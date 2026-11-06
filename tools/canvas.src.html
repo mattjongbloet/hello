@@ -1,0 +1,475 @@
+<title>Portfolio Reference Canvas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: an infinite light table. Fixed toolbar on top; below it a pannable/zoomable stage
+   with a sticky column strip (portfolios) and a sticky row rail (page types). */
+:root {
+  --table: #e4e6ea;       /* the light-table surface */
+  --sheet: #ffffff;       /* toolbar, labels, popovers */
+  --ink: #15171c;
+  --ink-2: #5d6370;
+  --line: #cfd3da;
+  --accent: #2f55e4;      /* cobalt: selection, focus, active toggle */
+  --accent-ink: #ffffff;
+  --hatch: #d3d7de;
+  --shadow: 0 1px 2px rgb(20 24 34 / .08), 0 6px 24px rgb(20 24 34 / .08);
+  --scrim: rgb(14 16 20 / .82);
+  --font-ui: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --bar-h: 52px; --strip-h: 44px; --rail-w: 40px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --table: #101216; --sheet: #1a1d23; --ink: #e7e9ee; --ink-2: #99a0ad; --line: #2c3039;
+    --accent: #7d97ff; --accent-ink: #0d1020; --hatch: #23262e;
+    --shadow: 0 1px 2px rgb(0 0 0 / .4), 0 8px 28px rgb(0 0 0 / .35); --scrim: rgb(5 6 8 / .88);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --table: #101216; --sheet: #1a1d23; --ink: #e7e9ee; --ink-2: #99a0ad; --line: #2c3039;
+  --accent: #7d97ff; --accent-ink: #0d1020; --hatch: #23262e;
+  --shadow: 0 1px 2px rgb(0 0 0 / .4), 0 8px 28px rgb(0 0 0 / .35); --scrim: rgb(5 6 8 / .88);
+  color-scheme: dark;
+}
+html, body { height: 100%; }
+body { margin: 0; background: var(--table); color: var(--ink); font: 13px/1.4 var(--font-ui); overflow: hidden; }
+[hidden] { display: none !important; }
+button, input { font: inherit; color: inherit; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.app { display: flex; flex-direction: column; height: 100%; }
+
+/* Toolbar */
+.bar {
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  min-height: var(--bar-h); box-sizing: border-box;
+  padding-block: 8px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  background: var(--sheet); border-bottom: 1px solid var(--line); position: relative; z-index: 30;
+}
+.brand { display: flex; align-items: baseline; gap: 10px; margin-right: auto; min-width: 0; }
+.brand h1 { font-size: 14px; font-weight: 600; margin: 0; letter-spacing: -.01em; white-space: nowrap; }
+.brand .meta { font: 12px var(--font-mono); color: var(--ink-2); white-space: nowrap; }
+.group { display: flex; align-items: center; gap: 6px; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; padding: 2px; gap: 2px; }
+.seg button { border: 0; background: none; padding: 5px 10px; border-radius: 6px; cursor: pointer; font-weight: 500; color: var(--ink-2); }
+.seg button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
+.btn { border: 1px solid var(--line); background: var(--sheet); border-radius: 8px; padding: 5px 10px; cursor: pointer; font-weight: 500; }
+.btn:hover { border-color: var(--ink-2); }
+.btn.icon { width: 30px; padding: 5px 0; text-align: center; }
+.zoomval { font: 12px var(--font-mono); width: 48px; text-align: center; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+
+/* Portfolio picker */
+.picker { position: absolute; right: max(16px, env(safe-area-inset-right, 0px)); top: calc(100% + 6px); width: min(320px, calc(100vw - 32px));
+  background: var(--sheet); border: 1px solid var(--line); border-radius: 10px; box-shadow: var(--shadow); display: flex; flex-direction: column; max-height: 70vh; }
+.picker header { display: flex; gap: 6px; align-items: center; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+.picker header strong { margin-right: auto; font-weight: 600; }
+.picker ul { list-style: none; margin: 0; padding: 6px; overflow: auto; }
+.picker li label { display: flex; align-items: center; gap: 10px; padding: 6px 8px; border-radius: 6px; cursor: pointer; }
+.picker li label:hover { background: var(--table); }
+.picker li .n { font: 11px var(--font-mono); color: var(--ink-2); width: 18px; text-align: right; font-variant-numeric: tabular-nums; }
+.picker li .host { margin-left: auto; font: 11px var(--font-mono); color: var(--ink-2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 140px; }
+.picker input { accent-color: var(--accent); }
+
+/* Stage */
+.stage { position: relative; flex: 1; overflow: hidden; cursor: grab; touch-action: none; }
+.stage.panning { cursor: grabbing; }
+.world { position: absolute; left: 0; top: 0; transform-origin: 0 0; will-change: transform; }
+
+.cell { position: absolute; }
+.cap { height: 30px; display: flex; align-items: center; gap: 8px; font-size: 12px; white-space: nowrap; }
+.cap .lbl { font-weight: 500; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.cap .live { margin-left: auto; font: 11px var(--font-mono); color: var(--ink-2); text-decoration: none; padding: 2px 6px; border-radius: 5px; border: 1px solid var(--line); background: var(--sheet); }
+.cap .live:hover { color: var(--accent); border-color: var(--accent); }
+.tabs { display: flex; gap: 4px; min-width: 0; overflow: hidden; }
+.tabs button { border: 1px solid var(--line); background: var(--sheet); border-radius: 999px; padding: 2px 8px; font-size: 11px; cursor: pointer; white-space: nowrap; max-width: 120px; overflow: hidden; text-overflow: ellipsis; }
+.tabs button[aria-pressed="true"] { background: var(--ink); color: var(--table); border-color: var(--ink); }
+.badge { font: 500 10px var(--font-mono); text-transform: uppercase; letter-spacing: .06em; padding: 2px 6px; border-radius: 4px; background: var(--ink); color: var(--table); }
+.badge.warn { background: #b4511f; color: #fff; }
+
+.shot { display: block; width: 100%; background: var(--sheet); box-shadow: var(--shadow); cursor: zoom-in; user-select: none; -webkit-user-drag: none; }
+.empty {
+  box-sizing: border-box; height: 200px; border: 1.5px dashed var(--line); border-radius: 6px; padding: 16px;
+  background: repeating-linear-gradient(-45deg, transparent 0 9px, var(--hatch) 9px 10px);
+  display: flex; flex-direction: column; justify-content: center; gap: 6px; color: var(--ink-2);
+}
+.empty b { color: var(--ink); font-size: 15px; font-weight: 600; text-transform: capitalize; }
+.empty p { margin: 0; font-size: 12px; }
+
+/* Sticky chrome */
+.strip { position: absolute; left: var(--rail-w); right: 0; top: 0; height: var(--strip-h); background: var(--sheet); border-bottom: 1px solid var(--line); overflow: hidden; z-index: 10; }
+.colhead { position: absolute; top: 0; height: 100%; display: flex; align-items: center; gap: 6px; box-sizing: border-box; padding: 0 2px; min-width: 0; }
+.colhead .num { font: 11px var(--font-mono); color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.colhead a { font-weight: 600; text-decoration: none; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.colhead a:hover { color: var(--accent); }
+.colhead .hide { margin-left: auto; border: 0; background: none; color: var(--ink-2); cursor: pointer; padding: 2px 4px; border-radius: 4px; flex: none; }
+.colhead .hide:hover { color: var(--ink); background: var(--table); }
+.rail { position: absolute; left: 0; top: var(--strip-h); bottom: 0; width: var(--rail-w); background: var(--sheet); border-right: 1px solid var(--line); overflow: hidden; z-index: 10; }
+.rowhead { position: absolute; left: 0; width: 100%; }
+.rowhead span { position: absolute; left: 50%; writing-mode: vertical-rl; transform: translateX(-50%) rotate(180deg); font: 500 11px var(--font-mono); text-transform: uppercase; letter-spacing: .12em; white-space: nowrap; }
+.rowhead::before { content: ""; position: absolute; left: 0; right: 0; top: 0; border-top: 1px solid var(--line); }
+.corner { position: absolute; left: 0; top: 0; width: var(--rail-w); height: var(--strip-h); background: var(--sheet); border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); z-index: 11; }
+.hint { position: absolute; right: max(12px, env(safe-area-inset-right, 0px)); bottom: max(12px, env(safe-area-inset-bottom, 0px)); font: 11px var(--font-mono); color: var(--ink-2); background: var(--sheet); border: 1px solid var(--line); border-radius: 6px; padding: 4px 8px; z-index: 12; pointer-events: none; }
+.nothing { position: absolute; inset: var(--strip-h) 0 0 var(--rail-w); display: grid; place-items: center; color: var(--ink-2); }
+
+/* Lightbox */
+.lb { position: fixed; inset: 0; background: var(--scrim); z-index: 50; display: flex; flex-direction: column; }
+.lb-bar { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; background: var(--sheet); border-bottom: 1px solid var(--line);
+  padding-block: 10px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.lb-title { margin-right: auto; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.lb-title strong { font-size: 14px; font-weight: 600; }
+.lb-title .url { font: 12px var(--font-mono); color: var(--ink-2); overflow-wrap: anywhere; }
+.lb-title .note { font-size: 12px; color: var(--ink-2); }
+.lb-scroll { flex: 1; overflow: auto; padding: 24px max(16px, env(safe-area-inset-right, 0px)) 48px max(16px, env(safe-area-inset-left, 0px)); }
+.lb-scroll img { display: block; margin: 0 auto; max-width: 100%; height: auto; background: var(--sheet); }
+.lb-scroll.actual img { max-width: none; }
+.btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); text-decoration: none; }
+
+@media (max-width: 640px) {
+  .brand .meta, .hint, .zoomval { display: none; }
+  :root { --rail-w: 32px; }
+}
+@media (prefers-reduced-motion: no-preference) { .world.ease { transition: transform .25s ease; } }
+</style>
+
+<div class="app">
+  <div class="bar">
+    <div class="brand"><h1>Portfolio Reference Canvas</h1><span class="meta" id="meta"></span></div>
+    <div class="seg" role="group" aria-label="Viewport">
+      <button id="mode-desktop" aria-pressed="true">Desktop 1440</button>
+      <button id="mode-mobile" aria-pressed="false">Mobile 390</button>
+    </div>
+    <div class="group" aria-label="Zoom">
+      <button class="btn icon" id="zoom-out" aria-label="Zoom out">−</button>
+      <span class="zoomval" id="zoomval">100%</span>
+      <button class="btn icon" id="zoom-in" aria-label="Zoom in">+</button>
+      <button class="btn" id="zoom-fit">Fit</button>
+    </div>
+    <button class="btn" id="pick-btn" aria-expanded="false" aria-controls="picker">Portfolios <span id="pick-count"></span></button>
+    <div class="picker" id="picker" hidden>
+      <header><strong>Show portfolios</strong><button class="btn" id="pick-all">All</button><button class="btn" id="pick-none">None</button></header>
+      <ul id="pick-list"></ul>
+    </div>
+  </div>
+  <div class="stage" id="stage">
+    <div class="world" id="world"></div>
+    <div class="strip" id="strip"></div>
+    <div class="rail" id="rail"></div>
+    <div class="corner"></div>
+    <div class="nothing" id="nothing" hidden>No portfolios shown. Pick some under Portfolios.</div>
+    <div class="hint">drag to pan · ⌘/ctrl + scroll to zoom · click a page to enlarge</div>
+  </div>
+</div>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-labelledby="lb-name">
+  <div class="lb-bar">
+    <div class="lb-title"><strong id="lb-name"></strong><span class="url" id="lb-url"></span><span class="note" id="lb-note"></span></div>
+    <button class="btn icon" id="lb-prev" aria-label="Previous portfolio">←</button>
+    <button class="btn icon" id="lb-next" aria-label="Next portfolio">→</button>
+    <button class="btn" id="lb-actual">Actual size</button>
+    <a class="btn primary" id="lb-live" target="_blank" rel="noopener">Open live page ↗</a>
+    <button class="btn" id="lb-close">Close</button>
+  </div>
+  <div class="lb-scroll" id="lb-scroll"><img id="lb-img" alt=""></div>
+</div>
+
+<script src="manifest.js"></script>
+<script>
+(() => {
+  const M = window.MANIFEST || { sites: {}, order: [] };
+  const ORDER = (M.order || Object.keys(M.sites)).filter((id) => M.sites[id]);
+  const ROWS = [
+    { key: 'home', label: 'Home' }, { key: 'case', label: 'Case study' }, { key: 'about', label: 'About' },
+    { key: 'contact', label: 'Contact' }, { key: 'other', label: 'Other' },
+  ];
+  const MODES = { desktop: { w: '1440', colW: 360 }, mobile: { w: '390', colW: 234 } };
+  const GAP_X = 48, GAP_Y = 96, CAP_H = 30, EMPTY_H = 200, PAD = 32;
+
+  const store = {
+    get(k, d) { try { const v = localStorage.getItem('prc:' + k); return v == null ? d : JSON.parse(v); } catch { return d; } },
+    set(k, v) { try { localStorage.setItem('prc:' + k, JSON.stringify(v)); } catch {} },
+  };
+  const state = {
+    mode: store.get('mode', 'desktop'),
+    hidden: new Set(store.get('hidden', [])),
+    otherIdx: {},                  // site id -> selected "other" page (1-based)
+    z: 1, tx: PAD, ty: PAD,
+  };
+  const $ = (id) => document.getElementById(id);
+  const stage = $('stage'), world = $('world'), strip = $('strip'), rail = $('rail');
+  let layout = { cols: [], rows: [], width: 0, height: 0 };
+
+  const host = (u) => { try { return new URL(u).host.replace(/^www\./, ''); } catch { return u || ''; } };
+  const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const visibleSites = () => ORDER.filter((id) => !state.hidden.has(id));
+  const otherKeys = (site) => Object.keys(site.pages).filter((k) => k.startsWith('other-')).sort();
+
+  // What goes in one cell: a screenshot or an empty cell with a reason.
+  function resolve(site, rowKey) {
+    const w = MODES[state.mode].w;
+    let key = rowKey, tabs = null;
+    if (rowKey === 'other') {
+      const keys = otherKeys(site);
+      if (!keys.length) return { kind: 'missing', reason: 'none found', detail: 'No other pages found.' };
+      const i = Math.min(state.otherIdx[site.id] || 1, keys.length);
+      key = keys[i - 1];
+      tabs = keys.map((k, n) => ({ n: n + 1, label: site.pages[k].label || `Page ${n + 1}`, active: n + 1 === i }));
+    }
+    let page = site.pages[key];
+    if (!page) return { kind: 'missing', reason: 'none found', tabs };
+    const badges = [];
+    if (page.same_as) {
+      const target = ROWS.find((r) => r.key === page.same_as);
+      badges.push({ text: `Same page as ${target ? target.label : page.same_as}` });
+      page = { ...site.pages[page.same_as], note: page.note || site.pages[page.same_as].note };
+    }
+    if (page.missing) return { kind: 'missing', reason: page.missing, detail: page.note, url: page.url, tabs };
+    const shot = page.shots && page.shots[w];
+    if (!shot || shot.error) return { kind: 'missing', reason: 'failed', detail: (shot && shot.error) || page.failed || 'Capture failed.', url: page.url, tabs };
+    if (page.locked) badges.push({ text: 'Locked', warn: true });
+    return { kind: 'shot', page, shot, key, tabs, badges };
+  }
+
+  function cellHeight(c, colW) {
+    if (c.kind !== 'shot') return CAP_H + EMPTY_H;
+    return CAP_H + Math.round(c.shot.web_height * colW / c.shot.web_width);
+  }
+
+  function render() {
+    const { colW } = MODES[state.mode];
+    const ids = visibleSites();
+    const sites = ids.map((id) => M.sites[id]);
+    $('nothing').hidden = ids.length > 0;
+    const cells = ROWS.map((r) => sites.map((s) => resolve(s, r.key)));
+    // Row height = tallest cell in that row, so rows line up across portfolios.
+    let y = 0;
+    const rows = ROWS.map((r, ri) => {
+      const h = Math.max(CAP_H + EMPTY_H, ...cells[ri].map((c) => cellHeight(c, colW)));
+      const row = { ...r, y, h }; y += h + GAP_Y; return row;
+    });
+    const cols = ids.map((id, i) => ({ id, x: i * (colW + GAP_X), w: colW, n: ORDER.indexOf(id) + 1 }));
+    layout = { cols, rows, width: Math.max(0, cols.length * (colW + GAP_X) - GAP_X), height: Math.max(0, y - GAP_Y) };
+
+    const html = [];
+    rows.forEach((row, ri) => cols.forEach((col, ci) => {
+      const c = cells[ri][ci], site = sites[ci];
+      const tabs = c.tabs && c.tabs.length > 1
+        ? `<div class="tabs">${c.tabs.map((t) => `<button data-site="${site.id}" data-other="${t.n}" aria-pressed="${t.active}" title="${esc(t.label)}">${esc(t.label)}</button>`).join('')}</div>`
+        : '';
+      const live = (c.page && (c.page.final_url || c.page.url)) || c.url;
+      const liveLink = live ? `<a class="live" href="${esc(live)}" target="_blank" rel="noopener" title="${esc(live)}">live ↗</a>` : '';
+      let body, label;
+      if (c.kind === 'shot') {
+        label = c.tabs && c.tabs.length > 1 ? '' : `<span class="lbl" title="${esc(c.page.note || '')}">${esc(c.page.label || row.label)}</span>`;
+        const h = Math.round(c.shot.web_height * col.w / c.shot.web_width);
+        body = `<img class="shot" loading="lazy" decoding="async" draggable="false" src="${esc(c.shot.web)}" width="${col.w}" height="${h}"
+          alt="${esc(site.name)} ${esc(row.label)}" data-site="${site.id}" data-row="${row.key}">`;
+      } else {
+        label = c.tabs && c.tabs.length > 1 ? '' : `<span class="lbl">${esc(row.label)}</span>`;
+        body = `<div class="empty"><b>${esc(c.reason)}</b>${c.detail ? `<p>${esc(c.detail)}</p>` : ''}</div>`;
+      }
+      const badges = (c.badges || []).map((b) => `<span class="badge${b.warn ? ' warn' : ''}">${esc(b.text)}</span>`).join('');
+      html.push(`<div class="cell" style="left:${col.x}px;top:${row.y}px;width:${col.w}px"><div class="cap">${tabs}${label}${badges}${liveLink}</div>${body}</div>`);
+    }));
+    world.innerHTML = html.join('');
+    world.style.width = layout.width + 'px'; world.style.height = layout.height + 'px';
+
+    strip.innerHTML = cols.map((col) => {
+      const s = M.sites[col.id], home = s.pages.home && (s.pages.home.final_url || s.pages.home.url) || s.input;
+      return `<div class="colhead" data-col="${col.id}"><span class="num">${String(col.n).padStart(2, '0')}</span><a href="${esc(home)}" target="_blank" rel="noopener" title="${esc(s.name)} · ${esc(host(s.input))}">${esc(s.name)}</a><button class="hide" data-hide="${col.id}" aria-label="Hide ${esc(s.name)}" title="Hide">×</button></div>`;
+    }).join('');
+    rail.innerHTML = rows.map((r) => `<div class="rowhead" data-row="${r.key}"><span>${r.label}</span></div>`).join('');
+
+    $('meta').textContent = `${ids.length} of ${ORDER.length} portfolios · ${state.mode === 'desktop' ? '1440px' : '390px'}`;
+    $('pick-count').textContent = `${ids.length}/${ORDER.length}`;
+    $('mode-desktop').setAttribute('aria-pressed', state.mode === 'desktop');
+    $('mode-mobile').setAttribute('aria-pressed', state.mode === 'mobile');
+    applyTransform();
+  }
+
+  // Keep the sticky labels in step with the world transform.
+  function applyTransform() {
+    const { z, tx, ty } = state;
+    world.style.transform = `translate(${tx}px, ${ty}px) scale(${z})`;
+    $('zoomval').textContent = Math.round(z * 100) + '%';
+    const railW = rail.offsetWidth, stripH = strip.offsetHeight;
+    for (const el of strip.children) {
+      const col = layout.cols.find((c) => c.id === el.dataset.col);
+      el.style.left = (tx - railW + col.x * z) + 'px';
+      el.style.width = Math.max(24, col.w * z) + 'px';
+    }
+    for (const el of rail.children) {
+      const row = layout.rows.find((r) => r.key === el.dataset.row);
+      const top = ty - stripH + row.y * z, h = row.h * z;
+      el.style.top = top + 'px'; el.style.height = h + 'px';
+      // Label stays on screen while any part of its row is.
+      const span = el.firstChild, lh = span.offsetHeight;
+      span.style.top = Math.max(0, Math.min(Math.max(16, -top + 16), h - lh - 8)) + 'px';
+    }
+  }
+
+  // Coordinates: world origin sits at (rail, strip) inside the stage.
+  const origin = () => ({ x: rail.offsetWidth, y: strip.offsetHeight });
+  function zoomAt(nz, sx, sy) {
+    nz = Math.min(4, Math.max(0.04, nz));
+    const wx = (sx - state.tx) / state.z, wy = (sy - state.ty) / state.z;
+    state.z = nz; state.tx = sx - wx * nz; state.ty = sy - wy * nz;
+    applyTransform();
+  }
+  const center = () => ({ x: stage.clientWidth / 2, y: stage.clientHeight / 2 });
+  function fit() {
+    const o = origin(), availW = stage.clientWidth - o.x - PAD * 2;
+    const z = layout.width ? Math.min(1, availW / layout.width) : 1;
+    state.z = Math.max(0.04, z); state.tx = o.x + PAD; state.ty = o.y + PAD;
+    applyTransform();
+  }
+
+  // Pan with drag / wheel, zoom with ctrl|cmd + wheel (trackpad pinch) or two-finger pinch.
+  const pointers = new Map();
+  let drag = null, moved = false, pinch = null;
+  stage.addEventListener('pointerdown', (e) => {
+    if (e.target.closest('a,button,.strip,.rail')) return;
+    pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    if (pointers.size === 1) { drag = { x: e.clientX, y: e.clientY, tx: state.tx, ty: state.ty }; moved = false; }
+    if (pointers.size === 2) {
+      const [a, b] = [...pointers.values()];
+      pinch = { d: Math.hypot(a.x - b.x, a.y - b.y), z: state.z };
+      drag = null;
+    }
+  });
+  window.addEventListener('pointermove', (e) => {
+    if (!pointers.has(e.pointerId)) return;
+    pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    if (pinch && pointers.size === 2) {
+      const [a, b] = [...pointers.values()], r = stage.getBoundingClientRect();
+      zoomAt(pinch.z * Math.hypot(a.x - b.x, a.y - b.y) / pinch.d, (a.x + b.x) / 2 - r.left, (a.y + b.y) / 2 - r.top);
+      moved = true; return;
+    }
+    if (!drag) return;
+    const dx = e.clientX - drag.x, dy = e.clientY - drag.y;
+    if (!moved && Math.hypot(dx, dy) < 4) return;
+    moved = true; stage.classList.add('panning');
+    state.tx = drag.tx + dx; state.ty = drag.ty + dy; applyTransform();
+  });
+  const end = (e) => {
+    pointers.delete(e.pointerId);
+    if (pointers.size < 2) pinch = null;
+    if (!pointers.size) { drag = null; stage.classList.remove('panning'); }
+  };
+  window.addEventListener('pointerup', end); window.addEventListener('pointercancel', end);
+  stage.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    const r = stage.getBoundingClientRect();
+    if (e.ctrlKey || e.metaKey) zoomAt(state.z * Math.exp(-e.deltaY * (e.deltaMode ? 0.05 : 0.0025)), e.clientX - r.left, e.clientY - r.top);
+    else {
+      const k = e.deltaMode ? 40 : 1;
+      state.tx -= (e.shiftKey && !e.deltaX ? e.deltaY : e.deltaX) * k;
+      state.ty -= (e.shiftKey && !e.deltaX ? 0 : e.deltaY) * k;
+      applyTransform();
+    }
+  }, { passive: false });
+
+  world.addEventListener('click', (e) => {
+    if (moved) { moved = false; return; }
+    const tab = e.target.closest('[data-other]');
+    if (tab) { state.otherIdx[tab.dataset.site] = +tab.dataset.other; render(); return; }
+    const img = e.target.closest('img.shot');
+    if (img) openLightbox(img.dataset.site, img.dataset.row);
+  });
+  strip.addEventListener('click', (e) => {
+    const b = e.target.closest('[data-hide]');
+    if (b) { state.hidden.add(b.dataset.hide); saveHidden(); render(); }
+  });
+
+  // Toolbar
+  const setMode = (m) => { state.mode = m; store.set('mode', m); render(); };
+  $('mode-desktop').onclick = () => setMode('desktop');
+  $('mode-mobile').onclick = () => setMode('mobile');
+  $('zoom-in').onclick = () => { const c = center(); zoomAt(state.z * 1.25, c.x, c.y); };
+  $('zoom-out').onclick = () => { const c = center(); zoomAt(state.z / 1.25, c.x, c.y); };
+  $('zoom-fit').onclick = fit;
+  const saveHidden = () => { store.set('hidden', [...state.hidden]); syncPicker(); };
+
+  function syncPicker() {
+    $('pick-list').innerHTML = ORDER.map((id, i) => {
+      const s = M.sites[id];
+      return `<li><label><input type="checkbox" id="pick-${id}" data-id="${id}" ${state.hidden.has(id) ? '' : 'checked'}><span class="n">${i + 1}</span><span>${esc(s.name)}</span><span class="host">${esc(host(s.input))}</span></label></li>`;
+    }).join('');
+  }
+  $('pick-list').addEventListener('change', (e) => {
+    const id = e.target.dataset.id; if (!id) return;
+    e.target.checked ? state.hidden.delete(id) : state.hidden.add(id);
+    store.set('hidden', [...state.hidden]); render();
+  });
+  $('pick-all').onclick = () => { state.hidden.clear(); saveHidden(); render(); };
+  $('pick-none').onclick = () => { ORDER.forEach((id) => state.hidden.add(id)); saveHidden(); render(); };
+  $('pick-btn').onclick = (e) => {
+    const p = $('picker'); p.hidden = !p.hidden; $('pick-btn').setAttribute('aria-expanded', !p.hidden); e.stopPropagation();
+  };
+  document.addEventListener('click', (e) => { if (!e.target.closest('#picker,#pick-btn')) { $('picker').hidden = true; $('pick-btn').setAttribute('aria-expanded', 'false'); } });
+
+  // Lightbox
+  let lbCur = null;
+  function openLightbox(siteId, rowKey) {
+    const site = M.sites[siteId], c = resolve(site, rowKey);
+    if (c.kind !== 'shot') return;
+    lbCur = { siteId, rowKey };
+    const row = ROWS.find((r) => r.key === rowKey);
+    const url = c.page.final_url || c.page.url;
+    $('lb-name').textContent = `${site.name} · ${row.label}${c.page.label ? ' · ' + c.page.label : ''}`;
+    $('lb-url').textContent = `${url}  ·  ${c.shot.width}×${c.shot.height}px  ·  ${c.shot.method === 'stitched' ? 'stitched from viewport shots' : 'full-page capture'}`;
+    $('lb-note').textContent = c.page.note || '';
+    $('lb-live').href = url;
+    const img = $('lb-img');
+    img.src = c.shot.web; img.width = c.shot.width; img.height = c.shot.height;
+    img.alt = `${site.name} ${row.label} screenshot`;
+    // Swap in the full-resolution PNG once it has loaded.
+    const full = new Image();
+    full.onload = () => { if (lbCur && lbCur.siteId === siteId && lbCur.rowKey === rowKey) img.src = full.src; };
+    full.src = c.shot.file;
+    $('lb-scroll').scrollTop = 0;
+    $('lb').hidden = false; $('lb-close').focus();
+  }
+  function stepLightbox(d) {
+    if (!lbCur) return;
+    const ids = visibleSites();
+    let i = ids.indexOf(lbCur.siteId);
+    for (let n = 0; n < ids.length; n++) {
+      i = (i + d + ids.length) % ids.length;
+      if (resolve(M.sites[ids[i]], lbCur.rowKey).kind === 'shot') return openLightbox(ids[i], lbCur.rowKey);
+    }
+  }
+  const closeLightbox = () => { $('lb').hidden = true; lbCur = null; };
+  $('lb-close').onclick = closeLightbox;
+  $('lb-prev').onclick = () => stepLightbox(-1);
+  $('lb-next').onclick = () => stepLightbox(1);
+  $('lb-actual').onclick = () => {
+    const on = $('lb-scroll').classList.toggle('actual');
+    $('lb-actual').textContent = on ? 'Fit width' : 'Actual size';
+  };
+  $('lb').addEventListener('click', (e) => { if (e.target.id === 'lb-scroll') closeLightbox(); });
+  document.addEventListener('keydown', (e) => {
+    if (!$('lb').hidden) {
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') stepLightbox(-1);
+      if (e.key === 'ArrowRight') stepLightbox(1);
+      return;
+    }
+    if (e.target.closest('input')) return;
+    const c = center();
+    if (e.key === '+' || e.key === '=') zoomAt(state.z * 1.25, c.x, c.y);
+    else if (e.key === '-') zoomAt(state.z / 1.25, c.x, c.y);
+    else if (e.key === '0' || e.key === 'f') fit();
+    else if (e.key === 'Escape') { $('picker').hidden = true; }
+  });
+
+  window.addEventListener('resize', applyTransform);
+  if (document.fonts) document.fonts.ready.then(applyTransform);
+  syncPicker();
+  render();
+  fit();
+})();
+</script>

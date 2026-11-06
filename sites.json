@@ -1,0 +1,28 @@
+[
+  {
+    "id": "iniabiodun",
+    "name": "Ìní Abiodun",
+    "input": "https://www.iniabiodun.com",
+    "home": { "url": "https://www.iniabiodun.com/", "note": "Intro overlay dismissed ('Enter the Atelier').", "actions": [{ "click": "text=Enter the Atelier" }] },
+    "case": { "url": "https://www.iniabiodun.com/fin-studio", "label": "Fin Studio", "note": "Home has no direct work links; first project on /craft (reached via the Navigate menu)." },
+    "about": { "url": "https://www.iniabiodun.com/about" },
+    "contact": { "missing": "no contact page", "note": "Email link on About only." },
+    "other": [
+      { "url": "https://www.iniabiodun.com/craft", "label": "Craft (work index)" },
+      { "url": "https://www.iniabiodun.com/library", "label": "Library" },
+      { "url": "https://www.iniabiodun.com/gallery", "label": "Gallery" }
+    ]
+  },
+  {
+    "id": "ericsin",
+    "name": "Eric Sin",
+    "input": "https://ericsin.com",
+    "home": { "url": "https://www.ericsin.com/" },
+    "case": { "url": "https://www.ericsin.com/work/VICTORY-PLUS", "label": "VICTORY+" },
+    "about": { "url": "https://www.ericsin.com/about" },
+    "contact": { "missing": "no contact page", "note": "mailto link in nav and footer only." },
+    "other": [
+      { "url": "https://www.ericsin.com/archives", "label": "Archives" }
+    ]
+  }
+]
