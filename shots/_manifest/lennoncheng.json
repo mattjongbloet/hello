@@ -1,0 +1,68 @@
+{
+  "id": "lennoncheng",
+  "name": "Lennon Cheng",
+  "input": "https://languid-fennel-9eb.notion.site/Lennon-Cheng-7dcd7541c1ef43b5a5989790c0aff337",
+  "pages": {
+    "home": {
+      "type": "home",
+      "label": "Notion page",
+      "url": "https://languid-fennel-9eb.notion.site/Lennon-Cheng-7dcd7541c1ef43b5a5989790c0aff337",
+      "note": "Single Notion page; the notion.site root isn't the portfolio.",
+      "shots": {
+        "390": {
+          "url": "https://languid-fennel-9eb.notion.site/Lennon-Cheng-7dcd7541c1ef43b5a5989790c0aff337",
+          "status": 200,
+          "final_url": "https://languid-fennel-9eb.notion.site/Lennon-Cheng-7dcd7541c1ef43b5a5989790c0aff337",
+          "title": "🍊 Lennon Cheng",
+          "password_screen": false,
+          "scroll": "inner",
+          "method": "stitched",
+          "width": 390,
+          "height": 10590,
+          "file": "shots/home/lennoncheng-390.png",
+          "web": "shots/_web/home/lennoncheng-390.jpg",
+          "web_width": 390,
+          "web_height": 10590
+        },
+        "1440": {
+          "url": "https://languid-fennel-9eb.notion.site/Lennon-Cheng-7dcd7541c1ef43b5a5989790c0aff337",
+          "status": 200,
+          "final_url": "https://languid-fennel-9eb.notion.site/Lennon-Cheng-7dcd7541c1ef43b5a5989790c0aff337",
+          "title": "Lennon Cheng",
+          "password_screen": false,
+          "scroll": "inner",
+          "method": "stitched",
+          "width": 1440,
+          "height": 13969,
+          "file": "shots/home/lennoncheng-1440.png",
+          "web": "shots/_web/home/lennoncheng-1440.jpg",
+          "web_width": 640,
+          "web_height": 6208
+        }
+      },
+      "final_url": "https://languid-fennel-9eb.notion.site/Lennon-Cheng-7dcd7541c1ef43b5a5989790c0aff337"
+    },
+    "case": {
+      "type": "case",
+      "label": null,
+      "url": null,
+      "note": "Work is shown in tabs/toggles on the one Notion page.",
+      "missing": "none found"
+    },
+    "about": {
+      "type": "about",
+      "label": null,
+      "url": null,
+      "note": "The Notion page opens with a 'Hello' intro.",
+      "same_as": "home"
+    },
+    "contact": {
+      "type": "contact",
+      "label": null,
+      "url": null,
+      "note": "Email in header.",
+      "missing": "no contact page"
+    }
+  },
+  "captured_at": "2026-11-06T11:36:21.211Z"
+}

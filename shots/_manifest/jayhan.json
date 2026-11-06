@@ -1,0 +1,151 @@
+{
+  "id": "jayhan",
+  "name": "Sim Jun Han",
+  "input": "https://jay-han.com/portfolio/",
+  "pages": {
+    "home": {
+      "type": "home",
+      "label": "Portfolio",
+      "url": "https://jay-han.com/portfolio/",
+      "note": "jay-han.com root doesn't resolve, so the given URL is used.",
+      "shots": {
+        "390": {
+          "url": "https://jay-han.com/portfolio/",
+          "status": 200,
+          "final_url": "https://jay-han.com/portfolio/",
+          "title": "Sim Jun Han — Lead Product Designer",
+          "password_screen": false,
+          "scroll": "transform",
+          "method": "stitched",
+          "width": 390,
+          "height": 6027,
+          "file": "shots/home/jayhan-390.png",
+          "web": "shots/_web/home/jayhan-390.jpg",
+          "web_width": 390,
+          "web_height": 6027
+        },
+        "1440": {
+          "url": "https://jay-han.com/portfolio/",
+          "status": 200,
+          "final_url": "https://jay-han.com/portfolio/",
+          "title": "Sim Jun Han — Lead Product Designer",
+          "password_screen": false,
+          "scroll": "transform",
+          "method": "stitched",
+          "width": 1440,
+          "height": 7749,
+          "file": "shots/home/jayhan-1440.png",
+          "web": "shots/_web/home/jayhan-1440.jpg",
+          "web_width": 640,
+          "web_height": 3444
+        }
+      },
+      "final_url": "https://jay-han.com/portfolio/"
+    },
+    "case": {
+      "type": "case",
+      "label": null,
+      "url": null,
+      "note": "Projects are shown inline on the portfolio page.",
+      "missing": "none found"
+    },
+    "about": {
+      "type": "about",
+      "label": null,
+      "url": null,
+      "note": null,
+      "missing": "none found"
+    },
+    "contact": {
+      "type": "contact",
+      "label": null,
+      "url": null,
+      "note": null,
+      "missing": "no contact page"
+    },
+    "other-1": {
+      "type": "other",
+      "label": "Line-screen halftone tool",
+      "url": "https://jay-han.com/line-screen-halftone/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://jay-han.com/line-screen-halftone/",
+          "status": 200,
+          "final_url": "https://jay-han.com/line-screen-halftone/",
+          "title": "Line Screen Halftone",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 390,
+          "height": 844,
+          "file": "shots/other/jayhan-1-390.png",
+          "web": "shots/_web/other/jayhan-1-390.jpg",
+          "web_width": 390,
+          "web_height": 844
+        },
+        "1440": {
+          "url": "https://jay-han.com/line-screen-halftone/",
+          "status": 200,
+          "final_url": "https://jay-han.com/line-screen-halftone/",
+          "title": "Line Screen Halftone",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 900,
+          "file": "shots/other/jayhan-1-1440.png",
+          "web": "shots/_web/other/jayhan-1-1440.jpg",
+          "web_width": 640,
+          "web_height": 400
+        }
+      },
+      "final_url": "https://jay-han.com/line-screen-halftone/"
+    },
+    "other-2": {
+      "type": "other",
+      "label": "Sunny",
+      "url": "https://jay-han.com/sunny/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://jay-han.com/sunny/",
+          "status": 200,
+          "final_url": "https://jay-han.com/sunny/",
+          "title": "Hello World",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.157,
+          "fallback_reason": "full-page shot differed from live viewport",
+          "method": "stitched",
+          "width": 390,
+          "height": 1370,
+          "file": "shots/other/jayhan-2-390.png",
+          "web": "shots/_web/other/jayhan-2-390.jpg",
+          "web_width": 390,
+          "web_height": 1370
+        },
+        "1440": {
+          "url": "https://jay-han.com/sunny/",
+          "status": 200,
+          "final_url": "https://jay-han.com/sunny/",
+          "title": "Hello World",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 900,
+          "file": "shots/other/jayhan-2-1440.png",
+          "web": "shots/_web/other/jayhan-2-1440.jpg",
+          "web_width": 640,
+          "web_height": 400
+        }
+      },
+      "final_url": "https://jay-han.com/sunny/"
+    }
+  },
+  "captured_at": "2026-11-06T11:44:41.343Z"
+}

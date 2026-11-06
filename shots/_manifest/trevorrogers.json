@@ -1,0 +1,152 @@
+{
+  "id": "trevorrogers",
+  "name": "Trevor Rogers",
+  "input": "https://trevorgrogers.com",
+  "pages": {
+    "home": {
+      "type": "home",
+      "label": null,
+      "url": "https://trevorgrogers.com/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://trevorgrogers.com/",
+          "status": 200,
+          "final_url": "https://trevorgrogers.com/",
+          "title": "Trevor Rogers · Design Leadership",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 390,
+          "height": 2827,
+          "file": "shots/home/trevorrogers-390.png",
+          "web": "shots/_web/home/trevorrogers-390.jpg",
+          "web_width": 390,
+          "web_height": 2827
+        },
+        "1440": {
+          "url": "https://trevorgrogers.com/",
+          "status": 200,
+          "final_url": "https://trevorgrogers.com/",
+          "title": "Trevor Rogers · Design Leadership",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.025,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 1852,
+          "file": "shots/home/trevorrogers-1440.png",
+          "web": "shots/_web/home/trevorrogers-1440.jpg",
+          "web_width": 640,
+          "web_height": 823
+        }
+      },
+      "final_url": "https://trevorgrogers.com/"
+    },
+    "case": {
+      "type": "case",
+      "label": null,
+      "url": null,
+      "note": "Site is essays and notes; no case studies.",
+      "missing": "none found"
+    },
+    "about": {
+      "type": "about",
+      "label": null,
+      "url": null,
+      "note": null,
+      "missing": "none found"
+    },
+    "contact": {
+      "type": "contact",
+      "label": null,
+      "url": null,
+      "note": "Email on home.",
+      "missing": "no contact page"
+    },
+    "other-1": {
+      "type": "other",
+      "label": "Essay: Nine Notes",
+      "url": "https://trevorgrogers.com/nine-notes-on-making-things",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://trevorgrogers.com/nine-notes-on-making-things",
+          "status": 200,
+          "final_url": "https://trevorgrogers.com/nine-notes-on-making-things",
+          "title": "Nine Notes on Making Things",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.133,
+          "method": "fullpage",
+          "width": 390,
+          "height": 20199,
+          "file": "shots/other/trevorrogers-1-390.png",
+          "web": "shots/_web/other/trevorrogers-1-390.jpg",
+          "web_width": 390,
+          "web_height": 20199
+        },
+        "1440": {
+          "url": "https://trevorgrogers.com/nine-notes-on-making-things",
+          "status": 200,
+          "final_url": "https://trevorgrogers.com/nine-notes-on-making-things",
+          "title": "Nine Notes on Making Things",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.06,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 16357,
+          "file": "shots/other/trevorrogers-1-1440.png",
+          "web": "shots/_web/other/trevorrogers-1-1440.jpg",
+          "web_width": 640,
+          "web_height": 7270
+        }
+      },
+      "final_url": "https://trevorgrogers.com/nine-notes-on-making-things"
+    },
+    "other-2": {
+      "type": "other",
+      "label": "Note",
+      "url": "https://trevorgrogers.com/blog/compounding-the-wrong-thing",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://trevorgrogers.com/blog/compounding-the-wrong-thing",
+          "status": 200,
+          "final_url": "https://trevorgrogers.com/blog/compounding-the-wrong-thing",
+          "title": "Compounding the Wrong Thing · Trevor Rogers",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 390,
+          "height": 4115,
+          "file": "shots/other/trevorrogers-2-390.png",
+          "web": "shots/_web/other/trevorrogers-2-390.jpg",
+          "web_width": 390,
+          "web_height": 4115
+        },
+        "1440": {
+          "url": "https://trevorgrogers.com/blog/compounding-the-wrong-thing",
+          "status": 200,
+          "final_url": "https://trevorgrogers.com/blog/compounding-the-wrong-thing",
+          "title": "Compounding the Wrong Thing · Trevor Rogers",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 3002,
+          "file": "shots/other/trevorrogers-2-1440.png",
+          "web": "shots/_web/other/trevorrogers-2-1440.jpg",
+          "web_width": 640,
+          "web_height": 1334
+        }
+      },
+      "final_url": "https://trevorgrogers.com/blog/compounding-the-wrong-thing"
+    }
+  },
+  "captured_at": "2026-11-06T12:32:28.632Z"
+}

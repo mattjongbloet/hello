@@ -1,28 +1,1020 @@
 [
-  {
-    "id": "iniabiodun",
-    "name": "Ìní Abiodun",
-    "input": "https://www.iniabiodun.com",
-    "home": { "url": "https://www.iniabiodun.com/", "note": "Intro overlay dismissed ('Enter the Atelier').", "actions": [{ "click": "text=Enter the Atelier" }] },
-    "case": { "url": "https://www.iniabiodun.com/fin-studio", "label": "Fin Studio", "note": "Home has no direct work links; first project on /craft (reached via the Navigate menu)." },
-    "about": { "url": "https://www.iniabiodun.com/about" },
-    "contact": { "missing": "no contact page", "note": "Email link on About only." },
-    "other": [
-      { "url": "https://www.iniabiodun.com/craft", "label": "Craft (work index)" },
-      { "url": "https://www.iniabiodun.com/library", "label": "Library" },
-      { "url": "https://www.iniabiodun.com/gallery", "label": "Gallery" }
-    ]
+ {
+  "id": "iniabiodun",
+  "name": "Ìní Abiodun",
+  "input": "https://www.iniabiodun.com",
+  "home": {
+   "url": "https://www.iniabiodun.com/",
+   "note": "Intro overlay dismissed ('Enter the Atelier').",
+   "actions": [
+    {
+     "click": "text=Enter the Atelier"
+    }
+   ]
   },
-  {
-    "id": "ericsin",
-    "name": "Eric Sin",
-    "input": "https://ericsin.com",
-    "home": { "url": "https://www.ericsin.com/" },
-    "case": { "url": "https://www.ericsin.com/work/VICTORY-PLUS", "label": "VICTORY+" },
-    "about": { "url": "https://www.ericsin.com/about" },
-    "contact": { "missing": "no contact page", "note": "mailto link in nav and footer only." },
-    "other": [
-      { "url": "https://www.ericsin.com/archives", "label": "Archives" }
-    ]
-  }
+  "case": {
+   "url": "https://www.iniabiodun.com/fin-studio",
+   "label": "Fin Studio",
+   "note": "Home has no direct work links; first project on /craft (reached via the Navigate menu)."
+  },
+  "about": {
+   "url": "https://www.iniabiodun.com/about"
+  },
+  "contact": {
+   "missing": "no contact page",
+   "note": "Email link on About only."
+  },
+  "other": [
+   {
+    "url": "https://www.iniabiodun.com/craft",
+    "label": "Craft (work index)"
+   },
+   {
+    "url": "https://www.iniabiodun.com/library",
+    "label": "Library"
+   },
+   {
+    "url": "https://www.iniabiodun.com/gallery",
+    "label": "Gallery"
+   }
+  ]
+ },
+ {
+  "id": "ericsin",
+  "name": "Eric Sin",
+  "input": "https://ericsin.com",
+  "home": {
+   "url": "https://www.ericsin.com/"
+  },
+  "case": {
+   "url": "https://www.ericsin.com/work/VICTORY-PLUS",
+   "label": "VICTORY+"
+  },
+  "about": {
+   "url": "https://www.ericsin.com/about"
+  },
+  "contact": {
+   "missing": "no contact page",
+   "note": "mailto link in nav and footer only."
+  },
+  "other": [
+   {
+    "url": "https://www.ericsin.com/archives",
+    "label": "Archives"
+   }
+  ]
+ },
+ {
+  "id": "heilyn",
+  "name": "Heilyn Nguyễn",
+  "input": "https://heilyn.media",
+  "home": {
+   "url": "https://heilyn.media/"
+  },
+  "case": {
+   "url": "https://heilyn.media/portfolio/personio-ai-driven-support/",
+   "label": "Personio AI-powered Support"
+  },
+  "about": {
+   "url": "https://heilyn.media/about/"
+  },
+  "contact": {
+   "url": "https://heilyn.media/contact/"
+  },
+  "other": []
+ },
+ {
+  "id": "shahi",
+  "name": "Shahriyar M",
+  "input": "https://www.shahi.design",
+  "home": {
+   "url": "https://www.shahi.design/"
+  },
+  "case": {
+   "missing": "none found",
+   "note": "Home shows a bio and two cards (Pretzel, an external product; Digital garden). No case study pages."
+  },
+  "about": {
+   "url": "https://www.shahi.design/about"
+  },
+  "contact": {
+   "url": "https://www.shahi.design/contact",
+   "label": "Work with me"
+  },
+  "other": []
+ },
+ {
+  "id": "gabrielvaldivia",
+  "name": "Gabriel Valdivia",
+  "input": "https://www.gabrielvaldivia.com",
+  "home": {
+   "url": "https://www.gabrielvaldivia.com/"
+  },
+  "case": {
+   "url": "https://www.gabrielvaldivia.com/work/supper",
+   "label": "Supper",
+   "note": "Case study specified in the brief."
+  },
+  "about": {
+   "url": "https://www.gabrielvaldivia.com/about"
+  },
+  "contact": {
+   "missing": "no contact page",
+   "note": "No contact page; there is an AI chat at /chat."
+  },
+  "other": [
+   {
+    "url": "https://www.gabrielvaldivia.com/notes",
+    "label": "Notes"
+   },
+   {
+    "url": "https://www.gabrielvaldivia.com/photos",
+    "label": "Photos"
+   },
+   {
+    "url": "https://www.gabrielvaldivia.com/clients",
+    "label": "Clients"
+   }
+  ]
+ },
+ {
+  "id": "floguo",
+  "name": "Flora Guo",
+  "input": "https://www.floguo.com",
+  "home": {
+   "url": "https://www.floguo.com/"
+  },
+  "case": {
+   "missing": "none found",
+   "note": "No case studies; the site is a digital garden (notes, writing, bookshelf, playground)."
+  },
+  "about": {
+   "same_as": "home",
+   "note": "The ABOUT menu item is the home page."
+  },
+  "contact": {
+   "missing": "no contact page",
+   "note": "Links to Twitter/Curius/GitHub only."
+  },
+  "other": [
+   {
+    "url": "https://www.floguo.com/books",
+    "label": "Bookshelf"
+   },
+   {
+    "url": "https://www.floguo.com/ideas",
+    "label": "Writing"
+   },
+   {
+    "url": "https://www.floguo.com/playground",
+    "label": "Playground"
+   }
+  ]
+ },
+ {
+  "id": "worawork",
+  "name": "worawork",
+  "input": "https://worawork.vercel.app",
+  "home": {
+   "url": "https://worawork.vercel.app/"
+  },
+  "case": {
+   "missing": "failed",
+   "note": "Site unreachable (Vercel: 402 Deployment Paused)."
+  },
+  "about": {
+   "missing": "failed",
+   "note": "Site unreachable (Vercel: 402 Deployment Paused)."
+  },
+  "contact": {
+   "missing": "failed",
+   "note": "Site unreachable (Vercel: 402 Deployment Paused)."
+  },
+  "other": []
+ },
+ {
+  "id": "adrienlamy",
+  "name": "Adrien Lamy",
+  "input": "https://adrienlamy.fr",
+  "home": {
+   "url": "https://adrienlamy.fr/",
+   "note": "Waits out the intro animation.",
+   "actions": [
+    {
+     "wait": 7000
+    }
+   ]
+  },
+  "case": {
+   "url": "https://cosmicshelter.com/work/lvmh-the-maison-of-all-victories",
+   "label": "LVMH (on Cosmic Shelter)",
+   "note": "Case studies are hosted on agency sites; first 'Case' link on home."
+  },
+  "about": {
+   "same_as": "home",
+   "note": "Home is a 'Who am I?' card."
+  },
+  "contact": {
+   "missing": "no contact page",
+   "note": "Copy-email button only."
+  },
+  "other": [
+   {
+    "url": "https://crabelab.adrienlamy.fr/en/copie-double",
+    "label": "Crabe Lab experiment"
+   }
+  ]
+ },
+ {
+  "id": "prestonb",
+  "name": "Preston Booth",
+  "input": "https://www.prestonb.xyz",
+  "home": {
+   "url": "https://www.prestonb.xyz/"
+  },
+  "case": {
+   "url": "https://www.prestonb.xyz/work/clerk-dns",
+   "label": "Clerk DNS Settings",
+   "note": "Home links to Work; first project there."
+  },
+  "about": {
+   "url": "https://www.prestonb.xyz/about"
+  },
+  "contact": {
+   "missing": "no contact page"
+  },
+  "other": [
+   {
+    "url": "https://www.prestonb.xyz/work",
+    "label": "Work index"
+   },
+   {
+    "url": "https://www.prestonb.xyz/explorations",
+    "label": "Playground"
+   }
+  ]
+ },
+ {
+  "id": "chloeyan",
+  "name": "Chloe Yan",
+  "input": "https://www.chloeyan.me",
+  "home": {
+   "url": "https://www.chloeyan.me/"
+  },
+  "case": {
+   "missing": "none found",
+   "note": "Home is a 3D garden linking to collections (Interface ideas, Shaders, Digital spaces, Journal), not case studies."
+  },
+  "about": {
+   "url": "https://www.chloeyan.me/about"
+  },
+  "contact": {
+   "missing": "no contact page"
+  },
+  "other": [
+   {
+    "url": "https://www.chloeyan.me/interface-ideas",
+    "label": "Interface ideas"
+   },
+   {
+    "url": "https://www.chloeyan.me/digital-spaces",
+    "label": "Digital spaces"
+   },
+   {
+    "url": "https://www.chloeyan.me/shaders",
+    "label": "Shaders"
+   }
+  ]
+ },
+ {
+  "id": "charliedeets",
+  "name": "Charlie Deets",
+  "input": "https://charliedeets.com/writings/",
+  "home": {
+   "url": "https://charliedeets.com/",
+   "label": "Home",
+   "note": "Brief URL was /writings/; site root is the portfolio."
+  },
+  "case": {
+   "url": "https://charliedeets.com/work/apple",
+   "label": "Apple"
+  },
+  "about": {
+   "missing": "none found",
+   "note": "No about page."
+  },
+  "contact": {
+   "missing": "no contact page"
+  },
+  "other": [
+   {
+    "url": "https://charliedeets.com/writing/",
+    "label": "Writing"
+   },
+   {
+    "url": "https://charliedeets.com/photo/",
+    "label": "Photography"
+   },
+   {
+    "url": "https://charliedeets.com/vr/",
+    "label": "Virtual Reality"
+   }
+  ]
+ },
+ {
+  "id": "lennoncheng",
+  "name": "Lennon Cheng",
+  "input": "https://languid-fennel-9eb.notion.site/Lennon-Cheng-7dcd7541c1ef43b5a5989790c0aff337",
+  "home": {
+   "url": "https://languid-fennel-9eb.notion.site/Lennon-Cheng-7dcd7541c1ef43b5a5989790c0aff337",
+   "label": "Notion page",
+   "note": "Single Notion page; the notion.site root isn't the portfolio."
+  },
+  "case": {
+   "missing": "none found",
+   "note": "Work is shown in tabs/toggles on the one Notion page."
+  },
+  "about": {
+   "same_as": "home",
+   "note": "The Notion page opens with a 'Hello' intro."
+  },
+  "contact": {
+   "missing": "no contact page",
+   "note": "Email in header."
+  },
+  "other": []
+ },
+ {
+  "id": "jayhan",
+  "name": "Sim Jun Han",
+  "input": "https://jay-han.com/portfolio/",
+  "home": {
+   "url": "https://jay-han.com/portfolio/",
+   "label": "Portfolio",
+   "note": "jay-han.com root doesn't resolve, so the given URL is used."
+  },
+  "case": {
+   "missing": "none found",
+   "note": "Projects are shown inline on the portfolio page."
+  },
+  "about": {
+   "missing": "none found"
+  },
+  "contact": {
+   "missing": "no contact page"
+  },
+  "other": [
+   {
+    "url": "https://jay-han.com/line-screen-halftone/",
+    "label": "Line-screen halftone tool"
+   },
+   {
+    "url": "https://jay-han.com/sunny/",
+    "label": "Sunny"
+   }
+  ]
+ },
+ {
+  "id": "trevorrogers",
+  "name": "Trevor Rogers",
+  "input": "https://trevorgrogers.com",
+  "home": {
+   "url": "https://trevorgrogers.com/"
+  },
+  "case": {
+   "missing": "none found",
+   "note": "Site is essays and notes; no case studies."
+  },
+  "about": {
+   "missing": "none found"
+  },
+  "contact": {
+   "missing": "no contact page",
+   "note": "Email on home."
+  },
+  "other": [
+   {
+    "url": "https://trevorgrogers.com/nine-notes-on-making-things",
+    "label": "Essay: Nine Notes"
+   },
+   {
+    "url": "https://trevorgrogers.com/blog/compounding-the-wrong-thing",
+    "label": "Note"
+   }
+  ]
+ },
+ {
+  "id": "danielchung",
+  "name": "Daniel Chung",
+  "input": "https://danielchung.design",
+  "home": {
+   "url": "https://danielchung.design/"
+  },
+  "case": {
+   "url": "https://danielchung.design/dex",
+   "label": "Dex"
+  },
+  "about": {
+   "missing": "none found",
+   "note": "Home has an 'Ask about me' chat instead."
+  },
+  "contact": {
+   "missing": "no contact page",
+   "note": "Email link on home."
+  },
+  "other": [
+   {
+    "url": "https://danielchung.design/onigiri",
+    "label": "Onigiri (personal OS)"
+   },
+   {
+    "url": "https://danielchung.design/photography",
+    "label": "Photography"
+   },
+   {
+    "url": "https://danielchung.design/desk",
+    "label": "Desk"
+   }
+  ]
+ },
+ {
+  "id": "karimmanaa",
+  "name": "Karim Manaa",
+  "input": "https://karimmanaa.com",
+  "home": {
+   "url": "https://karimmanaa.com/"
+  },
+  "case": {
+   "url": "https://karimmanaa.com/",
+   "label": "Weenyd (modal)",
+   "note": "Projects open as a modal over home.",
+   "actions": [
+    {
+     "click": "text=Weenyd"
+    }
+   ]
+  },
+  "about": {
+   "missing": "none found"
+  },
+  "contact": {
+   "missing": "no contact page",
+   "note": "Email and booking buttons on home."
+  },
+  "other": []
+ },
+ {
+  "id": "cameronsimony",
+  "name": "Cameron Simony",
+  "input": "https://cameronsimony.com",
+  "home": {
+   "url": "https://cameronsimony.com/"
+  },
+  "case": {
+   "missing": "failed",
+   "note": "Site unreachable (HTTP 502)."
+  },
+  "about": {
+   "missing": "failed",
+   "note": "Site unreachable (HTTP 502)."
+  },
+  "contact": {
+   "missing": "failed",
+   "note": "Site unreachable (HTTP 502)."
+  },
+  "other": []
+ },
+ {
+  "id": "lfs",
+  "name": "Matt Sellers",
+  "input": "https://www.lfs.gd",
+  "home": {
+   "url": "https://www.lfs.gd/"
+  },
+  "case": {
+   "url": "https://www.lfs.gd/docufai",
+   "label": "Docufai",
+   "note": "First item (Bentley) is 'coming soon'."
+  },
+  "about": {
+   "same_as": "home",
+   "note": "Bio is on home."
+  },
+  "contact": {
+   "missing": "no contact page"
+  },
+  "other": []
+ },
+ {
+  "id": "aydaoz",
+  "name": "Ayda Oz",
+  "input": "https://aydaoz.co",
+  "home": {
+   "url": "https://aydaoz.co/"
+  },
+  "case": {
+   "missing": "none found",
+   "note": "Case studies are sections of the home page (#qatalog etc.)."
+  },
+  "about": {
+   "same_as": "home",
+   "note": "About is a section of home (#about)."
+  },
+  "contact": {
+   "missing": "no contact page",
+   "note": "Book-a-call button."
+  },
+  "other": [
+   {
+    "url": "https://aydaoz.co/showcase/",
+    "label": "Showcase"
+   },
+   {
+    "url": "https://aydaoz.co/journal/",
+    "label": "Journal"
+   },
+   {
+    "url": "https://aydaoz.co/clients/",
+    "label": "Clients"
+   }
+  ]
+ },
+ {
+  "id": "dantase",
+  "name": "Dan Tase",
+  "input": "https://www.dantase.com",
+  "home": {
+   "url": "https://www.dantase.com/"
+  },
+  "case": {
+   "missing": "none found",
+   "note": "Work is shown inline on home."
+  },
+  "about": {
+   "url": "https://www.dantase.com/about"
+  },
+  "contact": {
+   "missing": "no contact page"
+  },
+  "other": [
+   {
+    "url": "https://www.dantase.com/updates",
+    "label": "Updates"
+   }
+  ]
+ },
+ {
+  "id": "edmacovaz",
+  "name": "Ed Macovaz",
+  "input": "https://www.edmacovaz.com/work",
+  "home": {
+   "url": "https://www.edmacovaz.com/",
+   "label": "Home",
+   "note": "Brief URL was /work; site root is the portfolio."
+  },
+  "case": {
+   "url": "https://www.edmacovaz.com/work",
+   "label": "Work",
+   "note": "Case studies are written inline on the Work page."
+  },
+  "about": {
+   "missing": "none found"
+  },
+  "contact": {
+   "missing": "no contact page",
+   "note": "Email/LinkedIn on home."
+  },
+  "other": [
+   {
+    "url": "https://www.edmacovaz.com/notes",
+    "label": "Notes"
+   }
+  ]
+ },
+ {
+  "id": "mattstromawn",
+  "name": "Matt Ström-Awn",
+  "input": "https://mattstromawn.com",
+  "home": {
+   "url": "https://mattstromawn.com/"
+  },
+  "case": {
+   "url": "https://mattstromawn.com/projects/copilotmoney/",
+   "label": "Copilot Money"
+  },
+  "about": {
+   "url": "https://mattstromawn.com/about"
+  },
+  "contact": {
+   "missing": "no contact page"
+  },
+  "other": [
+   {
+    "url": "https://mattstromawn.com/writing",
+    "label": "Writing"
+   },
+   {
+    "url": "https://mattstromawn.com/reading",
+    "label": "Reading"
+   }
+  ]
+ },
+ {
+  "id": "emilycampbell",
+  "name": "Emily Campbell",
+  "input": "https://emilycampbell.co",
+  "home": {
+   "url": "https://emilycampbell.co/"
+  },
+  "case": {
+   "missing": "none found",
+   "note": "Work page is a professional-experience list with no case studies."
+  },
+  "about": {
+   "url": "https://emilycampbell.co/info",
+   "label": "Info"
+  },
+  "contact": {
+   "missing": "no contact page"
+  },
+  "other": [
+   {
+    "url": "https://emilycampbell.co/work",
+    "label": "Work (experience)"
+   },
+   {
+    "url": "https://emilycampbell.co/speaking",
+    "label": "Speaking"
+   },
+   {
+    "url": "https://emilycampbell.co/garden",
+    "label": "Garden"
+   }
+  ]
+ },
+ {
+  "id": "dancarino",
+  "name": "Dan Cariño",
+  "input": "https://www.dancarino.me",
+  "home": {
+   "url": "https://www.dancarino.me/"
+  },
+  "case": {
+   "url": "https://www.dancarino.me/work/pre-loved",
+   "label": "Launching Secondhand"
+  },
+  "about": {
+   "url": "https://www.dancarino.me/about"
+  },
+  "contact": {
+   "missing": "no contact page",
+   "note": "Contact nav item scrolls home."
+  },
+  "other": [
+   {
+    "url": "https://www.dancarino.me/work/the-device",
+    "label": "Playground: The Device"
+   }
+  ]
+ },
+ {
+  "id": "stanreimgen",
+  "name": "Stan Reimgen",
+  "input": "https://www.stanreimgen.space",
+  "home": {
+   "url": "https://www.stanreimgen.space/"
+  },
+  "case": {
+   "url": "https://www.stanreimgen.space/",
+   "label": "Forget.Finance (window)",
+   "note": "StanOS desktop: projects open as fixed windows, captured as one viewport.",
+   "actions": [
+    {
+     "click": "text=Forget.Finance"
+    }
+   ],
+   "viewport": true
+  },
+  "about": {
+   "url": "https://www.stanreimgen.space/",
+   "label": "About (window)",
+   "actions": [
+    {
+     "click": "text=About"
+    }
+   ],
+   "viewport": true,
+   "note": "Opens as a window; captured as one viewport."
+  },
+  "contact": {
+   "missing": "no contact page"
+  },
+  "other": [
+   {
+    "url": "https://www.stanreimgen.space/",
+    "label": "Gallery (window)",
+    "actions": [
+     {
+      "click": "text=Gallery"
+     }
+    ],
+    "viewport": true
+   }
+  ]
+ },
+ {
+  "id": "sydneynguyen",
+  "name": "Sydney Nguyen",
+  "input": "https://sydneyknguyen.com",
+  "home": {
+   "url": "https://sydneyknguyen.com/"
+  },
+  "case": {
+   "url": "https://sydneyknguyen.com/shoal",
+   "label": "Shoal"
+  },
+  "about": {
+   "url": "https://sydneyknguyen.com/about"
+  },
+  "contact": {
+   "missing": "no contact page"
+  },
+  "other": []
+ },
+ {
+  "id": "pixelsurgery",
+  "name": "Filip Aleksandrow",
+  "input": "https://www.pixelsurgery.ca",
+  "home": {
+   "url": "https://www.pixelsurgery.ca/"
+  },
+  "case": {
+   "url": "https://www.pixelsurgery.ca/case-study/fluent-2-website",
+   "label": "Microsoft Fluent 2 Website"
+  },
+  "about": {
+   "url": "https://www.pixelsurgery.ca/hololog",
+   "label": "About (Hololog)"
+  },
+  "contact": {
+   "url": "https://www.pixelsurgery.ca/contact"
+  },
+  "other": [
+   {
+    "url": "https://www.pixelsurgery.ca/case-studies",
+    "label": "Case studies index"
+   },
+   {
+    "url": "https://www.pixelsurgery.ca/learning-hub",
+    "label": "Writing"
+   },
+   {
+    "url": "https://www.pixelsurgery.ca/gallery/posters",
+    "label": "Movie posters"
+   }
+  ]
+ },
+ {
+  "id": "taschiba",
+  "name": "Sati Tashibayeva",
+  "input": "https://taschiba.com",
+  "home": {
+   "url": "https://taschiba.com/"
+  },
+  "case": {
+   "url": "https://taschiba.com/indeed-ai/",
+   "label": "Indeed AI (locked)",
+   "note": "All three on-site case studies are password protected. The only unlocked one is on Behance, which blocks automated browsers (HTTP 403), so the password screen is shown."
+  },
+  "about": {
+   "url": "https://taschiba.com/about/"
+  },
+  "contact": {
+   "missing": "no contact page"
+  },
+  "other": []
+ },
+ {
+  "id": "justinjaywang",
+  "name": "Justin Jay Wang",
+  "input": "https://justinjay.wang",
+  "home": {
+   "url": "https://justinjay.wang/"
+  },
+  "case": {
+   "missing": "none found",
+   "note": "No case studies; home is About + posts, photos, notes."
+  },
+  "about": {
+   "same_as": "home",
+   "note": "Home opens with an About section."
+  },
+  "contact": {
+   "missing": "no contact page"
+  },
+  "other": [
+   {
+    "url": "https://justinjay.wang/posts/",
+    "label": "Posts"
+   },
+   {
+    "url": "https://justinjay.wang/photos/",
+    "label": "Photos"
+   },
+   {
+    "url": "https://justinjay.wang/now/",
+    "label": "Now"
+   }
+  ]
+ },
+ {
+  "id": "karyll",
+  "name": "Karyll Catubig",
+  "input": "https://karyll.com",
+  "home": {
+   "url": "https://karyll.com/"
+  },
+  "case": {
+   "url": "https://karyll.com/#qento",
+   "label": "Qento",
+   "note": "First project (Design System for Agents) is password protected. On mobile the case study opens as a fixed bottom sheet, captured as one viewport.",
+   "viewport": [
+    "390"
+   ]
+  },
+  "about": {
+   "url": "https://karyll.com/#about",
+   "viewport": [
+    "390"
+   ]
+  },
+  "contact": {
+   "missing": "no contact page",
+   "note": "Email link on home."
+  },
+  "other": []
+ },
+ {
+  "id": "jessa",
+  "name": "Jessa Wolfe",
+  "input": "https://jessa.art",
+  "home": {
+   "url": "https://jessa.art/"
+  },
+  "case": {
+   "url": "https://jessa.art/#mochiboard.html",
+   "label": "Mochiboard",
+   "note": "First card under Work."
+  },
+  "about": {
+   "url": "https://jessa.art/#about"
+  },
+  "contact": {
+   "url": "https://jessa.art/#hi",
+   "label": "Say hi"
+  },
+  "other": [
+   {
+    "url": "https://jessa.art/#talks",
+    "label": "Talks"
+   }
+  ]
+ },
+ {
+  "id": "styblova",
+  "name": "Jana Stýblová",
+  "input": "https://styblova.com/projects",
+  "home": {
+   "url": "https://styblova.com/"
+  },
+  "case": {
+   "url": "https://styblova.com/matter-neuroscience",
+   "label": "Matter Neuroscience",
+   "note": "First project (Google / NotebookLM) is password protected."
+  },
+  "about": {
+   "url": "https://styblova.com/about"
+  },
+  "contact": {
+   "url": "https://styblova.com/contact"
+  },
+  "other": []
+ },
+ {
+  "id": "herson",
+  "name": "Herson",
+  "input": "https://herson.me",
+  "home": {
+   "url": "https://herson.me/"
+  },
+  "case": {
+   "url": "https://herson.me/benjamin",
+   "label": "Benjamin",
+   "note": "First past-work project (Phantom) is password protected."
+  },
+  "about": {
+   "missing": "none found"
+  },
+  "contact": {
+   "missing": "no contact page"
+  },
+  "other": [
+   {
+    "url": "https://herson.me/slap-wall",
+    "label": "Slap Wall"
+   }
+  ]
+ },
+ {
+  "id": "buzzusborne",
+  "name": "Buzz Usborne",
+  "input": "https://buzzusborne.com",
+  "home": {
+   "url": "https://buzzusborne.com/"
+  },
+  "case": {
+   "url": "https://buzzusborne.com/work/designing-with-ai/",
+   "label": "Designing with AI"
+  },
+  "about": {
+   "url": "https://buzzusborne.com/about/"
+  },
+  "contact": {
+   "missing": "no contact page"
+  },
+  "other": [
+   {
+    "url": "https://buzzusborne.com/writing/",
+    "label": "Writing"
+   },
+   {
+    "url": "https://buzzusborne.com/press/",
+    "label": "Press"
+   },
+   {
+    "url": "https://buzzusborne.com/cv/",
+    "label": "CV"
+   }
+  ]
+ },
+ {
+  "id": "benroach",
+  "name": "Ben Roach",
+  "input": "https://www.benroachdesign.com",
+  "home": {
+   "url": "https://www.benroachdesign.com/"
+  },
+  "case": {
+   "url": "https://www.benroachdesign.com/work/google-ai",
+   "label": "Google AI adoption"
+  },
+  "about": {
+   "url": "https://www.benroachdesign.com/about"
+  },
+  "contact": {
+   "url": "https://www.benroachdesign.com/contact"
+  },
+  "other": [
+   {
+    "url": "https://www.benroachdesign.com/work",
+    "label": "Work index"
+   },
+   {
+    "url": "https://www.benroachdesign.com/lab",
+    "label": "AI Lab"
+   },
+   {
+    "url": "https://www.benroachdesign.com/lab/livevault",
+    "label": "Lab: LiveVault"
+   }
+  ]
+ },
+ {
+  "id": "calethompson",
+  "name": "Cale Thompson",
+  "input": "https://www.calethompson.com",
+  "home": {
+   "url": "https://www.calethompson.com/"
+  },
+  "case": {
+   "url": "https://www.calethompson.com/case-studies/stori/",
+   "label": "Stori"
+  },
+  "about": {
+   "missing": "none found"
+  },
+  "contact": {
+   "missing": "no contact page"
+  },
+  "other": [
+   {
+    "url": "https://www.calethompson.com/values/",
+    "label": "Principles in practice"
+   },
+   {
+    "url": "https://www.calethompson.com/company/nike/",
+    "label": "Nike (company page)"
+   }
+  ]
+ }
 ]

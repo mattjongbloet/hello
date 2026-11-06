@@ -1,0 +1,146 @@
+{
+  "id": "adrienlamy",
+  "name": "Adrien Lamy",
+  "input": "https://adrienlamy.fr",
+  "pages": {
+    "home": {
+      "type": "home",
+      "label": null,
+      "url": "https://adrienlamy.fr/",
+      "note": "Waits out the intro animation.",
+      "shots": {
+        "390": {
+          "url": "https://adrienlamy.fr/",
+          "status": 200,
+          "final_url": "https://adrienlamy.fr/",
+          "title": "Adrien Lamy :D",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.629,
+          "fallback_reason": "full-page shot differed from live viewport",
+          "method": "stitched",
+          "width": 390,
+          "height": 1905,
+          "file": "shots/home/adrienlamy-390.png",
+          "web": "shots/_web/home/adrienlamy-390.jpg",
+          "web_width": 390,
+          "web_height": 1905
+        },
+        "1440": {
+          "url": "https://adrienlamy.fr/",
+          "status": 200,
+          "final_url": "https://adrienlamy.fr/",
+          "title": "Adrien Lamy :D",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 900,
+          "file": "shots/home/adrienlamy-1440.png",
+          "web": "shots/_web/home/adrienlamy-1440.jpg",
+          "web_width": 640,
+          "web_height": 400
+        }
+      },
+      "final_url": "https://adrienlamy.fr/"
+    },
+    "case": {
+      "type": "case",
+      "label": "LVMH (on Cosmic Shelter)",
+      "url": "https://cosmicshelter.com/work/lvmh-the-maison-of-all-victories",
+      "note": "Case studies are hosted on agency sites; first 'Case' link on home.",
+      "shots": {
+        "390": {
+          "url": "https://cosmicshelter.com/work/lvmh-the-maison-of-all-victories",
+          "status": 200,
+          "final_url": "https://cosmicshelter.com/work/lvmh-the-maison-of-all-victories/",
+          "title": "LVMH – The Maison of All Victories | Cosmic Shelter",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.012,
+          "method": "fullpage",
+          "width": 390,
+          "height": 9434,
+          "file": "shots/case/adrienlamy-390.png",
+          "web": "shots/_web/case/adrienlamy-390.jpg",
+          "web_width": 390,
+          "web_height": 9434
+        },
+        "1440": {
+          "url": "https://cosmicshelter.com/work/lvmh-the-maison-of-all-victories",
+          "status": 200,
+          "final_url": "https://cosmicshelter.com/work/lvmh-the-maison-of-all-victories/",
+          "title": "LVMH – The Maison of All Victories | Cosmic Shelter",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.02,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 18193,
+          "file": "shots/case/adrienlamy-1440.png",
+          "web": "shots/_web/case/adrienlamy-1440.jpg",
+          "web_width": 640,
+          "web_height": 8086
+        }
+      },
+      "final_url": "https://cosmicshelter.com/work/lvmh-the-maison-of-all-victories/"
+    },
+    "about": {
+      "type": "about",
+      "label": null,
+      "url": null,
+      "note": "Home is a 'Who am I?' card.",
+      "same_as": "home"
+    },
+    "contact": {
+      "type": "contact",
+      "label": null,
+      "url": null,
+      "note": "Copy-email button only.",
+      "missing": "no contact page"
+    },
+    "other-1": {
+      "type": "other",
+      "label": "Crabe Lab experiment",
+      "url": "https://crabelab.adrienlamy.fr/en/copie-double",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://crabelab.adrienlamy.fr/en/copie-double",
+          "status": 200,
+          "final_url": "https://crabelab.adrienlamy.fr/en/copie-double",
+          "title": "Crabe Lab - Copie Double",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.13,
+          "method": "fullpage",
+          "width": 390,
+          "height": 4333,
+          "file": "shots/other/adrienlamy-1-390.png",
+          "web": "shots/_web/other/adrienlamy-1-390.jpg",
+          "web_width": 390,
+          "web_height": 4333
+        },
+        "1440": {
+          "url": "https://crabelab.adrienlamy.fr/en/copie-double",
+          "status": 200,
+          "final_url": "https://crabelab.adrienlamy.fr/en/copie-double",
+          "title": "Crabe Lab - Copie Double",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.058,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 5408,
+          "file": "shots/other/adrienlamy-1-1440.png",
+          "web": "shots/_web/other/adrienlamy-1-1440.jpg",
+          "web_width": 640,
+          "web_height": 2404
+        }
+      },
+      "final_url": "https://crabelab.adrienlamy.fr/en/copie-double"
+    }
+  },
+  "captured_at": "2026-11-06T12:34:11.425Z"
+}

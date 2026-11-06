@@ -1,0 +1,173 @@
+{
+  "id": "heilyn",
+  "name": "Heilyn Nguyễn",
+  "input": "https://heilyn.media",
+  "pages": {
+    "home": {
+      "type": "home",
+      "label": null,
+      "url": "https://heilyn.media/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://heilyn.media/",
+          "status": 200,
+          "final_url": "https://heilyn.media/",
+          "title": "Heilyn's Designs",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.05,
+          "method": "fullpage",
+          "width": 390,
+          "height": 10976,
+          "file": "shots/home/heilyn-390.png",
+          "web": "shots/_web/home/heilyn-390.jpg",
+          "web_width": 390,
+          "web_height": 10976
+        },
+        "1440": {
+          "url": "https://heilyn.media/",
+          "status": 200,
+          "final_url": "https://heilyn.media/",
+          "title": "Heilyn's Designs",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.067,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 3783,
+          "file": "shots/home/heilyn-1440.png",
+          "web": "shots/_web/home/heilyn-1440.jpg",
+          "web_width": 640,
+          "web_height": 1681
+        }
+      },
+      "final_url": "https://heilyn.media/"
+    },
+    "case": {
+      "type": "case",
+      "label": "Personio AI-powered Support",
+      "url": "https://heilyn.media/portfolio/personio-ai-driven-support/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://heilyn.media/portfolio/personio-ai-driven-support/",
+          "status": 200,
+          "final_url": "https://heilyn.media/portfolio/personio-ai-driven-support/",
+          "title": "Personio AI-powered Support – Heilyn's Designs",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.014,
+          "method": "fullpage",
+          "width": 390,
+          "height": 12895,
+          "file": "shots/case/heilyn-390.png",
+          "web": "shots/_web/case/heilyn-390.jpg",
+          "web_width": 390,
+          "web_height": 12895
+        },
+        "1440": {
+          "url": "https://heilyn.media/portfolio/personio-ai-driven-support/",
+          "status": 200,
+          "final_url": "https://heilyn.media/portfolio/personio-ai-driven-support/",
+          "title": "Personio AI-powered Support – Heilyn's Designs",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.013,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 10499,
+          "file": "shots/case/heilyn-1440.png",
+          "web": "shots/_web/case/heilyn-1440.jpg",
+          "web_width": 640,
+          "web_height": 4666
+        }
+      },
+      "final_url": "https://heilyn.media/portfolio/personio-ai-driven-support/"
+    },
+    "about": {
+      "type": "about",
+      "label": null,
+      "url": "https://heilyn.media/about/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://heilyn.media/about/",
+          "status": 200,
+          "final_url": "https://heilyn.media/about/",
+          "title": "About Me – Heilyn's Designs",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.086,
+          "method": "fullpage",
+          "width": 390,
+          "height": 3076,
+          "file": "shots/about/heilyn-390.png",
+          "web": "shots/_web/about/heilyn-390.jpg",
+          "web_width": 390,
+          "web_height": 3076
+        },
+        "1440": {
+          "url": "https://heilyn.media/about/",
+          "status": 200,
+          "final_url": "https://heilyn.media/about/",
+          "title": "About Me – Heilyn's Designs",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.178,
+          "fallback_reason": "full-page shot differed from live viewport",
+          "method": "stitched",
+          "width": 1440,
+          "height": 2786,
+          "file": "shots/about/heilyn-1440.png",
+          "web": "shots/_web/about/heilyn-1440.jpg",
+          "web_width": 640,
+          "web_height": 1238
+        }
+      },
+      "final_url": "https://heilyn.media/about/"
+    },
+    "contact": {
+      "type": "contact",
+      "label": null,
+      "url": "https://heilyn.media/contact/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://heilyn.media/contact/",
+          "status": 200,
+          "final_url": "https://heilyn.media/contact/",
+          "title": "Contact Us – Heilyn's Designs",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.009,
+          "method": "fullpage",
+          "width": 390,
+          "height": 1416,
+          "file": "shots/contact/heilyn-390.png",
+          "web": "shots/_web/contact/heilyn-390.jpg",
+          "web_width": 390,
+          "web_height": 1416
+        },
+        "1440": {
+          "url": "https://heilyn.media/contact/",
+          "status": 200,
+          "final_url": "https://heilyn.media/contact/",
+          "title": "Contact Us – Heilyn's Designs",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.013,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 1258,
+          "file": "shots/contact/heilyn-1440.png",
+          "web": "shots/_web/contact/heilyn-1440.jpg",
+          "web_width": 640,
+          "web_height": 559
+        }
+      },
+      "final_url": "https://heilyn.media/contact/"
+    }
+  },
+  "captured_at": "2026-11-06T11:32:03.852Z"
+}

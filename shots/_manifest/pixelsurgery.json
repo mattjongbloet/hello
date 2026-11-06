@@ -1,0 +1,296 @@
+{
+  "id": "pixelsurgery",
+  "name": "Filip Aleksandrow",
+  "input": "https://www.pixelsurgery.ca",
+  "pages": {
+    "home": {
+      "type": "home",
+      "label": null,
+      "url": "https://www.pixelsurgery.ca/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.pixelsurgery.ca/",
+          "status": 200,
+          "final_url": "https://www.pixelsurgery.ca/",
+          "title": "PixelSurgery | Base",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.005,
+          "method": "fullpage",
+          "width": 390,
+          "height": 9451,
+          "file": "shots/home/pixelsurgery-390.png",
+          "web": "shots/_web/home/pixelsurgery-390.jpg",
+          "web_width": 390,
+          "web_height": 9451
+        },
+        "1440": {
+          "url": "https://www.pixelsurgery.ca/",
+          "status": 200,
+          "final_url": "https://www.pixelsurgery.ca/",
+          "title": "PixelSurgery | Base",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.115,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 7182,
+          "file": "shots/home/pixelsurgery-1440.png",
+          "web": "shots/_web/home/pixelsurgery-1440.jpg",
+          "web_width": 640,
+          "web_height": 3192
+        }
+      },
+      "final_url": "https://www.pixelsurgery.ca/"
+    },
+    "case": {
+      "type": "case",
+      "label": "Microsoft Fluent 2 Website",
+      "url": "https://www.pixelsurgery.ca/case-study/fluent-2-website",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.pixelsurgery.ca/case-study/fluent-2-website",
+          "status": 200,
+          "final_url": "https://www.pixelsurgery.ca/case-study/fluent-2-website",
+          "title": "Filip Aleksandrow – Design. Precisely Incised.",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.123,
+          "method": "fullpage",
+          "width": 390,
+          "height": 14225,
+          "file": "shots/case/pixelsurgery-390.png",
+          "web": "shots/_web/case/pixelsurgery-390.jpg",
+          "web_width": 390,
+          "web_height": 14225
+        },
+        "1440": {
+          "url": "https://www.pixelsurgery.ca/case-study/fluent-2-website",
+          "status": 200,
+          "final_url": "https://www.pixelsurgery.ca/case-study/fluent-2-website",
+          "title": "Filip Aleksandrow – Design. Precisely Incised.",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.116,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 13682,
+          "file": "shots/case/pixelsurgery-1440.png",
+          "web": "shots/_web/case/pixelsurgery-1440.jpg",
+          "web_width": 640,
+          "web_height": 6081
+        }
+      },
+      "final_url": "https://www.pixelsurgery.ca/case-study/fluent-2-website"
+    },
+    "about": {
+      "type": "about",
+      "label": "About (Hololog)",
+      "url": "https://www.pixelsurgery.ca/hololog",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.pixelsurgery.ca/hololog",
+          "status": 200,
+          "final_url": "https://www.pixelsurgery.ca/hololog",
+          "title": "PixelSurgery | Holo Log",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.007,
+          "method": "fullpage",
+          "width": 390,
+          "height": 5347,
+          "file": "shots/about/pixelsurgery-390.png",
+          "web": "shots/_web/about/pixelsurgery-390.jpg",
+          "web_width": 390,
+          "web_height": 5347
+        },
+        "1440": {
+          "url": "https://www.pixelsurgery.ca/hololog",
+          "status": 200,
+          "final_url": "https://www.pixelsurgery.ca/hololog",
+          "title": "PixelSurgery | Holo Log",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 4076,
+          "file": "shots/about/pixelsurgery-1440.png",
+          "web": "shots/_web/about/pixelsurgery-1440.jpg",
+          "web_width": 640,
+          "web_height": 1812
+        }
+      },
+      "final_url": "https://www.pixelsurgery.ca/hololog"
+    },
+    "contact": {
+      "type": "contact",
+      "label": null,
+      "url": "https://www.pixelsurgery.ca/contact",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.pixelsurgery.ca/contact",
+          "status": 200,
+          "final_url": "https://www.pixelsurgery.ca/contact",
+          "title": "PixelSurgery | Contact",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.016,
+          "method": "fullpage",
+          "width": 390,
+          "height": 1802,
+          "file": "shots/contact/pixelsurgery-390.png",
+          "web": "shots/_web/contact/pixelsurgery-390.jpg",
+          "web_width": 390,
+          "web_height": 1802
+        },
+        "1440": {
+          "url": "https://www.pixelsurgery.ca/contact",
+          "status": 200,
+          "final_url": "https://www.pixelsurgery.ca/contact",
+          "title": "PixelSurgery | Contact",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.014,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 1819,
+          "file": "shots/contact/pixelsurgery-1440.png",
+          "web": "shots/_web/contact/pixelsurgery-1440.jpg",
+          "web_width": 640,
+          "web_height": 808
+        }
+      },
+      "final_url": "https://www.pixelsurgery.ca/contact"
+    },
+    "other-1": {
+      "type": "other",
+      "label": "Case studies index",
+      "url": "https://www.pixelsurgery.ca/case-studies",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.pixelsurgery.ca/case-studies",
+          "status": 200,
+          "final_url": "https://www.pixelsurgery.ca/case-studies",
+          "title": "PixelSurgery | Incisions",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.026,
+          "method": "fullpage",
+          "width": 390,
+          "height": 3353,
+          "file": "shots/other/pixelsurgery-1-390.png",
+          "web": "shots/_web/other/pixelsurgery-1-390.jpg",
+          "web_width": 390,
+          "web_height": 3353
+        },
+        "1440": {
+          "url": "https://www.pixelsurgery.ca/case-studies",
+          "status": 200,
+          "final_url": "https://www.pixelsurgery.ca/case-studies",
+          "title": "PixelSurgery | Incisions",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 2662,
+          "file": "shots/other/pixelsurgery-1-1440.png",
+          "web": "shots/_web/other/pixelsurgery-1-1440.jpg",
+          "web_width": 640,
+          "web_height": 1183
+        }
+      },
+      "final_url": "https://www.pixelsurgery.ca/case-studies"
+    },
+    "other-2": {
+      "type": "other",
+      "label": "Writing",
+      "url": "https://www.pixelsurgery.ca/learning-hub",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.pixelsurgery.ca/learning-hub",
+          "status": 200,
+          "final_url": "https://www.pixelsurgery.ca/learning-hub",
+          "title": "PixelSurgery | Learning Hub",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.03,
+          "method": "fullpage",
+          "width": 390,
+          "height": 2910,
+          "file": "shots/other/pixelsurgery-2-390.png",
+          "web": "shots/_web/other/pixelsurgery-2-390.jpg",
+          "web_width": 390,
+          "web_height": 2910
+        },
+        "1440": {
+          "url": "https://www.pixelsurgery.ca/learning-hub",
+          "status": 200,
+          "final_url": "https://www.pixelsurgery.ca/learning-hub",
+          "title": "PixelSurgery | Learning Hub",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.013,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 2329,
+          "file": "shots/other/pixelsurgery-2-1440.png",
+          "web": "shots/_web/other/pixelsurgery-2-1440.jpg",
+          "web_width": 640,
+          "web_height": 1035
+        }
+      },
+      "final_url": "https://www.pixelsurgery.ca/learning-hub"
+    },
+    "other-3": {
+      "type": "other",
+      "label": "Movie posters",
+      "url": "https://www.pixelsurgery.ca/gallery/posters",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.pixelsurgery.ca/gallery/posters",
+          "status": 200,
+          "final_url": "https://www.pixelsurgery.ca/gallery/posters",
+          "title": "PixelSurgery | AMPs",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.157,
+          "fallback_reason": "full-page shot differed from live viewport",
+          "method": "stitched",
+          "width": 390,
+          "height": 26851,
+          "file": "shots/other/pixelsurgery-3-390.png",
+          "web": "shots/_web/other/pixelsurgery-3-390.jpg",
+          "web_width": 390,
+          "web_height": 26851
+        },
+        "1440": {
+          "url": "https://www.pixelsurgery.ca/gallery/posters",
+          "status": 200,
+          "final_url": "https://www.pixelsurgery.ca/gallery/posters",
+          "title": "PixelSurgery | AMPs",
+          "password_screen": false,
+          "scroll": "window",
+          "method": "stitched",
+          "truncated_at": 30000,
+          "width": 1440,
+          "height": 30000,
+          "file": "shots/other/pixelsurgery-3-1440.png",
+          "web": "shots/_web/other/pixelsurgery-3-1440.jpg",
+          "web_width": 640,
+          "web_height": 13333
+        }
+      },
+      "final_url": "https://www.pixelsurgery.ca/gallery/posters"
+    }
+  },
+  "captured_at": "2026-11-06T13:05:42.007Z"
+}

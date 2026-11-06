@@ -1,0 +1,105 @@
+{
+  "id": "karimmanaa",
+  "name": "Karim Manaa",
+  "input": "https://karimmanaa.com",
+  "pages": {
+    "home": {
+      "type": "home",
+      "label": null,
+      "url": "https://karimmanaa.com/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://karimmanaa.com/",
+          "status": 200,
+          "final_url": "https://karimmanaa.com/",
+          "title": "Karim Manaa - AI Product Designer",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.007,
+          "method": "fullpage",
+          "width": 390,
+          "height": 2609,
+          "file": "shots/home/karimmanaa-390.png",
+          "web": "shots/_web/home/karimmanaa-390.jpg",
+          "web_width": 390,
+          "web_height": 2609
+        },
+        "1440": {
+          "url": "https://karimmanaa.com/",
+          "status": 200,
+          "final_url": "https://karimmanaa.com/",
+          "title": "Karim Manaa - AI Product Designer",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.025,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 1811,
+          "file": "shots/home/karimmanaa-1440.png",
+          "web": "shots/_web/home/karimmanaa-1440.jpg",
+          "web_width": 640,
+          "web_height": 805
+        }
+      },
+      "final_url": "https://karimmanaa.com/"
+    },
+    "case": {
+      "type": "case",
+      "label": "Weenyd (modal)",
+      "url": "https://karimmanaa.com/",
+      "note": "Projects open as a modal over home.",
+      "shots": {
+        "390": {
+          "url": "https://karimmanaa.com/",
+          "status": 200,
+          "final_url": "https://karimmanaa.com/",
+          "title": "Karim Manaa - AI Product Designer",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.416,
+          "fallback_reason": "full-page shot differed from live viewport",
+          "method": "stitched",
+          "width": 390,
+          "height": 2609,
+          "file": "shots/case/karimmanaa-390.png",
+          "web": "shots/_web/case/karimmanaa-390.jpg",
+          "web_width": 390,
+          "web_height": 2609
+        },
+        "1440": {
+          "url": "https://karimmanaa.com/",
+          "status": 200,
+          "final_url": "https://karimmanaa.com/",
+          "title": "Karim Manaa - AI Product Designer",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.147,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 1811,
+          "file": "shots/case/karimmanaa-1440.png",
+          "web": "shots/_web/case/karimmanaa-1440.jpg",
+          "web_width": 640,
+          "web_height": 805
+        }
+      },
+      "final_url": "https://karimmanaa.com/"
+    },
+    "about": {
+      "type": "about",
+      "label": null,
+      "url": null,
+      "note": null,
+      "missing": "none found"
+    },
+    "contact": {
+      "type": "contact",
+      "label": null,
+      "url": null,
+      "note": "Email and booking buttons on home.",
+      "missing": "no contact page"
+    }
+  },
+  "captured_at": "2026-11-06T11:37:43.023Z"
+}

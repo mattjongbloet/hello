@@ -1,0 +1,181 @@
+{
+  "id": "ericsin",
+  "name": "Eric Sin",
+  "input": "https://ericsin.com",
+  "pages": {
+    "home": {
+      "type": "home",
+      "label": null,
+      "url": "https://www.ericsin.com/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.ericsin.com/",
+          "status": 200,
+          "final_url": "https://www.ericsin.com/",
+          "title": "Eric Sin — Selected Works",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.015,
+          "method": "fullpage",
+          "width": 390,
+          "height": 6198,
+          "file": "shots/home/ericsin-390.png",
+          "web": "shots/_web/home/ericsin-390.jpg",
+          "web_width": 390,
+          "web_height": 6198
+        },
+        "1440": {
+          "url": "https://www.ericsin.com/",
+          "status": 200,
+          "final_url": "https://www.ericsin.com/",
+          "title": "Eric Sin — Selected Works",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.399,
+          "fallback_reason": "full-page shot differed from live viewport",
+          "method": "stitched",
+          "width": 1440,
+          "height": 3816,
+          "file": "shots/home/ericsin-1440.png",
+          "web": "shots/_web/home/ericsin-1440.jpg",
+          "web_width": 640,
+          "web_height": 1696
+        }
+      },
+      "final_url": "https://www.ericsin.com/"
+    },
+    "case": {
+      "type": "case",
+      "label": "VICTORY+",
+      "url": "https://www.ericsin.com/work/VICTORY-PLUS",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.ericsin.com/work/VICTORY-PLUS",
+          "status": 200,
+          "final_url": "https://www.ericsin.com/work/VICTORY-PLUS",
+          "title": "Eric Sin — Selected Works",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.007,
+          "method": "fullpage",
+          "width": 390,
+          "height": 9034,
+          "file": "shots/case/ericsin-390.png",
+          "web": "shots/_web/case/ericsin-390.jpg",
+          "web_width": 390,
+          "web_height": 9034
+        },
+        "1440": {
+          "url": "https://www.ericsin.com/work/VICTORY-PLUS",
+          "status": 200,
+          "final_url": "https://www.ericsin.com/work/VICTORY-PLUS",
+          "title": "Eric Sin — Selected Works",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.021,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 12632,
+          "file": "shots/case/ericsin-1440.png",
+          "web": "shots/_web/case/ericsin-1440.jpg",
+          "web_width": 640,
+          "web_height": 5614
+        }
+      },
+      "final_url": "https://www.ericsin.com/work/VICTORY-PLUS"
+    },
+    "about": {
+      "type": "about",
+      "label": null,
+      "url": "https://www.ericsin.com/about",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.ericsin.com/about",
+          "status": 200,
+          "final_url": "https://www.ericsin.com/about",
+          "title": "Eric Sin — Selected Works",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.005,
+          "method": "fullpage",
+          "width": 390,
+          "height": 2250,
+          "file": "shots/about/ericsin-390.png",
+          "web": "shots/_web/about/ericsin-390.jpg",
+          "web_width": 390,
+          "web_height": 2250
+        },
+        "1440": {
+          "url": "https://www.ericsin.com/about",
+          "status": 200,
+          "final_url": "https://www.ericsin.com/about",
+          "title": "Eric Sin — Selected Works",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.007,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 1676,
+          "file": "shots/about/ericsin-1440.png",
+          "web": "shots/_web/about/ericsin-1440.jpg",
+          "web_width": 640,
+          "web_height": 745
+        }
+      },
+      "final_url": "https://www.ericsin.com/about"
+    },
+    "contact": {
+      "type": "contact",
+      "label": null,
+      "url": null,
+      "note": "mailto link in nav and footer only.",
+      "missing": "no contact page"
+    },
+    "other-1": {
+      "type": "other",
+      "label": "Archives",
+      "url": "https://www.ericsin.com/archives",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.ericsin.com/archives",
+          "status": 200,
+          "final_url": "https://www.ericsin.com/archives",
+          "title": "Eric Sin — Selected Works",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.011,
+          "method": "fullpage",
+          "width": 390,
+          "height": 5520,
+          "file": "shots/other/ericsin-1-390.png",
+          "web": "shots/_web/other/ericsin-1-390.jpg",
+          "web_width": 390,
+          "web_height": 5520
+        },
+        "1440": {
+          "url": "https://www.ericsin.com/archives",
+          "status": 200,
+          "final_url": "https://www.ericsin.com/archives",
+          "title": "Eric Sin — Selected Works",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.251,
+          "fallback_reason": "full-page shot differed from live viewport",
+          "method": "stitched",
+          "width": 1440,
+          "height": 4888,
+          "file": "shots/other/ericsin-1-1440.png",
+          "web": "shots/_web/other/ericsin-1-1440.jpg",
+          "web_width": 640,
+          "web_height": 2172
+        }
+      },
+      "final_url": "https://www.ericsin.com/archives"
+    }
+  },
+  "captured_at": "2026-11-06T10:07:03.700Z"
+}

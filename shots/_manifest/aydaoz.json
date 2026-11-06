@@ -1,0 +1,185 @@
+{
+  "id": "aydaoz",
+  "name": "Ayda Oz",
+  "input": "https://aydaoz.co",
+  "pages": {
+    "home": {
+      "type": "home",
+      "label": null,
+      "url": "https://aydaoz.co/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://aydaoz.co/",
+          "status": 200,
+          "final_url": "https://aydaoz.co/",
+          "title": "Ayda Oz — Design Engineer",
+          "password_screen": false,
+          "scroll": "transform",
+          "method": "stitched",
+          "width": 390,
+          "height": 9685,
+          "file": "shots/home/aydaoz-390.png",
+          "web": "shots/_web/home/aydaoz-390.jpg",
+          "web_width": 390,
+          "web_height": 9685
+        },
+        "1440": {
+          "url": "https://aydaoz.co/",
+          "status": 200,
+          "final_url": "https://aydaoz.co/",
+          "title": "Ayda Oz — Design Engineer",
+          "password_screen": false,
+          "scroll": "transform",
+          "method": "stitched",
+          "width": 1440,
+          "height": 16650,
+          "file": "shots/home/aydaoz-1440.png",
+          "web": "shots/_web/home/aydaoz-1440.jpg",
+          "web_width": 640,
+          "web_height": 7400
+        }
+      },
+      "final_url": "https://aydaoz.co/"
+    },
+    "case": {
+      "type": "case",
+      "label": null,
+      "url": null,
+      "note": "Case studies are sections of the home page (#qatalog etc.).",
+      "missing": "none found"
+    },
+    "about": {
+      "type": "about",
+      "label": null,
+      "url": null,
+      "note": "About is a section of home (#about).",
+      "same_as": "home"
+    },
+    "contact": {
+      "type": "contact",
+      "label": null,
+      "url": null,
+      "note": "Book-a-call button.",
+      "missing": "no contact page"
+    },
+    "other-1": {
+      "type": "other",
+      "label": "Showcase",
+      "url": "https://aydaoz.co/showcase/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://aydaoz.co/showcase/",
+          "status": 200,
+          "final_url": "https://aydaoz.co/showcase/",
+          "title": "Showcase — Ayda Oz",
+          "password_screen": false,
+          "scroll": "transform",
+          "method": "stitched",
+          "width": 390,
+          "height": 9808,
+          "file": "shots/other/aydaoz-1-390.png",
+          "web": "shots/_web/other/aydaoz-1-390.jpg",
+          "web_width": 390,
+          "web_height": 9808
+        },
+        "1440": {
+          "url": "https://aydaoz.co/showcase/",
+          "status": 200,
+          "final_url": "https://aydaoz.co/showcase/",
+          "title": "Showcase — Ayda Oz",
+          "password_screen": false,
+          "scroll": "transform",
+          "method": "stitched",
+          "width": 1440,
+          "height": 4868,
+          "file": "shots/other/aydaoz-1-1440.png",
+          "web": "shots/_web/other/aydaoz-1-1440.jpg",
+          "web_width": 640,
+          "web_height": 2164
+        }
+      },
+      "final_url": "https://aydaoz.co/showcase/"
+    },
+    "other-2": {
+      "type": "other",
+      "label": "Journal",
+      "url": "https://aydaoz.co/journal/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://aydaoz.co/journal/",
+          "status": 200,
+          "final_url": "https://aydaoz.co/journal/",
+          "title": "Journal — Ayda Oz",
+          "password_screen": false,
+          "scroll": "transform",
+          "method": "stitched",
+          "width": 390,
+          "height": 2650,
+          "file": "shots/other/aydaoz-2-390.png",
+          "web": "shots/_web/other/aydaoz-2-390.jpg",
+          "web_width": 390,
+          "web_height": 2650
+        },
+        "1440": {
+          "url": "https://aydaoz.co/journal/",
+          "status": 200,
+          "final_url": "https://aydaoz.co/journal/",
+          "title": "Journal — Ayda Oz",
+          "password_screen": false,
+          "scroll": "transform",
+          "method": "stitched",
+          "width": 1440,
+          "height": 2685,
+          "file": "shots/other/aydaoz-2-1440.png",
+          "web": "shots/_web/other/aydaoz-2-1440.jpg",
+          "web_width": 640,
+          "web_height": 1193
+        }
+      },
+      "final_url": "https://aydaoz.co/journal/"
+    },
+    "other-3": {
+      "type": "other",
+      "label": "Clients",
+      "url": "https://aydaoz.co/clients/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://aydaoz.co/clients/",
+          "status": 200,
+          "final_url": "https://aydaoz.co/clients/",
+          "title": "Clients — Ayda Oz",
+          "password_screen": false,
+          "scroll": "transform",
+          "method": "stitched",
+          "width": 390,
+          "height": 2254,
+          "file": "shots/other/aydaoz-3-390.png",
+          "web": "shots/_web/other/aydaoz-3-390.jpg",
+          "web_width": 390,
+          "web_height": 2254
+        },
+        "1440": {
+          "url": "https://aydaoz.co/clients/",
+          "status": 200,
+          "final_url": "https://aydaoz.co/clients/",
+          "title": "Clients — Ayda Oz",
+          "password_screen": false,
+          "scroll": "transform",
+          "method": "stitched",
+          "width": 1440,
+          "height": 1713,
+          "file": "shots/other/aydaoz-3-1440.png",
+          "web": "shots/_web/other/aydaoz-3-1440.jpg",
+          "web_width": 640,
+          "web_height": 761
+        }
+      },
+      "final_url": "https://aydaoz.co/clients/"
+    }
+  },
+  "captured_at": "2026-11-06T11:47:35.970Z"
+}

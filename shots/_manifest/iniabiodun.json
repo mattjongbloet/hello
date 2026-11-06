@@ -1,0 +1,257 @@
+{
+  "id": "iniabiodun",
+  "name": "Ìní Abiodun",
+  "input": "https://www.iniabiodun.com",
+  "pages": {
+    "home": {
+      "type": "home",
+      "label": null,
+      "url": "https://www.iniabiodun.com/",
+      "note": "Intro overlay dismissed ('Enter the Atelier').",
+      "shots": {
+        "390": {
+          "url": "https://www.iniabiodun.com/",
+          "status": 200,
+          "final_url": "https://www.iniabiodun.com/",
+          "title": "Ìní·Olúwa",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 390,
+          "height": 844,
+          "file": "shots/home/iniabiodun-390.png",
+          "web": "shots/_web/home/iniabiodun-390.jpg",
+          "web_width": 390,
+          "web_height": 844
+        },
+        "1440": {
+          "url": "https://www.iniabiodun.com/",
+          "status": 200,
+          "final_url": "https://www.iniabiodun.com/",
+          "title": "Ìní·Olúwa",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 900,
+          "file": "shots/home/iniabiodun-1440.png",
+          "web": "shots/_web/home/iniabiodun-1440.jpg",
+          "web_width": 640,
+          "web_height": 400
+        }
+      },
+      "final_url": "https://www.iniabiodun.com/"
+    },
+    "case": {
+      "type": "case",
+      "label": "Fin Studio",
+      "url": "https://www.iniabiodun.com/fin-studio",
+      "note": "Home has no direct work links; first project on /craft (reached via the Navigate menu).",
+      "shots": {
+        "390": {
+          "url": "https://www.iniabiodun.com/fin-studio",
+          "status": 200,
+          "final_url": "https://www.iniabiodun.com/fin-studio",
+          "title": "Fin AI Agent Activation for Customer Retention",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.033,
+          "method": "fullpage",
+          "width": 390,
+          "height": 1644,
+          "file": "shots/case/iniabiodun-390.png",
+          "web": "shots/_web/case/iniabiodun-390.jpg",
+          "web_width": 390,
+          "web_height": 1644
+        },
+        "1440": {
+          "url": "https://www.iniabiodun.com/fin-studio",
+          "status": 200,
+          "final_url": "https://www.iniabiodun.com/fin-studio",
+          "title": "Fin AI Agent Activation for Customer Retention",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.044,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 1860,
+          "file": "shots/case/iniabiodun-1440.png",
+          "web": "shots/_web/case/iniabiodun-1440.jpg",
+          "web_width": 640,
+          "web_height": 827
+        }
+      },
+      "final_url": "https://www.iniabiodun.com/fin-studio"
+    },
+    "about": {
+      "type": "about",
+      "label": null,
+      "url": "https://www.iniabiodun.com/about",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.iniabiodun.com/about",
+          "status": 200,
+          "final_url": "https://www.iniabiodun.com/about",
+          "title": "Ìní·Olúwa",
+          "password_screen": false,
+          "scroll": "inner",
+          "method": "stitched",
+          "width": 390,
+          "height": 3100,
+          "file": "shots/about/iniabiodun-390.png",
+          "web": "shots/_web/about/iniabiodun-390.jpg",
+          "web_width": 390,
+          "web_height": 3100
+        },
+        "1440": {
+          "url": "https://www.iniabiodun.com/about",
+          "status": 200,
+          "final_url": "https://www.iniabiodun.com/about",
+          "title": "Ìní·Olúwa",
+          "password_screen": false,
+          "scroll": "inner",
+          "method": "stitched",
+          "width": 1440,
+          "height": 2619,
+          "file": "shots/about/iniabiodun-1440.png",
+          "web": "shots/_web/about/iniabiodun-1440.jpg",
+          "web_width": 640,
+          "web_height": 1164
+        }
+      },
+      "final_url": "https://www.iniabiodun.com/about"
+    },
+    "contact": {
+      "type": "contact",
+      "label": null,
+      "url": null,
+      "note": "Email link on About only.",
+      "missing": "no contact page"
+    },
+    "other-1": {
+      "type": "other",
+      "label": "Craft (work index)",
+      "url": "https://www.iniabiodun.com/craft",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.iniabiodun.com/craft",
+          "status": 200,
+          "final_url": "https://www.iniabiodun.com/craft",
+          "title": "Ìní·Olúwa",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 390,
+          "height": 877,
+          "file": "shots/other/iniabiodun-1-390.png",
+          "web": "shots/_web/other/iniabiodun-1-390.jpg",
+          "web_width": 390,
+          "web_height": 877
+        },
+        "1440": {
+          "url": "https://www.iniabiodun.com/craft",
+          "status": 200,
+          "final_url": "https://www.iniabiodun.com/craft",
+          "title": "Ìní·Olúwa",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 900,
+          "file": "shots/other/iniabiodun-1-1440.png",
+          "web": "shots/_web/other/iniabiodun-1-1440.jpg",
+          "web_width": 640,
+          "web_height": 400
+        }
+      },
+      "final_url": "https://www.iniabiodun.com/craft"
+    },
+    "other-2": {
+      "type": "other",
+      "label": "Library",
+      "url": "https://www.iniabiodun.com/library",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.iniabiodun.com/library",
+          "status": 200,
+          "final_url": "https://www.iniabiodun.com/library",
+          "title": "Ìní·Olúwa",
+          "password_screen": false,
+          "scroll": "inner",
+          "method": "stitched",
+          "width": 390,
+          "height": 997,
+          "file": "shots/other/iniabiodun-2-390.png",
+          "web": "shots/_web/other/iniabiodun-2-390.jpg",
+          "web_width": 390,
+          "web_height": 997
+        },
+        "1440": {
+          "url": "https://www.iniabiodun.com/library",
+          "status": 200,
+          "final_url": "https://www.iniabiodun.com/library",
+          "title": "Ìní·Olúwa",
+          "password_screen": false,
+          "scroll": "inner",
+          "method": "stitched",
+          "width": 1440,
+          "height": 1005,
+          "file": "shots/other/iniabiodun-2-1440.png",
+          "web": "shots/_web/other/iniabiodun-2-1440.jpg",
+          "web_width": 640,
+          "web_height": 447
+        }
+      },
+      "final_url": "https://www.iniabiodun.com/library"
+    },
+    "other-3": {
+      "type": "other",
+      "label": "Gallery",
+      "url": "https://www.iniabiodun.com/gallery",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.iniabiodun.com/gallery",
+          "status": 200,
+          "final_url": "https://www.iniabiodun.com/gallery",
+          "title": "Ìní·Olúwa",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 390,
+          "height": 844,
+          "file": "shots/other/iniabiodun-3-390.png",
+          "web": "shots/_web/other/iniabiodun-3-390.jpg",
+          "web_width": 390,
+          "web_height": 844
+        },
+        "1440": {
+          "url": "https://www.iniabiodun.com/gallery",
+          "status": 200,
+          "final_url": "https://www.iniabiodun.com/gallery",
+          "title": "Ìní·Olúwa",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 900,
+          "file": "shots/other/iniabiodun-3-1440.png",
+          "web": "shots/_web/other/iniabiodun-3-1440.jpg",
+          "web_width": 640,
+          "web_height": 400
+        }
+      },
+      "final_url": "https://www.iniabiodun.com/gallery"
+    }
+  },
+  "captured_at": "2026-11-06T10:09:35.059Z"
+}

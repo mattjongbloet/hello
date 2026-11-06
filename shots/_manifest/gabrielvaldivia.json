@@ -1,0 +1,253 @@
+{
+  "id": "gabrielvaldivia",
+  "name": "Gabriel Valdivia",
+  "input": "https://www.gabrielvaldivia.com",
+  "pages": {
+    "home": {
+      "type": "home",
+      "label": null,
+      "url": "https://www.gabrielvaldivia.com/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.gabrielvaldivia.com/",
+          "status": 200,
+          "final_url": "https://www.gabrielvaldivia.com/",
+          "title": "Fractional Head of Design for early-stage teams",
+          "password_screen": false,
+          "scroll": "transform",
+          "method": "stitched",
+          "width": 390,
+          "height": 4122,
+          "file": "shots/home/gabrielvaldivia-390.png",
+          "web": "shots/_web/home/gabrielvaldivia-390.jpg",
+          "web_width": 390,
+          "web_height": 4122
+        },
+        "1440": {
+          "url": "https://www.gabrielvaldivia.com/",
+          "status": 200,
+          "final_url": "https://www.gabrielvaldivia.com/",
+          "title": "Fractional Head of Design for early-stage teams",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.174,
+          "fallback_reason": "full-page shot differed from live viewport",
+          "method": "stitched",
+          "width": 1440,
+          "height": 4774,
+          "file": "shots/home/gabrielvaldivia-1440.png",
+          "web": "shots/_web/home/gabrielvaldivia-1440.jpg",
+          "web_width": 640,
+          "web_height": 2122
+        }
+      },
+      "final_url": "https://www.gabrielvaldivia.com/"
+    },
+    "case": {
+      "type": "case",
+      "label": "Supper",
+      "url": "https://www.gabrielvaldivia.com/work/supper",
+      "note": "Case study specified in the brief.",
+      "shots": {
+        "390": {
+          "url": "https://www.gabrielvaldivia.com/work/supper",
+          "status": 200,
+          "final_url": "https://www.gabrielvaldivia.com/work/supper",
+          "title": "Supper — Business Intelligence AI Platform — Gabriel Valdivia",
+          "password_screen": false,
+          "scroll": "transform",
+          "method": "stitched",
+          "width": 390,
+          "height": 2721,
+          "file": "shots/case/gabrielvaldivia-390.png",
+          "web": "shots/_web/case/gabrielvaldivia-390.jpg",
+          "web_width": 390,
+          "web_height": 2721
+        },
+        "1440": {
+          "url": "https://www.gabrielvaldivia.com/work/supper",
+          "status": 200,
+          "final_url": "https://www.gabrielvaldivia.com/work/supper",
+          "title": "Supper — Business Intelligence AI Platform — Gabriel Valdivia",
+          "password_screen": false,
+          "scroll": "transform",
+          "method": "stitched",
+          "width": 1440,
+          "height": 5737,
+          "file": "shots/case/gabrielvaldivia-1440.png",
+          "web": "shots/_web/case/gabrielvaldivia-1440.jpg",
+          "web_width": 640,
+          "web_height": 2550
+        }
+      },
+      "final_url": "https://www.gabrielvaldivia.com/work/supper"
+    },
+    "about": {
+      "type": "about",
+      "label": null,
+      "url": "https://www.gabrielvaldivia.com/about",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.gabrielvaldivia.com/about",
+          "status": 200,
+          "final_url": "https://www.gabrielvaldivia.com/about",
+          "title": "About — Gabriel Valdivia",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.001,
+          "method": "fullpage",
+          "width": 390,
+          "height": 5676,
+          "file": "shots/about/gabrielvaldivia-390.png",
+          "web": "shots/_web/about/gabrielvaldivia-390.jpg",
+          "web_width": 390,
+          "web_height": 5676
+        },
+        "1440": {
+          "url": "https://www.gabrielvaldivia.com/about",
+          "status": 200,
+          "final_url": "https://www.gabrielvaldivia.com/about",
+          "title": "About — Gabriel Valdivia",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 4196,
+          "file": "shots/about/gabrielvaldivia-1440.png",
+          "web": "shots/_web/about/gabrielvaldivia-1440.jpg",
+          "web_width": 640,
+          "web_height": 1865
+        }
+      },
+      "final_url": "https://www.gabrielvaldivia.com/about"
+    },
+    "contact": {
+      "type": "contact",
+      "label": null,
+      "url": null,
+      "note": "No contact page; there is an AI chat at /chat.",
+      "missing": "no contact page"
+    },
+    "other-1": {
+      "type": "other",
+      "label": "Notes",
+      "url": "https://www.gabrielvaldivia.com/notes",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.gabrielvaldivia.com/notes",
+          "status": 200,
+          "final_url": "https://www.gabrielvaldivia.com/notes",
+          "title": "Notes — Gabriel Valdivia",
+          "password_screen": false,
+          "scroll": "transform",
+          "method": "stitched",
+          "width": 390,
+          "height": 4203,
+          "file": "shots/other/gabrielvaldivia-1-390.png",
+          "web": "shots/_web/other/gabrielvaldivia-1-390.jpg",
+          "web_width": 390,
+          "web_height": 4203
+        },
+        "1440": {
+          "url": "https://www.gabrielvaldivia.com/notes",
+          "status": 200,
+          "final_url": "https://www.gabrielvaldivia.com/notes",
+          "title": "Notes — Gabriel Valdivia",
+          "password_screen": false,
+          "scroll": "transform",
+          "method": "stitched",
+          "width": 1440,
+          "height": 3520,
+          "file": "shots/other/gabrielvaldivia-1-1440.png",
+          "web": "shots/_web/other/gabrielvaldivia-1-1440.jpg",
+          "web_width": 640,
+          "web_height": 1564
+        }
+      },
+      "final_url": "https://www.gabrielvaldivia.com/notes"
+    },
+    "other-2": {
+      "type": "other",
+      "label": "Photos",
+      "url": "https://www.gabrielvaldivia.com/photos",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.gabrielvaldivia.com/photos",
+          "status": 200,
+          "final_url": "https://www.gabrielvaldivia.com/photos",
+          "title": "Photos — Gabriel Valdivia",
+          "password_screen": false,
+          "scroll": "transform",
+          "method": "stitched",
+          "width": 390,
+          "height": 7365,
+          "file": "shots/other/gabrielvaldivia-2-390.png",
+          "web": "shots/_web/other/gabrielvaldivia-2-390.jpg",
+          "web_width": 390,
+          "web_height": 7365
+        },
+        "1440": {
+          "url": "https://www.gabrielvaldivia.com/photos",
+          "status": 200,
+          "final_url": "https://www.gabrielvaldivia.com/photos",
+          "title": "Photos — Gabriel Valdivia",
+          "password_screen": false,
+          "scroll": "transform",
+          "method": "stitched",
+          "width": 1440,
+          "height": 3378,
+          "file": "shots/other/gabrielvaldivia-2-1440.png",
+          "web": "shots/_web/other/gabrielvaldivia-2-1440.jpg",
+          "web_width": 640,
+          "web_height": 1501
+        }
+      },
+      "final_url": "https://www.gabrielvaldivia.com/photos"
+    },
+    "other-3": {
+      "type": "other",
+      "label": "Clients",
+      "url": "https://www.gabrielvaldivia.com/clients",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.gabrielvaldivia.com/clients",
+          "status": 200,
+          "final_url": "https://www.gabrielvaldivia.com/clients",
+          "title": "Clients — Gabriel Valdivia",
+          "password_screen": false,
+          "scroll": "transform",
+          "method": "stitched",
+          "width": 390,
+          "height": 2013,
+          "file": "shots/other/gabrielvaldivia-3-390.png",
+          "web": "shots/_web/other/gabrielvaldivia-3-390.jpg",
+          "web_width": 390,
+          "web_height": 2013
+        },
+        "1440": {
+          "url": "https://www.gabrielvaldivia.com/clients",
+          "status": 200,
+          "final_url": "https://www.gabrielvaldivia.com/clients",
+          "title": "Clients — Gabriel Valdivia",
+          "password_screen": false,
+          "scroll": "transform",
+          "method": "stitched",
+          "width": 1440,
+          "height": 2272,
+          "file": "shots/other/gabrielvaldivia-3-1440.png",
+          "web": "shots/_web/other/gabrielvaldivia-3-1440.jpg",
+          "web_width": 640,
+          "web_height": 1010
+        }
+      },
+      "final_url": "https://www.gabrielvaldivia.com/clients"
+    }
+  },
+  "captured_at": "2026-11-06T11:33:37.286Z"
+}

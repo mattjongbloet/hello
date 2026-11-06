@@ -1,0 +1,55 @@
+{
+  "id": "worawork",
+  "name": "worawork",
+  "input": "https://worawork.vercel.app",
+  "pages": {
+    "home": {
+      "type": "home",
+      "label": null,
+      "url": "https://worawork.vercel.app/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://worawork.vercel.app/",
+          "status": 402,
+          "final_url": "https://worawork.vercel.app/",
+          "title": "Deployment Paused",
+          "password_screen": false,
+          "error": "HTTP 402"
+        },
+        "1440": {
+          "url": "https://worawork.vercel.app/",
+          "status": 402,
+          "final_url": "https://worawork.vercel.app/",
+          "title": "Deployment Paused",
+          "password_screen": false,
+          "error": "HTTP 402"
+        }
+      },
+      "final_url": "https://worawork.vercel.app/",
+      "failed": "HTTP 402"
+    },
+    "case": {
+      "type": "case",
+      "label": null,
+      "url": null,
+      "note": "Site unreachable (Vercel: 402 Deployment Paused).",
+      "missing": "failed"
+    },
+    "about": {
+      "type": "about",
+      "label": null,
+      "url": null,
+      "note": "Site unreachable (Vercel: 402 Deployment Paused).",
+      "missing": "failed"
+    },
+    "contact": {
+      "type": "contact",
+      "label": null,
+      "url": null,
+      "note": "Site unreachable (Vercel: 402 Deployment Paused).",
+      "missing": "failed"
+    }
+  },
+  "captured_at": "2026-11-06T11:32:08.132Z"
+}

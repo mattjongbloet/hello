@@ -1,0 +1,104 @@
+{
+  "id": "lfs",
+  "name": "Matt Sellers",
+  "input": "https://www.lfs.gd",
+  "pages": {
+    "home": {
+      "type": "home",
+      "label": null,
+      "url": "https://www.lfs.gd/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.lfs.gd/",
+          "status": 200,
+          "final_url": "https://www.lfs.gd/",
+          "title": "Matt Sellers — Software Designer",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 390,
+          "height": 4375,
+          "file": "shots/home/lfs-390.png",
+          "web": "shots/_web/home/lfs-390.jpg",
+          "web_width": 390,
+          "web_height": 4375
+        },
+        "1440": {
+          "url": "https://www.lfs.gd/",
+          "status": 200,
+          "final_url": "https://www.lfs.gd/",
+          "title": "Matt Sellers — Software Designer",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.001,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 1594,
+          "file": "shots/home/lfs-1440.png",
+          "web": "shots/_web/home/lfs-1440.jpg",
+          "web_width": 640,
+          "web_height": 708
+        }
+      },
+      "final_url": "https://www.lfs.gd/"
+    },
+    "case": {
+      "type": "case",
+      "label": "Docufai",
+      "url": "https://www.lfs.gd/docufai",
+      "note": "First item (Bentley) is 'coming soon'.",
+      "shots": {
+        "390": {
+          "url": "https://www.lfs.gd/docufai",
+          "status": 200,
+          "final_url": "https://www.lfs.gd/docufai",
+          "title": "Matt Sellers — Software Designer",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.043,
+          "method": "fullpage",
+          "width": 390,
+          "height": 4595,
+          "file": "shots/case/lfs-390.png",
+          "web": "shots/_web/case/lfs-390.jpg",
+          "web_width": 390,
+          "web_height": 4595
+        },
+        "1440": {
+          "url": "https://www.lfs.gd/docufai",
+          "status": 200,
+          "final_url": "https://www.lfs.gd/docufai",
+          "title": "Matt Sellers — Software Designer",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.067,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 7216,
+          "file": "shots/case/lfs-1440.png",
+          "web": "shots/_web/case/lfs-1440.jpg",
+          "web_width": 640,
+          "web_height": 3207
+        }
+      },
+      "final_url": "https://www.lfs.gd/docufai"
+    },
+    "about": {
+      "type": "about",
+      "label": null,
+      "url": null,
+      "note": "Bio is on home.",
+      "same_as": "home"
+    },
+    "contact": {
+      "type": "contact",
+      "label": null,
+      "url": null,
+      "note": null,
+      "missing": "no contact page"
+    }
+  },
+  "captured_at": "2026-11-06T11:38:57.909Z"
+}

@@ -1,0 +1,186 @@
+{
+  "id": "calethompson",
+  "name": "Cale Thompson",
+  "input": "https://www.calethompson.com",
+  "pages": {
+    "home": {
+      "type": "home",
+      "label": null,
+      "url": "https://www.calethompson.com/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.calethompson.com/",
+          "status": 200,
+          "final_url": "https://www.calethompson.com/",
+          "title": "Cale Thompson — VP of Product Design",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 390,
+          "height": 1570,
+          "file": "shots/home/calethompson-390.png",
+          "web": "shots/_web/home/calethompson-390.jpg",
+          "web_width": 390,
+          "web_height": 1570
+        },
+        "1440": {
+          "url": "https://www.calethompson.com/",
+          "status": 200,
+          "final_url": "https://www.calethompson.com/",
+          "title": "Cale Thompson — VP of Product Design",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 1829,
+          "file": "shots/home/calethompson-1440.png",
+          "web": "shots/_web/home/calethompson-1440.jpg",
+          "web_width": 640,
+          "web_height": 813
+        }
+      },
+      "final_url": "https://www.calethompson.com/"
+    },
+    "case": {
+      "type": "case",
+      "label": "Stori",
+      "url": "https://www.calethompson.com/case-studies/stori/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.calethompson.com/case-studies/stori/",
+          "status": 200,
+          "final_url": "https://www.calethompson.com/case-studies/stori/",
+          "title": "Stori Case Study — Unifying a Financial Platform | Cale Thompson",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.001,
+          "method": "fullpage",
+          "width": 390,
+          "height": 6593,
+          "file": "shots/case/calethompson-390.png",
+          "web": "shots/_web/case/calethompson-390.jpg",
+          "web_width": 390,
+          "web_height": 6593
+        },
+        "1440": {
+          "url": "https://www.calethompson.com/case-studies/stori/",
+          "status": 200,
+          "final_url": "https://www.calethompson.com/case-studies/stori/",
+          "title": "Stori Case Study — Unifying a Financial Platform | Cale Thompson",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 10098,
+          "file": "shots/case/calethompson-1440.png",
+          "web": "shots/_web/case/calethompson-1440.jpg",
+          "web_width": 640,
+          "web_height": 4488
+        }
+      },
+      "final_url": "https://www.calethompson.com/case-studies/stori/"
+    },
+    "about": {
+      "type": "about",
+      "label": null,
+      "url": null,
+      "note": null,
+      "missing": "none found"
+    },
+    "contact": {
+      "type": "contact",
+      "label": null,
+      "url": null,
+      "note": null,
+      "missing": "no contact page"
+    },
+    "other-1": {
+      "type": "other",
+      "label": "Principles in practice",
+      "url": "https://www.calethompson.com/values/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.calethompson.com/values/",
+          "status": 200,
+          "final_url": "https://www.calethompson.com/values/",
+          "title": "Design Principles — Cale Thompson",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.001,
+          "method": "fullpage",
+          "width": 390,
+          "height": 2361,
+          "file": "shots/other/calethompson-1-390.png",
+          "web": "shots/_web/other/calethompson-1-390.jpg",
+          "web_width": 390,
+          "web_height": 2361
+        },
+        "1440": {
+          "url": "https://www.calethompson.com/values/",
+          "status": 200,
+          "final_url": "https://www.calethompson.com/values/",
+          "title": "Design Principles — Cale Thompson",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 2019,
+          "file": "shots/other/calethompson-1-1440.png",
+          "web": "shots/_web/other/calethompson-1-1440.jpg",
+          "web_width": 640,
+          "web_height": 897
+        }
+      },
+      "final_url": "https://www.calethompson.com/values/"
+    },
+    "other-2": {
+      "type": "other",
+      "label": "Nike (company page)",
+      "url": "https://www.calethompson.com/company/nike/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.calethompson.com/company/nike/",
+          "status": 200,
+          "final_url": "https://www.calethompson.com/company/nike/",
+          "title": "Nike — Cale Thompson",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.001,
+          "method": "fullpage",
+          "width": 390,
+          "height": 1362,
+          "file": "shots/other/calethompson-2-390.png",
+          "web": "shots/_web/other/calethompson-2-390.jpg",
+          "web_width": 390,
+          "web_height": 1362
+        },
+        "1440": {
+          "url": "https://www.calethompson.com/company/nike/",
+          "status": 200,
+          "final_url": "https://www.calethompson.com/company/nike/",
+          "title": "Nike — Cale Thompson",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 1991,
+          "file": "shots/other/calethompson-2-1440.png",
+          "web": "shots/_web/other/calethompson-2-1440.jpg",
+          "web_width": 640,
+          "web_height": 885
+        }
+      },
+      "final_url": "https://www.calethompson.com/company/nike/"
+    }
+  },
+  "captured_at": "2026-11-06T11:53:46.075Z"
+}

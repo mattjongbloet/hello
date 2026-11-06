@@ -1,0 +1,132 @@
+{
+  "id": "shahi",
+  "name": "Shahriyar M",
+  "input": "https://www.shahi.design",
+  "pages": {
+    "home": {
+      "type": "home",
+      "label": null,
+      "url": "https://www.shahi.design/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.shahi.design/",
+          "status": 200,
+          "final_url": "https://www.shahi.design/",
+          "title": "Product designer who builds with AI | Shahriyar M",
+          "password_screen": false,
+          "scroll": "transform",
+          "method": "stitched",
+          "width": 390,
+          "height": 2434,
+          "file": "shots/home/shahi-390.png",
+          "web": "shots/_web/home/shahi-390.jpg",
+          "web_width": 390,
+          "web_height": 2434
+        },
+        "1440": {
+          "url": "https://www.shahi.design/",
+          "status": 200,
+          "final_url": "https://www.shahi.design/",
+          "title": "Product designer who builds with AI | Shahriyar M",
+          "password_screen": false,
+          "scroll": "transform",
+          "method": "stitched",
+          "width": 1440,
+          "height": 1523,
+          "file": "shots/home/shahi-1440.png",
+          "web": "shots/_web/home/shahi-1440.jpg",
+          "web_width": 640,
+          "web_height": 677
+        }
+      },
+      "final_url": "https://www.shahi.design/"
+    },
+    "case": {
+      "type": "case",
+      "label": null,
+      "url": null,
+      "note": "Home shows a bio and two cards (Pretzel, an external product; Digital garden). No case study pages.",
+      "missing": "none found"
+    },
+    "about": {
+      "type": "about",
+      "label": null,
+      "url": "https://www.shahi.design/about",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.shahi.design/about",
+          "status": 200,
+          "final_url": "https://www.shahi.design/about",
+          "title": "About Shahriyar Mohammadi | Shahriyar M",
+          "password_screen": false,
+          "scroll": "transform",
+          "method": "stitched",
+          "width": 390,
+          "height": 5125,
+          "file": "shots/about/shahi-390.png",
+          "web": "shots/_web/about/shahi-390.jpg",
+          "web_width": 390,
+          "web_height": 5125
+        },
+        "1440": {
+          "url": "https://www.shahi.design/about",
+          "status": 200,
+          "final_url": "https://www.shahi.design/about",
+          "title": "About Shahriyar Mohammadi | Shahriyar M",
+          "password_screen": false,
+          "scroll": "transform",
+          "method": "stitched",
+          "width": 1440,
+          "height": 4373,
+          "file": "shots/about/shahi-1440.png",
+          "web": "shots/_web/about/shahi-1440.jpg",
+          "web_width": 640,
+          "web_height": 1944
+        }
+      },
+      "final_url": "https://www.shahi.design/about"
+    },
+    "contact": {
+      "type": "contact",
+      "label": "Work with me",
+      "url": "https://www.shahi.design/contact",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.shahi.design/contact",
+          "status": 200,
+          "final_url": "https://www.shahi.design/contact",
+          "title": "Work with me | Shahriyar M",
+          "password_screen": false,
+          "scroll": "transform",
+          "method": "stitched",
+          "width": 390,
+          "height": 1737,
+          "file": "shots/contact/shahi-390.png",
+          "web": "shots/_web/contact/shahi-390.jpg",
+          "web_width": 390,
+          "web_height": 1737
+        },
+        "1440": {
+          "url": "https://www.shahi.design/contact",
+          "status": 200,
+          "final_url": "https://www.shahi.design/contact",
+          "title": "Work with me | Shahriyar M",
+          "password_screen": false,
+          "scroll": "transform",
+          "method": "stitched",
+          "width": 1440,
+          "height": 1691,
+          "file": "shots/contact/shahi-1440.png",
+          "web": "shots/_web/contact/shahi-1440.jpg",
+          "web_width": 640,
+          "web_height": 752
+        }
+      },
+      "final_url": "https://www.shahi.design/contact"
+    }
+  },
+  "captured_at": "2026-11-06T11:31:00.494Z"
+}

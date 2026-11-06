@@ -1,0 +1,227 @@
+{
+  "id": "danielchung",
+  "name": "Daniel Chung",
+  "input": "https://danielchung.design",
+  "pages": {
+    "home": {
+      "type": "home",
+      "label": null,
+      "url": "https://danielchung.design/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://danielchung.design/",
+          "status": 200,
+          "final_url": "https://danielchung.design/",
+          "title": "Daniel Chung",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 390,
+          "height": 2542,
+          "file": "shots/home/danielchung-390.png",
+          "web": "shots/_web/home/danielchung-390.jpg",
+          "web_width": 390,
+          "web_height": 2542
+        },
+        "1440": {
+          "url": "https://danielchung.design/",
+          "status": 200,
+          "final_url": "https://danielchung.design/",
+          "title": "Daniel Chung",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 1966,
+          "file": "shots/home/danielchung-1440.png",
+          "web": "shots/_web/home/danielchung-1440.jpg",
+          "web_width": 640,
+          "web_height": 874
+        }
+      },
+      "final_url": "https://danielchung.design/"
+    },
+    "case": {
+      "type": "case",
+      "label": "Dex",
+      "url": "https://danielchung.design/dex",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://danielchung.design/dex",
+          "status": 200,
+          "final_url": "https://danielchung.design/dex",
+          "title": "Dex | Daniel Chung",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.001,
+          "method": "fullpage",
+          "width": 390,
+          "height": 7958,
+          "file": "shots/case/danielchung-390.png",
+          "web": "shots/_web/case/danielchung-390.jpg",
+          "web_width": 390,
+          "web_height": 7958
+        },
+        "1440": {
+          "url": "https://danielchung.design/dex",
+          "status": 200,
+          "final_url": "https://danielchung.design/dex",
+          "title": "Dex | Daniel Chung",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.021,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 10511,
+          "file": "shots/case/danielchung-1440.png",
+          "web": "shots/_web/case/danielchung-1440.jpg",
+          "web_width": 640,
+          "web_height": 4672
+        }
+      },
+      "final_url": "https://danielchung.design/dex"
+    },
+    "about": {
+      "type": "about",
+      "label": null,
+      "url": null,
+      "note": "Home has an 'Ask about me' chat instead.",
+      "missing": "none found"
+    },
+    "contact": {
+      "type": "contact",
+      "label": null,
+      "url": null,
+      "note": "Email link on home.",
+      "missing": "no contact page"
+    },
+    "other-1": {
+      "type": "other",
+      "label": "Onigiri (personal OS)",
+      "url": "https://danielchung.design/onigiri",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://danielchung.design/onigiri",
+          "status": 200,
+          "final_url": "https://danielchung.design/onigiri",
+          "title": "Onigiri — Daniel Chung",
+          "password_screen": false,
+          "scroll": "window",
+          "method": "stitched",
+          "truncated_at": 30000,
+          "width": 390,
+          "height": 30000,
+          "file": "shots/other/danielchung-1-390.png",
+          "web": "shots/_web/other/danielchung-1-390.jpg",
+          "web_width": 390,
+          "web_height": 30000
+        },
+        "1440": {
+          "url": "https://danielchung.design/onigiri",
+          "status": 200,
+          "final_url": "https://danielchung.design/onigiri",
+          "title": "Onigiri — Daniel Chung",
+          "password_screen": false,
+          "scroll": "window",
+          "method": "stitched",
+          "truncated_at": 30000,
+          "width": 1440,
+          "height": 30000,
+          "file": "shots/other/danielchung-1-1440.png",
+          "web": "shots/_web/other/danielchung-1-1440.jpg",
+          "web_width": 640,
+          "web_height": 13333
+        }
+      },
+      "final_url": "https://danielchung.design/onigiri"
+    },
+    "other-2": {
+      "type": "other",
+      "label": "Photography",
+      "url": "https://danielchung.design/photography",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://danielchung.design/photography",
+          "status": 200,
+          "final_url": "https://danielchung.design/photography",
+          "title": "Photography — Daniel Chung",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 390,
+          "height": 25514,
+          "file": "shots/other/danielchung-2-390.png",
+          "web": "shots/_web/other/danielchung-2-390.jpg",
+          "web_width": 390,
+          "web_height": 25514
+        },
+        "1440": {
+          "url": "https://danielchung.design/photography",
+          "status": 200,
+          "final_url": "https://danielchung.design/photography",
+          "title": "Photography — Daniel Chung",
+          "password_screen": false,
+          "scroll": "window",
+          "method": "stitched",
+          "truncated_at": 30000,
+          "width": 1440,
+          "height": 30000,
+          "file": "shots/other/danielchung-2-1440.png",
+          "web": "shots/_web/other/danielchung-2-1440.jpg",
+          "web_width": 640,
+          "web_height": 13333
+        }
+      },
+      "final_url": "https://danielchung.design/photography"
+    },
+    "other-3": {
+      "type": "other",
+      "label": "Desk",
+      "url": "https://danielchung.design/desk",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://danielchung.design/desk",
+          "status": 200,
+          "final_url": "https://danielchung.design/desk",
+          "title": "Desk — Daniel Chung",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 390,
+          "height": 844,
+          "file": "shots/other/danielchung-3-390.png",
+          "web": "shots/_web/other/danielchung-3-390.jpg",
+          "web_width": 390,
+          "web_height": 844
+        },
+        "1440": {
+          "url": "https://danielchung.design/desk",
+          "status": 200,
+          "final_url": "https://danielchung.design/desk",
+          "title": "Desk — Daniel Chung",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 900,
+          "file": "shots/other/danielchung-3-1440.png",
+          "web": "shots/_web/other/danielchung-3-1440.jpg",
+          "web_width": 640,
+          "web_height": 400
+        }
+      },
+      "final_url": "https://danielchung.design/desk"
+    }
+  },
+  "captured_at": "2026-11-06T12:48:15.443Z"
+}

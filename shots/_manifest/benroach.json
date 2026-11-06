@@ -1,0 +1,295 @@
+{
+  "id": "benroach",
+  "name": "Ben Roach",
+  "input": "https://www.benroachdesign.com",
+  "pages": {
+    "home": {
+      "type": "home",
+      "label": null,
+      "url": "https://www.benroachdesign.com/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.benroachdesign.com/",
+          "status": 200,
+          "final_url": "https://www.benroachdesign.com/",
+          "title": "Ben Roach — UX Design Leader, Google & Amazon",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.073,
+          "method": "fullpage",
+          "width": 390,
+          "height": 4387,
+          "file": "shots/home/benroach-390.png",
+          "web": "shots/_web/home/benroach-390.jpg",
+          "web_width": 390,
+          "web_height": 4387
+        },
+        "1440": {
+          "url": "https://www.benroachdesign.com/",
+          "status": 200,
+          "final_url": "https://www.benroachdesign.com/",
+          "title": "Ben Roach — UX Design Leader, Google & Amazon",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.015,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 3136,
+          "file": "shots/home/benroach-1440.png",
+          "web": "shots/_web/home/benroach-1440.jpg",
+          "web_width": 640,
+          "web_height": 1394
+        }
+      },
+      "final_url": "https://www.benroachdesign.com/"
+    },
+    "case": {
+      "type": "case",
+      "label": "Google AI adoption",
+      "url": "https://www.benroachdesign.com/work/google-ai",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.benroachdesign.com/work/google-ai",
+          "status": 200,
+          "final_url": "https://www.benroachdesign.com/work/google-ai",
+          "title": "Directing AI Adoption at Google PSS — Ben Roach",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.017,
+          "method": "fullpage",
+          "width": 390,
+          "height": 17191,
+          "file": "shots/case/benroach-390.png",
+          "web": "shots/_web/case/benroach-390.jpg",
+          "web_width": 390,
+          "web_height": 17191
+        },
+        "1440": {
+          "url": "https://www.benroachdesign.com/work/google-ai",
+          "status": 200,
+          "final_url": "https://www.benroachdesign.com/work/google-ai",
+          "title": "Directing AI Adoption at Google PSS — Ben Roach",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.023,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 15466,
+          "file": "shots/case/benroach-1440.png",
+          "web": "shots/_web/case/benroach-1440.jpg",
+          "web_width": 640,
+          "web_height": 6874
+        }
+      },
+      "final_url": "https://www.benroachdesign.com/work/google-ai"
+    },
+    "about": {
+      "type": "about",
+      "label": null,
+      "url": "https://www.benroachdesign.com/about",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.benroachdesign.com/about",
+          "status": 200,
+          "final_url": "https://www.benroachdesign.com/about",
+          "title": "About Ben Roach — Chicago UX Design Leader",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.018,
+          "method": "fullpage",
+          "width": 390,
+          "height": 4740,
+          "file": "shots/about/benroach-390.png",
+          "web": "shots/_web/about/benroach-390.jpg",
+          "web_width": 390,
+          "web_height": 4740
+        },
+        "1440": {
+          "url": "https://www.benroachdesign.com/about",
+          "status": 200,
+          "final_url": "https://www.benroachdesign.com/about",
+          "title": "About Ben Roach — Chicago UX Design Leader",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.009,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 4396,
+          "file": "shots/about/benroach-1440.png",
+          "web": "shots/_web/about/benroach-1440.jpg",
+          "web_width": 640,
+          "web_height": 1954
+        }
+      },
+      "final_url": "https://www.benroachdesign.com/about"
+    },
+    "contact": {
+      "type": "contact",
+      "label": null,
+      "url": "https://www.benroachdesign.com/contact",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.benroachdesign.com/contact",
+          "status": 200,
+          "final_url": "https://www.benroachdesign.com/contact",
+          "title": "Contact Ben Roach",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.023,
+          "method": "fullpage",
+          "width": 390,
+          "height": 1175,
+          "file": "shots/contact/benroach-390.png",
+          "web": "shots/_web/contact/benroach-390.jpg",
+          "web_width": 390,
+          "web_height": 1175
+        },
+        "1440": {
+          "url": "https://www.benroachdesign.com/contact",
+          "status": 200,
+          "final_url": "https://www.benroachdesign.com/contact",
+          "title": "Contact Ben Roach",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.014,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 1257,
+          "file": "shots/contact/benroach-1440.png",
+          "web": "shots/_web/contact/benroach-1440.jpg",
+          "web_width": 640,
+          "web_height": 559
+        }
+      },
+      "final_url": "https://www.benroachdesign.com/contact"
+    },
+    "other-1": {
+      "type": "other",
+      "label": "Work index",
+      "url": "https://www.benroachdesign.com/work",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.benroachdesign.com/work",
+          "status": 200,
+          "final_url": "https://www.benroachdesign.com/work",
+          "title": "Case Studies — Ben Roach",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.036,
+          "method": "fullpage",
+          "width": 390,
+          "height": 2631,
+          "file": "shots/other/benroach-1-390.png",
+          "web": "shots/_web/other/benroach-1-390.jpg",
+          "web_width": 390,
+          "web_height": 2631
+        },
+        "1440": {
+          "url": "https://www.benroachdesign.com/work",
+          "status": 200,
+          "final_url": "https://www.benroachdesign.com/work",
+          "title": "Case Studies — Ben Roach",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.047,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 4363,
+          "file": "shots/other/benroach-1-1440.png",
+          "web": "shots/_web/other/benroach-1-1440.jpg",
+          "web_width": 640,
+          "web_height": 1939
+        }
+      },
+      "final_url": "https://www.benroachdesign.com/work"
+    },
+    "other-2": {
+      "type": "other",
+      "label": "AI Lab",
+      "url": "https://www.benroachdesign.com/lab",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.benroachdesign.com/lab",
+          "status": 200,
+          "final_url": "https://www.benroachdesign.com/lab",
+          "title": "AI Lab — Apps and Experiments by Ben Roach",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.029,
+          "method": "fullpage",
+          "width": 390,
+          "height": 2995,
+          "file": "shots/other/benroach-2-390.png",
+          "web": "shots/_web/other/benroach-2-390.jpg",
+          "web_width": 390,
+          "web_height": 2995
+        },
+        "1440": {
+          "url": "https://www.benroachdesign.com/lab",
+          "status": 200,
+          "final_url": "https://www.benroachdesign.com/lab",
+          "title": "AI Lab — Apps and Experiments by Ben Roach",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.026,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 2747,
+          "file": "shots/other/benroach-2-1440.png",
+          "web": "shots/_web/other/benroach-2-1440.jpg",
+          "web_width": 640,
+          "web_height": 1221
+        }
+      },
+      "final_url": "https://www.benroachdesign.com/lab"
+    },
+    "other-3": {
+      "type": "other",
+      "label": "Lab: LiveVault",
+      "url": "https://www.benroachdesign.com/lab/livevault",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.benroachdesign.com/lab/livevault",
+          "status": 200,
+          "final_url": "https://www.benroachdesign.com/lab/livevault",
+          "title": "LiveVault: The Live Music Archive as a Daily Ritual — Ben Roach",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.037,
+          "method": "fullpage",
+          "width": 390,
+          "height": 3359,
+          "file": "shots/other/benroach-3-390.png",
+          "web": "shots/_web/other/benroach-3-390.jpg",
+          "web_width": 390,
+          "web_height": 3359
+        },
+        "1440": {
+          "url": "https://www.benroachdesign.com/lab/livevault",
+          "status": 200,
+          "final_url": "https://www.benroachdesign.com/lab/livevault",
+          "title": "LiveVault: The Live Music Archive as a Daily Ritual — Ben Roach",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.018,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 2743,
+          "file": "shots/other/benroach-3-1440.png",
+          "web": "shots/_web/other/benroach-3-1440.jpg",
+          "web_width": 640,
+          "web_height": 1219
+        }
+      },
+      "final_url": "https://www.benroachdesign.com/lab/livevault"
+    }
+  },
+  "captured_at": "2026-11-06T12:18:01.566Z"
+}

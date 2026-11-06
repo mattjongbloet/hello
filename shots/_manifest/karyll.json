@@ -1,0 +1,136 @@
+{
+  "id": "karyll",
+  "name": "Karyll Catubig",
+  "input": "https://karyll.com",
+  "pages": {
+    "home": {
+      "type": "home",
+      "label": null,
+      "url": "https://karyll.com/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://karyll.com/",
+          "status": 200,
+          "final_url": "https://karyll.com/",
+          "title": "Karyll Catubig · Product designer",
+          "password_screen": true,
+          "scroll": "window",
+          "fallback_reason": "full-page height ballooned",
+          "method": "stitched",
+          "width": 390,
+          "height": 1691,
+          "file": "shots/home/karyll-390.png",
+          "web": "shots/_web/home/karyll-390.jpg",
+          "web_width": 390,
+          "web_height": 1691
+        },
+        "1440": {
+          "url": "https://karyll.com/",
+          "status": 200,
+          "final_url": "https://karyll.com/",
+          "title": "Karyll Catubig · Product designer",
+          "password_screen": true,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1446,
+          "height": 941,
+          "file": "shots/home/karyll-1440.png",
+          "web": "shots/_web/home/karyll-1440.jpg",
+          "web_width": 640,
+          "web_height": 416
+        }
+      },
+      "final_url": "https://karyll.com/"
+    },
+    "case": {
+      "type": "case",
+      "label": "Qento",
+      "url": "https://karyll.com/#qento",
+      "note": "First project (Design System for Agents) is password protected. On mobile the case study opens as a fixed bottom sheet, captured as one viewport.",
+      "shots": {
+        "390": {
+          "url": "https://karyll.com/#qento",
+          "status": 200,
+          "final_url": "https://karyll.com/#qento",
+          "title": "Qento · Karyll Catubig",
+          "password_screen": false,
+          "scroll": "window",
+          "method": "viewport",
+          "width": 390,
+          "height": 844,
+          "file": "shots/case/karyll-390.png",
+          "web": "shots/_web/case/karyll-390.jpg",
+          "web_width": 390,
+          "web_height": 844
+        },
+        "1440": {
+          "url": "https://karyll.com/#qento",
+          "status": 200,
+          "final_url": "https://karyll.com/#qento",
+          "title": "Qento · Karyll Catubig",
+          "password_screen": true,
+          "scroll": "window",
+          "fallback_reason": "full-page height ballooned",
+          "method": "stitched",
+          "width": 1440,
+          "height": 14043,
+          "file": "shots/case/karyll-1440.png",
+          "web": "shots/_web/case/karyll-1440.jpg",
+          "web_width": 640,
+          "web_height": 6241
+        }
+      },
+      "final_url": "https://karyll.com/#qento"
+    },
+    "about": {
+      "type": "about",
+      "label": null,
+      "url": "https://karyll.com/#about",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://karyll.com/#about",
+          "status": 200,
+          "final_url": "https://karyll.com/#about",
+          "title": "About · Karyll Catubig",
+          "password_screen": true,
+          "scroll": "window",
+          "method": "viewport",
+          "width": 390,
+          "height": 844,
+          "file": "shots/about/karyll-390.png",
+          "web": "shots/_web/about/karyll-390.jpg",
+          "web_width": 390,
+          "web_height": 844
+        },
+        "1440": {
+          "url": "https://karyll.com/#about",
+          "status": 200,
+          "final_url": "https://karyll.com/#about",
+          "title": "About · Karyll Catubig",
+          "password_screen": true,
+          "scroll": "window",
+          "fallback_reason": "full-page height ballooned",
+          "method": "stitched",
+          "width": 1440,
+          "height": 2151,
+          "file": "shots/about/karyll-1440.png",
+          "web": "shots/_web/about/karyll-1440.jpg",
+          "web_width": 640,
+          "web_height": 956
+        }
+      },
+      "final_url": "https://karyll.com/#about"
+    },
+    "contact": {
+      "type": "contact",
+      "label": null,
+      "url": null,
+      "note": "Email link on home.",
+      "missing": "no contact page"
+    }
+  },
+  "captured_at": "2026-11-06T13:09:00.093Z"
+}

@@ -1,0 +1,173 @@
+{
+  "id": "styblova",
+  "name": "Jana Stýblová",
+  "input": "https://styblova.com/projects",
+  "pages": {
+    "home": {
+      "type": "home",
+      "label": null,
+      "url": "https://styblova.com/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://styblova.com/",
+          "status": 200,
+          "final_url": "https://styblova.com/",
+          "title": "Jana Stýblová - Founding & Principal Product Designer | UX + UI",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.015,
+          "method": "fullpage",
+          "width": 390,
+          "height": 12195,
+          "file": "shots/home/styblova-390.png",
+          "web": "shots/_web/home/styblova-390.jpg",
+          "web_width": 390,
+          "web_height": 12195
+        },
+        "1440": {
+          "url": "https://styblova.com/",
+          "status": 200,
+          "final_url": "https://styblova.com/",
+          "title": "Jana Stýblová - Founding & Principal Product Designer | UX + UI",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 13286,
+          "file": "shots/home/styblova-1440.png",
+          "web": "shots/_web/home/styblova-1440.jpg",
+          "web_width": 640,
+          "web_height": 5905
+        }
+      },
+      "final_url": "https://styblova.com/"
+    },
+    "case": {
+      "type": "case",
+      "label": "Matter Neuroscience",
+      "url": "https://styblova.com/matter-neuroscience",
+      "note": "First project (Google / NotebookLM) is password protected.",
+      "shots": {
+        "390": {
+          "url": "https://styblova.com/matter-neuroscience",
+          "status": 200,
+          "final_url": "https://styblova.com/matter-neuroscience",
+          "title": "Jana Stýblová - Founding & Principal Product Designer | UX + UI - Matter Neuroscience",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.22,
+          "fallback_reason": "full-page shot differed from live viewport",
+          "method": "stitched",
+          "width": 390,
+          "height": 16802,
+          "file": "shots/case/styblova-390.png",
+          "web": "shots/_web/case/styblova-390.jpg",
+          "web_width": 390,
+          "web_height": 16802
+        },
+        "1440": {
+          "url": "https://styblova.com/matter-neuroscience",
+          "status": 200,
+          "final_url": "https://styblova.com/matter-neuroscience",
+          "title": "Jana Stýblová - Founding & Principal Product Designer | UX + UI - Matter Neuroscience",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.088,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 29342,
+          "file": "shots/case/styblova-1440.png",
+          "web": "shots/_web/case/styblova-1440.jpg",
+          "web_width": 640,
+          "web_height": 13041
+        }
+      },
+      "final_url": "https://styblova.com/matter-neuroscience"
+    },
+    "about": {
+      "type": "about",
+      "label": null,
+      "url": "https://styblova.com/about",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://styblova.com/about",
+          "status": 200,
+          "final_url": "https://styblova.com/about",
+          "title": "Jana Stýblová - Founding & Principal Product Designer | UX + UI - About",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 390,
+          "height": 4483,
+          "file": "shots/about/styblova-390.png",
+          "web": "shots/_web/about/styblova-390.jpg",
+          "web_width": 390,
+          "web_height": 4483
+        },
+        "1440": {
+          "url": "https://styblova.com/about",
+          "status": 200,
+          "final_url": "https://styblova.com/about",
+          "title": "Jana Stýblová - Founding & Principal Product Designer | UX + UI - About",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 3922,
+          "file": "shots/about/styblova-1440.png",
+          "web": "shots/_web/about/styblova-1440.jpg",
+          "web_width": 640,
+          "web_height": 1743
+        }
+      },
+      "final_url": "https://styblova.com/about"
+    },
+    "contact": {
+      "type": "contact",
+      "label": null,
+      "url": "https://styblova.com/contact",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://styblova.com/contact",
+          "status": 200,
+          "final_url": "https://styblova.com/contact",
+          "title": "Jana Stýblová - Founding & Principal Product Designer | UX + UI - Contact",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 390,
+          "height": 955,
+          "file": "shots/contact/styblova-390.png",
+          "web": "shots/_web/contact/styblova-390.jpg",
+          "web_width": 390,
+          "web_height": 955
+        },
+        "1440": {
+          "url": "https://styblova.com/contact",
+          "status": 200,
+          "final_url": "https://styblova.com/contact",
+          "title": "Jana Stýblová - Founding & Principal Product Designer | UX + UI - Contact",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 1275,
+          "file": "shots/contact/styblova-1440.png",
+          "web": "shots/_web/contact/styblova-1440.jpg",
+          "web_width": 640,
+          "web_height": 567
+        }
+      },
+      "final_url": "https://styblova.com/contact"
+    }
+  },
+  "captured_at": "2026-11-06T12:41:28.923Z"
+}

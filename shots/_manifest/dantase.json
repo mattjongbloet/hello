@@ -1,0 +1,145 @@
+{
+  "id": "dantase",
+  "name": "Dan Tase",
+  "input": "https://www.dantase.com",
+  "pages": {
+    "home": {
+      "type": "home",
+      "label": null,
+      "url": "https://www.dantase.com/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.dantase.com/",
+          "status": 200,
+          "final_url": "https://www.dantase.com/",
+          "title": "Dan Tase - Founding Product Designer",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.07,
+          "method": "fullpage",
+          "width": 390,
+          "height": 8158,
+          "file": "shots/home/dantase-390.png",
+          "web": "shots/_web/home/dantase-390.jpg",
+          "web_width": 390,
+          "web_height": 8158
+        },
+        "1440": {
+          "url": "https://www.dantase.com/",
+          "status": 200,
+          "final_url": "https://www.dantase.com/",
+          "title": "Dan Tase - Founding Product Designer",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.101,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 12962,
+          "file": "shots/home/dantase-1440.png",
+          "web": "shots/_web/home/dantase-1440.jpg",
+          "web_width": 640,
+          "web_height": 5761
+        }
+      },
+      "final_url": "https://www.dantase.com/"
+    },
+    "case": {
+      "type": "case",
+      "label": null,
+      "url": null,
+      "note": "Work is shown inline on home.",
+      "missing": "none found"
+    },
+    "about": {
+      "type": "about",
+      "label": null,
+      "url": "https://www.dantase.com/about",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.dantase.com/about",
+          "status": 200,
+          "final_url": "https://www.dantase.com/about/",
+          "title": "About — Dan Tase",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 773,
+          "height": 6264,
+          "file": "shots/about/dantase-390.png",
+          "web": "shots/_web/about/dantase-390.jpg",
+          "web_width": 390,
+          "web_height": 3160
+        },
+        "1440": {
+          "url": "https://www.dantase.com/about",
+          "status": 200,
+          "final_url": "https://www.dantase.com/about/",
+          "title": "About — Dan Tase",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.002,
+          "method": "fullpage",
+          "width": 1530,
+          "height": 6501,
+          "file": "shots/about/dantase-1440.png",
+          "web": "shots/_web/about/dantase-1440.jpg",
+          "web_width": 640,
+          "web_height": 2719
+        }
+      },
+      "final_url": "https://www.dantase.com/about/"
+    },
+    "contact": {
+      "type": "contact",
+      "label": null,
+      "url": null,
+      "note": null,
+      "missing": "no contact page"
+    },
+    "other-1": {
+      "type": "other",
+      "label": "Updates",
+      "url": "https://www.dantase.com/updates",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.dantase.com/updates",
+          "status": 200,
+          "final_url": "https://www.dantase.com/updates/",
+          "title": "Updates — Dan Tase",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.032,
+          "method": "fullpage",
+          "width": 390,
+          "height": 22529,
+          "file": "shots/other/dantase-1-390.png",
+          "web": "shots/_web/other/dantase-1-390.jpg",
+          "web_width": 390,
+          "web_height": 22529
+        },
+        "1440": {
+          "url": "https://www.dantase.com/updates",
+          "status": 200,
+          "final_url": "https://www.dantase.com/updates/",
+          "title": "Updates — Dan Tase",
+          "password_screen": false,
+          "scroll": "window",
+          "method": "stitched",
+          "truncated_at": 30000,
+          "width": 1440,
+          "height": 30000,
+          "file": "shots/other/dantase-1-1440.png",
+          "web": "shots/_web/other/dantase-1-1440.jpg",
+          "web_width": 640,
+          "web_height": 13333
+        }
+      },
+      "final_url": "https://www.dantase.com/updates/"
+    }
+  },
+  "captured_at": "2026-11-06T12:33:58.378Z"
+}

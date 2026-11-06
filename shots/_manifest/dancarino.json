@@ -1,0 +1,179 @@
+{
+  "id": "dancarino",
+  "name": "Dan Cariño",
+  "input": "https://www.dancarino.me",
+  "pages": {
+    "home": {
+      "type": "home",
+      "label": null,
+      "url": "https://www.dancarino.me/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.dancarino.me/",
+          "status": 200,
+          "final_url": "https://www.dancarino.me/",
+          "title": "Dan Cariño — Designer who builds",
+          "password_screen": true,
+          "scroll": "transform",
+          "method": "stitched",
+          "width": 390,
+          "height": 3105,
+          "file": "shots/home/dancarino-390.png",
+          "web": "shots/_web/home/dancarino-390.jpg",
+          "web_width": 390,
+          "web_height": 3105
+        },
+        "1440": {
+          "url": "https://www.dancarino.me/",
+          "status": 200,
+          "final_url": "https://www.dancarino.me/",
+          "title": "Dan Cariño — Designer who builds",
+          "password_screen": true,
+          "scroll": "transform",
+          "method": "stitched",
+          "width": 1440,
+          "height": 3356,
+          "file": "shots/home/dancarino-1440.png",
+          "web": "shots/_web/home/dancarino-1440.jpg",
+          "web_width": 640,
+          "web_height": 1492
+        }
+      },
+      "final_url": "https://www.dancarino.me/"
+    },
+    "case": {
+      "type": "case",
+      "label": "Launching Secondhand",
+      "url": "https://www.dancarino.me/work/pre-loved",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.dancarino.me/work/pre-loved",
+          "status": 200,
+          "final_url": "https://www.dancarino.me/work/pre-loved",
+          "title": "Making Secondhand Feel Native to H&M — Dan Cariño — Dan Cariño",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.639,
+          "fallback_reason": "full-page shot differed from live viewport",
+          "method": "stitched",
+          "width": 390,
+          "height": 14414,
+          "file": "shots/case/dancarino-390.png",
+          "web": "shots/_web/case/dancarino-390.jpg",
+          "web_width": 390,
+          "web_height": 14414
+        },
+        "1440": {
+          "url": "https://www.dancarino.me/work/pre-loved",
+          "status": 200,
+          "final_url": "https://www.dancarino.me/work/pre-loved",
+          "title": "Making Secondhand Feel Native to H&M — Dan Cariño — Dan Cariño",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.29,
+          "fallback_reason": "full-page shot differed from live viewport",
+          "method": "stitched",
+          "width": 1440,
+          "height": 12194,
+          "file": "shots/case/dancarino-1440.png",
+          "web": "shots/_web/case/dancarino-1440.jpg",
+          "web_width": 640,
+          "web_height": 5420
+        }
+      },
+      "final_url": "https://www.dancarino.me/work/pre-loved"
+    },
+    "about": {
+      "type": "about",
+      "label": null,
+      "url": "https://www.dancarino.me/about",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.dancarino.me/about",
+          "status": 200,
+          "final_url": "https://www.dancarino.me/about",
+          "title": "About — Dan Cariño — Dan Cariño",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.718,
+          "fallback_reason": "full-page shot differed from live viewport",
+          "method": "stitched",
+          "width": 390,
+          "height": 2672,
+          "file": "shots/about/dancarino-390.png",
+          "web": "shots/_web/about/dancarino-390.jpg",
+          "web_width": 390,
+          "web_height": 2672
+        },
+        "1440": {
+          "url": "https://www.dancarino.me/about",
+          "status": 200,
+          "final_url": "https://www.dancarino.me/about",
+          "title": "About — Dan Cariño — Dan Cariño",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.276,
+          "fallback_reason": "full-page shot differed from live viewport",
+          "method": "stitched",
+          "width": 1440,
+          "height": 1846,
+          "file": "shots/about/dancarino-1440.png",
+          "web": "shots/_web/about/dancarino-1440.jpg",
+          "web_width": 640,
+          "web_height": 820
+        }
+      },
+      "final_url": "https://www.dancarino.me/about"
+    },
+    "contact": {
+      "type": "contact",
+      "label": null,
+      "url": null,
+      "note": "Contact nav item scrolls home.",
+      "missing": "no contact page"
+    },
+    "other-1": {
+      "type": "other",
+      "label": "Playground: The Device",
+      "url": "https://www.dancarino.me/work/the-device",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.dancarino.me/work/the-device",
+          "status": 200,
+          "final_url": "https://www.dancarino.me/work/the-device",
+          "title": "The Device — Dan Cariño — Dan Cariño",
+          "password_screen": false,
+          "scroll": "transform",
+          "method": "stitched",
+          "width": 390,
+          "height": 2569,
+          "file": "shots/other/dancarino-1-390.png",
+          "web": "shots/_web/other/dancarino-1-390.jpg",
+          "web_width": 390,
+          "web_height": 2569
+        },
+        "1440": {
+          "url": "https://www.dancarino.me/work/the-device",
+          "status": 200,
+          "final_url": "https://www.dancarino.me/work/the-device",
+          "title": "The Device — Dan Cariño — Dan Cariño",
+          "password_screen": false,
+          "scroll": "transform",
+          "method": "stitched",
+          "width": 1440,
+          "height": 2398,
+          "file": "shots/other/dancarino-1-1440.png",
+          "web": "shots/_web/other/dancarino-1-1440.jpg",
+          "web_width": 640,
+          "web_height": 1066
+        }
+      },
+      "final_url": "https://www.dancarino.me/work/the-device"
+    }
+  },
+  "captured_at": "2026-11-06T12:53:45.963Z"
+}

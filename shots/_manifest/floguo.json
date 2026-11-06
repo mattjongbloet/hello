@@ -1,0 +1,190 @@
+{
+  "id": "floguo",
+  "name": "Flora Guo",
+  "input": "https://www.floguo.com",
+  "pages": {
+    "home": {
+      "type": "home",
+      "label": null,
+      "url": "https://www.floguo.com/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.floguo.com/",
+          "status": 200,
+          "final_url": "https://www.floguo.com/",
+          "title": "Flora Guo",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 390,
+          "height": 844,
+          "file": "shots/home/floguo-390.png",
+          "web": "shots/_web/home/floguo-390.jpg",
+          "web_width": 390,
+          "web_height": 844
+        },
+        "1440": {
+          "url": "https://www.floguo.com/",
+          "status": 200,
+          "final_url": "https://www.floguo.com/",
+          "title": "Flora Guo",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 900,
+          "file": "shots/home/floguo-1440.png",
+          "web": "shots/_web/home/floguo-1440.jpg",
+          "web_width": 640,
+          "web_height": 400
+        }
+      },
+      "final_url": "https://www.floguo.com/"
+    },
+    "case": {
+      "type": "case",
+      "label": null,
+      "url": null,
+      "note": "No case studies; the site is a digital garden (notes, writing, bookshelf, playground).",
+      "missing": "none found"
+    },
+    "about": {
+      "type": "about",
+      "label": null,
+      "url": null,
+      "note": "The ABOUT menu item is the home page.",
+      "same_as": "home"
+    },
+    "contact": {
+      "type": "contact",
+      "label": null,
+      "url": null,
+      "note": "Links to Twitter/Curius/GitHub only.",
+      "missing": "no contact page"
+    },
+    "other-1": {
+      "type": "other",
+      "label": "Bookshelf",
+      "url": "https://www.floguo.com/books",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.floguo.com/books",
+          "status": 200,
+          "final_url": "https://www.floguo.com/books",
+          "title": "floguo's bookshelf",
+          "password_screen": false,
+          "scroll": "inner",
+          "method": "stitched",
+          "width": 390,
+          "height": 4943,
+          "file": "shots/other/floguo-1-390.png",
+          "web": "shots/_web/other/floguo-1-390.jpg",
+          "web_width": 390,
+          "web_height": 4943
+        },
+        "1440": {
+          "url": "https://www.floguo.com/books",
+          "status": 200,
+          "final_url": "https://www.floguo.com/books",
+          "title": "floguo's bookshelf",
+          "password_screen": false,
+          "scroll": "inner",
+          "method": "stitched",
+          "width": 1440,
+          "height": 4586,
+          "file": "shots/other/floguo-1-1440.png",
+          "web": "shots/_web/other/floguo-1-1440.jpg",
+          "web_width": 640,
+          "web_height": 2038
+        }
+      },
+      "final_url": "https://www.floguo.com/books"
+    },
+    "other-2": {
+      "type": "other",
+      "label": "Writing",
+      "url": "https://www.floguo.com/ideas",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.floguo.com/ideas",
+          "status": 200,
+          "final_url": "https://www.floguo.com/ideas",
+          "title": "floguo's ideas",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 390,
+          "height": 844,
+          "file": "shots/other/floguo-2-390.png",
+          "web": "shots/_web/other/floguo-2-390.jpg",
+          "web_width": 390,
+          "web_height": 844
+        },
+        "1440": {
+          "url": "https://www.floguo.com/ideas",
+          "status": 200,
+          "final_url": "https://www.floguo.com/ideas",
+          "title": "floguo's ideas",
+          "password_screen": false,
+          "scroll": "inner",
+          "method": "stitched",
+          "width": 1440,
+          "height": 5435,
+          "file": "shots/other/floguo-2-1440.png",
+          "web": "shots/_web/other/floguo-2-1440.jpg",
+          "web_width": 640,
+          "web_height": 2416
+        }
+      },
+      "final_url": "https://www.floguo.com/ideas"
+    },
+    "other-3": {
+      "type": "other",
+      "label": "Playground",
+      "url": "https://www.floguo.com/playground",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.floguo.com/playground",
+          "status": 200,
+          "final_url": "https://www.floguo.com/playground",
+          "title": "floguo's playground",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 390,
+          "height": 844,
+          "file": "shots/other/floguo-3-390.png",
+          "web": "shots/_web/other/floguo-3-390.jpg",
+          "web_width": 390,
+          "web_height": 844
+        },
+        "1440": {
+          "url": "https://www.floguo.com/playground",
+          "status": 200,
+          "final_url": "https://www.floguo.com/playground",
+          "title": "floguo's playground",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 900,
+          "file": "shots/other/floguo-3-1440.png",
+          "web": "shots/_web/other/floguo-3-1440.jpg",
+          "web_width": 640,
+          "web_height": 400
+        }
+      },
+      "final_url": "https://www.floguo.com/playground"
+    }
+  },
+  "captured_at": "2026-11-06T11:32:33.086Z"
+}

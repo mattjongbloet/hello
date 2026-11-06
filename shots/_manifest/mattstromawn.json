@@ -1,0 +1,220 @@
+{
+  "id": "mattstromawn",
+  "name": "Matt Ström-Awn",
+  "input": "https://mattstromawn.com",
+  "pages": {
+    "home": {
+      "type": "home",
+      "label": null,
+      "url": "https://mattstromawn.com/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://mattstromawn.com/",
+          "status": 200,
+          "final_url": "https://mattstromawn.com/",
+          "title": "Matt Ström-Awn, designer-leader",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 390,
+          "height": 2674,
+          "file": "shots/home/mattstromawn-390.png",
+          "web": "shots/_web/home/mattstromawn-390.jpg",
+          "web_width": 390,
+          "web_height": 2674
+        },
+        "1440": {
+          "url": "https://mattstromawn.com/",
+          "status": 200,
+          "final_url": "https://mattstromawn.com/",
+          "title": "Matt Ström-Awn, designer-leader",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 2679,
+          "file": "shots/home/mattstromawn-1440.png",
+          "web": "shots/_web/home/mattstromawn-1440.jpg",
+          "web_width": 640,
+          "web_height": 1191
+        }
+      },
+      "final_url": "https://mattstromawn.com/"
+    },
+    "case": {
+      "type": "case",
+      "label": "Copilot Money",
+      "url": "https://mattstromawn.com/projects/copilotmoney/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://mattstromawn.com/projects/copilotmoney/",
+          "status": 200,
+          "final_url": "https://mattstromawn.com/projects/copilotmoney/",
+          "title": "Copilot Money || Matt Ström-Awn, designer-leader",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 390,
+          "height": 6276,
+          "file": "shots/case/mattstromawn-390.png",
+          "web": "shots/_web/case/mattstromawn-390.jpg",
+          "web_width": 390,
+          "web_height": 6276
+        },
+        "1440": {
+          "url": "https://mattstromawn.com/projects/copilotmoney/",
+          "status": 200,
+          "final_url": "https://mattstromawn.com/projects/copilotmoney/",
+          "title": "Copilot Money || Matt Ström-Awn, designer-leader",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 9415,
+          "file": "shots/case/mattstromawn-1440.png",
+          "web": "shots/_web/case/mattstromawn-1440.jpg",
+          "web_width": 640,
+          "web_height": 4184
+        }
+      },
+      "final_url": "https://mattstromawn.com/projects/copilotmoney/"
+    },
+    "about": {
+      "type": "about",
+      "label": null,
+      "url": "https://mattstromawn.com/about",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://mattstromawn.com/about",
+          "status": 200,
+          "final_url": "https://mattstromawn.com/about/",
+          "title": "Matt Ström-Awn, designer-leader",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 390,
+          "height": 2464,
+          "file": "shots/about/mattstromawn-390.png",
+          "web": "shots/_web/about/mattstromawn-390.jpg",
+          "web_width": 390,
+          "web_height": 2464
+        },
+        "1440": {
+          "url": "https://mattstromawn.com/about",
+          "status": 200,
+          "final_url": "https://mattstromawn.com/about/",
+          "title": "Matt Ström-Awn, designer-leader",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 2199,
+          "file": "shots/about/mattstromawn-1440.png",
+          "web": "shots/_web/about/mattstromawn-1440.jpg",
+          "web_width": 640,
+          "web_height": 977
+        }
+      },
+      "final_url": "https://mattstromawn.com/about/"
+    },
+    "contact": {
+      "type": "contact",
+      "label": null,
+      "url": null,
+      "note": null,
+      "missing": "no contact page"
+    },
+    "other-1": {
+      "type": "other",
+      "label": "Writing",
+      "url": "https://mattstromawn.com/writing",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://mattstromawn.com/writing",
+          "status": 200,
+          "final_url": "https://mattstromawn.com/writing/",
+          "title": "Matt Ström-Awn, designer-leader",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 390,
+          "height": 8190,
+          "file": "shots/other/mattstromawn-1-390.png",
+          "web": "shots/_web/other/mattstromawn-1-390.jpg",
+          "web_width": 390,
+          "web_height": 8190
+        },
+        "1440": {
+          "url": "https://mattstromawn.com/writing",
+          "status": 200,
+          "final_url": "https://mattstromawn.com/writing/",
+          "title": "Matt Ström-Awn, designer-leader",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 6565,
+          "file": "shots/other/mattstromawn-1-1440.png",
+          "web": "shots/_web/other/mattstromawn-1-1440.jpg",
+          "web_width": 640,
+          "web_height": 2918
+        }
+      },
+      "final_url": "https://mattstromawn.com/writing/"
+    },
+    "other-2": {
+      "type": "other",
+      "label": "Reading",
+      "url": "https://mattstromawn.com/reading",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://mattstromawn.com/reading",
+          "status": 200,
+          "final_url": "https://mattstromawn.com/reading/",
+          "title": "Reading || Matt Ström-Awn, designer-leader",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.005,
+          "method": "fullpage",
+          "width": 390,
+          "height": 2546,
+          "file": "shots/other/mattstromawn-2-390.png",
+          "web": "shots/_web/other/mattstromawn-2-390.jpg",
+          "web_width": 390,
+          "web_height": 2546
+        },
+        "1440": {
+          "url": "https://mattstromawn.com/reading",
+          "status": 200,
+          "final_url": "https://mattstromawn.com/reading/",
+          "title": "Reading || Matt Ström-Awn, designer-leader",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.001,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 2988,
+          "file": "shots/other/mattstromawn-2-1440.png",
+          "web": "shots/_web/other/mattstromawn-2-1440.jpg",
+          "web_width": 640,
+          "web_height": 1328
+        }
+      },
+      "final_url": "https://mattstromawn.com/reading/"
+    }
+  },
+  "captured_at": "2026-11-06T11:41:33.333Z"
+}

@@ -1,0 +1,133 @@
+{
+  "id": "sydneynguyen",
+  "name": "Sydney Nguyen",
+  "input": "https://sydneyknguyen.com",
+  "pages": {
+    "home": {
+      "type": "home",
+      "label": null,
+      "url": "https://sydneyknguyen.com/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://sydneyknguyen.com/",
+          "status": 200,
+          "final_url": "https://sydneyknguyen.com/",
+          "title": "Sydney Nguyen — UX/UI Designer",
+          "password_screen": false,
+          "scroll": "transform",
+          "method": "stitched",
+          "width": 390,
+          "height": 3008,
+          "file": "shots/home/sydneynguyen-390.png",
+          "web": "shots/_web/home/sydneynguyen-390.jpg",
+          "web_width": 390,
+          "web_height": 3008
+        },
+        "1440": {
+          "url": "https://sydneyknguyen.com/",
+          "status": 200,
+          "final_url": "https://sydneyknguyen.com/",
+          "title": "Sydney Nguyen — UX/UI Designer",
+          "password_screen": false,
+          "scroll": "transform",
+          "method": "stitched",
+          "width": 1440,
+          "height": 10576,
+          "file": "shots/home/sydneynguyen-1440.png",
+          "web": "shots/_web/home/sydneynguyen-1440.jpg",
+          "web_width": 640,
+          "web_height": 4700
+        }
+      },
+      "final_url": "https://sydneyknguyen.com/"
+    },
+    "case": {
+      "type": "case",
+      "label": "Shoal",
+      "url": "https://sydneyknguyen.com/shoal",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://sydneyknguyen.com/shoal",
+          "status": 200,
+          "final_url": "https://sydneyknguyen.com/shoal",
+          "title": "Shoal — UX Case Study · Sydney Nguyen",
+          "password_screen": false,
+          "scroll": "transform",
+          "method": "stitched",
+          "truncated_at": 30000,
+          "width": 390,
+          "height": 30000,
+          "file": "shots/case/sydneynguyen-390.png",
+          "web": "shots/_web/case/sydneynguyen-390.jpg",
+          "web_width": 390,
+          "web_height": 30000
+        },
+        "1440": {
+          "url": "https://sydneyknguyen.com/shoal",
+          "status": 200,
+          "final_url": "https://sydneyknguyen.com/shoal",
+          "title": "Shoal — UX Case Study · Sydney Nguyen",
+          "password_screen": false,
+          "scroll": "transform",
+          "method": "stitched",
+          "width": 1440,
+          "height": 26329,
+          "file": "shots/case/sydneynguyen-1440.png",
+          "web": "shots/_web/case/sydneynguyen-1440.jpg",
+          "web_width": 640,
+          "web_height": 11702
+        }
+      },
+      "final_url": "https://sydneyknguyen.com/shoal"
+    },
+    "about": {
+      "type": "about",
+      "label": null,
+      "url": "https://sydneyknguyen.com/about",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://sydneyknguyen.com/about",
+          "status": 200,
+          "final_url": "https://sydneyknguyen.com/about",
+          "title": "About Me · Sydney Nguyen",
+          "password_screen": false,
+          "scroll": "transform",
+          "method": "stitched",
+          "width": 390,
+          "height": 2000,
+          "file": "shots/about/sydneynguyen-390.png",
+          "web": "shots/_web/about/sydneynguyen-390.jpg",
+          "web_width": 390,
+          "web_height": 2000
+        },
+        "1440": {
+          "url": "https://sydneyknguyen.com/about",
+          "status": 200,
+          "final_url": "https://sydneyknguyen.com/about",
+          "title": "About Me · Sydney Nguyen",
+          "password_screen": false,
+          "scroll": "transform",
+          "method": "stitched",
+          "width": 1440,
+          "height": 1574,
+          "file": "shots/about/sydneynguyen-1440.png",
+          "web": "shots/_web/about/sydneynguyen-1440.jpg",
+          "web_width": 640,
+          "web_height": 700
+        }
+      },
+      "final_url": "https://sydneyknguyen.com/about"
+    },
+    "contact": {
+      "type": "contact",
+      "label": null,
+      "url": null,
+      "note": null,
+      "missing": "no contact page"
+    }
+  },
+  "captured_at": "2026-11-06T13:34:47.545Z"
+}

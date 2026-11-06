@@ -1,0 +1,222 @@
+{
+  "id": "prestonb",
+  "name": "Preston Booth",
+  "input": "https://www.prestonb.xyz",
+  "pages": {
+    "home": {
+      "type": "home",
+      "label": null,
+      "url": "https://www.prestonb.xyz/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.prestonb.xyz/",
+          "status": 200,
+          "final_url": "https://www.prestonb.xyz/",
+          "title": "Preston Booth | Product Designer & Builder",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.106,
+          "method": "fullpage",
+          "width": 532,
+          "height": 3446,
+          "file": "shots/home/prestonb-390.png",
+          "web": "shots/_web/home/prestonb-390.jpg",
+          "web_width": 390,
+          "web_height": 2526
+        },
+        "1440": {
+          "url": "https://www.prestonb.xyz/",
+          "status": 200,
+          "final_url": "https://www.prestonb.xyz/",
+          "title": "Preston Booth | Product Designer & Builder",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.061,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 3536,
+          "file": "shots/home/prestonb-1440.png",
+          "web": "shots/_web/home/prestonb-1440.jpg",
+          "web_width": 640,
+          "web_height": 1572
+        }
+      },
+      "final_url": "https://www.prestonb.xyz/"
+    },
+    "case": {
+      "type": "case",
+      "label": "Clerk DNS Settings",
+      "url": "https://www.prestonb.xyz/work/clerk-dns",
+      "note": "Home links to Work; first project there.",
+      "shots": {
+        "390": {
+          "url": "https://www.prestonb.xyz/work/clerk-dns",
+          "status": 200,
+          "final_url": "https://www.prestonb.xyz/work/clerk-dns",
+          "title": "Preston Booth | Product Designer & Builder",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.31,
+          "fallback_reason": "full-page shot differed from live viewport",
+          "method": "stitched",
+          "width": 390,
+          "height": 3811,
+          "file": "shots/case/prestonb-390.png",
+          "web": "shots/_web/case/prestonb-390.jpg",
+          "web_width": 390,
+          "web_height": 3811
+        },
+        "1440": {
+          "url": "https://www.prestonb.xyz/work/clerk-dns",
+          "status": 200,
+          "final_url": "https://www.prestonb.xyz/work/clerk-dns",
+          "title": "Preston Booth | Product Designer & Builder",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.525,
+          "fallback_reason": "full-page shot differed from live viewport",
+          "method": "stitched",
+          "width": 1440,
+          "height": 5113,
+          "file": "shots/case/prestonb-1440.png",
+          "web": "shots/_web/case/prestonb-1440.jpg",
+          "web_width": 640,
+          "web_height": 2272
+        }
+      },
+      "final_url": "https://www.prestonb.xyz/work/clerk-dns"
+    },
+    "about": {
+      "type": "about",
+      "label": null,
+      "url": "https://www.prestonb.xyz/about",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.prestonb.xyz/about",
+          "status": 200,
+          "final_url": "https://www.prestonb.xyz/about",
+          "title": "Preston Booth | Product Designer & Builder",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.03,
+          "method": "fullpage",
+          "width": 390,
+          "height": 3597,
+          "file": "shots/about/prestonb-390.png",
+          "web": "shots/_web/about/prestonb-390.jpg",
+          "web_width": 390,
+          "web_height": 3597
+        },
+        "1440": {
+          "url": "https://www.prestonb.xyz/about",
+          "status": 200,
+          "final_url": "https://www.prestonb.xyz/about",
+          "title": "Preston Booth | Product Designer & Builder",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.004,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 3599,
+          "file": "shots/about/prestonb-1440.png",
+          "web": "shots/_web/about/prestonb-1440.jpg",
+          "web_width": 640,
+          "web_height": 1600
+        }
+      },
+      "final_url": "https://www.prestonb.xyz/about"
+    },
+    "contact": {
+      "type": "contact",
+      "label": null,
+      "url": null,
+      "note": null,
+      "missing": "no contact page"
+    },
+    "other-1": {
+      "type": "other",
+      "label": "Work index",
+      "url": "https://www.prestonb.xyz/work",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.prestonb.xyz/work",
+          "status": 200,
+          "final_url": "https://www.prestonb.xyz/work",
+          "title": "Preston Booth | Product Designer & Builder",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.147,
+          "method": "fullpage",
+          "width": 390,
+          "height": 2497,
+          "file": "shots/other/prestonb-1-390.png",
+          "web": "shots/_web/other/prestonb-1-390.jpg",
+          "web_width": 390,
+          "web_height": 2497
+        },
+        "1440": {
+          "url": "https://www.prestonb.xyz/work",
+          "status": 200,
+          "final_url": "https://www.prestonb.xyz/work",
+          "title": "Preston Booth | Product Designer & Builder",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.051,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 2167,
+          "file": "shots/other/prestonb-1-1440.png",
+          "web": "shots/_web/other/prestonb-1-1440.jpg",
+          "web_width": 640,
+          "web_height": 963
+        }
+      },
+      "final_url": "https://www.prestonb.xyz/work"
+    },
+    "other-2": {
+      "type": "other",
+      "label": "Playground",
+      "url": "https://www.prestonb.xyz/explorations",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.prestonb.xyz/explorations",
+          "status": 200,
+          "final_url": "https://www.prestonb.xyz/explorations",
+          "title": "Preston Booth | Product Designer & Builder",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.08,
+          "method": "fullpage",
+          "width": 390,
+          "height": 7722,
+          "file": "shots/other/prestonb-2-390.png",
+          "web": "shots/_web/other/prestonb-2-390.jpg",
+          "web_width": 390,
+          "web_height": 7722
+        },
+        "1440": {
+          "url": "https://www.prestonb.xyz/explorations",
+          "status": 200,
+          "final_url": "https://www.prestonb.xyz/explorations",
+          "title": "Preston Booth | Product Designer & Builder",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.107,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 12630,
+          "file": "shots/other/prestonb-2-1440.png",
+          "web": "shots/_web/other/prestonb-2-1440.jpg",
+          "web_width": 640,
+          "web_height": 5613
+        }
+      },
+      "final_url": "https://www.prestonb.xyz/explorations"
+    }
+  },
+  "captured_at": "2026-11-06T11:42:24.657Z"
+}

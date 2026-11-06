@@ -1,0 +1,145 @@
+{
+  "id": "edmacovaz",
+  "name": "Ed Macovaz",
+  "input": "https://www.edmacovaz.com/work",
+  "pages": {
+    "home": {
+      "type": "home",
+      "label": "Home",
+      "url": "https://www.edmacovaz.com/",
+      "note": "Brief URL was /work; site root is the portfolio.",
+      "shots": {
+        "390": {
+          "url": "https://www.edmacovaz.com/",
+          "status": 200,
+          "final_url": "https://www.edmacovaz.com/",
+          "title": "Ed Macovaz",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 390,
+          "height": 844,
+          "file": "shots/home/edmacovaz-390.png",
+          "web": "shots/_web/home/edmacovaz-390.jpg",
+          "web_width": 390,
+          "web_height": 844
+        },
+        "1440": {
+          "url": "https://www.edmacovaz.com/",
+          "status": 200,
+          "final_url": "https://www.edmacovaz.com/",
+          "title": "Ed Macovaz",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 900,
+          "file": "shots/home/edmacovaz-1440.png",
+          "web": "shots/_web/home/edmacovaz-1440.jpg",
+          "web_width": 640,
+          "web_height": 400
+        }
+      },
+      "final_url": "https://www.edmacovaz.com/"
+    },
+    "case": {
+      "type": "case",
+      "label": "Work",
+      "url": "https://www.edmacovaz.com/work",
+      "note": "Case studies are written inline on the Work page.",
+      "shots": {
+        "390": {
+          "url": "https://www.edmacovaz.com/work",
+          "status": 200,
+          "final_url": "https://www.edmacovaz.com/work",
+          "title": "Work | Ed Macovaz",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.009,
+          "method": "fullpage",
+          "width": 390,
+          "height": 6028,
+          "file": "shots/case/edmacovaz-390.png",
+          "web": "shots/_web/case/edmacovaz-390.jpg",
+          "web_width": 390,
+          "web_height": 6028
+        },
+        "1440": {
+          "url": "https://www.edmacovaz.com/work",
+          "status": 200,
+          "final_url": "https://www.edmacovaz.com/work",
+          "title": "Work | Ed Macovaz",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.002,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 5049,
+          "file": "shots/case/edmacovaz-1440.png",
+          "web": "shots/_web/case/edmacovaz-1440.jpg",
+          "web_width": 640,
+          "web_height": 2244
+        }
+      },
+      "final_url": "https://www.edmacovaz.com/work"
+    },
+    "about": {
+      "type": "about",
+      "label": null,
+      "url": null,
+      "note": null,
+      "missing": "none found"
+    },
+    "contact": {
+      "type": "contact",
+      "label": null,
+      "url": null,
+      "note": "Email/LinkedIn on home.",
+      "missing": "no contact page"
+    },
+    "other-1": {
+      "type": "other",
+      "label": "Notes",
+      "url": "https://www.edmacovaz.com/notes",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.edmacovaz.com/notes",
+          "status": 200,
+          "final_url": "https://www.edmacovaz.com/notes",
+          "title": "Notes | Ed Macovaz",
+          "password_screen": false,
+          "scroll": "window",
+          "method": "stitched",
+          "truncated_at": 30000,
+          "width": 390,
+          "height": 30000,
+          "file": "shots/other/edmacovaz-1-390.png",
+          "web": "shots/_web/other/edmacovaz-1-390.jpg",
+          "web_width": 390,
+          "web_height": 30000
+        },
+        "1440": {
+          "url": "https://www.edmacovaz.com/notes",
+          "status": 200,
+          "final_url": "https://www.edmacovaz.com/notes",
+          "title": "Notes | Ed Macovaz",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.114,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 24629,
+          "file": "shots/other/edmacovaz-1-1440.png",
+          "web": "shots/_web/other/edmacovaz-1-1440.jpg",
+          "web_width": 640,
+          "web_height": 10946
+        }
+      },
+      "final_url": "https://www.edmacovaz.com/notes"
+    }
+  },
+  "captured_at": "2026-11-06T12:36:48.987Z"
+}

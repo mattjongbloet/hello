@@ -1,0 +1,137 @@
+{
+  "id": "taschiba",
+  "name": "Sati Tashibayeva",
+  "input": "https://taschiba.com",
+  "pages": {
+    "home": {
+      "type": "home",
+      "label": null,
+      "url": "https://taschiba.com/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://taschiba.com/",
+          "status": 200,
+          "final_url": "https://taschiba.com/",
+          "title": "Sati Tashibayeva — Product Designer",
+          "password_screen": false,
+          "scroll": "transform",
+          "method": "stitched",
+          "width": 390,
+          "height": 3927,
+          "file": "shots/home/taschiba-390.png",
+          "web": "shots/_web/home/taschiba-390.jpg",
+          "web_width": 390,
+          "web_height": 3927
+        },
+        "1440": {
+          "url": "https://taschiba.com/",
+          "status": 200,
+          "final_url": "https://taschiba.com/",
+          "title": "Sati Tashibayeva — Product Designer",
+          "password_screen": false,
+          "scroll": "transform",
+          "method": "stitched",
+          "width": 1440,
+          "height": 3613,
+          "file": "shots/home/taschiba-1440.png",
+          "web": "shots/_web/home/taschiba-1440.jpg",
+          "web_width": 640,
+          "web_height": 1606
+        }
+      },
+      "final_url": "https://taschiba.com/"
+    },
+    "case": {
+      "type": "case",
+      "label": "Indeed AI (locked)",
+      "url": "https://taschiba.com/indeed-ai/",
+      "note": "All three on-site case studies are password protected. The only unlocked one is on Behance, which blocks automated browsers (HTTP 403), so the password screen is shown.",
+      "shots": {
+        "390": {
+          "url": "https://taschiba.com/indeed-ai/",
+          "status": 200,
+          "final_url": "https://taschiba.com/indeed-ai/",
+          "title": "Indeed AI Resume Tailoring — Sati Tashibayeva",
+          "password_screen": true,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 395,
+          "height": 950,
+          "file": "shots/case/taschiba-390.png",
+          "web": "shots/_web/case/taschiba-390.jpg",
+          "web_width": 390,
+          "web_height": 938
+        },
+        "1440": {
+          "url": "https://taschiba.com/indeed-ai/",
+          "status": 200,
+          "final_url": "https://taschiba.com/indeed-ai/",
+          "title": "Indeed AI Resume Tailoring — Sati Tashibayeva",
+          "password_screen": true,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 966,
+          "file": "shots/case/taschiba-1440.png",
+          "web": "shots/_web/case/taschiba-1440.jpg",
+          "web_width": 640,
+          "web_height": 429
+        }
+      },
+      "final_url": "https://taschiba.com/indeed-ai/",
+      "locked": true
+    },
+    "about": {
+      "type": "about",
+      "label": null,
+      "url": "https://taschiba.com/about/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://taschiba.com/about/",
+          "status": 200,
+          "final_url": "https://taschiba.com/about/",
+          "title": "About — Sati Tashibayeva",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.023,
+          "method": "fullpage",
+          "width": 390,
+          "height": 4974,
+          "file": "shots/about/taschiba-390.png",
+          "web": "shots/_web/about/taschiba-390.jpg",
+          "web_width": 390,
+          "web_height": 4974
+        },
+        "1440": {
+          "url": "https://taschiba.com/about/",
+          "status": 200,
+          "final_url": "https://taschiba.com/about/",
+          "title": "About — Sati Tashibayeva",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.012,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 3100,
+          "file": "shots/about/taschiba-1440.png",
+          "web": "shots/_web/about/taschiba-1440.jpg",
+          "web_width": 640,
+          "web_height": 1378
+        }
+      },
+      "final_url": "https://taschiba.com/about/"
+    },
+    "contact": {
+      "type": "contact",
+      "label": null,
+      "url": null,
+      "note": null,
+      "missing": "no contact page"
+    }
+  },
+  "captured_at": "2026-11-06T13:07:53.715Z"
+}

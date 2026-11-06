@@ -12,7 +12,7 @@ const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
 const SHOTS = path.join(ROOT, 'shots');
-const TMP = path.join(SHOTS, '_frames');
+const TMP = path.join(SHOTS, '_frames', String(process.pid));
 const MAX_H = 30000; // safety cap on captured page height (px)
 
 const WIDTHS = {
@@ -51,7 +51,14 @@ async function dismissPopups(page) {
       if (btn) btn.click(); else c.remove();
     }
   }, DISMISS_TEXT.source).catch(() => {});
-  await page.keyboard.press('Escape').catch(() => {});
+  // Escape only when a modal is open, and undo it if it navigated (some sites bind Escape to "Back").
+  const modal = await page.locator('[role=dialog]:visible, [aria-modal=true]:visible').count().catch(() => 0);
+  if (modal) {
+    const before = page.url();
+    await page.keyboard.press('Escape').catch(() => {});
+    await sleep(500);
+    if (page.url() !== before) await page.goto(before, { waitUntil: 'domcontentloaded' }).catch(() => {});
+  }
 }
 
 // Find how the page scrolls: native window, an inner overflow container, or a transformed smooth-scroll wrapper.
@@ -59,9 +66,11 @@ async function scrollModel(page) {
   return page.evaluate(() => {
     const doc = document.scrollingElement || document.documentElement;
     const vh = innerHeight;
-    if (doc.scrollHeight > vh * 1.15) return { kind: 'window', height: doc.scrollHeight };
+    // Trust window scrolling only if it actually moves.
+    const y0 = scrollY; scrollTo(0, y0 + 50); const windowScrolls = scrollY !== y0; scrollTo(0, y0);
+    if (doc.scrollHeight > vh * 1.15 && windowScrolls) return { kind: 'window', height: doc.scrollHeight };
     let best = null;
-    for (const el of document.querySelectorAll('body *')) {
+    for (const el of [document.body, ...document.querySelectorAll('body *')]) {
       const s = getComputedStyle(el);
       if (/(auto|scroll)/.test(s.overflowY) && el.scrollHeight > el.clientHeight + 50 && el.clientHeight > vh * 0.7) {
         if (!best || el.scrollHeight > best.scrollHeight) best = el;
@@ -168,14 +177,16 @@ async function stitchCapture(page, model, out) {
   }, model.kind);
   const scrollTo = (y) => page.evaluate(([k, y]) => {
     if (k === 'inner') { const e = document.querySelector('[data-cap-scroller]'); e.scrollTop = y; return e.scrollTop; }
-    window.scrollTo(0, y); return k === 'transform' ? null : Math.round(scrollY);
+    document.documentElement.style.scrollBehavior = 'auto';
+    window.scrollTo({ top: y, behavior: 'instant' }); return null;
   }, [model.kind, y]);
+  const readWindowY = () => page.evaluate(() => Math.round(scrollY));
   let y = 0, prevOffset = -1, total = model.height;
-  for (let i = 0; i < Math.ceil(MAX_H / vh) + 2; i++) {
+  for (let i = 0; i < Math.ceil((2 * MAX_H) / vh) + 2; i++) { // half-viewport steps
     let actual = await scrollTo(y);
     if (model.kind === 'transform') {
       // Drive the smooth-scroll library with the wheel and read back the wrapper's translateY.
-      if (i) await page.mouse.wheel(0, vh);
+      if (i) await page.mouse.wheel(0, Math.round(vh / 2));
       await sleep(1000);
       actual = await page.evaluate(() => {
         const e = document.querySelector('[data-cap-scroller]');
@@ -184,6 +195,7 @@ async function stitchCapture(page, model, out) {
       });
     } else {
       await sleep(900);
+      if (model.kind === 'window') actual = await readWindowY();
     }
     await waitViewportImages(page);
     if (actual === prevOffset) break;
@@ -248,7 +260,7 @@ async function fullPageLooksBroken(page, out, height) {
   return worst;
 }
 
-async function capturePage(ctx, spec, out) {
+async function capturePage(ctx, spec, out, width) {
   const rec = { url: spec.url };
   let page;
   // Load, run any page actions, dismiss popups, slow-scroll to trigger lazy content, wait for fonts/images.
@@ -261,7 +273,7 @@ async function capturePage(ctx, spec, out) {
     await sleep(1200);
     for (const a of spec.actions || []) {
       // Actions (e.g. an intro gate) may already be gone on a repeat visit in the same context.
-      if (a.click) await page.locator(a.click).first().click({ timeout: 6000 }).catch(() => {});
+      if (a.click) await page.locator(a.click).filter({ visible: true }).first().click({ timeout: 8000 }).catch(() => {});
       await sleep(a.wait || 2000);
     }
     await dismissPopups(page);
@@ -279,7 +291,13 @@ async function capturePage(ctx, spec, out) {
     let model = await prepare();
     rec.scroll = model.kind;
     let method = 'fullpage';
-    if (model.kind === 'window' && model.height <= MAX_H) {
+    // viewport: true for every width, or a list of widths (e.g. ["390"]) for fixed overlays that don't scroll with the page.
+    const viewportOnly = spec.viewport === true || (Array.isArray(spec.viewport) && spec.viewport.includes(String(width)));
+    if (viewportOnly) {
+      method = 'viewport';
+      await page.evaluate(() => scrollTo(0, 0)); await sleep(500);
+      await page.screenshot({ path: out });
+    } else if (model.kind === 'window' && model.height <= MAX_H) {
       await relocateBottomFixed(page);
       await page.screenshot({ path: out, fullPage: true, timeout: 90000 });
       await restoreBottomFixed(page);
@@ -295,6 +313,7 @@ async function capturePage(ctx, spec, out) {
       if (method === 'stitched') model = await prepare();
     } else method = 'stitched';
     if (method === 'stitched') await stitchCapture(page, model, out);
+
     rec.method = method;
     if (model.height > MAX_H) rec.truncated_at = MAX_H;
     const [w, h] = py(['size', out]).split(' ').map(Number);
@@ -309,8 +328,6 @@ async function capturePage(ctx, spec, out) {
 (async () => {
   const sites = JSON.parse(fs.readFileSync(path.join(ROOT, 'sites.json'), 'utf8'));
   const only = process.argv.slice(2);
-  const manifestPath = path.join(ROOT, 'manifest.json');
-  const manifest = fs.existsSync(manifestPath) ? JSON.parse(fs.readFileSync(manifestPath, 'utf8')) : { sites: {} };
   fs.mkdirSync(TMP, { recursive: true });
   const browser = await chromium.launch();
 
@@ -335,16 +352,17 @@ async function capturePage(ctx, spec, out) {
         const name = n ? `${site.id}-${n}-${w}` : `${site.id}-${w}`;
         const rel = `shots/${type}/${name}.png`;
         fs.mkdirSync(path.join(SHOTS, type), { recursive: true });
-        const r = await capturePage(ctxs[w], spec, path.join(ROOT, rel));
+        const r = await capturePage(ctxs[w], spec, path.join(ROOT, rel), w);
         if (!r.error) {
           const web = `shots/_web/${type}/${name}.jpg`;
           fs.mkdirSync(path.join(SHOTS, '_web', type), { recursive: true });
-          const [tw, th] = py(['thumb', path.join(ROOT, rel), path.join(ROOT, web), w === '1440' ? '480' : '390']).split(' ').map(Number);
+          const [tw, th] = py(['thumb', path.join(ROOT, rel), path.join(ROOT, web), w === '1440' ? '640' : '390']).split(' ').map(Number);
           Object.assign(r, { file: rel, web, web_width: tw, web_height: th });
         }
         rec.shots[w] = r;
         rec.final_url = rec.final_url || r.final_url;
-        if (r.password_screen && type === 'case') rec.locked = true;
+        // A password field on a short page is a password screen; long pages may just carry a hidden form.
+        if (r.password_screen && type === 'case' && r.height && r.height < 2.2 * (w === '1440' ? 900 : 844)) rec.locked = true;
         console.log(`  ${key} @${w}: ${r.error ? 'FAILED ' + r.error : `${r.method} ${r.width}x${r.height} (${r.scroll})`}`);
       }
       if (Object.values(rec.shots).every((s) => s.error)) rec.failed = Object.values(rec.shots)[0].error;
@@ -352,12 +370,9 @@ async function capturePage(ctx, spec, out) {
     }
     for (const c of Object.values(ctxs)) await c.close();
     entry.captured_at = new Date().toISOString();
-    manifest.sites[site.id] = entry;
-    manifest.order = sites.map((s) => s.id).filter((id) => manifest.sites[id]);
-    fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2));
+    fs.mkdirSync(path.join(SHOTS, '_manifest'), { recursive: true });
+    fs.writeFileSync(path.join(SHOTS, '_manifest', `${site.id}.json`), JSON.stringify(entry, null, 2));
   }
   await browser.close();
-  fs.rmSync(TMP, { recursive: true, force: true });
-  // canvas.html reads manifest.js (a <script>, so it works over file://).
-  fs.writeFileSync(path.join(ROOT, 'manifest.js'), `window.MANIFEST = ${JSON.stringify(manifest)};\n`);
+  // Run tools/build-canvas.js afterwards to merge shots/_manifest/*.json into manifest.json.
 })();

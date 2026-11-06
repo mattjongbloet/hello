@@ -1,0 +1,195 @@
+{
+  "id": "justinjaywang",
+  "name": "Justin Jay Wang",
+  "input": "https://justinjay.wang",
+  "pages": {
+    "home": {
+      "type": "home",
+      "label": null,
+      "url": "https://justinjay.wang/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://justinjay.wang/",
+          "status": 200,
+          "final_url": "https://justinjay.wang/",
+          "title": "Justin Jay Wang",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.164,
+          "fallback_reason": "full-page shot differed from live viewport",
+          "method": "stitched",
+          "width": 390,
+          "height": 2844,
+          "file": "shots/home/justinjaywang-390.png",
+          "web": "shots/_web/home/justinjaywang-390.jpg",
+          "web_width": 390,
+          "web_height": 2844
+        },
+        "1440": {
+          "url": "https://justinjay.wang/",
+          "status": 200,
+          "final_url": "https://justinjay.wang/",
+          "title": "Justin Jay Wang",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.177,
+          "fallback_reason": "full-page shot differed from live viewport",
+          "method": "stitched",
+          "width": 1440,
+          "height": 2719,
+          "file": "shots/home/justinjaywang-1440.png",
+          "web": "shots/_web/home/justinjaywang-1440.jpg",
+          "web_width": 640,
+          "web_height": 1208
+        }
+      },
+      "final_url": "https://justinjay.wang/"
+    },
+    "case": {
+      "type": "case",
+      "label": null,
+      "url": null,
+      "note": "No case studies; home is About + posts, photos, notes.",
+      "missing": "none found"
+    },
+    "about": {
+      "type": "about",
+      "label": null,
+      "url": null,
+      "note": "Home opens with an About section.",
+      "same_as": "home"
+    },
+    "contact": {
+      "type": "contact",
+      "label": null,
+      "url": null,
+      "note": null,
+      "missing": "no contact page"
+    },
+    "other-1": {
+      "type": "other",
+      "label": "Posts",
+      "url": "https://justinjay.wang/posts/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://justinjay.wang/posts/",
+          "status": 200,
+          "final_url": "https://justinjay.wang/posts/",
+          "title": "Posts",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 390,
+          "height": 2313,
+          "file": "shots/other/justinjaywang-1-390.png",
+          "web": "shots/_web/other/justinjaywang-1-390.jpg",
+          "web_width": 390,
+          "web_height": 2313
+        },
+        "1440": {
+          "url": "https://justinjay.wang/posts/",
+          "status": 200,
+          "final_url": "https://justinjay.wang/posts/",
+          "title": "Posts",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 1893,
+          "file": "shots/other/justinjaywang-1-1440.png",
+          "web": "shots/_web/other/justinjaywang-1-1440.jpg",
+          "web_width": 640,
+          "web_height": 841
+        }
+      },
+      "final_url": "https://justinjay.wang/posts/"
+    },
+    "other-2": {
+      "type": "other",
+      "label": "Photos",
+      "url": "https://justinjay.wang/photos/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://justinjay.wang/photos/",
+          "status": 200,
+          "final_url": "https://justinjay.wang/photos/",
+          "title": "Photos",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 390,
+          "height": 6856,
+          "file": "shots/other/justinjaywang-2-390.png",
+          "web": "shots/_web/other/justinjaywang-2-390.jpg",
+          "web_width": 390,
+          "web_height": 6856
+        },
+        "1440": {
+          "url": "https://justinjay.wang/photos/",
+          "status": 200,
+          "final_url": "https://justinjay.wang/photos/",
+          "title": "Photos",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 10475,
+          "file": "shots/other/justinjaywang-2-1440.png",
+          "web": "shots/_web/other/justinjaywang-2-1440.jpg",
+          "web_width": 640,
+          "web_height": 4656
+        }
+      },
+      "final_url": "https://justinjay.wang/photos/"
+    },
+    "other-3": {
+      "type": "other",
+      "label": "Now",
+      "url": "https://justinjay.wang/now/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://justinjay.wang/now/",
+          "status": 200,
+          "final_url": "https://justinjay.wang/now/",
+          "title": "Now — Fall 2026",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 390,
+          "height": 2523,
+          "file": "shots/other/justinjaywang-3-390.png",
+          "web": "shots/_web/other/justinjaywang-3-390.jpg",
+          "web_width": 390,
+          "web_height": 2523
+        },
+        "1440": {
+          "url": "https://justinjay.wang/now/",
+          "status": 200,
+          "final_url": "https://justinjay.wang/now/",
+          "title": "Now — Fall 2026",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 2335,
+          "file": "shots/other/justinjaywang-3-1440.png",
+          "web": "shots/_web/other/justinjaywang-3-1440.jpg",
+          "web_width": 640,
+          "web_height": 1038
+        }
+      },
+      "final_url": "https://justinjay.wang/now/"
+    }
+  },
+  "captured_at": "2026-11-06T12:00:16.909Z"
+}

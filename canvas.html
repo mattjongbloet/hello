@@ -330,6 +330,12 @@ a { color: inherit; }
     state.z = Math.max(0.04, z); state.tx = o.x + PAD; state.ty = o.y + PAD;
     applyTransform();
   }
+  // Opening view: fit if the columns fit at a readable size, otherwise start readable at the left edge.
+  function initialView() {
+    fit();
+    if (state.z < 0.3) state.z = 0.3;
+    applyTransform();
+  }
 
   // Pan with drag / wheel, zoom with ctrl|cmd + wheel (trackpad pinch) or two-finger pinch.
   const pointers = new Map();
@@ -474,7 +480,7 @@ a { color: inherit; }
   if (document.fonts) document.fonts.ready.then(applyTransform);
   syncPicker();
   render();
-  fit();
+  initialView();
 })();
 </script>
 

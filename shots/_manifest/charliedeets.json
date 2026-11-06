@@ -1,0 +1,227 @@
+{
+  "id": "charliedeets",
+  "name": "Charlie Deets",
+  "input": "https://charliedeets.com/writings/",
+  "pages": {
+    "home": {
+      "type": "home",
+      "label": "Home",
+      "url": "https://charliedeets.com/",
+      "note": "Brief URL was /writings/; site root is the portfolio.",
+      "shots": {
+        "390": {
+          "url": "https://charliedeets.com/",
+          "status": 200,
+          "final_url": "https://charliedeets.com/",
+          "title": "Charlie Deets",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 390,
+          "height": 844,
+          "file": "shots/home/charliedeets-390.png",
+          "web": "shots/_web/home/charliedeets-390.jpg",
+          "web_width": 390,
+          "web_height": 844
+        },
+        "1440": {
+          "url": "https://charliedeets.com/",
+          "status": 200,
+          "final_url": "https://charliedeets.com/",
+          "title": "Charlie Deets",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 900,
+          "file": "shots/home/charliedeets-1440.png",
+          "web": "shots/_web/home/charliedeets-1440.jpg",
+          "web_width": 640,
+          "web_height": 400
+        }
+      },
+      "final_url": "https://charliedeets.com/"
+    },
+    "case": {
+      "type": "case",
+      "label": "Apple",
+      "url": "https://charliedeets.com/work/apple",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://charliedeets.com/work/apple",
+          "status": 200,
+          "final_url": "https://charliedeets.com/work/apple/",
+          "title": "Charlie Deets | Apple",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.073,
+          "method": "fullpage",
+          "width": 390,
+          "height": 6854,
+          "file": "shots/case/charliedeets-390.png",
+          "web": "shots/_web/case/charliedeets-390.jpg",
+          "web_width": 390,
+          "web_height": 6854
+        },
+        "1440": {
+          "url": "https://charliedeets.com/work/apple",
+          "status": 200,
+          "final_url": "https://charliedeets.com/work/apple/",
+          "title": "Charlie Deets | Apple",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.092,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 9311,
+          "file": "shots/case/charliedeets-1440.png",
+          "web": "shots/_web/case/charliedeets-1440.jpg",
+          "web_width": 640,
+          "web_height": 4138
+        }
+      },
+      "final_url": "https://charliedeets.com/work/apple/"
+    },
+    "about": {
+      "type": "about",
+      "label": null,
+      "url": null,
+      "note": "No about page.",
+      "missing": "none found"
+    },
+    "contact": {
+      "type": "contact",
+      "label": null,
+      "url": null,
+      "note": null,
+      "missing": "no contact page"
+    },
+    "other-1": {
+      "type": "other",
+      "label": "Writing",
+      "url": "https://charliedeets.com/writing/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://charliedeets.com/writing/",
+          "status": 200,
+          "final_url": "https://charliedeets.com/writing/",
+          "title": "Charlie Deets | Writing",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 390,
+          "height": 892,
+          "file": "shots/other/charliedeets-1-390.png",
+          "web": "shots/_web/other/charliedeets-1-390.jpg",
+          "web_width": 390,
+          "web_height": 892
+        },
+        "1440": {
+          "url": "https://charliedeets.com/writing/",
+          "status": 200,
+          "final_url": "https://charliedeets.com/writing/",
+          "title": "Charlie Deets | Writing",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 1020,
+          "file": "shots/other/charliedeets-1-1440.png",
+          "web": "shots/_web/other/charliedeets-1-1440.jpg",
+          "web_width": 640,
+          "web_height": 453
+        }
+      },
+      "final_url": "https://charliedeets.com/writing/"
+    },
+    "other-2": {
+      "type": "other",
+      "label": "Photography",
+      "url": "https://charliedeets.com/photo/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://charliedeets.com/photo/",
+          "status": 200,
+          "final_url": "https://charliedeets.com/photo/",
+          "title": "Charlie Deets | Photography",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.041,
+          "method": "fullpage",
+          "width": 390,
+          "height": 15220,
+          "file": "shots/other/charliedeets-2-390.png",
+          "web": "shots/_web/other/charliedeets-2-390.jpg",
+          "web_width": 390,
+          "web_height": 15220
+        },
+        "1440": {
+          "url": "https://charliedeets.com/photo/",
+          "status": 200,
+          "final_url": "https://charliedeets.com/photo/",
+          "title": "Charlie Deets | Photography",
+          "password_screen": false,
+          "scroll": "window",
+          "method": "stitched",
+          "truncated_at": 30000,
+          "width": 1440,
+          "height": 30000,
+          "file": "shots/other/charliedeets-2-1440.png",
+          "web": "shots/_web/other/charliedeets-2-1440.jpg",
+          "web_width": 640,
+          "web_height": 13333
+        }
+      },
+      "final_url": "https://charliedeets.com/photo/"
+    },
+    "other-3": {
+      "type": "other",
+      "label": "Virtual Reality",
+      "url": "https://charliedeets.com/vr/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://charliedeets.com/vr/",
+          "status": 200,
+          "final_url": "https://charliedeets.com/vr/",
+          "title": "Charlie Deets | Virtual Reality",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.028,
+          "method": "fullpage",
+          "width": 390,
+          "height": 3819,
+          "file": "shots/other/charliedeets-3-390.png",
+          "web": "shots/_web/other/charliedeets-3-390.jpg",
+          "web_width": 390,
+          "web_height": 3819
+        },
+        "1440": {
+          "url": "https://charliedeets.com/vr/",
+          "status": 200,
+          "final_url": "https://charliedeets.com/vr/",
+          "title": "Charlie Deets | Virtual Reality",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.007,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 6627,
+          "file": "shots/other/charliedeets-3-1440.png",
+          "web": "shots/_web/other/charliedeets-3-1440.jpg",
+          "web_width": 640,
+          "web_height": 2945
+        }
+      },
+      "final_url": "https://charliedeets.com/vr/"
+    }
+  },
+  "captured_at": "2026-11-06T12:38:33.408Z"
+}

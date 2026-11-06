@@ -1,0 +1,227 @@
+{
+  "id": "chloeyan",
+  "name": "Chloe Yan",
+  "input": "https://www.chloeyan.me",
+  "pages": {
+    "home": {
+      "type": "home",
+      "label": null,
+      "url": "https://www.chloeyan.me/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.chloeyan.me/",
+          "status": 200,
+          "final_url": "https://www.chloeyan.me/",
+          "title": "Chloe Yan",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 390,
+          "height": 844,
+          "file": "shots/home/chloeyan-390.png",
+          "web": "shots/_web/home/chloeyan-390.jpg",
+          "web_width": 390,
+          "web_height": 844
+        },
+        "1440": {
+          "url": "https://www.chloeyan.me/",
+          "status": 200,
+          "final_url": "https://www.chloeyan.me/",
+          "title": "Chloe Yan",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 900,
+          "file": "shots/home/chloeyan-1440.png",
+          "web": "shots/_web/home/chloeyan-1440.jpg",
+          "web_width": 640,
+          "web_height": 400
+        }
+      },
+      "final_url": "https://www.chloeyan.me/"
+    },
+    "case": {
+      "type": "case",
+      "label": null,
+      "url": null,
+      "note": "Home is a 3D garden linking to collections (Interface ideas, Shaders, Digital spaces, Journal), not case studies.",
+      "missing": "none found"
+    },
+    "about": {
+      "type": "about",
+      "label": null,
+      "url": "https://www.chloeyan.me/about",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.chloeyan.me/about",
+          "status": 200,
+          "final_url": "https://www.chloeyan.me/about",
+          "title": "Chloe Yan",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 390,
+          "height": 844,
+          "file": "shots/about/chloeyan-390.png",
+          "web": "shots/_web/about/chloeyan-390.jpg",
+          "web_width": 390,
+          "web_height": 844
+        },
+        "1440": {
+          "url": "https://www.chloeyan.me/about",
+          "status": 200,
+          "final_url": "https://www.chloeyan.me/about",
+          "title": "Chloe Yan",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 900,
+          "file": "shots/about/chloeyan-1440.png",
+          "web": "shots/_web/about/chloeyan-1440.jpg",
+          "web_width": 640,
+          "web_height": 400
+        }
+      },
+      "final_url": "https://www.chloeyan.me/about"
+    },
+    "contact": {
+      "type": "contact",
+      "label": null,
+      "url": null,
+      "note": null,
+      "missing": "no contact page"
+    },
+    "other-1": {
+      "type": "other",
+      "label": "Interface ideas",
+      "url": "https://www.chloeyan.me/interface-ideas",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.chloeyan.me/interface-ideas",
+          "status": 200,
+          "final_url": "https://www.chloeyan.me/interface-ideas",
+          "title": "Interface ideas",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 390,
+          "height": 844,
+          "file": "shots/other/chloeyan-1-390.png",
+          "web": "shots/_web/other/chloeyan-1-390.jpg",
+          "web_width": 390,
+          "web_height": 844
+        },
+        "1440": {
+          "url": "https://www.chloeyan.me/interface-ideas",
+          "status": 200,
+          "final_url": "https://www.chloeyan.me/interface-ideas",
+          "title": "Interface ideas",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 900,
+          "file": "shots/other/chloeyan-1-1440.png",
+          "web": "shots/_web/other/chloeyan-1-1440.jpg",
+          "web_width": 640,
+          "web_height": 400
+        }
+      },
+      "final_url": "https://www.chloeyan.me/interface-ideas"
+    },
+    "other-2": {
+      "type": "other",
+      "label": "Digital spaces",
+      "url": "https://www.chloeyan.me/digital-spaces",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.chloeyan.me/digital-spaces",
+          "status": 200,
+          "final_url": "https://www.chloeyan.me/digital-spaces",
+          "title": "Digital spaces",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 390,
+          "height": 844,
+          "file": "shots/other/chloeyan-2-390.png",
+          "web": "shots/_web/other/chloeyan-2-390.jpg",
+          "web_width": 390,
+          "web_height": 844
+        },
+        "1440": {
+          "url": "https://www.chloeyan.me/digital-spaces",
+          "status": 200,
+          "final_url": "https://www.chloeyan.me/digital-spaces",
+          "title": "Digital spaces",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 900,
+          "file": "shots/other/chloeyan-2-1440.png",
+          "web": "shots/_web/other/chloeyan-2-1440.jpg",
+          "web_width": 640,
+          "web_height": 400
+        }
+      },
+      "final_url": "https://www.chloeyan.me/digital-spaces"
+    },
+    "other-3": {
+      "type": "other",
+      "label": "Shaders",
+      "url": "https://www.chloeyan.me/shaders",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://www.chloeyan.me/shaders",
+          "status": 200,
+          "final_url": "https://www.chloeyan.me/shaders",
+          "title": "Shaders",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 430,
+          "height": 931,
+          "file": "shots/other/chloeyan-3-390.png",
+          "web": "shots/_web/other/chloeyan-3-390.jpg",
+          "web_width": 390,
+          "web_height": 844
+        },
+        "1440": {
+          "url": "https://www.chloeyan.me/shaders",
+          "status": 200,
+          "final_url": "https://www.chloeyan.me/shaders",
+          "title": "Shaders",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1482,
+          "height": 900,
+          "file": "shots/other/chloeyan-3-1440.png",
+          "web": "shots/_web/other/chloeyan-3-1440.jpg",
+          "web_width": 640,
+          "web_height": 389
+        }
+      },
+      "final_url": "https://www.chloeyan.me/shaders"
+    }
+  },
+  "captured_at": "2026-11-06T11:34:34.128Z"
+}

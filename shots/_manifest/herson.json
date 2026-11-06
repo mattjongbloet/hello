@@ -1,0 +1,145 @@
+{
+  "id": "herson",
+  "name": "Herson",
+  "input": "https://herson.me",
+  "pages": {
+    "home": {
+      "type": "home",
+      "label": null,
+      "url": "https://herson.me/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://herson.me/",
+          "status": 200,
+          "final_url": "https://herson.me/",
+          "title": "Herson Portfolio",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.091,
+          "method": "fullpage",
+          "width": 390,
+          "height": 1204,
+          "file": "shots/home/herson-390.png",
+          "web": "shots/_web/home/herson-390.jpg",
+          "web_width": 390,
+          "web_height": 1204
+        },
+        "1440": {
+          "url": "https://herson.me/",
+          "status": 200,
+          "final_url": "https://herson.me/",
+          "title": "Herson Portfolio",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 900,
+          "file": "shots/home/herson-1440.png",
+          "web": "shots/_web/home/herson-1440.jpg",
+          "web_width": 640,
+          "web_height": 400
+        }
+      },
+      "final_url": "https://herson.me/"
+    },
+    "case": {
+      "type": "case",
+      "label": "Benjamin",
+      "url": "https://herson.me/benjamin",
+      "note": "First past-work project (Phantom) is password protected.",
+      "shots": {
+        "390": {
+          "url": "https://herson.me/benjamin",
+          "status": 200,
+          "final_url": "https://herson.me/benjamin",
+          "title": "Herson Portfolio",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.085,
+          "method": "fullpage",
+          "width": 390,
+          "height": 6923,
+          "file": "shots/case/herson-390.png",
+          "web": "shots/_web/case/herson-390.jpg",
+          "web_width": 390,
+          "web_height": 6923
+        },
+        "1440": {
+          "url": "https://herson.me/benjamin",
+          "status": 200,
+          "final_url": "https://herson.me/benjamin",
+          "title": "Herson Portfolio",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.027,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 7109,
+          "file": "shots/case/herson-1440.png",
+          "web": "shots/_web/case/herson-1440.jpg",
+          "web_width": 640,
+          "web_height": 3160
+        }
+      },
+      "final_url": "https://herson.me/benjamin"
+    },
+    "about": {
+      "type": "about",
+      "label": null,
+      "url": null,
+      "note": null,
+      "missing": "none found"
+    },
+    "contact": {
+      "type": "contact",
+      "label": null,
+      "url": null,
+      "note": null,
+      "missing": "no contact page"
+    },
+    "other-1": {
+      "type": "other",
+      "label": "Slap Wall",
+      "url": "https://herson.me/slap-wall",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://herson.me/slap-wall",
+          "status": 200,
+          "final_url": "https://herson.me/slap-wall",
+          "title": "Herson Portfolio",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 390,
+          "height": 852,
+          "file": "shots/other/herson-1-390.png",
+          "web": "shots/_web/other/herson-1-390.jpg",
+          "web_width": 390,
+          "web_height": 852
+        },
+        "1440": {
+          "url": "https://herson.me/slap-wall",
+          "status": 200,
+          "final_url": "https://herson.me/slap-wall",
+          "title": "Herson Portfolio",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 900,
+          "file": "shots/other/herson-1-1440.png",
+          "web": "shots/_web/other/herson-1-1440.jpg",
+          "web_width": 640,
+          "web_height": 400
+        }
+      },
+      "final_url": "https://herson.me/slap-wall"
+    }
+  },
+  "captured_at": "2026-11-06T12:45:14.448Z"
+}

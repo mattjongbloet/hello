@@ -10,8 +10,12 @@ Full-page screenshots of product designer portfolios, laid out on one canvas to 
 ## Re-running
 
 ```
-node tools/capture.js [site-id ...]   # capture (all sites, or just these)
-node tools/build-canvas.js            # rebuild canvas.html + manifest.js
+node tools/capture.js [site-id ...]   # capture (all sites, or just these; run several in parallel on different ids)
+python3 tools/rethumb.py [site-id ...] # regenerate the web-sized JPEGs
+node tools/build-canvas.js            # merge shots/_manifest/*.json into manifest.json, rebuild canvas.html + manifest.js
+python3 tools/report.py               # list missing, locked and failed pages
 ```
 
-Capture: dismisses cookie banners/popups, scrolls slowly to the bottom and back, waits for fonts and images, then takes a full-page shot. Each full-page shot is checked against live viewport shots at 25/50/75% of the page; if it differs (common with smooth-scroll and reveal-on-scroll sites) the page is reloaded and captured as overlapping viewport shots stitched together.
+`sites.json` holds the page picks per portfolio. A page can carry `actions` (clicks/waits before capture, e.g. to open a modal or pass an intro screen), `viewport` (`true` or a list of widths, to capture a fixed window/overlay as one screen), `missing` with a reason, or `same_as` another page type.
+
+Capture: dismisses cookie banners/popups, scrolls slowly to the bottom and back, waits for fonts and images, then takes a full-page shot. Each full-page shot is checked against live viewport shots at 25/50/75% of the page; if it differs (common with smooth-scroll and reveal-on-scroll sites) the page is reloaded and captured as overlapping viewport shots stitched together. Pages are capped at 30,000px tall.

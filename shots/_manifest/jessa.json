@@ -1,0 +1,213 @@
+{
+  "id": "jessa",
+  "name": "Jessa Wolfe",
+  "input": "https://jessa.art",
+  "pages": {
+    "home": {
+      "type": "home",
+      "label": null,
+      "url": "https://jessa.art/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://jessa.art/",
+          "status": 200,
+          "final_url": "https://jessa.art/#",
+          "title": "Jessa Wolfe · Creator",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 390,
+          "height": 844,
+          "file": "shots/home/jessa-390.png",
+          "web": "shots/_web/home/jessa-390.jpg",
+          "web_width": 390,
+          "web_height": 844
+        },
+        "1440": {
+          "url": "https://jessa.art/",
+          "status": 200,
+          "final_url": "https://jessa.art/#",
+          "title": "Jessa Wolfe · Creator",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 900,
+          "file": "shots/home/jessa-1440.png",
+          "web": "shots/_web/home/jessa-1440.jpg",
+          "web_width": 640,
+          "web_height": 400
+        }
+      },
+      "final_url": "https://jessa.art/#"
+    },
+    "case": {
+      "type": "case",
+      "label": "Mochiboard",
+      "url": "https://jessa.art/#mochiboard.html",
+      "note": "First card under Work.",
+      "shots": {
+        "390": {
+          "url": "https://jessa.art/#mochiboard.html",
+          "status": 200,
+          "final_url": "https://jessa.art/#mochiboard.html",
+          "title": "Jessa Wolfe · Creator",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 390,
+          "height": 844,
+          "file": "shots/case/jessa-390.png",
+          "web": "shots/_web/case/jessa-390.jpg",
+          "web_width": 390,
+          "web_height": 844
+        },
+        "1440": {
+          "url": "https://jessa.art/#mochiboard.html",
+          "status": 200,
+          "final_url": "https://jessa.art/#mochiboard.html",
+          "title": "Jessa Wolfe · Dreamer",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 900,
+          "file": "shots/case/jessa-1440.png",
+          "web": "shots/_web/case/jessa-1440.jpg",
+          "web_width": 640,
+          "web_height": 400
+        }
+      },
+      "final_url": "https://jessa.art/#mochiboard.html"
+    },
+    "about": {
+      "type": "about",
+      "label": null,
+      "url": "https://jessa.art/#about",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://jessa.art/#about",
+          "status": 200,
+          "final_url": "https://jessa.art/#about",
+          "title": "Jessa Wolfe · Creator",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 390,
+          "height": 844,
+          "file": "shots/about/jessa-390.png",
+          "web": "shots/_web/about/jessa-390.jpg",
+          "web_width": 390,
+          "web_height": 844
+        },
+        "1440": {
+          "url": "https://jessa.art/#about",
+          "status": 200,
+          "final_url": "https://jessa.art/#about",
+          "title": "Jessa Wolfe · ▜▒▚■✦▟▪",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 900,
+          "file": "shots/about/jessa-1440.png",
+          "web": "shots/_web/about/jessa-1440.jpg",
+          "web_width": 640,
+          "web_height": 400
+        }
+      },
+      "final_url": "https://jessa.art/#about"
+    },
+    "contact": {
+      "type": "contact",
+      "label": "Say hi",
+      "url": "https://jessa.art/#hi",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://jessa.art/#hi",
+          "status": 200,
+          "final_url": "https://jessa.art/#hi",
+          "title": "Jessa Wolfe · Creator",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 390,
+          "height": 844,
+          "file": "shots/contact/jessa-390.png",
+          "web": "shots/_web/contact/jessa-390.jpg",
+          "web_width": 390,
+          "web_height": 844
+        },
+        "1440": {
+          "url": "https://jessa.art/#hi",
+          "status": 200,
+          "final_url": "https://jessa.art/#hi",
+          "title": "Jessa Wolfe · Creator",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 900,
+          "file": "shots/contact/jessa-1440.png",
+          "web": "shots/_web/contact/jessa-1440.jpg",
+          "web_width": 640,
+          "web_height": 400
+        }
+      },
+      "final_url": "https://jessa.art/#hi"
+    },
+    "other-1": {
+      "type": "other",
+      "label": "Talks",
+      "url": "https://jessa.art/#talks",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://jessa.art/#talks",
+          "status": 200,
+          "final_url": "https://jessa.art/#talks",
+          "title": "Jessa Wolfe · Creator",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 390,
+          "height": 844,
+          "file": "shots/other/jessa-1-390.png",
+          "web": "shots/_web/other/jessa-1-390.jpg",
+          "web_width": 390,
+          "web_height": 844
+        },
+        "1440": {
+          "url": "https://jessa.art/#talks",
+          "status": 200,
+          "final_url": "https://jessa.art/#talks",
+          "title": "Jessa Wolfe · Creato▞",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 900,
+          "file": "shots/other/jessa-1-1440.png",
+          "web": "shots/_web/other/jessa-1-1440.jpg",
+          "web_width": 640,
+          "web_height": 400
+        }
+      },
+      "final_url": "https://jessa.art/#talks"
+    }
+  },
+  "captured_at": "2026-11-06T12:14:19.023Z"
+}

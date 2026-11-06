@@ -1,0 +1,229 @@
+{
+  "id": "emilycampbell",
+  "name": "Emily Campbell",
+  "input": "https://emilycampbell.co",
+  "pages": {
+    "home": {
+      "type": "home",
+      "label": null,
+      "url": "https://emilycampbell.co/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://emilycampbell.co/",
+          "status": 200,
+          "final_url": "https://emilycampbell.co/",
+          "title": "Emily Campbell",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.526,
+          "fallback_reason": "full-page shot differed from live viewport",
+          "method": "stitched",
+          "width": 390,
+          "height": 1426,
+          "file": "shots/home/emilycampbell-390.png",
+          "web": "shots/_web/home/emilycampbell-390.jpg",
+          "web_width": 390,
+          "web_height": 1426
+        },
+        "1440": {
+          "url": "https://emilycampbell.co/",
+          "status": 200,
+          "final_url": "https://emilycampbell.co/",
+          "title": "Emily Campbell",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.871,
+          "fallback_reason": "full-page shot differed from live viewport",
+          "method": "stitched",
+          "width": 1440,
+          "height": 1929,
+          "file": "shots/home/emilycampbell-1440.png",
+          "web": "shots/_web/home/emilycampbell-1440.jpg",
+          "web_width": 640,
+          "web_height": 857
+        }
+      },
+      "final_url": "https://emilycampbell.co/"
+    },
+    "case": {
+      "type": "case",
+      "label": null,
+      "url": null,
+      "note": "Work page is a professional-experience list with no case studies.",
+      "missing": "none found"
+    },
+    "about": {
+      "type": "about",
+      "label": "Info",
+      "url": "https://emilycampbell.co/info",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://emilycampbell.co/info",
+          "status": 200,
+          "final_url": "https://emilycampbell.co/info",
+          "title": "Emily Campbell - Design leader, Speaker, Coach",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.003,
+          "method": "fullpage",
+          "width": 390,
+          "height": 5176,
+          "file": "shots/about/emilycampbell-390.png",
+          "web": "shots/_web/about/emilycampbell-390.jpg",
+          "web_width": 390,
+          "web_height": 5176
+        },
+        "1440": {
+          "url": "https://emilycampbell.co/info",
+          "status": 200,
+          "final_url": "https://emilycampbell.co/info",
+          "title": "Emily Campbell - Design leader, Speaker, Coach",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.003,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 3776,
+          "file": "shots/about/emilycampbell-1440.png",
+          "web": "shots/_web/about/emilycampbell-1440.jpg",
+          "web_width": 640,
+          "web_height": 1678
+        }
+      },
+      "final_url": "https://emilycampbell.co/info"
+    },
+    "contact": {
+      "type": "contact",
+      "label": null,
+      "url": null,
+      "note": null,
+      "missing": "no contact page"
+    },
+    "other-1": {
+      "type": "other",
+      "label": "Work (experience)",
+      "url": "https://emilycampbell.co/work",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://emilycampbell.co/work",
+          "status": 200,
+          "final_url": "https://emilycampbell.co/work",
+          "title": "Emily Campbell | Professional experience",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.003,
+          "method": "fullpage",
+          "width": 390,
+          "height": 12355,
+          "file": "shots/other/emilycampbell-1-390.png",
+          "web": "shots/_web/other/emilycampbell-1-390.jpg",
+          "web_width": 390,
+          "web_height": 12355
+        },
+        "1440": {
+          "url": "https://emilycampbell.co/work",
+          "status": 200,
+          "final_url": "https://emilycampbell.co/work",
+          "title": "Emily Campbell | Professional experience",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.001,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 8002,
+          "file": "shots/other/emilycampbell-1-1440.png",
+          "web": "shots/_web/other/emilycampbell-1-1440.jpg",
+          "web_width": 640,
+          "web_height": 3556
+        }
+      },
+      "final_url": "https://emilycampbell.co/work"
+    },
+    "other-2": {
+      "type": "other",
+      "label": "Speaking",
+      "url": "https://emilycampbell.co/speaking",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://emilycampbell.co/speaking",
+          "status": 200,
+          "final_url": "https://emilycampbell.co/speaking",
+          "title": "Emily Campbell | Speaking",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.003,
+          "method": "fullpage",
+          "width": 390,
+          "height": 6257,
+          "file": "shots/other/emilycampbell-2-390.png",
+          "web": "shots/_web/other/emilycampbell-2-390.jpg",
+          "web_width": 390,
+          "web_height": 6257
+        },
+        "1440": {
+          "url": "https://emilycampbell.co/speaking",
+          "status": 200,
+          "final_url": "https://emilycampbell.co/speaking",
+          "title": "Emily Campbell | Speaking",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.001,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 6326,
+          "file": "shots/other/emilycampbell-2-1440.png",
+          "web": "shots/_web/other/emilycampbell-2-1440.jpg",
+          "web_width": 640,
+          "web_height": 2812
+        }
+      },
+      "final_url": "https://emilycampbell.co/speaking"
+    },
+    "other-3": {
+      "type": "other",
+      "label": "Garden",
+      "url": "https://emilycampbell.co/garden",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://emilycampbell.co/garden",
+          "status": 200,
+          "final_url": "https://emilycampbell.co/garden?shelf=seeds&type=all&layout=list",
+          "title": "Garden — Emily Campbell",
+          "password_screen": false,
+          "scroll": "window",
+          "method": "stitched",
+          "truncated_at": 30000,
+          "width": 390,
+          "height": 30000,
+          "file": "shots/other/emilycampbell-3-390.png",
+          "web": "shots/_web/other/emilycampbell-3-390.jpg",
+          "web_width": 390,
+          "web_height": 30000
+        },
+        "1440": {
+          "url": "https://emilycampbell.co/garden",
+          "status": 200,
+          "final_url": "https://emilycampbell.co/garden?shelf=seeds&type=all&layout=list",
+          "title": "Garden — Emily Campbell",
+          "password_screen": false,
+          "scroll": "window",
+          "method": "stitched",
+          "truncated_at": 30000,
+          "width": 1440,
+          "height": 30000,
+          "file": "shots/other/emilycampbell-3-1440.png",
+          "web": "shots/_web/other/emilycampbell-3-1440.jpg",
+          "web_width": 640,
+          "web_height": 13333
+        }
+      },
+      "final_url": "https://emilycampbell.co/garden?shelf=seeds&type=all&layout=list"
+    }
+  },
+  "captured_at": "2026-11-06T12:46:15.891Z"
+}

@@ -1,0 +1,252 @@
+{
+  "id": "buzzusborne",
+  "name": "Buzz Usborne",
+  "input": "https://buzzusborne.com",
+  "pages": {
+    "home": {
+      "type": "home",
+      "label": null,
+      "url": "https://buzzusborne.com/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://buzzusborne.com/",
+          "status": 200,
+          "final_url": "https://buzzusborne.com/",
+          "title": "Buzz Usborne • Home",
+          "password_screen": false,
+          "scroll": "transform",
+          "method": "stitched",
+          "width": 390,
+          "height": 2029,
+          "file": "shots/home/buzzusborne-390.png",
+          "web": "shots/_web/home/buzzusborne-390.jpg",
+          "web_width": 390,
+          "web_height": 2029
+        },
+        "1440": {
+          "url": "https://buzzusborne.com/",
+          "status": 200,
+          "final_url": "https://buzzusborne.com/",
+          "title": "Buzz Usborne • Home",
+          "password_screen": false,
+          "scroll": "transform",
+          "method": "stitched",
+          "width": 1440,
+          "height": 3854,
+          "file": "shots/home/buzzusborne-1440.png",
+          "web": "shots/_web/home/buzzusborne-1440.jpg",
+          "web_width": 640,
+          "web_height": 1713
+        }
+      },
+      "final_url": "https://buzzusborne.com/"
+    },
+    "case": {
+      "type": "case",
+      "label": "Designing with AI",
+      "url": "https://buzzusborne.com/work/designing-with-ai/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://buzzusborne.com/work/designing-with-ai/",
+          "status": 200,
+          "final_url": "https://buzzusborne.com/work/designing-with-ai/",
+          "title": "Buzz Usborne • Designing with AI",
+          "password_screen": false,
+          "scroll": "transform",
+          "method": "stitched",
+          "width": 390,
+          "height": 14672,
+          "file": "shots/case/buzzusborne-390.png",
+          "web": "shots/_web/case/buzzusborne-390.jpg",
+          "web_width": 390,
+          "web_height": 14672
+        },
+        "1440": {
+          "url": "https://buzzusborne.com/work/designing-with-ai/",
+          "status": 200,
+          "final_url": "https://buzzusborne.com/work/designing-with-ai/",
+          "title": "Buzz Usborne • Designing with AI",
+          "password_screen": false,
+          "scroll": "transform",
+          "method": "stitched",
+          "width": 1440,
+          "height": 11794,
+          "file": "shots/case/buzzusborne-1440.png",
+          "web": "shots/_web/case/buzzusborne-1440.jpg",
+          "web_width": 640,
+          "web_height": 5242
+        }
+      },
+      "final_url": "https://buzzusborne.com/work/designing-with-ai/"
+    },
+    "about": {
+      "type": "about",
+      "label": null,
+      "url": "https://buzzusborne.com/about/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://buzzusborne.com/about/",
+          "status": 200,
+          "final_url": "https://buzzusborne.com/about/",
+          "title": "Buzz Usborne • About",
+          "password_screen": false,
+          "scroll": "transform",
+          "method": "stitched",
+          "width": 390,
+          "height": 4764,
+          "file": "shots/about/buzzusborne-390.png",
+          "web": "shots/_web/about/buzzusborne-390.jpg",
+          "web_width": 390,
+          "web_height": 4764
+        },
+        "1440": {
+          "url": "https://buzzusborne.com/about/",
+          "status": 200,
+          "final_url": "https://buzzusborne.com/about/",
+          "title": "Buzz Usborne • About",
+          "password_screen": false,
+          "scroll": "transform",
+          "method": "stitched",
+          "width": 1440,
+          "height": 3505,
+          "file": "shots/about/buzzusborne-1440.png",
+          "web": "shots/_web/about/buzzusborne-1440.jpg",
+          "web_width": 640,
+          "web_height": 1558
+        }
+      },
+      "final_url": "https://buzzusborne.com/about/"
+    },
+    "contact": {
+      "type": "contact",
+      "label": null,
+      "url": null,
+      "note": null,
+      "missing": "no contact page"
+    },
+    "other-1": {
+      "type": "other",
+      "label": "Writing",
+      "url": "https://buzzusborne.com/writing/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://buzzusborne.com/writing/",
+          "status": 200,
+          "final_url": "https://buzzusborne.com/writing/",
+          "title": "Buzz Usborne • Coaching Notes",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.174,
+          "fallback_reason": "full-page shot differed from live viewport",
+          "method": "stitched",
+          "width": 390,
+          "height": 844,
+          "file": "shots/other/buzzusborne-1-390.png",
+          "web": "shots/_web/other/buzzusborne-1-390.jpg",
+          "web_width": 390,
+          "web_height": 844
+        },
+        "1440": {
+          "url": "https://buzzusborne.com/writing/",
+          "status": 200,
+          "final_url": "https://buzzusborne.com/writing/",
+          "title": "Buzz Usborne • Coaching Notes",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.055,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 1791,
+          "file": "shots/other/buzzusborne-1-1440.png",
+          "web": "shots/_web/other/buzzusborne-1-1440.jpg",
+          "web_width": 640,
+          "web_height": 796
+        }
+      },
+      "final_url": "https://buzzusborne.com/writing/"
+    },
+    "other-2": {
+      "type": "other",
+      "label": "Press",
+      "url": "https://buzzusborne.com/press/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://buzzusborne.com/press/",
+          "status": 200,
+          "final_url": "https://buzzusborne.com/press/",
+          "title": "Buzz Usborne • Press",
+          "password_screen": false,
+          "scroll": "transform",
+          "method": "stitched",
+          "width": 390,
+          "height": 3524,
+          "file": "shots/other/buzzusborne-2-390.png",
+          "web": "shots/_web/other/buzzusborne-2-390.jpg",
+          "web_width": 390,
+          "web_height": 3524
+        },
+        "1440": {
+          "url": "https://buzzusborne.com/press/",
+          "status": 200,
+          "final_url": "https://buzzusborne.com/press/",
+          "title": "Buzz Usborne • Press",
+          "password_screen": false,
+          "scroll": "transform",
+          "method": "stitched",
+          "width": 1440,
+          "height": 2879,
+          "file": "shots/other/buzzusborne-2-1440.png",
+          "web": "shots/_web/other/buzzusborne-2-1440.jpg",
+          "web_width": 640,
+          "web_height": 1280
+        }
+      },
+      "final_url": "https://buzzusborne.com/press/"
+    },
+    "other-3": {
+      "type": "other",
+      "label": "CV",
+      "url": "https://buzzusborne.com/cv/",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "https://buzzusborne.com/cv/",
+          "status": 200,
+          "final_url": "https://buzzusborne.com/cv/",
+          "title": "Buzz Usborne • CV",
+          "password_screen": false,
+          "scroll": "transform",
+          "method": "stitched",
+          "width": 390,
+          "height": 10950,
+          "file": "shots/other/buzzusborne-3-390.png",
+          "web": "shots/_web/other/buzzusborne-3-390.jpg",
+          "web_width": 390,
+          "web_height": 10950
+        },
+        "1440": {
+          "url": "https://buzzusborne.com/cv/",
+          "status": 200,
+          "final_url": "https://buzzusborne.com/cv/",
+          "title": "Buzz Usborne • CV",
+          "password_screen": false,
+          "scroll": "transform",
+          "method": "stitched",
+          "width": 1440,
+          "height": 7306,
+          "file": "shots/other/buzzusborne-3-1440.png",
+          "web": "shots/_web/other/buzzusborne-3-1440.jpg",
+          "web_width": 640,
+          "web_height": 3247
+        }
+      },
+      "final_url": "https://buzzusborne.com/cv/"
+    }
+  },
+  "captured_at": "2026-11-06T12:27:47.422Z"
+}
