@@ -334,7 +334,7 @@ async function capturePage(ctx, spec, out, width) {
   for (const site of sites) {
     if (only.length && !only.includes(site.id)) continue;
     console.log(`\n# ${site.id}`);
-    const entry = { id: site.id, name: site.name, input: site.input, pages: {} };
+    const entry = { id: site.id, name: site.name, input: site.input, ...(site.self ? { self: true } : {}), pages: {} };
     // Page list: [type, key, spec, index]
     const jobs = [];
     for (const t of ['home', 'case', 'about', 'contact']) jobs.push([t, t, site[t] || { missing: 'none found' }]);
