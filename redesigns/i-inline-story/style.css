@@ -1,0 +1,92 @@
+/* Direction I — Inline Story
+   Layout: a single wide measure of oversized running text; projects appear as inline image chips inside sentences.
+   Grey carries the narrative, black marks the facts and links. */
+:root {
+  --paper: #ffffff;
+  --ink: #111214;
+  --story: #6b7079;        /* 4.9:1 on white */
+  --line: #e4e5e8;
+  --soft: #f3f4f6;
+  --accent: #2b59ff;       /* focus + hover only */
+  --font: "Familjen Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --big: clamp(30px, 5.2vw, 84px);
+  --mid: clamp(24px, 3vw, 44px);
+}
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 18px/1.6 var(--font); -webkit-font-smoothing: antialiased; font-variant-numeric: tabular-nums; }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; border-radius: 8px; }
+h1, h2, h3, p, ul, ol, figure { margin: 0; }
+.wrap { max-width: 1360px; margin: 0 auto; padding-left: max(24px, env(safe-area-inset-left, 0px)); padding-right: max(24px, env(safe-area-inset-right, 0px)); }
+
+/* Top */
+.top { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-block: 24px; font-size: 15px; }
+.top a { text-decoration: none; display: inline-block; padding-block: 8px; }
+.top .name { font-weight: 600; }
+.top nav { display: flex; gap: 24px; }
+.top nav a { color: var(--story); }
+.top nav a:hover, .top nav a[aria-current="page"] { color: var(--ink); }
+.top nav a[aria-current="page"] { text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 2px; }
+
+/* The story */
+.story { font-size: var(--big); line-height: 1.16; letter-spacing: -0.03em; font-weight: 500; color: var(--story); text-wrap: pretty; }
+.story.mid { font-size: var(--mid); line-height: 1.25; letter-spacing: -0.02em; }
+.story b, .story a { color: var(--ink); font-weight: 500; }
+.story a { text-decoration: none; background-image: linear-gradient(currentColor, currentColor); background-size: 0% .06em; background-position: 0 92%; background-repeat: no-repeat; transition: background-size .3s ease, color .2s; }
+.story a:hover { background-size: 100% .06em; color: var(--accent); }
+.chip { display: inline-block; height: .78em; width: 1.36em; border-radius: 999px; overflow: hidden; vertical-align: -0.06em; margin: 0; background: var(--soft); transition: width .35s cubic-bezier(.2, .7, .2, 1); box-shadow: inset 0 0 0 1px rgb(0 0 0 / .06); }
+.chip img { width: 100%; height: 100%; object-fit: cover; }
+.chip.dark { background: #0d0e11; }
+.chip.face img { object-position: 50% 28%; }
+a:hover .chip, a:focus-visible .chip { width: 2.2em; }
+.emoji { font-size: .82em; }
+.hero { padding-block: clamp(48px, 8vw, 120px) clamp(48px, 7vw, 104px); }
+.next { padding-block: 0 clamp(64px, 9vw, 128px); }
+
+/* Supporting sections */
+.rule { height: 1px; background: var(--line); border: 0; margin: 0; }
+.cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; padding-block: 56px; border-top: 1px solid var(--line); }
+.cols h3 { font-size: 13px; line-height: 20px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--story); margin-bottom: 16px; }
+.cols p { color: var(--ink); }
+.xp { list-style: none; padding: 0; }
+.xp li { display: grid; grid-template-columns: 1fr auto; gap: 0 16px; padding: 10px 0; border-top: 1px solid var(--line); }
+.xp li:last-child { border-bottom: 1px solid var(--line); }
+.xp span { color: var(--story); font-size: 15px; }
+.xp time { grid-row: span 2; font-size: 14px; color: var(--story); text-align: right; white-space: nowrap; }
+.links { display: flex; flex-direction: column; gap: 4px; }
+.links a { text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--line); display: inline-block; padding-block: 6px; width: max-content; max-width: 100%; }
+.links a:hover { text-decoration-color: var(--ink); }
+.foot { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-block: 24px 40px; color: var(--story); font-size: 14px; }
+
+/* Case study body */
+.meta { display: flex; flex-wrap: wrap; gap: 8px; padding-bottom: 40px; }
+.meta span { font-size: 14px; padding: 6px 12px; border-radius: 999px; background: var(--soft); }
+.figure { margin-block: 8px 0; }
+.figure img { width: 100%; border-radius: 24px; }
+.figure figcaption { font-size: 14px; color: var(--story); padding-top: 12px; }
+.read { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 40px; padding-block: 64px; border-top: 1px solid var(--line); }
+.read h2 { font-size: 13px; line-height: 20px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--story); padding-top: 10px; }
+.read .body { display: flex; flex-direction: column; gap: 20px; max-width: 680px; }
+.read .body p, .read .body li { font-size: 20px; line-height: 1.6; }
+.read ul { padding-left: 22px; display: flex; flex-direction: column; gap: 12px; }
+.pair { display: grid; grid-template-columns: 1.466fr 1fr; gap: 16px; }
+.pair figure { background: #1c1c1c; border-radius: 16px; overflow: hidden; }
+.pair + p { font-size: 14px !important; color: var(--story); }
+.video { position: relative; display: block; border-radius: 24px; overflow: hidden; }
+.video span { position: absolute; left: 20px; bottom: 20px; background: var(--paper); color: var(--ink); font-weight: 600; font-size: 16px; padding: 10px 16px; border-radius: 999px; }
+.video:hover span { background: var(--accent); color: #fff; }
+
+@media (max-width: 860px) {
+  .cols { grid-template-columns: 1fr; gap: 32px; padding-block: 40px; }
+  .read { grid-template-columns: 1fr; gap: 12px; padding-block: 40px; }
+  .read .body p, .read .body li { font-size: 18px; }
+  .pair { grid-template-columns: 1fr; }
+}
+@media (max-width: 520px) {
+  .wrap { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  .top nav { gap: 16px; }
+  .top .name span { display: none; }
+  .story { line-height: 1.2; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
