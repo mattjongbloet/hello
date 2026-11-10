@@ -37,7 +37,7 @@ mark { background: linear-gradient(transparent 12%, var(--marker) 12%, var(--mar
 .side .who span { font: 400 13px/1.4 var(--mono); color: var(--ink-2); }
 .side nav { display: flex; flex-direction: column; gap: 2px; font: 400 14px/1.4 var(--mono); }
 .side nav a { color: var(--ink-2); text-decoration: none; padding: 5px 0; display: flex; gap: 10px; }
-.side nav a span { color: #a3a89f; width: 1.6em; }
+.side nav a span { color: var(--ink-2); width: 1.6em; }
 .side nav a:hover, .side nav a[aria-current="page"] { color: var(--ink); }
 .side nav a[aria-current="page"] span { color: var(--pen); }
 .side .foot { margin-top: auto; font: 400 12px/1.6 var(--mono); color: var(--ink-2); display: flex; flex-direction: column; gap: 4px; }
@@ -175,3 +175,5 @@ mark { background: linear-gradient(transparent 12%, var(--marker) 12%, var(--mar
 }
 @media (max-width: 420px) { .side nav a.opt { display: none; } }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+@media (max-width: 860px) { .side nav a { padding-block: 10px; } .contact-card a.big { display: inline-block; padding-block: 6px; } }

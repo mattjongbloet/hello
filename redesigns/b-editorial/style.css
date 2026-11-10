@@ -193,3 +193,8 @@ h1, h2, h3 { font-weight: 400; text-wrap: balance; }
   .lead-fig .img img { aspect-ratio: 4 / 3; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+@media (max-width: 520px) {
+  .mast nav a, .mast > div > a, .colophon a, .shead a.label { display: inline-block; padding-block: 9px; }
+  .mast nav { gap: 4px 16px; }
+}

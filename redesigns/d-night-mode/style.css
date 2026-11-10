@@ -217,3 +217,7 @@ h1, h2, h3 { font-family: var(--display); font-weight: 600; letter-spacing: -0.0
   .t-intro { padding: 26px; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+
+@media (max-width: 560px) {
+  .xp a, .sec-head a, .foot a, .cta-block .mail { display: inline-block; padding-block: 8px; }
+}
