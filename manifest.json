@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T13:15:04.366Z",
+  "generated_at": "2026-11-10T21:17:49.319Z",
   "order": [
     "mjongbloet",
     "dir-a",
@@ -7,6 +7,16 @@
     "dir-c",
     "dir-d",
     "dir-e",
+    "dir-f",
+    "dir-g",
+    "dir-h",
+    "dir-i",
+    "dir-j",
+    "dir-k",
+    "dir-l",
+    "dir-m",
+    "dir-n",
+    "dir-o",
     "iniabiodun",
     "ericsin",
     "heilyn",
@@ -956,6 +966,1392 @@
         }
       },
       "captured_at": "2026-11-10T13:15:03.824Z"
+    },
+    "dir-f": {
+      "id": "dir-f",
+      "name": "Swiss Index",
+      "input": "redesigns/f-swiss-index/index.html",
+      "concept": "F",
+      "pages": {
+        "home": {
+          "type": "home",
+          "label": "Direction F · Home",
+          "url": "redesigns/f-swiss-index/index.html",
+          "note": null,
+          "shots": {
+            "390": {
+              "url": "redesigns/f-swiss-index/index.html",
+              "status": 200,
+              "final_url": "redesigns/f-swiss-index/index.html",
+              "title": "Matt Jongbloet — Index",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0.135,
+              "method": "fullpage",
+              "width": 390,
+              "height": 3697,
+              "file": "shots/home/dir-f-390.png",
+              "web": "shots/_web/home/dir-f-390.jpg",
+              "web_width": 390,
+              "web_height": 3697
+            },
+            "1440": {
+              "url": "redesigns/f-swiss-index/index.html",
+              "status": 200,
+              "final_url": "redesigns/f-swiss-index/index.html",
+              "title": "Matt Jongbloet — Index",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0.065,
+              "method": "fullpage",
+              "width": 1440,
+              "height": 2978,
+              "file": "shots/home/dir-f-1440.png",
+              "web": "shots/_web/home/dir-f-1440.jpg",
+              "web_width": 640,
+              "web_height": 1324
+            }
+          },
+          "final_url": "redesigns/f-swiss-index/index.html"
+        },
+        "case": {
+          "type": "case",
+          "label": "PMI (redesign)",
+          "url": "redesigns/f-swiss-index/case-pmi.html",
+          "note": null,
+          "shots": {
+            "390": {
+              "url": "redesigns/f-swiss-index/case-pmi.html",
+              "status": 200,
+              "final_url": "redesigns/f-swiss-index/case-pmi.html",
+              "title": "01 Private Mortgage Insurance — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0,
+              "method": "fullpage",
+              "width": 390,
+              "height": 5051,
+              "file": "shots/case/dir-f-390.png",
+              "web": "shots/_web/case/dir-f-390.jpg",
+              "web_width": 390,
+              "web_height": 5051
+            },
+            "1440": {
+              "url": "redesigns/f-swiss-index/case-pmi.html",
+              "status": 200,
+              "final_url": "redesigns/f-swiss-index/case-pmi.html",
+              "title": "01 Private Mortgage Insurance — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0,
+              "method": "fullpage",
+              "width": 1440,
+              "height": 4539,
+              "file": "shots/case/dir-f-1440.png",
+              "web": "shots/_web/case/dir-f-1440.jpg",
+              "web_width": 640,
+              "web_height": 2017
+            }
+          },
+          "final_url": "redesigns/f-swiss-index/case-pmi.html"
+        },
+        "about": {
+          "type": "about",
+          "label": null,
+          "url": "redesigns/f-swiss-index/about.html",
+          "note": null,
+          "shots": {
+            "390": {
+              "url": "redesigns/f-swiss-index/about.html",
+              "status": 200,
+              "final_url": "redesigns/f-swiss-index/about.html",
+              "title": "About — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0,
+              "method": "fullpage",
+              "width": 390,
+              "height": 3558,
+              "file": "shots/about/dir-f-390.png",
+              "web": "shots/_web/about/dir-f-390.jpg",
+              "web_width": 390,
+              "web_height": 3558
+            },
+            "1440": {
+              "url": "redesigns/f-swiss-index/about.html",
+              "status": 200,
+              "final_url": "redesigns/f-swiss-index/about.html",
+              "title": "About — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0,
+              "method": "fullpage",
+              "width": 1440,
+              "height": 2952,
+              "file": "shots/about/dir-f-1440.png",
+              "web": "shots/_web/about/dir-f-1440.jpg",
+              "web_width": 640,
+              "web_height": 1312
+            }
+          },
+          "final_url": "redesigns/f-swiss-index/about.html"
+        },
+        "contact": {
+          "type": "contact",
+          "label": null,
+          "url": null,
+          "note": "Concept: contact is part of every page.",
+          "missing": "no contact page"
+        }
+      },
+      "captured_at": "2026-11-10T21:12:48.381Z"
+    },
+    "dir-g": {
+      "id": "dir-g",
+      "name": "Doc",
+      "input": "redesigns/g-doc/index.html",
+      "concept": "G",
+      "pages": {
+        "home": {
+          "type": "home",
+          "label": "Direction G · Home",
+          "url": "redesigns/g-doc/index.html",
+          "note": null,
+          "shots": {
+            "390": {
+              "url": "redesigns/g-doc/index.html",
+              "status": 200,
+              "final_url": "redesigns/g-doc/index.html",
+              "title": "Matt Jongbloet — Home",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0.01,
+              "method": "fullpage",
+              "width": 390,
+              "height": 2753,
+              "file": "shots/home/dir-g-390.png",
+              "web": "shots/_web/home/dir-g-390.jpg",
+              "web_width": 390,
+              "web_height": 2753
+            },
+            "1440": {
+              "url": "redesigns/g-doc/index.html",
+              "status": 200,
+              "final_url": "redesigns/g-doc/index.html",
+              "title": "Matt Jongbloet — Home",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0.009,
+              "method": "fullpage",
+              "width": 1440,
+              "height": 2062,
+              "file": "shots/home/dir-g-1440.png",
+              "web": "shots/_web/home/dir-g-1440.jpg",
+              "web_width": 640,
+              "web_height": 916
+            }
+          },
+          "final_url": "redesigns/g-doc/index.html"
+        },
+        "case": {
+          "type": "case",
+          "label": "PMI (redesign)",
+          "url": "redesigns/g-doc/case-pmi.html",
+          "note": null,
+          "shots": {
+            "390": {
+              "url": "redesigns/g-doc/case-pmi.html",
+              "status": 200,
+              "final_url": "redesigns/g-doc/case-pmi.html",
+              "title": "PMI savings — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0.054,
+              "method": "fullpage",
+              "width": 390,
+              "height": 3799,
+              "file": "shots/case/dir-g-390.png",
+              "web": "shots/_web/case/dir-g-390.jpg",
+              "web_width": 390,
+              "web_height": 3799
+            },
+            "1440": {
+              "url": "redesigns/g-doc/case-pmi.html",
+              "status": 200,
+              "final_url": "redesigns/g-doc/case-pmi.html",
+              "title": "PMI savings — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0.027,
+              "method": "fullpage",
+              "width": 1440,
+              "height": 2979,
+              "file": "shots/case/dir-g-1440.png",
+              "web": "shots/_web/case/dir-g-1440.jpg",
+              "web_width": 640,
+              "web_height": 1324
+            }
+          },
+          "final_url": "redesigns/g-doc/case-pmi.html"
+        },
+        "about": {
+          "type": "about",
+          "label": null,
+          "url": "redesigns/g-doc/about.html",
+          "note": null,
+          "shots": {
+            "390": {
+              "url": "redesigns/g-doc/about.html",
+              "status": 200,
+              "final_url": "redesigns/g-doc/about.html",
+              "title": "About — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0.047,
+              "method": "fullpage",
+              "width": 390,
+              "height": 2298,
+              "file": "shots/about/dir-g-390.png",
+              "web": "shots/_web/about/dir-g-390.jpg",
+              "web_width": 390,
+              "web_height": 2298
+            },
+            "1440": {
+              "url": "redesigns/g-doc/about.html",
+              "status": 200,
+              "final_url": "redesigns/g-doc/about.html",
+              "title": "About — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0.046,
+              "method": "fullpage",
+              "width": 1440,
+              "height": 1794,
+              "file": "shots/about/dir-g-1440.png",
+              "web": "shots/_web/about/dir-g-1440.jpg",
+              "web_width": 640,
+              "web_height": 797
+            }
+          },
+          "final_url": "redesigns/g-doc/about.html"
+        },
+        "contact": {
+          "type": "contact",
+          "label": null,
+          "url": null,
+          "note": "Concept: contact is part of every page.",
+          "missing": "no contact page"
+        }
+      },
+      "captured_at": "2026-11-10T21:14:04.497Z"
+    },
+    "dir-h": {
+      "id": "dir-h",
+      "name": "Scrollytelling",
+      "input": "redesigns/h-scrollytelling/index.html",
+      "concept": "H",
+      "pages": {
+        "home": {
+          "type": "home",
+          "label": "Direction H · Home",
+          "url": "redesigns/h-scrollytelling/index.html",
+          "note": null,
+          "shots": {
+            "390": {
+              "url": "redesigns/h-scrollytelling/index.html",
+              "status": 200,
+              "final_url": "redesigns/h-scrollytelling/index.html",
+              "title": "Matt Jongbloet — Product Designer",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0.02,
+              "method": "fullpage",
+              "width": 390,
+              "height": 4754,
+              "file": "shots/home/dir-h-390.png",
+              "web": "shots/_web/home/dir-h-390.jpg",
+              "web_width": 390,
+              "web_height": 4754
+            },
+            "1440": {
+              "url": "redesigns/h-scrollytelling/index.html",
+              "status": 200,
+              "final_url": "redesigns/h-scrollytelling/index.html",
+              "title": "Matt Jongbloet — Product Designer",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0.237,
+              "fallback_reason": "full-page shot differed from live viewport",
+              "method": "stitched",
+              "width": 1440,
+              "height": 5516,
+              "file": "shots/home/dir-h-1440.png",
+              "web": "shots/_web/home/dir-h-1440.jpg",
+              "web_width": 640,
+              "web_height": 2452
+            }
+          },
+          "final_url": "redesigns/h-scrollytelling/index.html"
+        },
+        "case": {
+          "type": "case",
+          "label": "PMI (redesign)",
+          "url": "redesigns/h-scrollytelling/case-pmi.html",
+          "note": null,
+          "shots": {
+            "390": {
+              "url": "redesigns/h-scrollytelling/case-pmi.html",
+              "status": 200,
+              "final_url": "redesigns/h-scrollytelling/case-pmi.html",
+              "title": "PMI — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0.014,
+              "method": "fullpage",
+              "width": 390,
+              "height": 5643,
+              "file": "shots/case/dir-h-390.png",
+              "web": "shots/_web/case/dir-h-390.jpg",
+              "web_width": 390,
+              "web_height": 5643
+            },
+            "1440": {
+              "url": "redesigns/h-scrollytelling/case-pmi.html",
+              "status": 200,
+              "final_url": "redesigns/h-scrollytelling/case-pmi.html",
+              "title": "PMI — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0.243,
+              "fallback_reason": "full-page shot differed from live viewport",
+              "method": "stitched",
+              "width": 1440,
+              "height": 6735,
+              "file": "shots/case/dir-h-1440.png",
+              "web": "shots/_web/case/dir-h-1440.jpg",
+              "web_width": 640,
+              "web_height": 2993
+            }
+          },
+          "final_url": "redesigns/h-scrollytelling/case-pmi.html"
+        },
+        "about": {
+          "type": "about",
+          "label": null,
+          "url": "redesigns/h-scrollytelling/about.html",
+          "note": null,
+          "shots": {
+            "390": {
+              "url": "redesigns/h-scrollytelling/about.html",
+              "status": 200,
+              "final_url": "redesigns/h-scrollytelling/about.html",
+              "title": "About — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0.012,
+              "method": "fullpage",
+              "width": 390,
+              "height": 3568,
+              "file": "shots/about/dir-h-390.png",
+              "web": "shots/_web/about/dir-h-390.jpg",
+              "web_width": 390,
+              "web_height": 3568
+            },
+            "1440": {
+              "url": "redesigns/h-scrollytelling/about.html",
+              "status": 200,
+              "final_url": "redesigns/h-scrollytelling/about.html",
+              "title": "About — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0.018,
+              "method": "fullpage",
+              "width": 1440,
+              "height": 4616,
+              "file": "shots/about/dir-h-1440.png",
+              "web": "shots/_web/about/dir-h-1440.jpg",
+              "web_width": 640,
+              "web_height": 2052
+            }
+          },
+          "final_url": "redesigns/h-scrollytelling/about.html"
+        },
+        "contact": {
+          "type": "contact",
+          "label": null,
+          "url": null,
+          "note": "Concept: contact is part of every page.",
+          "missing": "no contact page"
+        }
+      },
+      "captured_at": "2026-11-10T21:16:16.504Z"
+    },
+    "dir-i": {
+      "id": "dir-i",
+      "name": "Inline Story",
+      "input": "redesigns/i-inline-story/index.html",
+      "concept": "I",
+      "pages": {
+        "home": {
+          "type": "home",
+          "label": "Direction I · Home",
+          "url": "redesigns/i-inline-story/index.html",
+          "note": null,
+          "shots": {
+            "390": {
+              "url": "redesigns/i-inline-story/index.html",
+              "status": 200,
+              "final_url": "redesigns/i-inline-story/index.html",
+              "title": "Matt Jongbloet — Product Designer",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0,
+              "method": "fullpage",
+              "width": 390,
+              "height": 1771,
+              "file": "shots/home/dir-i-390.png",
+              "web": "shots/_web/home/dir-i-390.jpg",
+              "web_width": 390,
+              "web_height": 1771
+            },
+            "1440": {
+              "url": "redesigns/i-inline-story/index.html",
+              "status": 200,
+              "final_url": "redesigns/i-inline-story/index.html",
+              "title": "Matt Jongbloet — Product Designer",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0,
+              "method": "fullpage",
+              "width": 1440,
+              "height": 1834,
+              "file": "shots/home/dir-i-1440.png",
+              "web": "shots/_web/home/dir-i-1440.jpg",
+              "web_width": 640,
+              "web_height": 815
+            }
+          },
+          "final_url": "redesigns/i-inline-story/index.html"
+        },
+        "case": {
+          "type": "case",
+          "label": "PMI (redesign)",
+          "url": "redesigns/i-inline-story/case-pmi.html",
+          "note": null,
+          "shots": {
+            "390": {
+              "url": "redesigns/i-inline-story/case-pmi.html",
+              "status": 200,
+              "final_url": "redesigns/i-inline-story/case-pmi.html",
+              "title": "PMI savings — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0,
+              "method": "fullpage",
+              "width": 390,
+              "height": 4051,
+              "file": "shots/case/dir-i-390.png",
+              "web": "shots/_web/case/dir-i-390.jpg",
+              "web_width": 390,
+              "web_height": 4051
+            },
+            "1440": {
+              "url": "redesigns/i-inline-story/case-pmi.html",
+              "status": 200,
+              "final_url": "redesigns/i-inline-story/case-pmi.html",
+              "title": "PMI savings — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0,
+              "method": "fullpage",
+              "width": 1440,
+              "height": 4336,
+              "file": "shots/case/dir-i-1440.png",
+              "web": "shots/_web/case/dir-i-1440.jpg",
+              "web_width": 640,
+              "web_height": 1927
+            }
+          },
+          "final_url": "redesigns/i-inline-story/case-pmi.html"
+        },
+        "about": {
+          "type": "about",
+          "label": null,
+          "url": "redesigns/i-inline-story/about.html",
+          "note": null,
+          "shots": {
+            "390": {
+              "url": "redesigns/i-inline-story/about.html",
+              "status": 200,
+              "final_url": "redesigns/i-inline-story/about.html",
+              "title": "About — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0,
+              "method": "fullpage",
+              "width": 390,
+              "height": 1974,
+              "file": "shots/about/dir-i-390.png",
+              "web": "shots/_web/about/dir-i-390.jpg",
+              "web_width": 390,
+              "web_height": 1974
+            },
+            "1440": {
+              "url": "redesigns/i-inline-story/about.html",
+              "status": 200,
+              "final_url": "redesigns/i-inline-story/about.html",
+              "title": "About — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0,
+              "method": "fullpage",
+              "width": 1440,
+              "height": 2210,
+              "file": "shots/about/dir-i-1440.png",
+              "web": "shots/_web/about/dir-i-1440.jpg",
+              "web_width": 640,
+              "web_height": 982
+            }
+          },
+          "final_url": "redesigns/i-inline-story/about.html"
+        },
+        "contact": {
+          "type": "contact",
+          "label": null,
+          "url": null,
+          "note": "Concept: contact is part of every page.",
+          "missing": "no contact page"
+        }
+      },
+      "captured_at": "2026-11-10T21:17:33.491Z"
+    },
+    "dir-j": {
+      "id": "dir-j",
+      "name": "Brutalist",
+      "input": "redesigns/j-brutalist/index.html",
+      "concept": "J",
+      "pages": {
+        "home": {
+          "type": "home",
+          "label": "Direction J · Home",
+          "url": "redesigns/j-brutalist/index.html",
+          "note": null,
+          "shots": {
+            "390": {
+              "url": "redesigns/j-brutalist/index.html",
+              "status": 200,
+              "final_url": "redesigns/j-brutalist/index.html",
+              "title": "MATT JONGBLOET",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0,
+              "method": "fullpage",
+              "width": 390,
+              "height": 3170,
+              "file": "shots/home/dir-j-390.png",
+              "web": "shots/_web/home/dir-j-390.jpg",
+              "web_width": 390,
+              "web_height": 3170
+            },
+            "1440": {
+              "url": "redesigns/j-brutalist/index.html",
+              "status": 200,
+              "final_url": "redesigns/j-brutalist/index.html",
+              "title": "MATT JONGBLOET",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0,
+              "method": "fullpage",
+              "width": 1440,
+              "height": 1890,
+              "file": "shots/home/dir-j-1440.png",
+              "web": "shots/_web/home/dir-j-1440.jpg",
+              "web_width": 640,
+              "web_height": 840
+            }
+          },
+          "final_url": "redesigns/j-brutalist/index.html"
+        },
+        "case": {
+          "type": "case",
+          "label": "PMI (redesign)",
+          "url": "redesigns/j-brutalist/case-pmi.html",
+          "note": null,
+          "shots": {
+            "390": {
+              "url": "redesigns/j-brutalist/case-pmi.html",
+              "status": 200,
+              "final_url": "redesigns/j-brutalist/case-pmi.html",
+              "title": "01_PMI — MATT JONGBLOET",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0,
+              "method": "fullpage",
+              "width": 390,
+              "height": 4499,
+              "file": "shots/case/dir-j-390.png",
+              "web": "shots/_web/case/dir-j-390.jpg",
+              "web_width": 390,
+              "web_height": 4499
+            },
+            "1440": {
+              "url": "redesigns/j-brutalist/case-pmi.html",
+              "status": 200,
+              "final_url": "redesigns/j-brutalist/case-pmi.html",
+              "title": "01_PMI — MATT JONGBLOET",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0,
+              "method": "fullpage",
+              "width": 1440,
+              "height": 3580,
+              "file": "shots/case/dir-j-1440.png",
+              "web": "shots/_web/case/dir-j-1440.jpg",
+              "web_width": 640,
+              "web_height": 1591
+            }
+          },
+          "final_url": "redesigns/j-brutalist/case-pmi.html"
+        },
+        "about": {
+          "type": "about",
+          "label": null,
+          "url": "redesigns/j-brutalist/about.html",
+          "note": null,
+          "shots": {
+            "390": {
+              "url": "redesigns/j-brutalist/about.html",
+              "status": 200,
+              "final_url": "redesigns/j-brutalist/about.html",
+              "title": "ABOUT — MATT JONGBLOET",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0,
+              "method": "fullpage",
+              "width": 390,
+              "height": 2889,
+              "file": "shots/about/dir-j-390.png",
+              "web": "shots/_web/about/dir-j-390.jpg",
+              "web_width": 390,
+              "web_height": 2889
+            },
+            "1440": {
+              "url": "redesigns/j-brutalist/about.html",
+              "status": 200,
+              "final_url": "redesigns/j-brutalist/about.html",
+              "title": "ABOUT — MATT JONGBLOET",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0,
+              "method": "fullpage",
+              "width": 1440,
+              "height": 2132,
+              "file": "shots/about/dir-j-1440.png",
+              "web": "shots/_web/about/dir-j-1440.jpg",
+              "web_width": 640,
+              "web_height": 948
+            }
+          },
+          "final_url": "redesigns/j-brutalist/about.html"
+        },
+        "contact": {
+          "type": "contact",
+          "label": null,
+          "url": null,
+          "note": "Concept: contact is part of every page.",
+          "missing": "no contact page"
+        }
+      },
+      "captured_at": "2026-11-10T21:12:47.347Z"
+    },
+    "dir-k": {
+      "id": "dir-k",
+      "name": "Annual Report",
+      "input": "redesigns/k-annual-report/index.html",
+      "concept": "K",
+      "pages": {
+        "home": {
+          "type": "home",
+          "label": "Direction K · Home",
+          "url": "redesigns/k-annual-report/index.html",
+          "note": null,
+          "shots": {
+            "390": {
+              "url": "redesigns/k-annual-report/index.html",
+              "status": 200,
+              "final_url": "redesigns/k-annual-report/index.html",
+              "title": "Matt Jongbloet — Annual Report 2026",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0,
+              "method": "fullpage",
+              "width": 390,
+              "height": 6429,
+              "file": "shots/home/dir-k-390.png",
+              "web": "shots/_web/home/dir-k-390.jpg",
+              "web_width": 390,
+              "web_height": 6429
+            },
+            "1440": {
+              "url": "redesigns/k-annual-report/index.html",
+              "status": 200,
+              "final_url": "redesigns/k-annual-report/index.html",
+              "title": "Matt Jongbloet — Annual Report 2026",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0,
+              "method": "fullpage",
+              "width": 1440,
+              "height": 3986,
+              "file": "shots/home/dir-k-1440.png",
+              "web": "shots/_web/home/dir-k-1440.jpg",
+              "web_width": 640,
+              "web_height": 1772
+            }
+          },
+          "final_url": "redesigns/k-annual-report/index.html"
+        },
+        "case": {
+          "type": "case",
+          "label": "PMI (redesign)",
+          "url": "redesigns/k-annual-report/case-pmi.html",
+          "note": null,
+          "shots": {
+            "390": {
+              "url": "redesigns/k-annual-report/case-pmi.html",
+              "status": 200,
+              "final_url": "redesigns/k-annual-report/case-pmi.html",
+              "title": "Segment report: PMI — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0,
+              "method": "fullpage",
+              "width": 390,
+              "height": 5211,
+              "file": "shots/case/dir-k-390.png",
+              "web": "shots/_web/case/dir-k-390.jpg",
+              "web_width": 390,
+              "web_height": 5211
+            },
+            "1440": {
+              "url": "redesigns/k-annual-report/case-pmi.html",
+              "status": 200,
+              "final_url": "redesigns/k-annual-report/case-pmi.html",
+              "title": "Segment report: PMI — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0,
+              "method": "fullpage",
+              "width": 1440,
+              "height": 4461,
+              "file": "shots/case/dir-k-1440.png",
+              "web": "shots/_web/case/dir-k-1440.jpg",
+              "web_width": 640,
+              "web_height": 1983
+            }
+          },
+          "final_url": "redesigns/k-annual-report/case-pmi.html"
+        },
+        "about": {
+          "type": "about",
+          "label": null,
+          "url": "redesigns/k-annual-report/about.html",
+          "note": null,
+          "shots": {
+            "390": {
+              "url": "redesigns/k-annual-report/about.html",
+              "status": 200,
+              "final_url": "redesigns/k-annual-report/about.html",
+              "title": "Profile — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0,
+              "method": "fullpage",
+              "width": 390,
+              "height": 2883,
+              "file": "shots/about/dir-k-390.png",
+              "web": "shots/_web/about/dir-k-390.jpg",
+              "web_width": 390,
+              "web_height": 2883
+            },
+            "1440": {
+              "url": "redesigns/k-annual-report/about.html",
+              "status": 200,
+              "final_url": "redesigns/k-annual-report/about.html",
+              "title": "Profile — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0,
+              "method": "fullpage",
+              "width": 1440,
+              "height": 2391,
+              "file": "shots/about/dir-k-1440.png",
+              "web": "shots/_web/about/dir-k-1440.jpg",
+              "web_width": 640,
+              "web_height": 1063
+            }
+          },
+          "final_url": "redesigns/k-annual-report/about.html"
+        },
+        "contact": {
+          "type": "contact",
+          "label": null,
+          "url": null,
+          "note": "Concept: contact is part of every page.",
+          "missing": "no contact page"
+        }
+      },
+      "captured_at": "2026-11-10T21:14:09.028Z"
+    },
+    "dir-l": {
+      "id": "dir-l",
+      "name": "Terminal",
+      "input": "redesigns/l-terminal/index.html",
+      "concept": "L",
+      "pages": {
+        "home": {
+          "type": "home",
+          "label": "Direction L · Home",
+          "url": "redesigns/l-terminal/index.html",
+          "note": null,
+          "shots": {
+            "390": {
+              "url": "redesigns/l-terminal/index.html",
+              "status": 200,
+              "final_url": "redesigns/l-terminal/index.html",
+              "title": "matt@portfolio: ~",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0.014,
+              "method": "fullpage",
+              "width": 390,
+              "height": 2844,
+              "file": "shots/home/dir-l-390.png",
+              "web": "shots/_web/home/dir-l-390.jpg",
+              "web_width": 390,
+              "web_height": 2844
+            },
+            "1440": {
+              "url": "redesigns/l-terminal/index.html",
+              "status": 200,
+              "final_url": "redesigns/l-terminal/index.html",
+              "title": "matt@portfolio: ~",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0.009,
+              "method": "fullpage",
+              "width": 1440,
+              "height": 1511,
+              "file": "shots/home/dir-l-1440.png",
+              "web": "shots/_web/home/dir-l-1440.jpg",
+              "web_width": 640,
+              "web_height": 672
+            }
+          },
+          "final_url": "redesigns/l-terminal/index.html"
+        },
+        "case": {
+          "type": "case",
+          "label": "PMI (redesign)",
+          "url": "redesigns/l-terminal/case-pmi.html",
+          "note": null,
+          "shots": {
+            "390": {
+              "url": "redesigns/l-terminal/case-pmi.html",
+              "status": 200,
+              "final_url": "redesigns/l-terminal/case-pmi.html",
+              "title": "PMI(1) — matt@portfolio",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0.007,
+              "method": "fullpage",
+              "width": 390,
+              "height": 3401,
+              "file": "shots/case/dir-l-390.png",
+              "web": "shots/_web/case/dir-l-390.jpg",
+              "web_width": 390,
+              "web_height": 3401
+            },
+            "1440": {
+              "url": "redesigns/l-terminal/case-pmi.html",
+              "status": 200,
+              "final_url": "redesigns/l-terminal/case-pmi.html",
+              "title": "PMI(1) — matt@portfolio",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0.017,
+              "method": "fullpage",
+              "width": 1440,
+              "height": 2550,
+              "file": "shots/case/dir-l-1440.png",
+              "web": "shots/_web/case/dir-l-1440.jpg",
+              "web_width": 640,
+              "web_height": 1133
+            }
+          },
+          "final_url": "redesigns/l-terminal/case-pmi.html"
+        },
+        "about": {
+          "type": "about",
+          "label": null,
+          "url": "redesigns/l-terminal/about.html",
+          "note": null,
+          "shots": {
+            "390": {
+              "url": "redesigns/l-terminal/about.html",
+              "status": 200,
+              "final_url": "redesigns/l-terminal/about.html",
+              "title": "about.md — matt@portfolio",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0.018,
+              "method": "fullpage",
+              "width": 390,
+              "height": 2042,
+              "file": "shots/about/dir-l-390.png",
+              "web": "shots/_web/about/dir-l-390.jpg",
+              "web_width": 390,
+              "web_height": 2042
+            },
+            "1440": {
+              "url": "redesigns/l-terminal/about.html",
+              "status": 200,
+              "final_url": "redesigns/l-terminal/about.html",
+              "title": "about.md — matt@portfolio",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0.026,
+              "method": "fullpage",
+              "width": 1440,
+              "height": 1703,
+              "file": "shots/about/dir-l-1440.png",
+              "web": "shots/_web/about/dir-l-1440.jpg",
+              "web_width": 640,
+              "web_height": 757
+            }
+          },
+          "final_url": "redesigns/l-terminal/about.html"
+        },
+        "contact": {
+          "type": "contact",
+          "label": null,
+          "url": null,
+          "note": "Concept: contact is part of every page.",
+          "missing": "no contact page"
+        }
+      },
+      "captured_at": "2026-11-10T21:15:24.739Z"
+    },
+    "dir-m": {
+      "id": "dir-m",
+      "name": "The Deck",
+      "input": "redesigns/m-deck/index.html",
+      "concept": "M",
+      "pages": {
+        "home": {
+          "type": "home",
+          "label": "Direction M · Home",
+          "url": "redesigns/m-deck/index.html",
+          "note": null,
+          "shots": {
+            "390": {
+              "url": "redesigns/m-deck/index.html",
+              "status": 200,
+              "final_url": "redesigns/m-deck/index.html",
+              "title": "The Pitch — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "transform",
+              "method": "stitched",
+              "width": 390,
+              "height": 5381,
+              "file": "shots/home/dir-m-390.png",
+              "web": "shots/_web/home/dir-m-390.jpg",
+              "web_width": 390,
+              "web_height": 5381
+            },
+            "1440": {
+              "url": "redesigns/m-deck/index.html",
+              "status": 200,
+              "final_url": "redesigns/m-deck/index.html",
+              "title": "The Pitch — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "transform",
+              "method": "stitched",
+              "width": 1440,
+              "height": 6300,
+              "file": "shots/home/dir-m-1440.png",
+              "web": "shots/_web/home/dir-m-1440.jpg",
+              "web_width": 640,
+              "web_height": 2800
+            }
+          },
+          "final_url": "redesigns/m-deck/index.html"
+        },
+        "case": {
+          "type": "case",
+          "label": "PMI (redesign)",
+          "url": "redesigns/m-deck/case-pmi.html",
+          "note": null,
+          "shots": {
+            "390": {
+              "url": "redesigns/m-deck/case-pmi.html",
+              "status": 200,
+              "final_url": "redesigns/m-deck/case-pmi.html",
+              "title": "PMI deck — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "transform",
+              "method": "stitched",
+              "width": 390,
+              "height": 5077,
+              "file": "shots/case/dir-m-390.png",
+              "web": "shots/_web/case/dir-m-390.jpg",
+              "web_width": 390,
+              "web_height": 5077
+            },
+            "1440": {
+              "url": "redesigns/m-deck/case-pmi.html",
+              "status": 200,
+              "final_url": "redesigns/m-deck/case-pmi.html",
+              "title": "PMI deck — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "transform",
+              "method": "stitched",
+              "width": 1440,
+              "height": 6300,
+              "file": "shots/case/dir-m-1440.png",
+              "web": "shots/_web/case/dir-m-1440.jpg",
+              "web_width": 640,
+              "web_height": 2800
+            }
+          },
+          "final_url": "redesigns/m-deck/case-pmi.html"
+        },
+        "about": {
+          "type": "about",
+          "label": null,
+          "url": "redesigns/m-deck/about.html",
+          "note": null,
+          "shots": {
+            "390": {
+              "url": "redesigns/m-deck/about.html",
+              "status": 200,
+              "final_url": "redesigns/m-deck/about.html",
+              "title": "About deck — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "transform",
+              "method": "stitched",
+              "width": 390,
+              "height": 3261,
+              "file": "shots/about/dir-m-390.png",
+              "web": "shots/_web/about/dir-m-390.jpg",
+              "web_width": 390,
+              "web_height": 3261
+            },
+            "1440": {
+              "url": "redesigns/m-deck/about.html",
+              "status": 200,
+              "final_url": "redesigns/m-deck/about.html",
+              "title": "About deck — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "transform",
+              "method": "stitched",
+              "width": 1440,
+              "height": 5400,
+              "file": "shots/about/dir-m-1440.png",
+              "web": "shots/_web/about/dir-m-1440.jpg",
+              "web_width": 640,
+              "web_height": 2400
+            }
+          },
+          "final_url": "redesigns/m-deck/about.html"
+        },
+        "contact": {
+          "type": "contact",
+          "label": null,
+          "url": null,
+          "note": "Concept: contact is part of every page.",
+          "missing": "no contact page"
+        }
+      },
+      "captured_at": "2026-11-10T21:13:10.451Z"
+    },
+    "dir-n": {
+      "id": "dir-n",
+      "name": "Leverage",
+      "input": "redesigns/n-leverage/index.html",
+      "concept": "N",
+      "pages": {
+        "home": {
+          "type": "home",
+          "label": "Direction N · Home",
+          "url": "redesigns/n-leverage/index.html",
+          "note": null,
+          "shots": {
+            "390": {
+              "url": "redesigns/n-leverage/index.html",
+              "status": 200,
+              "final_url": "redesigns/n-leverage/index.html",
+              "title": "Leverage — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0.015,
+              "method": "fullpage",
+              "width": 390,
+              "height": 3514,
+              "file": "shots/home/dir-n-390.png",
+              "web": "shots/_web/home/dir-n-390.jpg",
+              "web_width": 390,
+              "web_height": 3514
+            },
+            "1440": {
+              "url": "redesigns/n-leverage/index.html",
+              "status": 200,
+              "final_url": "redesigns/n-leverage/index.html",
+              "title": "Leverage — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0.042,
+              "method": "fullpage",
+              "width": 1440,
+              "height": 7291,
+              "file": "shots/home/dir-n-1440.png",
+              "web": "shots/_web/home/dir-n-1440.jpg",
+              "web_width": 640,
+              "web_height": 3240
+            }
+          },
+          "final_url": "redesigns/n-leverage/index.html"
+        },
+        "case": {
+          "type": "case",
+          "label": "PMI (redesign)",
+          "url": "redesigns/n-leverage/case-pmi.html",
+          "note": null,
+          "shots": {
+            "390": {
+              "url": "redesigns/n-leverage/case-pmi.html",
+              "status": 200,
+              "final_url": "redesigns/n-leverage/case-pmi.html",
+              "title": "PMI, zoomed out — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0.016,
+              "method": "fullpage",
+              "width": 390,
+              "height": 3589,
+              "file": "shots/case/dir-n-390.png",
+              "web": "shots/_web/case/dir-n-390.jpg",
+              "web_width": 390,
+              "web_height": 3589
+            },
+            "1440": {
+              "url": "redesigns/n-leverage/case-pmi.html",
+              "status": 200,
+              "final_url": "redesigns/n-leverage/case-pmi.html",
+              "title": "PMI, zoomed out — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0.06,
+              "method": "fullpage",
+              "width": 1440,
+              "height": 5563,
+              "file": "shots/case/dir-n-1440.png",
+              "web": "shots/_web/case/dir-n-1440.jpg",
+              "web_width": 640,
+              "web_height": 2472
+            }
+          },
+          "final_url": "redesigns/n-leverage/case-pmi.html"
+        },
+        "about": {
+          "type": "about",
+          "label": null,
+          "url": "redesigns/n-leverage/about.html",
+          "note": null,
+          "shots": {
+            "390": {
+              "url": "redesigns/n-leverage/about.html",
+              "status": 200,
+              "final_url": "redesigns/n-leverage/about.html",
+              "title": "About — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0.051,
+              "method": "fullpage",
+              "width": 390,
+              "height": 3082,
+              "file": "shots/about/dir-n-390.png",
+              "web": "shots/_web/about/dir-n-390.jpg",
+              "web_width": 390,
+              "web_height": 3082
+            },
+            "1440": {
+              "url": "redesigns/n-leverage/about.html",
+              "status": 200,
+              "final_url": "redesigns/n-leverage/about.html",
+              "title": "About — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0.041,
+              "method": "fullpage",
+              "width": 1440,
+              "height": 5574,
+              "file": "shots/about/dir-n-1440.png",
+              "web": "shots/_web/about/dir-n-1440.jpg",
+              "web_width": 640,
+              "web_height": 2477
+            }
+          },
+          "final_url": "redesigns/n-leverage/about.html"
+        },
+        "contact": {
+          "type": "contact",
+          "label": null,
+          "url": null,
+          "note": "Concept: contact is part of every page.",
+          "missing": "no contact page"
+        }
+      },
+      "captured_at": "2026-11-10T21:14:34.308Z"
+    },
+    "dir-o": {
+      "id": "dir-o",
+      "name": "Blueprint",
+      "input": "redesigns/o-blueprint/index.html",
+      "concept": "O",
+      "pages": {
+        "home": {
+          "type": "home",
+          "label": "Direction O · Home",
+          "url": "redesigns/o-blueprint/index.html",
+          "note": null,
+          "shots": {
+            "390": {
+              "url": "redesigns/o-blueprint/index.html",
+              "status": 200,
+              "final_url": "redesigns/o-blueprint/index.html",
+              "title": "MJ-001 General Arrangement — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0,
+              "method": "fullpage",
+              "width": 390,
+              "height": 4637,
+              "file": "shots/home/dir-o-390.png",
+              "web": "shots/_web/home/dir-o-390.jpg",
+              "web_width": 390,
+              "web_height": 4637
+            },
+            "1440": {
+              "url": "redesigns/o-blueprint/index.html",
+              "status": 200,
+              "final_url": "redesigns/o-blueprint/index.html",
+              "title": "MJ-001 General Arrangement — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0,
+              "method": "fullpage",
+              "width": 1440,
+              "height": 3415,
+              "file": "shots/home/dir-o-1440.png",
+              "web": "shots/_web/home/dir-o-1440.jpg",
+              "web_width": 640,
+              "web_height": 1518
+            }
+          },
+          "final_url": "redesigns/o-blueprint/index.html"
+        },
+        "case": {
+          "type": "case",
+          "label": "PMI (redesign)",
+          "url": "redesigns/o-blueprint/case-pmi.html",
+          "note": null,
+          "shots": {
+            "390": {
+              "url": "redesigns/o-blueprint/case-pmi.html",
+              "status": 200,
+              "final_url": "redesigns/o-blueprint/case-pmi.html",
+              "title": "MJ-002 PMI System — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0,
+              "method": "fullpage",
+              "width": 390,
+              "height": 5444,
+              "file": "shots/case/dir-o-390.png",
+              "web": "shots/_web/case/dir-o-390.jpg",
+              "web_width": 390,
+              "web_height": 5444
+            },
+            "1440": {
+              "url": "redesigns/o-blueprint/case-pmi.html",
+              "status": 200,
+              "final_url": "redesigns/o-blueprint/case-pmi.html",
+              "title": "MJ-002 PMI System — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0,
+              "method": "fullpage",
+              "width": 1440,
+              "height": 4141,
+              "file": "shots/case/dir-o-1440.png",
+              "web": "shots/_web/case/dir-o-1440.jpg",
+              "web_width": 640,
+              "web_height": 1840
+            }
+          },
+          "final_url": "redesigns/o-blueprint/case-pmi.html"
+        },
+        "about": {
+          "type": "about",
+          "label": null,
+          "url": "redesigns/o-blueprint/about.html",
+          "note": null,
+          "shots": {
+            "390": {
+              "url": "redesigns/o-blueprint/about.html",
+              "status": 200,
+              "final_url": "redesigns/o-blueprint/about.html",
+              "title": "MJ-003 Site Plan — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0,
+              "method": "fullpage",
+              "width": 390,
+              "height": 3311,
+              "file": "shots/about/dir-o-390.png",
+              "web": "shots/_web/about/dir-o-390.jpg",
+              "web_width": 390,
+              "web_height": 3311
+            },
+            "1440": {
+              "url": "redesigns/o-blueprint/about.html",
+              "status": 200,
+              "final_url": "redesigns/o-blueprint/about.html",
+              "title": "MJ-003 Site Plan — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0,
+              "method": "fullpage",
+              "width": 1440,
+              "height": 2226,
+              "file": "shots/about/dir-o-1440.png",
+              "web": "shots/_web/about/dir-o-1440.jpg",
+              "web_width": 640,
+              "web_height": 989
+            }
+          },
+          "final_url": "redesigns/o-blueprint/about.html"
+        },
+        "contact": {
+          "type": "contact",
+          "label": null,
+          "url": null,
+          "note": "Concept: contact is part of every page.",
+          "missing": "no contact page"
+        }
+      },
+      "captured_at": "2026-11-10T21:15:54.950Z"
     },
     "iniabiodun": {
       "id": "iniabiodun",

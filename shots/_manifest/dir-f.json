@@ -1,0 +1,139 @@
+{
+  "id": "dir-f",
+  "name": "Swiss Index",
+  "input": "redesigns/f-swiss-index/index.html",
+  "concept": "F",
+  "pages": {
+    "home": {
+      "type": "home",
+      "label": "Direction F · Home",
+      "url": "redesigns/f-swiss-index/index.html",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "redesigns/f-swiss-index/index.html",
+          "status": 200,
+          "final_url": "redesigns/f-swiss-index/index.html",
+          "title": "Matt Jongbloet — Index",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.135,
+          "method": "fullpage",
+          "width": 390,
+          "height": 3697,
+          "file": "shots/home/dir-f-390.png",
+          "web": "shots/_web/home/dir-f-390.jpg",
+          "web_width": 390,
+          "web_height": 3697
+        },
+        "1440": {
+          "url": "redesigns/f-swiss-index/index.html",
+          "status": 200,
+          "final_url": "redesigns/f-swiss-index/index.html",
+          "title": "Matt Jongbloet — Index",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.065,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 2978,
+          "file": "shots/home/dir-f-1440.png",
+          "web": "shots/_web/home/dir-f-1440.jpg",
+          "web_width": 640,
+          "web_height": 1324
+        }
+      },
+      "final_url": "redesigns/f-swiss-index/index.html"
+    },
+    "case": {
+      "type": "case",
+      "label": "PMI (redesign)",
+      "url": "redesigns/f-swiss-index/case-pmi.html",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "redesigns/f-swiss-index/case-pmi.html",
+          "status": 200,
+          "final_url": "redesigns/f-swiss-index/case-pmi.html",
+          "title": "01 Private Mortgage Insurance — Matt Jongbloet",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 390,
+          "height": 5051,
+          "file": "shots/case/dir-f-390.png",
+          "web": "shots/_web/case/dir-f-390.jpg",
+          "web_width": 390,
+          "web_height": 5051
+        },
+        "1440": {
+          "url": "redesigns/f-swiss-index/case-pmi.html",
+          "status": 200,
+          "final_url": "redesigns/f-swiss-index/case-pmi.html",
+          "title": "01 Private Mortgage Insurance — Matt Jongbloet",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 4539,
+          "file": "shots/case/dir-f-1440.png",
+          "web": "shots/_web/case/dir-f-1440.jpg",
+          "web_width": 640,
+          "web_height": 2017
+        }
+      },
+      "final_url": "redesigns/f-swiss-index/case-pmi.html"
+    },
+    "about": {
+      "type": "about",
+      "label": null,
+      "url": "redesigns/f-swiss-index/about.html",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "redesigns/f-swiss-index/about.html",
+          "status": 200,
+          "final_url": "redesigns/f-swiss-index/about.html",
+          "title": "About — Matt Jongbloet",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 390,
+          "height": 3558,
+          "file": "shots/about/dir-f-390.png",
+          "web": "shots/_web/about/dir-f-390.jpg",
+          "web_width": 390,
+          "web_height": 3558
+        },
+        "1440": {
+          "url": "redesigns/f-swiss-index/about.html",
+          "status": 200,
+          "final_url": "redesigns/f-swiss-index/about.html",
+          "title": "About — Matt Jongbloet",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 2952,
+          "file": "shots/about/dir-f-1440.png",
+          "web": "shots/_web/about/dir-f-1440.jpg",
+          "web_width": 640,
+          "web_height": 1312
+        }
+      },
+      "final_url": "redesigns/f-swiss-index/about.html"
+    },
+    "contact": {
+      "type": "contact",
+      "label": null,
+      "url": null,
+      "note": "Concept: contact is part of every page.",
+      "missing": "no contact page"
+    }
+  },
+  "captured_at": "2026-11-10T21:12:48.381Z"
+}

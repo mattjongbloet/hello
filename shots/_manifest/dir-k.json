@@ -1,0 +1,139 @@
+{
+  "id": "dir-k",
+  "name": "Annual Report",
+  "input": "redesigns/k-annual-report/index.html",
+  "concept": "K",
+  "pages": {
+    "home": {
+      "type": "home",
+      "label": "Direction K · Home",
+      "url": "redesigns/k-annual-report/index.html",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "redesigns/k-annual-report/index.html",
+          "status": 200,
+          "final_url": "redesigns/k-annual-report/index.html",
+          "title": "Matt Jongbloet — Annual Report 2026",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 390,
+          "height": 6429,
+          "file": "shots/home/dir-k-390.png",
+          "web": "shots/_web/home/dir-k-390.jpg",
+          "web_width": 390,
+          "web_height": 6429
+        },
+        "1440": {
+          "url": "redesigns/k-annual-report/index.html",
+          "status": 200,
+          "final_url": "redesigns/k-annual-report/index.html",
+          "title": "Matt Jongbloet — Annual Report 2026",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 3986,
+          "file": "shots/home/dir-k-1440.png",
+          "web": "shots/_web/home/dir-k-1440.jpg",
+          "web_width": 640,
+          "web_height": 1772
+        }
+      },
+      "final_url": "redesigns/k-annual-report/index.html"
+    },
+    "case": {
+      "type": "case",
+      "label": "PMI (redesign)",
+      "url": "redesigns/k-annual-report/case-pmi.html",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "redesigns/k-annual-report/case-pmi.html",
+          "status": 200,
+          "final_url": "redesigns/k-annual-report/case-pmi.html",
+          "title": "Segment report: PMI — Matt Jongbloet",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 390,
+          "height": 5211,
+          "file": "shots/case/dir-k-390.png",
+          "web": "shots/_web/case/dir-k-390.jpg",
+          "web_width": 390,
+          "web_height": 5211
+        },
+        "1440": {
+          "url": "redesigns/k-annual-report/case-pmi.html",
+          "status": 200,
+          "final_url": "redesigns/k-annual-report/case-pmi.html",
+          "title": "Segment report: PMI — Matt Jongbloet",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 4461,
+          "file": "shots/case/dir-k-1440.png",
+          "web": "shots/_web/case/dir-k-1440.jpg",
+          "web_width": 640,
+          "web_height": 1983
+        }
+      },
+      "final_url": "redesigns/k-annual-report/case-pmi.html"
+    },
+    "about": {
+      "type": "about",
+      "label": null,
+      "url": "redesigns/k-annual-report/about.html",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "redesigns/k-annual-report/about.html",
+          "status": 200,
+          "final_url": "redesigns/k-annual-report/about.html",
+          "title": "Profile — Matt Jongbloet",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 390,
+          "height": 2883,
+          "file": "shots/about/dir-k-390.png",
+          "web": "shots/_web/about/dir-k-390.jpg",
+          "web_width": 390,
+          "web_height": 2883
+        },
+        "1440": {
+          "url": "redesigns/k-annual-report/about.html",
+          "status": 200,
+          "final_url": "redesigns/k-annual-report/about.html",
+          "title": "Profile — Matt Jongbloet",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 2391,
+          "file": "shots/about/dir-k-1440.png",
+          "web": "shots/_web/about/dir-k-1440.jpg",
+          "web_width": 640,
+          "web_height": 1063
+        }
+      },
+      "final_url": "redesigns/k-annual-report/about.html"
+    },
+    "contact": {
+      "type": "contact",
+      "label": null,
+      "url": null,
+      "note": "Concept: contact is part of every page.",
+      "missing": "no contact page"
+    }
+  },
+  "captured_at": "2026-11-10T21:14:09.028Z"
+}

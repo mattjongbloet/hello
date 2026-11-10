@@ -1,0 +1,139 @@
+{
+  "id": "dir-l",
+  "name": "Terminal",
+  "input": "redesigns/l-terminal/index.html",
+  "concept": "L",
+  "pages": {
+    "home": {
+      "type": "home",
+      "label": "Direction L · Home",
+      "url": "redesigns/l-terminal/index.html",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "redesigns/l-terminal/index.html",
+          "status": 200,
+          "final_url": "redesigns/l-terminal/index.html",
+          "title": "matt@portfolio: ~",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.014,
+          "method": "fullpage",
+          "width": 390,
+          "height": 2844,
+          "file": "shots/home/dir-l-390.png",
+          "web": "shots/_web/home/dir-l-390.jpg",
+          "web_width": 390,
+          "web_height": 2844
+        },
+        "1440": {
+          "url": "redesigns/l-terminal/index.html",
+          "status": 200,
+          "final_url": "redesigns/l-terminal/index.html",
+          "title": "matt@portfolio: ~",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.009,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 1511,
+          "file": "shots/home/dir-l-1440.png",
+          "web": "shots/_web/home/dir-l-1440.jpg",
+          "web_width": 640,
+          "web_height": 672
+        }
+      },
+      "final_url": "redesigns/l-terminal/index.html"
+    },
+    "case": {
+      "type": "case",
+      "label": "PMI (redesign)",
+      "url": "redesigns/l-terminal/case-pmi.html",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "redesigns/l-terminal/case-pmi.html",
+          "status": 200,
+          "final_url": "redesigns/l-terminal/case-pmi.html",
+          "title": "PMI(1) — matt@portfolio",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.007,
+          "method": "fullpage",
+          "width": 390,
+          "height": 3401,
+          "file": "shots/case/dir-l-390.png",
+          "web": "shots/_web/case/dir-l-390.jpg",
+          "web_width": 390,
+          "web_height": 3401
+        },
+        "1440": {
+          "url": "redesigns/l-terminal/case-pmi.html",
+          "status": 200,
+          "final_url": "redesigns/l-terminal/case-pmi.html",
+          "title": "PMI(1) — matt@portfolio",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.017,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 2550,
+          "file": "shots/case/dir-l-1440.png",
+          "web": "shots/_web/case/dir-l-1440.jpg",
+          "web_width": 640,
+          "web_height": 1133
+        }
+      },
+      "final_url": "redesigns/l-terminal/case-pmi.html"
+    },
+    "about": {
+      "type": "about",
+      "label": null,
+      "url": "redesigns/l-terminal/about.html",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "redesigns/l-terminal/about.html",
+          "status": 200,
+          "final_url": "redesigns/l-terminal/about.html",
+          "title": "about.md — matt@portfolio",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.018,
+          "method": "fullpage",
+          "width": 390,
+          "height": 2042,
+          "file": "shots/about/dir-l-390.png",
+          "web": "shots/_web/about/dir-l-390.jpg",
+          "web_width": 390,
+          "web_height": 2042
+        },
+        "1440": {
+          "url": "redesigns/l-terminal/about.html",
+          "status": 200,
+          "final_url": "redesigns/l-terminal/about.html",
+          "title": "about.md — matt@portfolio",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.026,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 1703,
+          "file": "shots/about/dir-l-1440.png",
+          "web": "shots/_web/about/dir-l-1440.jpg",
+          "web_width": 640,
+          "web_height": 757
+        }
+      },
+      "final_url": "redesigns/l-terminal/about.html"
+    },
+    "contact": {
+      "type": "contact",
+      "label": null,
+      "url": null,
+      "note": "Concept: contact is part of every page.",
+      "missing": "no contact page"
+    }
+  },
+  "captured_at": "2026-11-10T21:15:24.739Z"
+}

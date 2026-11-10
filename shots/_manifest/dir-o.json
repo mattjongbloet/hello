@@ -1,0 +1,139 @@
+{
+  "id": "dir-o",
+  "name": "Blueprint",
+  "input": "redesigns/o-blueprint/index.html",
+  "concept": "O",
+  "pages": {
+    "home": {
+      "type": "home",
+      "label": "Direction O · Home",
+      "url": "redesigns/o-blueprint/index.html",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "redesigns/o-blueprint/index.html",
+          "status": 200,
+          "final_url": "redesigns/o-blueprint/index.html",
+          "title": "MJ-001 General Arrangement — Matt Jongbloet",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 390,
+          "height": 4637,
+          "file": "shots/home/dir-o-390.png",
+          "web": "shots/_web/home/dir-o-390.jpg",
+          "web_width": 390,
+          "web_height": 4637
+        },
+        "1440": {
+          "url": "redesigns/o-blueprint/index.html",
+          "status": 200,
+          "final_url": "redesigns/o-blueprint/index.html",
+          "title": "MJ-001 General Arrangement — Matt Jongbloet",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 3415,
+          "file": "shots/home/dir-o-1440.png",
+          "web": "shots/_web/home/dir-o-1440.jpg",
+          "web_width": 640,
+          "web_height": 1518
+        }
+      },
+      "final_url": "redesigns/o-blueprint/index.html"
+    },
+    "case": {
+      "type": "case",
+      "label": "PMI (redesign)",
+      "url": "redesigns/o-blueprint/case-pmi.html",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "redesigns/o-blueprint/case-pmi.html",
+          "status": 200,
+          "final_url": "redesigns/o-blueprint/case-pmi.html",
+          "title": "MJ-002 PMI System — Matt Jongbloet",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 390,
+          "height": 5444,
+          "file": "shots/case/dir-o-390.png",
+          "web": "shots/_web/case/dir-o-390.jpg",
+          "web_width": 390,
+          "web_height": 5444
+        },
+        "1440": {
+          "url": "redesigns/o-blueprint/case-pmi.html",
+          "status": 200,
+          "final_url": "redesigns/o-blueprint/case-pmi.html",
+          "title": "MJ-002 PMI System — Matt Jongbloet",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 4141,
+          "file": "shots/case/dir-o-1440.png",
+          "web": "shots/_web/case/dir-o-1440.jpg",
+          "web_width": 640,
+          "web_height": 1840
+        }
+      },
+      "final_url": "redesigns/o-blueprint/case-pmi.html"
+    },
+    "about": {
+      "type": "about",
+      "label": null,
+      "url": "redesigns/o-blueprint/about.html",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "redesigns/o-blueprint/about.html",
+          "status": 200,
+          "final_url": "redesigns/o-blueprint/about.html",
+          "title": "MJ-003 Site Plan — Matt Jongbloet",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 390,
+          "height": 3311,
+          "file": "shots/about/dir-o-390.png",
+          "web": "shots/_web/about/dir-o-390.jpg",
+          "web_width": 390,
+          "web_height": 3311
+        },
+        "1440": {
+          "url": "redesigns/o-blueprint/about.html",
+          "status": 200,
+          "final_url": "redesigns/o-blueprint/about.html",
+          "title": "MJ-003 Site Plan — Matt Jongbloet",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 2226,
+          "file": "shots/about/dir-o-1440.png",
+          "web": "shots/_web/about/dir-o-1440.jpg",
+          "web_width": 640,
+          "web_height": 989
+        }
+      },
+      "final_url": "redesigns/o-blueprint/about.html"
+    },
+    "contact": {
+      "type": "contact",
+      "label": null,
+      "url": null,
+      "note": "Concept: contact is part of every page.",
+      "missing": "no contact page"
+    }
+  },
+  "captured_at": "2026-11-10T21:15:54.950Z"
+}
