@@ -284,7 +284,8 @@ async function capturePage(ctx, spec, out, width) {
     rec.password_screen = await page.locator('input[type=password]').count() > 0;
     if (rec.status && rec.status >= 400) throw new Error(`HTTP ${rec.status}`);
     let model = await scrollModel(page);
-    await slowScroll(page, model);
+    // noscroll: for pages where wheel input pans or zooms a canvas instead of scrolling.
+    if (!spec.noscroll) await slowScroll(page, model);
     await dismissPopups(page);
     await settle(page);
     return scrollModel(page);

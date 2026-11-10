@@ -1,0 +1,139 @@
+{
+  "id": "dir-b",
+  "name": "Editorial",
+  "input": "redesigns/b-editorial/index.html",
+  "concept": "B",
+  "pages": {
+    "home": {
+      "type": "home",
+      "label": "Direction B · Home",
+      "url": "redesigns/b-editorial/index.html",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "redesigns/b-editorial/index.html",
+          "status": 200,
+          "final_url": "redesigns/b-editorial/index.html",
+          "title": "Matt Jongbloet — Product Designer",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 390,
+          "height": 4350,
+          "file": "shots/home/dir-b-390.png",
+          "web": "shots/_web/home/dir-b-390.jpg",
+          "web_width": 390,
+          "web_height": 4350
+        },
+        "1440": {
+          "url": "redesigns/b-editorial/index.html",
+          "status": 200,
+          "final_url": "redesigns/b-editorial/index.html",
+          "title": "Matt Jongbloet — Product Designer",
+          "password_screen": false,
+          "scroll": "window",
+          "fallback_reason": "full-page height ballooned",
+          "method": "stitched",
+          "width": 1440,
+          "height": 3473,
+          "file": "shots/home/dir-b-1440.png",
+          "web": "shots/_web/home/dir-b-1440.jpg",
+          "web_width": 640,
+          "web_height": 1544
+        }
+      },
+      "final_url": "redesigns/b-editorial/index.html"
+    },
+    "case": {
+      "type": "case",
+      "label": "PMI (redesign)",
+      "url": "redesigns/b-editorial/case-pmi.html",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "redesigns/b-editorial/case-pmi.html",
+          "status": 200,
+          "final_url": "redesigns/b-editorial/case-pmi.html",
+          "title": "Private Mortgage Insurance — Matt Jongbloet",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 390,
+          "height": 5786,
+          "file": "shots/case/dir-b-390.png",
+          "web": "shots/_web/case/dir-b-390.jpg",
+          "web_width": 390,
+          "web_height": 5786
+        },
+        "1440": {
+          "url": "redesigns/b-editorial/case-pmi.html",
+          "status": 200,
+          "final_url": "redesigns/b-editorial/case-pmi.html",
+          "title": "Private Mortgage Insurance — Matt Jongbloet",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 5823,
+          "file": "shots/case/dir-b-1440.png",
+          "web": "shots/_web/case/dir-b-1440.jpg",
+          "web_width": 640,
+          "web_height": 2588
+        }
+      },
+      "final_url": "redesigns/b-editorial/case-pmi.html"
+    },
+    "about": {
+      "type": "about",
+      "label": null,
+      "url": "redesigns/b-editorial/about.html",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "redesigns/b-editorial/about.html",
+          "status": 200,
+          "final_url": "redesigns/b-editorial/about.html",
+          "title": "About — Matt Jongbloet",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 390,
+          "height": 3513,
+          "file": "shots/about/dir-b-390.png",
+          "web": "shots/_web/about/dir-b-390.jpg",
+          "web_width": 390,
+          "web_height": 3513
+        },
+        "1440": {
+          "url": "redesigns/b-editorial/about.html",
+          "status": 200,
+          "final_url": "redesigns/b-editorial/about.html",
+          "title": "About — Matt Jongbloet",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 3353,
+          "file": "shots/about/dir-b-1440.png",
+          "web": "shots/_web/about/dir-b-1440.jpg",
+          "web_width": 640,
+          "web_height": 1490
+        }
+      },
+      "final_url": "redesigns/b-editorial/about.html"
+    },
+    "contact": {
+      "type": "contact",
+      "label": null,
+      "url": null,
+      "note": "Concept: contact is a section at the end of every page.",
+      "missing": "no contact page"
+    }
+  },
+  "captured_at": "2026-11-10T13:11:09.924Z"
+}

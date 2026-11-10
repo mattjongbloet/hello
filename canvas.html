@@ -113,6 +113,8 @@ a { color: inherit; }
 .colhead .hide:hover { color: var(--ink); background: var(--table); }
 .you { font: 600 10px var(--font-mono); text-transform: uppercase; letter-spacing: .08em; padding: 2px 6px; border-radius: 4px; background: var(--accent); color: var(--accent-ink); flex: none; }
 .cell.self .shot, .cell.self .empty { outline: 2px solid var(--accent); outline-offset: 4px; }
+.you.concept { background: var(--ink); color: var(--table); min-width: 22px; text-align: center; }
+.cell.concept .shot, .cell.concept .empty { outline: 2px dashed var(--ink-2); outline-offset: 4px; }
 .rail { position: absolute; left: 0; top: var(--strip-h); bottom: 0; width: var(--rail-w); background: var(--sheet); border-right: 1px solid var(--line); overflow: hidden; z-index: 10; }
 .rowhead { position: absolute; left: 0; width: 100%; }
 .rowhead span { position: absolute; left: 50%; writing-mode: vertical-rl; transform: translateX(-50%) rotate(180deg); font: 500 11px var(--font-mono); text-transform: uppercase; letter-spacing: .12em; white-space: nowrap; }
@@ -188,8 +190,11 @@ a { color: inherit; }
   const M = window.MANIFEST || { sites: {}, order: [] };
   const ORDER = (M.order || Object.keys(M.sites)).filter((id) => M.sites[id]);
   const isSelf = (id) => !!(M.sites[id] && M.sites[id].self);
-  const NUM = {}; ORDER.filter((id) => !isSelf(id)).forEach((id, i) => { NUM[id] = i + 1; });
-  const tag = (id) => isSelf(id) ? '<span class="you">You</span>' : `<span class="num">${String(NUM[id]).padStart(2, '0')}</span>`;
+  const conceptOf = (id) => (M.sites[id] && M.sites[id].concept) || null;
+  const NUM = {}; ORDER.filter((id) => !isSelf(id) && !conceptOf(id)).forEach((id, i) => { NUM[id] = i + 1; });
+  const tag = (id) => isSelf(id) ? '<span class="you">You</span>'
+    : conceptOf(id) ? `<span class="you concept" title="Redesign direction ${conceptOf(id)}">${conceptOf(id)}</span>`
+    : `<span class="num">${String(NUM[id]).padStart(2, '0')}</span>`;
   const ROWS = [
     { key: 'home', label: 'Home' }, { key: 'case', label: 'Case study' }, { key: 'about', label: 'About' },
     { key: 'contact', label: 'Contact' }, { key: 'other', label: 'Other' },
@@ -281,7 +286,7 @@ a { color: inherit; }
         body = `<div class="empty"><b>${esc(c.reason)}</b>${c.detail ? `<p>${esc(c.detail)}</p>` : ''}</div>`;
       }
       const badges = (c.badges || []).map((b) => `<span class="badge${b.warn ? ' warn' : ''}">${esc(b.text)}</span>`).join('');
-      html.push(`<div class="cell${isSelf(site.id) ? ' self' : ''}" style="left:${col.x}px;top:${row.y}px;width:${col.w}px"><div class="cap">${tabs}${label}${badges}${liveLink}</div>${body}</div>`);
+      html.push(`<div class="cell${isSelf(site.id) ? ' self' : conceptOf(site.id) ? ' concept' : ''}" style="left:${col.x}px;top:${row.y}px;width:${col.w}px"><div class="cap">${tabs}${label}${badges}${liveLink}</div>${body}</div>`);
     }));
     world.innerHTML = html.join('');
     world.style.width = layout.width + 'px'; world.style.height = layout.height + 'px';
@@ -411,7 +416,7 @@ a { color: inherit; }
   function syncPicker() {
     $('pick-list').innerHTML = ORDER.map((id, i) => {
       const s = M.sites[id];
-      return `<li><label><input type="checkbox" id="pick-${id}" data-id="${id}" ${state.hidden.has(id) ? '' : 'checked'}><span class="n">${isSelf(id) ? 'You' : NUM[id]}</span><span>${esc(s.name)}</span><span class="host">${esc(host(s.input))}</span></label></li>`;
+      return `<li><label><input type="checkbox" id="pick-${id}" data-id="${id}" ${state.hidden.has(id) ? '' : 'checked'}><span class="n">${isSelf(id) ? 'You' : conceptOf(id) || NUM[id]}</span><span>${esc(s.name)}</span><span class="host">${esc(host(s.input))}</span></label></li>`;
     }).join('');
   }
   $('pick-list').addEventListener('change', (e) => {

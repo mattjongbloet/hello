@@ -119,7 +119,18 @@
   "input": "redesigns/e-research-wall/index.html",
   "home": {
    "url": "redesigns/e-research-wall/index.html",
-   "label": "Direction E · Home"
+   "label": "Direction E · Home",
+   "noscroll": true,
+   "viewport": [
+    "1440"
+   ],
+   "actions": [
+    {
+     "click": "#zfit",
+     "wait": 800
+    }
+   ],
+   "note": "Desktop shows the whole board (Fit); phones get the stacked list view."
   },
   "case": {
    "url": "redesigns/e-research-wall/case-pmi.html",
