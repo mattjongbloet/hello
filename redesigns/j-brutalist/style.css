@@ -130,7 +130,7 @@ mark { background: var(--hi); color: var(--ink); padding: 0 .15em; }
 .span3 { border-right: 0; }
 
 @media (max-width: 600px) {
-  .table td.c-cell > * { padding-bottom: 6px; }
+  .table td.c-cell > * { padding-bottom: 8px; }
   /* About route log: number column + stacked where / what / notes */
   .table.route tr { grid-template-columns: 48px minmax(0, 1fr); }
   .table.route td { grid-column: 2; }

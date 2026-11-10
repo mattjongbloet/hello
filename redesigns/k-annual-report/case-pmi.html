@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Segment report: PMI — Matt Jongbloet</title>
+<meta name="description" content="Segment report: helping ≈1 million homeowners drop mortgage insurance early at Homebot.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Sans+Condensed:wght@400;500;600&family=Caveat:wght@500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="run">
+  <div class="wrap"><a href="index.html"><b>Matt Jongbloet</b><span class="who"> · Annual Report 2026</span></a>
+  <nav aria-label="Main"><a href="index.html">Report</a><a href="case-pmi.html" aria-current="page">Segment: PMI</a><a href="about.html">Profile</a></nav></div>
+</header>
+
+<main>
+  <section class="cover">
+    <div class="wrap">
+      <div class="title">
+        <span class="kick">Segment report · Homebot · July 2022</span>
+        <h1>Private Mortgage <em>Insurance</em></h1>
+      </div>
+      <span class="year" aria-hidden="true">’22</span>
+      <div class="meta">
+        <div><b>Homebot</b>Company</div>
+        <div><b>Consumer Team</b>Team</div>
+        <div><b>July 2022</b>Date</div>
+        <div><b>Product design</b>Prototyping, testing, delivery plan</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap g">
+      <div class="sec-head"><span class="num">01</span><h2>Executive summary</h2></div>
+      <div class="sec-body exec">
+        <div class="text">
+          <p class="open">Our data showed that about a million Homebot homeowners could stop paying private mortgage insurance (PMI) early.</p>
+          <p>I designed the feature that told them, and that pointed them back to their loan officers and realtors, Homebot’s customers. It turned a homeowner’s saving into a reason for their advisor to reach out.</p>
+          <p>I took the work from prototypes through usability testing to a four-sprint delivery plan with engineering, then presented it to the whole company.</p>
+        </div>
+        <div class="keyfig">
+          <div><span>Eligible homeowners</span><b>≈1M</b></div>
+          <div><span>Saving per homeowner, per month</span><b>≈$195</b></div>
+          <div><span>Potential savings, per month<sup class="fn"><a href="#n1" aria-label="Note 1">1</a></sup></span><b style="color:var(--red)">≈$200M</b></div>
+          <div><span>Usability rating (n = 20)</span><b>4.8/5</b></div>
+          <div><span>Requests in sprint one</span><b>500+</b></div>
+        </div>
+      </div>
+      <div class="sec-body" style="grid-column:1/-1">
+        <figure class="plate"><img src="../assets/pmi-mockup.png" alt="Two phone screens: 'When can you remove your $152.13 monthly mortgage insurance? Maybe now' with a 20% removal goal bar, and ways to remove PMI faster"></figure>
+        <p class="cap" style="padding-top:8px">Exhibit A. The design: a removal goal, what it’s worth, and who to ask.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec tint">
+    <div class="wrap g">
+      <div class="sec-head"><span class="num">02</span><h2>Market conditions</h2></div>
+      <div class="sec-body prose">
+        <p>Interviews and our data warehouse pointed to the same opportunity: help homeowners realise PMI savings, and help Homebot’s customers build trust as their advisors. Three conditions made it timely:</p>
+        <ul>
+          <li><span>Home prices rose faster than ever in 2021. The typical home gained $50,000 in value.</span></li>
+          <li><span>Nearly two-thirds of US households struck by COVID-19 faced financial trouble.</span></li>
+          <li><span>PMI lets buyers without a 20% down payment become homeowners. It can be removed once the loan-to-value ratio falls below 80% of the original appraised value, or sooner if the home has appreciated.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap g">
+      <div class="sec-head"><span class="num">03</span><h2>Operations</h2></div>
+      <div class="sec-body">
+        <table class="tbl">
+          <thead><tr><th>Stage</th><th>What I did</th><th class="r">Result</th></tr></thead>
+          <tbody>
+            <tr><td><b>Explore</b></td><td>Sketched and rapidly prototyped variations on copy, infographics and visualisations, and on ways to connect with loan officers and realtors.</td><td class="r" data-l="Result">Options to test</td></tr>
+            <tr><td><b>Validate</b></td><td>Ran usability sessions with 20 participants on value and on confidence in removing PMI.</td><td class="r" data-l="Result"><span class="fig">4.8/5</span></td></tr>
+            <tr><td><b>Plan</b></td><td>Broke the design into four sprints with the engineering team leads, each the smallest chunk of deliverable value.</td><td class="r" data-l="Result"><span class="fig">4</span> sprints</td></tr>
+            <tr><td><b>Align</b></td><td>Presented the project to the whole company using the Double Diamond, connecting colleagues to the mission and showing how the product org works.</td><td class="r" data-l="Result">Company-wide</td></tr>
+          </tbody>
+        </table>
+        <div class="plates">
+          <figure><div class="im"><img src="../assets/pmi-iterations.png" alt="Figma board of PMI iterations"></div><figcaption class="cap">Exhibit B. Iterations on copy, visuals and contact options.</figcaption></figure>
+          <figure><div class="im"><img src="../assets/pmi-handoff.png" alt="Figma handoff board with light mode"></div><figcaption class="cap">Exhibit C. Handoff, including light mode.</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec tint">
+    <div class="wrap g">
+      <div class="sec-head"><span class="num">04</span><h2>Results</h2></div>
+      <div class="sec-body prose">
+        <p>Within the first sprint, homeowners sent <b>more than 500 requests</b> to learn about cancelling PMI, worth around <b>$97,500 a month</b> in savings.<sup class="fn"><a href="#n2" aria-label="Note 2">2</a></sup></p>
+        <a class="video" href="https://www.youtube.com/watch?v=7k9B34Jx0yg"><img src="../assets/pmi-video.jpg" alt="Video still of the PMI feature"><span>▶ Watch the walkthrough ↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap g notes" id="notes">
+    <h2>Notes</h2>
+    <ol>
+      <li id="n1">Estimate: ≈1 million eligible homeowners × ≈$195 per month. Potential savings, not realised savings.</li>
+      <li id="n2">Requests from homeowners to learn about PMI cancellation during the first of four sprints.</li>
+    </ol>
+  </section>
+</main>
+
+<footer class="back" id="contact">
+  <div class="wrap">
+    <span class="kick">Next segment</span>
+    <h2><a href="https://www.mjongbloet.com/portfolio/home-search" style="text-decoration:none">Home Search ↗</a></h2>
+    <a class="mail" href="mailto:matthewjongbloet@gmail.com">matthewjongbloet@gmail.com</a>
+    <div class="small"><span>© 2026 Matt Jongbloet · Amsterdam, NL</span><span><a href="index.html">Report</a> · <a href="about.html">Profile</a></span></div>
+  </div>
+</footer>
+</body>
+</html>
