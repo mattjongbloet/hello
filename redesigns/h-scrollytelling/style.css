@@ -13,7 +13,7 @@
   --pad: 48px;
 }
 *, *::before, *::after { box-sizing: border-box; }
-body { margin: 0; background: var(--paper); color: var(--ink); font: 400 17px/1.65 var(--font); -webkit-font-smoothing: antialiased; font-variant-numeric: tabular-nums; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 17px/1.65 var(--font); -webkit-font-smoothing: antialiased; }
 img { max-width: 100%; display: block; }
 a { color: inherit; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
@@ -110,3 +110,6 @@ h1, h2, h3 { letter-spacing: -0.025em; line-height: 1.1; font-weight: 700; text-
 @media (max-width: 900px) { .step .m.rise { padding-bottom: 0; place-items: end center; } }
 /* Height-driven, centred absolutely; capped so both phones (≈60% of the image's width) always fit the half-width stage */
 .scene.rise img { position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); height: min(84%, 39vw); width: auto; max-width: none; max-height: none; }
+
+/* Tabular figures only where numbers line up (body-wide tnum widened commas and full stops) */
+.metric b, .card .big, .card .row b, .xp time, .label { font-variant-numeric: tabular-nums; }

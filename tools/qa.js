@@ -83,6 +83,21 @@ const WIDTHS = [390, 768, 1024, 1440];
           }
           if (hit && !inFixed(A.el) && !inFixed(B.el)) out.push(`overlapping text: ${desc(A.el)} × ${desc(B.el)}`);
         }
+        // Wide punctuation: a comma or full stop after a letter rendered wider than ~0.42em (e.g. tabular-nums widening it)
+        if (!mobile) {
+          const tw = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+          const seen = new Set();
+          for (let n; (n = tw.nextNode());) {
+            const el = n.parentElement; if (!el || !vis(el)) continue;
+            const cs = getComputedStyle(el); if (/mono/i.test(cs.fontFamily)) continue;
+            const t = n.textContent; const re = /[A-Za-z][.,](?=\s|$)/g; let m;
+            while ((m = re.exec(t))) {
+              const r = document.createRange(); r.setStart(n, m.index + 1); r.setEnd(n, m.index + 2);
+              const fs = parseFloat(cs.fontSize), ls = parseFloat(cs.letterSpacing) || 0, w = r.getBoundingClientRect().width - ls;
+              if (w / fs > 0.42 && !seen.has(el)) { seen.add(el); out.push(`wide punctuation (${(w / fs).toFixed(2)}em): ${desc(el)}`); }
+            }
+          }
+        }
         // Small tap targets on phones
         if (mobile) for (const el of all.filter((e) => e.matches('a, button'))) {
           const r = el.getBoundingClientRect();

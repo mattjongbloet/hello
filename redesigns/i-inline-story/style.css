@@ -13,7 +13,7 @@
   --mid: clamp(24px, 3vw, 44px);
 }
 *, *::before, *::after { box-sizing: border-box; }
-body { margin: 0; background: var(--paper); color: var(--ink); font: 400 18px/1.6 var(--font); -webkit-font-smoothing: antialiased; font-variant-numeric: tabular-nums; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 18px/1.6 var(--font); -webkit-font-smoothing: antialiased; }
 img { max-width: 100%; display: block; }
 a { color: inherit; }
 :focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; border-radius: 8px; }
@@ -90,3 +90,6 @@ a:hover .chip, a:focus-visible .chip { width: 2.2em; }
   .story { line-height: 1.2; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+/* Tabular figures only where numbers line up (body-wide tnum widened commas and full stops) */
+.xp time { font-variant-numeric: tabular-nums; }

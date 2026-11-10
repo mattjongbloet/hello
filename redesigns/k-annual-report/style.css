@@ -13,7 +13,7 @@
   --hand: "Caveat", cursive;
 }
 *, *::before, *::after { box-sizing: border-box; }
-body { margin: 0; background: var(--paper); color: var(--ink); font: 400 18px/1.6 var(--serif); -webkit-font-smoothing: antialiased; font-variant-numeric: lining-nums tabular-nums; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 18px/1.6 var(--serif); -webkit-font-smoothing: antialiased; }
 img { max-width: 100%; display: block; }
 a { color: inherit; }
 :focus-visible { outline: 2px solid var(--red); outline-offset: 3px; }
@@ -188,3 +188,6 @@ sup.fn a { display: inline-block; padding: 11px 10px; margin: -11px -10px; min-w
 .plates .im { flex: 1; overflow: hidden; }
 .plates .im img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 0; }
 @media (max-width: 600px) { .tbl td.r { white-space: normal; } }
+
+/* Tabular figures only where numbers line up (body-wide tnum widened commas and full stops) */
+.hl b, .tbl td, .keyfig b, .cover .meta, .sec-head .num, .contents li a::before, .notes li::before, .year { font-variant-numeric: tabular-nums; }
