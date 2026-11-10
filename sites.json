@@ -146,6 +146,226 @@
   "other": []
  },
  {
+  "id": "dir-f",
+  "name": "Swiss Index",
+  "concept": "F",
+  "input": "redesigns/f-swiss-index/index.html",
+  "home": {
+   "url": "redesigns/f-swiss-index/index.html",
+   "label": "Direction F · Home"
+  },
+  "case": {
+   "url": "redesigns/f-swiss-index/case-pmi.html",
+   "label": "PMI (redesign)"
+  },
+  "about": {
+   "url": "redesigns/f-swiss-index/about.html"
+  },
+  "contact": {
+   "missing": "no contact page",
+   "note": "Concept: contact is part of every page."
+  },
+  "other": []
+ },
+ {
+  "id": "dir-g",
+  "name": "Doc",
+  "concept": "G",
+  "input": "redesigns/g-doc/index.html",
+  "home": {
+   "url": "redesigns/g-doc/index.html",
+   "label": "Direction G · Home"
+  },
+  "case": {
+   "url": "redesigns/g-doc/case-pmi.html",
+   "label": "PMI (redesign)"
+  },
+  "about": {
+   "url": "redesigns/g-doc/about.html"
+  },
+  "contact": {
+   "missing": "no contact page",
+   "note": "Concept: contact is part of every page."
+  },
+  "other": []
+ },
+ {
+  "id": "dir-h",
+  "name": "Scrollytelling",
+  "concept": "H",
+  "input": "redesigns/h-scrollytelling/index.html",
+  "home": {
+   "url": "redesigns/h-scrollytelling/index.html",
+   "label": "Direction H · Home"
+  },
+  "case": {
+   "url": "redesigns/h-scrollytelling/case-pmi.html",
+   "label": "PMI (redesign)"
+  },
+  "about": {
+   "url": "redesigns/h-scrollytelling/about.html"
+  },
+  "contact": {
+   "missing": "no contact page",
+   "note": "Concept: contact is part of every page."
+  },
+  "other": []
+ },
+ {
+  "id": "dir-i",
+  "name": "Inline Story",
+  "concept": "I",
+  "input": "redesigns/i-inline-story/index.html",
+  "home": {
+   "url": "redesigns/i-inline-story/index.html",
+   "label": "Direction I · Home"
+  },
+  "case": {
+   "url": "redesigns/i-inline-story/case-pmi.html",
+   "label": "PMI (redesign)"
+  },
+  "about": {
+   "url": "redesigns/i-inline-story/about.html"
+  },
+  "contact": {
+   "missing": "no contact page",
+   "note": "Concept: contact is part of every page."
+  },
+  "other": []
+ },
+ {
+  "id": "dir-j",
+  "name": "Brutalist",
+  "concept": "J",
+  "input": "redesigns/j-brutalist/index.html",
+  "home": {
+   "url": "redesigns/j-brutalist/index.html",
+   "label": "Direction J · Home"
+  },
+  "case": {
+   "url": "redesigns/j-brutalist/case-pmi.html",
+   "label": "PMI (redesign)"
+  },
+  "about": {
+   "url": "redesigns/j-brutalist/about.html"
+  },
+  "contact": {
+   "missing": "no contact page",
+   "note": "Concept: contact is part of every page."
+  },
+  "other": []
+ },
+ {
+  "id": "dir-k",
+  "name": "Annual Report",
+  "concept": "K",
+  "input": "redesigns/k-annual-report/index.html",
+  "home": {
+   "url": "redesigns/k-annual-report/index.html",
+   "label": "Direction K · Home"
+  },
+  "case": {
+   "url": "redesigns/k-annual-report/case-pmi.html",
+   "label": "PMI (redesign)"
+  },
+  "about": {
+   "url": "redesigns/k-annual-report/about.html"
+  },
+  "contact": {
+   "missing": "no contact page",
+   "note": "Concept: contact is part of every page."
+  },
+  "other": []
+ },
+ {
+  "id": "dir-l",
+  "name": "Terminal",
+  "concept": "L",
+  "input": "redesigns/l-terminal/index.html",
+  "home": {
+   "url": "redesigns/l-terminal/index.html",
+   "label": "Direction L · Home"
+  },
+  "case": {
+   "url": "redesigns/l-terminal/case-pmi.html",
+   "label": "PMI (redesign)"
+  },
+  "about": {
+   "url": "redesigns/l-terminal/about.html"
+  },
+  "contact": {
+   "missing": "no contact page",
+   "note": "Concept: contact is part of every page."
+  },
+  "other": []
+ },
+ {
+  "id": "dir-m",
+  "name": "The Deck",
+  "concept": "M",
+  "input": "redesigns/m-deck/index.html",
+  "home": {
+   "url": "redesigns/m-deck/index.html",
+   "label": "Direction M · Home"
+  },
+  "case": {
+   "url": "redesigns/m-deck/case-pmi.html",
+   "label": "PMI (redesign)"
+  },
+  "about": {
+   "url": "redesigns/m-deck/about.html"
+  },
+  "contact": {
+   "missing": "no contact page",
+   "note": "Concept: contact is part of every page."
+  },
+  "other": []
+ },
+ {
+  "id": "dir-n",
+  "name": "Leverage",
+  "concept": "N",
+  "input": "redesigns/n-leverage/index.html",
+  "home": {
+   "url": "redesigns/n-leverage/index.html",
+   "label": "Direction N · Home"
+  },
+  "case": {
+   "url": "redesigns/n-leverage/case-pmi.html",
+   "label": "PMI (redesign)"
+  },
+  "about": {
+   "url": "redesigns/n-leverage/about.html"
+  },
+  "contact": {
+   "missing": "no contact page",
+   "note": "Concept: contact is part of every page."
+  },
+  "other": []
+ },
+ {
+  "id": "dir-o",
+  "name": "Blueprint",
+  "concept": "O",
+  "input": "redesigns/o-blueprint/index.html",
+  "home": {
+   "url": "redesigns/o-blueprint/index.html",
+   "label": "Direction O · Home"
+  },
+  "case": {
+   "url": "redesigns/o-blueprint/case-pmi.html",
+   "label": "PMI (redesign)"
+  },
+  "about": {
+   "url": "redesigns/o-blueprint/about.html"
+  },
+  "contact": {
+   "missing": "no contact page",
+   "note": "Concept: contact is part of every page."
+  },
+  "other": []
+ },
+ {
   "id": "iniabiodun",
   "name": "Ìní Abiodun",
   "input": "https://www.iniabiodun.com",
