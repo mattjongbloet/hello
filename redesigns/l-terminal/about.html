@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>about.md — matt@portfolio</title>
+<meta name="description" content="Matt Jongbloet: Canterbury, Amsterdam, the US, and back. Rendered from about.md.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="tabs" aria-label="Main">
+  <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+  <a href="index.html" data-t="home">~ zsh</a>
+  <a href="case-pmi.html" data-t="case">man pmi</a>
+  <a href="about.html" data-t="about" aria-current="page">about.md</a>
+  <span class="sp"></span>
+  <a class="ext" href="https://cdn.prod.website-files.com/63b35214bc1dc0317e22bd99/668ae1b79c5572bfad32e508_Matt_Jongbloet_CV_2024.pdf">cv.pdf ↗</a>
+</nav>
+
+<main class="term">
+  <section class="block">
+    <p class="cmd"><span class="ps">matt@portfolio<span class="p">:~$</span></span><span>cat about.md</span></p>
+    <div class="out man" style="margin-top:12px">
+      <h1 style="color:#fff;font-weight:600"><span class="mut"># </span>About</h1>
+      <div class="ind" style="padding-left:0;margin-top:10px">
+        <p>I always knew I wanted to use design to make people’s lives a little bit better. The first five years of my career, in visual and brand design, left me feeling like I was making nice-looking things without a purpose.</p>
+        <p>So I left Canterbury, England for an <b>MSc in Digital Design</b> in Amsterdam. I learned lab, field and showroom research, and tried new methods on real projects for large companies. Then I looked for a place where I could deliver dev-ready designs and also run research.</p>
+        <p>After marrying my now wife I moved to the US, where I played pivotal design roles for <b>5+ years</b> at early- and mid-stage SaaS companies. I’m now back in Amsterdam as <b>Senior Staff Product Designer</b> at <a href="https://hospitable.com/">Hospitable</a>, helping hosts run their short-term rentals on autopilot.</p>
+      </div>
+      <figure class="preview" style="margin-left:0"><div class="bar"><span>nepal.jpeg</span><span>1200×704</span></div><img src="../assets/nepal.jpeg" alt="Two hikers on a ridge in front of snow-capped Himalayan peaks in Nepal"></figure>
+    </div>
+  </section>
+
+  <section class="block">
+    <p class="cmd"><span class="ps">matt@portfolio<span class="p">:~$</span></span><span>git log --graph --format='%d %s' life</span></p>
+    <ol class="out gitlog">
+      <li><span class="gr">*</span><span class="ref head">HEAD</span><span>Amsterdam, NL — Senior Staff Product Designer, Hospitable <span class="mut">(Mar 2024 – now)</span></span></li>
+      <li><span class="gr">*</span><span class="ref">carv</span><span>Lead Product Designer, Carv <span class="mut">(Feb 2024 – Mar 2025)</span></span></li>
+      <li><span class="gr">*</span><span class="ref">trellis</span><span>Staff Product Designer, Growth, Trellis <span class="mut">(Jan 2022 – Feb 2023)</span></span></li>
+      <li><span class="gr">*</span><span class="ref">usa</span><span>United States — 5+ years at early- and mid-stage SaaS, incl. Homebot</span></li>
+      <li><span class="gr">*</span><span class="ref">msc</span><span>Amsterdam, NL — MSc Digital Design, Cum Laude</span></li>
+      <li><span class="gr">*</span><span class="ref">init</span><span>Canterbury, England — five years of visual and brand design</span></li>
+    </ol>
+  </section>
+
+  <section class="block">
+    <p class="cmd"><span class="ps">matt@portfolio<span class="p">:~$</span></span><span>cat credentials.json</span></p>
+<pre class="out json">{
+  <span class="k">"title"</span>: <span class="s">"Senior Staff Product Designer"</span>,
+  <span class="k">"years_in_product_design"</span>: <span class="y">"10+"</span>,
+  <span class="k">"degree"</span>: <span class="s">"MSc Digital Design, Cum Laude"</span>,
+  <span class="k">"certification"</span>: <span class="s">"UXC, Nielsen Norman Group"</span>,
+  <span class="k">"based_in"</span>: <span class="s">"Amsterdam, NL"</span>,
+  <span class="k">"email"</span>: <span class="s">"<a href="mailto:matthewjongbloet@gmail.com" style="color:inherit">matthewjongbloet@gmail.com</a>"</span>
+}</pre>
+  </section>
+
+    <section class="live" aria-label="Interactive prompt">
+      <div id="history" aria-live="polite"></div>
+      <form id="prompt" class="block" autocomplete="off">
+        <label class="ps" for="cmd">matt@portfolio<span class="p">:~$</span></label>
+        <input id="cmd" name="cmd" type="text" spellcheck="false" autocapitalize="off" placeholder="type help">
+      </form>
+      <div class="chips"><span class="lbl">Try:</span><button type="button" data-run="whoami">whoami</button><button type="button" data-run="ls">ls</button><button type="button" data-run="open pmi">open pmi</button><button type="button" data-run="impact">impact</button><button type="button" data-run="about">about</button><button type="button" data-run="contact">contact</button><button type="button" data-run="cv">cv</button></div>
+    </section>
+
+</main>
+<script src="script.js"></script>
+</body>
+</html>
