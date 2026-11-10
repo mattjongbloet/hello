@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>About board — Matt Jongbloet</title>
+<meta name="description" content="My story, pinned up: Canterbury, Amsterdam, the US, and back.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Kalam&display=swap">
+<link rel="stylesheet" href="style.css">
+<style>
+  .about-hero { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; }
+  .about-hero h1 { font-size: clamp(40px, 5vw, 64px); letter-spacing: -0.035em; line-height: 1.02; font-weight: 800; }
+  .about-hero h1 em { font-style: normal; background: var(--p); padding: 0 .1em; }
+  .about-hero p { font-size: 19px; color: #45443f; margin-top: 18px; max-width: 46ch; }
+  .route { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; position: relative; padding-top: 18px; }
+  .route svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
+  .route .sticky { min-height: 200px; font-size: 15px; }
+  .route .sticky::before { content: ""; position: absolute; top: -9px; left: 50%; width: 18px; height: 18px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #ff7a7a, #c0262d); box-shadow: 0 2px 4px rgb(0 0 0 / .35); transform: translateX(-50%); }
+  .route .place { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; opacity: .6; }
+  .route b { font-size: 18px; }
+  .xp-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .xp-cards a { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 16px; text-decoration: none; display: flex; flex-direction: column; gap: 4px; }
+  .xp-cards a:hover { border-color: var(--wire); box-shadow: 0 0 0 2px var(--wire); }
+  .xp-cards small { color: var(--ink-2); font-weight: 600; font-size: 12px; }
+  @media (max-width: 900px) { .about-hero, .route, .xp-cards { grid-template-columns: 1fr; } .route svg { display: none; } }
+</style>
+</head>
+<body class="dotted">
+<header class="topbar">
+  <a class="chip" href="index.html"><img src="../assets/headshot.jpg" alt=""><b>Matt Jongbloet</b><span>Product designer &amp; UX researcher</span></a>
+  <nav class="tabs" aria-label="Main">
+    <a href="index.html">Board</a>
+    <a href="case-pmi.html">PMI case</a>
+    <a href="about.html" aria-current="page">About</a>
+    <a class="opt" href="https://cdn.prod.website-files.com/63b35214bc1dc0317e22bd99/668ae1b79c5572bfad32e508_Matt_Jongbloet_CV_2024.pdf">Resume</a>
+  </nav>
+</header>
+
+<main class="scroll">
+  <div class="lane" style="gap:88px">
+    <section class="frame about-hero">
+      <span class="tab">about-me</span>
+      <div>
+        <h1>I wanted design to have a <em>purpose.</em></h1>
+        <p>I’m Matt, a product designer and UX researcher. Five years of brand design taught me that nice-looking wasn’t enough, so I went and learned research. Here’s the route, pinned up.</p>
+      </div>
+      <figure class="polaroid tape" style="--r:2.5deg;margin:0;max-width:360px;justify-self:center"><img src="../assets/headshot.jpg" alt="Matt Jongbloet smiling in front of a colourful mural" style="aspect-ratio:1;object-fit:cover"><span class="cap">hi, I’m Matt 🤔🎨</span></figure>
+    </section>
+
+    <section class="frame">
+      <span class="tab">route</span>
+      <div class="route" id="route">
+        <svg aria-hidden="true"><path id="string" d="" fill="none" stroke="#c0262d" stroke-width="1.5" opacity=".6"/></svg>
+        <div class="sticky p" style="--r:-2deg"><span class="place">Canterbury, England 🧙</span><b class="h">Visual &amp; brand design</b>I always knew I wanted to use design to make people’s lives a little better. Five years in, I felt I was making nice-looking things without a purpose.</div>
+        <div class="sticky" style="--r:1.5deg"><span class="place">Amsterdam 🇳🇱</span><b class="h">MSc Digital Design</b>Lab, field and showroom research, plus new methods on real projects for large companies. Graduated Cum Laude.</div>
+        <div class="sticky b" style="--r:-1deg"><span class="place">USA 🇺🇸</span><b class="h">5+ years of SaaS</b>After marrying my now wife, I played pivotal design roles at early- and mid-stage companies, delivering dev-ready designs and running research.</div>
+        <div class="sticky g" style="--r:2deg"><span class="place">Amsterdam 🇳🇱 · now</span><b class="h">Hospitable</b>Back in Amsterdam, leading design for software that runs short-term rentals on autopilot.</div>
+      </div>
+    </section>
+
+    <figure class="polaroid tape" style="--r:-1.2deg;margin:0 auto;width:min(100%,880px)"><img src="../assets/nepal.jpeg" alt="Two hikers on a ridge in front of snow-capped Himalayan peaks in Nepal"><span class="cap">Nepal</span></figure>
+
+    <section class="frame" style="width:min(100%,760px);align-self:flex-end">
+      <span class="tab">credentials</span>
+      <div class="three">
+        <div class="sticky o" style="--r:-1deg"><b class="big">10+</b>years in product design</div>
+        <div class="sticky" style="--r:1.2deg"><b class="h" style="font-size:20px">MSc</b>Digital Design, Cum Laude</div>
+        <div class="sticky b" style="--r:-.6deg"><b class="h" style="font-size:20px">UXC</b>Nielsen Norman Group</div>
+      </div>
+    </section>
+
+    <section class="frame" style="width:min(100%,860px)">
+      <span class="tab">experience</span>
+      <div class="xp-cards">
+        <a href="https://hospitable.com/"><small>Mar 2024 – now</small><b>Staff Product Designer</b><span>Hospitable</span></a>
+        <a href="https://www.carv.com/"><small>Feb 2024 – Mar 2025</small><b>Lead Product Designer</b><span>Carv</span></a>
+        <a href="https://savvy.insure/"><small>Jan 2022 – Feb 2023</small><b>Staff Product Designer, Growth</b><span>Trellis</span></a>
+      </div>
+      <p style="margin-top:16px"><a href="https://cdn.prod.website-files.com/63b35214bc1dc0317e22bd99/668ae1b79c5572bfad32e508_Matt_Jongbloet_CV_2024.pdf" style="font-weight:700;color:var(--wire)">Full resume (PDF) ↗</a></p>
+    </section>
+
+    <section class="frame contact-frame" style="width:min(100%,600px);align-self:flex-end">
+      <span class="tab">say-hi</span>
+      <h2>Got a complex problem? Let’s pin it up.</h2>
+      <a class="mail" href="mailto:matthewjongbloet@gmail.com">matthewjongbloet@gmail.com</a>
+    </section>
+  </div>
+</main>
+<script>
+// A loose red string between the four pins.
+(() => {
+  const draw = () => {
+    const box = document.getElementById('route'), path = document.getElementById('string');
+    if (getComputedStyle(path.parentNode).display === 'none') return;
+    const r = box.getBoundingClientRect();
+    const pts = [...box.querySelectorAll('.sticky')].map((s) => { const b = s.getBoundingClientRect(); return [b.left - r.left + b.width / 2, b.top - r.top]; });
+    let d = `M${pts[0][0]},${pts[0][1]}`;
+    for (let i = 1; i < pts.length; i++) { const [x0, y0] = pts[i - 1], [x1, y1] = pts[i]; d += ` Q${(x0 + x1) / 2},${Math.max(y0, y1) + 46} ${x1},${y1}`; }
+    path.setAttribute('d', d);
+  };
+  addEventListener('resize', draw); draw(); if (document.fonts) document.fonts.ready.then(draw);
+})();
+</script>
+</body>
+</html>

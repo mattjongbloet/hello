@@ -25,6 +25,116 @@
   ]
  },
  {
+  "id": "dir-a",
+  "name": "Clarity",
+  "concept": "A",
+  "input": "redesigns/a-clarity/index.html",
+  "home": {
+   "url": "redesigns/a-clarity/index.html",
+   "label": "Direction A · Home"
+  },
+  "case": {
+   "url": "redesigns/a-clarity/case-pmi.html",
+   "label": "PMI (redesign)"
+  },
+  "about": {
+   "url": "redesigns/a-clarity/about.html"
+  },
+  "contact": {
+   "missing": "no contact page",
+   "note": "Concept: contact is a section at the end of every page."
+  },
+  "other": []
+ },
+ {
+  "id": "dir-b",
+  "name": "Editorial",
+  "concept": "B",
+  "input": "redesigns/b-editorial/index.html",
+  "home": {
+   "url": "redesigns/b-editorial/index.html",
+   "label": "Direction B · Home"
+  },
+  "case": {
+   "url": "redesigns/b-editorial/case-pmi.html",
+   "label": "PMI (redesign)"
+  },
+  "about": {
+   "url": "redesigns/b-editorial/about.html"
+  },
+  "contact": {
+   "missing": "no contact page",
+   "note": "Concept: contact is a section at the end of every page."
+  },
+  "other": []
+ },
+ {
+  "id": "dir-c",
+  "name": "Field Notes",
+  "concept": "C",
+  "input": "redesigns/c-field-notes/index.html",
+  "home": {
+   "url": "redesigns/c-field-notes/index.html",
+   "label": "Direction C · Home"
+  },
+  "case": {
+   "url": "redesigns/c-field-notes/case-pmi.html",
+   "label": "PMI (redesign)"
+  },
+  "about": {
+   "url": "redesigns/c-field-notes/about.html"
+  },
+  "contact": {
+   "missing": "no contact page",
+   "note": "Concept: contact is a section at the end of every page."
+  },
+  "other": []
+ },
+ {
+  "id": "dir-d",
+  "name": "Night Mode",
+  "concept": "D",
+  "input": "redesigns/d-night-mode/index.html",
+  "home": {
+   "url": "redesigns/d-night-mode/index.html",
+   "label": "Direction D · Home"
+  },
+  "case": {
+   "url": "redesigns/d-night-mode/case-pmi.html",
+   "label": "PMI (redesign)"
+  },
+  "about": {
+   "url": "redesigns/d-night-mode/about.html"
+  },
+  "contact": {
+   "missing": "no contact page",
+   "note": "Concept: contact is a section at the end of every page."
+  },
+  "other": []
+ },
+ {
+  "id": "dir-e",
+  "name": "Research Wall",
+  "concept": "E",
+  "input": "redesigns/e-research-wall/index.html",
+  "home": {
+   "url": "redesigns/e-research-wall/index.html",
+   "label": "Direction E · Home"
+  },
+  "case": {
+   "url": "redesigns/e-research-wall/case-pmi.html",
+   "label": "PMI (redesign)"
+  },
+  "about": {
+   "url": "redesigns/e-research-wall/about.html"
+  },
+  "contact": {
+   "missing": "no contact page",
+   "note": "Concept: contact is a section at the end of every page."
+  },
+  "other": []
+ },
+ {
   "id": "iniabiodun",
   "name": "Ìní Abiodun",
   "input": "https://www.iniabiodun.com",

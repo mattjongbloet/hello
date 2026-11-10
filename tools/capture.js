@@ -267,7 +267,9 @@ async function capturePage(ctx, spec, out, width) {
   const prepare = async () => {
     if (page) await page.close();
     page = await ctx.newPage();
-    const resp = await page.goto(spec.url, { waitUntil: 'domcontentloaded', timeout: 45000 });
+    // Local pages (e.g. the redesign directions) are given as paths relative to the repo root.
+    const local = !/^https?:/.test(spec.url);
+    const resp = await page.goto(local ? 'file://' + path.resolve(ROOT, spec.url) : spec.url, { waitUntil: 'domcontentloaded', timeout: 45000 });
     rec.status = resp ? resp.status() : null;
     await page.waitForLoadState('networkidle', { timeout: 15000 }).catch(() => {});
     await sleep(1200);
@@ -277,7 +279,7 @@ async function capturePage(ctx, spec, out, width) {
       await sleep(a.wait || 2000);
     }
     await dismissPopups(page);
-    rec.final_url = page.url();
+    rec.final_url = local ? spec.url : page.url();
     rec.title = await page.title();
     rec.password_screen = await page.locator('input[type=password]').count() > 0;
     if (rec.status && rec.status >= 400) throw new Error(`HTTP ${rec.status}`);
@@ -334,7 +336,7 @@ async function capturePage(ctx, spec, out, width) {
   for (const site of sites) {
     if (only.length && !only.includes(site.id)) continue;
     console.log(`\n# ${site.id}`);
-    const entry = { id: site.id, name: site.name, input: site.input, ...(site.self ? { self: true } : {}), pages: {} };
+    const entry = { id: site.id, name: site.name, input: site.input, ...(site.self ? { self: true } : {}), ...(site.concept ? { concept: site.concept } : {}), pages: {} };
     // Page list: [type, key, spec, index]
     const jobs = [];
     for (const t of ['home', 'case', 'about', 'contact']) jobs.push([t, t, site[t] || { missing: 'none found' }]);
