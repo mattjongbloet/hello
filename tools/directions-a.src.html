@@ -68,10 +68,26 @@ code { font: 13px var(--mono); background: var(--surface); border: 1px solid var
       <h1>Portfolio Direction A</h1>
     </div>
     <div>
-      <p>New at the top: A6–A8, three iterations on A with copy from your CV, your project cards, and three answers to the big photo on the right. Then P, your own mockup built out into a full direction. Below it, Direction A, the one closest to today’s site, and five close variations of it. Each variation changes one thing (type, colour, layout, theme or content) and keeps everything else, so you can compare like for like. All five use your current title, Senior Staff Product Designer. Type is Roobert everywhere, except A1, A2 and A3, which try Apercu.</p>
+      <p>New at the top: three case-study formats (Trellis written up in full), then A6–A8, three iterations on A with copy from your CV, your project cards, and three answers to the big photo on the right. Then P, your own mockup built out into a full direction. Below it, Direction A, the one closest to today’s site, and five close variations of it. Each variation changes one thing (type, colour, layout, theme or content) and keeps everything else, so you can compare like for like. All five use your current title, Senior Staff Product Designer. Type is Roobert everywhere, except A1, A2 and A3, which try Apercu.</p>
       <a class="archive-link" href="archive/index.html">Other explorations (B–O) →</a>
     </div>
   </header>
+
+  <section class="dir original">
+    <div class="info">
+      <span class="variant-of">New · case study formats</span>
+      <span class="letter">CS</span><h2>Case studies</h2>
+      <p class="idea">Three ways to structure a project page, all sharing one header row (company, my role, team, timeframe, surface) and an “In short” box. Trellis is written up in full from your deck; Carv and Hospitable are templates with your CV facts and yellow placeholders.</p>
+      <ul class="changes"><li><b>1 · Impact first:</b> Trellis, with an experiment log and the re-order test</li><li><b>2 · Key decisions:</b> Carv, built around three calls</li><li><b>3 · Snapshot:</b> Hospitable, one screen plus an optional deep dive</li></ul>
+      <div class="open"><a href="cases/trellis.html">Trellis · format 1 <span>→</span></a><a href="cases/carv.html">Carv · format 2 <span>→</span></a><a href="cases/hospitable.html">Hospitable · format 3 <span>→</span></a></div>
+    </div>
+    <div class="shots">
+      <a class="shot home" href="cases/trellis.html"><img src="thumbs/cases-trellis.jpg" alt="Trellis case study, format 1" loading="lazy"><span>1 · Impact first</span></a>
+      <a class="shot phone" href="cases/trellis.html"><img src="thumbs/cases-trellis-m.jpg" alt="Trellis case study on a phone" loading="lazy"></a>
+      <a class="shot case" href="cases/carv.html"><img src="thumbs/cases-carv.jpg" alt="Carv template, format 2" loading="lazy"><span>2 · Key decisions</span></a>
+      <a class="shot about" href="cases/hospitable.html"><img src="thumbs/cases-hospitable.jpg" alt="Hospitable template, format 3" loading="lazy"><span>3 · Snapshot</span></a>
+    </div>
+  </section>
 
   <section class="dir original">
     <div class="info">
@@ -240,6 +256,7 @@ code { font: 13px var(--mono); background: var(--surface); border: 1px solid var
       <li>Shared in A1–A5: your Hospitable role reads Senior Staff Product Designer, and the opening line leads with that role rather than UX research. <span>A itself still shows the live site’s wording.</span></li>
       <li>Fonts are your files, served from <code>redesigns/fonts/</code>: Roobert (trial) and Apercu Pro. <span>Neither has arrows (→ ↗ ↓), so those come from Hanken Grotesk. Apercu has no italics here, so A1–A3 don’t use any.</span></li>
       <li>The font files are not committed to the repository, because it is public and font licences don’t allow redistribution. <span>Without them, the pages fall back to Hanken Grotesk.</span></li>
+      <li>Case studies are built by <code>tools/build-cases.py</code>. <span>Trellis visuals are cropped from your “product investment” deck (June 2023); the $3.5MM is worded as predicted gross annual revenue, as you described it.</span></li>
       <li>A6–A8 are built from A by <code>tools/build-a-cv.py</code>. <span>Copy and numbers come from your 2024 CV; your title is Senior Staff Product Designer at Hospitable. Trellis and Homebot dates follow the CV; Hospitable shows “Now” without a start month.</span></li>
       <li>P is built by <code>tools/build-p.py</code>. <span>The status chip reads “Open to senior staff roles”; change or remove it in that file.</span></li>
       <li>The other 14 directions (B–O) are kept in the <a href="archive/index.html">archive</a>.</li>

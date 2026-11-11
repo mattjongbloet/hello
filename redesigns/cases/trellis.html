@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../assets/mj-logo.svg" type="image/svg+xml">
+<title>Trellis: Growth experiments — Matt Jongbloet</title>
+<meta name="description" content="In 3 months, a small growth team and I ran experiments on around 15 parts of Savvy’s car insurance quote flow: $3.5MM in predicted gross annual revenue.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;650;700&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="../fonts/fonts.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="case.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="../a6-text-first/index.html"><img class="mark" src="../assets/mj-logo.svg" alt="">Matt Jongbloet</a>
+    <nav class="nav" aria-label="Main">
+      <a href="../a6-text-first/index.html#work" aria-current="page">Work</a>
+      <a href="../a6-text-first/about.html">About</a>
+      <a href="https://cdn.prod.website-files.com/63b35214bc1dc0317e22bd99/668ae1b79c5572bfad32e508_Matt_Jongbloet_CV_2024.pdf">Resume</a>
+    </nav>
+    <a class="btn" href="#contact">Contact</a>
+  </div>
+</header>
+<div class="formatbar"><div class="wrap"><span class="eyebrow">Case study formats</span><nav aria-label="Case study formats"><a href="trellis.html" aria-current="page"><b>Format 1 · Impact first</b><span>Trellis</span></a><a href="carv.html"><b>Format 2 · Key decisions</b><span>Carv</span></a><a href="hospitable.html"><b>Format 3 · Snapshot</b><span>Hospitable</span></a></nav></div></div>
+
+<main>
+  <section class="wrap cs-hero">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../a6-text-first/index.html#work">Work</a><span>/</span><span>Trellis</span></nav>
+    <h1>Finding $3.5MM in a car insurance quote flow</h1>
+    <p class="dek">In three months, a small growth team and I ran experiments on around 15 parts of Savvy’s car insurance quote flow, and proved we could get more people from “I want a quote” to “here are my offers”.</p>
+    <dl class="meta meta5"><div><dt>Company</dt><dd>Trellis / Savvy.Insure</dd></div><div><dt>My role</dt><dd>Staff Product Designer, leading design for the growth team</dd></div><div><dt>Team</dt><dd>1 front-end engineer, 1 back-end engineer, 1 growth engineering consultant</dd></div><div><dt>Timeframe</dt><dd>3 months, 2023</dd></div><div><dt>Surface</dt><dd>Car insurance quote flow</dd></div></dl>
+  </section>
+
+  <div class="wrap">
+    <div class="tldr">
+      <dl class="tldr-lines"><span class="eyebrow">In short</span><div><dt>Problem</dt><dd>Only about 59% of people who started the car insurance application finished it. Every drop-off was a quote, and revenue, lost.</dd></div><div><dt>What I did</dt><dd>Led design for a small growth team through around 15 experiments on the quote flow, from hypothesis to test to decision.</dd></div><div><dt>Result</dt><dd>$3.5MM in predicted gross annual revenue. One test alone lifted completion from 60.4% to 69.0%.</dd></div></dl>
+      <div class="tldr-stats"><div><b class="num">$3.5MM</b><span>predicted gross annual revenue</span></div><div><b class="num">~15</b><span>parts of the flow tested in 3 months</span></div><div><b class="num">+8.6 pts</b><span>completion in the re-order test (60.4% → 69.0%)</span></div></div>
+    </div>
+    <a class="cover" href="../assets/trellis/flow-v2.jpg"><img src="../assets/trellis/cover-v2.jpg" alt="The re-ordered quote flow: vehicle details, your vehicles, tell us about yourself, your drivers, home address"></a>
+  </div>
+
+  <div class="wrap cs-body">
+    <nav class="toc" aria-label="Contents">
+      <span class="eyebrow">Contents</span>
+      <a href="#context" class="on">Context</a>
+      <a href="#problem">Problem</a>
+      <a href="#approach">Approach</a>
+      <a href="#experiment">Featured experiment</a>
+      <a href="#outcome">Outcome</a>
+      <a href="#learnings">Learnings</a>
+    </nav>
+
+    <article class="prose">
+      <section id="context">
+        <p class="eyebrow">Context</p>
+        <h2>Where the business wins or loses</h2>
+        <p>Savvy.Insure, by Trellis, set out to make insurance easier for everyone. Someone who wants car insurance comes to Savvy, tells us about themselves, their cars and their drivers, and gets quotes back. That flow is where the business makes or loses money.</p>
+      </section>
+
+      <section id="problem">
+        <p class="eyebrow">Problem</p>
+        <h2>Four in ten people gave up before their quote</h2>
+        <p>From 17 to 31 May 2023, <strong>44,846</strong> people started the unlinked application and <strong>26,333</strong> finished it: a completion rate of <strong>58.7%</strong>. <span class="ph">Add one line on what “unlinked” means, e.g. people who fill the form in by hand rather than linking an existing policy.</span></p>
+        <figure class="fig"><a class="frame light" href="../assets/trellis/baseline-chart.jpg"><img src="../assets/trellis/baseline-chart.jpg" alt="Bar chart: 44,846 started the unlinked application, 26,333 completed it, 58.7% total conversion, 17 to 31 May 2023" loading="lazy"></a><figcaption>Baseline, 17–31 May 2023: 58.7% of people who started the application completed it.</figcaption></figure>
+      </section>
+
+      <section id="approach">
+        <p class="eyebrow">Approach</p>
+        <h2>Learn cheaply, decide with evidence</h2>
+        <ul>
+          <li><strong>The cheapest way to learn.</strong> Not every experiment needs to be an A/B test. We framed each change as a hypothesis, picked the lightest method that could confirm or disconfirm it, and used A/B tests where we needed statistical confidence.</li>
+          <li><strong>One small team, a steady cadence.</strong> With a front-end engineer, a back-end engineer and a growth engineering consultant, I designed and shipped experiments on around 15 parts of the flow in three months.</li>
+          <li><strong>Making it a habit.</strong> I co-wrote and presented <em>How do we make good decisions about product investment?</em>, sharing how we chose methods, from interviews to A/B tests, and why learning matters more than being right.</li>
+        </ul>
+        <div class="xlog-wrap">
+          <table class="xlog">
+            <caption>Experiment log</caption>
+            <thead><tr><th scope="col">#</th><th scope="col">Change</th><th scope="col">Hypothesis</th><th scope="col">Result</th></tr></thead>
+            <tbody>
+              <tr><td class="num">01</td><td>Re-order the application</td><td>Asking for the car before contact details will raise completion.</td><td><b class="num">60.4% → 69.0%</b></td></tr>
+              <tr><td class="num">02</td><td><span class="ph">Experiment</span></td><td><span class="ph">We think … will …</span></td><td><span class="ph">Result</span></td></tr>
+              <tr><td class="num">03</td><td><span class="ph">Experiment</span></td><td><span class="ph">We think … will …</span></td><td><span class="ph">Result</span></td></tr>
+              <tr><td class="num">04</td><td><span class="ph">Experiment</span></td><td><span class="ph">We think … will …</span></td><td><span class="ph">Result</span></td></tr>
+            </tbody>
+          </table>
+          <p class="xlog-note"><span class="ph">Add the rest of the ~15, or the 4–6 most telling. Losing tests are worth including: they show the judgment.</span></p>
+        </div>
+      </section>
+
+      <section id="experiment">
+        <p class="eyebrow">Featured experiment</p>
+        <h2>Ask for the car before the phone number</h2>
+        <p class="callout">Hypothesis: changing the order of the unlinked application flow will increase conversion.</p>
+        <p>The control flow opened by asking for name, phone, email and date of birth, before Savvy had given anything back. V2 starts with the car and the drivers, builds up to the policy, and only asks for contact details at the very end, as <em>“Where should we send your offers?”</em></p>
+        <figure class="fig wide"><a class="frame light" href="../assets/trellis/flow-control.jpg"><img src="../assets/trellis/flow-control.jpg" alt="Control flow, nine phone screens: basic information with phone and email first, then address, own or rent, vehicle information, vehicles, driver information, drivers, current premium, review" loading="lazy"></a><figcaption>Control: contact details on the very first screen.</figcaption></figure>
+        <figure class="fig wide"><a class="frame light" href="../assets/trellis/flow-v2.jpg"><img src="../assets/trellis/flow-v2.jpg" alt="V2 flow, nine phone screens: vehicle information, vehicles, tell us about yourself, drivers, home address, own or rent, current premium, review, and where should we send your offers" loading="lazy"></a><figcaption>V2: vehicles and drivers first, contact details last. Stars mark the steps that moved.</figcaption></figure>
+        <figure class="fig"><a class="frame light" href="../assets/trellis/result-chart.jpg"><img src="../assets/trellis/result-chart.jpg" alt="Bar chart, 1 to 9 June 2023: control 60.4% (8,108 of 13,419 completed), V2 69.0% (8,498 of 12,319 completed)" loading="lazy"></a><figcaption>1–9 June 2023: control completed 60.4% (8,108 of 13,419); V2 completed 69.0% (8,498 of 12,319).</figcaption></figure>
+      </section>
+
+      <section id="outcome">
+        <p class="eyebrow">Outcome</p>
+        <h2>$3.5MM in predicted annual revenue</h2>
+        <ul>
+          <li>Over three months, the experiments added up to <strong>$3.5MM in predicted gross annual revenue</strong>.</li>
+          <li>The re-order test lifted completion by <strong>8.6 points</strong>, a 14% relative improvement. <span class="ph">Did V2 ship to everyone? Say so here.</span></li>
+          <li>We left the team with the infrastructure to run similar tests with ease, and a shared way of deciding what to build.</li>
+        </ul>
+      </section>
+
+      <section id="learnings">
+        <p class="eyebrow">Learnings</p>
+        <h2>Value before data</h2>
+        <ul>
+          <li><strong>People need Trellis to feel valuable before they give their info.</strong> Order matters.</li>
+          <li><strong>Learning is more important than being right.</strong> Good testing infrastructure means more people share ideas, and it takes the HiPPO out of decisions.</li>
+          <li><strong>What I’d do differently:</strong> <span class="ph">one or two honest lines</span></li>
+        </ul>
+      </section>
+    </article>
+  </div>
+
+  <div class="wrap next">
+    <a href="carv.html">
+      <div><p class="eyebrow">Next · Format 2</p><h3>Carv</h3></div>
+      <span class="next-ph">Carv</span>
+    </a>
+  </div>
+
+</main>
+  <section class="wrap todo" aria-label="To fill in">
+    <div class="todo-card"><p class="eyebrow">To fill in (review note, not part of the page)</p><ol><li>What “unlinked application” means, in one line.</li><li>The other experiments: change, hypothesis and result for 4–6 of the ~15.</li><li>Whether V2 shipped, and anything you know about the effect after launch.</li><li>How the $3.5MM was predicted (e.g. modelled from conversion lift × traffic × revenue per policy). One line makes it far more credible.</li><li>A line on what you’d do differently.</li><li>Any before/after screens of the other experiments, if you can find them.</li></ol></div>
+  </section>
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div>
+      <h2>Drop me a line.</h2>
+      <p>I’m looking for opportunities where I can help teams build the right thing, and build it right. I’m in Amsterdam (CET).</p>
+    </div>
+    <div class="links">
+      <a class="btn" href="mailto:matthewjongbloet@gmail.com">matthewjongbloet@gmail.com</a>
+      <a class="plain" href="https://cdn.prod.website-files.com/63b35214bc1dc0317e22bd99/668ae1b79c5572bfad32e508_Matt_Jongbloet_CV_2024.pdf">Resume (PDF) ↗</a>
+    </div>
+  </div>
+</section>
+<footer class="foot"><div class="wrap"><span>© 2026 Matt Jongbloet</span><span><a href="../a6-text-first/index.html">Work</a> · <a href="../a6-text-first/about.html">About</a> · <a href="#contact">Contact</a></span></div></footer>
+<script src="script.js"></script>
+</body>
+</html>

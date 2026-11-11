@@ -22,6 +22,7 @@
 .pcard-wide { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); padding: 0; }
 .pcard-wide .pc-copy { padding: 56px 44px; align-self: center; }
 .pcard-wide .pc-shot { margin-top: 64px; aspect-ratio: auto; height: 400px; align-self: end; }
+.pcard-wide .pc-shot img { object-position: 0 0; }
 @media (max-width: 760px) {
   .work-band { margin-top: 64px; padding-block: 64px; }
   .pcards { grid-template-columns: 1fr; gap: 16px; }

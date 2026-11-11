@@ -23,14 +23,14 @@ CONTACT_NEW = "<p>I’m looking for opportunities where I can help teams build t
 XP_HOME = """<ul class="xp">
           <li><span class="role">Senior Staff Product Designer</span><span class="when num">Now</span><a class="co" href="https://hospitable.com/">Hospitable</a><span class="did">Helping hosts run their short-term rentals on autopilot.</span></li>
           <li><span class="role">Lead Product Designer</span><span class="when num">Feb 2024 — Mar 2025</span><a class="co" href="https://www.carv.com/">Carv</a><span class="did">Helping recruiters cut admin and boost hires.</span></li>
-          <li><span class="role">Staff Product Designer</span><span class="when num">Jan 2023 — Jan 2024</span><a class="co" href="https://savvy.insure/">Trellis / Savvy.Insure</a><span class="did">$3.5MM annual profit in 3 months, leading a growth team on UX optimisations.</span></li>
+          <li><span class="role">Staff Product Designer</span><span class="when num">Jan 2023 — Jan 2024</span><a class="co" href="https://savvy.insure/">Trellis / Savvy.Insure</a><span class="did">$3.5MM in predicted gross annual revenue from 3 months of growth experiments.</span></li>
           <li><span class="role">Senior Product Designer</span><span class="when num">Dec 2020 — Dec 2022</span><span class="co">Homebot</span><span class="did">Seven projects, research to dev-ready design, for ≈10 million users.</span></li>
         </ul>"""
 
 XP_ABOUT = """<ul class="xp">
           <li><span class="role">Senior Staff Product Designer</span><span class="when num">Now</span><a class="co" href="https://hospitable.com/">Hospitable</a><span class="did">Helping hosts run their short-term rentals on autopilot.</span></li>
           <li><span class="role">Lead Product Designer</span><span class="when num">Feb 2024 — Mar 2025</span><a class="co" href="https://www.carv.com/">Carv</a><span class="did">Helping recruiters cut admin and boost hires. Led design with cross-functional partners and the C-level on the future vision, and ran research into customers’ current experience.</span></li>
-          <li><span class="role">Staff Product Designer</span><span class="when num">Jan 2023 — Jan 2024</span><a class="co" href="https://savvy.insure/">Trellis / Savvy.Insure</a><span class="did">Making insurance easier for everyone. $3.5MM in annual profit in 3 months by leading a growth team on UX optimisations, and a key product pivot with a novel experience worth an extra $500k a year.</span></li>
+          <li><span class="role">Staff Product Designer</span><span class="when num">Jan 2023 — Jan 2024</span><a class="co" href="https://savvy.insure/">Trellis / Savvy.Insure</a><span class="did">Making insurance easier for everyone. $3.5MM in predicted gross annual revenue from 3 months of experiments leading the growth team, and a key product pivot with a novel experience worth an extra $500k a year.</span></li>
           <li><span class="role">Senior Product Designer</span><span class="when num">Dec 2020 — Dec 2022</span><span class="co">Homebot</span><span class="did">Helping homeowners make smarter financial decisions. The full design lifecycle on 7 projects for ≈10 million users, and research with more than 500 participants.</span></li>
           <li><span class="role">Lead Designer</span><span class="when num">Jan 2015 — Dec 2020</span><span class="co">Evolver / The Alchemist’s Kitchen</span><span class="did">User research, digital strategy, campaigns, branding, art direction, e-commerce and UX/UI.</span></li>
           <li><span class="role">Co-Founder</span><span class="when num">May 2016 — Dec 2019</span><span class="co">Humantra</span><span class="did">With two fellow creatives, designed the graphics, website and video that crowdfunded an ethical clothing start-up.</span></li>
@@ -50,7 +50,7 @@ SHARED = {
       <div><b>5 years</b><span>sharpening my research practice</span></div>
     </div>""",
          """    <div class="facts">
-      <div><b class="num">$3.5MM</b><span>annual profit in 3 months from UX optimisations (Trellis)</span></div>
+      <div><b class="num">$3.5MM</b><span>predicted annual revenue from 3 months of experiments (Trellis)</span></div>
       <div><b class="num">+$500k</b><span>a year from a product pivot I led (Trellis)</span></div>
       <div><b class="num">≈10M</b><span>users of the products I designed (Homebot)</span></div>
       <div><b class="num">500+</b><span>research participants (Homebot)</span></div>
@@ -103,6 +103,7 @@ SHARED = {
 
 PORTFOLIO = "https://www.mjongbloet.com/portfolio"
 PROJECTS = {
+    "trellis": ("../cases/trellis.html", "trellis/savvy-logo.png", "Trellis / Savvy.Insure", "Growth experiments", "Finding $3.5MM in predicted annual revenue in a car insurance quote flow", "trellis/cover-v2.jpg", "Read the case study →"),
     "pmi": ("case-pmi.html", "homebot-logo.png", "Homebot", "Private Mortgage Insurance (PMI)", "Helping ≈1M US homeowners save an estimated $200M a month", "pmi-mockup.png", "Read the case study →"),
     "search": (PORTFOLIO + "/home-search", "homebot-logo.png", "Homebot", "Home Search", "Helping ≈10 million people find their next home", "home-search.jpg", "See project ↗"),
     "admin": (PORTFOLIO + "/internal-admin", "homebot-logo.png", "Homebot", "Internal Admin", "Cutting the time for 20+ key admin tasks by ≈80%", "internal-admin.jpg", "See project ↗"),
@@ -133,7 +134,7 @@ def work(order):
     <div class="wrap">
       <div class="section-head">
         <h2>Selected work</h2>
-        <a href="{PORTFOLIO}">All 7 projects →</a>
+        <a href="{PORTFOLIO}">All projects →</a>
       </div>
       <div class="pcards">
 {cards}
@@ -142,10 +143,10 @@ def work(order):
   </section>"""
 
 
-ORDER = ["pmi", "search", "admin", "research", "health", "value", "wwf"]
+ORDER = ["trellis", "pmi", "search", "admin", "research", "health", "value"]
 WORK = {"a6-text-first": ORDER, "a8-at-a-glance": ORDER,
-        # A7 already features PMI in the hero, so the list opens with Home Search.
-        "a7-work-first": ["search", "pmi", "admin", "research", "health", "value", "wwf"]}
+        # A7 already features PMI in the hero, so its list leaves PMI out.
+        "a7-work-first": ["trellis", "search", "admin", "research", "health", "value", "wwf"]}
 
 ACTIONS = """      <div class="actions">
         <a class="btn" href="#work">See my work</a>
@@ -218,6 +219,7 @@ SHARED_CSS = """/* Iterations on A with CV copy (tools/build-a-cv.py). Shared ad
 .pcard-wide { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); padding: 0; }
 .pcard-wide .pc-copy { padding: 56px 44px; align-self: center; }
 .pcard-wide .pc-shot { margin-top: 64px; aspect-ratio: auto; height: 400px; align-self: end; }
+.pcard-wide .pc-shot img { object-position: 0 0; }
 @media (max-width: 760px) {
   .work-band { margin-top: 64px; padding-block: 64px; }
   .pcards { grid-template-columns: 1fr; gap: 16px; }
