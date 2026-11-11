@@ -1,0 +1,26 @@
+/* Trial fonts supplied by Matt for evaluating the directions. The .woff2 files are NOT committed (trial licences);
+   without them every family falls back to Hanken Grotesk. Trials contain only letters, digits , . - so
+   punctuation (’ — ≈ $ % : ( ) → ↗) always comes from the Hanken Grotesk fallback in each stack. */
+@font-face { font-family: "Roobert"; src: url("roobert-400.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Roobert"; src: url("roobert-400i.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Roobert"; src: url("roobert-500.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "Roobert"; src: url("roobert-600.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Roobert"; src: url("roobert-700.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "GT Eesti Display"; src: url("eesti-display-400.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "GT Eesti Display"; src: url("eesti-display-500.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "GT Eesti Display"; src: url("eesti-display-700.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "GT Eesti Text"; src: url("eesti-text-400.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "GT Eesti Text"; src: url("eesti-text-400i.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "GT Eesti Text"; src: url("eesti-text-500.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "GT Eesti Text"; src: url("eesti-text-700.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Geograph"; src: url("geograph-400.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Geograph"; src: url("geograph-400i.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Geograph"; src: url("geograph-500.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "Geograph"; src: url("geograph-700.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Styrene A"; src: url("styrene-a-400.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Styrene A"; src: url("styrene-a-500.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "Styrene A"; src: url("styrene-a-700.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Styrene B"; src: url("styrene-b-400.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Styrene B"; src: url("styrene-b-400i.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Styrene B"; src: url("styrene-b-500.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "Styrene B"; src: url("styrene-b-700.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }

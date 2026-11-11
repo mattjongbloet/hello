@@ -25,3 +25,10 @@
 .foot { background: #17181c; color: var(--ink-2); }
 .foot .wrap { border-top-color: var(--line); }
 .foot a:hover { color: var(--ink); }
+
+/* Type: Matt’s trial fonts (redesigns/fonts/fonts.css); Hanken Grotesk fills missing punctuation. */
+:root { --display: "Styrene A", "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif; --body: "Styrene B", "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif; }
+/* Styrene A runs wide: tighter tracking and a slightly smaller hero so headlines keep A's line breaks. */
+h1, h2, h3 { letter-spacing: -0.035em; }
+.hero h1 { font-size: clamp(38px, 5.6vw, 70px); max-width: 15ch; }
+.cs-hero h1, .ab-hero h1 { font-size: clamp(36px, 5.2vw, 66px); }

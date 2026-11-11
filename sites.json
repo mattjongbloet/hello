@@ -25,6 +25,28 @@
   ]
  },
  {
+  "id": "dir-p",
+  "name": "P · Sentence (your mockup)",
+  "concept": "P",
+  "input": "redesigns/p-sentence/index.html",
+  "home": {
+   "url": "redesigns/p-sentence/index.html",
+   "label": "P · Home"
+  },
+  "case": {
+   "url": "redesigns/p-sentence/case-pmi.html",
+   "label": "PMI (redesign)"
+  },
+  "about": {
+   "url": "redesigns/p-sentence/about.html"
+  },
+  "contact": {
+   "missing": "no contact page",
+   "note": "Concept: contact is a section at the end of every page (press C)."
+  },
+  "other": []
+ },
+ {
   "id": "dir-a",
   "name": "A · Clarity",
   "concept": "A",

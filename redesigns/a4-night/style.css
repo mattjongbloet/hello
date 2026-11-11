@@ -9,8 +9,8 @@
   --signal: #ff5a1f;      /* one warm accent: numbers, focus, active states */
   --signal-soft: #fff0e9;
   --signal-ink: #c2410c;  /* the accent when it's text: AA on white and on --signal-soft */
-  --display: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
-  --body: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --display: "Roobert", "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;  /* Hanken fills glyphs the trial lacks */
+  --body: "Roobert", "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
   --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
   --wrap: 1120px;
   --gutter: max(20px, env(safe-area-inset-left, 0px));

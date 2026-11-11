@@ -1,0 +1,139 @@
+{
+  "id": "dir-p",
+  "name": "P · Sentence (your mockup)",
+  "input": "redesigns/p-sentence/index.html",
+  "concept": "P",
+  "pages": {
+    "home": {
+      "type": "home",
+      "label": "P · Home",
+      "url": "redesigns/p-sentence/index.html",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "redesigns/p-sentence/index.html",
+          "status": 200,
+          "final_url": "redesigns/p-sentence/index.html",
+          "title": "Matt Jongbloet — Senior Staff Product Designer",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.038,
+          "method": "fullpage",
+          "width": 390,
+          "height": 5782,
+          "file": "shots/home/dir-p-390.png",
+          "web": "shots/_web/home/dir-p-390.jpg",
+          "web_width": 390,
+          "web_height": 5782
+        },
+        "1440": {
+          "url": "redesigns/p-sentence/index.html",
+          "status": 200,
+          "final_url": "redesigns/p-sentence/index.html",
+          "title": "Matt Jongbloet — Senior Staff Product Designer",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.02,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 3340,
+          "file": "shots/home/dir-p-1440.png",
+          "web": "shots/_web/home/dir-p-1440.jpg",
+          "web_width": 640,
+          "web_height": 1484
+        }
+      },
+      "final_url": "redesigns/p-sentence/index.html"
+    },
+    "case": {
+      "type": "case",
+      "label": "PMI (redesign)",
+      "url": "redesigns/p-sentence/case-pmi.html",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "redesigns/p-sentence/case-pmi.html",
+          "status": 200,
+          "final_url": "redesigns/p-sentence/case-pmi.html",
+          "title": "PMI Savings — Matt Jongbloet",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.077,
+          "method": "fullpage",
+          "width": 390,
+          "height": 6277,
+          "file": "shots/case/dir-p-390.png",
+          "web": "shots/_web/case/dir-p-390.jpg",
+          "web_width": 390,
+          "web_height": 6277
+        },
+        "1440": {
+          "url": "redesigns/p-sentence/case-pmi.html",
+          "status": 200,
+          "final_url": "redesigns/p-sentence/case-pmi.html",
+          "title": "PMI Savings — Matt Jongbloet",
+          "password_screen": false,
+          "scroll": "window",
+          "fallback_reason": "full-page height ballooned",
+          "method": "stitched",
+          "width": 1440,
+          "height": 5120,
+          "file": "shots/case/dir-p-1440.png",
+          "web": "shots/_web/case/dir-p-1440.jpg",
+          "web_width": 640,
+          "web_height": 2276
+        }
+      },
+      "final_url": "redesigns/p-sentence/case-pmi.html"
+    },
+    "about": {
+      "type": "about",
+      "label": null,
+      "url": "redesigns/p-sentence/about.html",
+      "note": null,
+      "shots": {
+        "390": {
+          "url": "redesigns/p-sentence/about.html",
+          "status": 200,
+          "final_url": "redesigns/p-sentence/about.html",
+          "title": "About — Matt Jongbloet",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.03,
+          "method": "fullpage",
+          "width": 390,
+          "height": 4428,
+          "file": "shots/about/dir-p-390.png",
+          "web": "shots/_web/about/dir-p-390.jpg",
+          "web_width": 390,
+          "web_height": 4428
+        },
+        "1440": {
+          "url": "redesigns/p-sentence/about.html",
+          "status": 200,
+          "final_url": "redesigns/p-sentence/about.html",
+          "title": "About — Matt Jongbloet",
+          "password_screen": false,
+          "scroll": "window",
+          "fullpage_diff": 0.068,
+          "method": "fullpage",
+          "width": 1440,
+          "height": 3056,
+          "file": "shots/about/dir-p-1440.png",
+          "web": "shots/_web/about/dir-p-1440.jpg",
+          "web_width": 640,
+          "web_height": 1358
+        }
+      },
+      "final_url": "redesigns/p-sentence/about.html"
+    },
+    "contact": {
+      "type": "contact",
+      "label": null,
+      "url": null,
+      "note": "Concept: contact is a section at the end of every page (press C).",
+      "missing": "no contact page"
+    }
+  },
+  "captured_at": "2026-11-11T13:19:58.326Z"
+}

@@ -1,2 +1,5 @@
 shots/_frames/
 node_modules/
+
+# Trial fonts (licence: evaluation only, do not redistribute)
+redesigns/fonts/*.woff2
