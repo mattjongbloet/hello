@@ -1,0 +1,47 @@
+/* Iterations on A with CV copy (tools/build-a-cv.py). Shared additions first, then this iteration's hero. */
+.xp .did { grid-column: 1 / -1; color: var(--ink-2); font-size: 15px; line-height: 1.45; margin-top: 2px; }
+.xp span.co { color: var(--ink-2); font-size: 15px; }
+.facts span { line-height: 1.4; }
+.taglist { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; }
+.taglist span { padding: 8px 14px; border-radius: 999px; background: var(--mist); font-size: 15px; }
+
+/* Project cards, as on Matt's current site: white card, logo tile, one line, screenshot bleeding off the bottom-right. */
+.work-band { background: #f7f7f6; margin-top: 96px; padding-block: 88px 96px; }
+.pcards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.pcard { display: flex; flex-direction: column; background: var(--paper); border: 1px solid #ebebe8; border-radius: 24px; overflow: hidden; text-decoration: none; color: var(--ink); padding: 44px 0 0 44px; transition: transform .25s ease, box-shadow .25s; }
+.pcard:hover { transform: translateY(-3px); box-shadow: 0 20px 44px -26px rgb(20 20 20 / .3); }
+.pc-copy { display: flex; flex-direction: column; gap: 4px; padding-right: 44px; }
+.pc-logo { width: 64px; height: 64px; border-radius: 16px; margin-bottom: 20px; }
+.pc-co { font-size: 16px; color: var(--ink-2); }
+.pcard h3 { font-size: clamp(22px, 2vw, 28px); font-weight: 500; letter-spacing: -0.02em; line-height: 1.2; margin-top: 6px; }
+.pcard p { font-size: 17px; color: var(--ink-2); line-height: 1.55; max-width: 36ch; margin-top: 4px; }
+.pc-more { margin-top: 20px; font-size: 17px; font-weight: 500; }
+.pc-shot { margin-top: 36px; background: #e8e8e8; border-top-left-radius: 20px; overflow: hidden; aspect-ratio: 16 / 10; }
+.pc-shot img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 0; transition: transform .4s ease; }
+.pcard:hover .pc-shot img { transform: scale(1.02); }
+.pcard-wide { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); padding: 0; }
+.pcard-wide .pc-copy { padding: 56px 44px; align-self: center; }
+.pcard-wide .pc-shot { margin-top: 64px; aspect-ratio: auto; height: 400px; align-self: end; }
+@media (max-width: 760px) {
+  .work-band { margin-top: 64px; padding-block: 64px; }
+  .pcards { grid-template-columns: 1fr; gap: 16px; }
+  .pcard, .pcard-wide { display: flex; padding: 28px 0 0 28px; }
+  .pc-copy, .pcard-wide .pc-copy { padding: 0 28px 0 0; }
+  .pcard-wide .pc-shot { margin-top: 28px; height: auto; aspect-ratio: 16 / 10; align-self: stretch; }
+  .pc-shot { margin-top: 28px; }
+  .pc-logo { width: 52px; height: 52px; border-radius: 14px; margin-bottom: 14px; }
+}
+
+/* A8 — At a glance: a small portrait, and a CV-style summary card instead of the big photo. */
+.hero.hero-glance { grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); align-items: end; }
+.portrait-sm { width: 88px; height: 88px; border-radius: 22px; object-fit: cover; object-position: 50% 30%; }
+.hero-glance h1 { font-size: clamp(40px, 5.6vw, 72px); max-width: 14ch; }
+.glance { border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; display: flex; flex-direction: column; gap: 14px; background: var(--paper); }
+.glance dl { margin: 0; display: flex; flex-direction: column; }
+.glance dl div { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 12px; padding-block: 12px; border-top: 1px solid var(--line); }
+.glance dt { font: 500 11px/1.9 var(--mono); text-transform: uppercase; letter-spacing: .08em; color: var(--ink-2); }
+.glance dd { margin: 0; font-size: 15px; line-height: 1.45; }
+.glance-cv { font-weight: 600; font-size: 15px; text-decoration: none; align-self: flex-start; padding-block: 6px; }
+.glance-cv:hover { color: var(--signal-ink); }
+.ab-hero .portrait { max-width: 260px; border-radius: 28px; }
+@media (max-width: 560px) { .glance { padding: 20px; } .glance dl div { grid-template-columns: 1fr; gap: 2px; } }

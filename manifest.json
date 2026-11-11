@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T13:48:17.562Z",
+  "generated_at": "2026-11-11T14:01:04.209Z",
   "order": [
     "mjongbloet",
     "dir-p",
@@ -282,14 +282,14 @@
               "title": "Matt Jongbloet — Senior Staff Product Designer",
               "password_screen": false,
               "scroll": "window",
-              "fullpage_diff": 0.038,
+              "fullpage_diff": 0.035,
               "method": "fullpage",
               "width": 390,
-              "height": 5782,
+              "height": 5517,
               "file": "shots/home/dir-p-390.png",
               "web": "shots/_web/home/dir-p-390.jpg",
               "web_width": 390,
-              "web_height": 5782
+              "web_height": 5517
             },
             "1440": {
               "url": "redesigns/p-sentence/index.html",
@@ -298,14 +298,14 @@
               "title": "Matt Jongbloet — Senior Staff Product Designer",
               "password_screen": false,
               "scroll": "window",
-              "fullpage_diff": 0.02,
+              "fullpage_diff": 0.021,
               "method": "fullpage",
               "width": 1440,
-              "height": 3340,
+              "height": 3232,
               "file": "shots/home/dir-p-1440.png",
               "web": "shots/_web/home/dir-p-1440.jpg",
               "web_width": 640,
-              "web_height": 1484
+              "web_height": 1436
             }
           },
           "final_url": "redesigns/p-sentence/index.html"
@@ -323,14 +323,14 @@
               "title": "PMI Savings — Matt Jongbloet",
               "password_screen": false,
               "scroll": "window",
-              "fullpage_diff": 0.077,
+              "fullpage_diff": 0.072,
               "method": "fullpage",
               "width": 390,
-              "height": 6277,
+              "height": 6092,
               "file": "shots/case/dir-p-390.png",
               "web": "shots/_web/case/dir-p-390.jpg",
               "web_width": 390,
-              "web_height": 6277
+              "web_height": 6092
             },
             "1440": {
               "url": "redesigns/p-sentence/case-pmi.html",
@@ -342,11 +342,11 @@
               "fallback_reason": "full-page height ballooned",
               "method": "stitched",
               "width": 1440,
-              "height": 5120,
+              "height": 5024,
               "file": "shots/case/dir-p-1440.png",
               "web": "shots/_web/case/dir-p-1440.jpg",
               "web_width": 640,
-              "web_height": 2276
+              "web_height": 2233
             }
           },
           "final_url": "redesigns/p-sentence/case-pmi.html"
@@ -364,15 +364,33 @@
               "title": "About — Matt Jongbloet",
               "password_screen": false,
               "scroll": "window",
-              "error": "Command failed: python3 -I /home/user/hello/tools/img.py compare /home/user/hello/shots/about/dir-p-390.png /home/user/hello/shots/_frames/10480/v-BhGklB/s0.75.png 2688"
+              "fullpage_diff": 0.074,
+              "method": "fullpage",
+              "width": 390,
+              "height": 4262,
+              "file": "shots/about/dir-p-390.png",
+              "web": "shots/_web/about/dir-p-390.jpg",
+              "web_width": 390,
+              "web_height": 4262
             },
             "1440": {
               "url": "redesigns/p-sentence/about.html",
-              "error": "browserContext.newPage: Target page, context or browser has been closed"
+              "status": 200,
+              "final_url": "redesigns/p-sentence/about.html",
+              "title": "About — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0.068,
+              "method": "fullpage",
+              "width": 1440,
+              "height": 3046,
+              "file": "shots/about/dir-p-1440.png",
+              "web": "shots/_web/about/dir-p-1440.jpg",
+              "web_width": 640,
+              "web_height": 1354
             }
           },
-          "final_url": "redesigns/p-sentence/about.html",
-          "failed": "Command failed: python3 -I /home/user/hello/tools/img.py compare /home/user/hello/shots/about/dir-p-390.png /home/user/hello/shots/_frames/10480/v-BhGklB/s0.75.png 2688"
+          "final_url": "redesigns/p-sentence/about.html"
         },
         "contact": {
           "type": "contact",
@@ -382,7 +400,7 @@
           "missing": "no contact page"
         }
       },
-      "captured_at": "2026-11-11T13:43:20.223Z"
+      "captured_at": "2026-11-11T13:50:07.757Z"
     },
     "dir-a": {
       "id": "dir-a",
@@ -403,7 +421,7 @@
               "title": "Matt Jongbloet — Product Designer",
               "password_screen": false,
               "scroll": "window",
-              "fullpage_diff": 0.062,
+              "fullpage_diff": 0.061,
               "method": "fullpage",
               "width": 390,
               "height": 6048,
@@ -485,7 +503,7 @@
               "title": "About — Matt Jongbloet",
               "password_screen": false,
               "scroll": "window",
-              "fullpage_diff": 0.04,
+              "fullpage_diff": 0.041,
               "method": "fullpage",
               "width": 390,
               "height": 4338,
@@ -521,11 +539,11 @@
           "missing": "no contact page"
         }
       },
-      "captured_at": "2026-11-11T13:21:36.083Z"
+      "captured_at": "2026-11-11T13:51:45.885Z"
     },
     "dir-a1": {
       "id": "dir-a1",
-      "name": "A · Serif",
+      "name": "A · Apercu",
       "input": "redesigns/a1-serif/index.html",
       "concept": "A1",
       "pages": {
@@ -542,14 +560,14 @@
               "title": "Matt Jongbloet — Senior Staff Product Designer",
               "password_screen": false,
               "scroll": "window",
-              "fullpage_diff": 0.059,
+              "fullpage_diff": 0.06,
               "method": "fullpage",
               "width": 390,
-              "height": 6101,
+              "height": 6005,
               "file": "shots/home/dir-a1-390.png",
               "web": "shots/_web/home/dir-a1-390.jpg",
               "web_width": 390,
-              "web_height": 6101
+              "web_height": 6005
             },
             "1440": {
               "url": "redesigns/a1-serif/index.html",
@@ -558,14 +576,14 @@
               "title": "Matt Jongbloet — Senior Staff Product Designer",
               "password_screen": false,
               "scroll": "window",
-              "fullpage_diff": 0.032,
+              "fullpage_diff": 0.03,
               "method": "fullpage",
               "width": 1440,
-              "height": 3684,
+              "height": 3629,
               "file": "shots/home/dir-a1-1440.png",
               "web": "shots/_web/home/dir-a1-1440.jpg",
               "web_width": 640,
-              "web_height": 1637
+              "web_height": 1613
             }
           },
           "final_url": "redesigns/a1-serif/index.html"
@@ -583,14 +601,14 @@
               "title": "PMI Savings — Matt Jongbloet",
               "password_screen": false,
               "scroll": "window",
-              "fullpage_diff": 0.064,
+              "fullpage_diff": 0.061,
               "method": "fullpage",
               "width": 390,
-              "height": 5486,
+              "height": 5482,
               "file": "shots/case/dir-a1-390.png",
               "web": "shots/_web/case/dir-a1-390.jpg",
               "web_width": 390,
-              "web_height": 5486
+              "web_height": 5482
             },
             "1440": {
               "url": "redesigns/a1-serif/case-pmi.html",
@@ -602,11 +620,11 @@
               "fallback_reason": "full-page height ballooned",
               "method": "stitched",
               "width": 1440,
-              "height": 4597,
+              "height": 4507,
               "file": "shots/case/dir-a1-1440.png",
               "web": "shots/_web/case/dir-a1-1440.jpg",
               "web_width": 640,
-              "web_height": 2043
+              "web_height": 2003
             }
           },
           "final_url": "redesigns/a1-serif/case-pmi.html"
@@ -624,14 +642,14 @@
               "title": "About — Matt Jongbloet",
               "password_screen": false,
               "scroll": "window",
-              "fullpage_diff": 0.066,
+              "fullpage_diff": 0.042,
               "method": "fullpage",
               "width": 390,
-              "height": 4382,
+              "height": 4338,
               "file": "shots/about/dir-a1-390.png",
               "web": "shots/_web/about/dir-a1-390.jpg",
               "web_width": 390,
-              "web_height": 4382
+              "web_height": 4338
             },
             "1440": {
               "url": "redesigns/a1-serif/about.html",
@@ -640,14 +658,14 @@
               "title": "About — Matt Jongbloet",
               "password_screen": false,
               "scroll": "window",
-              "fullpage_diff": 0.016,
+              "fullpage_diff": 0.052,
               "method": "fullpage",
               "width": 1440,
-              "height": 3073,
+              "height": 3075,
               "file": "shots/about/dir-a1-1440.png",
               "web": "shots/_web/about/dir-a1-1440.jpg",
               "web_width": 640,
-              "web_height": 1366
+              "web_height": 1367
             }
           },
           "final_url": "redesigns/a1-serif/about.html"
@@ -660,7 +678,7 @@
           "missing": "no contact page"
         }
       },
-      "captured_at": "2026-11-11T13:23:14.352Z"
+      "captured_at": "2026-11-11T13:53:24.045Z"
     },
     "dir-a2": {
       "id": "dir-a2",
@@ -681,14 +699,14 @@
               "title": "Matt Jongbloet — Senior Staff Product Designer",
               "password_screen": false,
               "scroll": "window",
-              "fullpage_diff": 0.057,
+              "fullpage_diff": 0.059,
               "method": "fullpage",
               "width": 390,
-              "height": 5984,
+              "height": 6005,
               "file": "shots/home/dir-a2-390.png",
               "web": "shots/_web/home/dir-a2-390.jpg",
               "web_width": 390,
-              "web_height": 5984
+              "web_height": 6005
             },
             "1440": {
               "url": "redesigns/a2-cobalt/index.html",
@@ -697,14 +715,14 @@
               "title": "Matt Jongbloet — Senior Staff Product Designer",
               "password_screen": false,
               "scroll": "window",
-              "fullpage_diff": 0.029,
+              "fullpage_diff": 0.03,
               "method": "fullpage",
               "width": 1440,
-              "height": 3602,
+              "height": 3629,
               "file": "shots/home/dir-a2-1440.png",
               "web": "shots/_web/home/dir-a2-1440.jpg",
               "web_width": 640,
-              "web_height": 1601
+              "web_height": 1613
             }
           },
           "final_url": "redesigns/a2-cobalt/index.html"
@@ -722,14 +740,14 @@
               "title": "PMI Savings — Matt Jongbloet",
               "password_screen": false,
               "scroll": "window",
-              "fullpage_diff": 0.061,
+              "fullpage_diff": 0.063,
               "method": "fullpage",
               "width": 390,
-              "height": 5435,
+              "height": 5482,
               "file": "shots/case/dir-a2-390.png",
               "web": "shots/_web/case/dir-a2-390.jpg",
               "web_width": 390,
-              "web_height": 5435
+              "web_height": 5482
             },
             "1440": {
               "url": "redesigns/a2-cobalt/case-pmi.html",
@@ -741,11 +759,11 @@
               "fallback_reason": "full-page height ballooned",
               "method": "stitched",
               "width": 1440,
-              "height": 4480,
+              "height": 4507,
               "file": "shots/case/dir-a2-1440.png",
               "web": "shots/_web/case/dir-a2-1440.jpg",
               "web_width": 640,
-              "web_height": 1991
+              "web_height": 2003
             }
           },
           "final_url": "redesigns/a2-cobalt/case-pmi.html"
@@ -779,14 +797,14 @@
               "title": "About — Matt Jongbloet",
               "password_screen": false,
               "scroll": "window",
-              "fullpage_diff": 0.024,
+              "fullpage_diff": 0.051,
               "method": "fullpage",
               "width": 1440,
-              "height": 2994,
+              "height": 3075,
               "file": "shots/about/dir-a2-1440.png",
               "web": "shots/_web/about/dir-a2-1440.jpg",
               "web_width": 640,
-              "web_height": 1331
+              "web_height": 1367
             }
           },
           "final_url": "redesigns/a2-cobalt/about.html"
@@ -799,7 +817,7 @@
           "missing": "no contact page"
         }
       },
-      "captured_at": "2026-11-11T13:24:50.988Z"
+      "captured_at": "2026-11-11T13:55:01.765Z"
     },
     "dir-a3": {
       "id": "dir-a3",
@@ -820,14 +838,14 @@
               "title": "Matt Jongbloet — Senior Staff Product Designer",
               "password_screen": false,
               "scroll": "window",
-              "fullpage_diff": 0.061,
+              "fullpage_diff": 0.057,
               "method": "fullpage",
               "width": 390,
-              "height": 6117,
+              "height": 6086,
               "file": "shots/home/dir-a3-390.png",
               "web": "shots/_web/home/dir-a3-390.jpg",
               "web_width": 390,
-              "web_height": 6117
+              "web_height": 6086
             },
             "1440": {
               "url": "redesigns/a3-grid/index.html",
@@ -861,14 +879,14 @@
               "title": "PMI Savings — Matt Jongbloet",
               "password_screen": false,
               "scroll": "window",
-              "fullpage_diff": 0.06,
+              "fullpage_diff": 0.063,
               "method": "fullpage",
               "width": 390,
-              "height": 5560,
+              "height": 5504,
               "file": "shots/case/dir-a3-390.png",
               "web": "shots/_web/case/dir-a3-390.jpg",
               "web_width": 390,
-              "web_height": 5560
+              "web_height": 5504
             },
             "1440": {
               "url": "redesigns/a3-grid/case-pmi.html",
@@ -902,14 +920,14 @@
               "title": "About — Matt Jongbloet",
               "password_screen": false,
               "scroll": "window",
-              "fullpage_diff": 0.048,
+              "fullpage_diff": 0.044,
               "method": "fullpage",
               "width": 390,
-              "height": 4389,
+              "height": 4355,
               "file": "shots/about/dir-a3-390.png",
               "web": "shots/_web/about/dir-a3-390.jpg",
               "web_width": 390,
-              "web_height": 4389
+              "web_height": 4355
             },
             "1440": {
               "url": "redesigns/a3-grid/about.html",
@@ -938,7 +956,7 @@
           "missing": "no contact page"
         }
       },
-      "captured_at": "2026-11-11T13:26:29.268Z"
+      "captured_at": "2026-11-11T13:56:39.796Z"
     },
     "dir-a4": {
       "id": "dir-a4",
@@ -959,14 +977,14 @@
               "title": "Matt Jongbloet — Senior Staff Product Designer",
               "password_screen": false,
               "scroll": "window",
-              "fullpage_diff": 0.039,
+              "fullpage_diff": 0.066,
               "method": "fullpage",
               "width": 390,
-              "height": 6217,
+              "height": 6037,
               "file": "shots/home/dir-a4-390.png",
               "web": "shots/_web/home/dir-a4-390.jpg",
               "web_width": 390,
-              "web_height": 6217
+              "web_height": 6037
             },
             "1440": {
               "url": "redesigns/a4-night/index.html",
@@ -975,14 +993,14 @@
               "title": "Matt Jongbloet — Senior Staff Product Designer",
               "password_screen": false,
               "scroll": "window",
-              "fullpage_diff": 0.029,
+              "fullpage_diff": 0.031,
               "method": "fullpage",
               "width": 1440,
-              "height": 3703,
+              "height": 3630,
               "file": "shots/home/dir-a4-1440.png",
               "web": "shots/_web/home/dir-a4-1440.jpg",
               "web_width": 640,
-              "web_height": 1646
+              "web_height": 1613
             }
           },
           "final_url": "redesigns/a4-night/index.html"
@@ -1000,14 +1018,14 @@
               "title": "PMI Savings — Matt Jongbloet",
               "password_screen": false,
               "scroll": "window",
-              "fullpage_diff": 0.032,
+              "fullpage_diff": 0.031,
               "method": "fullpage",
               "width": 390,
-              "height": 5667,
+              "height": 5483,
               "file": "shots/case/dir-a4-390.png",
               "web": "shots/_web/case/dir-a4-390.jpg",
               "web_width": 390,
-              "web_height": 5667
+              "web_height": 5483
             },
             "1440": {
               "url": "redesigns/a4-night/case-pmi.html",
@@ -1019,11 +1037,11 @@
               "fallback_reason": "full-page height ballooned",
               "method": "stitched",
               "width": 1440,
-              "height": 4601,
+              "height": 4508,
               "file": "shots/case/dir-a4-1440.png",
               "web": "shots/_web/case/dir-a4-1440.jpg",
               "web_width": 640,
-              "web_height": 2045
+              "web_height": 2004
             }
           },
           "final_url": "redesigns/a4-night/case-pmi.html"
@@ -1041,14 +1059,14 @@
               "title": "About — Matt Jongbloet",
               "password_screen": false,
               "scroll": "window",
-              "fullpage_diff": 0.053,
+              "fullpage_diff": 0.037,
               "method": "fullpage",
               "width": 390,
-              "height": 4519,
+              "height": 4339,
               "file": "shots/about/dir-a4-390.png",
               "web": "shots/_web/about/dir-a4-390.jpg",
               "web_width": 390,
-              "web_height": 4519
+              "web_height": 4339
             },
             "1440": {
               "url": "redesigns/a4-night/about.html",
@@ -1057,14 +1075,14 @@
               "title": "About — Matt Jongbloet",
               "password_screen": false,
               "scroll": "window",
-              "fullpage_diff": 0.029,
+              "fullpage_diff": 0.04,
               "method": "fullpage",
               "width": 1440,
-              "height": 3054,
+              "height": 3076,
               "file": "shots/about/dir-a4-1440.png",
               "web": "shots/_web/about/dir-a4-1440.jpg",
               "web_width": 640,
-              "web_height": 1357
+              "web_height": 1367
             }
           },
           "final_url": "redesigns/a4-night/about.html"
@@ -1077,7 +1095,7 @@
           "missing": "no contact page"
         }
       },
-      "captured_at": "2026-11-11T13:28:07.897Z"
+      "captured_at": "2026-11-11T13:58:18.088Z"
     },
     "dir-a5": {
       "id": "dir-a5",
@@ -1180,7 +1198,7 @@
               "title": "About — Matt Jongbloet",
               "password_screen": false,
               "scroll": "window",
-              "fullpage_diff": 0.04,
+              "fullpage_diff": 0.041,
               "method": "fullpage",
               "width": 390,
               "height": 4383,
@@ -1216,7 +1234,7 @@
           "missing": "no contact page"
         }
       },
-      "captured_at": "2026-11-11T13:30:19.809Z"
+      "captured_at": "2026-11-11T13:59:56.934Z"
     },
     "iniabiodun": {
       "id": "iniabiodun",

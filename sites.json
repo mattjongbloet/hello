@@ -25,6 +25,72 @@
   ]
  },
  {
+  "id": "dir-a6",
+  "name": "A · Text first",
+  "concept": "A6",
+  "input": "redesigns/a6-text-first/index.html",
+  "home": {
+   "url": "redesigns/a6-text-first/index.html",
+   "label": "A6 · Home"
+  },
+  "case": {
+   "url": "redesigns/a6-text-first/case-pmi.html",
+   "label": "PMI (redesign)"
+  },
+  "about": {
+   "url": "redesigns/a6-text-first/about.html"
+  },
+  "contact": {
+   "missing": "no contact page",
+   "note": "Concept: contact is a section at the end of every page."
+  },
+  "other": []
+ },
+ {
+  "id": "dir-a7",
+  "name": "A · Work first",
+  "concept": "A7",
+  "input": "redesigns/a7-work-first/index.html",
+  "home": {
+   "url": "redesigns/a7-work-first/index.html",
+   "label": "A7 · Home"
+  },
+  "case": {
+   "url": "redesigns/a7-work-first/case-pmi.html",
+   "label": "PMI (redesign)"
+  },
+  "about": {
+   "url": "redesigns/a7-work-first/about.html"
+  },
+  "contact": {
+   "missing": "no contact page",
+   "note": "Concept: contact is a section at the end of every page."
+  },
+  "other": []
+ },
+ {
+  "id": "dir-a8",
+  "name": "A · At a glance",
+  "concept": "A8",
+  "input": "redesigns/a8-at-a-glance/index.html",
+  "home": {
+   "url": "redesigns/a8-at-a-glance/index.html",
+   "label": "A8 · Home"
+  },
+  "case": {
+   "url": "redesigns/a8-at-a-glance/case-pmi.html",
+   "label": "PMI (redesign)"
+  },
+  "about": {
+   "url": "redesigns/a8-at-a-glance/about.html"
+  },
+  "contact": {
+   "missing": "no contact page",
+   "note": "Concept: contact is a section at the end of every page."
+  },
+  "other": []
+ },
+ {
   "id": "dir-p",
   "name": "P · Sentence (your mockup)",
   "concept": "P",

@@ -99,7 +99,7 @@
           "title": "About — Matt Jongbloet",
           "password_screen": false,
           "scroll": "window",
-          "fullpage_diff": 0.04,
+          "fullpage_diff": 0.041,
           "method": "fullpage",
           "width": 390,
           "height": 4383,
@@ -135,5 +135,5 @@
       "missing": "no contact page"
     }
   },
-  "captured_at": "2026-11-11T13:30:19.809Z"
+  "captured_at": "2026-11-11T13:59:56.934Z"
 }
