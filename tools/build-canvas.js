@@ -5,8 +5,8 @@ const src = fs.readFileSync(path.join(__dirname, 'canvas.src.html'), 'utf8');
 const head = '<!doctype html>\n<html lang="en">\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n';
 fs.writeFileSync(path.join(ROOT, 'canvas.html'), head + src + '\n</html>\n');
 // The redesign directions overview, from the same kind of source.
-const dsrc = path.join(__dirname, 'directions.src.html');
-if (fs.existsSync(dsrc)) fs.writeFileSync(path.join(ROOT, 'redesigns', 'index.html'), head + fs.readFileSync(dsrc, 'utf8') + '\n</html>\n');
+fs.writeFileSync(path.join(ROOT, 'redesigns', 'index.html'), head + fs.readFileSync(path.join(__dirname, 'directions-a.src.html'), 'utf8') + '\n</html>\n');
+fs.writeFileSync(path.join(ROOT, 'redesigns', 'archive', 'index.html'), head + fs.readFileSync(path.join(__dirname, 'archive.src.html'), 'utf8') + '\n</html>\n');
 // Merge per-site capture results (shots/_manifest/{id}.json) into manifest.json, in sites.json order.
 const sites = JSON.parse(fs.readFileSync(path.join(ROOT, 'sites.json'), 'utf8'));
 const manifest = { generated_at: new Date().toISOString(), order: [], sites: {} };

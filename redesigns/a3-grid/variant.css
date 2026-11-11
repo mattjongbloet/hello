@@ -1,0 +1,17 @@
+/* A3 · Grid — A's content and palette in a gallery layout: featured work as a 3-up card grid, edge-to-edge covers on case study and about. */
+.featured { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.case-card { grid-template-columns: 1fr; display: flex; flex-direction: column; }
+.case-card .shot { order: -1; min-height: 0; aspect-ratio: 4 / 3; }
+.case-card .copy { padding: 24px 24px 28px; gap: 10px; flex: 1; }
+.case-card h3 { font-size: 24px; }
+.case-card .copy > p { font-size: 15px; line-height: 1.5; }
+.case-card .metric { padding-top: 16px; }
+.case-card .metric b { font-size: 40px; }
+.case-card .metric span { font-size: 14px; }
+.grid4 { margin-top: 40px; }
+.cs-cover, .wide-photo { border-radius: 0; margin-inline: calc(50% - 50vw); }
+.cs-cover img { max-height: 720px; object-fit: cover; }
+@media (max-width: 1100px) { .featured { grid-template-columns: repeat(2, minmax(0, 1fr)); } .featured > :first-child { grid-column: 1 / -1; } .featured > :first-child .shot { aspect-ratio: 16 / 9; } }
+@media (max-width: 640px) { .featured { grid-template-columns: 1fr; } }
+/* Line the big numbers up across cards: reserve two lines for each metric caption */
+.case-card .metric span { min-height: 3.2em; }  /* two lines at line-height 1.6 */

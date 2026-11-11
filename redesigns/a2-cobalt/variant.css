@@ -1,0 +1,22 @@
+/* A2 · Cobalt — A with a cool palette: cobalt replaces the orange accent, neutrals shift cool. Layout and type unchanged. */
+:root {
+  --mist: #f2f4f8;
+  --line: #e1e5ed;
+  --ink: #121722;
+  --ink-2: #5a6272;        /* 6.2:1 on white, 5.8:1 on --mist */
+  --signal: #2f55e4;
+  --signal-soft: #ecf0fe;
+  --signal-ink: #2346cc;   /* 6.9:1 on white, 6.2:1 on --signal-soft */
+}
+.case-card .shot { background: #e6e9ef; }
+.cs-cover { background: #e6e9ef; }
+.contact { background: #10162a; }
+.foot { background: #10162a; }
+.foot .wrap { border-top-color: #252c44; }
+/* Let the cobalt carry the hero and the primary actions */
+.hero h1 em { color: var(--signal-ink); }
+.btn { background: var(--signal-ink); }
+.btn:hover { background: #1a37a8; }
+.btn.ghost { background: transparent; }
+.contact .btn { background: #ffffff; color: var(--ink); }
+.contact .btn:hover { background: var(--signal); color: #fff; }

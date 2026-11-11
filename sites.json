@@ -26,7 +26,7 @@
  },
  {
   "id": "dir-a",
-  "name": "Clarity",
+  "name": "A · Clarity",
   "concept": "A",
   "input": "redesigns/a-clarity/index.html",
   "home": {
@@ -47,20 +47,20 @@
   "other": []
  },
  {
-  "id": "dir-b",
-  "name": "Editorial",
-  "concept": "B",
-  "input": "redesigns/b-editorial/index.html",
+  "id": "dir-a1",
+  "name": "A · Serif",
+  "concept": "A1",
+  "input": "redesigns/a1-serif/index.html",
   "home": {
-   "url": "redesigns/b-editorial/index.html",
-   "label": "Direction B · Home"
+   "url": "redesigns/a1-serif/index.html",
+   "label": "A1 · Home"
   },
   "case": {
-   "url": "redesigns/b-editorial/case-pmi.html",
+   "url": "redesigns/a1-serif/case-pmi.html",
    "label": "PMI (redesign)"
   },
   "about": {
-   "url": "redesigns/b-editorial/about.html"
+   "url": "redesigns/a1-serif/about.html"
   },
   "contact": {
    "missing": "no contact page",
@@ -69,20 +69,20 @@
   "other": []
  },
  {
-  "id": "dir-c",
-  "name": "Field Notes",
-  "concept": "C",
-  "input": "redesigns/c-field-notes/index.html",
+  "id": "dir-a2",
+  "name": "A · Cobalt",
+  "concept": "A2",
+  "input": "redesigns/a2-cobalt/index.html",
   "home": {
-   "url": "redesigns/c-field-notes/index.html",
-   "label": "Direction C · Home"
+   "url": "redesigns/a2-cobalt/index.html",
+   "label": "A2 · Home"
   },
   "case": {
-   "url": "redesigns/c-field-notes/case-pmi.html",
+   "url": "redesigns/a2-cobalt/case-pmi.html",
    "label": "PMI (redesign)"
   },
   "about": {
-   "url": "redesigns/c-field-notes/about.html"
+   "url": "redesigns/a2-cobalt/about.html"
   },
   "contact": {
    "missing": "no contact page",
@@ -91,20 +91,20 @@
   "other": []
  },
  {
-  "id": "dir-d",
-  "name": "Night Mode",
-  "concept": "D",
-  "input": "redesigns/d-night-mode/index.html",
+  "id": "dir-a3",
+  "name": "A · Grid",
+  "concept": "A3",
+  "input": "redesigns/a3-grid/index.html",
   "home": {
-   "url": "redesigns/d-night-mode/index.html",
-   "label": "Direction D · Home"
+   "url": "redesigns/a3-grid/index.html",
+   "label": "A3 · Home"
   },
   "case": {
-   "url": "redesigns/d-night-mode/case-pmi.html",
+   "url": "redesigns/a3-grid/case-pmi.html",
    "label": "PMI (redesign)"
   },
   "about": {
-   "url": "redesigns/d-night-mode/about.html"
+   "url": "redesigns/a3-grid/about.html"
   },
   "contact": {
    "missing": "no contact page",
@@ -113,31 +113,20 @@
   "other": []
  },
  {
-  "id": "dir-e",
-  "name": "Research Wall",
-  "concept": "E",
-  "input": "redesigns/e-research-wall/index.html",
+  "id": "dir-a4",
+  "name": "A · Night",
+  "concept": "A4",
+  "input": "redesigns/a4-night/index.html",
   "home": {
-   "url": "redesigns/e-research-wall/index.html",
-   "label": "Direction E · Home",
-   "noscroll": true,
-   "viewport": [
-    "1440"
-   ],
-   "actions": [
-    {
-     "click": "#zfit",
-     "wait": 800
-    }
-   ],
-   "note": "Desktop shows the whole board (Fit); phones get the stacked list view."
+   "url": "redesigns/a4-night/index.html",
+   "label": "A4 · Home"
   },
   "case": {
-   "url": "redesigns/e-research-wall/case-pmi.html",
+   "url": "redesigns/a4-night/case-pmi.html",
    "label": "PMI (redesign)"
   },
   "about": {
-   "url": "redesigns/e-research-wall/about.html"
+   "url": "redesigns/a4-night/about.html"
   },
   "contact": {
    "missing": "no contact page",
@@ -146,222 +135,24 @@
   "other": []
  },
  {
-  "id": "dir-f",
-  "name": "Swiss Index",
-  "concept": "F",
-  "input": "redesigns/f-swiss-index/index.html",
+  "id": "dir-a5",
+  "name": "A · Senior Staff",
+  "concept": "A5",
+  "input": "redesigns/a5-senior-staff/index.html",
   "home": {
-   "url": "redesigns/f-swiss-index/index.html",
-   "label": "Direction F · Home"
+   "url": "redesigns/a5-senior-staff/index.html",
+   "label": "A5 · Home"
   },
   "case": {
-   "url": "redesigns/f-swiss-index/case-pmi.html",
+   "url": "redesigns/a5-senior-staff/case-pmi.html",
    "label": "PMI (redesign)"
   },
   "about": {
-   "url": "redesigns/f-swiss-index/about.html"
+   "url": "redesigns/a5-senior-staff/about.html"
   },
   "contact": {
    "missing": "no contact page",
-   "note": "Concept: contact is part of every page."
-  },
-  "other": []
- },
- {
-  "id": "dir-g",
-  "name": "Doc",
-  "concept": "G",
-  "input": "redesigns/g-doc/index.html",
-  "home": {
-   "url": "redesigns/g-doc/index.html",
-   "label": "Direction G · Home"
-  },
-  "case": {
-   "url": "redesigns/g-doc/case-pmi.html",
-   "label": "PMI (redesign)"
-  },
-  "about": {
-   "url": "redesigns/g-doc/about.html"
-  },
-  "contact": {
-   "missing": "no contact page",
-   "note": "Concept: contact is part of every page."
-  },
-  "other": []
- },
- {
-  "id": "dir-h",
-  "name": "Scrollytelling",
-  "concept": "H",
-  "input": "redesigns/h-scrollytelling/index.html",
-  "home": {
-   "url": "redesigns/h-scrollytelling/index.html",
-   "label": "Direction H · Home"
-  },
-  "case": {
-   "url": "redesigns/h-scrollytelling/case-pmi.html",
-   "label": "PMI (redesign)"
-  },
-  "about": {
-   "url": "redesigns/h-scrollytelling/about.html"
-  },
-  "contact": {
-   "missing": "no contact page",
-   "note": "Concept: contact is part of every page."
-  },
-  "other": []
- },
- {
-  "id": "dir-i",
-  "name": "Inline Story",
-  "concept": "I",
-  "input": "redesigns/i-inline-story/index.html",
-  "home": {
-   "url": "redesigns/i-inline-story/index.html",
-   "label": "Direction I · Home"
-  },
-  "case": {
-   "url": "redesigns/i-inline-story/case-pmi.html",
-   "label": "PMI (redesign)"
-  },
-  "about": {
-   "url": "redesigns/i-inline-story/about.html"
-  },
-  "contact": {
-   "missing": "no contact page",
-   "note": "Concept: contact is part of every page."
-  },
-  "other": []
- },
- {
-  "id": "dir-j",
-  "name": "Brutalist",
-  "concept": "J",
-  "input": "redesigns/j-brutalist/index.html",
-  "home": {
-   "url": "redesigns/j-brutalist/index.html",
-   "label": "Direction J · Home"
-  },
-  "case": {
-   "url": "redesigns/j-brutalist/case-pmi.html",
-   "label": "PMI (redesign)"
-  },
-  "about": {
-   "url": "redesigns/j-brutalist/about.html"
-  },
-  "contact": {
-   "missing": "no contact page",
-   "note": "Concept: contact is part of every page."
-  },
-  "other": []
- },
- {
-  "id": "dir-k",
-  "name": "Annual Report",
-  "concept": "K",
-  "input": "redesigns/k-annual-report/index.html",
-  "home": {
-   "url": "redesigns/k-annual-report/index.html",
-   "label": "Direction K · Home"
-  },
-  "case": {
-   "url": "redesigns/k-annual-report/case-pmi.html",
-   "label": "PMI (redesign)"
-  },
-  "about": {
-   "url": "redesigns/k-annual-report/about.html"
-  },
-  "contact": {
-   "missing": "no contact page",
-   "note": "Concept: contact is part of every page."
-  },
-  "other": []
- },
- {
-  "id": "dir-l",
-  "name": "Terminal",
-  "concept": "L",
-  "input": "redesigns/l-terminal/index.html",
-  "home": {
-   "url": "redesigns/l-terminal/index.html",
-   "label": "Direction L · Home"
-  },
-  "case": {
-   "url": "redesigns/l-terminal/case-pmi.html",
-   "label": "PMI (redesign)"
-  },
-  "about": {
-   "url": "redesigns/l-terminal/about.html"
-  },
-  "contact": {
-   "missing": "no contact page",
-   "note": "Concept: contact is part of every page."
-  },
-  "other": []
- },
- {
-  "id": "dir-m",
-  "name": "The Deck",
-  "concept": "M",
-  "input": "redesigns/m-deck/index.html",
-  "home": {
-   "url": "redesigns/m-deck/index.html",
-   "label": "Direction M · Home"
-  },
-  "case": {
-   "url": "redesigns/m-deck/case-pmi.html",
-   "label": "PMI (redesign)"
-  },
-  "about": {
-   "url": "redesigns/m-deck/about.html"
-  },
-  "contact": {
-   "missing": "no contact page",
-   "note": "Concept: contact is part of every page."
-  },
-  "other": []
- },
- {
-  "id": "dir-n",
-  "name": "Leverage",
-  "concept": "N",
-  "input": "redesigns/n-leverage/index.html",
-  "home": {
-   "url": "redesigns/n-leverage/index.html",
-   "label": "Direction N · Home"
-  },
-  "case": {
-   "url": "redesigns/n-leverage/case-pmi.html",
-   "label": "PMI (redesign)"
-  },
-  "about": {
-   "url": "redesigns/n-leverage/about.html"
-  },
-  "contact": {
-   "missing": "no contact page",
-   "note": "Concept: contact is part of every page."
-  },
-  "other": []
- },
- {
-  "id": "dir-o",
-  "name": "Blueprint",
-  "concept": "O",
-  "input": "redesigns/o-blueprint/index.html",
-  "home": {
-   "url": "redesigns/o-blueprint/index.html",
-   "label": "Direction O · Home"
-  },
-  "case": {
-   "url": "redesigns/o-blueprint/case-pmi.html",
-   "label": "PMI (redesign)"
-  },
-  "about": {
-   "url": "redesigns/o-blueprint/about.html"
-  },
-  "contact": {
-   "missing": "no contact page",
-   "note": "Concept: contact is part of every page."
+   "note": "Concept: contact is a section at the end of every page."
   },
   "other": []
  },

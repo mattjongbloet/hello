@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PMI board — Matt Jongbloet</title>
+<meta name="description" content="The PMI project at Homebot, laid out as a research board.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Kalam&display=swap">
+<link rel="stylesheet" href="style.css">
+<style>
+  .lane > .l { align-self: flex-start; width: min(100%, 860px); }
+  .lane > .r { align-self: flex-end; width: min(100%, 860px); }
+  .pinned { position: absolute; z-index: 2; }
+  @media (max-width: 1100px) { .pinned { position: relative; inset: auto !important; margin-top: -40px; align-self: flex-end; } }
+</style>
+</head>
+<body class="dotted">
+<header class="topbar">
+  <a class="chip" href="index.html"><img src="../../assets/headshot.jpg" alt=""><b>Matt Jongbloet</b><span>Product designer &amp; UX researcher</span></a>
+  <nav class="tabs" aria-label="Main">
+    <a href="index.html">Board</a>
+    <a href="case-pmi.html" aria-current="page">PMI case</a>
+    <a href="about.html">About</a>
+    <a class="opt" href="https://cdn.prod.website-files.com/63b35214bc1dc0317e22bd99/668ae1b79c5572bfad32e508_Matt_Jongbloet_CV_2024.pdf">Resume</a>
+  </nav>
+</header>
+
+<main class="scroll">
+  <div class="lane">
+    <section class="frame cs-title l">
+      <span class="tab">pmi · homebot · july-2022</span>
+      <h1>When can you remove your <em>mortgage insurance?</em></h1>
+      <p>Interviews and our data warehouse pointed at the same opportunity: around a million Homebot homeowners could stop paying private mortgage insurance (PMI) early. I designed the feature that told them, and connected them with their loan officers and realtors.</p>
+      <div class="meta-row"><span><small>Company</small>Homebot</span><span><small>Team</small>Consumer Team</span><span><small>Date</small>July 2022</span><span><small>My part</small>Prototyping, research, delivery plan</span></div>
+    </section>
+    <div class="sticky pinned" style="--r:3deg;right:0;top:40px;width:220px"><b class="big">4.8/5</b>with 20 usability participants<span class="who">— results, see below</span></div>
+
+    <figure class="polaroid tape r" style="--r:-1deg;margin:0;width:min(100%,900px)"><img src="../../assets/pmi-mockup.png" alt="Two phone screens: 'When can you remove your $152.13 monthly mortgage insurance? Maybe now' with a 20% removal goal bar, and ways to remove PMI faster"><span class="cap">the design: removal goal, savings, who to ask</span></figure>
+
+    <section class="frame l">
+      <span class="tab">background</span>
+      <h2>Why it mattered</h2>
+      <p class="lead">Three things were true in 2021–22:</p>
+      <div class="three" style="margin-top:22px">
+        <div class="sticky" style="--r:-1.5deg">Home prices rose faster than ever in 2021. The typical home gained <b>$50,000</b>.</div>
+        <div class="sticky p" style="--r:1deg">Nearly two-thirds of US households struck by COVID-19 faced financial trouble.</div>
+        <div class="sticky b" style="--r:-.6deg">PMI comes off once loan-to-value drops below <b>80%</b> of the original appraisal, or sooner if the home appreciated.</div>
+      </div>
+    </section>
+
+    <section class="frame r">
+      <span class="tab">opportunity-sizing</span>
+      <h2>What it was worth</h2>
+      <div class="math" style="margin-top:22px">
+        <div class="sticky g" style="--r:-1deg"><b class="big">≈1M</b>Homebot homeowners eligible to remove PMI early</div>
+        <span class="op">×</span>
+        <div class="sticky g" style="--r:1.2deg"><b class="big">$195</b>estimated saving each, per month</div>
+        <span class="op">≈</span>
+        <div class="sticky o" style="--r:-.8deg"><b class="big">$200M</b>a month in potential savings</div>
+      </div>
+      <p class="lead" style="margin-top:20px">And for Homebot’s customers, the loan officers and realtors, a reason to reach out and build trust as advisors.</p>
+    </section>
+
+    <section class="frame l">
+      <span class="tab">explore</span>
+      <h2>Prototype widely</h2>
+      <p class="lead">I sketched and rapidly prototyped variations on copy, infographics and visualisations, and on ways to connect homeowners with their loan officers and realtors.</p>
+      <div class="two" style="margin-top:24px;grid-template-columns:1.46fr 1fr">
+        <figure class="polaroid" style="--r:-1deg;margin:0"><div class="dark-img"><img src="../../assets/pmi-iterations.png" alt="Figma board of PMI iterations"></div><span class="cap">iterations</span></figure>
+        <figure class="polaroid" style="--r:1.5deg;margin:0"><div class="dark-img"><img src="../../assets/pmi-handoff.png" alt="Figma handoff board with light mode"></div><span class="cap">handoff + light mode</span></figure>
+      </div>
+    </section>
+
+    <section class="frame r">
+      <span class="tab">usability-testing</span>
+      <h2>Test with 20 people</h2>
+      <p class="lead">Usability sessions asked how valuable the feature felt, and how confident people were about removing PMI.</p>
+      <div class="two" style="margin-top:22px;max-width:520px">
+        <div class="sticky b" style="--r:-1deg"><b class="big">20</b>participants in usability sessions</div>
+        <div class="sticky" style="--r:1deg"><b class="big">4.8/5</b>rating for value and confidence in removal</div>
+      </div>
+    </section>
+
+    <section class="frame l">
+      <span class="tab">delivery</span>
+      <h2>Slice it into four sprints</h2>
+      <p class="lead">With the engineering team leads I broke the design into four sprints, each the smallest chunk of deliverable value.</p>
+      <div class="slices" aria-label="Four sprints"><i></i><i></i><i></i><i></i></div>
+    </section>
+
+    <section class="frame r">
+      <span class="tab">outcome</span>
+      <h2>500 requests in the first sprint</h2>
+      <div class="three" style="margin-top:22px">
+        <div class="sticky o" style="--r:-1.2deg"><b class="big">500+</b>requests to learn about PMI cancellation, in sprint one</div>
+        <div class="sticky g" style="--r:.8deg"><b class="big">≈$97.5k</b>a month in savings from those requests</div>
+        <div class="sticky p" style="--r:-.5deg">Presented to the whole company with the <b>Double Diamond</b>, connecting colleagues to the mission and showing how the product org works.</div>
+      </div>
+      <a class="video" href="https://www.youtube.com/watch?v=7k9B34Jx0yg" style="margin-top:24px"><img src="../../assets/pmi-video.jpg" alt="Video still of the PMI feature"><span>▶ Watch the walkthrough</span></a>
+    </section>
+
+    <section class="frame contact-frame l" style="width:min(100%,620px)">
+      <span class="tab">next</span>
+      <h2>More on the board</h2>
+      <p class="lead"><a href="https://www.mjongbloet.com/portfolio/home-search" style="font-weight:700;color:var(--wire)">Home Search ↗</a> · <a href="index.html" style="font-weight:700;color:var(--wire)">Back to the board</a></p>
+      <a class="mail" href="mailto:matthewjongbloet@gmail.com">matthewjongbloet@gmail.com</a>
+    </section>
+  </div>
+</main>
+</body>
+</html>

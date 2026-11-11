@@ -1,7 +1,7 @@
 """Build Direction G pages: inject the shared sidebar into redesigns/g-doc/src/*.html.
 The marker <!--SIDE:key--> marks which page is current (home, case, about)."""
 import glob, os, re
-D = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "redesigns", "g-doc")
+D = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "redesigns", "archive", "g-doc")
 side = open(os.path.join(D, "_side.html")).read()
 for src in glob.glob(os.path.join(D, "src", "*.html")):
     s = open(src).read()

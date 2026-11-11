@@ -1,0 +1,9 @@
+/* A5 · Senior Staff — A's look, with copy and structure reframed around staff-level scope: impact metrics up front and a "How I work" section. */
+.facts b { font-size: 26px; color: var(--signal-ink); }
+.how { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.how > div { background: var(--mist); border-radius: 14px; padding: 22px; display: flex; flex-direction: column; gap: 10px; }
+.how .eyebrow { color: var(--signal-ink); }
+.how h3 { font-size: 20px; font-weight: 700; letter-spacing: -0.015em; line-height: 1.2; }
+.how p { font-size: 15px; color: var(--ink-2); line-height: 1.5; }
+@media (max-width: 900px) { .how { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .how { grid-template-columns: 1fr; } }
