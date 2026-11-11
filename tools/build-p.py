@@ -22,6 +22,7 @@ def head(title, desc):
 <meta name="description" content="{desc}">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="{FONTS}">
+<link rel="icon" href="../assets/mj-logo.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../fonts/fonts.css">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -36,7 +37,7 @@ def header(current):
         for k, label, href in items)
     return f"""<header class="top">
   <div class="wrap">
-    <a class="chip name" href="index.html"><img src="../assets/headshot.jpg" alt="">Matt Jongbloet</a>
+    <a class="chip name" href="index.html"><img class="mark" src="../assets/mj-logo.svg" alt="">Matt Jongbloet</a>
     <nav class="nav" aria-label="Main">
 {links}
     </nav>

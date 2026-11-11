@@ -46,7 +46,8 @@ COMMON = {
 
 DARK_IMAGES = [("../assets/pmi-mockup.png", "../assets/pmi-mockup-dark.png"),
                ("../assets/home-search.jpg", "../assets/home-search-dark.jpg"),
-               ("../assets/home-value.png", "../assets/home-value-dark.png")]
+               ("../assets/home-value.png", "../assets/home-value-dark.png"),
+               ('src="../assets/mj-logo.svg"', 'src="../assets/mj-logo-light.svg"')]  # header logo only, not the favicon
 
 VARIANTS = {
     "a1-serif": {

@@ -34,6 +34,7 @@ p { margin: 0; }
 .top .wrap { display: flex; align-items: center; gap: 24px; height: 68px; }
 .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 700; letter-spacing: -0.01em; }
 .brand img { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; }
+.brand img.mark { width: auto; height: 34px; border-radius: 0; object-fit: contain; }  /* Matt’s MJ pencil monogram */
 .nav { margin-left: auto; display: flex; gap: 4px; }
 .nav a { text-decoration: none; padding: 8px 12px; border-radius: 999px; font-size: 15px; color: var(--ink-2); }
 .nav a:hover, .nav a[aria-current="page"] { color: var(--ink); background: var(--mist); }
