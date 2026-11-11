@@ -1,15 +1,2 @@
-/* A1 · Serif — A with a serif display face. Same layout, colour and content; headlines, numbers and titles in Instrument Serif. */
-:root { --display: "Instrument Serif", Georgia, "Times New Roman", serif; }
-h1, h2, h3, .facts b, .case-card .metric b, .results b { font-weight: 400; letter-spacing: -0.015em; }
-.hero h1 { font-size: clamp(48px, 7.2vw, 92px); line-height: 1.02; }
-.hero h1 em { font-style: italic; color: var(--ink-2); }
-.cs-hero h1, .ab-hero h1 { font-size: clamp(44px, 6.6vw, 84px); line-height: 1.04; }
-.section-head h2, .prose h2 { font-size: clamp(34px, 3.8vw, 50px); }
-.case-card h3 { font-size: clamp(28px, 2.8vw, 38px); }
-.facts b { font-size: 28px; }
-.case-card .metric b { font-size: clamp(44px, 4.6vw, 60px); }
-.results b { font-size: clamp(36px, 3.4vw, 46px); }
-.mini h3 { font-size: 22px; }
-.contact h2 { font-size: clamp(44px, 6vw, 76px); }
-.next h3 { font-size: clamp(34px, 4.2vw, 56px); }
-.path .place, .creds b { font-family: var(--display); font-weight: 400; font-size: 24px; letter-spacing: -0.01em; }
+/* A1 — A set in Apercu (Matt’s Apercu Pro). Everything else is A, so A vs A1 compares Roobert with Apercu directly. */
+:root { --display: "Apercu", "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif; --body: "Apercu", "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif; }

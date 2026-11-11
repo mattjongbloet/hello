@@ -16,5 +16,5 @@
 /* Line the big numbers up across cards: reserve two lines for each metric caption */
 .case-card .metric span { min-height: 3.2em; }  /* two lines at line-height 1.6 */
 
-/* Type: Matt’s trial fonts (redesigns/fonts/fonts.css); Hanken Grotesk fills missing punctuation. */
-:root { --display: "Geograph", "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif; --body: "Geograph", "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif; }
+/* Type: Apercu (redesigns/fonts/fonts.css). */
+:root { --display: "Apercu", "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif; --body: "Apercu", "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif; }

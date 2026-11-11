@@ -21,5 +21,5 @@
 .contact .btn { background: #ffffff; color: var(--ink); }
 .contact .btn:hover { background: var(--signal); color: #fff; }
 
-/* Type: Matt’s trial fonts (redesigns/fonts/fonts.css); Hanken Grotesk fills missing punctuation. */
-:root { --display: "GT Eesti Display", "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif; --body: "GT Eesti Text", "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif; }
+/* Type: Apercu (redesigns/fonts/fonts.css). */
+:root { --display: "Apercu", "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif; --body: "Apercu", "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif; }

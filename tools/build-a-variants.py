@@ -50,9 +50,7 @@ DARK_IMAGES = [("../assets/pmi-mockup.png", "../assets/pmi-mockup-dark.png"),
                ('src="../assets/mj-logo.svg"', 'src="../assets/mj-logo-light.svg"')]  # header logo only, not the favicon
 
 VARIANTS = {
-    "a1-serif": {
-        "font": "https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;650;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@500&display=swap",
-    },
+    "a1-serif": {},  # type-only variation: Apercu, set in its variant.css
     "a2-cobalt": {},
     "a3-grid": {},
     "a4-night": {"swap": DARK_IMAGES},

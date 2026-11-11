@@ -99,33 +99,15 @@
           "title": "About — Matt Jongbloet",
           "password_screen": false,
           "scroll": "window",
-          "fullpage_diff": 0.03,
-          "method": "fullpage",
-          "width": 390,
-          "height": 4428,
-          "file": "shots/about/dir-p-390.png",
-          "web": "shots/_web/about/dir-p-390.jpg",
-          "web_width": 390,
-          "web_height": 4428
+          "error": "Command failed: python3 -I /home/user/hello/tools/img.py compare /home/user/hello/shots/about/dir-p-390.png /home/user/hello/shots/_frames/10480/v-BhGklB/s0.75.png 2688"
         },
         "1440": {
           "url": "redesigns/p-sentence/about.html",
-          "status": 200,
-          "final_url": "redesigns/p-sentence/about.html",
-          "title": "About — Matt Jongbloet",
-          "password_screen": false,
-          "scroll": "window",
-          "fullpage_diff": 0.068,
-          "method": "fullpage",
-          "width": 1440,
-          "height": 3056,
-          "file": "shots/about/dir-p-1440.png",
-          "web": "shots/_web/about/dir-p-1440.jpg",
-          "web_width": 640,
-          "web_height": 1358
+          "error": "browserContext.newPage: Target page, context or browser has been closed"
         }
       },
-      "final_url": "redesigns/p-sentence/about.html"
+      "final_url": "redesigns/p-sentence/about.html",
+      "failed": "Command failed: python3 -I /home/user/hello/tools/img.py compare /home/user/hello/shots/about/dir-p-390.png /home/user/hello/shots/_frames/10480/v-BhGklB/s0.75.png 2688"
     },
     "contact": {
       "type": "contact",
@@ -135,5 +117,5 @@
       "missing": "no contact page"
     }
   },
-  "captured_at": "2026-11-11T13:19:58.326Z"
+  "captured_at": "2026-11-11T13:43:20.223Z"
 }
