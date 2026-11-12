@@ -40,7 +40,9 @@ const WIDTHS = [390, 768, 1024, 1440];
           if (/(hidden|clip)/.test(s.overflow) && s.textOverflow !== 'ellipsis' && el.children.length === 0 && el.innerText && el.scrollWidth > el.clientWidth + 1) out.push(`clipped text: ${desc(el)}`);
         }
         // Text leaves for overlap + contrast
-        const leaves = all.filter((el) => [...el.childNodes].some((n) => n.nodeType === 3 && n.textContent.trim()));
+        // Text inside a closed <details> isn't rendered, so it can't clip, overlap or fail contrast.
+        const hiddenInDetails = (el) => { const d = el.closest('details:not([open])'); return d && !el.closest('summary'); };
+        const leaves = all.filter((el) => !hiddenInDetails(el) && [...el.childNodes].some((n) => n.nodeType === 3 && n.textContent.trim()));
         const lum = (c) => { const v = c.map((x) => { x /= 255; return x <= 0.03928 ? x / 12.92 : Math.pow((x + 0.055) / 1.055, 2.4); }); return 0.2126 * v[0] + 0.7152 * v[1] + 0.0722 * v[2]; };
         const parse = (c) => {
           const m = c.match(/[\d.]+/g); if (!m) return null; let v = m.map(Number);

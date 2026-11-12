@@ -44,6 +44,18 @@ h1 { font-size: clamp(34px, 4.6vw, 56px); line-height: 1.04; letter-spacing: -0.
 .changes { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; font-size: 15px; color: var(--ink-2); }
 .changes b { color: var(--ink); font-weight: 600; }
 .dir.original { border-bottom: 2px solid var(--ink); }
+.formats { padding-block: 56px; border-bottom: 2px solid var(--ink); }
+.formats-head { display: flex; flex-direction: column; gap: 10px; max-width: 720px; margin-bottom: 28px; }
+.formats-head h2 { font-size: clamp(28px, 3.4vw, 40px); letter-spacing: -0.03em; margin: 0; line-height: 1.05; }
+.fgrid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
+.fcard { display: flex; flex-direction: column; gap: 6px; text-decoration: none; color: var(--ink); }
+.fshot { display: block; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--surface); margin-bottom: 8px; }
+.fshot img { width: 100%; height: auto; }
+.fcard:hover .fshot { border-color: var(--accent); }
+.fn { font: 500 12px/1 var(--mono); color: var(--accent); }
+.fcard b { font-size: 17px; }
+.fd { font-size: 14px; color: var(--ink-2); line-height: 1.45; }
+@media (max-width: 900px) { .fgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .archive-link { display: inline-flex; gap: 8px; align-items: center; margin-top: 18px; font-weight: 600; text-decoration: none; padding: 10px 14px; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); }
 .archive-link:hover { border-color: var(--accent); color: var(--accent); }
 .notes { padding-top: 56px; display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: 40px; }
@@ -68,10 +80,25 @@ code { font: 13px var(--mono); background: var(--surface); border: 1px solid var
       <h1>Portfolio Direction A</h1>
     </div>
     <div>
-      <p>New at the top: three case-study formats (Trellis written up in full), then A6–A8, three iterations on A with copy from your CV, your project cards, and three answers to the big photo on the right. Then P, your own mockup built out into a full direction. Below it, Direction A, the one closest to today’s site, and five close variations of it. Each variation changes one thing (type, colour, layout, theme or content) and keeps everything else, so you can compare like for like. All five use your current title, Senior Staff Product Designer. Type is Roobert everywhere, except A1, A2 and A3, which try Apercu.</p>
+      <p>New at the top: your PMI case study in five layouts to choose from. Then three case-study formats (Trellis written up in full), then A6–A8, three iterations on A with copy from your CV, your project cards, and three answers to the big photo on the right. Then P, your own mockup built out into a full direction. Below it, Direction A, the one closest to today’s site, and five close variations of it. Each variation changes one thing (type, colour, layout, theme or content) and keeps everything else, so you can compare like for like. All five use your current title, Senior Staff Product Designer. Type is Roobert everywhere, except A1, A2 and A3, which try Apercu.</p>
       <a class="archive-link" href="archive/index.html">Other explorations (B–O) →</a>
     </div>
   </header>
+
+  <section class="formats">
+    <div class="formats-head">
+      <span class="variant-of">New · pick a case-study layout</span>
+      <h2>PMI case study, five layouts</h2>
+      <p class="idea">The same copy and images in each, so only the structure differs. Each page has a bar at the top to jump between the five. Tell me which one you like and I’ll put every case study into it.</p>
+    </div>
+    <div class="fgrid">
+      <a class="fcard" href="pmi-formats/f1-impact-first.html"><span class="fshot"><img src="thumbs/pmi-f1-impact-first.jpg" alt="PMI case study, layout 1: Impact first" loading="lazy"></span><span class="fn">1</span><b>Impact first</b><span class="fd">Header row, an “In short” box with three numbers, then context → opportunity → approach → outcome beside a contents rail.</span></a>
+      <a class="fcard" href="pmi-formats/f2-key-decisions.html"><span class="fshot"><img src="thumbs/pmi-f2-key-decisions.jpg" alt="PMI case study, layout 2: Key decisions" loading="lazy"></span><span class="fn">2</span><b>Key decisions</b><span class="fd">The same story told as three decisions, each with what you did and the evidence. Images sit inside the decision they belong to.</span></a>
+      <a class="fcard" href="pmi-formats/f3-snapshot.html"><span class="fshot"><img src="thumbs/pmi-f3-snapshot.jpg" alt="PMI case study, layout 3: Snapshot" loading="lazy"></span><span class="fn">3</span><b>Snapshot</b><span class="fd">Everything on one screen: image, facts, three numbers, three lines. The full write-up opens under “Read the full story”.</span></a>
+      <a class="fcard" href="pmi-formats/f4-visual-story.html"><span class="fshot"><img src="thumbs/pmi-f4-visual-story.jpg" alt="PMI case study, layout 4: Visual story" loading="lazy"></span><span class="fn">4</span><b>Visual story</b><span class="fd">Images and big statements lead; short captions sit alongside and stay in view as you scroll.</span></a>
+      <a class="fcard" href="pmi-formats/f5-double-diamond.html"><span class="fshot"><img src="thumbs/pmi-f5-double-diamond.jpg" alt="PMI case study, layout 5: Double Diamond" loading="lazy"></span><span class="fn">5</span><b>Double Diamond</b><span class="fd">Discover → Define → Design → Deliver, with a checkpoint after each diamond: the framework you presented this project with.</span></a>
+    </div>
+  </section>
 
   <section class="dir original">
     <div class="info">
@@ -256,6 +283,7 @@ code { font: 13px var(--mono); background: var(--surface); border: 1px solid var
       <li>Shared in A1–A5: your Hospitable role reads Senior Staff Product Designer, and the opening line leads with that role rather than UX research. <span>A itself still shows the live site’s wording.</span></li>
       <li>Fonts are your files, served from <code>redesigns/fonts/</code>: Roobert (trial) and Apercu Pro. <span>Neither has arrows (→ ↗ ↓), so those come from Hanken Grotesk. Apercu has no italics here, so A1–A3 don’t use any.</span></li>
       <li>The font files are not committed to the repository, because it is public and font licences don’t allow redistribution. <span>Without them, the pages fall back to Hanken Grotesk.</span></li>
+      <li>The five PMI layouts are built by <code>tools/build-pmi-formats.py</code> from one set of copy. <span>Nothing was added to your case study; the “key decisions” and “Double Diamond” layouts only regroup what’s already there.</span></li>
       <li>Case studies are built by <code>tools/build-cases.py</code>. <span>Trellis visuals are cropped from your “product investment” deck (June 2023); the $3.5MM is worded as predicted gross annual revenue, as you described it.</span></li>
       <li>A6–A8 are built from A by <code>tools/build-a-cv.py</code>. <span>Copy and numbers come from your 2024 CV; your title is Senior Staff Product Designer at Hospitable. Trellis and Homebot dates follow the CV; Hospitable shows “Now” without a start month.</span></li>
       <li>P is built by <code>tools/build-p.py</code>. <span>The status chip reads “Open to senior staff roles”; change or remove it in that file.</span></li>

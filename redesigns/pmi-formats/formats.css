@@ -1,0 +1,68 @@
+/* Five layouts of the PMI case study (tools/build-pmi-formats.py). Adds to style.css + case.css. */
+.formatbar a b { min-width: 1ch; }
+.cs-cover { margin-top: 0; }
+.cs-hero { padding-bottom: 32px; }
+.prose .decisions .fig { margin-top: 18px; }
+
+/* 3 · Snapshot with a real image */
+.snap-visual.has-img { padding: 0; background: #e8e8e8; overflow: hidden; min-height: 0; aspect-ratio: 5 / 4; }
+.snap-visual.has-img img { width: 100%; height: 100%; object-fit: cover; }
+.deep .prose { max-width: 760px; gap: 56px; padding-top: 12px; }
+.deep[open] summary { border-bottom: 1px solid var(--line); margin-bottom: 28px; }
+
+/* 4 · Visual story */
+.plates { padding-top: 40px; }
+.plate { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 56px; align-items: start; padding-block: 64px; border-top: 1px solid var(--line); }
+.plate:first-child { border-top: 0; }
+.plate.flip .plate-visual { order: 2; }
+.plate-cap { position: sticky; top: 100px; display: flex; flex-direction: column; gap: 16px; }
+.plate-cap h2 { font-size: clamp(26px, 2.6vw, 34px); font-weight: 700; }
+.plate-cap p, .plate-cap li { color: #33363c; font-size: 16px; line-height: 1.6; }
+.plate-cap ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.plate-cap li { position: relative; padding-left: 24px; }
+.plate-cap li::before { content: ""; position: absolute; left: 2px; top: .75em; width: 10px; height: 2px; background: var(--signal); }
+.plate-cap strong { color: var(--ink); }
+.pframe { border-radius: var(--radius); overflow: hidden; background: #1c1c1c; }
+.pframe.light { background: #e8e8e8; }
+.pframe img { width: 100%; }
+.bigstat { border-radius: var(--radius); background: var(--signal-soft); padding: 56px 48px; display: flex; flex-direction: column; gap: 14px; }
+.bigstat b { font: 700 clamp(64px, 9vw, 128px)/0.95 var(--display); letter-spacing: -0.04em; color: var(--signal-ink); padding-top: 6px; }
+.bigstat span { font-size: 19px; max-width: 30ch; line-height: 1.45; }
+.fig.narrow { max-width: 440px; }
+.bigquote { margin: 0; padding: 56px 48px; border-radius: var(--radius); background: var(--signal-soft); font: 600 clamp(26px, 3vw, 40px)/1.2 var(--display); letter-spacing: -0.02em; color: var(--ink); }
+
+/* 5 · Double Diamond */
+.dd-wrap { display: flex; flex-direction: column; align-items: center; gap: 18px; padding-block: 56px 8px; }
+.dd { width: min(660px, 100%); height: auto; font-family: var(--display); }
+.dd-nav { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; }
+.dd-nav a { padding: 9px 16px; border-radius: 999px; background: var(--mist); text-decoration: none; font-size: 15px; font-weight: 500; }
+.dd-nav a:hover { background: var(--signal-soft); color: var(--signal-ink); }
+.phases { padding-top: 24px; }
+.phase { display: grid; grid-template-columns: 240px minmax(0, 720px); gap: 64px; padding-block: 56px; border-top: 1px solid var(--line); scroll-margin-top: 80px; }
+.phase-label { position: sticky; top: 100px; align-self: start; display: flex; flex-direction: column; gap: 8px; }
+.phase-n { font: 500 13px/1 var(--mono); color: var(--signal-ink); }
+.phase-label h2 { font-size: clamp(30px, 3vw, 40px); font-weight: 700; }
+.phase-label p { color: var(--ink-2); font-size: 15px; }
+.phase-body { display: flex; flex-direction: column; gap: 18px; }
+.phase-body h3 { font-size: clamp(22px, 2.2vw, 28px); font-weight: 700; line-height: 1.2; }
+.phase-body p, .phase-body li { color: #33363c; }
+.phase-body ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px; }
+.phase-body li { position: relative; padding-left: 28px; }
+.phase-body li::before { content: ""; position: absolute; left: 4px; top: .7em; width: 10px; height: 2px; background: var(--signal); }
+.phase-body strong { color: var(--ink); }
+.checkpoint { display: flex; align-items: center; gap: 12px; margin: 0 0 0 304px; padding: 14px 18px; border-radius: 12px; background: var(--signal-soft); font-weight: 600; max-width: 720px; }
+.checkpoint i { flex: none; width: 12px; height: 12px; border-radius: 50%; background: var(--signal); }
+.phases .results { margin-top: 56px; }
+
+@media (max-width: 900px) {
+  .plate, .phase { grid-template-columns: 1fr; gap: 24px; padding-block: 40px; }
+  .plate.flip .plate-visual { order: 0; }
+  .plate-cap, .phase-label { position: static; }
+  .checkpoint { margin-left: 0; }
+  .bigquote, .bigstat { padding: 32px 24px; }
+}
+@media (max-width: 560px) {
+  .formatbar a span { display: none; }
+  .formatbar a { padding: 8px 12px; }
+  .dd-nav a { padding: 9px 12px; font-size: 14px; }
+}
