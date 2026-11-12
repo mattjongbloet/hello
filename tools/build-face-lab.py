@@ -5,7 +5,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); T = os.path.
 rd = lambda n: open(os.path.join(T, n)).read()
 src = rd("object-face.js"); a = src.index("  // ---- Left eye: vinyl record ----"); b = src.index("  // ---- Nose: a tree ----")
 js = rd("three-common.js") + "\n" + rd("face-lab.js").replace("/*EYES*/", src[a:b])
-NOSES = [("tree", "Tree (current)"), ("cursor", "Cursor"), ("pinecone", "Pinecone"), ("tent", "Tent"), ("trowel", "Trowel")]
+NOSES = [("tree", "Tree (current)"), ("cursor", "Cursor (smaller)"), ("pinecone", "Pinecone"), ("tent", "Tent"), ("trowel", "Trowel")]
 MOUTHS = [("beans", "Coffee beans (current)"), ("bezier", "Bezier curve"), ("trail", "Hiking trail"), ("swatches", "Colour swatches")]
 btn = lambda kind, items, cur: "".join(f'<button type="button" data-kind="{kind}" data-name="{n}" aria-pressed="{"true" if n == cur else "false"}">{label}</button>' for n, label in items)
 HTML = f"""<!doctype html>
@@ -30,11 +30,11 @@ HTML = f"""<!doctype html>
   <div class="lab-grid">
     <div class="lab-face">
       <div class="lab-stage-wrap"><div class="toy-stage" role="img" aria-label="A face made of 3D objects, with a switchable nose and mouth"></div><div class="lab-overlay" aria-hidden="true"></div></div>
-      <p class="lab-tip" aria-live="polite">Tree (current): it sways when you hover it.</p>
+      <p class="lab-tip" aria-live="polite">Click a colour swatch, or the cursor.</p>
     </div>
     <div class="lab-opts">
-      <h2>Nose</h2><div role="group" aria-label="Nose">{btn("nose", NOSES, "tree")}</div>
-      <h2>Mouth</h2><div role="group" aria-label="Mouth">{btn("mouth", MOUTHS, "beans")}</div>
+      <h2>Nose</h2><div role="group" aria-label="Nose">{btn("nose", NOSES, "cursor")}</div>
+      <h2>Mouth</h2><div role="group" aria-label="Mouth">{btn("mouth", MOUTHS, "swatches")}</div>
       <p class="lab-note">Each one has its click behaviour working. The accent colour here <span class="lab-accent">looks like this</span>, and changes when you pick a swatch.</p>
     </div>
   </div>

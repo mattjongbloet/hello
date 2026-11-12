@@ -129,6 +129,18 @@ window.Toy3D = (() => {
   wheel.add(hit(new THREE.CircleGeometry(1.4, 24), 'cycle')); shadow(wheel);
 
 
+  // The accent inside the face: the record's label and the wheel's reflector follow the chosen swatch.
+  const setAccent = (c) => {
+    const S = 512, cv = document.createElement('canvas'); cv.width = cv.height = S; const g = cv.getContext('2d');
+    g.fillStyle = c; g.fillRect(0, 0, S, S);
+    g.strokeStyle = 'rgba(255,255,255,.55)'; g.lineWidth = 5; g.beginPath(); g.arc(S / 2, S / 2, S * .44, 0, 7); g.stroke();
+    g.fillStyle = '#fff'; g.textAlign = 'center'; g.font = '700 92px system-ui, sans-serif'; g.fillText('MJ', S / 2, S * .36);
+    g.font = '600 34px system-ui, sans-serif'; g.fillText('SIDE A · 33⅓', S / 2, S * .76);
+    const t = new THREE.CanvasTexture(cv); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8;
+    const m = lab.material[1]; if (m.map) m.map.dispose(); m.map = t; m.needsUpdate = true;
+    refl.material.color.set(c); kick();
+  };
+
   // ================= NOSES =================
   const noses = {}, NOSE_Y = -1.6;
   // -- tree (current)
@@ -143,7 +155,7 @@ window.Toy3D = (() => {
     noses.tree = { g, tip: 'Tree (current): it sways when you hover it.', tick: (t, dt, on) => { g.rotation.z = Math.sin(t * .0017) * .045 * (on ? 1 : .3); } }; }
   // -- cursor arrow: click for edit mode
   let editMode = false;
-  { const g = new THREE.Group(); g.position.set(-.42, .35, .15);
+  { const g = new THREE.Group(); g.position.set(-.3, .05, .15); g.scale.setScalar(.72);   // a little smaller than the first pass
     const s = new THREE.Shape(); [[0, 0], [0, -1.62], [.38, -1.27], [.63, -1.86], [.87, -1.76], [.62, -1.18], [1.12, -1.18]].forEach(([x, y], i) => i ? s.lineTo(x, y) : s.moveTo(x, y)); s.closePath();
     const body = new THREE.Mesh(new THREE.ExtrudeGeometry(s, { depth: .14, bevelEnabled: true, bevelSize: .035, bevelThickness: .035, bevelSegments: 4 }), new THREE.MeshPhysicalMaterial({ color: 0x15171a, roughness: .25, clearcoat: 1 }));
     const rim = new THREE.Mesh(new THREE.ExtrudeGeometry(s, { depth: .06, bevelEnabled: true, bevelSize: .1, bevelThickness: .03, bevelSegments: 3 }), std(0xffffff, .35)); rim.position.z = -.02;
@@ -241,7 +253,7 @@ window.Toy3D = (() => {
       card.add(paper, chip, hz); g.add(piv); cards.push({ card, c }); });
     const pin = new THREE.Mesh(new THREE.CylinderGeometry(.05, .05, .12, 20), steel); pin.rotation.x = Math.PI / 2; pin.position.z = .06; g.add(pin);
     let picked = null;
-    mouths.swatches = { g, tip: 'Colour swatches: click one and the accent colour changes.', click: (obj) => { const c = obj.userData.swatch; if (!c) return; picked = c; document.documentElement.style.setProperty('--signal', c); tip.textContent = 'Colour swatches: accent set to ' + c + '.'; },
+    mouths.swatches = { g, tip: 'Colour swatches: click one. The page accent, the record’s label and the wheel’s reflector all change.', click: (obj) => { const c = obj.userData.swatch; if (!c) return; picked = c; document.documentElement.style.setProperty('--signal', c); setAccent(c); tip.textContent = 'Colour swatches: accent set to ' + c + '.'; },
       tick: (t, dt) => cards.forEach(({ card, c }) => { card.position.y = lerp(card.position.y, c === picked ? -1.72 : -1.55, dt * 8); }) }; }
 
   Object.values(noses).concat(Object.values(mouths)).forEach((o) => { face.add(o.g); shadow(o.g); o.g.visible = false; });
@@ -255,6 +267,7 @@ window.Toy3D = (() => {
   };
   root.querySelectorAll('.lab-opts button').forEach((b) => b.addEventListener('click', () => choose(b.dataset.kind, b.dataset.name)));
   noses.tree.g.visible = true; mouths.beans.g.visible = true;
+  choose('mouth', 'swatches'); choose('nose', 'cursor');   // the pair Matt is trying
 
   // ---- pointer: hover, click, drag
   const ray = new THREE.Raycaster(), ndc = new THREE.Vector2(); let hover = null;

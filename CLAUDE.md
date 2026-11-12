@@ -11,7 +11,7 @@ This file records the decisions made so far and how the project is built, so a n
 | `redesigns/case-studies/` | **All case studies** in the chosen format. Generated. |
 | `redesigns/assets/` | Images: covers, logos, `cases/` (process images, video stills), `trellis/` (crops from Matt's deck), `mj-logo.svg`. |
 | `redesigns/fonts/` | `fonts.css` plus Roobert `.woff2` files. The `.woff2` files are **git-ignored** (trial licence, public repo); pages fall back to Hanken Grotesk without them. |
-| `redesigns/face-lab/` | One page to try nose and mouth ideas on the 3D face (`tools/build-face-lab.py`, `tools/toys/face-lab.js`). Noses: tree, cursor (edit mode), pinecone, tent, trowel. Mouths: coffee beans, bezier curve, hiking trail, colour swatches. Matt has not picked yet. |
+| `redesigns/face-lab/` | One page to try nose and mouth ideas on the 3D face (`tools/build-face-lab.py`, `tools/toys/face-lab.js`). Noses: tree, cursor (edit mode), pinecone, tent, trowel. Mouths: coffee beans, bezier curve, hiking trail, colour swatches. Matt is trying the smaller cursor nose with the colour-swatch mouth (the lab opens on that pair); a swatch click also recolours the record label and wheel reflector. Not yet on the home page. |
 | `redesigns/index.html` | Overview page listing every direction and demo (built from `tools/directions-a.src.html`). |
 | `redesigns/a-clarity/` | Direction A: the base HTML/CSS/JS everything else is generated from. |
 | `redesigns/a6-*`, `a7-*`, `a8-*`, `a1`–`a5`, `p-sentence/`, `pmi-formats/`, `cases/`, `archive/` | Earlier iterations and explorations, kept for reference. Not the current direction. |
