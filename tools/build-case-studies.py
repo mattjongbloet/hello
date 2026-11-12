@@ -5,7 +5,7 @@ Pages: case-studies/pmi.html, trellis.html (full); carv.html, hospitable.html (t
 Copy for PMI comes from tools/build-pmi-formats.py, shared pieces from tools/build-cases.py.
 Re-run: python3 tools/build-case-studies.py
 """
-import importlib.util, os, shutil
+import importlib.util, os, shutil, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -16,22 +16,22 @@ def load(name, file):
     m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m); return m
 
 
+sys.path.insert(0, HERE)
+import site_parts as sp
 bc = load("build_cases", "build-cases.py")
 pf = load("build_pmi_formats", "build-pmi-formats.py")
 ph, HOME, IMG = bc.ph, bc.HOME, "../assets/"
 T = IMG + "trellis/"
 A = os.path.join(ROOT, "redesigns", "a-clarity")
 OUT = os.path.join(ROOT, "redesigns", "case-studies")
-SITE = "../a6-1-feel-simple/"
-
-BRAND_OLD = f'<a class="brand" href="{HOME}index.html"><img class="mark" src="../assets/mj-logo.svg" alt="">Matt Jongbloet</a>'
-BRAND_ICON = f'<a class="brand" href="{HOME}index.html" aria-label="Matt Jongbloet, home"><img class="mark" src="../assets/mj-logo.svg" alt=""></a>'
-
+SITE = "../site/"
 
 def head(title, desc):
     h = bc.head(title, desc)
-    assert BRAND_OLD in h
-    return h.replace(BRAND_OLD, BRAND_ICON).replace('<link rel="stylesheet" href="case.css">', '<link rel="stylesheet" href="case.css">\n<link rel="stylesheet" href="format.css">')
+    assert len(sp.HEADER_RE.findall(h)) == 1
+    h = sp.HEADER_RE.sub(lambda m: sp.header(HOME, "work"), h)
+    h = h.replace("</head>", sp.THEME_HEAD + "\n</head>")
+    return h.replace('<link rel="stylesheet" href="case.css">', '<link rel="stylesheet" href="case.css">\n<link rel="stylesheet" href="format.css">')
 
 
 def opening(crumb, title, dek, meta, cover, tiles):
@@ -94,7 +94,7 @@ def ul(*items):
 # ---------------- PMI ----------------
 PMI = page("PMI Savings — Matt Jongbloet", "Helping ≈1 million US homeowners discover they can drop private mortgage insurance early.",
     opening("Homebot", pf.TITLE, pf.DEK, pf.META,
-            f'<div class="cs-cover"><img src="{IMG}pmi-mockup.png" alt="{pf.COVER_ALT}"></div>',
+            f'<div class="cs-cover has-dark"><img src="{IMG}pmi-mockup.png" data-dark="{IMG}pmi-mockup-dark.png" alt="{pf.COVER_ALT}"></div>',
             [("≈$200M", "a month in estimated savings for homeowners"), ("≈1M", "US homeowners on Homebot eligible to remove PMI early"), ("$195", "estimated monthly saving per homeowner"),
              ("4.8/5", "rating for value and confidence in usability testing"), ("500+", "requests to learn about PMI removal in the first sprint")])
     + body([
@@ -188,7 +188,6 @@ HOSP = template("Hospitable", "Hospitable", "Senior Staff Product Designer", "He
                  "Context, opportunity, approach, outcome: a few lines each.", "Visuals you’re allowed to show (crop or blur where needed)."])
 
 CSS = """/* Matt's case-study format (tools/build-case-studies.py). Adds to style.css + case.css. */
-.brand img.mark { height: 42px; }
 .cs-hero { padding-bottom: 32px; }
 .cs-hero h1 { max-width: 19ch; }
 .cs-cover, .cover { margin-top: 0; }
@@ -239,9 +238,9 @@ def build():
     shutil.copy(os.path.join(A, "style.css"), os.path.join(OUT, "style.css"))
     js = open(os.path.join(A, "script.js")).read()
     cut = js.index("  const links = [...document.querySelectorAll('.toc a')];")
-    open(os.path.join(OUT, "script.js"), "w").write(js[:cut].rstrip() + "\n})();\n" + TOC_JS)
+    open(os.path.join(OUT, "script.js"), "w").write(js[:cut].rstrip() + "\n})();\n" + TOC_JS + sp.THEME_JS)
     open(os.path.join(OUT, "case.css"), "w").write(bc.CSS)
-    open(os.path.join(OUT, "format.css"), "w").write(CSS + open(os.path.join(HERE, "type-smaller.css")).read())
+    open(os.path.join(OUT, "format.css"), "w").write(CSS + open(os.path.join(HERE, "type-smaller.css")).read() + sp.HEADER_CSS + sp.DARK_CSS)
     for name, html in [("pmi.html", PMI), ("trellis.html", TRELLIS), ("carv.html", CARV), ("hospitable.html", HOSP)]:
         open(os.path.join(OUT, name), "w").write(html)
     print("built case-studies")

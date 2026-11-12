@@ -1,5 +1,4 @@
 /* Matt's case-study format (tools/build-case-studies.py). Adds to style.css + case.css. */
-.brand img.mark { height: 42px; }
 .cs-hero { padding-bottom: 32px; }
 .cs-hero h1 { max-width: 19ch; }
 .cs-cover, .cover { margin-top: 0; }
@@ -57,3 +56,55 @@ body { font-size: 16px; }
 .story .prose > p:first-child { font-size: 21px !important; }
 .path .place { font-size: 17px; }
 .next h3 { font-size: clamp(24px, 3vw, 38px); }
+
+/* Header: face, name and role on the left; Work, About, Resume, theme toggle and Let's talk on the right. */
+.top .wrap { gap: 28px; }
+.brand { gap: 12px; font-weight: 600; font-size: 16px; }
+.brand img.face { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; object-position: 50% 30%; }
+.brand-role { font-weight: 400; color: var(--ink-2); }
+.nav { gap: 26px; }
+.nav a { padding: 8px 0; border-radius: 0; font-size: 16px; color: var(--ink); background: none !important; }
+.nav a:hover, .nav a[aria-current="page"] { color: var(--ink); text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 1.5px; }
+.theme-toggle { display: grid; place-items: center; width: 40px; height: 40px; padding: 0; border: 0; border-radius: 50%; background: none; color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--line); cursor: pointer; transition: box-shadow .15s; }
+.theme-toggle:hover { box-shadow: inset 0 0 0 1.5px var(--ink); }
+.theme-toggle svg { width: 20px; height: 20px; }
+.theme-toggle .i-sun { display: none; }
+:root[data-theme="dark"] .theme-toggle .i-sun { display: block; }
+:root[data-theme="dark"] .theme-toggle .i-moon { display: none; }
+.top .btn.talk { padding: 10px 20px; color: var(--ink); background: transparent; box-shadow: inset 0 0 0 1.5px var(--ink); }
+.top .btn.talk:hover { background: var(--ink); color: var(--paper); }
+@media (max-width: 760px) { .brand-role { display: none; } .top .wrap { gap: 14px; } .nav { gap: 16px; } }
+@media (max-width: 560px) { .top .btn.talk { padding: 9px 14px; } .brand-name { font-size: 15px; } }
+@media (max-width: 350px) { .brand-name { display: none; } }
+
+/* Dark theme (the toggle in the header). Same palette as the earlier A4 Night variant. */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #0e0f11; --mist: #18191d; --line: #2a2c32;
+  --ink: #f1f2f4; --ink-2: #a2a6ae;
+  --signal: #ff6a2b; --signal-soft: #2a1a12; --signal-ink: #ff8a57;
+}
+:root[data-theme="dark"] .btn:hover { background: #ffffff; }
+:root[data-theme="dark"] .btn.ghost:hover { box-shadow: inset 0 0 0 1.5px var(--ink); background: transparent; }
+:root[data-theme="dark"] .top .btn.talk:hover { background: var(--ink); color: var(--paper); }
+:root[data-theme="dark"] .prose p, :root[data-theme="dark"] .prose li, :root[data-theme="dark"] .plate-cap p, :root[data-theme="dark"] .phase-body p { color: #c9ccd2; }
+:root[data-theme="dark"] .video .play { background: #1d1f24; color: var(--ink); }
+:root[data-theme="dark"] .contact { background: #17181c; color: var(--ink); border-top: 1px solid var(--line); }
+:root[data-theme="dark"] .contact .btn { background: var(--ink); color: var(--paper); }
+:root[data-theme="dark"] .contact .btn:hover { background: var(--signal); color: #fff; }
+:root[data-theme="dark"] .contact p, :root[data-theme="dark"] .contact .plain { color: var(--ink-2); }
+:root[data-theme="dark"] .contact .plain:hover { color: var(--ink); }
+:root[data-theme="dark"] .foot { background: #17181c; color: var(--ink-2); }
+:root[data-theme="dark"] .foot .wrap { border-top-color: var(--line); }
+:root[data-theme="dark"] .foot a:hover { color: var(--ink); }
+:root[data-theme="dark"] .work-band { background: #131417; }
+:root[data-theme="dark"] .pcard { background: var(--mist); border-color: var(--line); }
+:root[data-theme="dark"] .pcard:hover { box-shadow: 0 20px 44px -26px rgb(0 0 0 / .9); }
+:root[data-theme="dark"] .pc-shot.has-dark { background: #0d0e11; }
+:root[data-theme="dark"] .pc-logo { opacity: .92; }
+:root[data-theme="dark"] .cs-cover.has-dark { background: #0d0e11; }
+:root[data-theme="dark"] .ph { background: #3a2f0d; color: #ffd978; border-bottom-color: #b98c00; }
+:root[data-theme="dark"] .todo-card { background: #1c1809; border-color: #8a6a00; }
+:root[data-theme="dark"] .todo-card .eyebrow { color: #ffd978; }
+:root[data-theme="dark"] .cover-ph, :root[data-theme="dark"] .snap-visual { background: repeating-linear-gradient(45deg, #18191d, #18191d 12px, #1f2126 12px, #1f2126 24px); }
+:root[data-theme="dark"] .next-ph { background: var(--mist); }

@@ -1,0 +1,145 @@
+/* Iterations on A with CV copy (tools/build-a-cv.py). Shared additions first, then this iteration's hero. */
+.xp .did { grid-column: 1 / -1; color: var(--ink-2); font-size: 15px; line-height: 1.45; margin-top: 2px; }
+.xp span.co { color: var(--ink-2); font-size: 15px; }
+.facts span { line-height: 1.4; }
+.taglist { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; }
+.taglist span { padding: 8px 14px; border-radius: 999px; background: var(--mist); font-size: 15px; }
+
+/* Project cards, as on Matt's current site: white card, logo tile, one line, screenshot bleeding off the bottom-right. */
+.work-band { background: #f7f7f6; margin-top: 96px; padding-block: 88px 96px; }
+.pcards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.pcard { display: flex; flex-direction: column; background: var(--paper); border: 1px solid #ebebe8; border-radius: 24px; overflow: hidden; text-decoration: none; color: var(--ink); padding: 44px 0 0 44px; transition: transform .25s ease, box-shadow .25s; }
+.pcard:hover { transform: translateY(-3px); box-shadow: 0 20px 44px -26px rgb(20 20 20 / .3); }
+.pc-copy { display: flex; flex-direction: column; gap: 4px; padding-right: 44px; }
+.pc-logo { width: 64px; height: 64px; border-radius: 16px; margin-bottom: 20px; }
+.pc-co { font-size: 16px; color: var(--ink-2); }
+.pcard h3 { font-size: clamp(22px, 2vw, 28px); font-weight: 500; letter-spacing: -0.02em; line-height: 1.2; margin-top: 6px; }
+.pcard p { font-size: 17px; color: var(--ink-2); line-height: 1.55; max-width: 36ch; margin-top: 4px; }
+.pc-more { margin-top: 20px; font-size: 17px; font-weight: 500; }
+.pc-shot { margin-top: 36px; background: #e8e8e8; border-top-left-radius: 20px; overflow: hidden; aspect-ratio: 16 / 10; }
+.pc-shot img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 0; transition: transform .4s ease; }
+.pcard:hover .pc-shot img { transform: scale(1.02); }
+.pcard-wide { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); padding: 0; }
+.pcard-wide .pc-copy { padding: 56px 44px; align-self: center; }
+.pcard-wide .pc-shot { margin-top: 64px; aspect-ratio: auto; height: 400px; align-self: end; }
+.pcard-wide .pc-shot img { object-position: 0 0; }
+@media (max-width: 760px) {
+  .work-band { margin-top: 64px; padding-block: 64px; }
+  .pcards { grid-template-columns: 1fr; gap: 16px; }
+  .pcard, .pcard-wide { display: flex; padding: 28px 0 0 28px; }
+  .pc-copy, .pcard-wide .pc-copy { padding: 0 28px 0 0; }
+  .pcard-wide .pc-shot { margin-top: 28px; height: auto; aspect-ratio: 16 / 10; align-self: stretch; }
+  .pc-shot { margin-top: 28px; }
+  .pc-logo { width: 52px; height: 52px; border-radius: 14px; margin-bottom: 14px; }
+}
+
+/* A6 — Text first: no big photo; the headline gets the full width. */
+.hero.hero-text { grid-template-columns: 1fr; padding-block: 96px 80px; }
+.hero-text h1 { font-size: clamp(44px, 7vw, 96px); max-width: 15ch; }
+.hero-text .lede { max-width: 52ch; }
+.who-chip { display: inline-flex; align-items: center; gap: 10px; align-self: flex-start; padding: 6px 16px 6px 6px; border-radius: 999px; background: var(--mist); font-size: 15px; color: var(--ink-2); }
+.who-chip img { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; }
+.who-chip b { color: var(--ink); font-weight: 600; }
+.who-chip a { color: var(--ink); }
+.ab-hero { grid-template-columns: 1fr; }
+.ab-hero .portrait { display: none; }
+.ab-hero h1 { max-width: 14ch; }
+@media (max-width: 560px) { .who-chip { border-radius: 18px; align-items: flex-start; } .who-chip span { padding-top: 7px; } }
+
+/* Slightly smaller type throughout (Matt: headings and body copy felt large). Roughly 10–15% down. */
+body { font-size: 16px; }
+.hero h1, .hero-text h1 { font-size: clamp(38px, 5.6vw, 76px); }
+.hero .lede { font-size: clamp(16px, 1.35vw, 19px); }
+.who-chip { font-size: 14px; }
+.facts b { font-size: 20px; }
+.facts span { font-size: 13px; }
+.section-head h2 { font-size: clamp(26px, 2.8vw, 36px); }
+.pcard h3 { font-size: clamp(20px, 1.75vw, 24px); }
+.pcard p { font-size: 16px; }
+.pc-co { font-size: 15px; }
+.pc-more { font-size: 16px; }
+.split .intro { font-size: 17px; }
+.split .intro h2 { font-size: clamp(26px, 2.8vw, 36px) !important; }
+.contact h2 { font-size: clamp(32px, 4vw, 52px); }
+.contact p { font-size: 17px; }
+.cs-hero h1 { font-size: clamp(34px, 4.8vw, 60px); }
+.cs-hero .dek, .dek { font-size: clamp(17px, 1.5vw, 20px); }
+.prose h2 { font-size: clamp(24px, 2.4vw, 30px); }
+.prose h3.sub { font-size: 20px; }
+.callout { font-size: 19px; }
+.results b { font-size: clamp(26px, 2.6vw, 34px); }
+.results.five b { font-size: clamp(24px, 2.3vw, 32px); }
+.ab-hero h1 { font-size: clamp(36px, 4.8vw, 60px); }
+.ab-hero p { font-size: 18px; }
+.story .prose { font-size: 17px; }
+.story .prose > p:first-child { font-size: 21px !important; }
+.path .place { font-size: 17px; }
+.next h3 { font-size: clamp(24px, 3vw, 38px); }
+
+/* Hero modelled on Sati Tashibayeva's: a smaller headline and intro, the interactive piece on the right,
+   and one line underneath (location, current role) in place of the four impact blocks. */
+.hero-screen { display: flex; flex-direction: column; min-height: calc(100svh - 68px); }
+.hero-screen > .wrap { width: 100%; }
+.hero-screen .hero { flex: 1; }
+.hero.hero-text h1 { font-size: clamp(34px, 4.3vw, 62px); max-width: 13ch; letter-spacing: -0.03em; }
+.hero .lede { font-size: clamp(16px, 1.25vw, 18px); max-width: 40ch; }
+.has-toy .hero-toy { max-width: 520px; }
+.hero-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; margin: 0; padding-block: 16px 20px; border-top: 1px solid var(--line); font-size: 16px; color: var(--ink-2); }
+.hero-foot svg { width: 17px; height: 17px; color: var(--signal); flex: none; }
+.hero-foot .lbl { font: 500 12px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+.hero-foot b { color: var(--ink); font-weight: 600; }
+.hero-foot a { color: var(--ink); font-weight: 600; display: inline-block; padding-block: 6px; }
+.work-band { margin-top: 0; }
+@media (max-width: 900px) { .hero-screen { min-height: 0; } }
+
+/* Header: face, name and role on the left; Work, About, Resume, theme toggle and Let's talk on the right. */
+.top .wrap { gap: 28px; }
+.brand { gap: 12px; font-weight: 600; font-size: 16px; }
+.brand img.face { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; object-position: 50% 30%; }
+.brand-role { font-weight: 400; color: var(--ink-2); }
+.nav { gap: 26px; }
+.nav a { padding: 8px 0; border-radius: 0; font-size: 16px; color: var(--ink); background: none !important; }
+.nav a:hover, .nav a[aria-current="page"] { color: var(--ink); text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 1.5px; }
+.theme-toggle { display: grid; place-items: center; width: 40px; height: 40px; padding: 0; border: 0; border-radius: 50%; background: none; color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--line); cursor: pointer; transition: box-shadow .15s; }
+.theme-toggle:hover { box-shadow: inset 0 0 0 1.5px var(--ink); }
+.theme-toggle svg { width: 20px; height: 20px; }
+.theme-toggle .i-sun { display: none; }
+:root[data-theme="dark"] .theme-toggle .i-sun { display: block; }
+:root[data-theme="dark"] .theme-toggle .i-moon { display: none; }
+.top .btn.talk { padding: 10px 20px; color: var(--ink); background: transparent; box-shadow: inset 0 0 0 1.5px var(--ink); }
+.top .btn.talk:hover { background: var(--ink); color: var(--paper); }
+@media (max-width: 760px) { .brand-role { display: none; } .top .wrap { gap: 14px; } .nav { gap: 16px; } }
+@media (max-width: 560px) { .top .btn.talk { padding: 9px 14px; } .brand-name { font-size: 15px; } }
+@media (max-width: 350px) { .brand-name { display: none; } }
+
+/* Dark theme (the toggle in the header). Same palette as the earlier A4 Night variant. */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #0e0f11; --mist: #18191d; --line: #2a2c32;
+  --ink: #f1f2f4; --ink-2: #a2a6ae;
+  --signal: #ff6a2b; --signal-soft: #2a1a12; --signal-ink: #ff8a57;
+}
+:root[data-theme="dark"] .btn:hover { background: #ffffff; }
+:root[data-theme="dark"] .btn.ghost:hover { box-shadow: inset 0 0 0 1.5px var(--ink); background: transparent; }
+:root[data-theme="dark"] .top .btn.talk:hover { background: var(--ink); color: var(--paper); }
+:root[data-theme="dark"] .prose p, :root[data-theme="dark"] .prose li, :root[data-theme="dark"] .plate-cap p, :root[data-theme="dark"] .phase-body p { color: #c9ccd2; }
+:root[data-theme="dark"] .video .play { background: #1d1f24; color: var(--ink); }
+:root[data-theme="dark"] .contact { background: #17181c; color: var(--ink); border-top: 1px solid var(--line); }
+:root[data-theme="dark"] .contact .btn { background: var(--ink); color: var(--paper); }
+:root[data-theme="dark"] .contact .btn:hover { background: var(--signal); color: #fff; }
+:root[data-theme="dark"] .contact p, :root[data-theme="dark"] .contact .plain { color: var(--ink-2); }
+:root[data-theme="dark"] .contact .plain:hover { color: var(--ink); }
+:root[data-theme="dark"] .foot { background: #17181c; color: var(--ink-2); }
+:root[data-theme="dark"] .foot .wrap { border-top-color: var(--line); }
+:root[data-theme="dark"] .foot a:hover { color: var(--ink); }
+:root[data-theme="dark"] .work-band { background: #131417; }
+:root[data-theme="dark"] .pcard { background: var(--mist); border-color: var(--line); }
+:root[data-theme="dark"] .pcard:hover { box-shadow: 0 20px 44px -26px rgb(0 0 0 / .9); }
+:root[data-theme="dark"] .pc-shot.has-dark { background: #0d0e11; }
+:root[data-theme="dark"] .pc-logo { opacity: .92; }
+:root[data-theme="dark"] .cs-cover.has-dark { background: #0d0e11; }
+:root[data-theme="dark"] .ph { background: #3a2f0d; color: #ffd978; border-bottom-color: #b98c00; }
+:root[data-theme="dark"] .todo-card { background: #1c1809; border-color: #8a6a00; }
+:root[data-theme="dark"] .todo-card .eyebrow { color: #ffd978; }
+:root[data-theme="dark"] .cover-ph, :root[data-theme="dark"] .snap-visual { background: repeating-linear-gradient(45deg, #18191d, #18191d 12px, #1f2126 12px, #1f2126 24px); }
+:root[data-theme="dark"] .next-ph { background: var(--mist); }

@@ -10,7 +10,8 @@ import os, shutil
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, "redesigns", "a6-1-feel-simple")
 TOYS = os.path.join(ROOT, "tools", "toys")
-VARIANTS = {"a6-1-hero-untangle": "untangle", "a6-1-hero-object-face": "object-face"}
+VARIANTS = {"a6-1-hero-untangle": ("a6-1-feel-simple", "untangle"), "a6-1-hero-object-face": ("a6-1-feel-simple", "object-face"),
+            "site": ("site", "object-face")}   # the current site gets the object face in place
 THREE = '<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>'  # classic build: also works from file://
 
 
@@ -19,11 +20,12 @@ def read(name):
 
 
 def build():
-    for folder, toy in VARIANTS.items():
+    for folder, (src, toy) in VARIANTS.items():
         out = os.path.join(ROOT, "redesigns", folder)
-        if os.path.isdir(out):
-            shutil.rmtree(out)
-        shutil.copytree(SRC, out)
+        if src != folder:
+            if os.path.isdir(out):
+                shutil.rmtree(out)
+            shutil.copytree(os.path.join(ROOT, "redesigns", src), out)
         p = os.path.join(out, "index.html"); s = open(p).read()
         a = '<section class="wrap hero hero-text">'
         assert s.count(a) == 1, folder

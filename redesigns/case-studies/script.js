@@ -27,3 +27,20 @@
   };
   addEventListener('scroll', set, { passive: true }); addEventListener('resize', set); set();
 })();
+
+// Light / dark theme: remembers the choice, swaps mockups that have a dark version.
+(() => {
+  const root = document.documentElement; let theme = root.dataset.theme || 'light';
+  const apply = () => {
+    root.dataset.theme = theme;
+    document.querySelectorAll('.theme-toggle').forEach((b) => { b.setAttribute('aria-pressed', String(theme === 'dark')); b.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'); });
+    document.querySelectorAll('img[data-dark]').forEach((img) => { if (!img.dataset.light) img.dataset.light = img.getAttribute('src'); const src = theme === 'dark' ? img.dataset.dark : img.dataset.light; if (img.getAttribute('src') !== src) img.setAttribute('src', src); });
+  };
+  apply();
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.theme-toggle')) return;
+    theme = theme === 'dark' ? 'light' : 'dark';
+    try { localStorage.setItem('mj-theme', theme); } catch (err) { /* private mode: the choice just won't persist */ }
+    apply();
+  });
+})();

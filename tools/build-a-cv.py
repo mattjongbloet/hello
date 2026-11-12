@@ -5,7 +5,9 @@ Senior Staff Product Designer at Hospitable. Each tries a different answer to th
   a8-at-a-glance  — small portrait; a CV-style "at a glance" card on the right
 All in Roobert (A's type). Re-run after changing A:  python3 tools/build-a-cv.py
 """
-import os, re, shutil
+import os, re, shutil, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import site_parts as sp
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 A = os.path.join(ROOT, "redesigns", "a-clarity")
@@ -114,6 +116,9 @@ PROJECTS = {
 }
 
 
+DARK_SHOTS = {"pmi-mockup.png": "pmi-mockup-dark.png", "home-search.jpg": "home-search-dark.jpg", "home-value.png": "home-value-dark.png"}  # swapped in dark mode
+
+
 def card(key, wide=False):
     href, logo, co, title, line, shot, more = PROJECTS[key]
     more_html = f'\n          <span class="pc-more">{more}</span>' if wide else ""
@@ -124,7 +129,7 @@ def card(key, wide=False):
           <h3>{title}</h3>
           <p>{line}</p>{more_html}
         </div>
-        <div class="pc-shot"><img src="../assets/{shot}" alt="" loading="lazy"></div>
+        <div class="pc-shot{' has-dark' if shot in DARK_SHOTS else ''}"><img src="../assets/{shot}"{f' data-dark="../assets/{DARK_SHOTS[shot]}"' if shot in DARK_SHOTS else ''} alt="" loading="lazy"></div>
       </a>"""
 
 
@@ -319,6 +324,37 @@ ITER_CSS = {
 }
 
 
+# ---- The current site (Matt's picks so far): A6.1's copy, a header and hero modelled on Sati Tashibayeva's, dark mode.
+PIN = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7Zm0 9.6A2.6 2.6 0 1 1 12 6.4a2.6 2.6 0 0 1 0 5.2Z"/></svg>'
+HEROES["site"] = f"""  <div class="hero-screen">
+  <section class="wrap hero hero-text">
+    <div class="hero-copy">
+      <h1>I make complex products <em>feel simple.</em></h1>
+      <p class="lede">I’m {SHINE}. I’m happiest when people succeed with what I design.</p>
+{ACTIONS}
+    </div>
+  </section>
+  <div class="wrap"><p class="hero-foot">{PIN}<span>Amsterdam, Netherlands</span><span aria-hidden="true">·</span><span class="lbl">Currently</span><span><b>Senior Staff Product Designer</b> at <a href="https://hospitable.com/">Hospitable</a></span></p></div>
+  </div>"""
+WORK["site"] = ORDER
+SITE_CSS = """
+/* Hero modelled on Sati Tashibayeva's: a smaller headline and intro, the interactive piece on the right,
+   and one line underneath (location, current role) in place of the four impact blocks. */
+.hero-screen { display: flex; flex-direction: column; min-height: calc(100svh - 68px); }
+.hero-screen > .wrap { width: 100%; }
+.hero-screen .hero { flex: 1; }
+.hero.hero-text h1 { font-size: clamp(34px, 4.3vw, 62px); max-width: 13ch; letter-spacing: -0.03em; }
+.hero .lede { font-size: clamp(16px, 1.25vw, 18px); max-width: 40ch; }
+.has-toy .hero-toy { max-width: 520px; }
+.hero-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; margin: 0; padding-block: 16px 20px; border-top: 1px solid var(--line); font-size: 16px; color: var(--ink-2); }
+.hero-foot svg { width: 17px; height: 17px; color: var(--signal); flex: none; }
+.hero-foot .lbl { font: 500 12px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+.hero-foot b { color: var(--ink); font-weight: 600; }
+.hero-foot a { color: var(--ink); font-weight: 600; display: inline-block; padding-block: 6px; }
+.work-band { margin-top: 0; }
+@media (max-width: 900px) { .hero-screen { min-height: 0; } }
+"""
+
 ICON_CSS = """
 /* Icon-only header: the name now lives in the hero chip, so the mark stands alone and a little larger. */
 .brand img.mark { height: 42px; }
@@ -346,6 +382,10 @@ ITER_CSS["a6-3-people-succeed"] = ITER_CSS["a6-text-first"] + ICON_CSS + """
 """
 
 
+ITER_CSS["site"] = ITER_CSS["a6-text-first"] + TYPE_SMALLER + SITE_CSS + sp.HEADER_CSS + sp.DARK_CSS
+FACTS_RE = re.compile(r'  <div class="wrap">\n    <div class="facts">.*?\n    </div>\n  </div>\n', re.S)
+
+
 def build():
     hero_re = re.compile(r'  <section class="wrap hero">.*?\n  </section>', re.S)
     work_re = re.compile(r'  <section class="wrap section" id="work">.*?\n  </section>', re.S)
@@ -367,11 +407,22 @@ def build():
                 s = xp_re.sub(lambda m: XP_HOME, s)
             if page == "about.html":
                 s = xp_re.sub(lambda m: XP_ABOUT, s)
+            if name == "site":
+                cur = "about" if page == "about.html" else "work"
+                assert len(sp.HEADER_RE.findall(s)) == 1
+                s = sp.HEADER_RE.sub(lambda m: sp.header("", cur, work_href="#work" if page == "index.html" else None), s)
+                s = rep(s, "</head>", sp.THEME_HEAD + "\n</head>", f"{name}/{page}")
+                if page == "index.html":
+                    assert len(FACTS_RE.findall(s)) == 1
+                    s = FACTS_RE.sub("", s)
             if name in ICON_ONLY:
                 s = rep(s, BRAND_OLD, BRAND_ICON, f"{name}/{page}")
             s = rep(s, '<link rel="stylesheet" href="style.css">', '<link rel="stylesheet" href="style.css">\n<link rel="stylesheet" href="variant.css">', f"{name}/{page}")
             open(os.path.join(out, page), "w").write(s)
         open(os.path.join(out, "variant.css"), "w").write(SHARED_CSS + ITER_CSS[name])
+        if name == "site":
+            open(os.path.join(out, "script.js"), "a").write(sp.THEME_JS)
+            os.remove(os.path.join(out, "case-pmi.html"))   # case studies live in redesigns/case-studies
         print("built", name)
 
 
