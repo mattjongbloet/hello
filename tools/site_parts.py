@@ -55,6 +55,8 @@ THEME_JS = """
 """
 
 HEADER_CSS = """
+/* One typeface: the small labels that used the monospace font are set in Roobert too. */
+:root { --mono: var(--body); }
 /* Header: face, name and role on the left; Work, About, Resume, theme toggle and Let's talk on the right. */
 .top .wrap { gap: 28px; }
 .brand { gap: 12px; font-weight: 600; font-size: 16px; }

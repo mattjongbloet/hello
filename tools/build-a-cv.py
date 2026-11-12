@@ -334,21 +334,24 @@ HEROES["site"] = f"""  <div class="hero-screen">
 {ACTIONS}
     </div>
   </section>
-  <div class="wrap"><p class="hero-foot">{PIN}<span>Amsterdam, Netherlands</span><span aria-hidden="true">·</span><span class="lbl">Currently</span><span><b>Senior Staff Product Designer</b> at <a href="https://hospitable.com/">Hospitable</a></span></p></div>
+  <div class="wrap"><p class="hero-foot">{PIN}<span>Amsterdam, Netherlands</span><span aria-hidden="true">·</span><span>Currently <b>Senior Staff Product Designer</b> at <a href="https://hospitable.com/">Hospitable</a></span></p></div>
   </div>"""
 WORK["site"] = ORDER
 SITE_CSS = """
 /* Hero modelled on Sati Tashibayeva's: a smaller headline and intro, the interactive piece on the right,
    and one line underneath (location, current role) in place of the four impact blocks. */
-.hero-screen { display: flex; flex-direction: column; min-height: calc(100svh - 68px); }
+.hero-screen { display: flex; flex-direction: column; min-height: calc(100svh - 69px); }  /* 69px = header + its border */
 .hero-screen > .wrap { width: 100%; }
 .hero-screen .hero { flex: 1; }
 .hero.hero-text h1 { font-size: clamp(34px, 4.3vw, 62px); max-width: 13ch; letter-spacing: -0.03em; }
 .hero .lede { font-size: clamp(16px, 1.25vw, 18px); max-width: 40ch; }
-.has-toy .hero-toy { max-width: 520px; }
-.hero-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; margin: 0; padding-block: 16px 20px; border-top: 1px solid var(--line); font-size: 16px; color: var(--ink-2); }
+/* Everything above the fold: the face shrinks with the window height so the location line always fits on the first screen. */
+.hero-screen .hero.hero-text.has-toy { padding-block: 28px 20px; }
+.has-toy .hero-toy { max-width: 520px; gap: 10px; }
+.hero-screen .toy-stage { width: clamp(240px, calc(100svh - 312px), 100%); margin-inline: auto; }
+.hero-screen .face-pop { min-height: 62px; }
+.hero-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; margin: 0; padding-block: 12px 14px; border-top: 1px solid var(--line); font-size: 16px; color: var(--ink-2); }
 .hero-foot svg { width: 17px; height: 17px; color: var(--signal); flex: none; }
-.hero-foot .lbl { font: 500 12px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
 .hero-foot b { color: var(--ink); font-weight: 600; }
 .hero-foot a { color: var(--ink); font-weight: 600; display: inline-block; padding-block: 6px; }
 .work-band { margin-top: 0; }
