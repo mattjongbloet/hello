@@ -8,5 +8,6 @@
   .hero-toy { justify-self: start; max-width: 340px; }
 }
 
-/* 1 · Untangle: one line, tangled when you're far away, a clean circle when you come close. */
-.toy-untangle canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; touch-action: manipulation; cursor: pointer; }
+/* 1 · Untangle (3D): one glossy cord, knotted when you're far away, a clean ring when you come close. */
+.toy-stage canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.toy-untangle .toy-stage { cursor: pointer; touch-action: manipulation; }
