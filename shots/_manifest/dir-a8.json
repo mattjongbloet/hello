@@ -17,7 +17,7 @@
           "title": "Matt Jongbloet — Senior Staff Product Designer",
           "password_screen": false,
           "scroll": "window",
-          "fullpage_diff": 0.018,
+          "fullpage_diff": 0.019,
           "method": "fullpage",
           "width": 390,
           "height": 6629,
@@ -33,14 +33,14 @@
           "title": "Matt Jongbloet — Senior Staff Product Designer",
           "password_screen": false,
           "scroll": "window",
-          "fullpage_diff": 0.011,
+          "fullpage_diff": 0.015,
           "method": "fullpage",
           "width": 1440,
-          "height": 4875,
+          "height": 4902,
           "file": "shots/home/dir-a8-1440.png",
           "web": "shots/_web/home/dir-a8-1440.jpg",
           "web_width": 640,
-          "web_height": 2167
+          "web_height": 2179
         }
       },
       "final_url": "redesigns/a8-at-a-glance/index.html"
@@ -102,11 +102,11 @@
           "fullpage_diff": 0.029,
           "method": "fullpage",
           "width": 390,
-          "height": 6273,
+          "height": 6295,
           "file": "shots/about/dir-a8-390.png",
           "web": "shots/_web/about/dir-a8-390.jpg",
           "web_width": 390,
-          "web_height": 6273
+          "web_height": 6295
         },
         "1440": {
           "url": "redesigns/a8-at-a-glance/about.html",
@@ -135,5 +135,5 @@
       "missing": "no contact page"
     }
   },
-  "captured_at": "2026-11-11T14:06:35.544Z"
+  "captured_at": "2026-11-12T18:57:08.755Z"
 }

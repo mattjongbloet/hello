@@ -84,10 +84,26 @@ code { font: 13px var(--mono); background: var(--surface); border: 1px solid var
       <h1>Portfolio Direction A</h1>
     </div>
     <div>
-      <p>New at the top: three subtle iterations of A6, your favourite home page. Then your PMI case study in five layouts to choose from. Then three case-study formats (Trellis written up in full), then A6–A8, three iterations on A with copy from your CV, your project cards, and three answers to the big photo on the right. Then P, your own mockup built out into a full direction. Below it, Direction A, the one closest to today’s site, and five close variations of it. Each variation changes one thing (type, colour, layout, theme or content) and keeps everything else, so you can compare like for like. All five use your current title, Senior Staff Product Designer. Type is Roobert everywhere, except A1, A2 and A3, which try Apercu.</p>
+      <p>At the top: your current direction, A6.1 with your case-study format. Then the three iterations of A6 it came from. Then your PMI case study in five layouts to choose from. Then three case-study formats (Trellis written up in full), then A6–A8, three iterations on A with copy from your CV, your project cards, and three answers to the big photo on the right. Then P, your own mockup built out into a full direction. Below it, Direction A, the one closest to today’s site, and five close variations of it. Each variation changes one thing (type, colour, layout, theme or content) and keeps everything else, so you can compare like for like. All five use your current title, Senior Staff Product Designer. Type is Roobert everywhere, except A1, A2 and A3, which try Apercu.</p>
       <a class="archive-link" href="archive/index.html">Other explorations (B–O) →</a>
     </div>
   </header>
+
+  <section class="dir original">
+    <div class="info">
+      <span class="variant-of">Current direction · your picks</span>
+      <span class="letter">A6.1</span><h2>Home + case-study format</h2>
+      <p class="idea">The home page you chose, now with slightly smaller headings and body copy throughout, and your case-study format: layout 4’s opening (title, intro, facts, image, five metric tiles) with layout 1’s body (contents menu; context → opportunity → approach → outcome).</p>
+      <ul class="changes"><li><b>Type:</b> headings and body about 10–15% smaller</li><li><b>Case studies:</b> PMI and Trellis in full; Carv and Hospitable as templates</li><li><b>Next:</b> something captivating for the right of the headline</li></ul>
+      <div class="open"><a href="a6-1-feel-simple/index.html">Home <span>→</span></a><a href="a6-1-feel-simple/about.html">About <span>→</span></a><a href="case-studies/pmi.html">Case study · PMI <span>→</span></a><a href="case-studies/trellis.html">Case study · Trellis <span>→</span></a><a href="case-studies/carv.html">Template · Carv <span>→</span></a><a href="case-studies/hospitable.html">Template · Hospitable <span>→</span></a></div>
+    </div>
+    <div class="shots">
+      <a class="shot home" href="a6-1-feel-simple/index.html"><img src="thumbs/a6-1-feel-simple-index.jpg" alt="A6.1 home page" loading="lazy"><span>Home</span></a>
+      <a class="shot phone" href="a6-1-feel-simple/index.html"><img src="thumbs/a6-1-feel-simple-index-m.jpg" alt="A6.1 home on a phone" loading="lazy"></a>
+      <a class="shot case" href="case-studies/pmi.html"><img src="thumbs/cs-pmi.jpg" alt="PMI case study in the chosen format" loading="lazy"><span>Case study · PMI</span></a>
+      <a class="shot about" href="case-studies/trellis.html"><img src="thumbs/cs-trellis.jpg" alt="Trellis case study in the chosen format" loading="lazy"><span>Case study · Trellis</span></a>
+    </div>
+  </section>
 
   <section class="dir original">
     <div class="info">
@@ -335,6 +351,7 @@ code { font: 13px var(--mono); background: var(--surface); border: 1px solid var
       <li>Shared in A1–A5: your Hospitable role reads Senior Staff Product Designer, and the opening line leads with that role rather than UX research. <span>A itself still shows the live site’s wording.</span></li>
       <li>Fonts are your files, served from <code>redesigns/fonts/</code>: Roobert (trial) and Apercu Pro. <span>Neither has arrows (→ ↗ ↓), so those come from Hanken Grotesk. Apercu has no italics here, so A1–A3 don’t use any.</span></li>
       <li>The font files are not committed to the repository, because it is public and font licences don’t allow redistribution. <span>Without them, the pages fall back to Hanken Grotesk.</span></li>
+      <li>Your case-study format is built by <code>tools/build-case-studies.py</code>; the smaller type lives in <code>tools/type-smaller.css</code> and is applied to A6.1 and the case studies.</li>
       <li>The five PMI layouts are built by <code>tools/build-pmi-formats.py</code> from one set of copy. <span>Nothing was added to your case study; the “key decisions” and “Double Diamond” layouts only regroup what’s already there.</span></li>
       <li>Case studies are built by <code>tools/build-cases.py</code>. <span>Trellis visuals are cropped from your “product investment” deck (June 2023); the $3.5MM is worded as predicted gross annual revenue, as you described it.</span></li>
       <li>A6–A8 are built from A by <code>tools/build-a-cv.py</code>. <span>Copy and numbers come from your 2024 CV; your title is Senior Staff Product Designer at Hospitable. Trellis and Homebot dates follow the CV; Hospitable shows “Now” without a start month.</span></li>

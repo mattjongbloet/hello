@@ -103,8 +103,8 @@ SHARED = {
 
 PORTFOLIO = "https://www.mjongbloet.com/portfolio"
 PROJECTS = {
-    "trellis": ("../cases/trellis.html", "trellis/savvy-logo.png", "Trellis / Savvy.Insure", "Growth experiments", "Finding $3.5MM in predicted annual revenue in a car insurance quote flow", "trellis/cover-v2.jpg", "Read the case study →"),
-    "pmi": ("case-pmi.html", "homebot-logo.png", "Homebot", "Private Mortgage Insurance (PMI)", "Helping ≈1M US homeowners save an estimated $200M a month", "pmi-mockup.png", "Read the case study →"),
+    "trellis": ("../case-studies/trellis.html", "trellis/savvy-logo.png", "Trellis / Savvy.Insure", "Growth experiments", "Finding $3.5MM in predicted annual revenue in a car insurance quote flow", "trellis/cover-v2.jpg", "Read the case study →"),
+    "pmi": ("../case-studies/pmi.html", "homebot-logo.png", "Homebot", "Private Mortgage Insurance (PMI)", "Helping ≈1M US homeowners save an estimated $200M a month", "pmi-mockup.png", "Read the case study →"),
     "search": (PORTFOLIO + "/home-search", "homebot-logo.png", "Homebot", "Home Search", "Helping ≈10 million people find their next home", "home-search.jpg", "See project ↗"),
     "admin": (PORTFOLIO + "/internal-admin", "homebot-logo.png", "Homebot", "Internal Admin", "Cutting the time for 20+ key admin tasks by ≈80%", "internal-admin.jpg", "See project ↗"),
     "research": (PORTFOLIO, "homebot-logo.png", "Homebot", "Scaling Research", "Empowering 30+ product people to learn in rigorous ways", "scaling-research.png", "See project ↗"),
@@ -323,10 +323,11 @@ ICON_CSS = """
 /* Icon-only header: the name now lives in the hero chip, so the mark stands alone and a little larger. */
 .brand img.mark { height: 42px; }
 """
+TYPE_SMALLER = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "type-smaller.css")).read()
 ITER_CSS["a6-1-feel-simple"] = ITER_CSS["a6-text-first"] + ICON_CSS + """
-/* A6.1 — A6's layout, leading with “I make complex products feel simple.” */
+/* A6.1 — Matt's chosen home page: A6's layout, leading with “I make complex products feel simple.” */
 .hero-text h1 { max-width: 14ch; }
-"""
+""" + TYPE_SMALLER
 ITER_CSS["a6-2-through-design"] = ITER_CSS["a6-text-first"] + ICON_CSS + """
 /* A6.2 — Lighter headline (Medium), with the intro and buttons set beside it. */
 .hero-split .hs-grid { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 56px; align-items: end; }

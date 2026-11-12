@@ -33,14 +33,14 @@
           "title": "Matt Jongbloet — Senior Staff Product Designer",
           "password_screen": false,
           "scroll": "window",
-          "fullpage_diff": 0.009,
+          "fullpage_diff": 0.013,
           "method": "fullpage",
           "width": 1440,
-          "height": 4885,
+          "height": 4911,
           "file": "shots/home/dir-a6-1440.png",
           "web": "shots/_web/home/dir-a6-1440.jpg",
           "web_width": 640,
-          "web_height": 2171
+          "web_height": 2183
         }
       },
       "final_url": "redesigns/a6-text-first/index.html"
@@ -99,14 +99,14 @@
           "title": "About — Matt Jongbloet",
           "password_screen": false,
           "scroll": "window",
-          "fullpage_diff": 0.03,
+          "fullpage_diff": 0.031,
           "method": "fullpage",
           "width": 390,
-          "height": 5977,
+          "height": 5999,
           "file": "shots/about/dir-a6-390.png",
           "web": "shots/_web/about/dir-a6-390.jpg",
           "web_width": 390,
-          "web_height": 5977
+          "web_height": 5999
         },
         "1440": {
           "url": "redesigns/a6-text-first/about.html",
@@ -135,5 +135,5 @@
       "missing": "no contact page"
     }
   },
-  "captured_at": "2026-11-11T14:03:14.016Z"
+  "captured_at": "2026-11-12T18:53:49.116Z"
 }

@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-11-12T18:46:47.561Z",
+  "generated_at": "2026-11-12T19:02:48.032Z",
   "order": [
     "mjongbloet",
+    "dir-a61",
+    "dir-a62",
+    "dir-a63",
     "dir-a6",
     "dir-a7",
     "dir-a8",
     "dir-p",
     "dir-a",
-    "dir-a1",
-    "dir-a2",
-    "dir-a3",
     "dir-a4",
     "dir-a5",
     "iniabiodun",
@@ -266,6 +266,423 @@
       },
       "captured_at": "2026-11-07T20:16:41.998Z"
     },
+    "dir-a61": {
+      "id": "dir-a61",
+      "name": "A6 · Feel simple",
+      "input": "redesigns/a6-1-feel-simple/index.html",
+      "concept": "A6.1",
+      "pages": {
+        "home": {
+          "type": "home",
+          "label": "A6.1 · Home",
+          "url": "redesigns/a6-1-feel-simple/index.html",
+          "note": null,
+          "shots": {
+            "390": {
+              "url": "redesigns/a6-1-feel-simple/index.html",
+              "status": 200,
+              "final_url": "redesigns/a6-1-feel-simple/index.html",
+              "title": "Matt Jongbloet — Senior Staff Product Designer",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0.024,
+              "method": "fullpage",
+              "width": 390,
+              "height": 6382,
+              "file": "shots/home/dir-a61-390.png",
+              "web": "shots/_web/home/dir-a61-390.jpg",
+              "web_width": 390,
+              "web_height": 6382
+            },
+            "1440": {
+              "url": "redesigns/a6-1-feel-simple/index.html",
+              "status": 200,
+              "final_url": "redesigns/a6-1-feel-simple/index.html",
+              "title": "Matt Jongbloet — Senior Staff Product Designer",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0.02,
+              "method": "fullpage",
+              "width": 1440,
+              "height": 4878,
+              "file": "shots/home/dir-a61-1440.png",
+              "web": "shots/_web/home/dir-a61-1440.jpg",
+              "web_width": 640,
+              "web_height": 2168
+            }
+          },
+          "final_url": "redesigns/a6-1-feel-simple/index.html"
+        },
+        "case": {
+          "type": "case",
+          "label": "PMI (redesign)",
+          "url": "redesigns/a6-1-feel-simple/case-pmi.html",
+          "note": null,
+          "shots": {
+            "390": {
+              "url": "redesigns/a6-1-feel-simple/case-pmi.html",
+              "status": 200,
+              "final_url": "redesigns/a6-1-feel-simple/case-pmi.html",
+              "title": "PMI Savings — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0.061,
+              "method": "fullpage",
+              "width": 390,
+              "height": 5482,
+              "file": "shots/case/dir-a61-390.png",
+              "web": "shots/_web/case/dir-a61-390.jpg",
+              "web_width": 390,
+              "web_height": 5482
+            },
+            "1440": {
+              "url": "redesigns/a6-1-feel-simple/case-pmi.html",
+              "status": 200,
+              "final_url": "redesigns/a6-1-feel-simple/case-pmi.html",
+              "title": "PMI Savings — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "window",
+              "fallback_reason": "full-page height ballooned",
+              "method": "stitched",
+              "width": 1440,
+              "height": 4536,
+              "file": "shots/case/dir-a61-1440.png",
+              "web": "shots/_web/case/dir-a61-1440.jpg",
+              "web_width": 640,
+              "web_height": 2016
+            }
+          },
+          "final_url": "redesigns/a6-1-feel-simple/case-pmi.html"
+        },
+        "about": {
+          "type": "about",
+          "label": null,
+          "url": "redesigns/a6-1-feel-simple/about.html",
+          "note": null,
+          "shots": {
+            "390": {
+              "url": "redesigns/a6-1-feel-simple/about.html",
+              "status": 200,
+              "final_url": "redesigns/a6-1-feel-simple/about.html",
+              "title": "About — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0.032,
+              "method": "fullpage",
+              "width": 390,
+              "height": 5999,
+              "file": "shots/about/dir-a61-390.png",
+              "web": "shots/_web/about/dir-a61-390.jpg",
+              "web_width": 390,
+              "web_height": 5999
+            },
+            "1440": {
+              "url": "redesigns/a6-1-feel-simple/about.html",
+              "status": 200,
+              "final_url": "redesigns/a6-1-feel-simple/about.html",
+              "title": "About — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0.057,
+              "method": "fullpage",
+              "width": 1440,
+              "height": 4351,
+              "file": "shots/about/dir-a61-1440.png",
+              "web": "shots/_web/about/dir-a61-1440.jpg",
+              "web_width": 640,
+              "web_height": 1934
+            }
+          },
+          "final_url": "redesigns/a6-1-feel-simple/about.html"
+        },
+        "contact": {
+          "type": "contact",
+          "label": null,
+          "url": null,
+          "note": "Concept: contact is a section at the end of every page.",
+          "missing": "no contact page"
+        }
+      },
+      "captured_at": "2026-11-12T18:48:40.874Z"
+    },
+    "dir-a62": {
+      "id": "dir-a62",
+      "name": "A6 · Through design",
+      "input": "redesigns/a6-2-through-design/index.html",
+      "concept": "A6.2",
+      "pages": {
+        "home": {
+          "type": "home",
+          "label": "A6.2 · Home",
+          "url": "redesigns/a6-2-through-design/index.html",
+          "note": null,
+          "shots": {
+            "390": {
+              "url": "redesigns/a6-2-through-design/index.html",
+              "status": 200,
+              "final_url": "redesigns/a6-2-through-design/index.html",
+              "title": "Matt Jongbloet — Senior Staff Product Designer",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0.023,
+              "method": "fullpage",
+              "width": 390,
+              "height": 6388,
+              "file": "shots/home/dir-a62-390.png",
+              "web": "shots/_web/home/dir-a62-390.jpg",
+              "web_width": 390,
+              "web_height": 6388
+            },
+            "1440": {
+              "url": "redesigns/a6-2-through-design/index.html",
+              "status": 200,
+              "final_url": "redesigns/a6-2-through-design/index.html",
+              "title": "Matt Jongbloet — Senior Staff Product Designer",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0.035,
+              "method": "fullpage",
+              "width": 1440,
+              "height": 4645,
+              "file": "shots/home/dir-a62-1440.png",
+              "web": "shots/_web/home/dir-a62-1440.jpg",
+              "web_width": 640,
+              "web_height": 2064
+            }
+          },
+          "final_url": "redesigns/a6-2-through-design/index.html"
+        },
+        "case": {
+          "type": "case",
+          "label": "PMI (redesign)",
+          "url": "redesigns/a6-2-through-design/case-pmi.html",
+          "note": null,
+          "shots": {
+            "390": {
+              "url": "redesigns/a6-2-through-design/case-pmi.html",
+              "status": 200,
+              "final_url": "redesigns/a6-2-through-design/case-pmi.html",
+              "title": "PMI Savings — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0.061,
+              "method": "fullpage",
+              "width": 390,
+              "height": 5482,
+              "file": "shots/case/dir-a62-390.png",
+              "web": "shots/_web/case/dir-a62-390.jpg",
+              "web_width": 390,
+              "web_height": 5482
+            },
+            "1440": {
+              "url": "redesigns/a6-2-through-design/case-pmi.html",
+              "status": 200,
+              "final_url": "redesigns/a6-2-through-design/case-pmi.html",
+              "title": "PMI Savings — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "window",
+              "fallback_reason": "full-page height ballooned",
+              "method": "stitched",
+              "width": 1440,
+              "height": 4536,
+              "file": "shots/case/dir-a62-1440.png",
+              "web": "shots/_web/case/dir-a62-1440.jpg",
+              "web_width": 640,
+              "web_height": 2016
+            }
+          },
+          "final_url": "redesigns/a6-2-through-design/case-pmi.html"
+        },
+        "about": {
+          "type": "about",
+          "label": null,
+          "url": "redesigns/a6-2-through-design/about.html",
+          "note": null,
+          "shots": {
+            "390": {
+              "url": "redesigns/a6-2-through-design/about.html",
+              "status": 200,
+              "final_url": "redesigns/a6-2-through-design/about.html",
+              "title": "About — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0.032,
+              "method": "fullpage",
+              "width": 390,
+              "height": 5999,
+              "file": "shots/about/dir-a62-390.png",
+              "web": "shots/_web/about/dir-a62-390.jpg",
+              "web_width": 390,
+              "web_height": 5999
+            },
+            "1440": {
+              "url": "redesigns/a6-2-through-design/about.html",
+              "status": 200,
+              "final_url": "redesigns/a6-2-through-design/about.html",
+              "title": "About — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0.057,
+              "method": "fullpage",
+              "width": 1440,
+              "height": 4351,
+              "file": "shots/about/dir-a62-1440.png",
+              "web": "shots/_web/about/dir-a62-1440.jpg",
+              "web_width": 640,
+              "web_height": 1934
+            }
+          },
+          "final_url": "redesigns/a6-2-through-design/about.html"
+        },
+        "contact": {
+          "type": "contact",
+          "label": null,
+          "url": null,
+          "note": "Concept: contact is a section at the end of every page.",
+          "missing": "no contact page"
+        }
+      },
+      "captured_at": "2026-11-12T18:50:19.861Z"
+    },
+    "dir-a63": {
+      "id": "dir-a63",
+      "name": "A6 · People succeed",
+      "input": "redesigns/a6-3-people-succeed/index.html",
+      "concept": "A6.3",
+      "pages": {
+        "home": {
+          "type": "home",
+          "label": "A6.3 · Home",
+          "url": "redesigns/a6-3-people-succeed/index.html",
+          "note": null,
+          "shots": {
+            "390": {
+              "url": "redesigns/a6-3-people-succeed/index.html",
+              "status": 200,
+              "final_url": "redesigns/a6-3-people-succeed/index.html",
+              "title": "Matt Jongbloet — Senior Staff Product Designer",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0.025,
+              "method": "fullpage",
+              "width": 390,
+              "height": 6369,
+              "file": "shots/home/dir-a63-390.png",
+              "web": "shots/_web/home/dir-a63-390.jpg",
+              "web_width": 390,
+              "web_height": 6369
+            },
+            "1440": {
+              "url": "redesigns/a6-3-people-succeed/index.html",
+              "status": 200,
+              "final_url": "redesigns/a6-3-people-succeed/index.html",
+              "title": "Matt Jongbloet — Senior Staff Product Designer",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0.034,
+              "method": "fullpage",
+              "width": 1440,
+              "height": 4799,
+              "file": "shots/home/dir-a63-1440.png",
+              "web": "shots/_web/home/dir-a63-1440.jpg",
+              "web_width": 640,
+              "web_height": 2133
+            }
+          },
+          "final_url": "redesigns/a6-3-people-succeed/index.html"
+        },
+        "case": {
+          "type": "case",
+          "label": "PMI (redesign)",
+          "url": "redesigns/a6-3-people-succeed/case-pmi.html",
+          "note": null,
+          "shots": {
+            "390": {
+              "url": "redesigns/a6-3-people-succeed/case-pmi.html",
+              "status": 200,
+              "final_url": "redesigns/a6-3-people-succeed/case-pmi.html",
+              "title": "PMI Savings — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0.061,
+              "method": "fullpage",
+              "width": 390,
+              "height": 5482,
+              "file": "shots/case/dir-a63-390.png",
+              "web": "shots/_web/case/dir-a63-390.jpg",
+              "web_width": 390,
+              "web_height": 5482
+            },
+            "1440": {
+              "url": "redesigns/a6-3-people-succeed/case-pmi.html",
+              "status": 200,
+              "final_url": "redesigns/a6-3-people-succeed/case-pmi.html",
+              "title": "PMI Savings — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "window",
+              "fallback_reason": "full-page height ballooned",
+              "method": "stitched",
+              "width": 1440,
+              "height": 4536,
+              "file": "shots/case/dir-a63-1440.png",
+              "web": "shots/_web/case/dir-a63-1440.jpg",
+              "web_width": 640,
+              "web_height": 2016
+            }
+          },
+          "final_url": "redesigns/a6-3-people-succeed/case-pmi.html"
+        },
+        "about": {
+          "type": "about",
+          "label": null,
+          "url": "redesigns/a6-3-people-succeed/about.html",
+          "note": null,
+          "shots": {
+            "390": {
+              "url": "redesigns/a6-3-people-succeed/about.html",
+              "status": 200,
+              "final_url": "redesigns/a6-3-people-succeed/about.html",
+              "title": "About — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0.032,
+              "method": "fullpage",
+              "width": 390,
+              "height": 5999,
+              "file": "shots/about/dir-a63-390.png",
+              "web": "shots/_web/about/dir-a63-390.jpg",
+              "web_width": 390,
+              "web_height": 5999
+            },
+            "1440": {
+              "url": "redesigns/a6-3-people-succeed/about.html",
+              "status": 200,
+              "final_url": "redesigns/a6-3-people-succeed/about.html",
+              "title": "About — Matt Jongbloet",
+              "password_screen": false,
+              "scroll": "window",
+              "fullpage_diff": 0.057,
+              "method": "fullpage",
+              "width": 1440,
+              "height": 4351,
+              "file": "shots/about/dir-a63-1440.png",
+              "web": "shots/_web/about/dir-a63-1440.jpg",
+              "web_width": 640,
+              "web_height": 1934
+            }
+          },
+          "final_url": "redesigns/a6-3-people-succeed/about.html"
+        },
+        "contact": {
+          "type": "contact",
+          "label": null,
+          "url": null,
+          "note": "Concept: contact is a section at the end of every page.",
+          "missing": "no contact page"
+        }
+      },
+      "captured_at": "2026-11-12T18:51:59.279Z"
+    },
     "dir-a6": {
       "id": "dir-a6",
       "name": "A · Text first",
@@ -301,14 +718,14 @@
               "title": "Matt Jongbloet — Senior Staff Product Designer",
               "password_screen": false,
               "scroll": "window",
-              "fullpage_diff": 0.009,
+              "fullpage_diff": 0.013,
               "method": "fullpage",
               "width": 1440,
-              "height": 4885,
+              "height": 4911,
               "file": "shots/home/dir-a6-1440.png",
               "web": "shots/_web/home/dir-a6-1440.jpg",
               "web_width": 640,
-              "web_height": 2171
+              "web_height": 2183
             }
           },
           "final_url": "redesigns/a6-text-first/index.html"
@@ -367,14 +784,14 @@
               "title": "About — Matt Jongbloet",
               "password_screen": false,
               "scroll": "window",
-              "fullpage_diff": 0.03,
+              "fullpage_diff": 0.031,
               "method": "fullpage",
               "width": 390,
-              "height": 5977,
+              "height": 5999,
               "file": "shots/about/dir-a6-390.png",
               "web": "shots/_web/about/dir-a6-390.jpg",
               "web_width": 390,
-              "web_height": 5977
+              "web_height": 5999
             },
             "1440": {
               "url": "redesigns/a6-text-first/about.html",
@@ -403,7 +820,7 @@
           "missing": "no contact page"
         }
       },
-      "captured_at": "2026-11-11T14:03:14.016Z"
+      "captured_at": "2026-11-12T18:53:49.116Z"
     },
     "dir-a7": {
       "id": "dir-a7",
@@ -424,14 +841,14 @@
               "title": "Matt Jongbloet — Senior Staff Product Designer",
               "password_screen": false,
               "scroll": "window",
-              "fullpage_diff": 0.018,
+              "fullpage_diff": 0.019,
               "method": "fullpage",
               "width": 390,
-              "height": 6589,
+              "height": 6562,
               "file": "shots/home/dir-a7-390.png",
               "web": "shots/_web/home/dir-a7-390.jpg",
               "web_width": 390,
-              "web_height": 6589
+              "web_height": 6562
             },
             "1440": {
               "url": "redesigns/a7-work-first/index.html",
@@ -443,11 +860,11 @@
               "fullpage_diff": 0.026,
               "method": "fullpage",
               "width": 1440,
-              "height": 4735,
+              "height": 4709,
               "file": "shots/home/dir-a7-1440.png",
               "web": "shots/_web/home/dir-a7-1440.jpg",
               "web_width": 640,
-              "web_height": 2104
+              "web_height": 2093
             }
           },
           "final_url": "redesigns/a7-work-first/index.html"
@@ -506,14 +923,14 @@
               "title": "About — Matt Jongbloet",
               "password_screen": false,
               "scroll": "window",
-              "fullpage_diff": 0.029,
+              "fullpage_diff": 0.032,
               "method": "fullpage",
               "width": 390,
-              "height": 6333,
+              "height": 6355,
               "file": "shots/about/dir-a7-390.png",
               "web": "shots/_web/about/dir-a7-390.jpg",
               "web_width": 390,
-              "web_height": 6333
+              "web_height": 6355
             },
             "1440": {
               "url": "redesigns/a7-work-first/about.html",
@@ -542,7 +959,7 @@
           "missing": "no contact page"
         }
       },
-      "captured_at": "2026-11-11T14:04:54.838Z"
+      "captured_at": "2026-11-12T18:55:28.936Z"
     },
     "dir-a8": {
       "id": "dir-a8",
@@ -563,7 +980,7 @@
               "title": "Matt Jongbloet — Senior Staff Product Designer",
               "password_screen": false,
               "scroll": "window",
-              "fullpage_diff": 0.018,
+              "fullpage_diff": 0.019,
               "method": "fullpage",
               "width": 390,
               "height": 6629,
@@ -579,14 +996,14 @@
               "title": "Matt Jongbloet — Senior Staff Product Designer",
               "password_screen": false,
               "scroll": "window",
-              "fullpage_diff": 0.011,
+              "fullpage_diff": 0.015,
               "method": "fullpage",
               "width": 1440,
-              "height": 4875,
+              "height": 4902,
               "file": "shots/home/dir-a8-1440.png",
               "web": "shots/_web/home/dir-a8-1440.jpg",
               "web_width": 640,
-              "web_height": 2167
+              "web_height": 2179
             }
           },
           "final_url": "redesigns/a8-at-a-glance/index.html"
@@ -648,11 +1065,11 @@
               "fullpage_diff": 0.029,
               "method": "fullpage",
               "width": 390,
-              "height": 6273,
+              "height": 6295,
               "file": "shots/about/dir-a8-390.png",
               "web": "shots/_web/about/dir-a8-390.jpg",
               "web_width": 390,
-              "web_height": 6273
+              "web_height": 6295
             },
             "1440": {
               "url": "redesigns/a8-at-a-glance/about.html",
@@ -681,7 +1098,7 @@
           "missing": "no contact page"
         }
       },
-      "captured_at": "2026-11-11T14:06:35.544Z"
+      "captured_at": "2026-11-12T18:57:08.755Z"
     },
     "dir-p": {
       "id": "dir-p",
@@ -960,423 +1377,6 @@
         }
       },
       "captured_at": "2026-11-11T13:51:45.885Z"
-    },
-    "dir-a1": {
-      "id": "dir-a1",
-      "name": "A · Apercu",
-      "input": "redesigns/a1-serif/index.html",
-      "concept": "A1",
-      "pages": {
-        "home": {
-          "type": "home",
-          "label": "A1 · Home",
-          "url": "redesigns/a1-serif/index.html",
-          "note": null,
-          "shots": {
-            "390": {
-              "url": "redesigns/a1-serif/index.html",
-              "status": 200,
-              "final_url": "redesigns/a1-serif/index.html",
-              "title": "Matt Jongbloet — Senior Staff Product Designer",
-              "password_screen": false,
-              "scroll": "window",
-              "fullpage_diff": 0.06,
-              "method": "fullpage",
-              "width": 390,
-              "height": 6005,
-              "file": "shots/home/dir-a1-390.png",
-              "web": "shots/_web/home/dir-a1-390.jpg",
-              "web_width": 390,
-              "web_height": 6005
-            },
-            "1440": {
-              "url": "redesigns/a1-serif/index.html",
-              "status": 200,
-              "final_url": "redesigns/a1-serif/index.html",
-              "title": "Matt Jongbloet — Senior Staff Product Designer",
-              "password_screen": false,
-              "scroll": "window",
-              "fullpage_diff": 0.03,
-              "method": "fullpage",
-              "width": 1440,
-              "height": 3629,
-              "file": "shots/home/dir-a1-1440.png",
-              "web": "shots/_web/home/dir-a1-1440.jpg",
-              "web_width": 640,
-              "web_height": 1613
-            }
-          },
-          "final_url": "redesigns/a1-serif/index.html"
-        },
-        "case": {
-          "type": "case",
-          "label": "PMI (redesign)",
-          "url": "redesigns/a1-serif/case-pmi.html",
-          "note": null,
-          "shots": {
-            "390": {
-              "url": "redesigns/a1-serif/case-pmi.html",
-              "status": 200,
-              "final_url": "redesigns/a1-serif/case-pmi.html",
-              "title": "PMI Savings — Matt Jongbloet",
-              "password_screen": false,
-              "scroll": "window",
-              "fullpage_diff": 0.061,
-              "method": "fullpage",
-              "width": 390,
-              "height": 5482,
-              "file": "shots/case/dir-a1-390.png",
-              "web": "shots/_web/case/dir-a1-390.jpg",
-              "web_width": 390,
-              "web_height": 5482
-            },
-            "1440": {
-              "url": "redesigns/a1-serif/case-pmi.html",
-              "status": 200,
-              "final_url": "redesigns/a1-serif/case-pmi.html",
-              "title": "PMI Savings — Matt Jongbloet",
-              "password_screen": false,
-              "scroll": "window",
-              "fallback_reason": "full-page height ballooned",
-              "method": "stitched",
-              "width": 1440,
-              "height": 4507,
-              "file": "shots/case/dir-a1-1440.png",
-              "web": "shots/_web/case/dir-a1-1440.jpg",
-              "web_width": 640,
-              "web_height": 2003
-            }
-          },
-          "final_url": "redesigns/a1-serif/case-pmi.html"
-        },
-        "about": {
-          "type": "about",
-          "label": null,
-          "url": "redesigns/a1-serif/about.html",
-          "note": null,
-          "shots": {
-            "390": {
-              "url": "redesigns/a1-serif/about.html",
-              "status": 200,
-              "final_url": "redesigns/a1-serif/about.html",
-              "title": "About — Matt Jongbloet",
-              "password_screen": false,
-              "scroll": "window",
-              "fullpage_diff": 0.042,
-              "method": "fullpage",
-              "width": 390,
-              "height": 4338,
-              "file": "shots/about/dir-a1-390.png",
-              "web": "shots/_web/about/dir-a1-390.jpg",
-              "web_width": 390,
-              "web_height": 4338
-            },
-            "1440": {
-              "url": "redesigns/a1-serif/about.html",
-              "status": 200,
-              "final_url": "redesigns/a1-serif/about.html",
-              "title": "About — Matt Jongbloet",
-              "password_screen": false,
-              "scroll": "window",
-              "fullpage_diff": 0.052,
-              "method": "fullpage",
-              "width": 1440,
-              "height": 3075,
-              "file": "shots/about/dir-a1-1440.png",
-              "web": "shots/_web/about/dir-a1-1440.jpg",
-              "web_width": 640,
-              "web_height": 1367
-            }
-          },
-          "final_url": "redesigns/a1-serif/about.html"
-        },
-        "contact": {
-          "type": "contact",
-          "label": null,
-          "url": null,
-          "note": "Concept: contact is a section at the end of every page.",
-          "missing": "no contact page"
-        }
-      },
-      "captured_at": "2026-11-11T13:53:24.045Z"
-    },
-    "dir-a2": {
-      "id": "dir-a2",
-      "name": "A · Cobalt",
-      "input": "redesigns/a2-cobalt/index.html",
-      "concept": "A2",
-      "pages": {
-        "home": {
-          "type": "home",
-          "label": "A2 · Home",
-          "url": "redesigns/a2-cobalt/index.html",
-          "note": null,
-          "shots": {
-            "390": {
-              "url": "redesigns/a2-cobalt/index.html",
-              "status": 200,
-              "final_url": "redesigns/a2-cobalt/index.html",
-              "title": "Matt Jongbloet — Senior Staff Product Designer",
-              "password_screen": false,
-              "scroll": "window",
-              "fullpage_diff": 0.059,
-              "method": "fullpage",
-              "width": 390,
-              "height": 6005,
-              "file": "shots/home/dir-a2-390.png",
-              "web": "shots/_web/home/dir-a2-390.jpg",
-              "web_width": 390,
-              "web_height": 6005
-            },
-            "1440": {
-              "url": "redesigns/a2-cobalt/index.html",
-              "status": 200,
-              "final_url": "redesigns/a2-cobalt/index.html",
-              "title": "Matt Jongbloet — Senior Staff Product Designer",
-              "password_screen": false,
-              "scroll": "window",
-              "fullpage_diff": 0.03,
-              "method": "fullpage",
-              "width": 1440,
-              "height": 3629,
-              "file": "shots/home/dir-a2-1440.png",
-              "web": "shots/_web/home/dir-a2-1440.jpg",
-              "web_width": 640,
-              "web_height": 1613
-            }
-          },
-          "final_url": "redesigns/a2-cobalt/index.html"
-        },
-        "case": {
-          "type": "case",
-          "label": "PMI (redesign)",
-          "url": "redesigns/a2-cobalt/case-pmi.html",
-          "note": null,
-          "shots": {
-            "390": {
-              "url": "redesigns/a2-cobalt/case-pmi.html",
-              "status": 200,
-              "final_url": "redesigns/a2-cobalt/case-pmi.html",
-              "title": "PMI Savings — Matt Jongbloet",
-              "password_screen": false,
-              "scroll": "window",
-              "fullpage_diff": 0.063,
-              "method": "fullpage",
-              "width": 390,
-              "height": 5482,
-              "file": "shots/case/dir-a2-390.png",
-              "web": "shots/_web/case/dir-a2-390.jpg",
-              "web_width": 390,
-              "web_height": 5482
-            },
-            "1440": {
-              "url": "redesigns/a2-cobalt/case-pmi.html",
-              "status": 200,
-              "final_url": "redesigns/a2-cobalt/case-pmi.html",
-              "title": "PMI Savings — Matt Jongbloet",
-              "password_screen": false,
-              "scroll": "window",
-              "fallback_reason": "full-page height ballooned",
-              "method": "stitched",
-              "width": 1440,
-              "height": 4507,
-              "file": "shots/case/dir-a2-1440.png",
-              "web": "shots/_web/case/dir-a2-1440.jpg",
-              "web_width": 640,
-              "web_height": 2003
-            }
-          },
-          "final_url": "redesigns/a2-cobalt/case-pmi.html"
-        },
-        "about": {
-          "type": "about",
-          "label": null,
-          "url": "redesigns/a2-cobalt/about.html",
-          "note": null,
-          "shots": {
-            "390": {
-              "url": "redesigns/a2-cobalt/about.html",
-              "status": 200,
-              "final_url": "redesigns/a2-cobalt/about.html",
-              "title": "About — Matt Jongbloet",
-              "password_screen": false,
-              "scroll": "window",
-              "fullpage_diff": 0.041,
-              "method": "fullpage",
-              "width": 390,
-              "height": 4338,
-              "file": "shots/about/dir-a2-390.png",
-              "web": "shots/_web/about/dir-a2-390.jpg",
-              "web_width": 390,
-              "web_height": 4338
-            },
-            "1440": {
-              "url": "redesigns/a2-cobalt/about.html",
-              "status": 200,
-              "final_url": "redesigns/a2-cobalt/about.html",
-              "title": "About — Matt Jongbloet",
-              "password_screen": false,
-              "scroll": "window",
-              "fullpage_diff": 0.051,
-              "method": "fullpage",
-              "width": 1440,
-              "height": 3075,
-              "file": "shots/about/dir-a2-1440.png",
-              "web": "shots/_web/about/dir-a2-1440.jpg",
-              "web_width": 640,
-              "web_height": 1367
-            }
-          },
-          "final_url": "redesigns/a2-cobalt/about.html"
-        },
-        "contact": {
-          "type": "contact",
-          "label": null,
-          "url": null,
-          "note": "Concept: contact is a section at the end of every page.",
-          "missing": "no contact page"
-        }
-      },
-      "captured_at": "2026-11-11T13:55:01.765Z"
-    },
-    "dir-a3": {
-      "id": "dir-a3",
-      "name": "A · Grid",
-      "input": "redesigns/a3-grid/index.html",
-      "concept": "A3",
-      "pages": {
-        "home": {
-          "type": "home",
-          "label": "A3 · Home",
-          "url": "redesigns/a3-grid/index.html",
-          "note": null,
-          "shots": {
-            "390": {
-              "url": "redesigns/a3-grid/index.html",
-              "status": 200,
-              "final_url": "redesigns/a3-grid/index.html",
-              "title": "Matt Jongbloet — Senior Staff Product Designer",
-              "password_screen": false,
-              "scroll": "window",
-              "fullpage_diff": 0.057,
-              "method": "fullpage",
-              "width": 390,
-              "height": 6086,
-              "file": "shots/home/dir-a3-390.png",
-              "web": "shots/_web/home/dir-a3-390.jpg",
-              "web_width": 390,
-              "web_height": 6086
-            },
-            "1440": {
-              "url": "redesigns/a3-grid/index.html",
-              "status": 200,
-              "final_url": "redesigns/a3-grid/index.html",
-              "title": "Matt Jongbloet — Senior Staff Product Designer",
-              "password_screen": false,
-              "scroll": "window",
-              "fullpage_diff": 0.029,
-              "method": "fullpage",
-              "width": 1440,
-              "height": 3013,
-              "file": "shots/home/dir-a3-1440.png",
-              "web": "shots/_web/home/dir-a3-1440.jpg",
-              "web_width": 640,
-              "web_height": 1339
-            }
-          },
-          "final_url": "redesigns/a3-grid/index.html"
-        },
-        "case": {
-          "type": "case",
-          "label": "PMI (redesign)",
-          "url": "redesigns/a3-grid/case-pmi.html",
-          "note": null,
-          "shots": {
-            "390": {
-              "url": "redesigns/a3-grid/case-pmi.html",
-              "status": 200,
-              "final_url": "redesigns/a3-grid/case-pmi.html",
-              "title": "PMI Savings — Matt Jongbloet",
-              "password_screen": false,
-              "scroll": "window",
-              "fullpage_diff": 0.063,
-              "method": "fullpage",
-              "width": 390,
-              "height": 5504,
-              "file": "shots/case/dir-a3-390.png",
-              "web": "shots/_web/case/dir-a3-390.jpg",
-              "web_width": 390,
-              "web_height": 5504
-            },
-            "1440": {
-              "url": "redesigns/a3-grid/case-pmi.html",
-              "status": 200,
-              "final_url": "redesigns/a3-grid/case-pmi.html",
-              "title": "PMI Savings — Matt Jongbloet",
-              "password_screen": false,
-              "scroll": "window",
-              "fallback_reason": "full-page height ballooned",
-              "method": "stitched",
-              "width": 1440,
-              "height": 4619,
-              "file": "shots/case/dir-a3-1440.png",
-              "web": "shots/_web/case/dir-a3-1440.jpg",
-              "web_width": 640,
-              "web_height": 2053
-            }
-          },
-          "final_url": "redesigns/a3-grid/case-pmi.html"
-        },
-        "about": {
-          "type": "about",
-          "label": null,
-          "url": "redesigns/a3-grid/about.html",
-          "note": null,
-          "shots": {
-            "390": {
-              "url": "redesigns/a3-grid/about.html",
-              "status": 200,
-              "final_url": "redesigns/a3-grid/about.html",
-              "title": "About — Matt Jongbloet",
-              "password_screen": false,
-              "scroll": "window",
-              "fullpage_diff": 0.044,
-              "method": "fullpage",
-              "width": 390,
-              "height": 4355,
-              "file": "shots/about/dir-a3-390.png",
-              "web": "shots/_web/about/dir-a3-390.jpg",
-              "web_width": 390,
-              "web_height": 4355
-            },
-            "1440": {
-              "url": "redesigns/a3-grid/about.html",
-              "status": 200,
-              "final_url": "redesigns/a3-grid/about.html",
-              "title": "About — Matt Jongbloet",
-              "password_screen": false,
-              "scroll": "window",
-              "fullpage_diff": 0.077,
-              "method": "fullpage",
-              "width": 1440,
-              "height": 3229,
-              "file": "shots/about/dir-a3-1440.png",
-              "web": "shots/_web/about/dir-a3-1440.jpg",
-              "web_width": 640,
-              "web_height": 1435
-            }
-          },
-          "final_url": "redesigns/a3-grid/about.html"
-        },
-        "contact": {
-          "type": "contact",
-          "label": null,
-          "url": null,
-          "note": "Concept: contact is a section at the end of every page.",
-          "missing": "no contact page"
-        }
-      },
-      "captured_at": "2026-11-11T13:56:39.796Z"
     },
     "dir-a4": {
       "id": "dir-a4",

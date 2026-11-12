@@ -1,0 +1,59 @@
+/* Matt's case-study format (tools/build-case-studies.py). Adds to style.css + case.css. */
+.brand img.mark { height: 42px; }
+.cs-hero { padding-bottom: 32px; }
+.cs-hero h1 { max-width: 19ch; }
+.cs-cover, .cover { margin-top: 0; }
+
+/* Five metric tiles under the cover */
+.results.five { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; margin-top: 12px; }
+.results.five div { padding: 20px; }
+.results.five b { font-size: clamp(26px, 2.6vw, 36px); padding-top: 2px; }
+.results.five span { font-size: 14px; }
+
+/* Body */
+.cs-body { padding-top: 96px; }
+.toc a { border-radius: 0 8px 8px 0; }
+.prose h3.sub { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.25; margin-top: 28px; }
+.cover-ph.small { min-height: 220px; border-radius: 14px; }
+
+@media (max-width: 1000px) {
+  .results.five { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .results.five div { grid-column: span 2; }
+  .results.five div:nth-child(-n+2) { grid-column: span 3; }
+}
+@media (max-width: 560px) {
+  .results.five { grid-template-columns: 1fr 1fr; }
+  .results.five div, .results.five div:nth-child(-n+2) { grid-column: auto; }
+  .results.five div:first-child { grid-column: 1 / -1; }
+  .results.five b { font-size: 26px; }
+}
+
+/* Slightly smaller type throughout (Matt: headings and body copy felt large). Roughly 10–15% down. */
+body { font-size: 16px; }
+.hero h1, .hero-text h1 { font-size: clamp(38px, 5.6vw, 76px); }
+.hero .lede { font-size: clamp(16px, 1.35vw, 19px); }
+.who-chip { font-size: 14px; }
+.facts b { font-size: 20px; }
+.facts span { font-size: 13px; }
+.section-head h2 { font-size: clamp(26px, 2.8vw, 36px); }
+.pcard h3 { font-size: clamp(20px, 1.75vw, 24px); }
+.pcard p { font-size: 16px; }
+.pc-co { font-size: 15px; }
+.pc-more { font-size: 16px; }
+.split .intro { font-size: 17px; }
+.split .intro h2 { font-size: clamp(26px, 2.8vw, 36px) !important; }
+.contact h2 { font-size: clamp(32px, 4vw, 52px); }
+.contact p { font-size: 17px; }
+.cs-hero h1 { font-size: clamp(34px, 4.8vw, 60px); }
+.cs-hero .dek, .dek { font-size: clamp(17px, 1.5vw, 20px); }
+.prose h2 { font-size: clamp(24px, 2.4vw, 30px); }
+.prose h3.sub { font-size: 20px; }
+.callout { font-size: 19px; }
+.results b { font-size: clamp(26px, 2.6vw, 34px); }
+.results.five b { font-size: clamp(24px, 2.3vw, 32px); }
+.ab-hero h1 { font-size: clamp(36px, 4.8vw, 60px); }
+.ab-hero p { font-size: 18px; }
+.story .prose { font-size: 17px; }
+.story .prose > p:first-child { font-size: 21px !important; }
+.path .place { font-size: 17px; }
+.next h3 { font-size: clamp(24px, 3vw, 38px); }
