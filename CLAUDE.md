@@ -21,8 +21,8 @@ This file records the decisions made so far and how the project is built, so a n
 ## Decisions Matt has made
 
 - **Home page**: A6.1 ("I make complex products feel simple."), with a header and hero modelled on taschiba.com:
-  - Header: face, "Matt Jongbloet", "Product Designer" · Work, About, Resume, light/dark toggle, "Let's talk". No logo in the header (the pencil logo is the favicon).
-  - Hero: headline + intro (smaller type), the **3D object face** on the right, and one line underneath: "Amsterdam, Netherlands · Currently Senior Staff Product Designer at Hospitable". No impact-stat blocks. The hero must fit the first screen on a laptop.
+  - Header: face, "Matt Jongbloet", "Senior Staff Product Designer" · Work, About, Resume, light/dark toggle, "Let's talk". No logo in the header (the pencil logo is the favicon).
+  - Hero: headline + intro (smaller type), the **3D object face** on the right, and one line underneath: "Amsterdam, Netherlands · Currently designing [Hospitable logo]" (logo links to hospitable.com; its wordmark takes the text colour). No impact-stat blocks. The hero must fit the first screen on a laptop.
   - Intro copy: "I'm a rigorously curious product designer with 15 years' experience helping people and businesses shine. I'm happiest when people succeed with what I design."
 - **Object face** (home page): vinyl record + bike wheel (eyes), a small **cursor arrow** (nose; click toggles an "edit mode" overlay with bounding boxes and spacing), a fan of **colour swatches** (smile; clicking one sets the accent: `--signal` on the page, the record label, the wheel reflector, and the headline's "feel simple." via `--accent-text`, which is deepened for pale colours on the light theme). No eyebrows. Realistic 3D, not flat. Built from `tools/toys/face-lab.js` + eyes from `object-face.js` (`face-home.html/.css`). Sound (Web Audio, starts on click only): clicking the record toggles a lo-fi loop; clicking the wheel gives it a push and it ticks like a freewheel as it coasts down.
 - **Typeface**: Roobert only, everywhere (including small labels; no monospace). Apercu, GT Eesti, Geograph, Styrene and serifs were tried and rejected.
@@ -60,7 +60,7 @@ Run QA on every changed page; it should print `all clear`. For dark mode, QA a t
 
 - Never invent facts, numbers or claims. Copy comes from mjongbloet.com, Matt's 2024 CV and what he says in chat.
 - Label estimates as estimates (e.g. PMI "≈$200M a month in estimated savings"; Trellis "$3.5MM in **predicted gross annual revenue**").
-- Matt's title: Senior Staff Product Designer at Hospitable (header shows "Product Designer"). "15 years' experience" is his wording.
+- Matt's title: Senior Staff Product Designer at Hospitable (shown in full in the header). "15 years' experience" is his wording.
 - Dates: Trellis Jan 2023 – Jan 2024 and Homebot Dec 2020 – Dec 2022 follow the CV. Hospitable shows "Now" (start month unconfirmed).
 
 ## Open items

@@ -21,7 +21,7 @@ def header(home, current, work_href=None, about_href=None):
     keep = ' class="keep"' if current == "about" else ""
     return f"""<header class="top">
   <div class="wrap">
-    <a class="brand" href="{home}index.html"><img class="face" src="../assets/headshot.jpg" alt=""><span class="brand-name">Matt Jongbloet</span><span class="brand-role">Product Designer</span></a>
+    <a class="brand" href="{home}index.html"><img class="face" src="../assets/headshot.jpg" alt=""><span class="brand-name">Matt Jongbloet</span><span class="brand-role">Senior Staff Product Designer</span></a>
     <nav class="nav" aria-label="Main">
       <a href="{work_href}"{cur("work")}>Work</a>
       <a href="{about_href}"{cur("about")}{keep}>About</a>
@@ -73,7 +73,8 @@ HEADER_CSS = """
 :root[data-theme="dark"] .theme-toggle .i-moon { display: none; }
 .top .btn.talk { padding: 10px 20px; color: var(--ink); background: transparent; box-shadow: inset 0 0 0 1.5px var(--ink); }
 .top .btn.talk:hover { background: var(--ink); color: var(--paper); }
-@media (max-width: 760px) { .brand-role { display: none; } .top .wrap { gap: 14px; } .nav { gap: 16px; } }
+@media (max-width: 1000px) { .brand-role { display: none; } }
+@media (max-width: 760px) { .top .wrap { gap: 14px; } .nav { gap: 16px; } }
 @media (max-width: 560px) { .top .btn.talk { padding: 9px 14px; } .brand-name { font-size: 15px; } }
 @media (max-width: 350px) { .brand-name { display: none; } }
 """
