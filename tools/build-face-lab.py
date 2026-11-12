@@ -30,7 +30,7 @@ HTML = f"""<!doctype html>
   <div class="lab-grid">
     <div class="lab-face">
       <div class="lab-stage-wrap"><div class="toy-stage" role="img" aria-label="A face made of 3D objects, with a switchable nose and mouth"></div><div class="lab-overlay" aria-hidden="true"></div></div>
-      <p class="lab-tip" aria-live="polite">Click a colour swatch, or the cursor.</p>
+      <p class="lab-tip" aria-live="polite">Click the record for music and the wheel to spin it. Then try a colour swatch or the cursor.</p>
     </div>
     <div class="lab-opts">
       <h2>Nose</h2><div role="group" aria-label="Nose">{btn("nose", NOSES, "cursor")}</div>

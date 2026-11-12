@@ -161,6 +161,26 @@
   noses.tree.g.visible = true; mouths.beans.g.visible = true;
   choose('mouth', 'swatches'); choose('nose', 'cursor');   // the pair Matt is trying
 
+  // ---- sound (Web Audio, nothing to download). Browsers only allow sound after a click, so both start on click.
+  let ac = null, stopMusic = null, noise = null, ticks = 0, push = 0;
+  const audio = () => { ac = ac || new (window.AudioContext || window.webkitAudioContext)(); if (ac.state === 'suspended') ac.resume();
+    if (!noise) { noise = ac.createBuffer(1, ac.sampleRate * .03, ac.sampleRate); const d = noise.getChannelData(0); for (let i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1; } return ac; };
+  const playMusic = () => {                              // the record: a small lo-fi loop
+    audio(); const master = ac.createGain(), lp = ac.createBiquadFilter();
+    master.gain.setValueAtTime(.0001, ac.currentTime); master.gain.exponentialRampToValueAtTime(.16, ac.currentTime + .4);
+    lp.type = 'lowpass'; lp.frequency.value = 1300; lp.connect(master); master.connect(ac.destination);
+    const chords = [[220, 261.63, 329.63], [174.61, 220, 261.63], [196, 246.94, 293.66], [164.81, 207.65, 246.94]]; let step = 0; const beat = 1.5;
+    const go = () => { const now = ac.currentTime; chords[step++ % 4].forEach((f, i) => { const o = ac.createOscillator(), g = ac.createGain(); o.type = 'triangle'; o.frequency.value = f;
+      g.gain.setValueAtTime(.0001, now + i * .09); g.gain.exponentialRampToValueAtTime(.2, now + i * .09 + .06); g.gain.exponentialRampToValueAtTime(.0001, now + beat * .95); o.connect(g).connect(lp); o.start(now + i * .09); o.stop(now + beat); }); };
+    go(); const timer = setInterval(go, beat * 1000);
+    stopMusic = () => { clearInterval(timer); master.gain.exponentialRampToValueAtTime(.0001, ac.currentTime + .3); setTimeout(() => master.disconnect(), 400); stopMusic = null; };
+  };
+  const tick = (vol) => {                                // the wheel: one click of the freewheel
+    if (!ac || ac.state !== 'running') return; const src = ac.createBufferSource(), bp = ac.createBiquadFilter(), g = ac.createGain(), now = ac.currentTime;
+    src.buffer = noise; bp.type = 'bandpass'; bp.frequency.value = 3400; bp.Q.value = 2.2; g.gain.setValueAtTime(vol, now); g.gain.exponentialRampToValueAtTime(.0001, now + .018);
+    src.connect(bp).connect(g).connect(ac.destination); src.start(now); src.stop(now + .03);
+  };
+
   // ---- pointer: hover, click, drag
   const ray = new THREE.Raycaster(), ndc = new THREE.Vector2(); let hover = null;
   const cast = (e) => { const r = stage.getBoundingClientRect(); ndc.set(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1); ray.setFromCamera(ndc, camera);
@@ -174,6 +194,8 @@
   const drop = () => { dragging = null; stage.style.cursor = ''; }; stage.addEventListener('pointerup', drop); stage.addEventListener('pointercancel', drop);
   stage.addEventListener('pointerleave', () => { hover = null; });
   stage.addEventListener('click', (e) => { const h = cast(e); if (!h) return; const k = h.object.userData.k;
+    if (k === 'music') { if (stopMusic) stopMusic(); else playMusic(); }
+    if (k === 'cycle') { audio(); push = 16; }                // a push: it spins up, then coasts and ticks down
     if (k === 'nose' && noses[nose].click) noses[nose].click(h.object); if (k === 'mouth' && mouths[mouth].click) mouths[mouth].click(h.object); kick(); });
 
   // ---- edit mode overlay (cursor nose): bounding boxes, handles, spacing
@@ -187,9 +209,11 @@
   // ---- motion
   let vSpin = 0, wSpin = 0;
   onTick((time, dt) => {
-    const music = hover === 'music'; arm.rotation.z = lerp(arm.rotation.z, music ? -.43 : .1, dt * 5); arm.position.z = lerp(arm.position.z, music ? .1 : .2, dt * 5);
+    const music = hover === 'music' || !!stopMusic; arm.rotation.z = lerp(arm.rotation.z, music ? -.43 : .1, dt * 5); arm.position.z = lerp(arm.position.z, music ? .1 : .2, dt * 5);
     vSpin = lerp(vSpin, music ? 3.49 : 0, dt * (music ? 2.5 : 1.4)); spinner.rotation.z -= vSpin * dt;
-    wSpin = lerp(wSpin, hover === 'cycle' ? 11 : 0, dt * (hover === 'cycle' ? 3 : .5)); wspin.rotation.z -= wSpin * dt;
+    if (push) { wSpin = Math.max(wSpin, push); push = 0; }
+    wSpin = lerp(wSpin, hover === 'cycle' ? Math.max(11, wSpin) : 0, dt * (hover === 'cycle' ? 3 : .35)); wspin.rotation.z -= wSpin * dt;
+    ticks += wSpin * dt * 24 / 6.283; let nTick = 0; while (ticks >= 1) { ticks -= 1; if (wSpin > .6 && nTick++ < 3) tick(.05 + Math.min(.07, wSpin * .005)); }   // 24 clicks a turn
     noses[nose].tick(time, dt, hover === 'nose'); mouths[mouth].tick(time, dt, hover === 'mouth');
     const still = editMode || dragging !== null || reduce, idle = time - ptr.at > 3000, gx = still ? 0 : idle ? Math.sin(time * .0006) * .25 : ptr.x, gy = still ? 0 : idle ? Math.cos(time * .0008) * .15 : ptr.y;
     face.rotation.y = lerp(face.rotation.y, gx * .42, dt * 4); face.rotation.x = lerp(face.rotation.x, gy * .3, dt * 4);
