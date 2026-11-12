@@ -74,7 +74,7 @@ body { font-size: 16px; }
 .prose h3.sub { font-size: 20px; }
 .callout { font-size: 19px; }
 .results b { font-size: clamp(26px, 2.6vw, 34px); }
-.results.five b { font-size: clamp(24px, 2.3vw, 32px); }
+.results.n5 b { font-size: clamp(24px, 2.3vw, 32px); }
 .ab-hero h1 { font-size: clamp(36px, 4.8vw, 60px); }
 .ab-hero p { font-size: 18px; }
 .story .prose { font-size: 17px; }

@@ -107,12 +107,12 @@ PORTFOLIO = "https://www.mjongbloet.com/portfolio"
 PROJECTS = {
     "trellis": ("../case-studies/trellis.html", "trellis/savvy-logo.png", "Trellis / Savvy.Insure", "Growth experiments", "Finding $3.5MM in predicted annual revenue in a car insurance quote flow", "trellis/cover-v2.jpg", "Read the case study →"),
     "pmi": ("../case-studies/pmi.html", "homebot-logo.png", "Homebot", "Private Mortgage Insurance (PMI)", "Helping ≈1M US homeowners save an estimated $200M a month", "pmi-mockup.png", "Read the case study →"),
-    "search": (PORTFOLIO + "/home-search", "homebot-logo.png", "Homebot", "Home Search", "Helping ≈10 million people find their next home", "home-search.jpg", "See project ↗"),
-    "admin": (PORTFOLIO + "/internal-admin", "homebot-logo.png", "Homebot", "Internal Admin", "Cutting the time for 20+ key admin tasks by ≈80%", "internal-admin.jpg", "See project ↗"),
-    "research": (PORTFOLIO, "homebot-logo.png", "Homebot", "Scaling Research", "Empowering 30+ product people to learn in rigorous ways", "scaling-research.png", "See project ↗"),
-    "health": (PORTFOLIO, "humanapi-logo.png", "Human API", "Digital Health", "Helping convince investors with a compelling story and prototype", "digital-health.jpg", "See project ↗"),
-    "value": (PORTFOLIO, "homebot-logo.png", "Homebot", "Home Value Estimates", "Increasing trust and confidence in home value estimates", "home-value.png", "See project ↗"),
-    "wwf": (PORTFOLIO, "wwf-logo.png", "WWF", "Location-Based Game", "Using technology to enhance nature experiences for families", "wwf-game.jpg", "See project ↗"),
+    "search": ("../case-studies/home-search.html", "homebot-logo.png", "Homebot", "Home Search", "Helping ≈10 million people find their next home", "home-search.jpg", "Read the case study →"),
+    "admin": ("../case-studies/internal-admin.html", "homebot-logo.png", "Homebot", "Internal Admin", "Cutting the time for 20+ key admin tasks by ≈80%", "internal-admin.jpg", "Read the case study →"),
+    "research": ("../case-studies/scaling-research.html", "homebot-logo.png", "Homebot", "Scaling Research", "Empowering 30+ product people to learn in rigorous ways", "scaling-research.png", "Read the case study →"),
+    "health": ("../case-studies/digital-health.html", "humanapi-logo.png", "Human API", "Digital Health", "Helping convince investors with a compelling story and prototype", "digital-health.jpg", "Read the case study →"),
+    "value": ("../case-studies/home-value-estimates.html", "homebot-logo.png", "Homebot", "Home Value Estimates", "Increasing trust and confidence in home value estimates", "home-value.png", "Read the case study →"),
+    "wwf": ("../case-studies/location-based-game.html", "wwf-logo.png", "WWF", "Location-Based Game", "Using technology to enhance nature experiences for families", "wwf-game.jpg", "Read the case study →"),
 }
 
 
@@ -133,13 +133,14 @@ def card(key, wide=False):
       </a>"""
 
 
-def work(order):
-    cards = "\n".join(card(k, wide=(i == 0)) for i, k in enumerate(order))
+def work(order, wide=None, all_link=True):
+    wide = wide or {order[0]}
+    cards = "\n".join(card(k, wide=(k in wide)) for k in order)
+    more = f'\n        <a href="{PORTFOLIO}">All projects →</a>' if all_link else ""
     return f"""  <section class="work-band" id="work">
     <div class="wrap">
       <div class="section-head">
-        <h2>Selected work</h2>
-        <a href="{PORTFOLIO}">All projects →</a>
+        <h2>Selected work</h2>{more}
       </div>
       <div class="pcards">
 {cards}
@@ -336,7 +337,7 @@ HEROES["site"] = f"""  <div class="hero-screen">
   </section>
   <div class="wrap"><p class="hero-foot">{PIN}<span>Amsterdam, Netherlands</span><span aria-hidden="true">·</span><span>Currently <b>Senior Staff Product Designer</b> at <a href="https://hospitable.com/">Hospitable</a></span></p></div>
   </div>"""
-WORK["site"] = ORDER
+WORK["site"] = ["trellis", "pmi", "search", "admin", "research", "health", "value", "wwf"]   # every case study, all local
 SITE_CSS = """
 /* Hero modelled on Sati Tashibayeva's: a smaller headline and intro, the interactive piece on the right,
    and one line underneath (location, current role) in place of the four impact blocks. */
@@ -406,7 +407,7 @@ def build():
                 assert len(hero_re.findall(s)) == 1, name
                 s = hero_re.sub(lambda m: hero, s)
                 assert len(work_re.findall(s)) == 1, name
-                s = work_re.sub(lambda m: work(WORK[name]), s)
+                s = work_re.sub(lambda m: work(WORK[name], wide={"trellis", "wwf"}, all_link=False) if name == "site" else work(WORK[name]), s)
                 s = xp_re.sub(lambda m: XP_HOME, s)
             if page == "about.html":
                 s = xp_re.sub(lambda m: XP_ABOUT, s)
