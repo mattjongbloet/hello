@@ -25,6 +25,72 @@
   ]
  },
  {
+  "id": "dir-a61",
+  "name": "A6 · Feel simple",
+  "concept": "A6.1",
+  "input": "redesigns/a6-1-feel-simple/index.html",
+  "home": {
+   "url": "redesigns/a6-1-feel-simple/index.html",
+   "label": "A6.1 · Home"
+  },
+  "case": {
+   "url": "redesigns/a6-1-feel-simple/case-pmi.html",
+   "label": "PMI (redesign)"
+  },
+  "about": {
+   "url": "redesigns/a6-1-feel-simple/about.html"
+  },
+  "contact": {
+   "missing": "no contact page",
+   "note": "Concept: contact is a section at the end of every page."
+  },
+  "other": []
+ },
+ {
+  "id": "dir-a62",
+  "name": "A6 · Through design",
+  "concept": "A6.2",
+  "input": "redesigns/a6-2-through-design/index.html",
+  "home": {
+   "url": "redesigns/a6-2-through-design/index.html",
+   "label": "A6.2 · Home"
+  },
+  "case": {
+   "url": "redesigns/a6-2-through-design/case-pmi.html",
+   "label": "PMI (redesign)"
+  },
+  "about": {
+   "url": "redesigns/a6-2-through-design/about.html"
+  },
+  "contact": {
+   "missing": "no contact page",
+   "note": "Concept: contact is a section at the end of every page."
+  },
+  "other": []
+ },
+ {
+  "id": "dir-a63",
+  "name": "A6 · People succeed",
+  "concept": "A6.3",
+  "input": "redesigns/a6-3-people-succeed/index.html",
+  "home": {
+   "url": "redesigns/a6-3-people-succeed/index.html",
+   "label": "A6.3 · Home"
+  },
+  "case": {
+   "url": "redesigns/a6-3-people-succeed/case-pmi.html",
+   "label": "PMI (redesign)"
+  },
+  "about": {
+   "url": "redesigns/a6-3-people-succeed/about.html"
+  },
+  "contact": {
+   "missing": "no contact page",
+   "note": "Concept: contact is a section at the end of every page."
+  },
+  "other": []
+ },
+ {
   "id": "dir-a6",
   "name": "A · Text first",
   "concept": "A6",

@@ -231,6 +231,46 @@ SHARED_CSS = """/* Iterations on A with CV copy (tools/build-a-cv.py). Shared ad
 }
 """
 
+CHIP = '<p class="who-chip"><img src="../assets/headshot.jpg" alt=""><span><b>Matt Jongbloet</b> · Senior Staff Product Designer at <a href="https://hospitable.com/">Hospitable</a></span></p>'
+SHINE = "a rigorously curious product designer with 15 years’ experience helping people and businesses shine"
+
+# Iterations on A6 (Matt's favourite): icon-only header, and each leads with a different line he likes.
+HEROES.update({
+    "a6-1-feel-simple": f"""  <section class="wrap hero hero-text">
+    <div class="hero-copy">
+      {CHIP}
+      <h1>I make complex products <em>feel simple.</em></h1>
+      <p class="lede">I’m {SHINE}. I’m happiest when people succeed with what I design.</p>
+{ACTIONS}
+    </div>
+  </section>""",
+    "a6-2-through-design": f"""  <section class="wrap hero hero-text hero-split">
+    <div class="hero-copy">
+      {CHIP}
+      <div class="hs-grid">
+        <h1>I simplify the complex <em>through design.</em></h1>
+        <div class="hs-side">
+          <p class="lede">I’m {SHINE}. I’m happiest when people succeed with what I design.</p>
+{ACTIONS}
+        </div>
+      </div>
+    </div>
+  </section>""",
+    "a6-3-people-succeed": f"""  <section class="wrap hero hero-text hero-center">
+    <div class="hero-copy">
+      {CHIP}
+      <h1>I’m happiest when people succeed <em>with what I design.</em></h1>
+      <p class="lede">I’m {SHINE}. I make complex products feel simple.</p>
+{ACTIONS}
+    </div>
+  </section>""",
+})
+ICON_ONLY = {"a6-1-feel-simple", "a6-2-through-design", "a6-3-people-succeed"}
+BRAND_OLD = '<a class="brand" href="index.html"><img class="mark" src="../assets/mj-logo.svg" alt="">Matt Jongbloet</a>'
+BRAND_ICON = '<a class="brand" href="index.html" aria-label="Matt Jongbloet, home"><img class="mark" src="../assets/mj-logo.svg" alt=""></a>'
+for _k in ICON_ONLY:
+    WORK[_k] = ORDER
+
 ITER_CSS = {
     "a6-text-first": """
 /* A6 — Text first: no big photo; the headline gets the full width. */
@@ -279,6 +319,32 @@ ITER_CSS = {
 }
 
 
+ICON_CSS = """
+/* Icon-only header: the name now lives in the hero chip, so the mark stands alone and a little larger. */
+.brand img.mark { height: 42px; }
+"""
+ITER_CSS["a6-1-feel-simple"] = ITER_CSS["a6-text-first"] + ICON_CSS + """
+/* A6.1 — A6's layout, leading with “I make complex products feel simple.” */
+.hero-text h1 { max-width: 14ch; }
+"""
+ITER_CSS["a6-2-through-design"] = ITER_CSS["a6-text-first"] + ICON_CSS + """
+/* A6.2 — Lighter headline (Medium), with the intro and buttons set beside it. */
+.hero-split .hs-grid { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 56px; align-items: end; }
+.hero-split h1 { font-weight: 500; letter-spacing: -0.035em; font-size: clamp(44px, 6.6vw, 90px); max-width: 12ch; }
+.hero-split .hs-side { display: flex; flex-direction: column; gap: 24px; padding-bottom: 10px; }
+.hero-split .lede { font-size: 18px; }
+@media (max-width: 900px) { .hero-split .hs-grid { grid-template-columns: 1fr; gap: 28px; } }
+"""
+ITER_CSS["a6-3-people-succeed"] = ITER_CSS["a6-text-first"] + ICON_CSS + """
+/* A6.3 — Centred hero, leading with “I’m happiest when people succeed with what I design.” */
+.hero-center .hero-copy { align-items: center; text-align: center; }
+.hero-center .who-chip { align-self: center; text-align: left; }
+.hero-center h1 { font-size: clamp(40px, 6vw, 82px); max-width: 17ch; }
+.hero-center .lede { max-width: 54ch; }
+.hero-center .actions { justify-content: center; }
+"""
+
+
 def build():
     hero_re = re.compile(r'  <section class="wrap hero">.*?\n  </section>', re.S)
     work_re = re.compile(r'  <section class="wrap section" id="work">.*?\n  </section>', re.S)
@@ -300,6 +366,8 @@ def build():
                 s = xp_re.sub(lambda m: XP_HOME, s)
             if page == "about.html":
                 s = xp_re.sub(lambda m: XP_ABOUT, s)
+            if name in ICON_ONLY:
+                s = rep(s, BRAND_OLD, BRAND_ICON, f"{name}/{page}")
             s = rep(s, '<link rel="stylesheet" href="style.css">', '<link rel="stylesheet" href="style.css">\n<link rel="stylesheet" href="variant.css">', f"{name}/{page}")
             open(os.path.join(out, page), "w").write(s)
         open(os.path.join(out, "variant.css"), "w").write(SHARED_CSS + ITER_CSS[name])
