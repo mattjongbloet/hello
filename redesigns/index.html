@@ -84,10 +84,52 @@ code { font: 13px var(--mono); background: var(--surface); border: 1px solid var
       <h1>Portfolio Direction A</h1>
     </div>
     <div>
-      <p>At the top: your current direction, A6.1 with your case-study format. Then the three iterations of A6 it came from. Then your PMI case study in five layouts to choose from. Then three case-study formats (Trellis written up in full), then A6–A8, three iterations on A with copy from your CV, your project cards, and three answers to the big photo on the right. Then P, your own mockup built out into a full direction. Below it, Direction A, the one closest to today’s site, and five close variations of it. Each variation changes one thing (type, colour, layout, theme or content) and keeps everything else, so you can compare like for like. All five use your current title, Senior Staff Product Designer. Type is Roobert everywhere, except A1, A2 and A3, which try Apercu.</p>
+      <p>At the top: three working demos for the right of A6.1’s headline. Open each one and play with it. Then your current direction, A6.1 with your case-study format. Then the three iterations of A6 it came from. Then your PMI case study in five layouts to choose from. Then three case-study formats (Trellis written up in full), then A6–A8, three iterations on A with copy from your CV, your project cards, and three answers to the big photo on the right. Then P, your own mockup built out into a full direction. Below it, Direction A, the one closest to today’s site, and five close variations of it. Each variation changes one thing (type, colour, layout, theme or content) and keeps everything else, so you can compare like for like. All five use your current title, Senior Staff Product Designer. Type is Roobert everywhere, except A1, A2 and A3, which try Apercu.</p>
       <a class="archive-link" href="archive/index.html">Other explorations (B–O) →</a>
     </div>
   </header>
+
+  <section class="dir original">
+    <div class="info">
+      <span class="variant-of">New · try it: hero idea 1</span>
+      <span class="letter">1</span><h2>Untangle</h2>
+      <p class="idea">A single line: a tangle when your cursor is far away, one clean circle as you come close. The headline, made interactive.</p>
+      <ul class="changes"><li><b>Try:</b> move the cursor towards and away from it</li><li><b>Idle:</b> it demonstrates itself; on a phone, tap to toggle</li></ul>
+      <div class="open"><a href="a6-1-hero-untangle/index.html">Open and try it <span>→</span></a></div>
+    </div>
+    <div class="shots">
+      <a class="shot home" href="a6-1-hero-untangle/index.html"><img src="thumbs/a6-1-hero-untangle-index.jpg" alt="Hero idea 1 on the home page" loading="lazy"><span>Home</span></a>
+      <a class="shot phone" href="a6-1-hero-untangle/index.html"><img src="thumbs/a6-1-hero-untangle-index-m.jpg" alt="Hero idea 1 on a phone" loading="lazy"></a>
+    </div>
+  </section>
+
+  <section class="dir original">
+    <div class="info">
+      <span class="variant-of">New · try it: hero idea 2</span>
+      <span class="letter">2</span><h2>Object face</h2>
+      <p class="idea">A face built from things you like: vinyl and bike-wheel eyes, mountain brows, your pencil logo for a nose, a chocolate smile.</p>
+      <ul class="changes"><li><b>Try:</b> hover the record (the needle drops), then click it for music</li><li><b>Click:</b> every piece opens a small card; the brows show your Nepal photo</li><li><b>Placeholders:</b> playlist, route and favourites are yours to fill</li></ul>
+      <div class="open"><a href="a6-1-hero-object-face/index.html">Open and try it <span>→</span></a></div>
+    </div>
+    <div class="shots">
+      <a class="shot home" href="a6-1-hero-object-face/index.html"><img src="thumbs/a6-1-hero-object-face-index.jpg" alt="Hero idea 2 on the home page" loading="lazy"><span>Home</span></a>
+      <a class="shot phone" href="a6-1-hero-object-face/index.html"><img src="thumbs/a6-1-hero-object-face-index-m.jpg" alt="Hero idea 2 on a phone" loading="lazy"></a>
+    </div>
+  </section>
+
+  <section class="dir original">
+    <div class="info">
+      <span class="variant-of">New · try it: hero idea 4</span>
+      <span class="letter">4</span><h2>Face follows</h2>
+      <p class="idea">An illustrated portrait that turns to follow the cursor, blinks, and says hello when clicked.</p>
+      <ul class="changes"><li><b>Try:</b> move the cursor around the page; click the face</li><li><b>Note:</b> the drawing is a stand-in; your own illustration or 3D head would drop into the same layers</li></ul>
+      <div class="open"><a href="a6-1-hero-face-follows/index.html">Open and try it <span>→</span></a></div>
+    </div>
+    <div class="shots">
+      <a class="shot home" href="a6-1-hero-face-follows/index.html"><img src="thumbs/a6-1-hero-face-follows-index.jpg" alt="Hero idea 4 on the home page" loading="lazy"><span>Home</span></a>
+      <a class="shot phone" href="a6-1-hero-face-follows/index.html"><img src="thumbs/a6-1-hero-face-follows-index-m.jpg" alt="Hero idea 4 on a phone" loading="lazy"></a>
+    </div>
+  </section>
 
   <section class="dir original">
     <div class="info">
@@ -351,6 +393,7 @@ code { font: 13px var(--mono); background: var(--surface); border: 1px solid var
       <li>Shared in A1–A5: your Hospitable role reads Senior Staff Product Designer, and the opening line leads with that role rather than UX research. <span>A itself still shows the live site’s wording.</span></li>
       <li>Fonts are your files, served from <code>redesigns/fonts/</code>: Roobert (trial) and Apercu Pro. <span>Neither has arrows (→ ↗ ↓), so those come from Hanken Grotesk. Apercu has no italics here, so A1–A3 don’t use any.</span></li>
       <li>The font files are not committed to the repository, because it is public and font licences don’t allow redistribution. <span>Without them, the pages fall back to Hanken Grotesk.</span></li>
+      <li>The hero demos live in <code>tools/toys/</code> and are added to copies of A6.1 by <code>tools/build-hero-toys.py</code>. <span>No libraries: canvas, SVG and Web Audio. Each rests still when the visitor has reduced motion turned on, and pauses when off screen.</span></li>
       <li>Your case-study format is built by <code>tools/build-case-studies.py</code>; the smaller type lives in <code>tools/type-smaller.css</code> and is applied to A6.1 and the case studies.</li>
       <li>The five PMI layouts are built by <code>tools/build-pmi-formats.py</code> from one set of copy. <span>Nothing was added to your case study; the “key decisions” and “Double Diamond” layouts only regroup what’s already there.</span></li>
       <li>Case studies are built by <code>tools/build-cases.py</code>. <span>Trellis visuals are cropped from your “product investment” deck (June 2023); the $3.5MM is worded as predicted gross annual revenue, as you described it.</span></li>

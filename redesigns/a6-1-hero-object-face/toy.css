@@ -1,0 +1,43 @@
+/* Hero "toy": the interactive piece to the right of the headline on A6.1 (tools/build-hero-toys.py). */
+.hero.hero-text.has-toy { grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 40px; align-items: center; padding-block: 72px 64px; }
+.hero-toy { position: relative; width: 100%; max-width: 470px; justify-self: end; display: flex; flex-direction: column; gap: 14px; }
+.toy-stage { position: relative; width: 100%; aspect-ratio: 1; }
+.toy-hint { margin: 0; font: 500 12px/1.4 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-2); text-align: center; min-height: 17px; }
+@media (max-width: 900px) {
+  .hero.hero-text.has-toy { grid-template-columns: 1fr; gap: 28px; padding-block: 48px; }
+  .hero-toy { justify-self: start; max-width: 340px; }
+}
+
+/* 2 · Object face: a face built from things Matt likes. Each piece is a button: hover to wake it, click to open it. */
+.face { transition: transform .2s ease-out; }
+.fo { position: absolute; padding: 0; border: 0; background: none; cursor: pointer; display: block; border-radius: 16px; transition: transform .25s cubic-bezier(.2,.8,.2,1); -webkit-tap-highlight-color: transparent; }
+.fo svg, .fo img { display: block; width: 100%; height: auto; overflow: visible; }
+.fo:focus-visible { outline: 2px solid var(--signal); outline-offset: 6px; }
+.fo-brow-l { left: 9%; top: 9%; width: 32%; }
+.fo-brow-r { left: 59%; top: 9%; width: 32%; }
+.fo-vinyl { left: 5%; top: 25%; width: 41%; border-radius: 50%; }
+.fo-wheel { left: 57%; top: 25%; width: 37%; border-radius: 50%; }
+.fo-nose { left: 43.5%; top: 45%; width: 13%; }
+.fo-mouth { left: 23%; top: 77%; width: 54%; }
+
+/* Eyebrows lift together */
+.face:has(.fo-brow:hover) .fo-brow, .face:has(.fo-brow:focus-visible) .fo-brow, .face.on-hike .fo-brow { transform: translateY(-9px); }
+/* Vinyl: the needle drops and the record turns */
+.fo-vinyl .arm { transform-origin: 116px 14px; transform: rotate(-30deg); transition: transform .45s cubic-bezier(.3,1.4,.5,1); }
+.fo-vinyl:hover .arm, .fo-vinyl:focus-visible .arm, .fo-vinyl[aria-pressed="true"] .arm { transform: rotate(0deg); }
+.fo-vinyl .disc, .fo-wheel .spin { transform-origin: 60px 60px; }
+.fo-nose:hover, .fo-nose:focus-visible { transform: rotate(-8deg) translateY(-3px); }
+.fo-mouth:hover, .fo-mouth:focus-visible { transform: scale(1.05); }
+@media (prefers-reduced-motion: no-preference) {
+  .fo-vinyl:hover .disc, .fo-vinyl:focus-visible .disc, .fo-vinyl[aria-pressed="true"] .disc { animation: fo-spin 1.8s linear infinite; }
+  .fo-wheel:hover .spin, .fo-wheel:focus-visible .spin, .face.on-cycle .fo-wheel .spin { animation: fo-spin 1.1s linear infinite; }
+  @keyframes fo-spin { to { transform: rotate(360deg); } }
+}
+
+/* What opens */
+.face-pop { min-height: 78px; display: flex; align-items: center; justify-content: center; }
+.face-card { display: flex; align-items: center; gap: 14px; padding: 12px 16px; border-radius: 16px; background: var(--mist); width: 100%; }
+.face-card img { width: 72px; height: 54px; object-fit: cover; border-radius: 10px; flex: none; }
+.face-card b { display: block; font-size: 15px; }
+.face-card span { display: block; font-size: 14px; color: var(--ink-2); line-height: 1.4; }
+.face-card a { color: var(--ink); font-weight: 600; }

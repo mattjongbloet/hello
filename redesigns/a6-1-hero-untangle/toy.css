@@ -1,0 +1,12 @@
+/* Hero "toy": the interactive piece to the right of the headline on A6.1 (tools/build-hero-toys.py). */
+.hero.hero-text.has-toy { grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 40px; align-items: center; padding-block: 72px 64px; }
+.hero-toy { position: relative; width: 100%; max-width: 470px; justify-self: end; display: flex; flex-direction: column; gap: 14px; }
+.toy-stage { position: relative; width: 100%; aspect-ratio: 1; }
+.toy-hint { margin: 0; font: 500 12px/1.4 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-2); text-align: center; min-height: 17px; }
+@media (max-width: 900px) {
+  .hero.hero-text.has-toy { grid-template-columns: 1fr; gap: 28px; padding-block: 48px; }
+  .hero-toy { justify-self: start; max-width: 340px; }
+}
+
+/* 1 · Untangle: one line, tangled when you're far away, a clean circle when you come close. */
+.toy-untangle canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; touch-action: manipulation; cursor: pointer; }
