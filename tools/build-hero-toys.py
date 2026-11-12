@@ -11,7 +11,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, "redesigns", "a6-1-feel-simple")
 TOYS = os.path.join(ROOT, "tools", "toys")
 VARIANTS = {"a6-1-hero-untangle": ("a6-1-feel-simple", "untangle"), "a6-1-hero-object-face": ("a6-1-feel-simple", "object-face"),
-            "site": ("site", "object-face")}   # the current site gets the object face in place
+            "site": ("site", "face-home")}   # the current site gets the object face in place
 THREE = '<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>'  # classic build: also works from file://
 
 
@@ -41,7 +41,12 @@ def build():
         s = s.replace(js, js + '\n' + THREE + '\n<script src="toy.js"></script>')
         open(p, "w").write(s)
         open(os.path.join(out, "toy.css"), "w").write(read("toy-base.css") + "\n" + read(toy + ".css"))
-        open(os.path.join(out, "toy.js"), "w").write(read("three-common.js") + "\n" + read(toy + ".js"))
+        if toy == "face-home":   # the lab's face (cursor nose, swatch smile) with the eyes from object-face.js
+            src = read("object-face.js"); a = src.index("  // ---- Left eye: vinyl record ----"); b = src.index("  // ---- Nose: a tree ----")
+            js = read("face-lab.js").replace("/*EYES*/", src[a:b])
+        else:
+            js = read(toy + ".js")
+        open(os.path.join(out, "toy.js"), "w").write(read("three-common.js") + "\n" + js)
         print("built", folder)
 
 

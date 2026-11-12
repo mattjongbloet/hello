@@ -346,10 +346,11 @@ SITE_CSS = """
 .hero-screen .hero { flex: 1; }
 .hero.hero-text h1 { font-size: clamp(34px, 4.3vw, 62px); max-width: 13ch; letter-spacing: -0.03em; }
 .hero .lede { font-size: clamp(16px, 1.25vw, 18px); max-width: 40ch; }
+.hero-screen .hero h1 em { color: var(--accent-text, var(--signal)); }   /* “feel simple.” takes the accent, and follows the swatches */
 /* Everything above the fold: the face shrinks with the window height so the location line always fits on the first screen. */
 .hero-screen .hero.hero-text.has-toy { padding-block: 28px 20px; }
 .has-toy .hero-toy { max-width: 520px; gap: 10px; }
-.hero-screen .toy-stage { width: clamp(240px, calc(100svh - 312px), 100%); margin-inline: auto; }
+.hero-screen .toy-stage { width: clamp(240px, calc(100svh - 236px), 100%); margin-inline: auto; }
 .hero-screen .face-pop { min-height: 62px; }
 .hero-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; margin: 0; padding-block: 12px 14px; border-top: 1px solid var(--line); font-size: 16px; color: var(--ink-2); }
 .hero-foot svg { width: 17px; height: 17px; color: var(--signal); flex: none; }

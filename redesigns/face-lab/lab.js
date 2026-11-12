@@ -61,7 +61,8 @@ window.Toy3D = (() => {
 // Nose: tree (current), cursor (edit mode), pinecone (opens), tent (unzips, lights up), trowel (digs, a sprout grows).
 // Mouth: coffee beans (current), bezier curve (drag the handles), hiking trail (a walker crosses), colour swatches (set the accent).
 (() => {
-  const root = document.querySelector('.lab'); if (!root || !window.THREE) return;
+  const root = document.querySelector('.lab, .lab-home'); if (!root || !window.THREE) return;
+  const HOME = root.classList.contains('lab-home');   // on the home page the caption stays short
   const stage = root.querySelector('.toy-stage'), tip = root.querySelector('.lab-tip'), overlay = root.querySelector('.lab-overlay');
   const { renderer, scene, camera, ptr, reduce, kick, onTick } = Toy3D.setup(stage, { z: 12.5 });
   const { shadow, rod } = Toy3D, V = (x, y, z) => new THREE.Vector3(x, y, z);
@@ -230,7 +231,7 @@ window.Toy3D = (() => {
     rebuild();
     const mood = () => { const y = (C[0].y + C[1].y) / 2, skew = Math.abs(C[0].y - C[1].y); return skew > .7 ? 'a smirk' : y < -.35 ? 'a smile' : y > .35 ? 'a frown' : 'a straight face'; };
     mouths.bezier = { g, tip: 'Bezier curve: drag the two orange handles to make it smile, smirk or frown.',
-      drag: (i, local) => { C[i].set(Math.max(-2.2, Math.min(2.2, local.x)), Math.max(-1.3, Math.min(1.3, local.y - MOUTH_Y)), 0); rebuild(); tip.textContent = 'Bezier curve: that’s ' + mood() + '.'; }, tick: () => {} }; }
+      drag: (i, local) => { C[i].set(Math.max(-2.2, Math.min(2.2, local.x)), Math.max(-1.3, Math.min(1.3, local.y - MOUTH_Y)), 0); rebuild(); if (!HOME) tip.textContent = 'Bezier curve: that’s ' + mood() + '.'; }, tick: () => {} }; }
   // -- dotted hiking trail: click and a walker crosses, leaving footprints
   { const g = new THREE.Group(); g.position.set(0, MOUTH_Y, .1); const at = (u) => { const x = -1.6 + 3.2 * u; return V(x, -.55 + .2 * x * x, 0); }; let walk = -1;
     for (let i = 0; i <= 16; i++) { const d = new THREE.Mesh(new THREE.SphereGeometry(.045, 12, 8), std(0x8b6b4a, .9)); d.position.copy(at(i / 16)); d.scale.z = .5; g.add(d); }
@@ -253,7 +254,12 @@ window.Toy3D = (() => {
       card.add(paper, chip, hz); g.add(piv); cards.push({ card, c }); });
     const pin = new THREE.Mesh(new THREE.CylinderGeometry(.05, .05, .12, 20), steel); pin.rotation.x = Math.PI / 2; pin.position.z = .06; g.add(pin);
     let picked = null;
-    mouths.swatches = { g, tip: 'Colour swatches: click one. The page accent, the record’s label and the wheel’s reflector all change.', click: (obj) => { const c = obj.userData.swatch; if (!c) return; picked = c; document.documentElement.style.setProperty('--signal', c); setAccent(c); tip.textContent = 'Colour swatches: accent set to ' + c + '.'; },
+    mouths.swatches = { g, tip: 'Colour swatches: click one. The page accent, the record’s label and the wheel’s reflector all change.', click: (obj) => { const c = obj.userData.swatch; if (!c) return; picked = c; document.documentElement.style.setProperty('--signal', c); setAccent(c);
+        // Text in the accent (the headline's last line) needs 3:1 on a light page, so pale colours are deepened for text only.
+        const col = new THREE.Color(c), lum = (x) => { const f = (v) => v <= .03928 ? v / 12.92 : Math.pow((v + .055) / 1.055, 2.4); const k = new THREE.Color(x).convertLinearToSRGB(); return .2126 * f(k.r) + .7152 * f(k.g) + .0722 * f(k.b); };
+        const light = document.documentElement.dataset.theme !== 'dark'; let text = col.clone(), n = 0;
+        while (light && 1.05 / (lum(text) + .05) < 3.2 && n++ < 20) text.multiplyScalar(.93);
+        document.documentElement.style.setProperty('--accent-text', '#' + text.getHexString()); if (!HOME) tip.textContent = 'Colour swatches: accent set to ' + c + '.'; },
       tick: (t, dt) => cards.forEach(({ card, c }) => { card.position.y = lerp(card.position.y, c === picked ? -1.72 : -1.55, dt * 8); }) }; }
 
   Object.values(noses).concat(Object.values(mouths)).forEach((o) => { face.add(o.g); shadow(o.g); o.g.visible = false; });
@@ -263,7 +269,7 @@ window.Toy3D = (() => {
     if (set[prev].off) set[prev].off(); set[prev].g.visible = false; set[name].g.visible = true;
     if (kind === 'nose') nose = name; else mouth = name;
     root.querySelectorAll(`[data-kind="${kind}"]`).forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.name === name)));
-    tip.textContent = set[name].tip; kick();
+    if (!HOME) tip.textContent = set[name].tip; kick();
   };
   root.querySelectorAll('.lab-opts button').forEach((b) => b.addEventListener('click', () => choose(b.dataset.kind, b.dataset.name)));
   noses.tree.g.visible = true; mouths.beans.g.visible = true;

@@ -11,7 +11,7 @@ This file records the decisions made so far and how the project is built, so a n
 | `redesigns/case-studies/` | **All case studies** in the chosen format. Generated. |
 | `redesigns/assets/` | Images: covers, logos, `cases/` (process images, video stills), `trellis/` (crops from Matt's deck), `mj-logo.svg`. |
 | `redesigns/fonts/` | `fonts.css` plus Roobert `.woff2` files. The `.woff2` files are **git-ignored** (trial licence, public repo); pages fall back to Hanken Grotesk without them. |
-| `redesigns/face-lab/` | One page to try nose and mouth ideas on the 3D face (`tools/build-face-lab.py`, `tools/toys/face-lab.js`). Noses: tree, cursor (edit mode), pinecone, tent, trowel. Mouths: coffee beans, bezier curve, hiking trail, colour swatches. Matt is trying the smaller cursor nose with the colour-swatch mouth (the lab opens on that pair); a swatch click also recolours the record label and wheel reflector. Not yet on the home page. |
+| `redesigns/face-lab/` | One page to try nose and mouth ideas on the 3D face (`tools/build-face-lab.py`, `tools/toys/face-lab.js`). Noses: tree, cursor (edit mode), pinecone, tent, trowel. Mouths: coffee beans, bezier curve, hiking trail, colour swatches. Matt chose the smaller cursor nose + colour-swatch mouth; that pair is on the home page. |
 | `redesigns/index.html` | Overview page listing every direction and demo (built from `tools/directions-a.src.html`). |
 | `redesigns/a-clarity/` | Direction A: the base HTML/CSS/JS everything else is generated from. |
 | `redesigns/a6-*`, `a7-*`, `a8-*`, `a1`–`a5`, `p-sentence/`, `pmi-formats/`, `cases/`, `archive/` | Earlier iterations and explorations, kept for reference. Not the current direction. |
@@ -24,7 +24,7 @@ This file records the decisions made so far and how the project is built, so a n
   - Header: face, "Matt Jongbloet", "Product Designer" · Work, About, Resume, light/dark toggle, "Let's talk". No logo in the header (the pencil logo is the favicon).
   - Hero: headline + intro (smaller type), the **3D object face** on the right, and one line underneath: "Amsterdam, Netherlands · Currently Senior Staff Product Designer at Hospitable". No impact-stat blocks. The hero must fit the first screen on a laptop.
   - Intro copy: "I'm a rigorously curious product designer with 15 years' experience helping people and businesses shine. I'm happiest when people succeed with what I design."
-- **Object face**: vinyl record + bike wheel (eyes), tree (nose, he likes exploring the woods), smile = coffee beans as a **stand-in** (undecided; options offered: hammock, chocolate bar, open book, festoon lights). No eyebrows. Realistic 3D, not flat.
+- **Object face** (home page): vinyl record + bike wheel (eyes), a small **cursor arrow** (nose; click toggles an "edit mode" overlay with bounding boxes and spacing), a fan of **colour swatches** (smile; clicking one sets the accent: `--signal` on the page, the record label, the wheel reflector, and the headline's "feel simple." via `--accent-text`, which is deepened for pale colours on the light theme). No eyebrows. Realistic 3D, not flat. Built from `tools/toys/face-lab.js` + eyes from `object-face.js` (`face-home.html/.css`).
 - **Typeface**: Roobert only, everywhere (including small labels; no monospace). Apercu, GT Eesti, Geograph, Styrene and serifs were tried and rejected.
 - **Case-study format**: opening = title, intro, facts row (company, role, team, date), cover image, metric tiles; body = contents menu on the left with Context → Opportunity → Approach → Outcome; "Next project" at the end.
 - **Project cards** (home): his current site's style — white card, logo tile, company, title, one line, screenshot bleeding off the bottom-right.
@@ -65,7 +65,7 @@ Run QA on every changed page; it should print `all clear`. For dark mode, QA a t
 
 ## Open items
 
-- Smile object for the 3D face; whether the tree should be more realistic (would need modelled assets).
+- The 3D face has no keyboard or screen-reader way to pick a swatch or toggle edit mode yet (pointer only).
 - Trellis case study placeholders: what "unlinked application" means, 4–6 more experiments, whether V2 shipped, how the $3.5MM was predicted.
 - Carv and Hospitable case studies need content from Matt.
 - Internal Admin is dated January 2020 on the live site, before the CV's Homebot start (Dec 2020): confirm.
