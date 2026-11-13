@@ -43,28 +43,73 @@
   const disc = new THREE.Mesh(new THREE.CylinderGeometry(1.3, 1.3, .045, 128), [edge, blackVinyl, edge]); disc.rotation.x = Math.PI / 2; spinner.add(disc);
   const lab = new THREE.Mesh(new THREE.CylinderGeometry(.44, .44, .05, 64), [edge, new THREE.MeshStandardMaterial({ map: label, roughness: .75 }), edge]); lab.rotation.x = Math.PI / 2; lab.position.z = .004; spinner.add(lab);
   const spindle = new THREE.Mesh(new THREE.CylinderGeometry(.035, .035, .16, 24), steel); spindle.rotation.x = Math.PI / 2; spindle.position.z = .06; vinyl.add(spindle);
-  const arm = new THREE.Group(); arm.position.set(1.36, 1.12, .2); vinyl.add(arm);          // tonearm, pivoting about z
-  const base = new THREE.Mesh(new THREE.CylinderGeometry(.15, .17, .14, 32), alu); base.rotation.x = Math.PI / 2; base.position.z = -.12;
-  const weight = new THREE.Mesh(new THREE.CylinderGeometry(.085, .085, .2, 24), new THREE.MeshStandardMaterial({ color: 0x2b2d33, metalness: .9, roughness: .35 })); weight.position.set(0, .26, 0);
-  const shell = new THREE.Mesh(new THREE.BoxGeometry(.13, .24, .05), new THREE.MeshStandardMaterial({ color: 0x1c1d21, roughness: .5, metalness: .2 })); shell.position.set(0, -1.3, 0);
-  const stylus = new THREE.Mesh(new THREE.ConeGeometry(.02, .07, 12), steel); stylus.rotation.x = -Math.PI / 2; stylus.position.set(0, -1.38, -.05);
-  arm.add(rod(V(0, .34, 0), V(0, -1.2, 0), .022, steel), weight, shell, stylus); vinyl.add(base); base.position.add(arm.position).setZ(.06);
+  // Technics SL-1210 style: platter, gimbal base, S-shaped tonearm, angled headshell with finger lift, counterweight.
+  const black = new THREE.MeshStandardMaterial({ color: 0x17181b, metalness: .6, roughness: .42 }), chrome = new THREE.MeshStandardMaterial({ color: 0xe8eaee, metalness: 1, roughness: .1 });
+  const cylZ = (r, h, mat, seg = 40) => { const m = new THREE.Mesh(new THREE.CylinderGeometry(r, r, h, seg), mat); m.rotation.x = Math.PI / 2; return m; };
+  const platter = cylZ(1.37, .07, alu, 128); platter.position.z = -.062; vinyl.add(platter);
+  const dots = new THREE.InstancedMesh(new THREE.CylinderGeometry(.011, .011, .012, 8), black, 180), DM = new THREE.Matrix4();   // strobe dots on the platter rim
+  for (let d = 0; d < 180; d++) { const a = d / 180 * Math.PI * 2; DM.makeRotationX(Math.PI / 2); DM.setPosition(Math.cos(a) * 1.335, Math.sin(a) * 1.335, -.026); dots.setMatrixAt(d, DM); } vinyl.add(dots);
+  const baseT = new THREE.Group(); baseT.position.set(1.36, 1.12, 0); vinyl.add(baseT);
+  const plinth = cylZ(.3, .07, black, 64); plinth.position.z = -.04;
+  const collar = cylZ(.21, .13, alu, 64); collar.position.z = .05;
+  const gimbal = new THREE.Mesh(new THREE.TorusGeometry(.155, .024, 14, 64), chrome); gimbal.position.z = .2;
+  const dial = cylZ(.09, .1, black); dial.position.set(.33, -.2, .0); const dialCap = cylZ(.062, .02, chrome); dialCap.position.set(.33, -.2, .058);
+  const lever = rod(V(.33, -.44, -.02), V(.33, -.44, .1), .022, chrome), leverKnob = new THREE.Mesh(new THREE.SphereGeometry(.04, 16, 12), black); leverKnob.position.set(.33, -.44, .11);
+  const restPost = rod(V(.17, -.8, -.04), V(.17, -.8, .13), .025, black), restClip = new THREE.Mesh(new THREE.TorusGeometry(.04, .012, 8, 20, Math.PI), black); restClip.position.set(.17, -.8, .16); restClip.rotation.x = Math.PI / 2;
+  baseT.add(plinth, collar, gimbal, dial, dialCap, lever, leverKnob, restPost, restClip);
+  const arm = new THREE.Group(); arm.position.set(1.36, 1.12, .2); vinyl.add(arm);          // moving parts, pivoting about z
+  const yoke = new THREE.Mesh(new THREE.BoxGeometry(.13, .17, .1), chrome);
+  const cw = new THREE.Mesh(new THREE.CylinderGeometry(.118, .118, .3, 48), black); cw.position.y = .5;
+  const cwRing = new THREE.Mesh(new THREE.CylinderGeometry(.121, .121, .05, 48), chrome); cwRing.position.y = .335;
+  const cwCap = new THREE.Mesh(new THREE.CylinderGeometry(.06, .06, .03, 32), chrome); cwCap.position.y = .665;
+  const tube = new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3([V(0, -.06, 0), V(0, -.36, 0), V(.045, -.62, 0), V(.075, -.85, 0), V(.035, -1.05, 0), V(-.05, -1.2, 0)]), 64, .0215, 14), chrome);
+  const head = new THREE.Group(); head.position.set(-.05, -1.2, 0); head.rotation.z = -.42;
+  const lock = new THREE.Mesh(new THREE.CylinderGeometry(.031, .031, .075, 24), chrome); lock.position.y = -.025;
+  const shell = new THREE.Mesh(new THREE.BoxGeometry(.135, .31, .014), black); shell.position.set(0, -.21, 0);
+  const lift = rod(V(.055, -.09, 0), V(.23, -.15, .035), .009, chrome);
+  const cart = new THREE.Mesh(new THREE.BoxGeometry(.108, .17, .08), new THREE.MeshStandardMaterial({ color: 0xf1f1ef, roughness: .35 })); cart.position.set(0, -.26, -.047);
+  const cartFront = new THREE.Mesh(new THREE.BoxGeometry(.11, .035, .082), black); cartFront.position.set(0, -.345, -.047);
+  const stylus = new THREE.Mesh(new THREE.ConeGeometry(.014, .05, 12), chrome); stylus.rotation.x = -Math.PI / 2; stylus.position.set(0, -.33, -.105);
+  [-.035, .035].forEach((x) => { const sc = cylZ(.012, .01, chrome, 12); sc.position.set(x, -.2, .011); head.add(sc); });
+  head.add(lock, shell, lift, cart, cartFront, stylus);
+  arm.add(yoke, rod(V(0, .08, 0), V(0, .68, 0), .028, chrome), cw, cwRing, cwCap, tube, head);
   vinyl.add(hit(new THREE.CircleGeometry(1.45, 24), 'music')); shadow(vinyl);
 
   // ---- Right eye: bicycle wheel ----
   const wheel = new THREE.Group(); wheel.position.set(1.85, .85, 0); wheel.scale.setScalar(.95); wheel.userData.k = 'cycle'; face.add(wheel);
   const wspin = new THREE.Group(); wheel.add(wspin);
-  const tyre = new THREE.Mesh(new THREE.TorusGeometry(1.2, .105, 24, 120), new THREE.MeshStandardMaterial({ color: 0x141416, roughness: .92 }));
-  const rim = new THREE.Mesh(new THREE.TorusGeometry(1.075, .05, 16, 120), alu); rim.scale.z = 1.9;
-  const hub = new THREE.Mesh(new THREE.CylinderGeometry(.075, .075, .44, 24), alu); hub.rotation.x = Math.PI / 2;
-  wspin.add(tyre, rim, hub);
-  for (const z of [-.16, .16]) { const f = new THREE.Mesh(new THREE.CylinderGeometry(.16, .16, .025, 32), steel); f.rotation.x = Math.PI / 2; f.position.z = z; wspin.add(f); }
-  for (let i = 0; i < 28; i++) {                         // spokes, laced alternately to each flange
-    const a = i / 28 * Math.PI * 2, side = i % 2 ? 1 : -1, fa = a + side * 1.05 * (i % 4 < 2 ? 1 : -1);
-    wspin.add(rod(V(.15 * Math.cos(fa), .15 * Math.sin(fa), side * .16), V(1.04 * Math.cos(a), 1.04 * Math.sin(a), 0), .0085, steel));
+  // DT Swiss GRC 1100 style: deep carbon rim with decals, straight-pull spokes, hub, disc rotor, and a gravel tyre (tan sidewalls, small knobs).
+  const carbon = new THREE.MeshPhysicalMaterial({ color: 0x0d0d0f, roughness: .4, clearcoat: .4, clearcoatRoughness: .28, side: THREE.DoubleSide });
+  const blackMetal = new THREE.MeshStandardMaterial({ color: 0x131315, metalness: .85, roughness: .32 });
+  const TR = 1.06, TT = .165, tg = new THREE.TorusGeometry(TR, TT, 32, 160);
+  { const pos = tg.attributes.position, col = new Float32Array(pos.count * 3), tan = new THREE.Color(0xb28550), blk = new THREE.Color(0x141416);
+    for (let i = 0; i < pos.count; i++) { const rho = Math.hypot(pos.getX(i), pos.getY(i)); (rho > TR + .075 || rho < TR - .125 ? blk : tan).toArray(col, i * 3); }
+    tg.setAttribute('color', new THREE.BufferAttribute(col, 3)); }
+  const tyre = new THREE.Mesh(tg, new THREE.MeshStandardMaterial({ vertexColors: true, roughness: .92 })); wspin.add(tyre);
+  const ROWS = [-38, -19, 0, 19, 38], PER = 104, knobs = new THREE.InstancedMesh(new THREE.BoxGeometry(.034, .05, .042), new THREE.MeshStandardMaterial({ color: 0x121214, roughness: .95 }), ROWS.length * PER);
+  { const KM = new THREE.Matrix4(), qz = new THREE.Quaternion(), qy = new THREE.Quaternion(), Z = V(0, 0, 1), Y = V(0, 1, 0), one = V(1, 1, 1); let n = 0;
+    ROWS.forEach((deg, row) => { const phi = deg * Math.PI / 180, rr = TR + (TT + .012) * Math.cos(phi), zz = (TT + .012) * Math.sin(phi);
+      for (let k = 0; k < PER; k++) { const th = (k + (row % 2 ? .5 : 0)) / PER * Math.PI * 2; qz.setFromAxisAngle(Z, th); qy.setFromAxisAngle(Y, -phi);
+        KM.compose(V(rr * Math.cos(th), rr * Math.sin(th), zz), qz.clone().multiply(qy), one); knobs.setMatrixAt(n++, KM); } }); }
+  wspin.add(knobs);
+  const prof = [[.955, .105], [.935, .119], [.9, .113], [.84, .072], [.795, .024], [.784, 0], [.795, -.024], [.84, -.072], [.9, -.113], [.935, -.119], [.955, -.105]].map(([r, h]) => new THREE.Vector2(r, h));
+  const rim = new THREE.Mesh(new THREE.LatheGeometry(prof, 160), carbon); rim.rotation.x = Math.PI / 2; wspin.add(rim);
+  const decalTex = (() => { const c = document.createElement('canvas'); c.width = 4096; c.height = 128; const g = c.getContext('2d'); g.fillStyle = '#fff'; g.textBaseline = 'middle';
+    [['DT SWISS', .04, '900 italic 92px Arial, Helvetica, sans-serif'], ['GRC 1100', .2, '700 60px Arial, Helvetica, sans-serif'], ['DT SWISS', .54, '900 italic 92px Arial, Helvetica, sans-serif'], ['GRC 1100', .7, '700 60px Arial, Helvetica, sans-serif']].forEach(([t, x, f]) => { g.font = f; g.fillText(t, x * 4096, 66); });
+    const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8; return t; })();
+  const decal = new THREE.Mesh(new THREE.LatheGeometry([[.925, .1215], [.9, .1155], [.845, .078]].map(([r, h]) => new THREE.Vector2(r, h)), 160), new THREE.MeshStandardMaterial({ map: decalTex, transparent: true, alphaTest: .35, roughness: .5, side: THREE.DoubleSide })); decal.rotation.x = Math.PI / 2; wspin.add(decal);
+  const hubBody = cylZ(.052, .5, blackMetal, 32), axle = cylZ(.03, .6, chrome, 24); wspin.add(hubBody, axle);
+  for (const z of [-.14, .14]) { const f = cylZ(.105, .04, blackMetal, 40); f.position.z = z; wspin.add(f); }
+  for (let i = 0; i < 24; i++) {                         // 24 straight-pull spokes, crossed, alternating flanges
+    const a = i / 24 * Math.PI * 2, side = i % 2 ? 1 : -1, fa = a + (i % 4 < 2 ? .62 : -.62);
+    wspin.add(rod(V(.095 * Math.cos(fa), .095 * Math.sin(fa), side * .14), V(.79 * Math.cos(a), .79 * Math.sin(a), 0), .0075, blackMetal));
   }
-  const valve = new THREE.Mesh(new THREE.CylinderGeometry(.018, .018, .16, 10), new THREE.MeshStandardMaterial({ color: 0xb08d57, metalness: 1, roughness: .3 })); valve.position.set(0, .97, 0); wspin.add(valve);
-  const refl = new THREE.Mesh(new THREE.BoxGeometry(.2, .08, .03), new THREE.MeshPhysicalMaterial({ color: SIGNAL, roughness: .2, clearcoat: 1 })); refl.position.set(0, -.62, 0); wspin.add(refl);
+  const rotorMat = new THREE.MeshStandardMaterial({ color: 0xbfc3c9, metalness: 1, roughness: .28, side: THREE.DoubleSide });
+  const rotor = new THREE.Group(); rotor.position.z = -.21; rotor.add(new THREE.Mesh(new THREE.RingGeometry(.31, .4, 72), rotorMat));
+  for (let i = 0; i < 6; i++) { const arm2 = new THREE.Mesh(new THREE.BoxGeometry(.035, .25, .008), rotorMat); const a = i / 6 * Math.PI * 2; arm2.position.set(Math.cos(a) * .2, Math.sin(a) * .2, 0); arm2.rotation.z = a + Math.PI / 2 + .35; rotor.add(arm2); }
+  rotor.add(new THREE.Mesh(new THREE.RingGeometry(.06, .11, 40), blackMetal)); wspin.add(rotor);
+  const refl = new THREE.Mesh(new THREE.TorusGeometry(.056, .016, 14, 48), new THREE.MeshPhysicalMaterial({ color: SIGNAL, roughness: .25, clearcoat: 1 })); wspin.add(refl);   // the accent: a band on the hub and the valve cap
+  wspin.add(rod(V(0, .79, 0), V(0, .7, 0), .012, blackMetal)); const cap = new THREE.Mesh(new THREE.CylinderGeometry(.016, .016, .04, 12), refl.material); cap.position.set(0, .69, 0); wspin.add(cap);
   wheel.add(hit(new THREE.CircleGeometry(1.4, 24), 'cycle')); shadow(wheel);
 
   // ---- Nose: a tree ----

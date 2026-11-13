@@ -105,28 +105,73 @@ window.Toy3D = (() => {
   const disc = new THREE.Mesh(new THREE.CylinderGeometry(1.3, 1.3, .045, 128), [edge, blackVinyl, edge]); disc.rotation.x = Math.PI / 2; spinner.add(disc);
   const lab = new THREE.Mesh(new THREE.CylinderGeometry(.44, .44, .05, 64), [edge, new THREE.MeshStandardMaterial({ map: label, roughness: .75 }), edge]); lab.rotation.x = Math.PI / 2; lab.position.z = .004; spinner.add(lab);
   const spindle = new THREE.Mesh(new THREE.CylinderGeometry(.035, .035, .16, 24), steel); spindle.rotation.x = Math.PI / 2; spindle.position.z = .06; vinyl.add(spindle);
-  const arm = new THREE.Group(); arm.position.set(1.36, 1.12, .2); vinyl.add(arm);          // tonearm, pivoting about z
-  const base = new THREE.Mesh(new THREE.CylinderGeometry(.15, .17, .14, 32), alu); base.rotation.x = Math.PI / 2; base.position.z = -.12;
-  const weight = new THREE.Mesh(new THREE.CylinderGeometry(.085, .085, .2, 24), new THREE.MeshStandardMaterial({ color: 0x2b2d33, metalness: .9, roughness: .35 })); weight.position.set(0, .26, 0);
-  const shell = new THREE.Mesh(new THREE.BoxGeometry(.13, .24, .05), new THREE.MeshStandardMaterial({ color: 0x1c1d21, roughness: .5, metalness: .2 })); shell.position.set(0, -1.3, 0);
-  const stylus = new THREE.Mesh(new THREE.ConeGeometry(.02, .07, 12), steel); stylus.rotation.x = -Math.PI / 2; stylus.position.set(0, -1.38, -.05);
-  arm.add(rod(V(0, .34, 0), V(0, -1.2, 0), .022, steel), weight, shell, stylus); vinyl.add(base); base.position.add(arm.position).setZ(.06);
+  // Technics SL-1210 style: platter, gimbal base, S-shaped tonearm, angled headshell with finger lift, counterweight.
+  const black = new THREE.MeshStandardMaterial({ color: 0x17181b, metalness: .6, roughness: .42 }), chrome = new THREE.MeshStandardMaterial({ color: 0xe8eaee, metalness: 1, roughness: .1 });
+  const cylZ = (r, h, mat, seg = 40) => { const m = new THREE.Mesh(new THREE.CylinderGeometry(r, r, h, seg), mat); m.rotation.x = Math.PI / 2; return m; };
+  const platter = cylZ(1.37, .07, alu, 128); platter.position.z = -.062; vinyl.add(platter);
+  const dots = new THREE.InstancedMesh(new THREE.CylinderGeometry(.011, .011, .012, 8), black, 180), DM = new THREE.Matrix4();   // strobe dots on the platter rim
+  for (let d = 0; d < 180; d++) { const a = d / 180 * Math.PI * 2; DM.makeRotationX(Math.PI / 2); DM.setPosition(Math.cos(a) * 1.335, Math.sin(a) * 1.335, -.026); dots.setMatrixAt(d, DM); } vinyl.add(dots);
+  const baseT = new THREE.Group(); baseT.position.set(1.36, 1.12, 0); vinyl.add(baseT);
+  const plinth = cylZ(.3, .07, black, 64); plinth.position.z = -.04;
+  const collar = cylZ(.21, .13, alu, 64); collar.position.z = .05;
+  const gimbal = new THREE.Mesh(new THREE.TorusGeometry(.155, .024, 14, 64), chrome); gimbal.position.z = .2;
+  const dial = cylZ(.09, .1, black); dial.position.set(.33, -.2, .0); const dialCap = cylZ(.062, .02, chrome); dialCap.position.set(.33, -.2, .058);
+  const lever = rod(V(.33, -.44, -.02), V(.33, -.44, .1), .022, chrome), leverKnob = new THREE.Mesh(new THREE.SphereGeometry(.04, 16, 12), black); leverKnob.position.set(.33, -.44, .11);
+  const restPost = rod(V(.17, -.8, -.04), V(.17, -.8, .13), .025, black), restClip = new THREE.Mesh(new THREE.TorusGeometry(.04, .012, 8, 20, Math.PI), black); restClip.position.set(.17, -.8, .16); restClip.rotation.x = Math.PI / 2;
+  baseT.add(plinth, collar, gimbal, dial, dialCap, lever, leverKnob, restPost, restClip);
+  const arm = new THREE.Group(); arm.position.set(1.36, 1.12, .2); vinyl.add(arm);          // moving parts, pivoting about z
+  const yoke = new THREE.Mesh(new THREE.BoxGeometry(.13, .17, .1), chrome);
+  const cw = new THREE.Mesh(new THREE.CylinderGeometry(.118, .118, .3, 48), black); cw.position.y = .5;
+  const cwRing = new THREE.Mesh(new THREE.CylinderGeometry(.121, .121, .05, 48), chrome); cwRing.position.y = .335;
+  const cwCap = new THREE.Mesh(new THREE.CylinderGeometry(.06, .06, .03, 32), chrome); cwCap.position.y = .665;
+  const tube = new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3([V(0, -.06, 0), V(0, -.36, 0), V(.045, -.62, 0), V(.075, -.85, 0), V(.035, -1.05, 0), V(-.05, -1.2, 0)]), 64, .0215, 14), chrome);
+  const head = new THREE.Group(); head.position.set(-.05, -1.2, 0); head.rotation.z = -.42;
+  const lock = new THREE.Mesh(new THREE.CylinderGeometry(.031, .031, .075, 24), chrome); lock.position.y = -.025;
+  const shell = new THREE.Mesh(new THREE.BoxGeometry(.135, .31, .014), black); shell.position.set(0, -.21, 0);
+  const lift = rod(V(.055, -.09, 0), V(.23, -.15, .035), .009, chrome);
+  const cart = new THREE.Mesh(new THREE.BoxGeometry(.108, .17, .08), new THREE.MeshStandardMaterial({ color: 0xf1f1ef, roughness: .35 })); cart.position.set(0, -.26, -.047);
+  const cartFront = new THREE.Mesh(new THREE.BoxGeometry(.11, .035, .082), black); cartFront.position.set(0, -.345, -.047);
+  const stylus = new THREE.Mesh(new THREE.ConeGeometry(.014, .05, 12), chrome); stylus.rotation.x = -Math.PI / 2; stylus.position.set(0, -.33, -.105);
+  [-.035, .035].forEach((x) => { const sc = cylZ(.012, .01, chrome, 12); sc.position.set(x, -.2, .011); head.add(sc); });
+  head.add(lock, shell, lift, cart, cartFront, stylus);
+  arm.add(yoke, rod(V(0, .08, 0), V(0, .68, 0), .028, chrome), cw, cwRing, cwCap, tube, head);
   vinyl.add(hit(new THREE.CircleGeometry(1.45, 24), 'music')); shadow(vinyl);
 
   // ---- Right eye: bicycle wheel ----
   const wheel = new THREE.Group(); wheel.position.set(1.85, .85, 0); wheel.scale.setScalar(.95); wheel.userData.k = 'cycle'; face.add(wheel);
   const wspin = new THREE.Group(); wheel.add(wspin);
-  const tyre = new THREE.Mesh(new THREE.TorusGeometry(1.2, .105, 24, 120), new THREE.MeshStandardMaterial({ color: 0x141416, roughness: .92 }));
-  const rim = new THREE.Mesh(new THREE.TorusGeometry(1.075, .05, 16, 120), alu); rim.scale.z = 1.9;
-  const hub = new THREE.Mesh(new THREE.CylinderGeometry(.075, .075, .44, 24), alu); hub.rotation.x = Math.PI / 2;
-  wspin.add(tyre, rim, hub);
-  for (const z of [-.16, .16]) { const f = new THREE.Mesh(new THREE.CylinderGeometry(.16, .16, .025, 32), steel); f.rotation.x = Math.PI / 2; f.position.z = z; wspin.add(f); }
-  for (let i = 0; i < 28; i++) {                         // spokes, laced alternately to each flange
-    const a = i / 28 * Math.PI * 2, side = i % 2 ? 1 : -1, fa = a + side * 1.05 * (i % 4 < 2 ? 1 : -1);
-    wspin.add(rod(V(.15 * Math.cos(fa), .15 * Math.sin(fa), side * .16), V(1.04 * Math.cos(a), 1.04 * Math.sin(a), 0), .0085, steel));
+  // DT Swiss GRC 1100 style: deep carbon rim with decals, straight-pull spokes, hub, disc rotor, and a gravel tyre (tan sidewalls, small knobs).
+  const carbon = new THREE.MeshPhysicalMaterial({ color: 0x0d0d0f, roughness: .4, clearcoat: .4, clearcoatRoughness: .28, side: THREE.DoubleSide });
+  const blackMetal = new THREE.MeshStandardMaterial({ color: 0x131315, metalness: .85, roughness: .32 });
+  const TR = 1.06, TT = .165, tg = new THREE.TorusGeometry(TR, TT, 32, 160);
+  { const pos = tg.attributes.position, col = new Float32Array(pos.count * 3), tan = new THREE.Color(0xb28550), blk = new THREE.Color(0x141416);
+    for (let i = 0; i < pos.count; i++) { const rho = Math.hypot(pos.getX(i), pos.getY(i)); (rho > TR + .075 || rho < TR - .125 ? blk : tan).toArray(col, i * 3); }
+    tg.setAttribute('color', new THREE.BufferAttribute(col, 3)); }
+  const tyre = new THREE.Mesh(tg, new THREE.MeshStandardMaterial({ vertexColors: true, roughness: .92 })); wspin.add(tyre);
+  const ROWS = [-38, -19, 0, 19, 38], PER = 104, knobs = new THREE.InstancedMesh(new THREE.BoxGeometry(.034, .05, .042), new THREE.MeshStandardMaterial({ color: 0x121214, roughness: .95 }), ROWS.length * PER);
+  { const KM = new THREE.Matrix4(), qz = new THREE.Quaternion(), qy = new THREE.Quaternion(), Z = V(0, 0, 1), Y = V(0, 1, 0), one = V(1, 1, 1); let n = 0;
+    ROWS.forEach((deg, row) => { const phi = deg * Math.PI / 180, rr = TR + (TT + .012) * Math.cos(phi), zz = (TT + .012) * Math.sin(phi);
+      for (let k = 0; k < PER; k++) { const th = (k + (row % 2 ? .5 : 0)) / PER * Math.PI * 2; qz.setFromAxisAngle(Z, th); qy.setFromAxisAngle(Y, -phi);
+        KM.compose(V(rr * Math.cos(th), rr * Math.sin(th), zz), qz.clone().multiply(qy), one); knobs.setMatrixAt(n++, KM); } }); }
+  wspin.add(knobs);
+  const prof = [[.955, .105], [.935, .119], [.9, .113], [.84, .072], [.795, .024], [.784, 0], [.795, -.024], [.84, -.072], [.9, -.113], [.935, -.119], [.955, -.105]].map(([r, h]) => new THREE.Vector2(r, h));
+  const rim = new THREE.Mesh(new THREE.LatheGeometry(prof, 160), carbon); rim.rotation.x = Math.PI / 2; wspin.add(rim);
+  const decalTex = (() => { const c = document.createElement('canvas'); c.width = 4096; c.height = 128; const g = c.getContext('2d'); g.fillStyle = '#fff'; g.textBaseline = 'middle';
+    [['DT SWISS', .04, '900 italic 92px Arial, Helvetica, sans-serif'], ['GRC 1100', .2, '700 60px Arial, Helvetica, sans-serif'], ['DT SWISS', .54, '900 italic 92px Arial, Helvetica, sans-serif'], ['GRC 1100', .7, '700 60px Arial, Helvetica, sans-serif']].forEach(([t, x, f]) => { g.font = f; g.fillText(t, x * 4096, 66); });
+    const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8; return t; })();
+  const decal = new THREE.Mesh(new THREE.LatheGeometry([[.925, .1215], [.9, .1155], [.845, .078]].map(([r, h]) => new THREE.Vector2(r, h)), 160), new THREE.MeshStandardMaterial({ map: decalTex, transparent: true, alphaTest: .35, roughness: .5, side: THREE.DoubleSide })); decal.rotation.x = Math.PI / 2; wspin.add(decal);
+  const hubBody = cylZ(.052, .5, blackMetal, 32), axle = cylZ(.03, .6, chrome, 24); wspin.add(hubBody, axle);
+  for (const z of [-.14, .14]) { const f = cylZ(.105, .04, blackMetal, 40); f.position.z = z; wspin.add(f); }
+  for (let i = 0; i < 24; i++) {                         // 24 straight-pull spokes, crossed, alternating flanges
+    const a = i / 24 * Math.PI * 2, side = i % 2 ? 1 : -1, fa = a + (i % 4 < 2 ? .62 : -.62);
+    wspin.add(rod(V(.095 * Math.cos(fa), .095 * Math.sin(fa), side * .14), V(.79 * Math.cos(a), .79 * Math.sin(a), 0), .0075, blackMetal));
   }
-  const valve = new THREE.Mesh(new THREE.CylinderGeometry(.018, .018, .16, 10), new THREE.MeshStandardMaterial({ color: 0xb08d57, metalness: 1, roughness: .3 })); valve.position.set(0, .97, 0); wspin.add(valve);
-  const refl = new THREE.Mesh(new THREE.BoxGeometry(.2, .08, .03), new THREE.MeshPhysicalMaterial({ color: SIGNAL, roughness: .2, clearcoat: 1 })); refl.position.set(0, -.62, 0); wspin.add(refl);
+  const rotorMat = new THREE.MeshStandardMaterial({ color: 0xbfc3c9, metalness: 1, roughness: .28, side: THREE.DoubleSide });
+  const rotor = new THREE.Group(); rotor.position.z = -.21; rotor.add(new THREE.Mesh(new THREE.RingGeometry(.31, .4, 72), rotorMat));
+  for (let i = 0; i < 6; i++) { const arm2 = new THREE.Mesh(new THREE.BoxGeometry(.035, .25, .008), rotorMat); const a = i / 6 * Math.PI * 2; arm2.position.set(Math.cos(a) * .2, Math.sin(a) * .2, 0); arm2.rotation.z = a + Math.PI / 2 + .35; rotor.add(arm2); }
+  rotor.add(new THREE.Mesh(new THREE.RingGeometry(.06, .11, 40), blackMetal)); wspin.add(rotor);
+  const refl = new THREE.Mesh(new THREE.TorusGeometry(.056, .016, 14, 48), new THREE.MeshPhysicalMaterial({ color: SIGNAL, roughness: .25, clearcoat: 1 })); wspin.add(refl);   // the accent: a band on the hub and the valve cap
+  wspin.add(rod(V(0, .79, 0), V(0, .7, 0), .012, blackMetal)); const cap = new THREE.Mesh(new THREE.CylinderGeometry(.016, .016, .04, 12), refl.material); cap.position.set(0, .69, 0); wspin.add(cap);
   wheel.add(hit(new THREE.CircleGeometry(1.4, 24), 'cycle')); shadow(wheel);
 
 
@@ -207,11 +252,18 @@ window.Toy3D = (() => {
         grown = lerp(grown, dig < 0 || dig > .5 ? target : grown, dt * 3); sprout.scale.setScalar(Math.max(.001, grown)); } }; }
 
   // -- framed artwork: click and it opens larger in a lightbox
-  { const g = new THREE.Group(); g.position.set(0, -.6, .12); const ART_SRC = '', W = 1.0, H = W * 1408 / 1010;
-    const frame = new THREE.Mesh(new THREE.BoxGeometry(W + .16, H + .16, .09), new THREE.MeshStandardMaterial({ color: 0x141414, roughness: .45 })); g.add(frame);
-    const print = new THREE.Mesh(new THREE.PlaneGeometry(W, H), new THREE.MeshBasicMaterial({ color: 0x111111 })); print.position.z = .05; g.add(print);
+  { const g = new THREE.Group(); g.position.set(0, -.6, .12); const ART_SRC = '', W = .78, H = W * 1408 / 1010;
+    // a moulded frame, a bevel-cut mat board, the print set back behind it, and glass in front
+    const rectHole = (w, h, hw, hh) => { const sh = new THREE.Shape(); sh.moveTo(-w / 2, -h / 2); sh.lineTo(w / 2, -h / 2); sh.lineTo(w / 2, h / 2); sh.lineTo(-w / 2, h / 2); sh.closePath();
+      const ho = new THREE.Path(); ho.moveTo(-hw / 2, -hh / 2); ho.lineTo(-hw / 2, hh / 2); ho.lineTo(hw / 2, hh / 2); ho.lineTo(hw / 2, -hh / 2); ho.closePath(); sh.holes.push(ho); return sh; };
+    const MAT = .1, BAR = .075, iw = W + MAT * 2, ih = H + MAT * 2;
+    const frame = new THREE.Mesh(new THREE.ExtrudeGeometry(rectHole(iw + BAR * 2, ih + BAR * 2, iw, ih), { depth: .075, bevelEnabled: true, bevelSize: .022, bevelThickness: .03, bevelSegments: 5 }), new THREE.MeshPhysicalMaterial({ color: 0x121212, roughness: .32, clearcoat: .5, clearcoatRoughness: .35 })); frame.position.z = -.02; g.add(frame);
+    const mat = new THREE.Mesh(new THREE.ExtrudeGeometry(rectHole(iw + .02, ih + .02, W, H), { depth: .012, bevelEnabled: true, bevelSize: .012, bevelThickness: .012, bevelSegments: 2 }), new THREE.MeshStandardMaterial({ color: 0xf6f4ee, roughness: .95 })); mat.position.z = .012; g.add(mat);
+    const back = new THREE.Mesh(new THREE.BoxGeometry(iw + BAR, ih + BAR, .02), new THREE.MeshStandardMaterial({ color: 0x2a2623, roughness: .9 })); back.position.z = -.03; g.add(back);
+    const print = new THREE.Mesh(new THREE.PlaneGeometry(W + .02, H + .02), new THREE.MeshBasicMaterial({ color: 0x111111 })); print.position.z = .006; g.add(print);
+    const glass = new THREE.Mesh(new THREE.PlaneGeometry(iw, ih), new THREE.MeshPhysicalMaterial({ color: 0xffffff, transparent: true, opacity: .07, roughness: .02, metalness: 0, clearcoat: 1, depthWrite: false })); glass.position.z = .05; g.add(glass);
     if (ART_SRC) new THREE.TextureLoader().load(ART_SRC, (t) => { t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8; print.material.map = t; print.material.color.set(0xffffff); print.material.needsUpdate = true; kick(); });
-    const h = hit(new THREE.PlaneGeometry(W + .3, H + .3), 'nose'); h.position.z = .1; g.add(h);
+    const h = hit(new THREE.PlaneGeometry(W + .45, H + .45), 'nose'); h.position.z = .12; g.add(h);
     let box = null; const close = () => { if (box) { box.remove(); box = null; removeEventListener('keydown', onKey); } }, onKey = (e) => { if (e.key === 'Escape') close(); };
     const openBox = () => { if (box) return; box = document.createElement('div'); box.className = 'art-lightbox'; box.setAttribute('role', 'dialog'); box.setAttribute('aria-modal', 'true'); box.setAttribute('aria-label', 'Artwork by Matt Jongbloet');
       box.innerHTML = '<button type="button" aria-label="Close">Close ✕</button><img src="../assets/art-why.jpg" alt="“Why?”, a dense black and white line illustration by Matt Jongbloet">';
@@ -278,20 +330,30 @@ window.Toy3D = (() => {
   // -- half a stroopwafel: each click takes a bite where you clicked; it grows back slowly
   { const g = new THREE.Group(); g.position.set(0, MOUTH_Y - .1, .08); const S = 512, cv = document.createElement('canvas'); cv.width = S; cv.height = S / 2; const c2 = cv.getContext('2d');
     const tex = new THREE.CanvasTexture(cv); tex.colorSpace = THREE.SRGBColorSpace; tex.anisotropy = 8; const bites = [];
-    const paint = (now) => { c2.globalCompositeOperation = 'source-over'; c2.clearRect(0, 0, S, S / 2);
-      c2.save(); c2.beginPath(); c2.arc(S / 2, 0, S / 2 - 2, 0, Math.PI); c2.closePath(); c2.clip();
-      c2.fillStyle = '#d79a4c'; c2.fillRect(0, 0, S, S / 2); c2.strokeStyle = '#b5762f'; c2.lineWidth = 4;
-      for (let i = -S; i < S * 2; i += 24) { c2.beginPath(); c2.moveTo(i, 0); c2.lineTo(i + S / 2, S / 2); c2.stroke(); c2.beginPath(); c2.moveTo(i, 0); c2.lineTo(i - S / 2, S / 2); c2.stroke(); }
-      c2.restore(); c2.strokeStyle = '#a8682a'; c2.lineWidth = 9; c2.beginPath(); c2.arc(S / 2, 0, S / 2 - 7, 0, Math.PI); c2.stroke(); c2.fillStyle = '#a8682a'; c2.fillRect(0, 0, S, 6);
+    // baked once: golden wafer, darker toward the rim, speckled, with the pressed diamond grid; plus a height map for the relief
+    const base = document.createElement('canvas'); base.width = S; base.height = S / 2; const height = document.createElement('canvas'); height.width = S; height.height = S / 2;
+    { const b = base.getContext('2d'), hh = height.getContext('2d'); const clip = (c) => { c.beginPath(); c.arc(S / 2, 0, S / 2 - 2, 0, Math.PI); c.closePath(); c.clip(); };
+      b.save(); clip(b); const gr = b.createRadialGradient(S / 2, 0, S * .05, S / 2, 0, S / 2); gr.addColorStop(0, '#e2a654'); gr.addColorStop(.7, '#d29245'); gr.addColorStop(1, '#a8672a'); b.fillStyle = gr; b.fillRect(0, 0, S, S / 2);
+      for (let i = 0; i < 2600; i++) { b.fillStyle = `rgba(${rnd() > .5 ? '120,66,20' : '255,214,150'},${.05 + rnd() * .12})`; b.beginPath(); b.arc(rnd() * S, rnd() * S / 2, .6 + rnd() * 2.2, 0, 6.283); b.fill(); }
+      hh.fillStyle = '#555'; hh.fillRect(0, 0, S, S / 2);
+      for (const [cx, w, a, hc] of [[b, 7, 'rgba(150,88,30,.55)', null], [hh, 9, null, '#fff']]) { cx.strokeStyle = a || hc; cx.lineWidth = w; cx.lineCap = 'round';
+        for (let i = -S; i < S * 2; i += 26) { cx.beginPath(); cx.moveTo(i, 0); cx.lineTo(i + S / 2, S / 2); cx.stroke(); cx.beginPath(); cx.moveTo(i, 0); cx.lineTo(i - S / 2, S / 2); cx.stroke(); } }
+      b.strokeStyle = 'rgba(255,225,170,.35)'; b.lineWidth = 2; for (let i = -S; i < S * 2; i += 26) { b.beginPath(); b.moveTo(i - 3, 0); b.lineTo(i - 3 + S / 2, S / 2); b.stroke(); }
+      b.restore(); b.strokeStyle = '#96591f'; b.lineWidth = 10; b.beginPath(); b.arc(S / 2, 0, S / 2 - 7, 0, Math.PI); b.stroke(); b.fillStyle = '#96591f'; b.fillRect(0, 0, S, 5); }
+    const bump = new THREE.CanvasTexture(height); bump.anisotropy = 8;
+    const paint = (now) => { c2.globalCompositeOperation = 'source-over'; c2.clearRect(0, 0, S, S / 2); c2.drawImage(base, 0, 0);
       c2.globalCompositeOperation = 'destination-out';
       for (const b of bites) { const k = Math.max(0, 1 - Math.max(0, now - b.t - 2500) / 6500), r = b.r * k; if (r < 1) continue;
         for (let j = 0; j < 6; j++) { const a = j / 6 * 6.283 + b.a; c2.beginPath(); c2.arc(b.x + Math.cos(a) * r * .55, b.y + Math.sin(a) * r * .55, r * .58, 0, 6.283); c2.fill(); } }
       tex.needsUpdate = true; };
     paint(0);
-    const geo = new THREE.PlaneGeometry(3.1, 1.55), layers = [];
-    [[0, 0x9a5a22], [.03, 0x8a4a14], [.06, 0xb9742c], [.09, 0xffffff]].forEach(([z, col]) => { const m = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ map: tex, color: col, roughness: .8, alphaTest: .5, transparent: false })); m.position.z = z;
-      m.customDepthMaterial = new THREE.MeshDepthMaterial({ depthPacking: THREE.RGBADepthPacking, map: tex, alphaTest: .5 }); g.add(m); layers.push(m); });
-    layers[3].userData.k = 'mouth';
+    // twelve thin layers give it real thickness: wafer, a glossy caramel middle, wafer. Bites cut through all of them.
+    const geo = new THREE.PlaneGeometry(3.1, 1.55), layers = [], LN = 12;
+    for (let i = 0; i < LN; i++) { const caramel = i >= 5 && i <= 6, top = i === LN - 1;
+      const m = new THREE.Mesh(geo, new THREE.MeshPhysicalMaterial({ map: tex, color: caramel ? 0x7a3f10 : top ? 0xffffff : 0xb9783a, roughness: caramel ? .18 : .78, clearcoat: caramel ? 1 : 0, alphaTest: .5,
+        bumpMap: top ? bump : null, bumpScale: top ? 1.6 : 0 })); m.position.z = i * .0125; if (caramel) m.scale.set(1.012, 1.02, 1);
+      m.customDepthMaterial = new THREE.MeshDepthMaterial({ depthPacking: THREE.RGBADepthPacking, map: tex, alphaTest: .5 }); g.add(m); layers.push(m); }
+    layers[LN - 1].userData.k = 'mouth';
     const crunch = () => { try { audio(); const src = ac.createBufferSource(), bp = ac.createBiquadFilter(), gn = ac.createGain(), now = ac.currentTime; src.buffer = noise; bp.type = 'bandpass'; bp.frequency.value = 1500; bp.Q.value = .8;
       gn.gain.setValueAtTime(.22, now); gn.gain.exponentialRampToValueAtTime(.0001, now + .09); src.connect(bp).connect(gn).connect(ac.destination); src.start(now); src.stop(now + .03); } catch (e) { /* no audio: bite silently */ } };
     mouths.stroopwafel = { g, tip: 'Stroopwafel: click to take a bite. Eat it all if you like; it grows back.',

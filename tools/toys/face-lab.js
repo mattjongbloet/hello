@@ -93,11 +93,18 @@
         grown = lerp(grown, dig < 0 || dig > .5 ? target : grown, dt * 3); sprout.scale.setScalar(Math.max(.001, grown)); } }; }
 
   // -- framed artwork: click and it opens larger in a lightbox
-  { const g = new THREE.Group(); g.position.set(0, -.6, .12); const ART_SRC = '%%ART%%', W = 1.0, H = W * 1408 / 1010;
-    const frame = new THREE.Mesh(new THREE.BoxGeometry(W + .16, H + .16, .09), new THREE.MeshStandardMaterial({ color: 0x141414, roughness: .45 })); g.add(frame);
-    const print = new THREE.Mesh(new THREE.PlaneGeometry(W, H), new THREE.MeshBasicMaterial({ color: 0x111111 })); print.position.z = .05; g.add(print);
+  { const g = new THREE.Group(); g.position.set(0, -.6, .12); const ART_SRC = '%%ART%%', W = .78, H = W * 1408 / 1010;
+    // a moulded frame, a bevel-cut mat board, the print set back behind it, and glass in front
+    const rectHole = (w, h, hw, hh) => { const sh = new THREE.Shape(); sh.moveTo(-w / 2, -h / 2); sh.lineTo(w / 2, -h / 2); sh.lineTo(w / 2, h / 2); sh.lineTo(-w / 2, h / 2); sh.closePath();
+      const ho = new THREE.Path(); ho.moveTo(-hw / 2, -hh / 2); ho.lineTo(-hw / 2, hh / 2); ho.lineTo(hw / 2, hh / 2); ho.lineTo(hw / 2, -hh / 2); ho.closePath(); sh.holes.push(ho); return sh; };
+    const MAT = .1, BAR = .075, iw = W + MAT * 2, ih = H + MAT * 2;
+    const frame = new THREE.Mesh(new THREE.ExtrudeGeometry(rectHole(iw + BAR * 2, ih + BAR * 2, iw, ih), { depth: .075, bevelEnabled: true, bevelSize: .022, bevelThickness: .03, bevelSegments: 5 }), new THREE.MeshPhysicalMaterial({ color: 0x121212, roughness: .32, clearcoat: .5, clearcoatRoughness: .35 })); frame.position.z = -.02; g.add(frame);
+    const mat = new THREE.Mesh(new THREE.ExtrudeGeometry(rectHole(iw + .02, ih + .02, W, H), { depth: .012, bevelEnabled: true, bevelSize: .012, bevelThickness: .012, bevelSegments: 2 }), new THREE.MeshStandardMaterial({ color: 0xf6f4ee, roughness: .95 })); mat.position.z = .012; g.add(mat);
+    const back = new THREE.Mesh(new THREE.BoxGeometry(iw + BAR, ih + BAR, .02), new THREE.MeshStandardMaterial({ color: 0x2a2623, roughness: .9 })); back.position.z = -.03; g.add(back);
+    const print = new THREE.Mesh(new THREE.PlaneGeometry(W + .02, H + .02), new THREE.MeshBasicMaterial({ color: 0x111111 })); print.position.z = .006; g.add(print);
+    const glass = new THREE.Mesh(new THREE.PlaneGeometry(iw, ih), new THREE.MeshPhysicalMaterial({ color: 0xffffff, transparent: true, opacity: .07, roughness: .02, metalness: 0, clearcoat: 1, depthWrite: false })); glass.position.z = .05; g.add(glass);
     if (ART_SRC) new THREE.TextureLoader().load(ART_SRC, (t) => { t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8; print.material.map = t; print.material.color.set(0xffffff); print.material.needsUpdate = true; kick(); });
-    const h = hit(new THREE.PlaneGeometry(W + .3, H + .3), 'nose'); h.position.z = .1; g.add(h);
+    const h = hit(new THREE.PlaneGeometry(W + .45, H + .45), 'nose'); h.position.z = .12; g.add(h);
     let box = null; const close = () => { if (box) { box.remove(); box = null; removeEventListener('keydown', onKey); } }, onKey = (e) => { if (e.key === 'Escape') close(); };
     const openBox = () => { if (box) return; box = document.createElement('div'); box.className = 'art-lightbox'; box.setAttribute('role', 'dialog'); box.setAttribute('aria-modal', 'true'); box.setAttribute('aria-label', 'Artwork by Matt Jongbloet');
       box.innerHTML = '<button type="button" aria-label="Close">Close ✕</button><img src="../assets/art-why.jpg" alt="“Why?”, a dense black and white line illustration by Matt Jongbloet">';
@@ -164,20 +171,30 @@
   // -- half a stroopwafel: each click takes a bite where you clicked; it grows back slowly
   { const g = new THREE.Group(); g.position.set(0, MOUTH_Y - .1, .08); const S = 512, cv = document.createElement('canvas'); cv.width = S; cv.height = S / 2; const c2 = cv.getContext('2d');
     const tex = new THREE.CanvasTexture(cv); tex.colorSpace = THREE.SRGBColorSpace; tex.anisotropy = 8; const bites = [];
-    const paint = (now) => { c2.globalCompositeOperation = 'source-over'; c2.clearRect(0, 0, S, S / 2);
-      c2.save(); c2.beginPath(); c2.arc(S / 2, 0, S / 2 - 2, 0, Math.PI); c2.closePath(); c2.clip();
-      c2.fillStyle = '#d79a4c'; c2.fillRect(0, 0, S, S / 2); c2.strokeStyle = '#b5762f'; c2.lineWidth = 4;
-      for (let i = -S; i < S * 2; i += 24) { c2.beginPath(); c2.moveTo(i, 0); c2.lineTo(i + S / 2, S / 2); c2.stroke(); c2.beginPath(); c2.moveTo(i, 0); c2.lineTo(i - S / 2, S / 2); c2.stroke(); }
-      c2.restore(); c2.strokeStyle = '#a8682a'; c2.lineWidth = 9; c2.beginPath(); c2.arc(S / 2, 0, S / 2 - 7, 0, Math.PI); c2.stroke(); c2.fillStyle = '#a8682a'; c2.fillRect(0, 0, S, 6);
+    // baked once: golden wafer, darker toward the rim, speckled, with the pressed diamond grid; plus a height map for the relief
+    const base = document.createElement('canvas'); base.width = S; base.height = S / 2; const height = document.createElement('canvas'); height.width = S; height.height = S / 2;
+    { const b = base.getContext('2d'), hh = height.getContext('2d'); const clip = (c) => { c.beginPath(); c.arc(S / 2, 0, S / 2 - 2, 0, Math.PI); c.closePath(); c.clip(); };
+      b.save(); clip(b); const gr = b.createRadialGradient(S / 2, 0, S * .05, S / 2, 0, S / 2); gr.addColorStop(0, '#e2a654'); gr.addColorStop(.7, '#d29245'); gr.addColorStop(1, '#a8672a'); b.fillStyle = gr; b.fillRect(0, 0, S, S / 2);
+      for (let i = 0; i < 2600; i++) { b.fillStyle = `rgba(${rnd() > .5 ? '120,66,20' : '255,214,150'},${.05 + rnd() * .12})`; b.beginPath(); b.arc(rnd() * S, rnd() * S / 2, .6 + rnd() * 2.2, 0, 6.283); b.fill(); }
+      hh.fillStyle = '#555'; hh.fillRect(0, 0, S, S / 2);
+      for (const [cx, w, a, hc] of [[b, 7, 'rgba(150,88,30,.55)', null], [hh, 9, null, '#fff']]) { cx.strokeStyle = a || hc; cx.lineWidth = w; cx.lineCap = 'round';
+        for (let i = -S; i < S * 2; i += 26) { cx.beginPath(); cx.moveTo(i, 0); cx.lineTo(i + S / 2, S / 2); cx.stroke(); cx.beginPath(); cx.moveTo(i, 0); cx.lineTo(i - S / 2, S / 2); cx.stroke(); } }
+      b.strokeStyle = 'rgba(255,225,170,.35)'; b.lineWidth = 2; for (let i = -S; i < S * 2; i += 26) { b.beginPath(); b.moveTo(i - 3, 0); b.lineTo(i - 3 + S / 2, S / 2); b.stroke(); }
+      b.restore(); b.strokeStyle = '#96591f'; b.lineWidth = 10; b.beginPath(); b.arc(S / 2, 0, S / 2 - 7, 0, Math.PI); b.stroke(); b.fillStyle = '#96591f'; b.fillRect(0, 0, S, 5); }
+    const bump = new THREE.CanvasTexture(height); bump.anisotropy = 8;
+    const paint = (now) => { c2.globalCompositeOperation = 'source-over'; c2.clearRect(0, 0, S, S / 2); c2.drawImage(base, 0, 0);
       c2.globalCompositeOperation = 'destination-out';
       for (const b of bites) { const k = Math.max(0, 1 - Math.max(0, now - b.t - 2500) / 6500), r = b.r * k; if (r < 1) continue;
         for (let j = 0; j < 6; j++) { const a = j / 6 * 6.283 + b.a; c2.beginPath(); c2.arc(b.x + Math.cos(a) * r * .55, b.y + Math.sin(a) * r * .55, r * .58, 0, 6.283); c2.fill(); } }
       tex.needsUpdate = true; };
     paint(0);
-    const geo = new THREE.PlaneGeometry(3.1, 1.55), layers = [];
-    [[0, 0x9a5a22], [.03, 0x8a4a14], [.06, 0xb9742c], [.09, 0xffffff]].forEach(([z, col]) => { const m = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ map: tex, color: col, roughness: .8, alphaTest: .5, transparent: false })); m.position.z = z;
-      m.customDepthMaterial = new THREE.MeshDepthMaterial({ depthPacking: THREE.RGBADepthPacking, map: tex, alphaTest: .5 }); g.add(m); layers.push(m); });
-    layers[3].userData.k = 'mouth';
+    // twelve thin layers give it real thickness: wafer, a glossy caramel middle, wafer. Bites cut through all of them.
+    const geo = new THREE.PlaneGeometry(3.1, 1.55), layers = [], LN = 12;
+    for (let i = 0; i < LN; i++) { const caramel = i >= 5 && i <= 6, top = i === LN - 1;
+      const m = new THREE.Mesh(geo, new THREE.MeshPhysicalMaterial({ map: tex, color: caramel ? 0x7a3f10 : top ? 0xffffff : 0xb9783a, roughness: caramel ? .18 : .78, clearcoat: caramel ? 1 : 0, alphaTest: .5,
+        bumpMap: top ? bump : null, bumpScale: top ? 1.6 : 0 })); m.position.z = i * .0125; if (caramel) m.scale.set(1.012, 1.02, 1);
+      m.customDepthMaterial = new THREE.MeshDepthMaterial({ depthPacking: THREE.RGBADepthPacking, map: tex, alphaTest: .5 }); g.add(m); layers.push(m); }
+    layers[LN - 1].userData.k = 'mouth';
     const crunch = () => { try { audio(); const src = ac.createBufferSource(), bp = ac.createBiquadFilter(), gn = ac.createGain(), now = ac.currentTime; src.buffer = noise; bp.type = 'bandpass'; bp.frequency.value = 1500; bp.Q.value = .8;
       gn.gain.setValueAtTime(.22, now); gn.gain.exponentialRampToValueAtTime(.0001, now + .09); src.connect(bp).connect(gn).connect(ac.destination); src.start(now); src.stop(now + .03); } catch (e) { /* no audio: bite silently */ } };
     mouths.stroopwafel = { g, tip: 'Stroopwafel: click to take a bite. Eat it all if you like; it grows back.',

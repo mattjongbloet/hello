@@ -6,7 +6,7 @@ rd = lambda n: open(os.path.join(T, n)).read()
 src = rd("object-face.js"); a = src.index("  // ---- Left eye: vinyl record ----"); b = src.index("  // ---- Nose: a tree ----")
 import base64, io
 from PIL import Image
-im = Image.open(os.path.join(ROOT, "redesigns", "assets", "art-why.jpg")).convert("RGB"); im = im.resize((480, round(480 * im.height / im.width)), Image.LANCZOS)
+im = Image.open(os.path.join(ROOT, "redesigns", "assets", "art-why.jpg")).convert("RGB"); im = im.resize((760, round(760 * im.height / im.width)), Image.LANCZOS)
 buf = io.BytesIO(); im.save(buf, "JPEG", quality=82)   # embedded so the 3D texture also loads from file://
 ART = "data:image/jpeg;base64," + base64.b64encode(buf.getvalue()).decode()
 js = rd("three-common.js") + "\n" + rd("face-lab.js").replace("/*EYES*/", src[a:b]).replace("%%ART%%", ART)
