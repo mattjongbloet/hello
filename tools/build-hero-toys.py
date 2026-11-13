@@ -41,9 +41,13 @@ def build():
         s = s.replace(js, js + '\n' + THREE + '\n<script src="toy.js"></script>')
         open(p, "w").write(s)
         open(os.path.join(out, "toy.css"), "w").write(read("toy-base.css") + "\n" + read(toy + ".css"))
-        if toy == "face-home":   # the lab's face (cursor nose, swatch smile) with the eyes from object-face.js
+        if toy == "face-home":   # the lab's face (framed-art nose, stroopwafel smile) with the eyes from object-face.js
             src = read("object-face.js"); a = src.index("  // ---- Left eye: vinyl record ----"); b = src.index("  // ---- Nose: a tree ----")
-            js = read("face-lab.js").replace("/*EYES*/", src[a:b]).replace("%%ART%%", "")
+            import base64, io
+            from PIL import Image
+            im = Image.open(os.path.join(ROOT, "redesigns", "assets", "art-why.jpg")).convert("RGB"); im = im.resize((760, round(760 * im.height / im.width)), Image.LANCZOS)
+            buf = io.BytesIO(); im.save(buf, "JPEG", quality=82)   # embedded so the 3D texture also loads from file://
+            js = read("face-lab.js").replace("/*EYES*/", src[a:b]).replace("%%ART%%", "data:image/jpeg;base64," + base64.b64encode(buf.getvalue()).decode())
         else:
             js = read(toy + ".js")
         open(os.path.join(out, "toy.js"), "w").write(read("three-common.js") + "\n" + js)

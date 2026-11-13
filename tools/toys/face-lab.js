@@ -211,8 +211,8 @@
   };
   root.querySelectorAll('.lab-opts button').forEach((b) => b.addEventListener('click', () => choose(b.dataset.kind, b.dataset.name)));
   noses.tree.g.visible = true; mouths.beans.g.visible = true;
-  if (!HOME) { vinyl.scale.setScalar(.86); wheel.scale.setScalar(.86); }   // lab: smaller eyes so the larger frame leads
-  if (HOME) { choose('mouth', 'swatches'); choose('nose', 'cursor'); } else { choose('mouth', 'stroopwafel'); choose('nose', 'art'); }   // home: Matt's pick; lab: what he's trying now
+  vinyl.scale.setScalar(.82); wheel.scale.setScalar(.82);   // smaller eyes so the larger frame leads
+  choose('mouth', 'stroopwafel'); choose('nose', 'art');   // Matt's pick, on the home page and in the lab
 
   // ---- sound (Web Audio, nothing to download). Browsers only allow sound after a click, so both start on click.
   let ac = null, stopMusic = null, noise = null, ticks = 0, push = 0;
