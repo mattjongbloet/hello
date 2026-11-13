@@ -106,6 +106,14 @@ body { font-size: 16px; }
   .hero-screen .toy-hint { flex: none; min-height: 40px; display: grid; place-items: center; }   /* 40px = the pills' height */
 }
 .work-band { margin-top: 0; padding-top: 52px; }
+/* Project cards (Matt's pick from the card lab): screenshot on top edge to edge, the logo straddling its bottom edge, bold title. */
+.pcard { padding: 0; flex-direction: column-reverse; justify-content: flex-end; }
+.pc-shot { margin: 0; border-radius: 0; }
+.pc-copy { padding: 0 32px 32px; }
+.pc-logo { width: 64px; height: 64px; margin: -32px 0 14px; position: relative; z-index: 1; box-shadow: 0 0 0 4px var(--paper); }   /* z-index keeps it above the image when the image scales on hover */
+.pcard h3 { font-weight: 600; }
+:root[data-theme="dark"] .pc-logo { box-shadow: 0 0 0 4px var(--mist); opacity: 1; }
+@media (max-width: 900px) { .pcard { padding: 0; } .pc-shot { margin: 0; } .pc-copy { padding: 0 24px 26px; } .pc-logo { width: 56px; height: 56px; margin: -28px 0 12px; } }
 @media (max-width: 900px) { .hero-screen { min-height: 0; } }
 
 /* One typeface: the small labels that used the monospace font are set in Roobert too. */

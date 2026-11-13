@@ -76,7 +76,7 @@ h1 { font: 650 clamp(28px, 3.4vw, 40px)/1.1 var(--body); letter-spacing: -.025em
 .v2 .copy, .v4 .copy { padding: 26px 32px 32px; }
 /* 2 */ .v2 .logo { width: 48px; height: 48px; border-radius: 12px; margin-bottom: 14px; }
 /* 3 */ .v3 .pc { padding: 14px; } .v3 .shot { margin: 0; border-radius: 14px; } .v3 .copy { padding: 22px 18px 18px; } .v3 .logo { width: 48px; height: 48px; border-radius: 12px; margin-bottom: 14px; }
-/* 4 */ .v4 .copy { padding-top: 0; } .v4 .logo { width: 64px; height: 64px; margin: -32px 0 14px; position: relative; box-shadow: 0 0 0 4px var(--paper); }
+/* 4 */ .v4 .copy { padding-top: 0; } .v4 .logo { width: 64px; height: 64px; margin: -32px 0 14px; position: relative; z-index: 1; box-shadow: 0 0 0 4px var(--paper); }
 /* 5 */ .v5 .head { flex-direction: row; align-items: center; gap: 12px; } .v5 .logo { width: 36px; height: 36px; border-radius: 10px; margin: 0; } .v5 .pc h3 { margin-top: 16px; }
 /* 6 */ .v6 .logo { display: none; } .v6 .co { align-self: flex-start; padding: 6px 12px; border-radius: 999px; background: color-mix(in srgb, var(--ink) 6%, transparent); color: var(--ink); font-size: 14px; font-weight: 500; } .v6 .pc h3 { margin-top: 16px; }
 /* 7 */ .v7 .pc { padding: 40px 40px 0; } .v7 .copy { padding: 0; align-items: center; text-align: center; } .v7 .head { align-items: center; } .v7 .shot { border-radius: 20px 20px 0 0; }
@@ -125,7 +125,7 @@ TOP = """.pcard { padding: 0; flex-direction: column-reverse; justify-content: f
 @media (max-width: 900px) { .pcard { padding: 0; } .pc-shot { margin: 0; } }
 """
 SHORT = [("overlap", "Image on top, logo overlapping", TOP + """.pc-copy { padding: 0 32px 32px; }
-.pc-logo { width: 64px; height: 64px; margin: -32px 0 14px; position: relative; box-shadow: 0 0 0 4px var(--paper); }
+.pc-logo { width: 64px; height: 64px; margin: -32px 0 14px; position: relative; z-index: 1; box-shadow: 0 0 0 4px var(--paper); }
 :root[data-theme="dark"] .pc-logo { box-shadow: 0 0 0 4px var(--mist); opacity: 1; }
 @media (max-width: 900px) { .pc-copy { padding: 0 24px 26px; } .pc-logo { width: 56px; height: 56px; margin: -28px 0 12px; } }"""),
  ("compact", "Compact header", """.pc-copy { display: grid; grid-template-columns: auto 1fr; align-items: center; column-gap: 12px; row-gap: 4px; }
