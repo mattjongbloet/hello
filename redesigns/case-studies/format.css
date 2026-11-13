@@ -69,7 +69,7 @@ body { font-size: 16px; }
 /* Accent: the tan of the gravel tyre's sidewall (also the record label). --signal-ink is the deeper tan used when the accent is small text. */
 :root { --signal: #b28550; --signal-soft: #f6efe4; --signal-ink: #7a5626; }
 .contact .btn:hover { color: #15171a; }
-/* Header: face, name and role on the left; Work, About, Resume, theme toggle and Let's talk on the right. */
+/* Header: face, name and role on the left; Work, About, Resume and the theme toggle on the right (no “Let's talk” button: Matt removed it). */
 .top .wrap { gap: 28px; }
 .brand { gap: 12px; font-weight: 600; font-size: 16px; }
 .brand img.face { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; object-position: 50% 30%; }

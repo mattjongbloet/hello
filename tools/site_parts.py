@@ -1,5 +1,5 @@
 """Shared parts for Matt's current site (redesigns/site + redesigns/case-studies):
-the header (face, name, role · Work, About, Resume, theme toggle, Let's talk), the light/dark theme, and their CSS.
+the header (face, name, role · Work, About, Resume, theme toggle), the light/dark theme, and their CSS.
 Used by tools/build-a-cv.py and tools/build-case-studies.py.
 """
 import re
@@ -28,7 +28,6 @@ def header(home, current, work_href=None, about_href=None):
       <a href="{CV}">Resume</a>
     </nav>
     <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">{MOON}{SUN}</button>
-    <a class="btn ghost talk" href="#contact">Let’s talk</a>
   </div>
 </header>"""
 
@@ -60,7 +59,7 @@ HEADER_CSS = """
 /* Accent: the tan of the gravel tyre's sidewall (also the record label). --signal-ink is the deeper tan used when the accent is small text. */
 :root { --signal: #b28550; --signal-soft: #f6efe4; --signal-ink: #7a5626; }
 .contact .btn:hover { color: #15171a; }
-/* Header: face, name and role on the left; Work, About, Resume, theme toggle and Let's talk on the right. */
+/* Header: face, name and role on the left; Work, About, Resume and the theme toggle on the right (no “Let's talk” button: Matt removed it). */
 .top .wrap { gap: 28px; }
 .brand { gap: 12px; font-weight: 600; font-size: 16px; }
 .brand img.face { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; object-position: 50% 30%; }

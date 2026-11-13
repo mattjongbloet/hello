@@ -353,11 +353,14 @@ SITE_CSS = """
 .has-toy .hero-toy { max-width: 520px; gap: 8px; }
 .hero-screen .toy-stage { width: clamp(240px, calc(70svh - 180px), 100%); margin-inline: auto; }
 .hero-screen .face-pop { min-height: 62px; }
-.hero-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 28px; margin: 26px 0 0; font-size: 16px; color: var(--ink); font-weight: 500; }
-.hero-meta .hm { display: inline-flex; align-items: center; gap: 9px; }
+/* Location and current role sit just under the intro, where the buttons were, as soft pills so they read as their own element.
+   (Fifteen treatments to compare: redesigns/meta-lab/, tools/build-meta-lab.py.) */
+.hero .lede { margin-bottom: 0; }
+.hero-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 0; font-size: 15px; color: var(--ink); font-weight: 500; }   /* the column's 28px gap spaces it, as it did the buttons */
+.hero-meta .hm { display: inline-flex; align-items: center; gap: 9px; min-height: 40px; padding: 0 16px; border-radius: 999px; background: color-mix(in srgb, var(--ink) 6%, transparent); }
 .hero-meta .flag { width: 24px; height: 16px; flex: none; }
 .hero-meta .hosp-link { display: inline-flex; align-items: center; padding-block: 10px; color: var(--ink); margin-left: -2px; }
-.hero-meta .hosp { width: auto; height: 19px; color: inherit; }
+.hero-meta .hosp { width: auto; height: 17px; color: inherit; }
 .work-band { margin-top: 0; padding-top: 52px; }
 @media (max-width: 900px) { .hero-screen { min-height: 0; } }
 """
