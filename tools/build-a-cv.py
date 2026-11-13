@@ -361,6 +361,14 @@ SITE_CSS = """
 .hero-meta .flag { width: 24px; height: 16px; flex: none; }
 .hero-meta .hosp-link { display: inline-flex; align-items: center; padding-block: 10px; color: var(--ink); margin-left: -2px; }
 .hero-meta .hosp { width: auto; height: 17px; color: inherit; }
+/* Two columns, one height: the face column is exactly as tall as the text column, so the top of the face lines up
+   with the top of the headline and the hint sits level with the pills. The face is sized by that height. */
+@media (min-width: 901px) {
+  .hero-screen .hero.hero-text.has-toy { align-items: stretch; align-content: center; }
+  .hero-screen .hero-toy { height: 0; min-height: 100%; gap: 0; justify-self: end; }
+  .hero-screen .toy-stage { flex: 1 1 0; min-height: 0; width: auto; max-width: 100%; aspect-ratio: 1; align-self: center; margin: 0; }
+  .hero-screen .toy-hint { flex: none; min-height: 40px; display: grid; place-items: center; }   /* 40px = the pills' height */
+}
 .work-band { margin-top: 0; padding-top: 52px; }
 @media (max-width: 900px) { .hero-screen { min-height: 0; } }
 """

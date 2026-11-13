@@ -159,9 +159,12 @@ window.Toy3D = (() => {
   const decal = new THREE.Mesh(new THREE.LatheGeometry([[.998, .1102], [.97, .107], [.905, .0756]].map(([r, h]) => new THREE.Vector2(r, h)), 160), new THREE.MeshStandardMaterial({ map: decalTex, transparent: true, alphaTest: .35, roughness: .5, side: THREE.DoubleSide })); decal.rotation.x = Math.PI / 2; wspin.add(decal);
   const hubBody = cylZ(.052, .5, blackMetal, 32), axle = cylZ(.03, .6, chrome, 24); wspin.add(hubBody, axle);
   for (const z of [-.14, .14]) { const f = cylZ(.105, .04, blackMetal, 40); f.position.z = z; wspin.add(f); }
+  // Spokes get their own material: black in light mode, a little lighter in dark mode so they don't vanish against the dark page.
+  const spokeMat = blackMetal.clone(), spokeTheme = () => { spokeMat.color.set(document.documentElement.dataset.theme === 'dark' ? 0x70737a : 0x131315); if (typeof kick === 'function') kick(); };
+  spokeTheme(); new MutationObserver(spokeTheme).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
   for (let i = 0; i < 24; i++) {                         // 24 straight-pull spokes, crossed, alternating flanges
     const a = i / 24 * Math.PI * 2, side = i % 2 ? 1 : -1, fa = a + (i % 4 < 2 ? .62 : -.62);
-    wspin.add(rod(V(.095 * Math.cos(fa), .095 * Math.sin(fa), side * .14), V(.825 * Math.cos(a), .825 * Math.sin(a), 0), .0075, blackMetal));
+    wspin.add(rod(V(.095 * Math.cos(fa), .095 * Math.sin(fa), side * .14), V(.825 * Math.cos(a), .825 * Math.sin(a), 0), .0075, spokeMat));
   }
   const rotorMat = new THREE.MeshStandardMaterial({ color: 0xbfc3c9, metalness: 1, roughness: .28, side: THREE.DoubleSide });
   const rotor = new THREE.Group(); rotor.position.z = -.21; rotor.add(new THREE.Mesh(new THREE.RingGeometry(.31, .4, 72), rotorMat));
