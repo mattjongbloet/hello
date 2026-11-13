@@ -29,6 +29,16 @@ XP_HOME = """<ul class="xp">
           <li><span class="role">Senior Product Designer</span><span class="when num">Dec 2020 — Dec 2022</span><span class="co">Homebot</span><span class="did">Seven projects, research to dev-ready design, for ≈10 million users.</span></li>
         </ul>"""
 
+# The current site's home page: rows with company logos, condensed (no description). Matt's pick from the roles lab.
+XP_SITE = """<ul class="xp xp-rows">
+          <li><img class="xp-logo" src="../assets/hospitable-mark.svg" alt=""><span class="role">Senior Staff Product Designer</span><span class="when num">Now</span><a class="co" href="https://hospitable.com/">Hospitable</a></li>
+          <li><img class="xp-logo" src="../assets/carv-logo.svg" alt=""><span class="role">Lead Product Designer</span><span class="when num">Feb 2024 — Mar 2025</span><a class="co" href="https://www.carv.com/">Carv</a></li>
+          <li><img class="xp-logo" src="../assets/trellis/savvy-logo.png" alt=""><span class="role">Staff Product Designer</span><span class="when num">Jan 2023 — Jan 2024</span><a class="co" href="https://savvy.insure/">Trellis / Savvy.Insure</a></li>
+          <li><img class="xp-logo" src="../assets/homebot-logo.png" alt=""><span class="role">Senior Product Designer</span><span class="when num">Dec 2020 — Dec 2022</span><span class="co">Homebot</span></li>
+        </ul>"""
+RESUME_OLD = '<p style="margin-top:18px"><a href="https://cdn.prod.website-files.com/63b35214bc1dc0317e22bd99/668ae1b79c5572bfad32e508_Matt_Jongbloet_CV_2024.pdf" style="color:var(--ink-2);font-size:15px">Download full resume (PDF) →</a></p>'
+RESUME_BTN = '<p style="margin-top:24px"><a class="btn" href="https://cdn.prod.website-files.com/63b35214bc1dc0317e22bd99/668ae1b79c5572bfad32e508_Matt_Jongbloet_CV_2024.pdf">Download full resume (PDF) →</a></p>'
+
 XP_ABOUT = """<ul class="xp">
           <li><span class="role">Senior Staff Product Designer</span><span class="when num">Now</span><a class="co" href="https://hospitable.com/">Hospitable</a><span class="did">Helping hosts run their short-term rentals on autopilot.</span></li>
           <li><span class="role">Lead Product Designer</span><span class="when num">Feb 2024 — Mar 2025</span><a class="co" href="https://www.carv.com/">Carv</a><span class="did">Helping recruiters cut admin and boost hires. Led design with cross-functional partners and the C-level on the future vision, and ran research into customers’ current experience.</span></li>
@@ -370,6 +380,13 @@ SITE_CSS = """
   .hero-screen .toy-hint { flex: none; min-height: 40px; display: grid; place-items: center; }   /* 40px = the pills' height */
 }
 .work-band { margin-top: 0; padding-top: 52px; }
+/* Recent roles (Matt's pick from the roles lab): rows with a company logo, condensed. */
+.xp-rows li { grid-template-columns: 40px minmax(0, 1fr) auto; grid-template-areas: "lg role when" "lg co when"; column-gap: 14px; row-gap: 1px; padding: 13px 0; align-items: start; }
+.xp-rows .xp-logo { grid-area: lg; width: 40px; height: 40px; border-radius: 10px; }
+.xp-rows .role { grid-area: role; font-size: 16px; line-height: 1.35; }
+.xp-rows .co { grid-area: co; justify-self: start; }
+.xp-rows .when { grid-area: when; grid-row: auto; font-size: 13px; line-height: 1.7; }
+@media (max-width: 480px) { .xp-rows li { grid-template-columns: 40px minmax(0, 1fr); grid-template-areas: "lg role" "lg co" "lg when"; } .xp-rows .when { text-align: left; } }
 /* Project cards (Matt's pick from the card lab): screenshot on top edge to edge, the logo straddling its bottom edge, bold title. */
 .pcard { padding: 0; flex-direction: column-reverse; justify-content: flex-end; }
 .pc-shot { margin: 0; border-radius: 0; }
@@ -431,7 +448,9 @@ def build():
                 assert len(work_re.findall(s)) == 1, name
                 # site: no wide cards (Matt wants every project two per row)
                 s = work_re.sub(lambda m: work(WORK[name], wide={"-"}, all_link=False) if name == "site" else work(WORK[name]), s)
-                s = xp_re.sub(lambda m: XP_HOME, s)
+                s = xp_re.sub(lambda m: XP_SITE if name == "site" else XP_HOME, s)
+                if name == "site":
+                    s = rep(s, RESUME_OLD, RESUME_BTN, f"{name}/{page}")
             if page == "about.html":
                 s = xp_re.sub(lambda m: XP_ABOUT, s)
             if name == "site":
