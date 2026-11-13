@@ -107,7 +107,8 @@ body { font-size: 16px; }
 }
 .work-band { margin-top: 0; padding-top: 52px; }
 /* Recent roles (Matt's pick from the roles lab): rows with a company logo, condensed. */
-.xp-rows li { grid-template-columns: 40px minmax(0, 1fr) auto; grid-template-areas: "lg role when" "lg co when"; column-gap: 14px; row-gap: 1px; padding: 13px 0; align-items: start; }
+.xp.xp-rows { border-top: 0; }   /* no separator lines: white space only */
+.xp-rows li { grid-template-columns: 40px minmax(0, 1fr) auto; grid-template-areas: "lg role when" "lg co when"; column-gap: 14px; row-gap: 1px; padding: 0 0 22px; border-bottom: 0; align-items: start; }
 .xp-rows .xp-logo { grid-area: lg; width: 40px; height: 40px; border-radius: 10px; }
 .xp-rows .role { grid-area: role; font-size: 16px; line-height: 1.35; }
 .xp-rows .co { grid-area: co; justify-self: start; }
