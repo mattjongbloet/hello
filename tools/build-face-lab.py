@@ -50,7 +50,7 @@ HTML = f"""<!doctype html>
 </html>
 """
 CSS = """/* Face lab (tools/build-face-lab.py): a single page to compare nose and mouth ideas for the 3D face. */
-:root { --paper: #ffffff; --mist: #f4f4f1; --line: #e4e4df; --ink: #15171a; --ink-2: #5f636b; --signal: #ff5a1f;
+:root { --paper: #ffffff; --mist: #f4f4f1; --line: #e4e4df; --ink: #15171a; --ink-2: #5f636b; --signal: #b28550;
   --body: "Roobert", "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif; }
 *, *::before, *::after { box-sizing: border-box; }
 body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.55 var(--body); -webkit-font-smoothing: antialiased; }

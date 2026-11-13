@@ -57,6 +57,9 @@ THEME_JS = """
 HEADER_CSS = """
 /* One typeface: the small labels that used the monospace font are set in Roobert too. */
 :root { --mono: var(--body); }
+/* Accent: the tan of the gravel tyre's sidewall (also the record label). --signal-ink is the deeper tan used when the accent is small text. */
+:root { --signal: #b28550; --signal-soft: #f6efe4; --signal-ink: #7a5626; }
+.contact .btn:hover { color: #15171a; }
 /* Header: face, name and role on the left; Work, About, Resume, theme toggle and Let's talk on the right. */
 .top .wrap { gap: 28px; }
 .brand { gap: 12px; font-weight: 600; font-size: 16px; }
@@ -85,7 +88,7 @@ DARK_CSS = """
   color-scheme: dark;
   --paper: #0e0f11; --mist: #18191d; --line: #2a2c32;
   --ink: #f1f2f4; --ink-2: #a2a6ae;
-  --signal: #ff6a2b; --signal-soft: #2a1a12; --signal-ink: #ff8a57;
+  --signal: #c4975f; --signal-soft: #2a2115; --signal-ink: #d9ae76;
 }
 :root[data-theme="dark"] .btn:hover { background: #ffffff; }
 :root[data-theme="dark"] .btn.ghost:hover { box-shadow: inset 0 0 0 1.5px var(--ink); background: transparent; }
@@ -94,7 +97,7 @@ DARK_CSS = """
 :root[data-theme="dark"] .video .play { background: #1d1f24; color: var(--ink); }
 :root[data-theme="dark"] .contact { background: #17181c; color: var(--ink); border-top: 1px solid var(--line); }
 :root[data-theme="dark"] .contact .btn { background: var(--ink); color: var(--paper); }
-:root[data-theme="dark"] .contact .btn:hover { background: var(--signal); color: #fff; }
+:root[data-theme="dark"] .contact .btn:hover { background: var(--signal); color: #15171a; }
 :root[data-theme="dark"] .contact p, :root[data-theme="dark"] .contact .plain { color: var(--ink-2); }
 :root[data-theme="dark"] .contact .plain:hover { color: var(--ink); }
 :root[data-theme="dark"] .foot { background: #17181c; color: var(--ink-2); }
