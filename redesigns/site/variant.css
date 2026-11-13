@@ -114,6 +114,9 @@ body { font-size: 16px; }
 .xp-rows .co { grid-area: co; justify-self: start; }
 .xp-rows .when { grid-area: when; grid-row: auto; font-size: 13px; line-height: 1.7; }
 @media (max-width: 480px) { .xp-rows li { grid-template-columns: 40px minmax(0, 1fr); grid-template-areas: "lg role" "lg co" "lg when"; } .xp-rows .when { text-align: left; } }
+/* On phones the company links get extra padding as tap targets; pull it back so linked and unlinked rows space the same. */
+.xp-rows a.co { margin-block: -8px; position: relative; }
+@media (min-width: 561px) { .xp-rows a.co { margin-block: 0; } }
 /* Project cards (Matt's pick from the card lab): screenshot on top edge to edge, the logo straddling its bottom edge, bold title. */
 .pcard { padding: 0; flex-direction: column-reverse; justify-content: flex-end; }
 .pc-shot { margin: 0; border-radius: 0; }
