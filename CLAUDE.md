@@ -20,10 +20,10 @@ This file records the decisions made so far and how the project is built, so a n
 
 ## Decisions Matt has made
 
-- **Home page**: A6.1 layout; headline now "Shaping systems, stories, and strategy." ("and strategy." in the accent colour; the earlier line was "I make complex products feel simple."), with a header and hero modelled on taschiba.com:
+- **Home page**: A6.1 ("I make complex products feel simple."; "Shaping systems, stories + strategy." was tried as the headline and moved into the intro), with a header and hero modelled on taschiba.com:
   - Header: face, "Matt Jongbloet", "Senior Staff Product Designer" · Work, About, Resume, light/dark toggle, "Let's talk". No logo in the header (the pencil logo is the favicon).
-  - Hero: headline + intro (smaller type), the **3D object face** on the right, and one line underneath: "Amsterdam, Netherlands · Currently designing [Hospitable logo]" (logo links to hospitable.com; its wordmark takes the text colour). No impact-stat blocks. The hero must fit the first screen on a laptop.
-  - Intro copy: "I'm a rigorously curious product designer with 15 years' experience helping people and businesses shine. I'm happiest when people succeed with what I design."
+  - Hero: two-line headline "I make complex products / feel simple." ("feel simple." in the accent), intro (smaller type), then one line: Dutch flag + "Amsterdam, NL" and "Designing @ [Hospitable logo]" (logo links to hospitable.com; its wordmark takes the text colour). The **3D object face** on the right. No buttons, no impact-stat blocks, no bottom strip. The hero stops short of the first screen so "Selected work" and the top of the first project card peek in from the bottom.
+  - Intro copy: "I'm a rigorously curious product designer with 15 years' experience shaping systems, stories and strategy. I'm happiest when people succeed with what I design."
 - **Object face** (home page): vinyl record (label "MJ / DNB") + bike wheel (eyes), **framed art** (nose: Matt's "Why?" illustration, no mat board; click opens a lightbox), **half a stroopwafel** (smile; each click takes a bite, it regrows). No eyebrows. Realistic 3D, not flat. Built from `tools/toys/face-lab.js` + eyes from `object-face.js` (`face-home.html/.css`). Sound (Web Audio, starts on click only): clicking the record toggles a lo-fi loop; clicking the wheel gives it a push and it ticks like a freewheel as it coasts down; bites crunch. The colour swatches (which set the accent via `--signal` / `--accent-text`) are no longer on the home page, so the accent stays the tan there; the code remains in the lab.
 - **3D realism** (Matt wants the objects as realistic as possible): the record sits on a strobe-dotted platter with a Technics SL-1210 style S-shaped tonearm (gimbal, counterweight, angled headshell, finger lift); the wheel is modelled on a DT Swiss GRC 1100 (deep carbon rim with decals, 24 straight-pull spokes, hub, disc rotor) with a slim tan-wall gravel tyre and chunky tread knobs on the outer edge only (the black shoulder is smooth). The record label reads "MJ / DNB". In the lab the eyes and stroopwafel are scaled down so the larger frame leads. Both live in `tools/toys/object-face.js`. In the lab, the framed art has a moulded frame and glass (no mat board; Matt asked for it removed, and for the frame to be a little larger next to the eyes); the stroopwafel has layered thickness, a caramel middle and a pressed-grid relief. All are modelled in code; true photorealism would need scanned/modelled GLB assets or baked renders.
 - **Accent colour**: the tan of the gravel tyre's sidewall, `#b28550` (set in `tools/site_parts.py`; a deeper `--signal-ink` for small text, lighter tans in dark mode). The record label, hub band, headline accent and page accents all use it. The earlier orange `#ff5a1f` remains only in older explorations.
@@ -72,7 +72,7 @@ Run QA on every changed page; it should print `all clear`. For dark mode, QA a t
 - Carv and Hospitable case studies need content from Matt.
 - Internal Admin is dated January 2020 on the live site, before the CV's Homebot start (Dec 2020): confirm.
 - Hospitable start month.
-- Phone header hides Work/About/Resume (no menu yet). Hero still has "See my work" / "More about me" buttons (the reference has none).
+- Phone header hides Work/About/Resume (no menu yet).
 - Live site issues found: contact links on case-study pages point to a template email and phone number.
 
 ## Publishing
