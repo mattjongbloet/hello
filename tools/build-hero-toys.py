@@ -50,6 +50,7 @@ def build():
             js = read("face-lab.js").replace("/*EYES*/", src[a:b]).replace("%%ART%%", "data:image/jpeg;base64," + base64.b64encode(buf.getvalue()).decode())
         else:
             js = read(toy + ".js")
+        if toy == "face-home": js = read("jungle.js") + "\n" + js   # the record's music
         open(os.path.join(out, "toy.js"), "w").write(read("three-common.js") + "\n" + js)
         print("built", folder)
 

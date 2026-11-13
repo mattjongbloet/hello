@@ -9,7 +9,7 @@ from PIL import Image
 im = Image.open(os.path.join(ROOT, "redesigns", "assets", "art-why.jpg")).convert("RGB"); im = im.resize((760, round(760 * im.height / im.width)), Image.LANCZOS)
 buf = io.BytesIO(); im.save(buf, "JPEG", quality=82)   # embedded so the 3D texture also loads from file://
 ART = "data:image/jpeg;base64," + base64.b64encode(buf.getvalue()).decode()
-js = rd("three-common.js") + "\n" + rd("face-lab.js").replace("/*EYES*/", src[a:b]).replace("%%ART%%", ART)
+js = rd("three-common.js") + "\n" + rd("jungle.js") + "\n" + rd("face-lab.js").replace("/*EYES*/", src[a:b]).replace("%%ART%%", ART)
 NOSES = [("tree", "Tree (current)"), ("cursor", "Cursor (smaller)"), ("pinecone", "Pinecone"), ("tent", "Tent"), ("trowel", "Trowel"), ("art", "Framed art")]
 MOUTHS = [("beans", "Coffee beans (current)"), ("bezier", "Bezier curve"), ("trail", "Hiking trail"), ("swatches", "Colour swatches"), ("stroopwafel", "Stroopwafel")]
 btn = lambda kind, items, cur: "".join(f'<button type="button" data-kind="{kind}" data-name="{n}" aria-pressed="{"true" if n == cur else "false"}">{label}</button>' for n, label in items)
