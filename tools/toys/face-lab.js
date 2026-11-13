@@ -21,8 +21,8 @@
     const S = 512, cv = document.createElement('canvas'); cv.width = cv.height = S; const g = cv.getContext('2d');
     g.fillStyle = c; g.fillRect(0, 0, S, S);
     g.strokeStyle = 'rgba(255,255,255,.55)'; g.lineWidth = 5; g.beginPath(); g.arc(S / 2, S / 2, S * .44, 0, 7); g.stroke();
-    g.fillStyle = '#fff'; g.textAlign = 'center'; g.font = '700 92px system-ui, sans-serif'; g.fillText('MJ', S / 2, S * .36);
-    g.font = '600 34px system-ui, sans-serif'; g.fillText('SIDE A · 33⅓', S / 2, S * .76);
+    g.fillStyle = '#fff'; g.textAlign = 'center'; g.font = '700 84px system-ui, sans-serif'; g.fillText('MJ', S / 2, S * .35);
+    g.fillText('DNB', S / 2, S * .8);
     const t = new THREE.CanvasTexture(cv); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8;
     const m = lab.material[1]; if (m.map) m.map.dispose(); m.map = t; m.needsUpdate = true;
     refl.material.color.set(c); kick();
@@ -93,7 +93,7 @@
         grown = lerp(grown, dig < 0 || dig > .5 ? target : grown, dt * 3); sprout.scale.setScalar(Math.max(.001, grown)); } }; }
 
   // -- framed artwork: click and it opens larger in a lightbox
-  { const g = new THREE.Group(); g.position.set(0, -.6, .12); const ART_SRC = '%%ART%%', W = 1.0, H = W * 1408 / 1010;
+  { const g = new THREE.Group(); g.position.set(0, -.6, .12); const ART_SRC = '%%ART%%', W = 1.14, H = W * 1408 / 1010;
     // a moulded frame around the print (no mat board), with glass in front
     const rectHole = (w, h, hw, hh) => { const sh = new THREE.Shape(); sh.moveTo(-w / 2, -h / 2); sh.lineTo(w / 2, -h / 2); sh.lineTo(w / 2, h / 2); sh.lineTo(-w / 2, h / 2); sh.closePath();
       const ho = new THREE.Path(); ho.moveTo(-hw / 2, -hh / 2); ho.lineTo(-hw / 2, hh / 2); ho.lineTo(hw / 2, hh / 2); ho.lineTo(hw / 2, -hh / 2); ho.closePath(); sh.holes.push(ho); return sh; };
@@ -168,7 +168,7 @@
       tick: (t, dt) => cards.forEach(({ card, c }) => { card.position.y = lerp(card.position.y, c === picked ? -1.72 : -1.55, dt * 8); }) }; }
 
   // -- half a stroopwafel: each click takes a bite where you clicked; it grows back slowly
-  { const g = new THREE.Group(); g.position.set(0, MOUTH_Y - .1, .08); const S = 512, cv = document.createElement('canvas'); cv.width = S; cv.height = S / 2; const c2 = cv.getContext('2d');
+  { const g = new THREE.Group(); g.position.set(0, MOUTH_Y - .1, .08); g.scale.setScalar(.88); const S = 512, cv = document.createElement('canvas'); cv.width = S; cv.height = S / 2; const c2 = cv.getContext('2d');
     const tex = new THREE.CanvasTexture(cv); tex.colorSpace = THREE.SRGBColorSpace; tex.anisotropy = 8; const bites = [];
     // baked once: golden wafer, darker toward the rim, speckled, with the pressed diamond grid; plus a height map for the relief
     const base = document.createElement('canvas'); base.width = S; base.height = S / 2; const height = document.createElement('canvas'); height.width = S; height.height = S / 2;
@@ -211,6 +211,7 @@
   };
   root.querySelectorAll('.lab-opts button').forEach((b) => b.addEventListener('click', () => choose(b.dataset.kind, b.dataset.name)));
   noses.tree.g.visible = true; mouths.beans.g.visible = true;
+  if (!HOME) { vinyl.scale.setScalar(.86); wheel.scale.setScalar(.86); }   // lab: smaller eyes so the larger frame leads
   if (HOME) { choose('mouth', 'swatches'); choose('nose', 'cursor'); } else { choose('mouth', 'stroopwafel'); choose('nose', 'art'); }   // home: Matt's pick; lab: what he's trying now
 
   // ---- sound (Web Audio, nothing to download). Browsers only allow sound after a click, so both start on click.

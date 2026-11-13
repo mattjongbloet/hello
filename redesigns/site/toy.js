@@ -95,8 +95,8 @@ window.Toy3D = (() => {
     const S = 512, c = document.createElement('canvas'); c.width = c.height = S; const g = c.getContext('2d');
     g.fillStyle = SIGNAL; g.fillRect(0, 0, S, S);
     g.strokeStyle = 'rgba(255,255,255,.55)'; g.lineWidth = 5; g.beginPath(); g.arc(S / 2, S / 2, S * .44, 0, 7); g.stroke();
-    g.fillStyle = '#fff'; g.textAlign = 'center'; g.font = '700 92px system-ui, sans-serif'; g.fillText('MJ', S / 2, S * .36);
-    g.font = '600 34px system-ui, sans-serif'; g.fillText('SIDE A · 33⅓', S / 2, S * .76);
+    g.fillStyle = '#fff'; g.textAlign = 'center'; g.font = '700 84px system-ui, sans-serif'; g.fillText('MJ', S / 2, S * .35);
+    g.fillText('DNB', S / 2, S * .8);
     const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8; return t;
   })();
   const spinner = new THREE.Group(); vinyl.add(spinner);
@@ -140,7 +140,7 @@ window.Toy3D = (() => {
   // ---- Right eye: bicycle wheel ----
   const wheel = new THREE.Group(); wheel.position.set(1.85, .85, 0); wheel.scale.setScalar(.95); wheel.userData.k = 'cycle'; face.add(wheel);
   const wspin = new THREE.Group(); wheel.add(wspin);
-  // DT Swiss GRC 1100 style: deep carbon rim with decals, straight-pull spokes, hub, disc rotor, and a gravel tyre (tan sidewalls, chunky knobs).
+  // DT Swiss GRC 1100 style: deep carbon rim with decals, straight-pull spokes, hub, disc rotor, and a gravel tyre (tan sidewalls, chunky knobs on the outer tread only; the black shoulder is smooth).
   const carbon = new THREE.MeshPhysicalMaterial({ color: 0x0d0d0f, roughness: .4, clearcoat: .4, clearcoatRoughness: .28, side: THREE.DoubleSide });
   const blackMetal = new THREE.MeshStandardMaterial({ color: 0x131315, metalness: .85, roughness: .32 });
   const TR = 1.105, TT = .122, tg = new THREE.TorusGeometry(TR, TT, 32, 160);
@@ -148,9 +148,9 @@ window.Toy3D = (() => {
     for (let i = 0; i < pos.count; i++) { const rho = Math.hypot(pos.getX(i), pos.getY(i)); (rho > TR + TT * .5 || rho < TR - TT * .8 ? blk : tan).toArray(col, i * 3); }
     tg.setAttribute('color', new THREE.BufferAttribute(col, 3)); }
   const tyre = new THREE.Mesh(tg, new THREE.MeshStandardMaterial({ vertexColors: true, roughness: .92 })); wspin.add(tyre);
-  const ROWS = [-56, -28, 0, 28, 56], PER = 60, knobs = new THREE.InstancedMesh(new THREE.BoxGeometry(.062, .064, .046), new THREE.MeshStandardMaterial({ color: 0x121214, roughness: .95 }), ROWS.length * PER);
+  const ROWS = [-17, 0, 17], PER = 60, knobs = new THREE.InstancedMesh(new THREE.BoxGeometry(.056, .064, .034), new THREE.MeshStandardMaterial({ color: 0x121214, roughness: .95 }), ROWS.length * PER);
   { const KM = new THREE.Matrix4(), qz = new THREE.Quaternion(), qy = new THREE.Quaternion(), Z = V(0, 0, 1), Y = V(0, 1, 0), one = V(1, 1, 1); let n = 0;
-    ROWS.forEach((deg, row) => { const phi = deg * Math.PI / 180, rr = TR + (TT + .02) * Math.cos(phi), zz = (TT + .02) * Math.sin(phi);
+    ROWS.forEach((deg, row) => { const phi = deg * Math.PI / 180, rr = TR + (TT + .022) * Math.cos(phi), zz = (TT + .022) * Math.sin(phi);
       for (let k = 0; k < PER; k++) { const th = (k + (row % 2 ? .5 : 0)) / PER * Math.PI * 2; qz.setFromAxisAngle(Z, th); qy.setFromAxisAngle(Y, -phi);
         KM.compose(V(rr * Math.cos(th), rr * Math.sin(th), zz), qz.clone().multiply(qy), one); knobs.setMatrixAt(n++, KM); } }); }
   wspin.add(knobs);
@@ -180,8 +180,8 @@ window.Toy3D = (() => {
     const S = 512, cv = document.createElement('canvas'); cv.width = cv.height = S; const g = cv.getContext('2d');
     g.fillStyle = c; g.fillRect(0, 0, S, S);
     g.strokeStyle = 'rgba(255,255,255,.55)'; g.lineWidth = 5; g.beginPath(); g.arc(S / 2, S / 2, S * .44, 0, 7); g.stroke();
-    g.fillStyle = '#fff'; g.textAlign = 'center'; g.font = '700 92px system-ui, sans-serif'; g.fillText('MJ', S / 2, S * .36);
-    g.font = '600 34px system-ui, sans-serif'; g.fillText('SIDE A · 33⅓', S / 2, S * .76);
+    g.fillStyle = '#fff'; g.textAlign = 'center'; g.font = '700 84px system-ui, sans-serif'; g.fillText('MJ', S / 2, S * .35);
+    g.fillText('DNB', S / 2, S * .8);
     const t = new THREE.CanvasTexture(cv); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8;
     const m = lab.material[1]; if (m.map) m.map.dispose(); m.map = t; m.needsUpdate = true;
     refl.material.color.set(c); kick();
@@ -252,7 +252,7 @@ window.Toy3D = (() => {
         grown = lerp(grown, dig < 0 || dig > .5 ? target : grown, dt * 3); sprout.scale.setScalar(Math.max(.001, grown)); } }; }
 
   // -- framed artwork: click and it opens larger in a lightbox
-  { const g = new THREE.Group(); g.position.set(0, -.6, .12); const ART_SRC = '', W = 1.0, H = W * 1408 / 1010;
+  { const g = new THREE.Group(); g.position.set(0, -.6, .12); const ART_SRC = '', W = 1.14, H = W * 1408 / 1010;
     // a moulded frame around the print (no mat board), with glass in front
     const rectHole = (w, h, hw, hh) => { const sh = new THREE.Shape(); sh.moveTo(-w / 2, -h / 2); sh.lineTo(w / 2, -h / 2); sh.lineTo(w / 2, h / 2); sh.lineTo(-w / 2, h / 2); sh.closePath();
       const ho = new THREE.Path(); ho.moveTo(-hw / 2, -hh / 2); ho.lineTo(-hw / 2, hh / 2); ho.lineTo(hw / 2, hh / 2); ho.lineTo(hw / 2, -hh / 2); ho.closePath(); sh.holes.push(ho); return sh; };
@@ -327,7 +327,7 @@ window.Toy3D = (() => {
       tick: (t, dt) => cards.forEach(({ card, c }) => { card.position.y = lerp(card.position.y, c === picked ? -1.72 : -1.55, dt * 8); }) }; }
 
   // -- half a stroopwafel: each click takes a bite where you clicked; it grows back slowly
-  { const g = new THREE.Group(); g.position.set(0, MOUTH_Y - .1, .08); const S = 512, cv = document.createElement('canvas'); cv.width = S; cv.height = S / 2; const c2 = cv.getContext('2d');
+  { const g = new THREE.Group(); g.position.set(0, MOUTH_Y - .1, .08); g.scale.setScalar(.88); const S = 512, cv = document.createElement('canvas'); cv.width = S; cv.height = S / 2; const c2 = cv.getContext('2d');
     const tex = new THREE.CanvasTexture(cv); tex.colorSpace = THREE.SRGBColorSpace; tex.anisotropy = 8; const bites = [];
     // baked once: golden wafer, darker toward the rim, speckled, with the pressed diamond grid; plus a height map for the relief
     const base = document.createElement('canvas'); base.width = S; base.height = S / 2; const height = document.createElement('canvas'); height.width = S; height.height = S / 2;
@@ -370,6 +370,7 @@ window.Toy3D = (() => {
   };
   root.querySelectorAll('.lab-opts button').forEach((b) => b.addEventListener('click', () => choose(b.dataset.kind, b.dataset.name)));
   noses.tree.g.visible = true; mouths.beans.g.visible = true;
+  if (!HOME) { vinyl.scale.setScalar(.86); wheel.scale.setScalar(.86); }   // lab: smaller eyes so the larger frame leads
   if (HOME) { choose('mouth', 'swatches'); choose('nose', 'cursor'); } else { choose('mouth', 'stroopwafel'); choose('nose', 'art'); }   // home: Matt's pick; lab: what he's trying now
 
   // ---- sound (Web Audio, nothing to download). Browsers only allow sound after a click, so both start on click.
