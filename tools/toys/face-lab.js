@@ -167,38 +167,113 @@
         document.documentElement.style.setProperty('--accent-text', '#' + text.getHexString()); if (!HOME) tip.textContent = 'Colour swatches: accent set to ' + c + '.'; },
       tick: (t, dt) => cards.forEach(({ card, c }) => { card.position.y = lerp(card.position.y, c === picked ? -1.72 : -1.55, dt * 8); }) }; }
 
-  // -- half a stroopwafel: each click takes a bite where you clicked; it grows back slowly
-  { const g = new THREE.Group(); g.position.set(0, MOUTH_Y - .1, .08); g.scale.setScalar(.88); const S = 512, cv = document.createElement('canvas'); cv.width = S; cv.height = S / 2; const c2 = cv.getContext('2d');
-    const tex = new THREE.CanvasTexture(cv); tex.colorSpace = THREE.SRGBColorSpace; tex.anisotropy = 8; const bites = [];
-    // baked once: golden wafer, darker toward the rim, speckled, with the pressed diamond grid; plus a height map for the relief
-    const base = document.createElement('canvas'); base.width = S; base.height = S / 2; const height = document.createElement('canvas'); height.width = S; height.height = S / 2;
-    { const b = base.getContext('2d'), hh = height.getContext('2d'); const clip = (c) => { c.beginPath(); c.arc(S / 2, 0, S / 2 - 2, 0, Math.PI); c.closePath(); c.clip(); };
-      b.save(); clip(b); const gr = b.createRadialGradient(S / 2, 0, S * .05, S / 2, 0, S / 2); gr.addColorStop(0, '#e2a654'); gr.addColorStop(.7, '#d29245'); gr.addColorStop(1, '#a8672a'); b.fillStyle = gr; b.fillRect(0, 0, S, S / 2);
-      for (let i = 0; i < 2600; i++) { b.fillStyle = `rgba(${rnd() > .5 ? '120,66,20' : '255,214,150'},${.05 + rnd() * .12})`; b.beginPath(); b.arc(rnd() * S, rnd() * S / 2, .6 + rnd() * 2.2, 0, 6.283); b.fill(); }
-      hh.fillStyle = '#555'; hh.fillRect(0, 0, S, S / 2);
-      for (const [cx, w, a, hc] of [[b, 7, 'rgba(150,88,30,.55)', null], [hh, 9, null, '#fff']]) { cx.strokeStyle = a || hc; cx.lineWidth = w; cx.lineCap = 'round';
-        for (let i = -S; i < S * 2; i += 26) { cx.beginPath(); cx.moveTo(i, 0); cx.lineTo(i + S / 2, S / 2); cx.stroke(); cx.beginPath(); cx.moveTo(i, 0); cx.lineTo(i - S / 2, S / 2); cx.stroke(); } }
-      b.strokeStyle = 'rgba(255,225,170,.35)'; b.lineWidth = 2; for (let i = -S; i < S * 2; i += 26) { b.beginPath(); b.moveTo(i - 3, 0); b.lineTo(i - 3 + S / 2, S / 2); b.stroke(); }
-      b.restore(); b.strokeStyle = '#96591f'; b.lineWidth = 10; b.beginPath(); b.arc(S / 2, 0, S / 2 - 7, 0, Math.PI); b.stroke(); b.fillStyle = '#96591f'; b.fillRect(0, 0, S, 5); }
-    const bump = new THREE.CanvasTexture(height); bump.anisotropy = 8;
-    const paint = (now) => { c2.globalCompositeOperation = 'source-over'; c2.clearRect(0, 0, S, S / 2); c2.drawImage(base, 0, 0);
-      c2.globalCompositeOperation = 'destination-out';
-      for (const b of bites) { const k = Math.max(0, 1 - Math.max(0, now - b.t - 2500) / 6500), r = b.r * k; if (r < 1) continue;
-        for (let j = 0; j < 6; j++) { const a = j / 6 * 6.283 + b.a; c2.beginPath(); c2.arc(b.x + Math.cos(a) * r * .55, b.y + Math.sin(a) * r * .55, r * .58, 0, 6.283); c2.fill(); } }
-      tex.needsUpdate = true; };
+  // -- half a stroopwafel: two baked wafers with a caramel layer between them. Each click takes a bite of its own
+  //    shape and size where you clicked; the bite knits back from its edges, comes in as pale dough and browns.
+  { const g = new THREE.Group(); g.position.set(0, MOUTH_Y - .1, .08); g.scale.setScalar(.88);
+    const S = 1024, H = S / 2, PAD = 30, CX = S / 2, CY = PAD, R = S / 2 - PAD * 1.7, PW = 3.1, PH = 1.55, T = .42, bites = [];
+    const mk = () => { const c = document.createElement('canvas'); c.width = S; c.height = H; return c; };
+    // A hand-cut half circle: the rim wobbles a little and the cut edge is not ruler-straight.
+    const outline = (c, grow, seed, wob) => { c.beginPath(); const N = 96, rr = R + grow;
+      for (let i = 0; i <= N; i++) { const a = i / N * Math.PI, w = 1 + wob * (Math.sin(a * 7 + seed) * .5 + Math.sin(a * 13 + seed * 2.3) * .3 + Math.sin(a * 23 + seed * .7) * .2);
+        c[i ? 'lineTo' : 'moveTo'](CX + Math.cos(a) * rr * w, CY + Math.sin(a) * rr * w); }
+      for (let i = 0; i <= 30; i++) c.lineTo(CX - rr + i / 30 * 2 * rr, CY - grow * .4 + Math.sin(i * 1.7 + seed) * wob * 110 + Math.sin(i * .6 + seed * 3) * wob * 70);
+      c.closePath(); };
+    // Baked once. Top wafer: uneven browning, a fine pressed lattice, speckle, a darker rim. Plus a height map for the relief.
+    const topBase = mk(), carBase = mk(), botBase = mk(), height = mk();
+    { const b = topBase.getContext('2d'), hh = height.getContext('2d');
+      b.save(); outline(b, 0, 1, .012); b.clip();
+      const gr = b.createRadialGradient(CX, CY, R * .1, CX, CY, R * 1.02); gr.addColorStop(0, '#dba558'); gr.addColorStop(.72, '#c98c40'); gr.addColorStop(.93, '#b0722f'); gr.addColorStop(1, '#8f5521'); b.fillStyle = gr; b.fillRect(0, 0, S, H);
+      for (let i = 0; i < 90; i++) { const x = rnd() * S, y = rnd() * H, r = 30 + rnd() * 120, dark = rnd() > .45, bl = b.createRadialGradient(x, y, 0, x, y, r);   // blotchy, uneven bake
+        bl.addColorStop(0, dark ? 'rgba(122,66,20,.16)' : 'rgba(246,206,132,.15)'); bl.addColorStop(1, dark ? 'rgba(122,66,20,0)' : 'rgba(246,206,132,0)'); b.fillStyle = bl; b.fillRect(x - r, y - r, r * 2, r * 2); }
+      hh.fillStyle = '#8a8a8a'; hh.fillRect(0, 0, S, H);
+      const G = 30, line = (cx, off, i, dir) => { cx.beginPath(); cx.moveTo(i + off, 0); cx.lineTo(i + off + dir * H, H); cx.stroke(); };
+      for (let i = -S; i < S * 2; i += G) for (const dir of [1, -1]) {
+        const j = (rnd() - .5) * 3;                                                                    // the iron's lines are not perfectly even
+        b.lineCap = 'butt'; b.strokeStyle = 'rgba(108,58,16,.5)'; b.lineWidth = 5.5; line(b, j, i, dir);     // pressed groove
+        b.strokeStyle = 'rgba(70,34,8,.22)'; b.lineWidth = 2; line(b, j + 3.2, i, dir);                      // its shadow side
+        b.strokeStyle = 'rgba(255,228,172,.3)'; b.lineWidth = 2; line(b, j - 3.4, i, dir);                   // its lit side
+        hh.strokeStyle = '#1c1c1c'; hh.lineWidth = 7; line(hh, j, i, dir); }
+      for (let i = 0; i < 9000; i++) { const x = rnd() * S, y = rnd() * H, r = .5 + rnd() * 2.2, dk = rnd() > .5;
+        b.fillStyle = `rgba(${dk ? '104,56,16' : '255,224,166'},${.05 + rnd() * .13})`; b.beginPath(); b.arc(x, y, r, 0, 6.283); b.fill();
+        if (i % 3 === 0) { hh.fillStyle = dk ? 'rgba(0,0,0,.25)' : 'rgba(255,255,255,.25)'; hh.beginPath(); hh.arc(x, y, r * 1.6, 0, 6.283); hh.fill(); } }
+      for (let i = 0; i < 26; i++) { const a = rnd() * Math.PI, d = R * (.2 + rnd() * .75), x = CX + Math.cos(a) * d, y = CY + Math.sin(a) * d, r = 5 + rnd() * 12, sc = b.createRadialGradient(x, y, 0, x, y, r);   // a few scorched spots
+        sc.addColorStop(0, 'rgba(96,48,12,.4)'); sc.addColorStop(1, 'rgba(96,48,12,0)'); b.fillStyle = sc; b.fillRect(x - r, y - r, r * 2, r * 2); }
+      b.restore();
+      b.save(); outline(b, 0, 1, .012); b.clip(); b.strokeStyle = 'rgba(126,70,24,.75)'; b.lineWidth = 22; outline(b, 0, 1, .012); b.stroke();        // darker, crisper rim
+      b.strokeStyle = 'rgba(236,196,128,.35)'; b.lineWidth = 5; outline(b, -15, 1, .012); b.stroke(); b.restore();
+      hh.strokeStyle = '#d8d8d8'; hh.lineWidth = 26; outline(hh, -4, 1, .012); hh.stroke();
+      // the caramel squeezes out past the wafers, unevenly, with a few beads along the rim
+      const c = carBase.getContext('2d'); c.fillStyle = '#fff'; outline(c, 9, 5, .022); c.fill();
+      for (let i = 0; i < 14; i++) { const a = .08 + rnd() * (Math.PI - .16), r = 9 + rnd() * 13; c.beginPath(); c.arc(CX + Math.cos(a) * (R + 9), CY + Math.sin(a) * (R + 9), r, 0, 6.283); c.fill(); }
+      // the bottom wafer was never lined up exactly with the top one
+      const o = botBase.getContext('2d'); o.fillStyle = '#fff'; o.translate(7, 5); outline(o, 3, 9, .016); o.fill(); }
+    const cvT = mk(), cvC = mk(), cvB = mk(), tx = (cv) => { const t = new THREE.CanvasTexture(cv); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8; return t; };
+    const texT = tx(cvT), texC = tx(cvC), texB = tx(cvB), bump = new THREE.CanvasTexture(height); bump.anisotropy = 8;
+    const clamp01 = (v) => Math.max(0, Math.min(1, v)), ease = (p) => p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;
+    const DELAY = 2200, GROW = 2800, BROWN = 2600, LIFE = DELAY + GROW + BROWN;
+    // One bite = a main arc with scalloped tooth marks round it. `km` scales the middle, `kl(i)` each tooth mark.
+    const biteShape = (c, b, scale, km, kl) => { c.save(); c.translate(b.x, b.y); c.rotate(b.rot); c.scale(b.sx, 1);
+      if (km > .01) { c.beginPath(); c.arc(0, 0, b.r * .74 * scale * km, 0, 6.283); c.fill(); }
+      b.lobes.forEach((l, i) => { const k = kl(i); if (k < .01) return; c.beginPath(); c.arc(Math.cos(l.a) * b.r * l.d * scale, Math.sin(l.a) * b.r * l.d * scale, b.r * l.rr * scale * k, 0, 6.283); c.fill(); });
+      c.restore(); };
+    const paint = (now) => {
+      for (const [cv, base, scale, kind] of [[cvT, topBase, 1, 't'], [cvC, carBase, .9, 'c'], [cvB, botBase, .96, 'b']]) { const c = cv.getContext('2d');
+        c.globalCompositeOperation = 'source-over'; c.clearRect(0, 0, S, H); c.drawImage(base, 0, 0);
+        for (const b of bites) { const age = now - b.t, p = clamp01((age - DELAY) / GROW);
+          if (kind === 't' && p > 0) {                                                                 // regrown wafer arrives as pale dough, then browns
+            const pale = .62 * (1 - clamp01((age - DELAY - GROW * .55) / BROWN)); if (pale > .01) { c.globalCompositeOperation = 'source-atop'; c.fillStyle = `rgba(250,226,176,${pale})`; biteShape(c, b, 1.04, 1, () => 1); } }
+          c.globalCompositeOperation = 'destination-out'; c.fillStyle = '#000';
+          const lag = kind === 'c' ? .08 : kind === 'b' ? -.05 : 0, q = clamp01(p + lag * (p > 0 && p < 1 ? 1 : 0));   // the three layers close at slightly different moments
+          biteShape(c, b, scale, 1 - ease(clamp01((q - .3) / .7)), (i) => 1 - ease(clamp01(q * 1.9 - b.lobes[i].delay * .9))); } }   // tooth marks knit first, the middle fills last
+      texT.needsUpdate = texC.needsUpdate = texB.needsUpdate = true; };
     paint(0);
-    // twelve thin layers give it real thickness: wafer, a glossy caramel middle, wafer. Bites cut through all of them.
-    const geo = new THREE.PlaneGeometry(3.1, 1.55), layers = [], LN = 12;
-    for (let i = 0; i < LN; i++) { const caramel = i >= 5 && i <= 6, top = i === LN - 1;
-      const m = new THREE.Mesh(geo, new THREE.MeshPhysicalMaterial({ map: tex, color: caramel ? 0x7a3f10 : top ? 0xffffff : 0xb9783a, roughness: caramel ? .18 : .78, clearcoat: caramel ? 1 : 0, alphaTest: .5,
-        bumpMap: top ? bump : null, bumpScale: top ? 1.6 : 0 })); m.position.z = i * .0125; if (caramel) m.scale.set(1.012, 1.02, 1);
-      m.customDepthMaterial = new THREE.MeshDepthMaterial({ depthPacking: THREE.RGBADepthPacking, map: tex, alphaTest: .5 }); g.add(m); layers.push(m); }
-    layers[LN - 1].userData.k = 'mouth';
-    const crunch = () => { try { audio(); const src = ac.createBufferSource(), bp = ac.createBiquadFilter(), gn = ac.createGain(), now = ac.currentTime; src.buffer = noise; bp.type = 'bandpass'; bp.frequency.value = 1500; bp.Q.value = .8;
-      gn.gain.setValueAtTime(.22, now); gn.gain.exponentialRampToValueAtTime(.0001, now + .09); src.connect(bp).connect(gn).connect(ac.destination); src.start(now); src.stop(now + .03); } catch (e) { /* no audio: bite silently */ } };
-    mouths.stroopwafel = { g, tip: 'Stroopwafel: click to take a bite. Eat it all if you like; it grows back.',
-      click: (obj, uv) => { if (!uv) return; bites.push({ x: uv.x * S, y: (1 - uv.y) * S / 2, r: 52, a: Math.random() * 6, t: performance.now() }); crunch(); tip.textContent = HOME ? tip.textContent : 'Stroopwafel: ' + bites.length + (bites.length === 1 ? ' bite' : ' bites') + ' taken. It grows back in a few seconds.'; },
-      tick: (t) => { if (!bites.length) return; const now = performance.now(); while (bites.length && now - bites[0].t > 9200) bites.shift(); paint(now); } }; }
+    // Interior layers keep the cut-out from their texture but take one flat colour with a crumb grain, so the edge and
+    // every bitten face read as wafer / caramel / wafer.
+    const solid = (mat, hex, grain) => { const c = new THREE.Color(hex);
+      mat.onBeforeCompile = (sh) => { sh.fragmentShader = sh.fragmentShader.replace('#include <map_fragment>', `#include <map_fragment>
+        float crumbN = fract(sin(dot(floor(vMapUv * vec2(520.0, 260.0)), vec2(12.9898, 78.233))) * 43758.5453);
+        diffuseColor.rgb = vec3(${c.r.toFixed(4)}, ${c.g.toFixed(4)}, ${c.b.toFixed(4)}) * (1.0 - ${grain.toFixed(2)} * crumbN);`); };
+      mat.customProgramCacheKey = () => 'sw' + hex + '-' + grain; return mat; };
+    const geo = new THREE.PlaneGeometry(PW, PH), NB = 12, NC = 6, NT = 13, LN = NB + NC + NT; let topLayer = null;
+    for (let i = 0; i < LN; i++) { const kind = i < NB ? 'b' : i < NB + NC ? 'c' : 't', tex = kind === 'b' ? texB : kind === 'c' ? texC : texT, top = i === LN - 1, baked = i === 0 || i === NB - 1 || i === NB + NC;
+      const mat = kind === 'c' ? solid(new THREE.MeshPhysicalMaterial({ map: tex, roughness: .14, clearcoat: 1, clearcoatRoughness: .08, emissive: 0x2a1000, emissiveIntensity: .5, alphaTest: .5 }), 0x8a430d, .0)
+        : top ? new THREE.MeshStandardMaterial({ map: tex, roughness: .9, bumpMap: bump, bumpScale: 2.4, alphaTest: .5 })
+        : solid(new THREE.MeshStandardMaterial({ map: tex, roughness: .95, alphaTest: .5 }), baked ? 0xa9682a : (i % 2 ? 0xdcae66 : 0xd3a45c), baked ? .1 : .22);
+      const m = new THREE.Mesh(geo, mat); m.position.z = i / (LN - 1) * T - T / 2;
+      m.customDepthMaterial = new THREE.MeshDepthMaterial({ depthPacking: THREE.RGBADepthPacking, map: tex, alphaTest: .5 }); g.add(m); if (top) topLayer = m; }
+    topLayer.userData.k = 'mouth';
+    // crumbs: a few fall away with every bite
+    const crumbGeo = new THREE.DodecahedronGeometry(.03, 0), crumbMat = new THREE.MeshStandardMaterial({ color: 0xcf9a52, roughness: .95 }), crumbs = [];
+    for (let i = 0; i < 40; i++) { const m = new THREE.Mesh(crumbGeo, crumbMat); m.visible = false; g.add(m); crumbs.push({ m, life: 0, v: V(0, 0, 0), spin: V(0, 0, 0) }); }
+    const spill = (x, y, n, size) => { let k = 0; for (const c of crumbs) { if (k >= n) break; if (c.life > 0) continue; k++;
+      const a = Math.random() * 6.283, d = Math.random() * size * .5; c.m.position.set(x + Math.cos(a) * d, y + Math.sin(a) * d, T / 2 + .02); c.m.scale.setScalar(.5 + Math.random() * 1.6);
+      c.v.set(Math.cos(a) * (.3 + Math.random() * .9), .5 + Math.random() * 1.3, .3 + Math.random() * .8); c.spin.set(Math.random() * 9, Math.random() * 9, Math.random() * 9); c.life = .7 + Math.random() * .5; c.m.visible = true; } };
+    // five bite sounds, built from grains of noise: each has its own pitch, length and number of cracks, plus a soft low chomp
+    const BITES = [{ f: 2600, q: 1.4, n: 3, len: .11, g: .2 }, { f: 1500, q: .9, n: 5, len: .19, g: .22 }, { f: 3400, q: 2.2, n: 2, len: .07, g: .17 }, { f: 1100, q: .7, n: 6, len: .26, g: .24 }, { f: 2000, q: 1.1, n: 4, len: .15, g: .21 }]; let lastSnd = -1;
+    let grit = null;   // half a second of noise for the bite sounds (the shared sample is only 30ms)
+    const crunch = (size) => { try { audio(); if (!grit) { grit = ac.createBuffer(1, ac.sampleRate * .5, ac.sampleRate); const d = grit.getChannelData(0); for (let j = 0; j < d.length; j++) d[j] = Math.random() * 2 - 1; } const noise = grit; let i = Math.floor(Math.random() * BITES.length); if (i === lastSnd) i = (i + 1) % BITES.length; lastSnd = i; const P = BITES[i], now = ac.currentTime, span = Math.max(.05, noise.duration - .08);
+      for (let k = 0; k < P.n; k++) { const src = ac.createBufferSource(), bp = ac.createBiquadFilter(), gn = ac.createGain(), t0 = now + (k / P.n) * P.len + Math.random() * .012, d = .014 + Math.random() * .03;
+        src.buffer = noise; src.playbackRate.value = .8 + Math.random() * .7; bp.type = 'bandpass'; bp.frequency.value = P.f * (.7 + Math.random() * .7) * (1.15 - size * .3); bp.Q.value = P.q;
+        gn.gain.setValueAtTime(.0001, t0); gn.gain.exponentialRampToValueAtTime(P.g * (1 - k / P.n * .55), t0 + .003); gn.gain.exponentialRampToValueAtTime(.0001, t0 + d);
+        src.connect(bp).connect(gn).connect(ac.destination); src.start(t0, Math.random() * span, d + .02); }
+      const lo = ac.createBufferSource(), lp = ac.createBiquadFilter(), lg = ac.createGain(); lo.buffer = noise; lp.type = 'lowpass'; lp.frequency.value = 260 + size * 120;
+      lg.gain.setValueAtTime(.0001, now); lg.gain.exponentialRampToValueAtTime(.16 + size * .1, now + .008); lg.gain.exponentialRampToValueAtTime(.0001, now + .09 + size * .05);
+      lo.connect(lp).connect(lg).connect(ac.destination); lo.start(now, Math.random() * span, .16); } catch (e) { /* no audio: bite silently */ } };
+    mouths.stroopwafel = { g, tip: 'Stroopwafel: click to take a bite. Every bite is a different size; it grows back as pale dough and browns.',
+      click: (obj, uv) => { if (!uv) return; const x = uv.x * S, y = (1 - uv.y) * H;
+        try { if (cvT.getContext('2d').getImageData(Math.round(x), Math.round(y), 1, 1).data[3] < 40) return; } catch (e) { /* can't read the pixel: allow the bite */ }   // nothing left there to bite
+        const size = Math.random(), r = R * (.1 + size * .2), n = 5 + Math.floor(Math.random() * 5), lobes = [];
+        for (let i = 0; i < n; i++) lobes.push({ a: i / n * 6.283 + (Math.random() - .5) * .5, d: .52 + Math.random() * .2, rr: .34 + Math.random() * .24, delay: Math.random() });
+        bites.push({ x, y, r, rot: Math.random() * 6.283, sx: .75 + Math.random() * .6, lobes, t: performance.now() }); crunch(size);
+        spill((uv.x - .5) * PW, (uv.y - .5) * PH, 5 + Math.round(size * 8), r / S * PW * 2); paint(performance.now());
+        if (!HOME) tip.textContent = 'Stroopwafel: ' + bites.length + (bites.length === 1 ? ' bite' : ' bites') + ' taken. Each one grows back in a few seconds.'; },
+      tick: (t, dt) => {
+        const idle = t - ptr.at > 3000, px = reduce ? 0 : idle ? Math.sin(t * .0007) * .45 : ptr.x, py = reduce ? 0 : idle ? Math.cos(t * .0009) * .3 : ptr.y;   // it leans with the pointer, so its edge shows
+        g.rotation.x = lerp(g.rotation.x, .5 + py * .3, Math.min(1, dt * 5)); g.rotation.y = lerp(g.rotation.y, px * .5, Math.min(1, dt * 5));
+        for (const c of crumbs) { if (c.life <= 0) continue; c.life -= dt; c.v.y -= 6.5 * dt; c.m.position.addScaledVector(c.v, dt); c.m.rotation.x += c.spin.x * dt; c.m.rotation.y += c.spin.y * dt;
+          if (c.life < .25) c.m.scale.multiplyScalar(Math.max(0, 1 - dt * 6)); if (c.life <= 0) c.m.visible = false; }
+        if (!bites.length) return; const now = performance.now(); let gone = false; while (bites.length && now - bites[0].t > LIFE) { bites.shift(); gone = true; }
+        if (gone || bites.some((b) => now - b.t > DELAY)) paint(now); } }; }   // a fresh bite just sits there, so only repaint while something is growing back
 
   Object.values(noses).concat(Object.values(mouths)).forEach((o) => { face.add(o.g); shadow(o.g); o.g.visible = false; });
   let nose = 'tree', mouth = 'beans';
