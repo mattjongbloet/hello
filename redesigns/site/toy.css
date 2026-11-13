@@ -29,3 +29,6 @@
 .art-lightbox { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: 56px 20px 20px; background: rgb(10 10 12 / .88); cursor: zoom-out; }
 .art-lightbox img { max-width: min(100%, 760px); max-height: calc(100vh - 84px); border-radius: 6px; box-shadow: 0 30px 80px rgb(0 0 0 / .6); }
 .art-lightbox button { position: absolute; top: 12px; right: 16px; font: 500 15px/1 var(--body); padding: 12px 16px; border-radius: 999px; border: 0; background: #fff; color: #15171a; cursor: pointer; }
+
+/* The hint under the face: Roobert, sentence case (not the small uppercase label). */
+.lab-home .toy-hint { font: 400 14px/1.4 var(--body); letter-spacing: 0; text-transform: none; }

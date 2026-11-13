@@ -1,0 +1,120 @@
+"""Card lab: fifteen variations of the half-width project card (two per row), light theme.
+Each variation is shown as a real pair so the row can be judged.  Output: redesigns/card-lab/index.html
+Re-run: python3 tools/build-card-lab.py"""
+import os
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); OUT = os.path.join(ROOT, "redesigns", "card-lab")
+# (href, logo, company, title, line, shot, big figure, what the figure is). Copy and figures as on the home page / case studies.
+P = [("../case-studies/pmi.html", "homebot-logo.png", "Homebot", "Private Mortgage Insurance (PMI)", "Helping ≈1M US homeowners save an estimated $200M a month", "pmi-mockup.png", "≈$200M", "estimated savings a month"),
+     ("../case-studies/home-search.html", "homebot-logo.png", "Homebot", "Home Search", "Helping ≈10 million people find their next home", "home-search.jpg", "≈10M", "people finding their next home")]
+ARROW = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+def card(p):
+    href, logo, co, title, line, shot, big, bigl = p
+    return f'''<a class="pc" href="{href}">
+        <div class="copy">
+          <div class="head"><img class="logo" src="../assets/{logo}" alt=""><span class="co">{co}</span></div>
+          <span class="big">{big}<small>{bigl}</small></span>
+          <h3>{title}</h3>
+          <p>{line}</p>
+        </div>
+        <span class="arr">{ARROW}</span>
+        <div class="shot"><img src="../assets/{shot}" alt="" loading="lazy"></div>
+      </a>'''
+V = [("Current", "The card as it is now: logo, company, title, one line, screenshot bleeding off the bottom-right."),
+ ("Image on top", "The screenshot fills the top edge to edge; logo and text sit underneath."),
+ ("Image on top, inset", "The screenshot sits inside the card in its own rounded tile, text underneath."),
+ ("Image on top, logo overlapping", "The logo straddles the bottom edge of the image, like an app icon."),
+ ("Compact header", "Logo and company share one row, so the title starts higher and the image gets more room."),
+ ("No logo, company tag", "The logo tile is replaced by a small company pill."),
+ ("Centred screenshot", "The screenshot sits centred and bleeds off the bottom only."),
+ ("Tinted card", "The whole card takes the grey tint; the screenshot floats on it with a shadow."),
+ ("Number first", "The headline figure leads; the project name sits under it."),
+ ("Image, then one row", "Minimal: image on top, then logo, title and an arrow in a single row. No description."),
+ ("Arrow in the corner", "The current card with an arrow button top-right that signals it opens."),
+ ("Outlined, no fill", "No white fill: a hairline outline on the page background, image in a rounded tile."),
+ ("No card", "No container at all: a rounded image with text set straight on the page."),
+ ("Side by side", "Text on the left, a tall crop of the screenshot on the right."),
+ ("Image fills the card", "The screenshot is the card; a white label with logo and title floats bottom-left.")]
+secs = "\n".join(f'''  <section class="var v{i}">
+    <h2><b>{i}</b> {n}</h2>
+    <p class="note">{note}</p>
+    <div class="row">
+      {card(P[0])}
+      {card(P[1])}
+    </div>
+  </section>''' for i, (n, note) in enumerate(V, 1))
+CSS = """
+:root { --paper: #fff; --mist: #f6f6f4; --line: #e4e4df; --ink: #15171a; --ink-2: #5f636b; --signal: #b28550; --tile: #e8e8e8; --body: "Roobert", "Hanken Grotesk", system-ui, sans-serif; }
+* { box-sizing: border-box; } body { margin: 0; font: 400 16px/1.5 var(--body); color: var(--ink); background: var(--mist); }
+img { display: block; max-width: 100%; } a { color: inherit; } :focus-visible { outline: 2px solid var(--signal); outline-offset: 3px; border-radius: 8px; }
+.page { max-width: 1120px; margin: 0 auto; padding: 28px 20px 80px; }
+.back { display: inline-block; padding: 12px 0; color: var(--ink-2); text-decoration: none; } .back:hover { color: var(--ink); }
+h1 { font: 650 clamp(28px, 3.4vw, 40px)/1.1 var(--body); letter-spacing: -.025em; margin: 6px 0 8px; }
+.intro { color: var(--ink-2); max-width: 64ch; margin: 0; }
+.var { margin-top: 56px; }
+.var h2 { font: 600 18px/1.2 var(--body); margin: 0 0 6px; display: flex; align-items: center; gap: 10px; }
+.var h2 b { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--ink); color: #fff; font-size: 13px; font-weight: 600; }
+.note { margin: 0 0 18px; color: var(--ink-2); font-size: 15px; }
+.row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+@media (max-width: 760px) { .row { grid-template-columns: 1fr; gap: 16px; } }
+/* ---- base card (= variation 1, the current card) ---- */
+.pc { position: relative; display: flex; flex-direction: column; background: var(--paper); border: 1px solid #ebebe8; border-radius: 24px; overflow: hidden; text-decoration: none; color: var(--ink); padding: 40px 0 0 40px; transition: transform .25s ease, box-shadow .25s; }
+.pc:hover { transform: translateY(-3px); box-shadow: 0 20px 44px -26px rgb(20 20 20 / .3); }
+.copy { display: flex; flex-direction: column; gap: 4px; padding-right: 40px; }
+.head { display: flex; flex-direction: column; gap: 0; }
+.logo { width: 60px; height: 60px; border-radius: 15px; margin-bottom: 18px; }
+.co { font-size: 15px; color: var(--ink-2); }
+.pc h3 { font: 500 clamp(20px, 1.75vw, 24px)/1.2 var(--body); letter-spacing: -.02em; margin: 6px 0 0; }
+.pc p { font-size: 16px; color: var(--ink-2); line-height: 1.55; max-width: 36ch; margin: 4px 0 0; }
+.big, .arr { display: none; }
+.shot { margin-top: 32px; background: var(--tile); border-top-left-radius: 20px; overflow: hidden; aspect-ratio: 16 / 10; }
+.shot img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 0; transition: transform .4s ease; }
+.pc:hover .shot img { transform: scale(1.02); }
+@media (max-width: 760px) { .pc { padding: 26px 0 0 26px; } .copy { padding-right: 26px; } .shot { margin-top: 26px; } }
+/* shared by the image-on-top family */
+.v2 .pc, .v3 .pc, .v4 .pc, .v10 .pc, .v12 .pc, .v13 .pc { padding: 0; flex-direction: column-reverse; justify-content: flex-end; }
+.v2 .shot, .v4 .shot, .v10 .shot { margin: 0; border-radius: 0; }
+.v2 .copy, .v4 .copy { padding: 26px 32px 32px; }
+/* 2 */ .v2 .logo { width: 48px; height: 48px; border-radius: 12px; margin-bottom: 14px; }
+/* 3 */ .v3 .pc { padding: 14px; } .v3 .shot { margin: 0; border-radius: 14px; } .v3 .copy { padding: 22px 18px 18px; } .v3 .logo { width: 48px; height: 48px; border-radius: 12px; margin-bottom: 14px; }
+/* 4 */ .v4 .copy { padding-top: 0; } .v4 .logo { width: 64px; height: 64px; margin: -32px 0 14px; position: relative; box-shadow: 0 0 0 4px var(--paper); }
+/* 5 */ .v5 .head { flex-direction: row; align-items: center; gap: 12px; } .v5 .logo { width: 36px; height: 36px; border-radius: 10px; margin: 0; } .v5 .pc h3 { margin-top: 16px; }
+/* 6 */ .v6 .logo { display: none; } .v6 .co { align-self: flex-start; padding: 6px 12px; border-radius: 999px; background: color-mix(in srgb, var(--ink) 6%, transparent); color: var(--ink); font-size: 14px; font-weight: 500; } .v6 .pc h3 { margin-top: 16px; }
+/* 7 */ .v7 .pc { padding: 40px 40px 0; } .v7 .copy { padding: 0; align-items: center; text-align: center; } .v7 .head { align-items: center; } .v7 .shot { border-radius: 20px 20px 0 0; }
+@media (max-width: 760px) { .v7 .pc { padding: 26px 26px 0; } }
+/* 8 */ .v8 .pc { background: #ececea; border-color: transparent; } .v8 .shot { background: none; border-radius: 0; overflow: visible; padding-top: 4px; } .v8 .shot img { border-top-left-radius: 16px; box-shadow: -10px -8px 40px -14px rgb(0 0 0 / .35); height: calc(100% - 4px); }
+/* 9 */ .v9 .big { display: flex; flex-direction: column; order: 2; font: 600 clamp(40px, 4.4vw, 60px)/1 var(--body); letter-spacing: -.04em; margin-top: 2px; } .v9 .big small { font: 400 16px/1.4 var(--body); letter-spacing: 0; color: var(--ink-2); margin-top: 8px; }
+.v9 .head { order: 1; flex-direction: row; align-items: center; gap: 12px; margin-bottom: 18px; } .v9 .logo { width: 36px; height: 36px; border-radius: 10px; margin: 0; } .v9 .pc h3 { order: 3; font-size: 17px; letter-spacing: 0; margin-top: 16px; } .v9 .pc p { display: none; }
+/* 10 */ .v10 .copy { flex-direction: row; align-items: center; gap: 14px; padding: 20px 76px 20px 24px; min-height: 84px; } .v10 .head { flex: none; } .v10 .logo { width: 44px; height: 44px; border-radius: 12px; margin: 0; } .v10 .co, .v10 .pc p { display: none; } .v10 .pc h3 { margin: 0; font-size: 19px; }
+.v10 .arr { display: grid; place-items: center; position: absolute; right: 22px; bottom: 20px; width: 44px; height: 44px; border-radius: 50%; background: color-mix(in srgb, var(--ink) 6%, transparent); } .arr svg { width: 20px; height: 20px; }
+/* 11 */ .v11 .arr { display: grid; place-items: center; position: absolute; right: 28px; top: 28px; width: 48px; height: 48px; border-radius: 50%; box-shadow: inset 0 0 0 1.5px var(--line); transition: background .2s, color .2s; } .v11 .pc:hover .arr { background: var(--ink); color: #fff; box-shadow: none; }
+/* 12 */ .v12 .pc { padding: 14px; background: none; border: 1.5px solid #dcdcd6; } .v12 .shot { margin: 0; border-radius: 14px; } .v12 .copy { padding: 22px 18px 18px; } .v12 .logo { width: 48px; height: 48px; border-radius: 12px; margin-bottom: 14px; }
+/* 13 */ .v13 .pc { background: none; border: 0; border-radius: 0; overflow: visible; } .v13 .pc:hover { box-shadow: none; } .v13 .shot { margin: 0; border-radius: 22px; } .v13 .copy { padding: 20px 4px 0; } .v13 .head { flex-direction: row; align-items: center; gap: 10px; } .v13 .logo { width: 28px; height: 28px; border-radius: 8px; margin: 0; } .v13 .pc h3 { margin-top: 10px; }
+/* 14 */ .v14 .pc { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .82fr); padding: 0; min-height: 380px; } .v14 .copy { padding: 36px 20px 36px 36px; align-self: start; } .v14 .shot { margin: 36px 0 0; aspect-ratio: auto; grid-column: 2; grid-row: 1; } .v14 .shot img { object-position: 22% 0; }
+@media (max-width: 420px) { .v14 .pc { display: flex; min-height: 0; } .v14 .copy { padding: 26px; } .v14 .shot { margin: 0 0 0 26px; aspect-ratio: 16 / 10; } }
+/* 15 */ .v15 .pc { padding: 0; border: 0; } .v15 .shot { margin: 0; border-radius: 0; aspect-ratio: 5 / 4; } .v15 .copy { position: absolute; left: 18px; bottom: 18px; max-width: calc(100% - 36px); z-index: 1; flex-direction: row; align-items: center; gap: 12px; padding: 12px 18px 12px 12px; border-radius: 18px; background: #fff; box-shadow: 0 10px 30px -12px rgb(0 0 0 / .35); }
+.v15 .head { flex: none; } .v15 .logo { width: 40px; height: 40px; border-radius: 11px; margin: 0; } .v15 .co, .v15 .pc p { display: none; } .v15 .pc h3 { margin: 0; font-size: 18px; }
+"""
+os.makedirs(OUT, exist_ok=True)
+open(os.path.join(OUT, "index.html"), "w").write(f"""<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="../assets/mj-logo.svg" type="image/svg+xml">
+<title>Project cards: 15 variations</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;650;700&display=swap">
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>{CSS}</style>
+</head>
+<body>
+<main class="page">
+  <a class="back" href="../site/index.html">← Home page</a>
+  <h1>Project cards: 15 variations</h1>
+  <p class="intro">The half-width project card, two per row, in the light theme. Each variation is a real pair at the home page’s width, and every card links to its case study.</p>
+{secs}
+</main>
+</body>
+</html>
+""")
+print("built card-lab")
