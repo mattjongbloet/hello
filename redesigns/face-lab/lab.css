@@ -36,4 +36,8 @@ body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.55 v
 .lab-gap::before, .lab-gap::after { content: ""; position: absolute; top: -6px; height: 11px; border-left: 1.5px solid #f0326e; }
 .lab-gap::before { left: 0; } .lab-gap::after { right: 0; }
 .lab-gap span { position: absolute; left: 50%; top: -22px; transform: translateX(-50%); background: #f0326e; color: #fff; font-size: 11px; line-height: 1; padding: 4px 6px; border-radius: 4px; }
+/* Lightbox for the framed art */
+.art-lightbox { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: 56px 20px 20px; background: rgb(10 10 12 / .88); cursor: zoom-out; }
+.art-lightbox img { max-width: min(100%, 760px); max-height: calc(100vh - 84px); border-radius: 6px; box-shadow: 0 30px 80px rgb(0 0 0 / .6); }
+.art-lightbox button { position: absolute; top: 12px; right: 16px; font: 500 15px/1 var(--body); padding: 12px 16px; border-radius: 999px; border: 0; background: #fff; color: #15171a; cursor: pointer; }
 @media (max-width: 860px) { .lab-grid { grid-template-columns: 1fr; gap: 12px; } .lab-stage-wrap { width: min(100%, 420px); } }

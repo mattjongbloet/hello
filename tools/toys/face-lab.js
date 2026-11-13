@@ -92,6 +92,19 @@
         else tool.rotation.z = lerp(tool.rotation.z, on ? .08 : 0, dt * 6);
         grown = lerp(grown, dig < 0 || dig > .5 ? target : grown, dt * 3); sprout.scale.setScalar(Math.max(.001, grown)); } }; }
 
+  // -- framed artwork: click and it opens larger in a lightbox
+  { const g = new THREE.Group(); g.position.set(0, -.6, .12); const ART_SRC = '%%ART%%', W = 1.0, H = W * 1408 / 1010;
+    const frame = new THREE.Mesh(new THREE.BoxGeometry(W + .16, H + .16, .09), new THREE.MeshStandardMaterial({ color: 0x141414, roughness: .45 })); g.add(frame);
+    const print = new THREE.Mesh(new THREE.PlaneGeometry(W, H), new THREE.MeshBasicMaterial({ color: 0x111111 })); print.position.z = .05; g.add(print);
+    if (ART_SRC) new THREE.TextureLoader().load(ART_SRC, (t) => { t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8; print.material.map = t; print.material.color.set(0xffffff); print.material.needsUpdate = true; kick(); });
+    const h = hit(new THREE.PlaneGeometry(W + .3, H + .3), 'nose'); h.position.z = .1; g.add(h);
+    let box = null; const close = () => { if (box) { box.remove(); box = null; removeEventListener('keydown', onKey); } }, onKey = (e) => { if (e.key === 'Escape') close(); };
+    const openBox = () => { if (box) return; box = document.createElement('div'); box.className = 'art-lightbox'; box.setAttribute('role', 'dialog'); box.setAttribute('aria-modal', 'true'); box.setAttribute('aria-label', 'Artwork by Matt Jongbloet');
+      box.innerHTML = '<button type="button" aria-label="Close">Close ✕</button><img src="../assets/art-why.jpg" alt="“Why?”, a dense black and white line illustration by Matt Jongbloet">';
+      box.addEventListener('click', close); document.body.appendChild(box); addEventListener('keydown', onKey); box.querySelector('button').focus(); };
+    noses.art = { g, tip: 'Framed art: click it and the piece opens larger.', click: openBox, off: close,
+      tick: (t, dt, on) => { g.position.z = lerp(g.position.z, on ? .35 : .12, dt * 8); g.rotation.z = lerp(g.rotation.z, on ? -.04 : 0, dt * 8); } }; }
+
   // ================= MOUTHS =================
   const mouths = {}, MOUTH_Y = -2.35;
   // -- coffee beans (current)
@@ -148,6 +161,29 @@
         document.documentElement.style.setProperty('--accent-text', '#' + text.getHexString()); if (!HOME) tip.textContent = 'Colour swatches: accent set to ' + c + '.'; },
       tick: (t, dt) => cards.forEach(({ card, c }) => { card.position.y = lerp(card.position.y, c === picked ? -1.72 : -1.55, dt * 8); }) }; }
 
+  // -- half a stroopwafel: each click takes a bite where you clicked; it grows back slowly
+  { const g = new THREE.Group(); g.position.set(0, MOUTH_Y - .1, .08); const S = 512, cv = document.createElement('canvas'); cv.width = S; cv.height = S / 2; const c2 = cv.getContext('2d');
+    const tex = new THREE.CanvasTexture(cv); tex.colorSpace = THREE.SRGBColorSpace; tex.anisotropy = 8; const bites = [];
+    const paint = (now) => { c2.globalCompositeOperation = 'source-over'; c2.clearRect(0, 0, S, S / 2);
+      c2.save(); c2.beginPath(); c2.arc(S / 2, 0, S / 2 - 2, 0, Math.PI); c2.closePath(); c2.clip();
+      c2.fillStyle = '#d79a4c'; c2.fillRect(0, 0, S, S / 2); c2.strokeStyle = '#b5762f'; c2.lineWidth = 4;
+      for (let i = -S; i < S * 2; i += 24) { c2.beginPath(); c2.moveTo(i, 0); c2.lineTo(i + S / 2, S / 2); c2.stroke(); c2.beginPath(); c2.moveTo(i, 0); c2.lineTo(i - S / 2, S / 2); c2.stroke(); }
+      c2.restore(); c2.strokeStyle = '#a8682a'; c2.lineWidth = 9; c2.beginPath(); c2.arc(S / 2, 0, S / 2 - 7, 0, Math.PI); c2.stroke(); c2.fillStyle = '#a8682a'; c2.fillRect(0, 0, S, 6);
+      c2.globalCompositeOperation = 'destination-out';
+      for (const b of bites) { const k = Math.max(0, 1 - Math.max(0, now - b.t - 2500) / 6500), r = b.r * k; if (r < 1) continue;
+        for (let j = 0; j < 6; j++) { const a = j / 6 * 6.283 + b.a; c2.beginPath(); c2.arc(b.x + Math.cos(a) * r * .55, b.y + Math.sin(a) * r * .55, r * .58, 0, 6.283); c2.fill(); } }
+      tex.needsUpdate = true; };
+    paint(0);
+    const geo = new THREE.PlaneGeometry(3.1, 1.55), layers = [];
+    [[0, 0x9a5a22], [.03, 0x8a4a14], [.06, 0xb9742c], [.09, 0xffffff]].forEach(([z, col]) => { const m = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ map: tex, color: col, roughness: .8, alphaTest: .5, transparent: false })); m.position.z = z;
+      m.customDepthMaterial = new THREE.MeshDepthMaterial({ depthPacking: THREE.RGBADepthPacking, map: tex, alphaTest: .5 }); g.add(m); layers.push(m); });
+    layers[3].userData.k = 'mouth';
+    const crunch = () => { try { audio(); const src = ac.createBufferSource(), bp = ac.createBiquadFilter(), gn = ac.createGain(), now = ac.currentTime; src.buffer = noise; bp.type = 'bandpass'; bp.frequency.value = 1500; bp.Q.value = .8;
+      gn.gain.setValueAtTime(.22, now); gn.gain.exponentialRampToValueAtTime(.0001, now + .09); src.connect(bp).connect(gn).connect(ac.destination); src.start(now); src.stop(now + .03); } catch (e) { /* no audio: bite silently */ } };
+    mouths.stroopwafel = { g, tip: 'Stroopwafel: click to take a bite. Eat it all if you like; it grows back.',
+      click: (obj, uv) => { if (!uv) return; bites.push({ x: uv.x * S, y: (1 - uv.y) * S / 2, r: 52, a: Math.random() * 6, t: performance.now() }); crunch(); tip.textContent = HOME ? tip.textContent : 'Stroopwafel: ' + bites.length + (bites.length === 1 ? ' bite' : ' bites') + ' taken. It grows back in a few seconds.'; },
+      tick: (t) => { if (!bites.length) return; const now = performance.now(); while (bites.length && now - bites[0].t > 9200) bites.shift(); paint(now); } }; }
+
   Object.values(noses).concat(Object.values(mouths)).forEach((o) => { face.add(o.g); shadow(o.g); o.g.visible = false; });
   let nose = 'tree', mouth = 'beans';
   const choose = (kind, name) => {
@@ -159,7 +195,7 @@
   };
   root.querySelectorAll('.lab-opts button').forEach((b) => b.addEventListener('click', () => choose(b.dataset.kind, b.dataset.name)));
   noses.tree.g.visible = true; mouths.beans.g.visible = true;
-  choose('mouth', 'swatches'); choose('nose', 'cursor');   // the pair Matt is trying
+  if (HOME) { choose('mouth', 'swatches'); choose('nose', 'cursor'); } else { choose('mouth', 'stroopwafel'); choose('nose', 'art'); }   // home: Matt's pick; lab: what he's trying now
 
   // ---- sound (Web Audio, nothing to download). Browsers only allow sound after a click, so both start on click.
   let ac = null, stopMusic = null, noise = null, ticks = 0, push = 0;
@@ -196,7 +232,7 @@
   stage.addEventListener('click', (e) => { const h = cast(e); if (!h) return; const k = h.object.userData.k;
     if (k === 'music') { if (stopMusic) stopMusic(); else playMusic(); }
     if (k === 'cycle') { audio(); push = 16; }                // a push: it spins up, then coasts and ticks down
-    if (k === 'nose' && noses[nose].click) noses[nose].click(h.object); if (k === 'mouth' && mouths[mouth].click) mouths[mouth].click(h.object); kick(); });
+    if (k === 'nose' && noses[nose].click) noses[nose].click(h.object); if (k === 'mouth' && mouths[mouth].click) mouths[mouth].click(h.object, h.uv); kick(); });
 
   // ---- edit mode overlay (cursor nose): bounding boxes, handles, spacing
   const boxEls = ['Eye', 'Eye', 'Nose', 'Mouth'].map((n) => { const d = document.createElement('div'); d.className = 'lab-box'; d.innerHTML = `<i></i><i></i><i></i><i></i><span></span><b>${n}</b>`; overlay.appendChild(d); return d; });

@@ -4,9 +4,14 @@ import os
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); T = os.path.join(ROOT, "tools", "toys"); OUT = os.path.join(ROOT, "redesigns", "face-lab")
 rd = lambda n: open(os.path.join(T, n)).read()
 src = rd("object-face.js"); a = src.index("  // ---- Left eye: vinyl record ----"); b = src.index("  // ---- Nose: a tree ----")
-js = rd("three-common.js") + "\n" + rd("face-lab.js").replace("/*EYES*/", src[a:b])
-NOSES = [("tree", "Tree (current)"), ("cursor", "Cursor (smaller)"), ("pinecone", "Pinecone"), ("tent", "Tent"), ("trowel", "Trowel")]
-MOUTHS = [("beans", "Coffee beans (current)"), ("bezier", "Bezier curve"), ("trail", "Hiking trail"), ("swatches", "Colour swatches")]
+import base64, io
+from PIL import Image
+im = Image.open(os.path.join(ROOT, "redesigns", "assets", "art-why.jpg")).convert("RGB"); im = im.resize((480, round(480 * im.height / im.width)), Image.LANCZOS)
+buf = io.BytesIO(); im.save(buf, "JPEG", quality=82)   # embedded so the 3D texture also loads from file://
+ART = "data:image/jpeg;base64," + base64.b64encode(buf.getvalue()).decode()
+js = rd("three-common.js") + "\n" + rd("face-lab.js").replace("/*EYES*/", src[a:b]).replace("%%ART%%", ART)
+NOSES = [("tree", "Tree (current)"), ("cursor", "Cursor (smaller)"), ("pinecone", "Pinecone"), ("tent", "Tent"), ("trowel", "Trowel"), ("art", "Framed art")]
+MOUTHS = [("beans", "Coffee beans (current)"), ("bezier", "Bezier curve"), ("trail", "Hiking trail"), ("swatches", "Colour swatches"), ("stroopwafel", "Stroopwafel")]
 btn = lambda kind, items, cur: "".join(f'<button type="button" data-kind="{kind}" data-name="{n}" aria-pressed="{"true" if n == cur else "false"}">{label}</button>' for n, label in items)
 HTML = f"""<!doctype html>
 <html lang="en">
@@ -30,11 +35,11 @@ HTML = f"""<!doctype html>
   <div class="lab-grid">
     <div class="lab-face">
       <div class="lab-stage-wrap"><div class="toy-stage" role="img" aria-label="A face made of 3D objects, with a switchable nose and mouth"></div><div class="lab-overlay" aria-hidden="true"></div></div>
-      <p class="lab-tip" aria-live="polite">Click the record for music and the wheel to spin it. Then try a colour swatch or the cursor.</p>
+      <p class="lab-tip" aria-live="polite">Click the framed art to open it. Click the stroopwafel to take bites.</p>
     </div>
     <div class="lab-opts">
-      <h2>Nose</h2><div role="group" aria-label="Nose">{btn("nose", NOSES, "cursor")}</div>
-      <h2>Mouth</h2><div role="group" aria-label="Mouth">{btn("mouth", MOUTHS, "swatches")}</div>
+      <h2>Nose</h2><div role="group" aria-label="Nose">{btn("nose", NOSES, "art")}</div>
+      <h2>Mouth</h2><div role="group" aria-label="Mouth">{btn("mouth", MOUTHS, "stroopwafel")}</div>
       <p class="lab-note">Each one has its click behaviour working. The accent colour here <span class="lab-accent">looks like this</span>, and changes when you pick a swatch.</p>
     </div>
   </div>
@@ -82,6 +87,10 @@ body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.55 v
 .lab-gap::before, .lab-gap::after { content: ""; position: absolute; top: -6px; height: 11px; border-left: 1.5px solid #f0326e; }
 .lab-gap::before { left: 0; } .lab-gap::after { right: 0; }
 .lab-gap span { position: absolute; left: 50%; top: -22px; transform: translateX(-50%); background: #f0326e; color: #fff; font-size: 11px; line-height: 1; padding: 4px 6px; border-radius: 4px; }
+/* Lightbox for the framed art */
+.art-lightbox { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: 56px 20px 20px; background: rgb(10 10 12 / .88); cursor: zoom-out; }
+.art-lightbox img { max-width: min(100%, 760px); max-height: calc(100vh - 84px); border-radius: 6px; box-shadow: 0 30px 80px rgb(0 0 0 / .6); }
+.art-lightbox button { position: absolute; top: 12px; right: 16px; font: 500 15px/1 var(--body); padding: 12px 16px; border-radius: 999px; border: 0; background: #fff; color: #15171a; cursor: pointer; }
 @media (max-width: 860px) { .lab-grid { grid-template-columns: 1fr; gap: 12px; } .lab-stage-wrap { width: min(100%, 420px); } }
 """
 os.makedirs(OUT, exist_ok=True)

@@ -43,7 +43,7 @@ def build():
         open(os.path.join(out, "toy.css"), "w").write(read("toy-base.css") + "\n" + read(toy + ".css"))
         if toy == "face-home":   # the lab's face (cursor nose, swatch smile) with the eyes from object-face.js
             src = read("object-face.js"); a = src.index("  // ---- Left eye: vinyl record ----"); b = src.index("  // ---- Nose: a tree ----")
-            js = read("face-lab.js").replace("/*EYES*/", src[a:b])
+            js = read("face-lab.js").replace("/*EYES*/", src[a:b]).replace("%%ART%%", "")
         else:
             js = read(toy + ".js")
         open(os.path.join(out, "toy.js"), "w").write(read("three-common.js") + "\n" + js)
