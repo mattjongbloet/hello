@@ -99,7 +99,11 @@ SHORT = [("soft", "Soft pills", ""),   # the home page's current style
  ("pink", "Hospitable pink pill", """.hero-meta .hm + .hm { background: #fdecf1; }
 :root[data-theme="dark"] .hero-meta .hm + .hm { background: rgb(237 60 106 / .2); }"""),
  ("raised", "Raised pills", """.hero-meta .hm { background: #fff; box-shadow: 0 0 0 1px rgb(0 0 0 / .06), 0 6px 16px -6px rgb(0 0 0 / .18); }
-:root[data-theme="dark"] .hero-meta .hm { background: #1d1f24; box-shadow: 0 0 0 1px rgb(255 255 255 / .08), 0 8px 18px -8px rgb(0 0 0 / .8); }""")]
+:root[data-theme="dark"] .hero-meta .hm { background: #1d1f24; box-shadow: 0 0 0 1px rgb(255 255 255 / .08), 0 8px 18px -8px rgb(0 0 0 / .8); }"""),
+ ("outline-grey", "Outlined pills", """.hero-meta .hm { background: none; box-shadow: inset 0 0 0 1.5px var(--line); }"""),
+ ("outline", "Outlined pills: grey and pink", """.hero-meta .hm { background: none; box-shadow: inset 0 0 0 1.5px var(--line); }
+.hero-meta .hm + .hm { box-shadow: inset 0 0 0 1.5px #f6bfce; }
+:root[data-theme="dark"] .hero-meta .hm + .hm { box-shadow: inset 0 0 0 1.5px rgb(237 60 106 / .5); }""")]
 for key, name, css in SHORT:
     page = home.replace("<head>", '<head>\n<base href="../site/">', 1).replace("</head>", f"<style>{css}</style>\n</head>", 1)
     open(os.path.join(OUT, f"hero-{key}.html"), "w").write(page)
@@ -129,7 +133,7 @@ open(os.path.join(OUT, "heroes.html"), "w").write(f"""<!doctype html>
 <main class="page">
   <a class="back" href="index.html">← All 15 treatments</a>
   <h1>Hero with the shortlisted pills</h1>
-  <p class="intro">The real home page three times, each with one treatment. Each frame is live: you can scroll it, switch to dark mode and click the face.</p>
+  <p class="intro">The real home page once per shortlisted treatment. Each frame is live: you can scroll it, switch to dark mode and click the face.</p>
 {frames}
 </main>
 </body>
