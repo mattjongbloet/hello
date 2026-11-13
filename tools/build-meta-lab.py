@@ -100,6 +100,7 @@ SHORT = [("soft", "Soft pills", ""),   # the home page's current style
 :root[data-theme="dark"] .hero-meta .hm + .hm { background: rgb(237 60 106 / .2); }"""),
  ("raised", "Raised pills", """.hero-meta .hm { background: #fff; box-shadow: 0 0 0 1px rgb(0 0 0 / .06), 0 6px 16px -6px rgb(0 0 0 / .18); }
 :root[data-theme="dark"] .hero-meta .hm { background: #1d1f24; box-shadow: 0 0 0 1px rgb(255 255 255 / .08), 0 8px 18px -8px rgb(0 0 0 / .8); }"""),
+ ("tan", "Tan tint pills", """.hero-meta .hm { background: var(--signal-soft); }"""),
  ("outline-grey", "Outlined pills", """.hero-meta .hm { background: none; box-shadow: inset 0 0 0 1.5px var(--line); }"""),
  ("outline", "Outlined pills: grey and pink", """.hero-meta .hm { background: none; box-shadow: inset 0 0 0 1.5px var(--line); }
 .hero-meta .hm + .hm { box-shadow: inset 0 0 0 1.5px #f6bfce; }
