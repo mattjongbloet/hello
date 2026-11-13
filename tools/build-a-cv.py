@@ -376,7 +376,7 @@ SITE_CSS = """
 @media (min-width: 901px) {
   .hero-screen .hero.hero-text.has-toy { align-items: stretch; align-content: center; }
   .hero-screen .hero-toy { height: 0; min-height: 100%; gap: 0; justify-self: end; }
-  .hero-screen .toy-stage { flex: 1 1 0; min-height: 0; width: auto; max-width: 100%; aspect-ratio: 1; align-self: center; margin: 0; }
+  .hero-screen .toy-stage { flex: 1 1 0; min-height: 0; width: auto; max-width: 100%; aspect-ratio: 1; align-self: center; margin: -36px 0 -24px; }   /* the stage has empty margin inside it, so it may spill past the column a little: a bigger face, same alignment */
   .hero-screen .toy-hint { flex: none; min-height: 40px; display: grid; place-items: center; }   /* 40px = the pills' height */
 }
 .work-band { margin-top: 0; padding-top: 52px; }
