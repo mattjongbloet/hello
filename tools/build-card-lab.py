@@ -111,8 +111,67 @@ open(os.path.join(OUT, "index.html"), "w").write(f"""<!doctype html>
 <main class="page">
   <a class="back" href="../site/index.html">← Home page</a>
   <h1>Project cards: 15 variations</h1>
-  <p class="intro">The half-width project card, two per row, in the light theme. Each variation is a real pair at the home page’s width, and every card links to its case study.</p>
+  <p class="intro">The half-width project card, two per row, in the light theme. Each variation is a real pair at the home page’s width, and every card links to its case study. <a href="home.html">See the shortlist (4, 5, 13) on the home page →</a></p>
 {secs}
+</main>
+</body>
+</html>
+""")
+
+# ---- The shortlist on the real home page: copies of site/index.html with the card CSS swapped, plus a page that stacks them.
+home = open(os.path.join(ROOT, "redesigns", "site", "index.html")).read()
+TOP = """.pcard { padding: 0; flex-direction: column-reverse; justify-content: flex-end; }
+.pc-shot { margin: 0; border-radius: 0; }
+@media (max-width: 900px) { .pcard { padding: 0; } .pc-shot { margin: 0; } }
+"""
+SHORT = [("overlap", "Image on top, logo overlapping", TOP + """.pc-copy { padding: 0 32px 32px; }
+.pc-logo { width: 64px; height: 64px; margin: -32px 0 14px; position: relative; box-shadow: 0 0 0 4px var(--paper); }
+:root[data-theme="dark"] .pc-logo { box-shadow: 0 0 0 4px var(--mist); opacity: 1; }
+@media (max-width: 900px) { .pc-copy { padding: 0 24px 26px; } .pc-logo { width: 56px; height: 56px; margin: -28px 0 12px; } }"""),
+ ("compact", "Compact header", """.pc-copy { display: grid; grid-template-columns: auto 1fr; align-items: center; column-gap: 12px; row-gap: 4px; }
+.pc-logo { width: 36px; height: 36px; border-radius: 10px; margin: 0; }
+.pc-copy h3, .pc-copy p { grid-column: 1 / -1; }
+.pcard h3 { margin-top: 14px; }
+@media (max-width: 900px) { .pc-logo { width: 36px; height: 36px; border-radius: 10px; margin: 0; } }"""),
+ ("nocard", "No card", TOP + """.pcard, :root[data-theme="dark"] .pcard { background: none; border: 0; border-radius: 0; overflow: visible; }
+.pcard:hover, :root[data-theme="dark"] .pcard:hover { box-shadow: none; }
+.pcards { gap: 44px 24px; }
+.pc-shot { border-radius: 22px; }
+.pc-copy { display: grid; grid-template-columns: auto 1fr; align-items: center; column-gap: 10px; row-gap: 4px; padding: 20px 4px 0; }
+.pc-logo { width: 28px; height: 28px; border-radius: 8px; margin: 0; }
+.pc-copy h3, .pc-copy p { grid-column: 1 / -1; }
+.pcard h3 { margin-top: 8px; }
+@media (max-width: 900px) { .pcards { gap: 32px; } .pc-copy { padding: 16px 2px 0; } .pc-logo { width: 28px; height: 28px; border-radius: 8px; margin: 0; } }""")]
+for key, name, css in SHORT:
+    page = home.replace("<head>", '<head>\n<base href="../site/">', 1).replace("</head>", f"<style>{css}</style>\n</head>", 1)
+    open(os.path.join(OUT, f"home-{key}.html"), "w").write(page)
+frames = "\n".join(f'''  <section class="var">
+    <h2>{name} <a href="home-{key}.html">Open full page →</a></h2>
+    <iframe src="home-{key}.html" title="Home page with the {name.lower()} card" loading="lazy"></iframe>
+  </section>''' for key, name, css in SHORT)
+open(os.path.join(OUT, "home.html"), "w").write(f"""<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="../assets/mj-logo.svg" type="image/svg+xml">
+<title>Home page with the shortlisted cards</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;650;700&display=swap">
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>{CSS}
+.page {{ max-width: 1520px; }}
+.var h2 {{ flex-wrap: wrap; gap: 6px 16px; align-items: baseline; margin-bottom: 12px; }}
+.var h2 a {{ font-weight: 500; font-size: 15px; color: var(--ink-2); padding: 12px 0; }}
+.var iframe {{ display: block; width: 100%; height: min(1000px, 92vh); border: 1px solid var(--line); border-radius: 18px; background: #fff; }}
+</style>
+</head>
+<body>
+<main class="page">
+  <a class="back" href="index.html">← All 15 card variations</a>
+  <h1>Home page with the shortlisted cards</h1>
+  <p class="intro">The real home page once per card style, with all eight projects. Each frame is live: scroll it to see the cards, and use the toggle for dark mode.</p>
+{frames}
 </main>
 </body>
 </html>
