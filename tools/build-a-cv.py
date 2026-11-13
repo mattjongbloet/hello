@@ -331,7 +331,7 @@ HOSP_LOGO = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 136 25" class=
 HEROES["site"] = f"""  <div class="hero-screen">
   <section class="wrap hero hero-text">
     <div class="hero-copy">
-      <h1>I make complex products <em>feel simple.</em></h1>
+      <h1>Shaping systems, stories, <em>and strategy.</em></h1>
       <p class="lede">I’m {SHINE}. I’m happiest when people succeed with what I design.</p>
 {ACTIONS}
     </div>
@@ -347,7 +347,7 @@ SITE_CSS = """
 .hero-screen .hero { flex: 1; }
 .hero.hero-text h1 { font-size: clamp(34px, 4.3vw, 62px); max-width: 13ch; letter-spacing: -0.03em; }
 .hero .lede { font-size: clamp(16px, 1.25vw, 18px); max-width: 40ch; }
-.hero-screen .hero h1 em { color: var(--accent-text, var(--signal)); }   /* “feel simple.” takes the accent, and follows the swatches */
+.hero-screen .hero h1 em { color: var(--accent-text, var(--signal)); }   /* “and strategy.” takes the accent */
 /* Everything above the fold: the face shrinks with the window height so the location line always fits on the first screen. */
 .hero-screen .hero.hero-text.has-toy { padding-block: 28px 20px; }
 .has-toy .hero-toy { max-width: 520px; gap: 10px; }

@@ -20,7 +20,7 @@ This file records the decisions made so far and how the project is built, so a n
 
 ## Decisions Matt has made
 
-- **Home page**: A6.1 ("I make complex products feel simple."), with a header and hero modelled on taschiba.com:
+- **Home page**: A6.1 layout; headline now "Shaping systems, stories, and strategy." ("and strategy." in the accent colour; the earlier line was "I make complex products feel simple."), with a header and hero modelled on taschiba.com:
   - Header: face, "Matt Jongbloet", "Senior Staff Product Designer" · Work, About, Resume, light/dark toggle, "Let's talk". No logo in the header (the pencil logo is the favicon).
   - Hero: headline + intro (smaller type), the **3D object face** on the right, and one line underneath: "Amsterdam, Netherlands · Currently designing [Hospitable logo]" (logo links to hospitable.com; its wordmark takes the text colour). No impact-stat blocks. The hero must fit the first screen on a laptop.
   - Intro copy: "I'm a rigorously curious product designer with 15 years' experience helping people and businesses shine. I'm happiest when people succeed with what I design."

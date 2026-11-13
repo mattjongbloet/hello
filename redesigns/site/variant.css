@@ -83,7 +83,7 @@ body { font-size: 16px; }
 .hero-screen .hero { flex: 1; }
 .hero.hero-text h1 { font-size: clamp(34px, 4.3vw, 62px); max-width: 13ch; letter-spacing: -0.03em; }
 .hero .lede { font-size: clamp(16px, 1.25vw, 18px); max-width: 40ch; }
-.hero-screen .hero h1 em { color: var(--accent-text, var(--signal)); }   /* “feel simple.” takes the accent, and follows the swatches */
+.hero-screen .hero h1 em { color: var(--accent-text, var(--signal)); }   /* “and strategy.” takes the accent */
 /* Everything above the fold: the face shrinks with the window height so the location line always fits on the first screen. */
 .hero-screen .hero.hero-text.has-toy { padding-block: 28px 20px; }
 .has-toy .hero-toy { max-width: 520px; gap: 10px; }
