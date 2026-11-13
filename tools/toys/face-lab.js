@@ -267,9 +267,11 @@
         bites.push({ x, y, r, rot: Math.random() * 6.283, sx: .75 + Math.random() * .6, lobes, t: performance.now() }); crunch(size);
         spill((uv.x - .5) * PW, (uv.y - .5) * PH, 5 + Math.round(size * 8), r / S * PW * 2); paint(performance.now());
         if (!HOME) tip.textContent = 'Stroopwafel: ' + bites.length + (bites.length === 1 ? ' bite' : ' bites') + ' taken. Each one grows back in a few seconds.'; },
-      tick: (t, dt) => {
-        const idle = t - ptr.at > 3000, px = reduce ? 0 : idle ? Math.sin(t * .0007) * .45 : ptr.x, py = reduce ? 0 : idle ? Math.cos(t * .0009) * .3 : ptr.y;   // it leans with the pointer, so its edge shows
-        g.rotation.x = lerp(g.rotation.x, .5 + py * .3, Math.min(1, dt * 5)); g.rotation.y = lerp(g.rotation.y, px * .5, Math.min(1, dt * 5));
+      tick: (t, dt, on) => {
+        const idle = t - ptr.at > 3000, px = reduce ? 0 : idle ? Math.sin(t * .0007) * .45 : ptr.x, py = reduce ? 0 : idle ? Math.cos(t * .0009) * .3 : ptr.y;   // pointer position, or a slow sway when idle
+        // Nearly front-on: flat while the pointer is on it (so bites land where you click), and only a slight lean
+        // otherwise, enough with the whole face's movement to glimpse the three layers at the edge.
+        g.rotation.x = lerp(g.rotation.x, on ? .04 : .19 + py * .1, Math.min(1, dt * 6)); g.rotation.y = lerp(g.rotation.y, on ? 0 : px * .16, Math.min(1, dt * 6));
         for (const c of crumbs) { if (c.life <= 0) continue; c.life -= dt; c.v.y -= 6.5 * dt; c.m.position.addScaledVector(c.v, dt); c.m.rotation.x += c.spin.x * dt; c.m.rotation.y += c.spin.y * dt;
           if (c.life < .25) c.m.scale.multiplyScalar(Math.max(0, 1 - dt * 6)); if (c.life <= 0) c.m.visible = false; }
         if (!bites.length) return; const now = performance.now(); let gone = false; while (bites.length && now - bites[0].t > LIFE) { bites.shift(); gone = true; }
