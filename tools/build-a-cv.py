@@ -37,7 +37,7 @@ XP_SITE = """<ul class="xp xp-rows">
           <li><img class="xp-logo" src="../assets/homebot-logo.png" alt=""><span class="role">Senior Product Designer</span><span class="when num">Dec 2020 — Dec 2022</span><span class="co">Homebot</span></li>
         </ul>"""
 RESUME_OLD = '<p style="margin-top:18px"><a href="https://cdn.prod.website-files.com/63b35214bc1dc0317e22bd99/668ae1b79c5572bfad32e508_Matt_Jongbloet_CV_2024.pdf" style="color:var(--ink-2);font-size:15px">Download full resume (PDF) →</a></p>'
-RESUME_BTN = '<p style="margin-top:24px"><a class="btn" href="https://cdn.prod.website-files.com/63b35214bc1dc0317e22bd99/668ae1b79c5572bfad32e508_Matt_Jongbloet_CV_2024.pdf">Download full resume (PDF) →</a></p>'
+RESUME_BTN = '<p style="margin-top:18px"><a href="https://cdn.prod.website-files.com/63b35214bc1dc0317e22bd99/668ae1b79c5572bfad32e508_Matt_Jongbloet_CV_2024.pdf" style="color:var(--ink-2);font-size:15px;font-weight:600">Download full resume (PDF) →</a></p>'   # a text link again (Matt dropped the button), now bold
 
 XP_ABOUT = """<ul class="xp">
           <li><span class="role">Senior Staff Product Designer</span><span class="when num">Now</span><a class="co" href="https://hospitable.com/">Hospitable</a><span class="did">Helping hosts run their short-term rentals on autopilot.</span></li>
