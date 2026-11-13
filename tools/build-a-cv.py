@@ -349,7 +349,7 @@ SITE_CSS = """
 .hero.hero-text h1 { font-size: clamp(34px, 4.3vw, 62px); max-width: none; letter-spacing: -0.03em; }
 .hero .lede { font-size: clamp(16px, 1.25vw, 18px); max-width: 40ch; }
 .hero-screen .hero h1 em { color: var(--accent-text, var(--signal)); }   /* “feel simple.” takes the accent */
-.hero-screen .hero.hero-text.has-toy { padding-block: 20px 12px; }
+.hero-screen .hero.hero-text.has-toy { padding-block: clamp(36px, 7svh, 76px) 16px; }   /* more air under the header */
 .has-toy .hero-toy { max-width: 520px; gap: 8px; }
 .hero-screen .toy-stage { width: clamp(240px, calc(70svh - 180px), 100%); margin-inline: auto; }
 .hero-screen .face-pop { min-height: 62px; }
