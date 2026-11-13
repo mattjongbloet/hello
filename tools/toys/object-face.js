@@ -78,38 +78,38 @@
   // ---- Right eye: bicycle wheel ----
   const wheel = new THREE.Group(); wheel.position.set(1.85, .85, 0); wheel.scale.setScalar(.95); wheel.userData.k = 'cycle'; face.add(wheel);
   const wspin = new THREE.Group(); wheel.add(wspin);
-  // DT Swiss GRC 1100 style: deep carbon rim with decals, straight-pull spokes, hub, disc rotor, and a gravel tyre (tan sidewalls, small knobs).
+  // DT Swiss GRC 1100 style: deep carbon rim with decals, straight-pull spokes, hub, disc rotor, and a gravel tyre (tan sidewalls, chunky knobs).
   const carbon = new THREE.MeshPhysicalMaterial({ color: 0x0d0d0f, roughness: .4, clearcoat: .4, clearcoatRoughness: .28, side: THREE.DoubleSide });
   const blackMetal = new THREE.MeshStandardMaterial({ color: 0x131315, metalness: .85, roughness: .32 });
-  const TR = 1.06, TT = .165, tg = new THREE.TorusGeometry(TR, TT, 32, 160);
+  const TR = 1.105, TT = .122, tg = new THREE.TorusGeometry(TR, TT, 32, 160);
   { const pos = tg.attributes.position, col = new Float32Array(pos.count * 3), tan = new THREE.Color(0xb28550), blk = new THREE.Color(0x141416);
-    for (let i = 0; i < pos.count; i++) { const rho = Math.hypot(pos.getX(i), pos.getY(i)); (rho > TR + .075 || rho < TR - .125 ? blk : tan).toArray(col, i * 3); }
+    for (let i = 0; i < pos.count; i++) { const rho = Math.hypot(pos.getX(i), pos.getY(i)); (rho > TR + TT * .5 || rho < TR - TT * .8 ? blk : tan).toArray(col, i * 3); }
     tg.setAttribute('color', new THREE.BufferAttribute(col, 3)); }
   const tyre = new THREE.Mesh(tg, new THREE.MeshStandardMaterial({ vertexColors: true, roughness: .92 })); wspin.add(tyre);
-  const ROWS = [-38, -19, 0, 19, 38], PER = 104, knobs = new THREE.InstancedMesh(new THREE.BoxGeometry(.034, .05, .042), new THREE.MeshStandardMaterial({ color: 0x121214, roughness: .95 }), ROWS.length * PER);
+  const ROWS = [-56, -28, 0, 28, 56], PER = 60, knobs = new THREE.InstancedMesh(new THREE.BoxGeometry(.062, .064, .046), new THREE.MeshStandardMaterial({ color: 0x121214, roughness: .95 }), ROWS.length * PER);
   { const KM = new THREE.Matrix4(), qz = new THREE.Quaternion(), qy = new THREE.Quaternion(), Z = V(0, 0, 1), Y = V(0, 1, 0), one = V(1, 1, 1); let n = 0;
-    ROWS.forEach((deg, row) => { const phi = deg * Math.PI / 180, rr = TR + (TT + .012) * Math.cos(phi), zz = (TT + .012) * Math.sin(phi);
+    ROWS.forEach((deg, row) => { const phi = deg * Math.PI / 180, rr = TR + (TT + .02) * Math.cos(phi), zz = (TT + .02) * Math.sin(phi);
       for (let k = 0; k < PER; k++) { const th = (k + (row % 2 ? .5 : 0)) / PER * Math.PI * 2; qz.setFromAxisAngle(Z, th); qy.setFromAxisAngle(Y, -phi);
         KM.compose(V(rr * Math.cos(th), rr * Math.sin(th), zz), qz.clone().multiply(qy), one); knobs.setMatrixAt(n++, KM); } }); }
   wspin.add(knobs);
-  const prof = [[.955, .105], [.935, .119], [.9, .113], [.84, .072], [.795, .024], [.784, 0], [.795, -.024], [.84, -.072], [.9, -.113], [.935, -.119], [.955, -.105]].map(([r, h]) => new THREE.Vector2(r, h));
+  const prof = [[1.03, .094], [1.008, .108], [.97, .104], [.9, .07], [.832, .024], [.818, 0], [.832, -.024], [.9, -.07], [.97, -.104], [1.008, -.108], [1.03, -.094]].map(([r, h]) => new THREE.Vector2(r, h));
   const rim = new THREE.Mesh(new THREE.LatheGeometry(prof, 160), carbon); rim.rotation.x = Math.PI / 2; wspin.add(rim);
   const decalTex = (() => { const c = document.createElement('canvas'); c.width = 4096; c.height = 128; const g = c.getContext('2d'); g.fillStyle = '#fff'; g.textBaseline = 'middle';
     [['DT SWISS', .04, '900 italic 92px Arial, Helvetica, sans-serif'], ['GRC 1100', .2, '700 60px Arial, Helvetica, sans-serif'], ['DT SWISS', .54, '900 italic 92px Arial, Helvetica, sans-serif'], ['GRC 1100', .7, '700 60px Arial, Helvetica, sans-serif']].forEach(([t, x, f]) => { g.font = f; g.fillText(t, x * 4096, 66); });
     const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8; return t; })();
-  const decal = new THREE.Mesh(new THREE.LatheGeometry([[.925, .1215], [.9, .1155], [.845, .078]].map(([r, h]) => new THREE.Vector2(r, h)), 160), new THREE.MeshStandardMaterial({ map: decalTex, transparent: true, alphaTest: .35, roughness: .5, side: THREE.DoubleSide })); decal.rotation.x = Math.PI / 2; wspin.add(decal);
+  const decal = new THREE.Mesh(new THREE.LatheGeometry([[.998, .1102], [.97, .107], [.905, .0756]].map(([r, h]) => new THREE.Vector2(r, h)), 160), new THREE.MeshStandardMaterial({ map: decalTex, transparent: true, alphaTest: .35, roughness: .5, side: THREE.DoubleSide })); decal.rotation.x = Math.PI / 2; wspin.add(decal);
   const hubBody = cylZ(.052, .5, blackMetal, 32), axle = cylZ(.03, .6, chrome, 24); wspin.add(hubBody, axle);
   for (const z of [-.14, .14]) { const f = cylZ(.105, .04, blackMetal, 40); f.position.z = z; wspin.add(f); }
   for (let i = 0; i < 24; i++) {                         // 24 straight-pull spokes, crossed, alternating flanges
     const a = i / 24 * Math.PI * 2, side = i % 2 ? 1 : -1, fa = a + (i % 4 < 2 ? .62 : -.62);
-    wspin.add(rod(V(.095 * Math.cos(fa), .095 * Math.sin(fa), side * .14), V(.79 * Math.cos(a), .79 * Math.sin(a), 0), .0075, blackMetal));
+    wspin.add(rod(V(.095 * Math.cos(fa), .095 * Math.sin(fa), side * .14), V(.825 * Math.cos(a), .825 * Math.sin(a), 0), .0075, blackMetal));
   }
   const rotorMat = new THREE.MeshStandardMaterial({ color: 0xbfc3c9, metalness: 1, roughness: .28, side: THREE.DoubleSide });
   const rotor = new THREE.Group(); rotor.position.z = -.21; rotor.add(new THREE.Mesh(new THREE.RingGeometry(.31, .4, 72), rotorMat));
   for (let i = 0; i < 6; i++) { const arm2 = new THREE.Mesh(new THREE.BoxGeometry(.035, .25, .008), rotorMat); const a = i / 6 * Math.PI * 2; arm2.position.set(Math.cos(a) * .2, Math.sin(a) * .2, 0); arm2.rotation.z = a + Math.PI / 2 + .35; rotor.add(arm2); }
   rotor.add(new THREE.Mesh(new THREE.RingGeometry(.06, .11, 40), blackMetal)); wspin.add(rotor);
   const refl = new THREE.Mesh(new THREE.TorusGeometry(.056, .016, 14, 48), new THREE.MeshPhysicalMaterial({ color: SIGNAL, roughness: .25, clearcoat: 1 })); wspin.add(refl);   // the accent: a band on the hub and the valve cap
-  wspin.add(rod(V(0, .79, 0), V(0, .7, 0), .012, blackMetal)); const cap = new THREE.Mesh(new THREE.CylinderGeometry(.016, .016, .04, 12), refl.material); cap.position.set(0, .69, 0); wspin.add(cap);
+  wspin.add(rod(V(0, .825, 0), V(0, .735, 0), .012, blackMetal)); const cap = new THREE.Mesh(new THREE.CylinderGeometry(.016, .016, .04, 12), refl.material); cap.position.set(0, .725, 0); wspin.add(cap);
   wheel.add(hit(new THREE.CircleGeometry(1.4, 24), 'cycle')); shadow(wheel);
 
   // ---- Nose: a tree ----

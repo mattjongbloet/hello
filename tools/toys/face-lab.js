@@ -93,18 +93,17 @@
         grown = lerp(grown, dig < 0 || dig > .5 ? target : grown, dt * 3); sprout.scale.setScalar(Math.max(.001, grown)); } }; }
 
   // -- framed artwork: click and it opens larger in a lightbox
-  { const g = new THREE.Group(); g.position.set(0, -.6, .12); const ART_SRC = '%%ART%%', W = .78, H = W * 1408 / 1010;
-    // a moulded frame, a bevel-cut mat board, the print set back behind it, and glass in front
+  { const g = new THREE.Group(); g.position.set(0, -.6, .12); const ART_SRC = '%%ART%%', W = 1.0, H = W * 1408 / 1010;
+    // a moulded frame around the print (no mat board), with glass in front
     const rectHole = (w, h, hw, hh) => { const sh = new THREE.Shape(); sh.moveTo(-w / 2, -h / 2); sh.lineTo(w / 2, -h / 2); sh.lineTo(w / 2, h / 2); sh.lineTo(-w / 2, h / 2); sh.closePath();
       const ho = new THREE.Path(); ho.moveTo(-hw / 2, -hh / 2); ho.lineTo(-hw / 2, hh / 2); ho.lineTo(hw / 2, hh / 2); ho.lineTo(hw / 2, -hh / 2); ho.closePath(); sh.holes.push(ho); return sh; };
-    const MAT = .1, BAR = .075, iw = W + MAT * 2, ih = H + MAT * 2;
+    const MAT = 0, BAR = .075, iw = W + MAT * 2, ih = H + MAT * 2;
     const frame = new THREE.Mesh(new THREE.ExtrudeGeometry(rectHole(iw + BAR * 2, ih + BAR * 2, iw, ih), { depth: .075, bevelEnabled: true, bevelSize: .022, bevelThickness: .03, bevelSegments: 5 }), new THREE.MeshPhysicalMaterial({ color: 0x121212, roughness: .32, clearcoat: .5, clearcoatRoughness: .35 })); frame.position.z = -.02; g.add(frame);
-    const mat = new THREE.Mesh(new THREE.ExtrudeGeometry(rectHole(iw + .02, ih + .02, W, H), { depth: .012, bevelEnabled: true, bevelSize: .012, bevelThickness: .012, bevelSegments: 2 }), new THREE.MeshStandardMaterial({ color: 0xf6f4ee, roughness: .95 })); mat.position.z = .012; g.add(mat);
     const back = new THREE.Mesh(new THREE.BoxGeometry(iw + BAR, ih + BAR, .02), new THREE.MeshStandardMaterial({ color: 0x2a2623, roughness: .9 })); back.position.z = -.03; g.add(back);
     const print = new THREE.Mesh(new THREE.PlaneGeometry(W + .02, H + .02), new THREE.MeshBasicMaterial({ color: 0x111111 })); print.position.z = .006; g.add(print);
     const glass = new THREE.Mesh(new THREE.PlaneGeometry(iw, ih), new THREE.MeshPhysicalMaterial({ color: 0xffffff, transparent: true, opacity: .07, roughness: .02, metalness: 0, clearcoat: 1, depthWrite: false })); glass.position.z = .05; g.add(glass);
     if (ART_SRC) new THREE.TextureLoader().load(ART_SRC, (t) => { t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8; print.material.map = t; print.material.color.set(0xffffff); print.material.needsUpdate = true; kick(); });
-    const h = hit(new THREE.PlaneGeometry(W + .45, H + .45), 'nose'); h.position.z = .12; g.add(h);
+    const h = hit(new THREE.PlaneGeometry(W + .25, H + .25), 'nose'); h.position.z = .12; g.add(h);
     let box = null; const close = () => { if (box) { box.remove(); box = null; removeEventListener('keydown', onKey); } }, onKey = (e) => { if (e.key === 'Escape') close(); };
     const openBox = () => { if (box) return; box = document.createElement('div'); box.className = 'art-lightbox'; box.setAttribute('role', 'dialog'); box.setAttribute('aria-modal', 'true'); box.setAttribute('aria-label', 'Artwork by Matt Jongbloet');
       box.innerHTML = '<button type="button" aria-label="Close">Close ✕</button><img src="../assets/art-why.jpg" alt="“Why?”, a dense black and white line illustration by Matt Jongbloet">';
