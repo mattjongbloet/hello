@@ -85,10 +85,52 @@ open(os.path.join(OUT, "index.html"), "w").write(f"""<!doctype html>
 <main class="page">
   <a class="back" href="../site/index.html">← Home page</a>
   <h1>Location and role: 15 treatments</h1>
-  <p class="intro">The two items that sit under the hero intro, shown with the intro above each so you can judge how separate they feel. Number 2 is on the home page now.</p>
+  <p class="intro">The two items that sit under the hero intro, shown with the intro above each so you can judge how separate they feel. Number 2 is on the home page now. <a href="heroes.html">See the shortlist (2, 13, 14) in the full hero →</a></p>
   <div class="grid">
 {cards}
   </div>
+</main>
+</body>
+</html>
+""")
+
+# ---- The shortlist in the full hero: copies of the home page with one treatment each, plus a page that stacks them.
+SHORT = [("soft", "Soft pills", ""),   # the home page's current style
+ ("pink", "Hospitable pink pill", """.hero-meta .hm + .hm { background: #fdecf1; }
+:root[data-theme="dark"] .hero-meta .hm + .hm { background: rgb(237 60 106 / .2); }"""),
+ ("raised", "Raised pills", """.hero-meta .hm { background: #fff; box-shadow: 0 0 0 1px rgb(0 0 0 / .06), 0 6px 16px -6px rgb(0 0 0 / .18); }
+:root[data-theme="dark"] .hero-meta .hm { background: #1d1f24; box-shadow: 0 0 0 1px rgb(255 255 255 / .08), 0 8px 18px -8px rgb(0 0 0 / .8); }""")]
+for key, name, css in SHORT:
+    page = home.replace("<head>", '<head>\n<base href="../site/">', 1).replace("</head>", f"<style>{css}</style>\n</head>", 1)
+    open(os.path.join(OUT, f"hero-{key}.html"), "w").write(page)
+frames = "\n".join(f'''  <section class="opt">
+    <h2>{name} <a href="hero-{key}.html">Open full page →</a></h2>
+    <iframe src="hero-{key}.html" title="Home page hero with {name.lower()}" loading="lazy"></iframe>
+  </section>''' for key, name, css in SHORT)
+open(os.path.join(OUT, "heroes.html"), "w").write(f"""<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="../assets/mj-logo.svg" type="image/svg+xml">
+<title>Hero with the shortlisted pills</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;650;700&display=swap">
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>{CSS}
+.page {{ max-width: 1520px; }}
+.opt {{ margin-top: 28px; }}
+.opt h2 {{ font: 600 18px/1.2 var(--body); margin: 0 0 12px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; }}
+.opt h2 a {{ font-weight: 500; font-size: 15px; color: var(--ink-2); padding: 12px 0; }}
+.opt iframe {{ display: block; width: 100%; height: min(820px, 86vh); border: 1px solid var(--line); border-radius: 18px; background: #fff; }}
+</style>
+</head>
+<body>
+<main class="page">
+  <a class="back" href="index.html">← All 15 treatments</a>
+  <h1>Hero with the shortlisted pills</h1>
+  <p class="intro">The real home page three times, each with one treatment. Each frame is live: you can scroll it, switch to dark mode and click the face.</p>
+{frames}
 </main>
 </body>
 </html>
