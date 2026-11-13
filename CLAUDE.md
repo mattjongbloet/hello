@@ -30,6 +30,7 @@ This file records the decisions made so far and how the project is built, so a n
 - **Typeface**: Roobert only, everywhere (including small labels; no monospace). Apercu, GT Eesti, Geograph, Styrene and serifs were tried and rejected.
 - **Case-study format**: opening = title, intro, facts row (company, role, team, date), cover image, metric tiles; body = contents menu on the left with Context → Opportunity → Approach → Outcome; "Next project" at the end.
 - **Project cards** (home): white card with the screenshot on top edge to edge, the logo tile straddling the image's bottom edge, then company, **bold** title and one line. All cards are half-width, two per row (no wide cards). Fifteen variations of this card (light theme first) are in `redesigns/card-lab/` (`tools/build-card-lab.py`); Matt picked 4 (image on top, logo overlapping), now on the home page; 5 (compact header) and 13 (no card) were also shortlisted (`redesigns/card-lab/home.html`).
+- **Recent roles** (home): 15 variations with company logos are in `redesigns/roles-lab/` (`tools/build-roles-lab.py`); Matt has not picked one yet. Logo tiles: `assets/hospitable-mark.svg` (made from the Hospitable logo's mark), Homebot and Savvy PNGs; **Carv is a placeholder letter tile** (`assets/carv-placeholder.svg`) until Matt supplies the logo. LinkedIn could not be scraped (login wall; we never sign in).
 - **Type size**: headings and body ~10–15% smaller than Direction A (`tools/type-smaller.css`).
 - Dark mode exists behind the toggle; the site opens in light mode.
 
@@ -43,6 +44,7 @@ python3 tools/build-hero-toys.py     # adds the 3D object face to site/ (and the
 python3 tools/build-case-studies.py  # all case studies
 python3 tools/build-face-lab.py      # face lab
 python3 tools/build-card-lab.py      # 15 variations of the project card
+python3 tools/build-roles-lab.py     # 15 variations of the Recent roles list
 python3 tools/build-meta-lab.py      # 15 treatments of the location/role items (reads the built home page)
 node tools/build-canvas.js           # overview page (redesigns/index.html) + canvas
 ```
@@ -75,6 +77,7 @@ Run QA on every changed page; it should print `all clear`. For dark mode, QA a t
 - Carv and Hospitable case studies need content from Matt.
 - Internal Admin is dated January 2020 on the live site, before the CV's Homebot start (Dec 2020): confirm.
 - Hospitable start month.
+- Carv logo file (placeholder tile in the roles lab).
 - Phone header hides Work/About/Resume (no menu yet).
 - Live site issues found: contact links on case-study pages point to a template email and phone number.
 
