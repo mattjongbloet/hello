@@ -127,4 +127,87 @@ open(os.path.join(OUT, "index.html"), "w").write(f"""<!doctype html>
 </body>
 </html>
 """)
+
+# ---- Round 2: fifteen refinements of the five Matt preferred (rows, one line, one card, two-by-two, timeline).
+# Cards are outlined, not filled (his note), and several are condensed.
+V2 = [("Rows, condensed", "Rows with logos, minus the description and with tighter spacing."),
+ ("Rows, condensed, dates beside the company", "Company and dates share the second line, so nothing sits on the right."),
+ ("Rows, small logos", "Keeps the description, with smaller logos and tighter spacing."),
+ ("One line each", "Logo, role and dates. The logo stands in for the company name."),
+ ("One line each, with company", "Adds the company name in grey; years replace the full dates so it still fits one line."),
+ ("One line each, in an outlined card", "The one-line list inside a single outlined card, with a green dot on “Now”."),
+ ("One card, outlined", "All four roles with descriptions in one outlined card."),
+ ("One card, outlined, condensed", "The same card without descriptions."),
+ ("One card, outlined, company first", "Condensed, with the company name leading."),
+ ("Two-by-two, outlined", "Four outlined cards, logo on top, years in a pill."),
+ ("Two-by-two, outlined, compact", "Shorter cards: the logo sits beside the text."),
+ ("Two-by-two, outlined, company first", "Company name leads; years sit top-right as plain text."),
+ ("Timeline", "A vertical line through the logos, with descriptions."),
+ ("Timeline, condensed", "No descriptions, smaller logos."),
+ ("Timeline in an outlined card", "The condensed timeline inside one outlined card.")]
+secs2 = "\n".join(f"""  <section class="var w{i}">
+    <h2><b>{i}</b> {n}</h2>
+    <p class="note">{note}</p>
+    <div class="stage">
+      {ABOUT}
+      <div class="col">
+        <p class="eyebrow">Recent roles</p>
+        <ul class="roles">
+{items}
+        </ul>
+        <a class="cv" href="{CV}">Download full resume (PDF) →</a>
+      </div>
+    </div>
+  </section>""" for i, (n, note) in enumerate(V2, 1))
+OUTL = "background: var(--paper); border: 1px solid #dfdfd9; border-radius: 20px;"
+DOT = 'content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #1f9d55; box-shadow: 0 0 0 3px rgb(31 157 85 / .18); margin-right: 8px; vertical-align: 1px;'
+BASE = CSS[:CSS.index(".v1 .roles, .v6 .roles")]
+CSS2 = BASE + f"""
+.w1 .roles, .w2 .roles, .w3 .roles, .w4 .roles, .w5 .roles {{ border-top: 1px solid var(--line); }}
+/* 1 */ .w1 .r {{ padding: 13px 0; grid-template-columns: 40px minmax(0, 1fr) auto; }} .w1 .lg {{ width: 40px; height: 40px; border-radius: 10px; }} .w1 .did {{ display: none; }}
+/* 2 */ .w2 .r {{ padding: 13px 0; grid-template-columns: 40px auto minmax(0, 1fr); grid-template-areas: "lg role role" "lg co when"; column-gap: 14px; }} .w2 .lg {{ width: 40px; height: 40px; border-radius: 10px; }} .w2 .co {{ margin-right: -6px; }} .w2 .when {{ justify-self: start; font-size: 15px; line-height: 1.5; }} .w2 .when::before {{ content: "·"; margin-right: 8px; }} .w2 .did {{ display: none; }}
+/* 3 */ .w3 .r {{ padding: 14px 0; grid-template-columns: 32px minmax(0, 1fr) auto; column-gap: 12px; }} .w3 .lg {{ width: 32px; height: 32px; border-radius: 8px; }} .w3 .role {{ font-size: 15px; }} .w3 .co, .w3 .did {{ font-size: 14px; }} .w3 .did {{ margin-top: 3px; }}
+/* 4 */ .w4 .r, .w6 .r {{ grid-template-columns: 32px minmax(0, 1fr) auto; grid-template-areas: "lg role when"; align-items: center; padding: 13px 0; column-gap: 12px; }} .w4 .lg, .w5 .lg, .w6 .lg {{ width: 32px; height: 32px; border-radius: 8px; }} .w4 .did, .w4 .co, .w6 .did, .w6 .co {{ display: none; }}
+/* 5 */ .w5 .r {{ grid-template-columns: 32px auto minmax(0, 1fr) auto; grid-template-areas: "lg role co yr"; align-items: center; padding: 13px 0; column-gap: 10px; }} .w5 .role {{ font-size: 15px; }} .w5 .co {{ font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }} .w5 .yr {{ display: block; grid-area: yr; font-size: 13px; color: var(--ink-2); white-space: nowrap; }} .w5 .when, .w5 .did {{ display: none; }}
+/* 6 */ .w6 .roles {{ {OUTL} padding: 2px 16px; }} .w6 .r:last-child, .w7 .r:last-child, .w8 .r:last-child, .w9 .r:last-child {{ border-bottom: 0; }} .w6 .r:first-child .when::before, .w7 .r:first-child .when::before, .w8 .r:first-child .when::before, .w9 .r:first-child .when::before, .w15 .r:first-child .when::before {{ {DOT} }}
+/* 7 */ .w7 .roles, .w8 .roles, .w9 .roles {{ {OUTL} padding: 4px 20px; }} .w7 .r, .w8 .r {{ grid-template-areas: "lg role role" "lg co when" "lg did did"; }}
+/* 8 */ .w8 .r, .w9 .r {{ padding: 14px 0; grid-template-columns: 40px minmax(0, 1fr) auto; }} .w8 .lg, .w9 .lg {{ width: 40px; height: 40px; border-radius: 10px; }} .w8 .did, .w9 .did {{ display: none; }}
+/* 9 */ .w9 .r {{ grid-template-areas: "lg co when" "lg role when"; }} .w9 .co {{ color: var(--ink); font-weight: 600; font-size: 16px; line-height: 1.35; }} .w9 .role {{ font-weight: 400; font-size: 14px; color: var(--ink-2); }}
+/* 10 */ .w10 .roles, .w11 .roles, .w12 .roles {{ display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }} .w10 .r, .w12 .r {{ {OUTL} border-radius: 18px; padding: 18px; grid-template-columns: auto 1fr; grid-template-areas: "lg yr" "role role" "co co"; }} .w10 .lg, .w12 .lg {{ margin-bottom: 14px; }} .w10 .yr {{ {PILL} grid-area: yr; justify-self: end; }} .w10 .when, .w10 .did, .w11 .when, .w11 .did, .w12 .when, .w12 .did {{ display: none; }}
+/* 11 */ .w11 .r {{ {OUTL} border-radius: 16px; padding: 14px; grid-template-columns: 40px minmax(0, 1fr); grid-template-areas: "lg role" "lg co" "lg yr"; column-gap: 12px; }} .w11 .lg {{ width: 40px; height: 40px; border-radius: 10px; }} .w11 .role {{ font-size: 14px; line-height: 1.3; }} .w11 .co {{ font-size: 13px; margin-top: 2px; }} .w11 .yr {{ display: block; grid-area: yr; font-size: 13px; color: var(--ink-2); }}
+/* 12 */ .w12 .r {{ grid-template-areas: "lg yr" "co co" "role role"; }} .w12 .co {{ color: var(--ink); font-weight: 600; font-size: 16px; line-height: 1.35; }} .w12 .role {{ font-weight: 400; font-size: 14px; color: var(--ink-2); }} .w12 .yr {{ display: block; grid-area: yr; justify-self: end; font-size: 13px; color: var(--ink-2); }}
+/* 13 */ .w13 .r, .w14 .r, .w15 .r {{ position: relative; border: 0; padding: 0 0 28px; }} .w13 .r::before, .w14 .r::before, .w15 .r::before {{ content: ""; position: absolute; left: 21px; top: 0; bottom: 0; width: 2px; background: var(--line); }} .w13 .r:last-child::before, .w14 .r:last-child::before, .w15 .r:last-child::before {{ display: none; }} .w13 .r:last-child {{ padding-bottom: 6px; }} .w13 .lg, .w14 .lg, .w15 .lg {{ position: relative; box-shadow: 0 0 0 5px var(--paper); }}
+/* 14 */ .w14 .r, .w15 .r {{ grid-template-columns: 36px minmax(0, 1fr) auto; padding-bottom: 20px; column-gap: 14px; }} .w14 .r::before, .w15 .r::before {{ left: 17px; }} .w14 .lg, .w15 .lg {{ width: 36px; height: 36px; border-radius: 9px; }} .w14 .did, .w15 .did {{ display: none; }} .w14 .r:last-child {{ padding-bottom: 4px; }} .w14 .role, .w15 .role {{ font-size: 15px; }} .w14 .co, .w15 .co {{ font-size: 14px; }}
+/* 15 */ .w15 .roles {{ {OUTL} padding: 20px 20px 18px; }} .w15 .r:last-child {{ padding-bottom: 0; }}
+@media (max-width: 420px) {{
+  .w1 .r, .w3 .r, .w8 .r, .w13 .r, .w14 .r, .w15 .r {{ grid-template-areas: "lg role role" "lg co co" "lg when when" "lg did did"; }} .w1 .when, .w3 .when, .w8 .when, .w13 .when, .w14 .when, .w15 .when {{ justify-self: start; }}
+  .w9 .r {{ grid-template-areas: "lg co co" "lg role role" "lg when when"; }} .w9 .when {{ justify-self: start; }}
+  .w7 .r {{ grid-template-columns: 44px minmax(0, 1fr); grid-template-areas: "lg role" "lg co" "lg when" "did did"; }} .w7 .when {{ justify-self: start; }}
+  .w2 .r {{ grid-template-columns: 40px minmax(0, 1fr); grid-template-areas: "lg role" "lg co" "lg when"; }} .w2 .when::before {{ display: none; }}
+  .w5 .r {{ grid-template-columns: 32px minmax(0, 1fr) auto; grid-template-areas: "lg role yr" "lg co yr"; }}
+  .w11 .roles {{ grid-template-columns: 1fr; }}
+}}
+"""
+open(os.path.join(OUT, "round-2.html"), "w").write(f"""<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="../assets/mj-logo.svg" type="image/svg+xml">
+<title>Recent roles, round 2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;650;700&display=swap">
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>{CSS2}</style>
+</head>
+<body>
+<main class="page">
+  <a class="back" href="index.html">← Round 1: the first 15</a>
+  <h1>Recent roles, round 2</h1>
+  <p class="intro">Fifteen refinements of the five you preferred: rows with logos, one line each, one card, two-by-two cards and the timeline. Cards are outlined, not filled, and several are condensed.</p>
+{secs2}
+</main>
+</body>
+</html>
+""")
 print("built roles-lab")

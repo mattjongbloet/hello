@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="../assets/mj-logo.svg" type="image/svg+xml">
+<title>Recent roles, round 2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;650;700&display=swap">
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+:root { --paper: #fff; --mist: #f6f6f4; --line: #e4e4df; --ink: #15171a; --ink-2: #5f636b; --signal: #b28550; --signal-soft: #f6efe4; --body: "Roobert", "Hanken Grotesk", system-ui, sans-serif; }
+* { box-sizing: border-box; } body { margin: 0; font: 400 16px/1.5 var(--body); color: var(--ink); background: var(--mist); }
+img { display: block; } a { color: inherit; } :focus-visible { outline: 2px solid var(--signal); outline-offset: 3px; border-radius: 8px; }
+.page { max-width: 1120px; margin: 0 auto; padding: 28px 20px 80px; }
+.back { display: inline-block; padding: 12px 0; color: var(--ink-2); text-decoration: none; } .back:hover { color: var(--ink); }
+h1 { font: 650 clamp(28px, 3.4vw, 40px)/1.1 var(--body); letter-spacing: -.025em; margin: 6px 0 8px; }
+.intro { color: var(--ink-2); max-width: 66ch; margin: 0; }
+.var { margin-top: 56px; }
+.var h2 { font: 600 18px/1.2 var(--body); margin: 0 0 6px; display: flex; align-items: center; gap: 10px; }
+.var h2 b { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--ink); color: #fff; font-size: 13px; font-weight: 600; }
+.note { margin: 0 0 18px; color: var(--ink-2); font-size: 15px; }
+/* The home page's About section: text on the left, Recent roles in the right half. */
+.stage { background: var(--paper); border-radius: 24px; padding: 52px 48px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 64px; align-items: start; }
+.eyebrow { margin: 0 0 16px; font-size: 13px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); }
+.about h3 { font: 650 clamp(26px, 2.9vw, 36px)/1.12 var(--body); letter-spacing: -.03em; margin: 0 0 20px; }
+.about p:not(.eyebrow) { color: var(--ink-2); font-size: 17px; line-height: 1.65; margin: 0 0 26px; } .about strong { color: var(--ink); font-weight: 600; }
+.btn { display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border-radius: 999px; box-shadow: inset 0 0 0 1.5px var(--line); text-decoration: none; font-weight: 600; font-size: 15px; } .btn:hover { box-shadow: inset 0 0 0 1.5px var(--ink); }
+.cv { display: inline-block; margin-top: 8px; padding: 12px 0; color: var(--ink-2); font-size: 15px; text-underline-offset: 4px; } .cv:hover { color: var(--ink); }
+@media (max-width: 860px) { .stage { grid-template-columns: 1fr; gap: 40px; padding: 32px 22px; } }
+/* ---- base list (= variation 1): sized for the half column ---- */
+.roles { list-style: none; margin: 0; padding: 0; }
+.r { display: grid; grid-template-columns: 44px minmax(0, 1fr) auto; grid-template-areas: "lg role when" "lg co when" "lg did did"; column-gap: 14px; row-gap: 1px; padding: 18px 0; border-bottom: 1px solid var(--line); align-items: start; align-content: start; }
+.lg { grid-area: lg; width: 44px; height: 44px; border-radius: 11px; }
+.role { grid-area: role; font-weight: 600; font-size: 16px; line-height: 1.35; }
+.co { grid-area: co; color: var(--ink-2); font-size: 15px; }
+.when { grid-area: when; color: var(--ink-2); font-size: 13px; line-height: 1.7; white-space: nowrap; justify-self: end; }
+.did { grid-area: did; color: var(--ink-2); font-size: 15px; line-height: 1.45; margin-top: 6px; }
+.yr { display: none; }
+
+.w1 .roles, .w2 .roles, .w3 .roles, .w4 .roles, .w5 .roles { border-top: 1px solid var(--line); }
+/* 1 */ .w1 .r { padding: 13px 0; grid-template-columns: 40px minmax(0, 1fr) auto; } .w1 .lg { width: 40px; height: 40px; border-radius: 10px; } .w1 .did { display: none; }
+/* 2 */ .w2 .r { padding: 13px 0; grid-template-columns: 40px auto minmax(0, 1fr); grid-template-areas: "lg role role" "lg co when"; column-gap: 14px; } .w2 .lg { width: 40px; height: 40px; border-radius: 10px; } .w2 .co { margin-right: -6px; } .w2 .when { justify-self: start; font-size: 15px; line-height: 1.5; } .w2 .when::before { content: "·"; margin-right: 8px; } .w2 .did { display: none; }
+/* 3 */ .w3 .r { padding: 14px 0; grid-template-columns: 32px minmax(0, 1fr) auto; column-gap: 12px; } .w3 .lg { width: 32px; height: 32px; border-radius: 8px; } .w3 .role { font-size: 15px; } .w3 .co, .w3 .did { font-size: 14px; } .w3 .did { margin-top: 3px; }
+/* 4 */ .w4 .r, .w6 .r { grid-template-columns: 32px minmax(0, 1fr) auto; grid-template-areas: "lg role when"; align-items: center; padding: 13px 0; column-gap: 12px; } .w4 .lg, .w5 .lg, .w6 .lg { width: 32px; height: 32px; border-radius: 8px; } .w4 .did, .w4 .co, .w6 .did, .w6 .co { display: none; }
+/* 5 */ .w5 .r { grid-template-columns: 32px auto minmax(0, 1fr) auto; grid-template-areas: "lg role co yr"; align-items: center; padding: 13px 0; column-gap: 10px; } .w5 .role { font-size: 15px; } .w5 .co { font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; } .w5 .yr { display: block; grid-area: yr; font-size: 13px; color: var(--ink-2); white-space: nowrap; } .w5 .when, .w5 .did { display: none; }
+/* 6 */ .w6 .roles { background: var(--paper); border: 1px solid #dfdfd9; border-radius: 20px; padding: 2px 16px; } .w6 .r:last-child, .w7 .r:last-child, .w8 .r:last-child, .w9 .r:last-child { border-bottom: 0; } .w6 .r:first-child .when::before, .w7 .r:first-child .when::before, .w8 .r:first-child .when::before, .w9 .r:first-child .when::before, .w15 .r:first-child .when::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #1f9d55; box-shadow: 0 0 0 3px rgb(31 157 85 / .18); margin-right: 8px; vertical-align: 1px; }
+/* 7 */ .w7 .roles, .w8 .roles, .w9 .roles { background: var(--paper); border: 1px solid #dfdfd9; border-radius: 20px; padding: 4px 20px; } .w7 .r, .w8 .r { grid-template-areas: "lg role role" "lg co when" "lg did did"; }
+/* 8 */ .w8 .r, .w9 .r { padding: 14px 0; grid-template-columns: 40px minmax(0, 1fr) auto; } .w8 .lg, .w9 .lg { width: 40px; height: 40px; border-radius: 10px; } .w8 .did, .w9 .did { display: none; }
+/* 9 */ .w9 .r { grid-template-areas: "lg co when" "lg role when"; } .w9 .co { color: var(--ink); font-weight: 600; font-size: 16px; line-height: 1.35; } .w9 .role { font-weight: 400; font-size: 14px; color: var(--ink-2); }
+/* 10 */ .w10 .roles, .w11 .roles, .w12 .roles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; } .w10 .r, .w12 .r { background: var(--paper); border: 1px solid #dfdfd9; border-radius: 20px; border-radius: 18px; padding: 18px; grid-template-columns: auto 1fr; grid-template-areas: "lg yr" "role role" "co co"; } .w10 .lg, .w12 .lg { margin-bottom: 14px; } .w10 .yr { display: inline-flex; align-items: center; min-height: 30px; padding: 0 11px; border-radius: 999px; background: color-mix(in srgb, var(--ink) 6%, transparent); color: var(--ink); font-size: 13px; font-weight: 500; white-space: nowrap; grid-area: yr; justify-self: end; } .w10 .when, .w10 .did, .w11 .when, .w11 .did, .w12 .when, .w12 .did { display: none; }
+/* 11 */ .w11 .r { background: var(--paper); border: 1px solid #dfdfd9; border-radius: 20px; border-radius: 16px; padding: 14px; grid-template-columns: 40px minmax(0, 1fr); grid-template-areas: "lg role" "lg co" "lg yr"; column-gap: 12px; } .w11 .lg { width: 40px; height: 40px; border-radius: 10px; } .w11 .role { font-size: 14px; line-height: 1.3; } .w11 .co { font-size: 13px; margin-top: 2px; } .w11 .yr { display: block; grid-area: yr; font-size: 13px; color: var(--ink-2); }
+/* 12 */ .w12 .r { grid-template-areas: "lg yr" "co co" "role role"; } .w12 .co { color: var(--ink); font-weight: 600; font-size: 16px; line-height: 1.35; } .w12 .role { font-weight: 400; font-size: 14px; color: var(--ink-2); } .w12 .yr { display: block; grid-area: yr; justify-self: end; font-size: 13px; color: var(--ink-2); }
+/* 13 */ .w13 .r, .w14 .r, .w15 .r { position: relative; border: 0; padding: 0 0 28px; } .w13 .r::before, .w14 .r::before, .w15 .r::before { content: ""; position: absolute; left: 21px; top: 0; bottom: 0; width: 2px; background: var(--line); } .w13 .r:last-child::before, .w14 .r:last-child::before, .w15 .r:last-child::before { display: none; } .w13 .r:last-child { padding-bottom: 6px; } .w13 .lg, .w14 .lg, .w15 .lg { position: relative; box-shadow: 0 0 0 5px var(--paper); }
+/* 14 */ .w14 .r, .w15 .r { grid-template-columns: 36px minmax(0, 1fr) auto; padding-bottom: 20px; column-gap: 14px; } .w14 .r::before, .w15 .r::before { left: 17px; } .w14 .lg, .w15 .lg { width: 36px; height: 36px; border-radius: 9px; } .w14 .did, .w15 .did { display: none; } .w14 .r:last-child { padding-bottom: 4px; } .w14 .role, .w15 .role { font-size: 15px; } .w14 .co, .w15 .co { font-size: 14px; }
+/* 15 */ .w15 .roles { background: var(--paper); border: 1px solid #dfdfd9; border-radius: 20px; padding: 20px 20px 18px; } .w15 .r:last-child { padding-bottom: 0; }
+@media (max-width: 420px) {
+  .w1 .r, .w3 .r, .w8 .r, .w13 .r, .w14 .r, .w15 .r { grid-template-areas: "lg role role" "lg co co" "lg when when" "lg did did"; } .w1 .when, .w3 .when, .w8 .when, .w13 .when, .w14 .when, .w15 .when { justify-self: start; }
+  .w9 .r { grid-template-areas: "lg co co" "lg role role" "lg when when"; } .w9 .when { justify-self: start; }
+  .w7 .r { grid-template-columns: 44px minmax(0, 1fr); grid-template-areas: "lg role" "lg co" "lg when" "did did"; } .w7 .when { justify-self: start; }
+  .w2 .r { grid-template-columns: 40px minmax(0, 1fr); grid-template-areas: "lg role" "lg co" "lg when"; } .w2 .when::before { display: none; }
+  .w5 .r { grid-template-columns: 32px minmax(0, 1fr) auto; grid-template-areas: "lg role yr" "lg co yr"; }
+  .w11 .roles { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<main class="page">
+  <a class="back" href="index.html">← Round 1: the first 15</a>
+  <h1>Recent roles, round 2</h1>
+  <p class="intro">Fifteen refinements of the five you preferred: rows with logos, one line each, one card, two-by-two cards and the timeline. Cards are outlined, not filled, and several are condensed.</p>
+  <section class="var w1">
+    <h2><b>1</b> Rows, condensed</h2>
+    <p class="note">Rows with logos, minus the description and with tighter spacing.</p>
+    <div class="stage">
+      <div class="about">
+        <p class="eyebrow">About</p>
+        <h3>It began with street art: colour, composition and form.</h3>
+        <p>It’s all about communicating a message that’s <strong>clear, concise and beautiful</strong>. Today that means understanding the problem through empathy, user research and strategy before designing the solution. I have an <strong>MSc in Digital Design</strong> and over ten years in digital product design.</p>
+        <a class="btn" href="../site/about.html">Read my story</a>
+      </div>
+      <div class="col">
+        <p class="eyebrow">Recent roles</p>
+        <ul class="roles">
+      <li class="r"><img class="lg" src="../assets/hospitable-mark.svg" alt="Hospitable logo"><span class="role">Senior Staff Product Designer</span><span class="co">Hospitable</span><span class="when">Now</span><span class="yr">Now</span><span class="did">Helping hosts run their short-term rentals on autopilot.</span></li>
+      <li class="r"><img class="lg" src="../assets/carv-logo.svg" alt="Carv logo"><span class="role">Lead Product Designer</span><span class="co">Carv</span><span class="when">Feb 2024 — Mar 2025</span><span class="yr">2024–25</span><span class="did">Helping recruiters cut admin and boost hires.</span></li>
+      <li class="r"><img class="lg" src="../assets/trellis/savvy-logo.png" alt="Trellis / Savvy.Insure logo"><span class="role">Staff Product Designer</span><span class="co">Trellis / Savvy.Insure</span><span class="when">Jan 2023 — Jan 2024</span><span class="yr">2023–24</span><span class="did">$3.5MM in predicted gross annual revenue from 3 months of growth experiments.</span></li>
+      <li class="r"><img class="lg" src="../assets/homebot-logo.png" alt="Homebot logo"><span class="role">Senior Product Designer</span><span class="co">Homebot</span><span class="when">Dec 2020 — Dec 2022</span><span class="yr">2020–22</span><span class="did">Seven projects, research to dev-ready design, for ≈10 million users.</span></li>
+        </ul>
+        <a class="cv" href="https://cdn.prod.website-files.com/63b35214bc1dc0317e22bd99/668ae1b79c5572bfad32e508_Matt_Jongbloet_CV_2024.pdf">Download full resume (PDF) →</a>
+      </div>
+    </div>
+  </section>
+  <section class="var w2">
+    <h2><b>2</b> Rows, condensed, dates beside the company</h2>
+    <p class="note">Company and dates share the second line, so nothing sits on the right.</p>
+    <div class="stage">
+      <div class="about">
+        <p class="eyebrow">About</p>
+        <h3>It began with street art: colour, composition and form.</h3>
+        <p>It’s all about communicating a message that’s <strong>clear, concise and beautiful</strong>. Today that means understanding the problem through empathy, user research and strategy before designing the solution. I have an <strong>MSc in Digital Design</strong> and over ten years in digital product design.</p>
+        <a class="btn" href="../site/about.html">Read my story</a>
+      </div>
+      <div class="col">
+        <p class="eyebrow">Recent roles</p>
+        <ul class="roles">
+      <li class="r"><img class="lg" src="../assets/hospitable-mark.svg" alt="Hospitable logo"><span class="role">Senior Staff Product Designer</span><span class="co">Hospitable</span><span class="when">Now</span><span class="yr">Now</span><span class="did">Helping hosts run their short-term rentals on autopilot.</span></li>
+      <li class="r"><img class="lg" src="../assets/carv-logo.svg" alt="Carv logo"><span class="role">Lead Product Designer</span><span class="co">Carv</span><span class="when">Feb 2024 — Mar 2025</span><span class="yr">2024–25</span><span class="did">Helping recruiters cut admin and boost hires.</span></li>
+      <li class="r"><img class="lg" src="../assets/trellis/savvy-logo.png" alt="Trellis / Savvy.Insure logo"><span class="role">Staff Product Designer</span><span class="co">Trellis / Savvy.Insure</span><span class="when">Jan 2023 — Jan 2024</span><span class="yr">2023–24</span><span class="did">$3.5MM in predicted gross annual revenue from 3 months of growth experiments.</span></li>
+      <li class="r"><img class="lg" src="../assets/homebot-logo.png" alt="Homebot logo"><span class="role">Senior Product Designer</span><span class="co">Homebot</span><span class="when">Dec 2020 — Dec 2022</span><span class="yr">2020–22</span><span class="did">Seven projects, research to dev-ready design, for ≈10 million users.</span></li>
+        </ul>
+        <a class="cv" href="https://cdn.prod.website-files.com/63b35214bc1dc0317e22bd99/668ae1b79c5572bfad32e508_Matt_Jongbloet_CV_2024.pdf">Download full resume (PDF) →</a>
+      </div>
+    </div>
+  </section>
+  <section class="var w3">
+    <h2><b>3</b> Rows, small logos</h2>
+    <p class="note">Keeps the description, with smaller logos and tighter spacing.</p>
+    <div class="stage">
+      <div class="about">
+        <p class="eyebrow">About</p>
+        <h3>It began with street art: colour, composition and form.</h3>
+        <p>It’s all about communicating a message that’s <strong>clear, concise and beautiful</strong>. Today that means understanding the problem through empathy, user research and strategy before designing the solution. I have an <strong>MSc in Digital Design</strong> and over ten years in digital product design.</p>
+        <a class="btn" href="../site/about.html">Read my story</a>
+      </div>
+      <div class="col">
+        <p class="eyebrow">Recent roles</p>
+        <ul class="roles">
+      <li class="r"><img class="lg" src="../assets/hospitable-mark.svg" alt="Hospitable logo"><span class="role">Senior Staff Product Designer</span><span class="co">Hospitable</span><span class="when">Now</span><span class="yr">Now</span><span class="did">Helping hosts run their short-term rentals on autopilot.</span></li>
+      <li class="r"><img class="lg" src="../assets/carv-logo.svg" alt="Carv logo"><span class="role">Lead Product Designer</span><span class="co">Carv</span><span class="when">Feb 2024 — Mar 2025</span><span class="yr">2024–25</span><span class="did">Helping recruiters cut admin and boost hires.</span></li>
+      <li class="r"><img class="lg" src="../assets/trellis/savvy-logo.png" alt="Trellis / Savvy.Insure logo"><span class="role">Staff Product Designer</span><span class="co">Trellis / Savvy.Insure</span><span class="when">Jan 2023 — Jan 2024</span><span class="yr">2023–24</span><span class="did">$3.5MM in predicted gross annual revenue from 3 months of growth experiments.</span></li>
+      <li class="r"><img class="lg" src="../assets/homebot-logo.png" alt="Homebot logo"><span class="role">Senior Product Designer</span><span class="co">Homebot</span><span class="when">Dec 2020 — Dec 2022</span><span class="yr">2020–22</span><span class="did">Seven projects, research to dev-ready design, for ≈10 million users.</span></li>
+        </ul>
+        <a class="cv" href="https://cdn.prod.website-files.com/63b35214bc1dc0317e22bd99/668ae1b79c5572bfad32e508_Matt_Jongbloet_CV_2024.pdf">Download full resume (PDF) →</a>
+      </div>
+    </div>
+  </section>
+  <section class="var w4">
+    <h2><b>4</b> One line each</h2>
+    <p class="note">Logo, role and dates. The logo stands in for the company name.</p>
+    <div class="stage">
+      <div class="about">
+        <p class="eyebrow">About</p>
+        <h3>It began with street art: colour, composition and form.</h3>
+        <p>It’s all about communicating a message that’s <strong>clear, concise and beautiful</strong>. Today that means understanding the problem through empathy, user research and strategy before designing the solution. I have an <strong>MSc in Digital Design</strong> and over ten years in digital product design.</p>
+        <a class="btn" href="../site/about.html">Read my story</a>
+      </div>
+      <div class="col">
+        <p class="eyebrow">Recent roles</p>
+        <ul class="roles">
+      <li class="r"><img class="lg" src="../assets/hospitable-mark.svg" alt="Hospitable logo"><span class="role">Senior Staff Product Designer</span><span class="co">Hospitable</span><span class="when">Now</span><span class="yr">Now</span><span class="did">Helping hosts run their short-term rentals on autopilot.</span></li>
+      <li class="r"><img class="lg" src="../assets/carv-logo.svg" alt="Carv logo"><span class="role">Lead Product Designer</span><span class="co">Carv</span><span class="when">Feb 2024 — Mar 2025</span><span class="yr">2024–25</span><span class="did">Helping recruiters cut admin and boost hires.</span></li>
+      <li class="r"><img class="lg" src="../assets/trellis/savvy-logo.png" alt="Trellis / Savvy.Insure logo"><span class="role">Staff Product Designer</span><span class="co">Trellis / Savvy.Insure</span><span class="when">Jan 2023 — Jan 2024</span><span class="yr">2023–24</span><span class="did">$3.5MM in predicted gross annual revenue from 3 months of growth experiments.</span></li>
+      <li class="r"><img class="lg" src="../assets/homebot-logo.png" alt="Homebot logo"><span class="role">Senior Product Designer</span><span class="co">Homebot</span><span class="when">Dec 2020 — Dec 2022</span><span class="yr">2020–22</span><span class="did">Seven projects, research to dev-ready design, for ≈10 million users.</span></li>
+        </ul>
+        <a class="cv" href="https://cdn.prod.website-files.com/63b35214bc1dc0317e22bd99/668ae1b79c5572bfad32e508_Matt_Jongbloet_CV_2024.pdf">Download full resume (PDF) →</a>
+      </div>
+    </div>
+  </section>
+  <section class="var w5">
+    <h2><b>5</b> One line each, with company</h2>
+    <p class="note">Adds the company name in grey; years replace the full dates so it still fits one line.</p>
+    <div class="stage">
+      <div class="about">
+        <p class="eyebrow">About</p>
+        <h3>It began with street art: colour, composition and form.</h3>
+        <p>It’s all about communicating a message that’s <strong>clear, concise and beautiful</strong>. Today that means understanding the problem through empathy, user research and strategy before designing the solution. I have an <strong>MSc in Digital Design</strong> and over ten years in digital product design.</p>
+        <a class="btn" href="../site/about.html">Read my story</a>
+      </div>
+      <div class="col">
+        <p class="eyebrow">Recent roles</p>
+        <ul class="roles">
+      <li class="r"><img class="lg" src="../assets/hospitable-mark.svg" alt="Hospitable logo"><span class="role">Senior Staff Product Designer</span><span class="co">Hospitable</span><span class="when">Now</span><span class="yr">Now</span><span class="did">Helping hosts run their short-term rentals on autopilot.</span></li>
+      <li class="r"><img class="lg" src="../assets/carv-logo.svg" alt="Carv logo"><span class="role">Lead Product Designer</span><span class="co">Carv</span><span class="when">Feb 2024 — Mar 2025</span><span class="yr">2024–25</span><span class="did">Helping recruiters cut admin and boost hires.</span></li>
+      <li class="r"><img class="lg" src="../assets/trellis/savvy-logo.png" alt="Trellis / Savvy.Insure logo"><span class="role">Staff Product Designer</span><span class="co">Trellis / Savvy.Insure</span><span class="when">Jan 2023 — Jan 2024</span><span class="yr">2023–24</span><span class="did">$3.5MM in predicted gross annual revenue from 3 months of growth experiments.</span></li>
+      <li class="r"><img class="lg" src="../assets/homebot-logo.png" alt="Homebot logo"><span class="role">Senior Product Designer</span><span class="co">Homebot</span><span class="when">Dec 2020 — Dec 2022</span><span class="yr">2020–22</span><span class="did">Seven projects, research to dev-ready design, for ≈10 million users.</span></li>
+        </ul>
+        <a class="cv" href="https://cdn.prod.website-files.com/63b35214bc1dc0317e22bd99/668ae1b79c5572bfad32e508_Matt_Jongbloet_CV_2024.pdf">Download full resume (PDF) →</a>
+      </div>
+    </div>
+  </section>
+  <section class="var w6">
+    <h2><b>6</b> One line each, in an outlined card</h2>
+    <p class="note">The one-line list inside a single outlined card, with a green dot on “Now”.</p>
+    <div class="stage">
+      <div class="about">
+        <p class="eyebrow">About</p>
+        <h3>It began with street art: colour, composition and form.</h3>
+        <p>It’s all about communicating a message that’s <strong>clear, concise and beautiful</strong>. Today that means understanding the problem through empathy, user research and strategy before designing the solution. I have an <strong>MSc in Digital Design</strong> and over ten years in digital product design.</p>
+        <a class="btn" href="../site/about.html">Read my story</a>
+      </div>
+      <div class="col">
+        <p class="eyebrow">Recent roles</p>
+        <ul class="roles">
+      <li class="r"><img class="lg" src="../assets/hospitable-mark.svg" alt="Hospitable logo"><span class="role">Senior Staff Product Designer</span><span class="co">Hospitable</span><span class="when">Now</span><span class="yr">Now</span><span class="did">Helping hosts run their short-term rentals on autopilot.</span></li>
+      <li class="r"><img class="lg" src="../assets/carv-logo.svg" alt="Carv logo"><span class="role">Lead Product Designer</span><span class="co">Carv</span><span class="when">Feb 2024 — Mar 2025</span><span class="yr">2024–25</span><span class="did">Helping recruiters cut admin and boost hires.</span></li>
+      <li class="r"><img class="lg" src="../assets/trellis/savvy-logo.png" alt="Trellis / Savvy.Insure logo"><span class="role">Staff Product Designer</span><span class="co">Trellis / Savvy.Insure</span><span class="when">Jan 2023 — Jan 2024</span><span class="yr">2023–24</span><span class="did">$3.5MM in predicted gross annual revenue from 3 months of growth experiments.</span></li>
+      <li class="r"><img class="lg" src="../assets/homebot-logo.png" alt="Homebot logo"><span class="role">Senior Product Designer</span><span class="co">Homebot</span><span class="when">Dec 2020 — Dec 2022</span><span class="yr">2020–22</span><span class="did">Seven projects, research to dev-ready design, for ≈10 million users.</span></li>
+        </ul>
+        <a class="cv" href="https://cdn.prod.website-files.com/63b35214bc1dc0317e22bd99/668ae1b79c5572bfad32e508_Matt_Jongbloet_CV_2024.pdf">Download full resume (PDF) →</a>
+      </div>
+    </div>
+  </section>
+  <section class="var w7">
+    <h2><b>7</b> One card, outlined</h2>
+    <p class="note">All four roles with descriptions in one outlined card.</p>
+    <div class="stage">
+      <div class="about">
+        <p class="eyebrow">About</p>
+        <h3>It began with street art: colour, composition and form.</h3>
+        <p>It’s all about communicating a message that’s <strong>clear, concise and beautiful</strong>. Today that means understanding the problem through empathy, user research and strategy before designing the solution. I have an <strong>MSc in Digital Design</strong> and over ten years in digital product design.</p>
+        <a class="btn" href="../site/about.html">Read my story</a>
+      </div>
+      <div class="col">
+        <p class="eyebrow">Recent roles</p>
+        <ul class="roles">
+      <li class="r"><img class="lg" src="../assets/hospitable-mark.svg" alt="Hospitable logo"><span class="role">Senior Staff Product Designer</span><span class="co">Hospitable</span><span class="when">Now</span><span class="yr">Now</span><span class="did">Helping hosts run their short-term rentals on autopilot.</span></li>
+      <li class="r"><img class="lg" src="../assets/carv-logo.svg" alt="Carv logo"><span class="role">Lead Product Designer</span><span class="co">Carv</span><span class="when">Feb 2024 — Mar 2025</span><span class="yr">2024–25</span><span class="did">Helping recruiters cut admin and boost hires.</span></li>
+      <li class="r"><img class="lg" src="../assets/trellis/savvy-logo.png" alt="Trellis / Savvy.Insure logo"><span class="role">Staff Product Designer</span><span class="co">Trellis / Savvy.Insure</span><span class="when">Jan 2023 — Jan 2024</span><span class="yr">2023–24</span><span class="did">$3.5MM in predicted gross annual revenue from 3 months of growth experiments.</span></li>
+      <li class="r"><img class="lg" src="../assets/homebot-logo.png" alt="Homebot logo"><span class="role">Senior Product Designer</span><span class="co">Homebot</span><span class="when">Dec 2020 — Dec 2022</span><span class="yr">2020–22</span><span class="did">Seven projects, research to dev-ready design, for ≈10 million users.</span></li>
+        </ul>
+        <a class="cv" href="https://cdn.prod.website-files.com/63b35214bc1dc0317e22bd99/668ae1b79c5572bfad32e508_Matt_Jongbloet_CV_2024.pdf">Download full resume (PDF) →</a>
+      </div>
+    </div>
+  </section>
+  <section class="var w8">
+    <h2><b>8</b> One card, outlined, condensed</h2>
+    <p class="note">The same card without descriptions.</p>
+    <div class="stage">
+      <div class="about">
+        <p class="eyebrow">About</p>
+        <h3>It began with street art: colour, composition and form.</h3>
+        <p>It’s all about communicating a message that’s <strong>clear, concise and beautiful</strong>. Today that means understanding the problem through empathy, user research and strategy before designing the solution. I have an <strong>MSc in Digital Design</strong> and over ten years in digital product design.</p>
+        <a class="btn" href="../site/about.html">Read my story</a>
+      </div>
+      <div class="col">
+        <p class="eyebrow">Recent roles</p>
+        <ul class="roles">
+      <li class="r"><img class="lg" src="../assets/hospitable-mark.svg" alt="Hospitable logo"><span class="role">Senior Staff Product Designer</span><span class="co">Hospitable</span><span class="when">Now</span><span class="yr">Now</span><span class="did">Helping hosts run their short-term rentals on autopilot.</span></li>
+      <li class="r"><img class="lg" src="../assets/carv-logo.svg" alt="Carv logo"><span class="role">Lead Product Designer</span><span class="co">Carv</span><span class="when">Feb 2024 — Mar 2025</span><span class="yr">2024–25</span><span class="did">Helping recruiters cut admin and boost hires.</span></li>
+      <li class="r"><img class="lg" src="../assets/trellis/savvy-logo.png" alt="Trellis / Savvy.Insure logo"><span class="role">Staff Product Designer</span><span class="co">Trellis / Savvy.Insure</span><span class="when">Jan 2023 — Jan 2024</span><span class="yr">2023–24</span><span class="did">$3.5MM in predicted gross annual revenue from 3 months of growth experiments.</span></li>
+      <li class="r"><img class="lg" src="../assets/homebot-logo.png" alt="Homebot logo"><span class="role">Senior Product Designer</span><span class="co">Homebot</span><span class="when">Dec 2020 — Dec 2022</span><span class="yr">2020–22</span><span class="did">Seven projects, research to dev-ready design, for ≈10 million users.</span></li>
+        </ul>
+        <a class="cv" href="https://cdn.prod.website-files.com/63b35214bc1dc0317e22bd99/668ae1b79c5572bfad32e508_Matt_Jongbloet_CV_2024.pdf">Download full resume (PDF) →</a>
+      </div>
+    </div>
+  </section>
+  <section class="var w9">
+    <h2><b>9</b> One card, outlined, company first</h2>
+    <p class="note">Condensed, with the company name leading.</p>
+    <div class="stage">
+      <div class="about">
+        <p class="eyebrow">About</p>
+        <h3>It began with street art: colour, composition and form.</h3>
+        <p>It’s all about communicating a message that’s <strong>clear, concise and beautiful</strong>. Today that means understanding the problem through empathy, user research and strategy before designing the solution. I have an <strong>MSc in Digital Design</strong> and over ten years in digital product design.</p>
+        <a class="btn" href="../site/about.html">Read my story</a>
+      </div>
+      <div class="col">
+        <p class="eyebrow">Recent roles</p>
+        <ul class="roles">
+      <li class="r"><img class="lg" src="../assets/hospitable-mark.svg" alt="Hospitable logo"><span class="role">Senior Staff Product Designer</span><span class="co">Hospitable</span><span class="when">Now</span><span class="yr">Now</span><span class="did">Helping hosts run their short-term rentals on autopilot.</span></li>
+      <li class="r"><img class="lg" src="../assets/carv-logo.svg" alt="Carv logo"><span class="role">Lead Product Designer</span><span class="co">Carv</span><span class="when">Feb 2024 — Mar 2025</span><span class="yr">2024–25</span><span class="did">Helping recruiters cut admin and boost hires.</span></li>
+      <li class="r"><img class="lg" src="../assets/trellis/savvy-logo.png" alt="Trellis / Savvy.Insure logo"><span class="role">Staff Product Designer</span><span class="co">Trellis / Savvy.Insure</span><span class="when">Jan 2023 — Jan 2024</span><span class="yr">2023–24</span><span class="did">$3.5MM in predicted gross annual revenue from 3 months of growth experiments.</span></li>
+      <li class="r"><img class="lg" src="../assets/homebot-logo.png" alt="Homebot logo"><span class="role">Senior Product Designer</span><span class="co">Homebot</span><span class="when">Dec 2020 — Dec 2022</span><span class="yr">2020–22</span><span class="did">Seven projects, research to dev-ready design, for ≈10 million users.</span></li>
+        </ul>
+        <a class="cv" href="https://cdn.prod.website-files.com/63b35214bc1dc0317e22bd99/668ae1b79c5572bfad32e508_Matt_Jongbloet_CV_2024.pdf">Download full resume (PDF) →</a>
+      </div>
+    </div>
+  </section>
+  <section class="var w10">
+    <h2><b>10</b> Two-by-two, outlined</h2>
+    <p class="note">Four outlined cards, logo on top, years in a pill.</p>
+    <div class="stage">
+      <div class="about">
+        <p class="eyebrow">About</p>
+        <h3>It began with street art: colour, composition and form.</h3>
+        <p>It’s all about communicating a message that’s <strong>clear, concise and beautiful</strong>. Today that means understanding the problem through empathy, user research and strategy before designing the solution. I have an <strong>MSc in Digital Design</strong> and over ten years in digital product design.</p>
+        <a class="btn" href="../site/about.html">Read my story</a>
+      </div>
+      <div class="col">
+        <p class="eyebrow">Recent roles</p>
+        <ul class="roles">
+      <li class="r"><img class="lg" src="../assets/hospitable-mark.svg" alt="Hospitable logo"><span class="role">Senior Staff Product Designer</span><span class="co">Hospitable</span><span class="when">Now</span><span class="yr">Now</span><span class="did">Helping hosts run their short-term rentals on autopilot.</span></li>
+      <li class="r"><img class="lg" src="../assets/carv-logo.svg" alt="Carv logo"><span class="role">Lead Product Designer</span><span class="co">Carv</span><span class="when">Feb 2024 — Mar 2025</span><span class="yr">2024–25</span><span class="did">Helping recruiters cut admin and boost hires.</span></li>
+      <li class="r"><img class="lg" src="../assets/trellis/savvy-logo.png" alt="Trellis / Savvy.Insure logo"><span class="role">Staff Product Designer</span><span class="co">Trellis / Savvy.Insure</span><span class="when">Jan 2023 — Jan 2024</span><span class="yr">2023–24</span><span class="did">$3.5MM in predicted gross annual revenue from 3 months of growth experiments.</span></li>
+      <li class="r"><img class="lg" src="../assets/homebot-logo.png" alt="Homebot logo"><span class="role">Senior Product Designer</span><span class="co">Homebot</span><span class="when">Dec 2020 — Dec 2022</span><span class="yr">2020–22</span><span class="did">Seven projects, research to dev-ready design, for ≈10 million users.</span></li>
+        </ul>
+        <a class="cv" href="https://cdn.prod.website-files.com/63b35214bc1dc0317e22bd99/668ae1b79c5572bfad32e508_Matt_Jongbloet_CV_2024.pdf">Download full resume (PDF) →</a>
+      </div>
+    </div>
+  </section>
+  <section class="var w11">
+    <h2><b>11</b> Two-by-two, outlined, compact</h2>
+    <p class="note">Shorter cards: the logo sits beside the text.</p>
+    <div class="stage">
+      <div class="about">
+        <p class="eyebrow">About</p>
+        <h3>It began with street art: colour, composition and form.</h3>
+        <p>It’s all about communicating a message that’s <strong>clear, concise and beautiful</strong>. Today that means understanding the problem through empathy, user research and strategy before designing the solution. I have an <strong>MSc in Digital Design</strong> and over ten years in digital product design.</p>
+        <a class="btn" href="../site/about.html">Read my story</a>
+      </div>
+      <div class="col">
+        <p class="eyebrow">Recent roles</p>
+        <ul class="roles">
+      <li class="r"><img class="lg" src="../assets/hospitable-mark.svg" alt="Hospitable logo"><span class="role">Senior Staff Product Designer</span><span class="co">Hospitable</span><span class="when">Now</span><span class="yr">Now</span><span class="did">Helping hosts run their short-term rentals on autopilot.</span></li>
+      <li class="r"><img class="lg" src="../assets/carv-logo.svg" alt="Carv logo"><span class="role">Lead Product Designer</span><span class="co">Carv</span><span class="when">Feb 2024 — Mar 2025</span><span class="yr">2024–25</span><span class="did">Helping recruiters cut admin and boost hires.</span></li>
+      <li class="r"><img class="lg" src="../assets/trellis/savvy-logo.png" alt="Trellis / Savvy.Insure logo"><span class="role">Staff Product Designer</span><span class="co">Trellis / Savvy.Insure</span><span class="when">Jan 2023 — Jan 2024</span><span class="yr">2023–24</span><span class="did">$3.5MM in predicted gross annual revenue from 3 months of growth experiments.</span></li>
+      <li class="r"><img class="lg" src="../assets/homebot-logo.png" alt="Homebot logo"><span class="role">Senior Product Designer</span><span class="co">Homebot</span><span class="when">Dec 2020 — Dec 2022</span><span class="yr">2020–22</span><span class="did">Seven projects, research to dev-ready design, for ≈10 million users.</span></li>
+        </ul>
+        <a class="cv" href="https://cdn.prod.website-files.com/63b35214bc1dc0317e22bd99/668ae1b79c5572bfad32e508_Matt_Jongbloet_CV_2024.pdf">Download full resume (PDF) →</a>
+      </div>
+    </div>
+  </section>
+  <section class="var w12">
+    <h2><b>12</b> Two-by-two, outlined, company first</h2>
+    <p class="note">Company name leads; years sit top-right as plain text.</p>
+    <div class="stage">
+      <div class="about">
+        <p class="eyebrow">About</p>
+        <h3>It began with street art: colour, composition and form.</h3>
+        <p>It’s all about communicating a message that’s <strong>clear, concise and beautiful</strong>. Today that means understanding the problem through empathy, user research and strategy before designing the solution. I have an <strong>MSc in Digital Design</strong> and over ten years in digital product design.</p>
+        <a class="btn" href="../site/about.html">Read my story</a>
+      </div>
+      <div class="col">
+        <p class="eyebrow">Recent roles</p>
+        <ul class="roles">
+      <li class="r"><img class="lg" src="../assets/hospitable-mark.svg" alt="Hospitable logo"><span class="role">Senior Staff Product Designer</span><span class="co">Hospitable</span><span class="when">Now</span><span class="yr">Now</span><span class="did">Helping hosts run their short-term rentals on autopilot.</span></li>
+      <li class="r"><img class="lg" src="../assets/carv-logo.svg" alt="Carv logo"><span class="role">Lead Product Designer</span><span class="co">Carv</span><span class="when">Feb 2024 — Mar 2025</span><span class="yr">2024–25</span><span class="did">Helping recruiters cut admin and boost hires.</span></li>
+      <li class="r"><img class="lg" src="../assets/trellis/savvy-logo.png" alt="Trellis / Savvy.Insure logo"><span class="role">Staff Product Designer</span><span class="co">Trellis / Savvy.Insure</span><span class="when">Jan 2023 — Jan 2024</span><span class="yr">2023–24</span><span class="did">$3.5MM in predicted gross annual revenue from 3 months of growth experiments.</span></li>
+      <li class="r"><img class="lg" src="../assets/homebot-logo.png" alt="Homebot logo"><span class="role">Senior Product Designer</span><span class="co">Homebot</span><span class="when">Dec 2020 — Dec 2022</span><span class="yr">2020–22</span><span class="did">Seven projects, research to dev-ready design, for ≈10 million users.</span></li>
+        </ul>
+        <a class="cv" href="https://cdn.prod.website-files.com/63b35214bc1dc0317e22bd99/668ae1b79c5572bfad32e508_Matt_Jongbloet_CV_2024.pdf">Download full resume (PDF) →</a>
+      </div>
+    </div>
+  </section>
+  <section class="var w13">
+    <h2><b>13</b> Timeline</h2>
+    <p class="note">A vertical line through the logos, with descriptions.</p>
+    <div class="stage">
+      <div class="about">
+        <p class="eyebrow">About</p>
+        <h3>It began with street art: colour, composition and form.</h3>
+        <p>It’s all about communicating a message that’s <strong>clear, concise and beautiful</strong>. Today that means understanding the problem through empathy, user research and strategy before designing the solution. I have an <strong>MSc in Digital Design</strong> and over ten years in digital product design.</p>
+        <a class="btn" href="../site/about.html">Read my story</a>
+      </div>
+      <div class="col">
+        <p class="eyebrow">Recent roles</p>
+        <ul class="roles">
+      <li class="r"><img class="lg" src="../assets/hospitable-mark.svg" alt="Hospitable logo"><span class="role">Senior Staff Product Designer</span><span class="co">Hospitable</span><span class="when">Now</span><span class="yr">Now</span><span class="did">Helping hosts run their short-term rentals on autopilot.</span></li>
+      <li class="r"><img class="lg" src="../assets/carv-logo.svg" alt="Carv logo"><span class="role">Lead Product Designer</span><span class="co">Carv</span><span class="when">Feb 2024 — Mar 2025</span><span class="yr">2024–25</span><span class="did">Helping recruiters cut admin and boost hires.</span></li>
+      <li class="r"><img class="lg" src="../assets/trellis/savvy-logo.png" alt="Trellis / Savvy.Insure logo"><span class="role">Staff Product Designer</span><span class="co">Trellis / Savvy.Insure</span><span class="when">Jan 2023 — Jan 2024</span><span class="yr">2023–24</span><span class="did">$3.5MM in predicted gross annual revenue from 3 months of growth experiments.</span></li>
+      <li class="r"><img class="lg" src="../assets/homebot-logo.png" alt="Homebot logo"><span class="role">Senior Product Designer</span><span class="co">Homebot</span><span class="when">Dec 2020 — Dec 2022</span><span class="yr">2020–22</span><span class="did">Seven projects, research to dev-ready design, for ≈10 million users.</span></li>
+        </ul>
+        <a class="cv" href="https://cdn.prod.website-files.com/63b35214bc1dc0317e22bd99/668ae1b79c5572bfad32e508_Matt_Jongbloet_CV_2024.pdf">Download full resume (PDF) →</a>
+      </div>
+    </div>
+  </section>
+  <section class="var w14">
+    <h2><b>14</b> Timeline, condensed</h2>
+    <p class="note">No descriptions, smaller logos.</p>
+    <div class="stage">
+      <div class="about">
+        <p class="eyebrow">About</p>
+        <h3>It began with street art: colour, composition and form.</h3>
+        <p>It’s all about communicating a message that’s <strong>clear, concise and beautiful</strong>. Today that means understanding the problem through empathy, user research and strategy before designing the solution. I have an <strong>MSc in Digital Design</strong> and over ten years in digital product design.</p>
+        <a class="btn" href="../site/about.html">Read my story</a>
+      </div>
+      <div class="col">
+        <p class="eyebrow">Recent roles</p>
+        <ul class="roles">
+      <li class="r"><img class="lg" src="../assets/hospitable-mark.svg" alt="Hospitable logo"><span class="role">Senior Staff Product Designer</span><span class="co">Hospitable</span><span class="when">Now</span><span class="yr">Now</span><span class="did">Helping hosts run their short-term rentals on autopilot.</span></li>
+      <li class="r"><img class="lg" src="../assets/carv-logo.svg" alt="Carv logo"><span class="role">Lead Product Designer</span><span class="co">Carv</span><span class="when">Feb 2024 — Mar 2025</span><span class="yr">2024–25</span><span class="did">Helping recruiters cut admin and boost hires.</span></li>
+      <li class="r"><img class="lg" src="../assets/trellis/savvy-logo.png" alt="Trellis / Savvy.Insure logo"><span class="role">Staff Product Designer</span><span class="co">Trellis / Savvy.Insure</span><span class="when">Jan 2023 — Jan 2024</span><span class="yr">2023–24</span><span class="did">$3.5MM in predicted gross annual revenue from 3 months of growth experiments.</span></li>
+      <li class="r"><img class="lg" src="../assets/homebot-logo.png" alt="Homebot logo"><span class="role">Senior Product Designer</span><span class="co">Homebot</span><span class="when">Dec 2020 — Dec 2022</span><span class="yr">2020–22</span><span class="did">Seven projects, research to dev-ready design, for ≈10 million users.</span></li>
+        </ul>
+        <a class="cv" href="https://cdn.prod.website-files.com/63b35214bc1dc0317e22bd99/668ae1b79c5572bfad32e508_Matt_Jongbloet_CV_2024.pdf">Download full resume (PDF) →</a>
+      </div>
+    </div>
+  </section>
+  <section class="var w15">
+    <h2><b>15</b> Timeline in an outlined card</h2>
+    <p class="note">The condensed timeline inside one outlined card.</p>
+    <div class="stage">
+      <div class="about">
+        <p class="eyebrow">About</p>
+        <h3>It began with street art: colour, composition and form.</h3>
+        <p>It’s all about communicating a message that’s <strong>clear, concise and beautiful</strong>. Today that means understanding the problem through empathy, user research and strategy before designing the solution. I have an <strong>MSc in Digital Design</strong> and over ten years in digital product design.</p>
+        <a class="btn" href="../site/about.html">Read my story</a>
+      </div>
+      <div class="col">
+        <p class="eyebrow">Recent roles</p>
+        <ul class="roles">
+      <li class="r"><img class="lg" src="../assets/hospitable-mark.svg" alt="Hospitable logo"><span class="role">Senior Staff Product Designer</span><span class="co">Hospitable</span><span class="when">Now</span><span class="yr">Now</span><span class="did">Helping hosts run their short-term rentals on autopilot.</span></li>
+      <li class="r"><img class="lg" src="../assets/carv-logo.svg" alt="Carv logo"><span class="role">Lead Product Designer</span><span class="co">Carv</span><span class="when">Feb 2024 — Mar 2025</span><span class="yr">2024–25</span><span class="did">Helping recruiters cut admin and boost hires.</span></li>
+      <li class="r"><img class="lg" src="../assets/trellis/savvy-logo.png" alt="Trellis / Savvy.Insure logo"><span class="role">Staff Product Designer</span><span class="co">Trellis / Savvy.Insure</span><span class="when">Jan 2023 — Jan 2024</span><span class="yr">2023–24</span><span class="did">$3.5MM in predicted gross annual revenue from 3 months of growth experiments.</span></li>
+      <li class="r"><img class="lg" src="../assets/homebot-logo.png" alt="Homebot logo"><span class="role">Senior Product Designer</span><span class="co">Homebot</span><span class="when">Dec 2020 — Dec 2022</span><span class="yr">2020–22</span><span class="did">Seven projects, research to dev-ready design, for ≈10 million users.</span></li>
+        </ul>
+        <a class="cv" href="https://cdn.prod.website-files.com/63b35214bc1dc0317e22bd99/668ae1b79c5572bfad32e508_Matt_Jongbloet_CV_2024.pdf">Download full resume (PDF) →</a>
+      </div>
+    </div>
+  </section>
+</main>
+</body>
+</html>
