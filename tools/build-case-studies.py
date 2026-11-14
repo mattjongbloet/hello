@@ -393,8 +393,7 @@ PAGES["trellis"] = page("Trellis: Growth experiments — Matt Jongbloet", "Savvy
          + f'<div class="fig-pair even"><figure class="fig"><div class="frame cover-ph">{ph("Before: the old Savvy homepage (mobile, full page)")}</div><figcaption>Before</figcaption></figure><figure class="fig"><div class="frame cover-ph">{ph("After: the redesigned homepage (mobile, full page)")}</div><figcaption>After</figcaption></figure></div>'),
         ("outcome", "Outcome", "$3.5MM in predicted annual revenue",
          ul("Across around 15 experiments in three months, the wins added up to <strong>$3.5MM in predicted gross annual revenue</strong>.",
-            "The re-order test alone lifted completion of the unlinked application from <strong>60.4% to 69.0%</strong>, a 14% relative improvement.",
-            "We left the team with the infrastructure to keep testing with ease, and a shared way of deciding what to build.")
+            "The re-order test alone lifted completion of the unlinked application from <strong>60.4% to 69.0%</strong>, a 14% relative improvement.")
          + '<h3 class="sub">What we learned</h3>'
          + ul("<strong>People need Savvy to feel valuable before they give their info.</strong> Order matters.",
               "<strong>Learning is more important than being right.</strong> Good testing infrastructure means more people share ideas, and it takes the HiPPO out of decisions.")),
