@@ -40,3 +40,13 @@
     apply();
   });
 })();
+// Phone menu: the hamburger next to the theme toggle opens Work / About / Resume as a panel under the header.
+(() => {
+  const top = document.querySelector('.top'), btn = top && top.querySelector('.menu-toggle'); if (!btn) return;
+  const set = (open) => { top.classList.toggle('menu-open', open); btn.setAttribute('aria-expanded', String(open)); btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu'); };
+  btn.addEventListener('click', () => set(!top.classList.contains('menu-open')));
+  top.querySelectorAll('.nav a').forEach((a) => a.addEventListener('click', () => set(false)));
+  document.addEventListener('click', (e) => { if (!e.target.closest('.top')) set(false); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && top.classList.contains('menu-open')) { set(false); btn.focus(); } });
+  matchMedia('(min-width: 561px)').addEventListener('change', (e) => { if (e.matches) set(false); });
+})();

@@ -12,6 +12,9 @@ THEME_HEAD = """<script>try { document.documentElement.dataset.theme = localStor
 SUN = '<svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><g stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M5.3 5.3l1.7 1.7M17 17l1.7 1.7M5.3 18.7 7 17M17 7l1.7-1.7"/></g></svg>'
 MOON = '<svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.2 8.2 0 1 0 10.2 10.2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>'
 
+BURGER = '<svg class="i-burger" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14M5 12h14M5 16h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>'
+CLOSE = '<svg class="i-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>'
+
 
 def header(home, current, work_href=None, about_href=None):
     """home: path prefix to the site's home folder ('' on the home page itself)."""
@@ -22,12 +25,13 @@ def header(home, current, work_href=None, about_href=None):
     return f"""<header class="top">
   <div class="wrap">
     <a class="brand" href="{home}index.html"><img class="face" src="../assets/headshot.jpg" alt=""><span class="brand-name">Matt Jongbloet</span><span class="brand-role">Senior Staff Product Designer</span></a>
-    <nav class="nav" aria-label="Main">
+    <nav class="nav" id="site-nav" aria-label="Main">
       <a href="{work_href}"{cur("work")}>Work</a>
       <a href="{about_href}"{cur("about")}{keep}>About</a>
       <a href="{CV}">Resume</a>
     </nav>
     <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">{MOON}{SUN}</button>
+    <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">{BURGER}{CLOSE}</button>
   </div>
 </header>"""
 
@@ -50,6 +54,16 @@ THEME_JS = """
     try { localStorage.setItem('mj-theme', theme); } catch (err) { /* private mode: the choice just won't persist */ }
     apply();
   });
+})();
+// Phone menu: the hamburger next to the theme toggle opens Work / About / Resume as a panel under the header.
+(() => {
+  const top = document.querySelector('.top'), btn = top && top.querySelector('.menu-toggle'); if (!btn) return;
+  const set = (open) => { top.classList.toggle('menu-open', open); btn.setAttribute('aria-expanded', String(open)); btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu'); };
+  btn.addEventListener('click', () => set(!top.classList.contains('menu-open')));
+  top.querySelectorAll('.nav a').forEach((a) => a.addEventListener('click', () => set(false)));
+  document.addEventListener('click', (e) => { if (!e.target.closest('.top')) set(false); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && top.classList.contains('menu-open')) { set(false); btn.focus(); } });
+  matchMedia('(min-width: 561px)').addEventListener('change', (e) => { if (e.matches) set(false); });
 })();
 """
 
@@ -79,6 +93,22 @@ HEADER_CSS = """
 @media (max-width: 760px) { .top .wrap { gap: 14px; } .nav { gap: 16px; } }
 @media (max-width: 560px) { .top .btn.talk { padding: 9px 14px; } .brand-name { font-size: 15px; } }
 @media (max-width: 350px) { .brand-name { display: none; } }
+/* Phone menu. The hamburger shows only where the links are hidden (560px and down) and opens them as a panel under the header. */
+.menu-toggle { display: none; place-items: center; width: 40px; height: 40px; padding: 0; border: 0; border-radius: 50%; background: none; color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--line); cursor: pointer; transition: box-shadow .15s; }
+.menu-toggle:hover { box-shadow: inset 0 0 0 1.5px var(--ink); }
+.menu-toggle svg { width: 20px; height: 20px; }
+.menu-toggle .i-close, .top.menu-open .menu-toggle .i-burger { display: none; }
+.top.menu-open .menu-toggle .i-close { display: block; }
+@media (max-width: 560px) {
+  .menu-toggle { display: grid; }
+  .top .wrap { gap: 10px; }
+  .theme-toggle { margin-left: auto; }
+  .nav { display: none; position: absolute; left: 0; right: 0; top: 100%; margin: 0; flex-direction: column; gap: 0; padding: 6px 20px 14px; background: var(--paper); border-bottom: 1px solid var(--line); box-shadow: 0 18px 30px -22px rgb(0 0 0 / .35); }
+  .top.menu-open .nav { display: flex; }
+  .top.menu-open { background: var(--paper); }
+  .nav a, .nav a:not(.keep) { display: flex; align-items: center; min-height: 52px; padding: 0; font-size: 18px; font-weight: 500; border-bottom: 1px solid var(--line); }
+  .nav a:last-child { border-bottom: 0; }
+}
 """
 
 DARK_CSS = """
