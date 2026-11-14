@@ -1,9 +1,9 @@
 /* Matt's case-study format (tools/build-case-studies.py). Adds to style.css + case.css. */
 /* Team in the facts row: linked avatars (photo or initials) with names, then a short note. */
-.team { display: flex; flex-direction: column; gap: 6px; margin-top: 2px; }
-.mate { display: inline-flex; align-items: center; gap: 9px; min-height: 32px; color: var(--ink); text-decoration: none; font-weight: 500; }
-.mate:hover { text-decoration: underline; text-underline-offset: 3px; }
-.mate-face { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; overflow: hidden; flex: none; background: color-mix(in srgb, var(--ink) 8%, transparent); font-size: 11px; font-weight: 600; letter-spacing: .02em; color: var(--ink-2); }
+.team { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+.mate { display: inline-flex; border-radius: 50%; transition: transform .15s, box-shadow .15s; }
+.mate:hover { transform: translateY(-2px); box-shadow: 0 0 0 2px var(--paper), 0 0 0 3.5px var(--signal); }
+.mate-face { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; overflow: hidden; flex: none; background: color-mix(in srgb, var(--ink) 8%, transparent); font-size: 11px; font-weight: 600; letter-spacing: .02em; color: var(--ink-2); }
 .mate-face img { width: 100%; height: 100%; object-fit: cover; }
 .team-note { display: block; margin-top: 6px; font-size: 13px; color: var(--ink-2); }
 .cs-hero { padding-bottom: 32px; }

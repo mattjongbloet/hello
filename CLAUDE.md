@@ -35,6 +35,7 @@ This file records the decisions made so far and how the project is built, so a n
   Matt likes putting the cover image first, above the headline (reference: a Fin Studio case study). Three options on PMI are in `redesigns/cs-cover-lab/` (`tools/build-cs-cover-lab.py`): 1 image first, same layout; 2 framed stage, centred title; 3 full-bleed cover, split title. No pick yet.
 - **Project cards** (home): white card with the screenshot on top edge to edge, the logo tile straddling the image's bottom edge, then company, **bold** title and one line. All cards are half-width, two per row (no wide cards). Fifteen variations of this card (light theme first) are in `redesigns/card-lab/` (`tools/build-card-lab.py`); Matt picked 4 (image on top, logo overlapping), now on the home page; 5 (compact header) and 13 (no card) were also shortlisted (`redesigns/card-lab/home.html`).
 - **Recent roles** (home): rows with a company logo, role, company and dates, condensed (no description), separated by white space only (no rule lines); the resume link under it is a bold text link (a primary button was tried and dropped). Matt's pick from round 2 of the roles lab. History: 15 variations with company logos are in `redesigns/roles-lab/` (`tools/build-roles-lab.py`); Matt preferred rows with logos, one line each, one card, two-by-two cards and the timeline, and wants cards outlined (not grey-filled) and more condensed; `roles-lab/round-2.html` has 15 refinements of those. No final pick yet. Logo tiles: `assets/hospitable-mark.svg` (made from the Hospitable logo's mark), Homebot and Savvy PNGs, `assets/carv-logo.svg` (from the SVG Matt uploaded). Variations are shown in the real half-column About layout. LinkedIn could not be scraped (login wall; we never sign in).
+- **Case-study team**: Trellis's Team fact is three 44px round headshots (Drew Bolles, Chuong Nguyen, Alexey Komissarouk; photos from Matt in `assets/team/<linkedin-handle>.jpg`), each linking to their LinkedIn, names only in the link label and tooltip (Matt asked to drop the visible names and the engineering note). `team()` in `build-case-studies.py`; it falls back to initials when no photo exists.
 - **Type size**: headings and body ~10–15% smaller than Direction A (`tools/type-smaller.css`).
 - Dark mode exists behind the toggle; the site opens in light mode.
 
@@ -82,7 +83,7 @@ Run QA on every changed page; it should print `all clear`. For dark mode, QA a t
 - The 3D face has no keyboard or screen-reader way to open the artwork or take a bite yet (pointer only).
 - Trellis case study placeholders: what "unlinked application" means, 4–6 more experiments, whether V2 shipped, how the $3.5MM was predicted.
 - Carv and Hospitable case studies need content from Matt.
-- Trellis team (facts row) shows Drew Bolles, Chuong Nguyen and Alexey Komissarouk linked to their LinkedIn profiles with initials avatars; LinkedIn photos need a sign-in, so headshots wait for Matt (drop them in `redesigns/assets/team/<linkedin-handle>.jpg` and rebuild; the `team()` helper in `build-case-studies.py` picks them up).
+
 - Internal Admin is dated January 2020 on the live site, before the CV's Homebot start (Dec 2020): confirm.
 - Hospitable start month.
 - Live site issues found: contact links on case-study pages point to a template email and phone number.
