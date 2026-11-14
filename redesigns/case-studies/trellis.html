@@ -40,7 +40,7 @@
     <!-- Trellis / Savvy cover animation (about 8s, loops): the mobile homepage, a tap on Start saving, three quote-flow
      questions (vehicle, own or rent, current premium $250), shopping insurers, then offers and the homepage's own claim
      ("could save you an average of $1,500/year"). The phone is a CSS iPhone (titanium band, bezel, Dynamic Island,
-     side keys, glass glare) that floats with a slow tilt; an iOS keyboard (letters or number pad) slides up while typing. Insurer logos are cut from Savvy's own homepage graphic
+     side keys, glass glare) shown front on with a gentle float; an iOS keyboard (letters or number pad) slides up while typing. Insurer logos are cut from Savvy's own homepage graphic
      (assets/trellis/ins-*.png); the offer prices ($118-$149/mo) are illustrative, picked so the best offer saves ~$1,580/year
      against the $250 entered, in line with the $1,500 average claim. Rebuilt in HTML/CSS from Matt's screens, so it stays sharp.
      Inserted as the Trellis case-study cover by tools/build-case-studies.py. -->
@@ -100,14 +100,14 @@
 :root[data-theme="dark"] .sv-anim { background: radial-gradient(120% 90% at 50% 0%, #1d2433, #121722 70%); }
 .sv-scale { width: 324px; height: 644px; flex: none; transform-origin: 50% 50%; perspective: 1800px; }
 /* The device: titanium band, black bezel, glass screen. Thickness is faked with stacked edge shadows, and it floats with a slow tilt. */
-.sv-device { position: relative; width: 324px; height: 644px; transform-style: preserve-3d; transform: rotateY(-9deg) rotateX(4deg) rotateZ(.6deg); animation: sv-float 9s ease-in-out infinite alternate; }
-@keyframes sv-float { 0% { transform: rotateY(-9deg) rotateX(4deg) rotateZ(.6deg) translateY(0); } 100% { transform: rotateY(-4deg) rotateX(2deg) rotateZ(0deg) translateY(-6px); } }
+.sv-device { position: relative; width: 324px; height: 644px; animation: sv-float 4.5s ease-in-out infinite alternate; }   /* front on (Matt), with a gentle float */
+@keyframes sv-float { to { transform: translateY(-6px); } }
 .sv-frame { position: absolute; inset: 0; border-radius: 58px; padding: 4px;
-  background: linear-gradient(140deg, #f4f5f6 0%, #a9acb1 14%, #d9dbde 30%, #7d8086 52%, #c6c8cb 70%, #8a8d92 86%, #e7e8ea 100%);
+  background: linear-gradient(180deg, #eceef0 0%, #a9acb1 12%, #d4d6d9 50%, #9a9da2 88%, #e2e4e6 100%);
   box-shadow: inset 0 0 0 1px rgb(255 255 255 / .55), inset 0 0 1px 2px rgb(0 0 0 / .25),
-    1px 1px 0 #8b8e93, 2px 2px 0 #7b7e83, 3px 3px 0 #6d7075, 4px 4px 0 #5f6267, 5px 5px 0 #53565b, 6px 6px 1px #45484c,
-    10px 18px 30px -6px rgb(10 25 70 / .35), 24px 48px 70px -22px rgb(10 25 70 / .45), 0 2px 3px rgb(0 0 0 / .2); }
-:root[data-theme="dark"] .sv-frame { box-shadow: inset 0 0 0 1px rgb(255 255 255 / .55), inset 0 0 1px 2px rgb(0 0 0 / .25), 1px 1px 0 #8b8e93, 2px 2px 0 #7b7e83, 3px 3px 0 #6d7075, 4px 4px 0 #5f6267, 5px 5px 0 #53565b, 6px 6px 1px #45484c, 10px 18px 34px -6px rgb(0 0 0 / .6), 24px 48px 80px -22px rgb(0 0 0 / .7); }
+    0 0 0 1px #6d7075, 0 1px 0 1px #5f6267,
+    0 18px 34px -10px rgb(10 25 70 / .32), 0 46px 70px -24px rgb(10 25 70 / .42), 0 2px 3px rgb(0 0 0 / .18); }
+:root[data-theme="dark"] .sv-frame { box-shadow: inset 0 0 0 1px rgb(255 255 255 / .55), inset 0 0 1px 2px rgb(0 0 0 / .25), 0 0 0 1px #6d7075, 0 1px 0 1px #5f6267, 0 18px 36px -10px rgb(0 0 0 / .6), 0 46px 80px -24px rgb(0 0 0 / .7); }
 .sv-bezel { width: 100%; height: 100%; border-radius: 54px; padding: 8px; background: #050506; box-shadow: inset 0 0 0 1.5px #1c1d20; }
 .sv-key { position: absolute; width: 4px; border-radius: 2px; background: linear-gradient(90deg, #6d7075, #c9cbce 45%, #85888d); box-shadow: -1px 0 1px rgb(0 0 0 / .25); }
 .sv-act { left: -3px; top: 112px; height: 30px; } .sv-vup { left: -3px; top: 162px; height: 52px; } .sv-vdn { left: -3px; top: 224px; height: 52px; }
