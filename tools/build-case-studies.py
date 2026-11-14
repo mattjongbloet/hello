@@ -41,6 +41,16 @@ def meta(rows):
     return f'<dl class="meta{" meta5" if len(rows) == 5 else ""}">' + "".join(f"<div><dt>{k}</dt><dd>{v}</dd></div>" for k, v in rows) + "</dl>"
 
 
+def team(people, note=""):
+    """Teammates as linked avatars. A photo at assets/team/<linkedin-handle>.jpg is used if present, otherwise initials."""
+    out = []
+    for name, handle in people:
+        photo = os.path.join(HERE, "..", "redesigns", "assets", "team", handle + ".jpg")
+        face = f'<img src="{IMG}team/{handle}.jpg" alt="">' if os.path.exists(photo) else "".join(w[0] for w in name.split()[:2])
+        out.append(f'<a class="mate" href="https://www.linkedin.com/in/{handle}/" target="_blank" rel="noopener"><span class="mate-face" aria-hidden="true">{face}</span>{name}</a>')
+    return '<span class="team">' + "".join(out) + "</span>" + (f'<span class="team-note">{note}</span>' if note else "")
+
+
 def opening(crumb, title, dek, rows, cover, tiles):
     t = "".join(f'<div><b class="num">{n}</b><span>{label}</span></div>' for n, label in tiles)
     return f"""  <section class="wrap cs-hero">
@@ -348,7 +358,7 @@ def tfig(src, alt, cap, wide=False):
 PAGES["trellis"] = page("Trellis: Growth experiments — Matt Jongbloet", "In 3 months, a small growth team and I ran experiments on around 15 parts of Savvy’s car insurance quote flow: $3.5MM in predicted gross annual revenue.",
     opening("Trellis", "Finding $3.5MM in a car insurance quote flow",
             "In three months, a small growth team and I ran experiments on around 15 parts of Savvy’s car insurance quote flow, and proved we could get more people from “I want a quote” to “here are my offers”.",
-            [("Company", "Trellis / Savvy.Insure"), ("My role", "Staff Product Designer, Growth"), ("Team", "1 front-end engineer, 1 back-end engineer, 1 growth engineering consultant"), ("Timeframe", "3 months, 2023"), ("Surface", "Car insurance quote flow")],
+            [("Company", "Trellis / Savvy.Insure"), ("My role", "Staff Product Designer, Growth"), ("Team", team([("Drew Bolles", "drew-bolles"), ("Chuong Nguyen", "chuongtnguyen"), ("Alexey Komissarouk", "alexeymk")], "Front-end, back-end and growth engineering")), ("Timeframe", "3 months, 2023"), ("Surface", "Car insurance quote flow")],
             open(os.path.join(HERE, "anims", "trellis.html")).read(),   # animated cover: homepage → three questions → offers
             [("$3.5MM", "predicted gross annual revenue"), ("~15", "parts of the quote flow tested"), ("3 months", "from first test to result"),
              ("69.0%", "completion in the winning re-order test, up from 60.4%"), ("+14%", "relative lift in completed applications")])
@@ -408,6 +418,13 @@ PAGES["hospitable"] = template("Hospitable", "Hospitable", "Senior Staff Product
                  "Context, opportunity, approach, outcome: a few lines each.", "Visuals you’re allowed to show (crop or blur where needed)."])
 
 CSS = """/* Matt's case-study format (tools/build-case-studies.py). Adds to style.css + case.css. */
+/* Team in the facts row: linked avatars (photo or initials) with names, then a short note. */
+.team { display: flex; flex-direction: column; gap: 6px; margin-top: 2px; }
+.mate { display: inline-flex; align-items: center; gap: 9px; min-height: 32px; color: var(--ink); text-decoration: none; font-weight: 500; }
+.mate:hover { text-decoration: underline; text-underline-offset: 3px; }
+.mate-face { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; overflow: hidden; flex: none; background: color-mix(in srgb, var(--ink) 8%, transparent); font-size: 11px; font-weight: 600; letter-spacing: .02em; color: var(--ink-2); }
+.mate-face img { width: 100%; height: 100%; object-fit: cover; }
+.team-note { display: block; margin-top: 6px; font-size: 13px; color: var(--ink-2); }
 .cs-hero { padding-bottom: 32px; }
 .cs-hero h1 { max-width: 19ch; }
 .cs-cover, .cover { margin-top: 0; }

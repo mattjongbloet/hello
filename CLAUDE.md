@@ -82,6 +82,7 @@ Run QA on every changed page; it should print `all clear`. For dark mode, QA a t
 - The 3D face has no keyboard or screen-reader way to open the artwork or take a bite yet (pointer only).
 - Trellis case study placeholders: what "unlinked application" means, 4–6 more experiments, whether V2 shipped, how the $3.5MM was predicted.
 - Carv and Hospitable case studies need content from Matt.
+- Trellis team (facts row) shows Drew Bolles, Chuong Nguyen and Alexey Komissarouk linked to their LinkedIn profiles with initials avatars; LinkedIn photos need a sign-in, so headshots wait for Matt (drop them in `redesigns/assets/team/<linkedin-handle>.jpg` and rebuild; the `team()` helper in `build-case-studies.py` picks them up).
 - Internal Admin is dated January 2020 on the live site, before the CV's Homebot start (Dec 2020): confirm.
 - Hospitable start month.
 - Live site issues found: contact links on case-study pages point to a template email and phone number.
