@@ -381,7 +381,7 @@ PAGES["trellis"] = page("Trellis: Growth experiments — Matt Jongbloet", "Savvy
         ("approach", "Approach", "Fifteen experiments in three months",
          p("Unfortunately, I no longer have access to all the experiments, files and visuals, so here I’ll show the one I do have: one example of the 15.")
          + '<h3 class="sub">One example: ask for the car before the phone number</h3>'
-         + '<p>From 17 to 31 May 2023, <strong>44,846</strong> people started the unlinked application and <strong>26,333</strong> finished it: <strong>58.7%</strong>. Four in ten gave up before seeing a quote.</p>'
+         + '<p><strong>Four in ten people gave up before seeing a quote.</strong> From 17 to 31 May 2023, 44,846 people started the unlinked application and 26,333 finished it: a completion rate of 58.7%.</p>'
          + tfig("baseline-chart.jpg", "Bar chart: 44,846 started the unlinked application, 26,333 completed it, 58.7% total conversion, 17 to 31 May 2023", "Baseline, 17–31 May 2023: 58.7% of people who started the unlinked application completed it.", pad=True)
          + '<p class="callout">Hypothesis: changing the order of the unlinked application will increase conversion.</p>'
          + "<p>The control opened by asking for name, phone, email and date of birth, before Savvy had given anything back. V2 starts with the car and the drivers, builds up to the policy, and only asks for contact details at the very end, as <em>“Where should we send your offers?”</em></p>"
