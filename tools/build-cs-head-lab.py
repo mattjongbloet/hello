@@ -136,10 +136,27 @@ open(os.path.join(OUT, "index.html"), "w").write(f"""<!doctype html>
 <main class="page">
   <a class="back-lab" href="../case-studies/trellis.html">← Trellis case study</a>
   <h1>Case-study header: 15 options</h1>
+  <p class="intro"><a href="full-1.html">1</a> · <a href="full-4.html">4</a> · <a href="full-7.html">7</a> · <a href="full-13.html">13</a>: shortlisted, shown in the full case study.</p>
   <p class="intro">The top of a case study, shown on Trellis. Each one starts with “Back to work” on the left and the next case study on the right, then the same title, intro and five facts, arranged to avoid the empty space on the right.</p>
 {secs}
 </main>
 </body>
 </html>
 """)
+# ---- The shortlist in the full Trellis case study: the built page with its opening swapped for the option.
+import re
+PICKS = [1, 4, 7, 13]
+page = open(os.path.join(ROOT, "redesigns", "case-studies", "trellis.html")).read()
+OPEN = re.compile(r'  <section class="wrap cs-hero">.*?</section>\n', re.S); assert OPEN.search(page), "Trellis opening not found"
+HEAD_CSS = CSS[CSS.index("/* the header itself"):]
+# a few class names here are already used by the case-study styles, so the copies use their own
+REN = {"facts": "hfacts", "team": "hteam", "mate": "hmate", "split": "hsplit", "wide": "hwide", "next": "hnext"}
+def own(t):   # only class attributes in the markup and class selectors in the CSS, never the words in the copy
+    t = re.sub(r'class="([^"]*)"', lambda m: 'class="' + " ".join(REN.get(c, c) for c in m.group(1).split()) + '"', t)
+    return re.sub(r"\.(" + "|".join(REN) + r")(?![\w-])", lambda m: "." + REN[m.group(1)], t)
+for n in PICKS:
+    name, note, cls, html = V[n - 1]
+    hd = own(f'  <header class="wrap hd {cls}">{html}</header>\n')
+    out = OPEN.sub(lambda m: hd, page, 1).replace("<head>", '<head>\n<base href="../case-studies/">', 1).replace("</head>", f"<style>{own(HEAD_CSS)}\n.hd {{ padding-bottom: 40px; }}</style>\n</head>", 1)
+    open(os.path.join(OUT, f"full-{n}.html"), "w").write(out)
 print("built cs-head-lab")
