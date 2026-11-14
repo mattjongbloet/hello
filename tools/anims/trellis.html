@@ -50,7 +50,7 @@
  </div></div>
 </div>
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
 .sv-anim { position: relative; aspect-ratio: 16 / 10; background: radial-gradient(120% 90% at 50% 0%, #eef3ff, #dbe5fb 70%); display: grid; place-items: center; overflow: hidden; }
 :root[data-theme="dark"] .sv-anim { background: radial-gradient(120% 90% at 50% 0%, #1d2433, #121722 70%); }
 .sv-scale { width: 300px; height: 620px; flex: none; transform-origin: 50% 50%; }
@@ -65,7 +65,7 @@
 .sv-scr.on { transform: none; } .sv-scr.off { transform: translateX(-28%); opacity: 0; }
 .sv-logo { display: flex; align-items: center; gap: 6px; font: 600 19px/1 var(--svf); letter-spacing: -.02em; color: #102a6b; margin: 4px 0 26px; }
 .sv-mark { width: 18px; height: 18px; flex: none; }   /* Savvy's own mark (Matt's SVG) */
-.sv-home h4 { font: 600 27px/1.12 var(--svf); letter-spacing: -.025em; margin: 0 0 12px; }
+.sv-home h4 { font: 700 27px/1.12 var(--svf); letter-spacing: -.025em; margin: 0 0 12px; }
 .sv-sub { margin: 0 0 18px; color: #3d4766; } .sv-sub b { color: #0f1b3d; font-weight: 600; }
 .sv-btn { position: relative; display: flex; align-items: center; justify-content: center; gap: 8px; height: 42px; border-radius: 999px; background: #3a6ee8; color: #fff; font-weight: 600; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; margin-top: 12px; transition: transform .12s, filter .12s; }
 .sv-btn em { font-style: normal; } .sv-btn.press { transform: scale(.96); filter: brightness(.88); }
@@ -82,7 +82,7 @@
 .sv-steps::before { right: 16.667%; background: #dde3f0; } .sv-steps::after { width: 0; background: #3a6ee8; } .sv-steps.p3::after { width: 66.667%; }
 .sv-steps span { position: relative; } .sv-steps span::before { content: ""; position: absolute; left: 50%; top: -15px; width: 10px; height: 10px; margin-left: -5px; border-radius: 50%; background: #fff; box-shadow: inset 0 0 0 2px #c9d0de; }
 .sv-steps .on, .sv-steps .done { color: #3a6ee8; } .sv-steps .on::before { box-shadow: inset 0 0 0 2px #3a6ee8; } .sv-steps .done::before { background: #3a6ee8; box-shadow: none; }
-.sv-scr h5 { font: 600 17px/1.3 var(--svf); margin: 0 0 16px; letter-spacing: -.01em; }
+.sv-scr h5 { font: 700 17px/1.3 var(--svf); margin: 0 0 16px; letter-spacing: -.01em; }
 .sv-field { height: 50px; border: 1.5px solid #dde3f0; border-radius: 10px; padding: 6px 12px; margin-bottom: 10px; display: flex; flex-direction: column; justify-content: center; transition: border-color .2s; }
 .sv-field.focus { border-color: #3a6ee8; } .sv-field small { font-size: 10px; color: #8a93ab; } .sv-field span { font-size: 15px; font-weight: 500; min-height: 20px; }
 .sv-field.focus span::after { content: ""; display: inline-block; width: 1.5px; height: 16px; background: #3a6ee8; vertical-align: -3px; margin-left: 1px; animation: sv-blink .8s steps(2) infinite; }
@@ -95,7 +95,7 @@
 .sv-bar { width: 70%; height: 6px; border-radius: 3px; background: #e6ecfa; overflow: hidden; } .sv-bar i { display: block; height: 100%; width: 0; background: #3a6ee8; border-radius: 3px; }
 .sv-load.on .sv-bar i { transition: width .75s ease-out; width: 100%; }
 .sv-done { padding-top: 34px; } .sv-good { margin: 0 0 6px; color: #19a463; font-weight: 600; font-size: 13px; letter-spacing: .04em; text-transform: uppercase; }
-.sv-done h4 { font: 600 24px/1.2 var(--svf); letter-spacing: -.02em; margin: 0 0 20px; } .sv-num { color: #3a6ee8; font-variant-numeric: tabular-nums; }
+.sv-done h4 { font: 700 24px/1.2 var(--svf); letter-spacing: -.02em; margin: 0 0 20px; } .sv-num { color: #3a6ee8; font-variant-numeric: tabular-nums; }
 .sv-offers div { opacity: 0; transform: translateY(8px); transition: opacity .3s, transform .3s; } .sv-offers div.in { opacity: 1; transform: none; }
 .sv-touch { position: absolute; left: 0; top: 0; width: 34px; height: 34px; margin: -17px 0 0 -17px; border-radius: 50%; background: rgb(15 27 61 / .22); box-shadow: 0 0 0 2px rgb(255 255 255 / .9); opacity: 0; pointer-events: none; transition: transform .45s cubic-bezier(.4, .1, .2, 1), opacity .2s; }
 .sv-touch.show { opacity: 1; } .sv-touch.tap { animation: sv-tap .3s ease-out; }
