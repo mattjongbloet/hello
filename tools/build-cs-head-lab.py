@@ -34,8 +34,8 @@ V = [
   f'{topnav()}<div class="row"><div class="c-t">{h1}{dek}</div>{facts("stack")}</div>'),
  ("Facts in a tinted panel", "Like the sidebar, but the facts sit in a tinted panel on the right.", "side",
   f'{topnav()}<div class="row"><div class="c-t">{h1}{dek}</div>{facts("stack panel")}</div>'),
- ("Full-width headline", "A larger headline that runs the full width, so there’s no gap; the intro sits under it at reading width, then the facts row.", "wide",
-  f'{topnav()}{h1}<div class="row2"><div></div>{dek}</div>{facts()}'),
+ ("Full-width headline", "A larger headline that runs the full width, so there’s no gap; the intro sits under it, left-aligned at reading width, then the facts row.", "wide",
+  f'{topnav()}{h1}{dek}{facts()}'),
  ("Intro aligned to the facts", "Title on the left; the intro starts at the second fact column, so the text and the row underneath share one grid.", "grid",
   f'{topnav()}{h1}<div class="g5">{dek}</div>{facts()}'),
  ("Tinted band", "Title, intro and facts inside a full-width tinted band; the facts sit along the band’s bottom edge.", "band",
@@ -98,7 +98,7 @@ img { display: block; } a { color: inherit; } :focus-visible { outline: 2px soli
 .facts.stack { grid-template-columns: 1fr; gap: 16px; margin: 6px 0 0; padding: 0 0 0 24px; border-top: 0; border-left: 1px solid var(--line); }
 .facts.stack.panel { border: 0; background: var(--mist); border-radius: 18px; padding: 22px 24px; margin: 0; }
 /* 8 wide */
-.wide h1 { max-width: none; font-size: clamp(34px, 5.6vw, 76px); } .row2 { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); } .wide .row2 .dek { margin-top: 26px; }
+.wide h1 { max-width: none; font-size: clamp(34px, 5.6vw, 76px); } .wide .dek { margin-top: 26px; max-width: 62ch; }
 /* 9 grid */
 .grid h1 { max-width: 22ch; } .g5 { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0 24px; } .g5 .dek { grid-column: 2 / -1; max-width: none; }
 /* 10 band */
