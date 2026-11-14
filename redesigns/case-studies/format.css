@@ -17,6 +17,13 @@
 .flow li img { width: 100%; border-radius: 10px; background: #fff; box-shadow: 0 0 0 1px rgb(15 27 61 / .06), 0 10px 24px -14px rgb(15 27 61 / .35); transition: transform .2s; }
 .flow-stage:hover li img { transform: translateY(-2px); }
 .flow li .num { font-size: 12px; color: var(--ink-2); }
+/* Full-page phone screenshots (Trellis homepage before / after): a phone-shaped window that slowly scrolls the whole page.
+   Hover pauses it; click opens the full image; reduced motion shows the top. */
+.fig-pair.pages .page-scroll { display: block; aspect-ratio: 9 / 19.5; height: auto; overflow: hidden; container-type: size; border-radius: 26px; background: #fff; border: 1px solid var(--line); box-shadow: 0 18px 40px -26px rgb(15 27 61 / .35); }
+.fig-pair.pages .page-scroll img { width: 100%; height: auto; object-fit: initial; animation: page-scroll var(--dur, 36s) ease-in-out infinite alternate; }
+.fig-pair.pages .page-scroll:hover img { animation-play-state: paused; }
+@keyframes page-scroll { 0%, 6% { transform: translateY(0); } 94%, 100% { transform: translateY(calc(-100% + 100cqh)); } }
+@media (prefers-reduced-motion: reduce) { .fig-pair.pages .page-scroll img { animation: none; } }
 /* Team in the facts row: linked avatars (photo or initials) with names, then a short note. */
 .team { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
 .mate { display: inline-flex; border-radius: 50%; transition: transform .15s, box-shadow .15s; }

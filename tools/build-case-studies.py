@@ -390,16 +390,18 @@ PAGES["trellis"] = page("Trellis: Growth experiments — Matt Jongbloet", "Savvy
          + tfig("result-chart.jpg", "Bar chart, 1 to 9 June 2023: control 60.4% (8,108 of 13,419 completed), V2 69.0% (8,498 of 12,319 completed)", "1–9 June 2023: control completed 60.4% (8,108 of 13,419); V2 completed 69.0% (8,498 of 12,319).", pad=True)
          + '<h3 class="sub">Also: a new homepage</h3>'
          + '<p>I also redesigned the homepage, where both paths begin, to make the value clear up front: better insurers, real savings, and help at no cost.</p>'
-         + f'<div class="fig-pair even"><figure class="fig"><div class="frame cover-ph">{ph("Before: the old Savvy homepage (mobile, full page)")}</div><figcaption>Before</figcaption></figure><figure class="fig"><div class="frame cover-ph">{ph("After: the redesigned homepage (mobile, full page)")}</div><figcaption>After</figcaption></figure></div>'),
+         + f'<div class="fig-pair even pages">'
+         + f'<figure class="fig"><a class="frame page-scroll" href="{T}home-before.jpg"><img src="{T}home-before.jpg" alt="The Savvy homepage before, on a phone: a purple headline, “Best Insurers. Instant Results. 100% Free.”, a teal Start Saving button, an illustration, three steps, three benefits and a closing call to action" loading="lazy" style="--dur: 30s"></a><figcaption>Before: January 2023</figcaption></figure>'
+         + f'<figure class="fig"><a class="frame page-scroll" href="{T}home-after.jpg"><img src="{T}home-after.jpg" alt="The redesigned Savvy homepage, on a phone: “Stop overpaying for insurance”, the $1,500 average saving, Start saving, insurer offers, Trusted by Ramsey, partner logos, benefits, reviews, three steps, licensed agents and FAQs" loading="lazy" style="--dur: 44s"></a><figcaption>After: May 2024</figcaption></figure></div>'),
         ("outcome", "Outcome", "$3.5MM in predicted annual revenue",
          ul("Across around 15 experiments in three months, the wins added up to <strong>$3.5MM in predicted gross annual revenue</strong>.",
-            "The re-order test alone lifted completion of the unlinked application from <strong>60.4% to 69.0%</strong>, a 14% relative improvement.")
+            "The re-order test alone lifted completion of the unlinked application from <strong>60.4% to 69.0%</strong>, a 14% relative improvement.",
+            "We left the team with the infrastructure to keep testing with ease, and a shared way of deciding what to build.")
          + '<h3 class="sub">What we learned</h3>'
          + ul("<strong>People need Savvy to feel valuable before they give their info.</strong> Order matters.",
               "<strong>Learning is more important than being right.</strong> Good testing infrastructure means more people share ideas, and it takes the HiPPO out of decisions.")),
     ]) + nxt("trellis"),
-    bc.todo(["Before and after homepage images at full resolution (mobile, full page, about 1,000px wide or more).",
-             "How the $3.5MM was predicted. One line makes it far more credible.", "Whether V2 shipped to everyone."]))
+    bc.todo(["How the $3.5MM was predicted. One line makes it far more credible.", "Whether V2 shipped to everyone."]))
 
 
 # ---- Templates for the projects still to write (not linked from the home page yet)
@@ -447,6 +449,13 @@ CSS = """/* Matt's case-study format (tools/build-case-studies.py). Adds to styl
 .flow li img { width: 100%; border-radius: 10px; background: #fff; box-shadow: 0 0 0 1px rgb(15 27 61 / .06), 0 10px 24px -14px rgb(15 27 61 / .35); transition: transform .2s; }
 .flow-stage:hover li img { transform: translateY(-2px); }
 .flow li .num { font-size: 12px; color: var(--ink-2); }
+/* Full-page phone screenshots (Trellis homepage before / after): a phone-shaped window that slowly scrolls the whole page.
+   Hover pauses it; click opens the full image; reduced motion shows the top. */
+.fig-pair.pages .page-scroll { display: block; aspect-ratio: 9 / 19.5; height: auto; overflow: hidden; container-type: size; border-radius: 26px; background: #fff; border: 1px solid var(--line); box-shadow: 0 18px 40px -26px rgb(15 27 61 / .35); }
+.fig-pair.pages .page-scroll img { width: 100%; height: auto; object-fit: initial; animation: page-scroll var(--dur, 36s) ease-in-out infinite alternate; }
+.fig-pair.pages .page-scroll:hover img { animation-play-state: paused; }
+@keyframes page-scroll { 0%, 6% { transform: translateY(0); } 94%, 100% { transform: translateY(calc(-100% + 100cqh)); } }
+@media (prefers-reduced-motion: reduce) { .fig-pair.pages .page-scroll img { animation: none; } }
 /* Team in the facts row: linked avatars (photo or initials) with names, then a short note. */
 .team { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
 .mate { display: inline-flex; border-radius: 50%; transition: transform .15s, box-shadow .15s; }
