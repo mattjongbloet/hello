@@ -316,10 +316,10 @@
   const plane = new THREE.Plane(), pt = new THREE.Vector3();
   stage.addEventListener('pointermove', (e) => {
     if (dragging !== null) { plane.setFromNormalAndCoplanarPoint(V(0, 0, 1).applyQuaternion(face.quaternion), face.localToWorld(V(0, MOUTH_Y, .1))); cast(e); if (ray.ray.intersectPlane(plane, pt)) mouths.bezier.drag(dragging, face.worldToLocal(pt.clone())); kick(); return; }
-    if (e.pointerType === 'touch') return; const h = cast(e); hover = h ? h.object.userData.k : null; stage.style.cursor = h ? (h.object.userData.handle !== undefined ? 'grab' : 'pointer') : ''; kick(); });
+    if (e.pointerType === 'touch') return; const h = cast(e); hover = h ? h.object.userData.k : null; stage.dataset.hover = hover || '';   /* which object is under the pointer, for the cursor playground */ stage.style.cursor = h ? (h.object.userData.handle !== undefined ? 'grab' : 'pointer') : ''; kick(); });
   stage.addEventListener('pointerdown', (e) => { const h = cast(e); if (h && h.object.userData.handle !== undefined && mouth === 'bezier') { dragging = h.object.userData.handle; stage.setPointerCapture(e.pointerId); stage.style.cursor = 'grabbing'; } });
   const drop = () => { dragging = null; stage.style.cursor = ''; }; stage.addEventListener('pointerup', drop); stage.addEventListener('pointercancel', drop);
-  stage.addEventListener('pointerleave', () => { hover = null; });
+  stage.addEventListener('pointerleave', () => { hover = null; stage.dataset.hover = ''; });
   stage.addEventListener('click', (e) => { const h = cast(e); if (!h) return; const k = h.object.userData.k;
     if (k === 'music') { if (stopMusic) stopMusic(); else playMusic(); }
     if (k === 'cycle') { audio(); push = 16; }                // a push: it spins up, then coasts and ticks down
