@@ -1,8 +1,10 @@
 <!-- Trellis / Savvy cover animation (about 8s, loops): the mobile homepage, a tap on Start saving, three quote-flow
-     questions (vehicle, own or rent, current premium), shopping insurers, then offers and the homepage's own claim
-     ("could save you an average of $1,500/year"). Rebuilt in HTML/CSS from Matt's screens, so it stays sharp.
+     questions (vehicle, own or rent, current premium $250), shopping insurers, then offers and the homepage's own claim
+     ("could save you an average of $1,500/year"). Insurer logos are cut from Savvy's own homepage graphic
+     (assets/trellis/ins-*.png); the offer prices ($118-$149/mo) are illustrative, picked so the best offer saves ~$1,580/year
+     against the $250 entered, in line with the $1,500 average claim. Rebuilt in HTML/CSS from Matt's screens, so it stays sharp.
      Inserted as the Trellis case-study cover by tools/build-case-studies.py. -->
-<div class="cs-cover sv-anim" role="img" aria-label="Animation: on the Savvy mobile site, someone taps Start saving, answers three quick questions about their car, home and current premium, and sees offers from five insurers, with Savvy customers saving an average of $1,500 a year">
+<div class="cs-cover sv-anim" role="img" aria-label="Animation: on the Savvy mobile site, someone taps Start saving, answers three quick questions about their car, home and current premium, and sees offers from five insurers, from $118 to $149 a month, with Savvy customers saving an average of $1,500 a year">
  <div class="sv-scale"><div class="sv-phone" aria-hidden="true">
   <div class="sv-status"><b>9:41</b><i></i></div>
   <div class="sv-screens">
@@ -12,7 +14,7 @@
     <p class="sv-sub"><b>Savvy works with 40+ top national and local insurers</b> and could save you an average of <b>$1,500/year.</b></p>
     <span class="sv-btn sv-cta" data-tap="1">Start saving <em>→</em></span>
     <p class="sv-rate"><span>★</span> 4.9/5 Rating on TrustPilot</p>
-    <div class="sv-quotes"><div><i class="c1"></i>Progressive<s>$$/mo</s></div><div><i class="c2"></i>Allstate<s>$$/mo</s></div><div><i class="c3"></i>Liberty Mutual<s>$$/mo</s></div><div><i class="c4"></i>Travelers<s>$$/mo</s></div></div>
+    <div class="sv-quotes"><div><img class="sv-lg" src="../assets/trellis/ins-progressive.png" alt="">Progressive<s>$$/mo</s></div><div><img class="sv-lg" src="../assets/trellis/ins-allstate.png" alt="">Allstate<s>$$/mo</s></div><div><img class="sv-lg" src="../assets/trellis/ins-liberty.png" alt="">Liberty Mutual<s>$$/mo</s></div><div><img class="sv-lg" src="../assets/trellis/ins-travelers.png" alt="">Travelers<s>$$/mo</s></div></div>
    </section>
    <section class="sv-scr" data-s="1">
     <div class="sv-steps"><span class="on">Vehicles</span><span>Drivers</span><span>Policy</span></div>
@@ -32,7 +34,7 @@
     <div class="sv-steps"><span class="done">Vehicles</span><span class="done">Drivers</span><span class="on">Policy</span></div>
     <h5>How much are you currently paying for auto insurance each month?</h5>
     <p class="sv-help">If you don’t know the exact amount, an estimate is okay!</p>
-    <div class="sv-field"><small>Estimated monthly premium</small><span data-type="$150"></span></div>
+    <div class="sv-field"><small>Estimated monthly premium</small><span data-type="$250"></span></div>
     <span class="sv-btn" data-tap="4">Continue</span>
    </section>
    <section class="sv-scr sv-load" data-s="4">
@@ -41,7 +43,7 @@
    <section class="sv-scr sv-done" data-s="5">
     <p class="sv-good">Good news!</p>
     <h4>You could save an average of <b class="sv-num">$1,500</b>/year</h4>
-    <div class="sv-quotes sv-offers"><div><i class="c1"></i>Progressive<s>$$/mo</s></div><div><i class="c2"></i>Allstate<s>$$/mo</s></div><div><i class="c3"></i>Liberty Mutual<s>$$/mo</s></div><div><i class="c4"></i>Travelers<s>$$/mo</s></div><div><i class="c5"></i>Farmers<s>$$/mo</s></div></div>
+    <div class="sv-quotes sv-offers"><div class="best"><img class="sv-lg" src="../assets/trellis/ins-progressive.png" alt=""><span class="sv-nm">Progressive<em>Best offer</em></span><s><b>$118</b>/mo</s></div><div><img class="sv-lg" src="../assets/trellis/ins-allstate.png" alt=""><span class="sv-nm">Allstate</span><s><b>$131</b>/mo</s></div><div><img class="sv-lg" src="../assets/trellis/ins-liberty.png" alt=""><span class="sv-nm">Liberty Mutual</span><s><b>$139</b>/mo</s></div><div><img class="sv-lg" src="../assets/trellis/ins-travelers.png" alt=""><span class="sv-nm">Travelers</span><s><b>$142</b>/mo</s></div><div><img class="sv-lg" src="../assets/trellis/ins-farmers.png" alt=""><span class="sv-nm">Farmers</span><s><b>$149</b>/mo</s></div></div>
    </section>
   </div>
   <span class="sv-touch"></span>
@@ -70,7 +72,10 @@
 .sv-quotes { background: #eef3ff; border-radius: 18px; padding: 10px; display: grid; gap: 7px; }
 .sv-quotes div { display: flex; align-items: center; gap: 9px; height: 36px; padding: 0 12px; background: #fff; border-radius: 10px; font-weight: 600; font-size: 12px; box-shadow: 0 1px 2px rgb(15 27 61 / .08); }
 .sv-quotes s { margin-left: auto; text-decoration: none; color: #3a6ee8; font-weight: 700; }
-.sv-quotes i { width: 18px; height: 18px; border-radius: 50%; flex: none; } .c1 { background: #2a6fdb; } .c2 { background: #0b3a7e; } .c3 { background: #f4c20d; } .c4 { background: #e2231a; } .c5 { background: #003a70; }
+.sv-anim img.sv-lg { width: 24px; height: 24px; border-radius: 50%; flex: none; }   /* beats the page's .cs-cover img { width: 100% } */
+.sv-offers div { height: 44px; } .sv-anim .sv-offers img.sv-lg { width: 28px; height: 28px; } .sv-nm { display: flex; flex-direction: column; line-height: 1.2; }
+.sv-nm em { font-style: normal; font-size: 8.5px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: #3a6ee8; background: #eef3ff; border-radius: 4px; padding: 1px 5px; margin-top: 2px; align-self: flex-start; }
+.sv-offers .best { box-shadow: 0 0 0 1.5px #3a6ee8; } .sv-offers s b { font-size: 15px; } .sv-offers s { color: #0f1b3d; font-weight: 500; font-size: 11px; } .sv-offers s b { color: #3a6ee8; font-weight: 800; }
 .sv-steps { display: flex; justify-content: space-between; font-size: 9.5px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #b5bccc; margin: 4px 0 20px; padding-top: 14px; position: relative; }
 .sv-steps::before { content: ""; position: absolute; left: 6%; right: 6%; top: 4px; height: 2px; background: #dde3f0; }
 .sv-steps span { position: relative; } .sv-steps span::before { content: ""; position: absolute; left: 50%; top: -15px; width: 10px; height: 10px; margin-left: -5px; border-radius: 50%; background: #fff; box-shadow: inset 0 0 0 2px #c9d0de; }
