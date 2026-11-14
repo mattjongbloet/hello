@@ -349,7 +349,7 @@ PAGES["trellis"] = page("Trellis: Growth experiments — Matt Jongbloet", "In 3 
     opening("Trellis", "Finding $3.5MM in a car insurance quote flow",
             "In three months, a small growth team and I ran experiments on around 15 parts of Savvy’s car insurance quote flow, and proved we could get more people from “I want a quote” to “here are my offers”.",
             [("Company", "Trellis / Savvy.Insure"), ("My role", "Staff Product Designer, leading design for the growth team"), ("Team", "1 front-end engineer, 1 back-end engineer, 1 growth engineering consultant"), ("Timeframe", "3 months, 2023"), ("Surface", "Car insurance quote flow")],
-            f'<a class="cover" href="{T}flow-v2.jpg"><img src="{T}cover-v2.jpg" alt="The re-ordered quote flow: vehicle details, your vehicles, tell us about yourself, your drivers, home address"></a>',
+            open(os.path.join(HERE, "anims", "trellis.html")).read(),   # animated cover: homepage → three questions → offers
             [("$3.5MM", "predicted gross annual revenue"), ("~15", "parts of the quote flow tested"), ("3 months", "from first test to result"),
              ("69.0%", "completion in the winning re-order test, up from 60.4%"), ("+14%", "relative lift in completed applications")])
     + body([
