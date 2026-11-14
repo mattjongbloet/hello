@@ -6,51 +6,68 @@ import os, json
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); OUT = os.path.join(ROOT, "redesigns", "cursor-lab")
 C = lambda cx, cy, r: f'<circle cx="{cx}" cy="{cy}" r="{r}"/>'
 P = lambda d: f'<path d="{d}"/>'
-# key = the face's hover key. Each idea: (name, emoji, 24x24 line drawing)
+# ---- Round 3: Matt is set on play/pause, spin arrow, magnifier and chomper. Five high-fidelity line drawings of each,
+# built from exact geometry on a 24px grid (round caps and joins, optically centred), so they stay crisp at cursor size.
+import math
+INK = "#15171a"
+f = lambda v: f"{v:.2f}".rstrip("0").rstrip(".")
+pt = lambda cx, cy, r, deg: (cx + r * math.cos(math.radians(deg)), cy + r * math.sin(math.radians(deg)))
+def arc(cx, cy, r, a0, a1):                      # clockwise on screen from a0 to a1 (degrees, 0 = right, 90 = down)
+    (x0, y0), (x1, y1) = pt(cx, cy, r, a0), pt(cx, cy, r, a1)
+    return f"M{f(x0)} {f(y0)}A{f(r)} {f(r)} 0 {1 if (a1 - a0) % 360 > 180 else 0} 1 {f(x1)} {f(y1)}"
+def head(cx, cy, r, a, L=3.3, spread=32):        # arrowhead at the end of a clockwise arc
+    x, y = pt(cx, cy, r, a); d = a + 90 - 8      # direction of travel, tucked in a touch so it sits on the curve
+    (ax, ay), (bx, by) = pt(x, y, L, d + 180 - spread), pt(x, y, L, d + 180 + spread)
+    return f"M{f(ax)} {f(ay)}L{f(x)} {f(y)}L{f(bx)} {f(by)}"
+dot = lambda cx, cy, r=1: f'<circle cx="{f(cx)}" cy="{f(cy)}" r="{f(r)}" fill="{INK}" stroke="none"/>'
+tint = 'fill="rgba(21,23,26,.12)"'
+# play: a triangle with eased corners, nudged right so it looks centred in the chip; pause: two rounded bars
+TRI = "M9 6.3a1 1 0 0 1 1.53-.85l9.05 5.7a1 1 0 0 1 0 1.7l-9.05 5.7A1 1 0 0 1 9 17.7z"
+BARS = '<rect x="7.25" y="5.5" width="3.25" height="13" rx="1.1"{0}/><rect x="13.5" y="5.5" width="3.25" height="13" rx="1.1"{0}/>'
+RING = '<circle cx="12" cy="12" r="9.25"/>'
+SMALLTRI = "M10.3 8.6a.7.7 0 0 1 1.07-.6l4.7 2.96a.7.7 0 0 1 0 1.18l-4.7 2.96a.7.7 0 0 1-1.07-.6z"
+def chomp(half=32, r=8.5, cx=11.4, cy=12):       # a round head with a wedge mouth opening to the right
+    (ux, uy), (lx, ly) = pt(cx, cy, r, -half), pt(cx, cy, r, half)
+    return f"M{f(cx)} {f(cy)}L{f(ux)} {f(uy)}A{f(r)} {f(r)} 0 1 0 {f(lx)} {f(ly)}Z"
+def teeth(half=34, r=8.5, cx=11.4, cy=12):       # two small solid teeth on each jaw, pointing into the mouth
+    out = ""
+    for sign in (-1, 1):
+        for t in (.5, .78):
+            (ax, ay), (bx, by) = pt(cx, cy, r * (t - .11), sign * half), pt(cx, cy, r * (t + .11), sign * half)
+            mx, my = pt(cx, cy, r * t, sign * half); tx, ty = pt(mx, my, 2.1, sign * half - sign * 90)
+            out += f'<path d="M{f(ax)} {f(ay)}L{f(tx)} {f(ty)}L{f(bx)} {f(by)}Z" fill="{INK}" stroke-width="1"/>'
+    return out
+EYE = dot(12.3, 7.5, 1.05)
+LENS, HANDLE, PLUS = '<circle cx="10.5" cy="10.5" r="6.25"{0}/>', "M15.1 15.1l5.15 5.15", "M10.5 7.9v5.2M7.9 10.5h5.2"
+# (name, stroke width, drawing, drawing while the record plays)
 IDEAS = {
- "music": ("Record", [
-  ("Two fingers", "✌️", P("M9 11V4.5a1.5 1.5 0 0 1 3 0V10M12 10V3.5a1.5 1.5 0 0 1 3 0V11M15 11.5c1.5-.6 3 .2 3 2V15a6 6 0 0 1-6 6h-.5A5.5 5.5 0 0 1 6 15.5V13a1.5 1.5 0 0 1 3 0v1")),
-  ("Stylus", "💽", P("M4 4l8 8M10.5 10.5l5.5 5.5-3.2 3.2-5.5-5.5zM14.4 19.6v2")),
-  ("Play / pause", "▶️", P("M8 5.5v13l11-6.5z")),
-  ("Musical note", "🎵", P("M9 18V6l10-2v12") + C(6.5, 18, 2.5) + C(16.5, 16, 2.5)),
-  ("Speaker", "🔊", P("M4 9.5h3.5L12 6v12l-4.5-3.5H4zM15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"))]),
- "cycle": ("Wheel", [
-  ("Pedal", "🦶", C(6.5, 6.5, 2.2) + P("M8 8l6.5 6.5M10.5 16h10v4h-10zM13.5 16v4M17 16v4")),
-  ("Open hand", "🖐️", P("M8 12V6.5a1.5 1.5 0 0 1 3 0V11M11 11V4.5a1.5 1.5 0 0 1 3 0V11M14 11V5.5a1.5 1.5 0 0 1 3 0V12M17 12V8.5a1.5 1.5 0 0 1 3 0V15a6 6 0 0 1-6 6h-1.5a6 6 0 0 1-5-2.6L4.6 14.2a1.5 1.5 0 0 1 2.5-1.7L8 13.6")),
-  ("Spin arrow", "🔄", P("M19 12a7 7 0 1 1-2.6-5.4M17 2.8V7h-4.2") + C(12, 12, 1)),
-  ("Tiny bike", "🚲", C(5.5, 16.5, 3.5) + C(18.5, 16.5, 3.5) + P("M5.5 16.5l3.5-8h6.5l3 8M9 8.5l3.5 8 3-8M7.5 8.5h3M14.5 6h2.5")),
-  ("Bell", "🔔", P("M6 16.5h12c-1.2-1.2-2-2.7-2-5.5a4 4 0 0 0-8 0c0 2.8-.8 4.3-2 5.5zM10.5 19a1.5 1.5 0 0 0 3 0M12 5V3.5"))]),
- "nose": ("Framed art", [
-  ("Eye", "👁️", P("M2.5 12s3.5-6.5 9.5-6.5S21.5 12 21.5 12s-3.5 6.5-9.5 6.5S2.5 12 2.5 12z") + C(12, 12, 3)),
-  ("Magnifier +", "🔍", C(10.5, 10.5, 6) + P("M15 15l5.5 5.5M10.5 8v5M8 10.5h5")),
-  ("Monocle face", "🧐", C(12, 12, 9) + C(15, 10, 2.6) + P("M8 10h.01M17.2 12.3l1.3 4.7M9 16c1.5 1 4 1 5.5-.3")),
-  ("Expand", "↔️", P("M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5")),
-  ("Frame + sparkle", "🖼️", P("M4 7.5h13v12H4zM6.5 16.5l3-3.5 2.5 2.5 1.5-1.5 2 2.5M20 2.5v4M18 4.5h4"))]),
- "mouth": ("Stroopwafel", [
-  ("Open mouth", "👄", P("M3 10c3-3 6-3.5 9-2 3-1.5 6-1 9 2-2.5 5-5.5 7.5-9 7.5S5.5 15 3 10zM3 10c3 1.6 15 1.6 18 0M8 11v2M12 11.2v2.2M16 11v2")),
-  ("Chattering teeth", "🦷", P("M5 11a7 5.5 0 0 1 14 0zM5 14a7 5.5 0 0 0 14 0zM8.5 11V8.4M12 11V7.6M15.5 11V8.4M8.5 14v2.6M12 14v3.4M15.5 14v2.6")),
-  ("Bite mark", "🍪", P("M12 3a9 9 0 1 0 9 9c-1.7.4-3.1-.4-3.5-1.9-1.7.5-3.3-.5-3.5-2.2C12.5 7.8 11.5 5.6 12 3zM8.5 11h.01M11 15.5h.01M15 16h.01")),
-  ("Licking lips", "😋", P("M5 11h14M5 11c2 5.5 12 5.5 14 0M11.5 15c0 3.2 4.6 3.6 4.8.2")),
-  ("Coffee cup", "☕", P("M5 9h11v5a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5zM16 10.5h1.5a2.5 2.5 0 0 1 0 5H16M8 3.5c-.8 1 .8 2 0 3M12 3.5c-.8 1 .8 2 0 3")),
-  # round 2: fifteen more for the stroopwafel (Matt wasn't convinced by the first five; "maybe just a smile with teeth")
-  ("Smile with teeth", "😁", P("M4 9.5h16c0 5-3.5 8.5-8 8.5s-8-3.5-8-8.5zM4.6 13h14.8M9 9.5V13M12 9.5V13M15 9.5V13")),
-  ("Simple smile", "🙂", P("M5 10c1.5 6 12.5 6 14 0")),
-  ("Big grin", "😀", P("M3.5 9c5.5-2 11.5-2 17 0-.6 5.4-4.2 9-8.5 9s-7.9-3.6-8.5-9zM4.3 12.6c5 1.3 10.4 1.3 15.4 0M8 8.2v4.9M12 7.6v5.6M16 8.2v4.9")),
-  ("Fangs", "🧛", P("M4 9.5h16c0 5-3.5 8.5-8 8.5s-8-3.5-8-8.5zM8 9.5l1.2 3.6 1.2-3.6M13.6 9.5l1.2 3.6 1.2-3.6")),
-  ("Bitten waffle", "🧇", P("M12 3a9 9 0 1 0 9 9c-1.7.4-3.1-.4-3.5-1.9-1.7.5-3.3-.5-3.5-2.2C12.5 7.8 11.5 5.6 12 3zM7 8l9 9M5.5 13l5.5 5.5M7 16l6-6M11 19l6.5-6.5")),
-  ("Bitten half wafel", "🥮", P("M3 8h10.5c.2 1.6 1.4 2.6 3 2.4.2 1.4 1.4 2.2 2.8 2A9 9 0 0 1 3 8zM7 8l6.5 6.5M4.5 11l5.5 5.5M11 8l-5 5M14.5 11.5l-5 5")),
-  ("Tooth", "🦷", P("M7.5 4c1.6-.8 3 .4 4.5.4S14.9 3.2 16.5 4c2.4 1.2 2.4 4.6 1.5 7.4-.7 2.2-.8 8.1-2.5 8.1s-1.3-5-3.5-5-1.8 5-3.5 5-1.8-5.9-2.5-8.1C5.1 8.6 5.1 5.2 7.5 4z")),
-  ("Chomper", "😮", P("M12 12l7.8-4.5A9 9 0 1 0 19.8 16.5zM13 7.5h.01")),
-  ("Grinning face", "😄", C(12, 12, 9) + P("M7.5 13h9a4.5 4.5 0 0 1-9 0zM9 9.5h.01M15 9.5h.01")),
-  ("Drool", "🤤", P("M5 9.5c1.5 6 12.5 6 14 0M15.5 13.6s-1.6 2.4-1.6 3.8a1.6 1.6 0 0 0 3.2 0c0-1.4-1.6-3.8-1.6-3.8z")),
-  ("Lips", "💋", P("M3 12c2.5-3.5 5-5 7-4 .8.4 1.4.9 2 .9s1.2-.5 2-.9c2-1 4.5.5 7 4-2.5 3.5-5.5 5.5-9 5.5S5.5 15.5 3 12zM3 12c3 1 6 1.4 9 1.4s6-.4 9-1.4")),
-  ("Zigzag chomp", "🐊", P("M3 7h18M3 7l3 4 3-4 3 4 3-4 3 4 3-4M3 17h18M3 17l3-4 3 4 3-4 3 4 3-4 3 4")),
-  ("Tongue out", "😛", C(12, 12, 9) + P("M8 13.5h8M10.5 13.5v2.8a1.9 1.9 0 0 0 3.8 0v-2.8M9 9.5h.01M15 9.5h.01")),
-  ("Pinch", "🤏", P("M6 20c-1-4 0-7 3-9l5-3.5a1.6 1.6 0 0 1 2 2.4L13 12.5M9 20c.5-2.5 2-4 4-4.5l4.5-1a1.5 1.5 0 0 0-.3-3L13 12.5") + C(19, 7, 1.6)),
-  ("Caramel drip", "🍯", P("M3 6h18v4c0 1.6-2.4 1.6-2.4 0 0 2.4-3 2.4-3 0v3.5c0 2-3 2-3 0V10c0 3-3.4 3-3.4 0v1.6c0 1.8-2.8 1.8-2.8 0V10c0 1.6-3.4 1.6-3.4 0z"))]),
+ "music": ("Record: play / pause", [
+  ("Outline", 1.75, P(TRI), BARS.format("")),
+  ("Solid", 1.75, f'<path d="{TRI}" fill="{INK}"/>', BARS.format(f' fill="{INK}"')),
+  ("Soft fill", 1.75, f'<path d="{TRI}" {tint}/>', BARS.format(f" {tint}")),
+  ("Light, in a ring", 1.5, RING + P(SMALLTRI), RING + '<path d="M10 8.75v6.5M14 8.75v6.5"/>'),
+  ("Bold", 2.1, P(TRI), BARS.format(""))]),
+ "cycle": ("Wheel: spin", [
+  ("Single arrow", 1.75, P(arc(12, 12, 7.5, -48, 250) + head(12, 12, 7.5, 250)), None),
+  ("Two arrows", 1.75, P(arc(12, 12, 7.5, 200, 338) + head(12, 12, 7.5, 338) + arc(12, 12, 7.5, 20, 158) + head(12, 12, 7.5, 158)), None),
+  ("Arrow round a hub", 1.75, P(arc(12, 12, 8, -48, 250) + head(12, 12, 8, 250)) + '<circle cx="12" cy="12" r="1.9"/>', None),
+  ("Arrow round a wheel", 1.6, '<circle cx="11.5" cy="12.5" r="5.25"/>' + dot(11.5, 12.5, 1.05) + P(arc(11.5, 12.5, 8.9, 205, 318) + head(11.5, 12.5, 8.9, 318, 3)), None),
+  ("Bold", 2.1, P(arc(12, 12, 7.25, -44, 246) + head(12, 12, 7.25, 246, 3.6)), None)]),
+ "nose": ("Framed art: magnifier", [
+  ("Plus", 1.75, LENS.format("") + P(HANDLE + PLUS), None),
+  ("Plus, heavy handle", 1.75, LENS.format("") + P(PLUS) + '<path d="M15.3 15.3l4.6 4.6" stroke-width="3"/>', None),
+  ("Glint, no plus", 1.75, LENS.format("") + P(HANDLE + arc(10.5, 10.5, 3.5, 190, 262)), None),
+  ("Soft fill", 1.75, LENS.format(f" {tint}") + P(HANDLE + PLUS), None),
+  ("Bold", 2.1, '<circle cx="10.5" cy="10.5" r="6"/>' + P("M15 15l5 5M10.5 8v5M8 10.5h5"), None)]),
+ "mouth": ("Stroopwafel: chomper", [
+  ("Chomper", 1.75, P(chomp()) + EYE, None),
+  ("With teeth", 1.75, P(chomp(34)) + teeth() + EYE, None),
+  ("With crumbs", 1.75, P(chomp(34, 8.2, 10.6)) + dot(11.5, 7.6, 1.05) + dot(18.6, 12, .8) + dot(21.4, 10.2, .7) + dot(21.6, 13.6, .7), None),
+  ("About to eat", 1.75, P(chomp(36, 8, 10.2)) + dot(11.1, 7.7, 1.05) + '<circle cx="19.6" cy="12" r="2.3"/>', None),
+  ("Soft fill", 1.75, f'<path d="{chomp()}" {tint}/>' + EYE, None)]),
 }
-PAUSE = P("M8.5 5v14M15.5 5v14")
-DATA = json.dumps({k: {"label": v[0], "ideas": [{"name": n, "emoji": e, "svg": s} for n, e, s in v[1]]} for k, v in IDEAS.items()}, ensure_ascii=False)
+PAUSE = ""
+DATA = json.dumps({k: {"label": v[0], "ideas": [{"name": n, "w": w, "svg": s, "alt": alt} for n, w, s, alt in v[1]]} for k, v in IDEAS.items()}, ensure_ascii=False)
 CSS = """
 :root { --paper: #fff; --mist: #f6f6f4; --line: #e4e4df; --ink: #15171a; --ink-2: #5f636b; --signal: #b28550; --signal-soft: #f6efe4; --body: "Roobert", "Hanken Grotesk", system-ui, sans-serif; --mono: var(--body); }
 * { box-sizing: border-box; } body { margin: 0; font: 400 16px/1.5 var(--body); color: var(--ink); background: var(--mist); }
@@ -63,6 +80,8 @@ h1 { font: 650 clamp(28px, 3.4vw, 40px)/1.1 var(--body); letter-spacing: -.025em
 .face { position: sticky; top: 16px; background: var(--paper); border: 1px solid #ebebe8; border-radius: 24px; padding: 20px 20px 16px; }
 .face .hero-toy { max-width: none; } .face .toy-hint { font: 400 14px/1.4 var(--body); letter-spacing: 0; text-transform: none; }
 .pick { margin: 12px 0 0; font-size: 14px; color: var(--ink-2); text-align: center; min-height: 42px; }
+.big { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 14px; margin-top: 6px; padding-top: 14px; border-top: 1px solid var(--line); }
+.big figure { margin: 0; display: grid; grid-auto-flow: column; grid-template-rows: auto auto; gap: 6px 6px; justify-items: center; } .big img { width: 72px; height: 72px; grid-row: 1; } .big figcaption { grid-row: 2; grid-column: 1 / -1; font-size: 13px; color: var(--ink-2); }
 .panel { display: grid; gap: 14px; }
 .box { background: var(--paper); border: 1px solid #ebebe8; border-radius: 20px; padding: 18px 20px; }
 .box h2 { font: 600 16px/1.2 var(--body); margin: 0 0 12px; }
@@ -77,16 +96,15 @@ button.opt img { width: 28px; height: 28px; border-radius: 50%; background: #fff
 JS = """
 (() => {
   const DATA = %%DATA%%, PAUSE = %%PAUSE%%, KEYS = Object.keys(DATA);
-  const state = { style: 'chip', mode: 'replace', size: 32, pick: { music: 2, cycle: 2, nose: 1, mouth: 5 }, playing: false };
+  const state = { style: 'chip', mode: 'replace', size: 32, pick: { music: 0, cycle: 0, nose: 0, mouth: 0 }, playing: false };
   const esc = (s) => encodeURIComponent(s).replace(/'/g, '%27').replace(/\\(/g, '%28').replace(/\\)/g, '%29');
   // Build one icon as an SVG string in the chosen style.
-  const icon = (key, i, style, px) => { const idea = DATA[key].ideas[i], art = key === 'music' && i === 2 && state.playing ? PAUSE : idea.svg;
+  const icon = (key, i, style, px, still) => { const idea = DATA[key].ideas[i], art = idea.alt && state.playing && !still ? idea.alt : idea.svg, W = idea.w || 1.75;
     const strokes = (w, col) => `<g fill="none" stroke="${col}" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round">${art}</g>`;
-    if (style === 'emoji') return `<svg xmlns="http://www.w3.org/2000/svg" width="${px}" height="${px}" viewBox="0 0 32 32"><text x="16" y="17" font-size="25" text-anchor="middle" dominant-baseline="central">${key === 'music' && i === 2 && state.playing ? '⏸️' : idea.emoji}</text></svg>`;
-    if (style === 'chip') return `<svg xmlns="http://www.w3.org/2000/svg" width="${px}" height="${px}" viewBox="-5 -5 34 34"><circle cx="12" cy="12" r="16" fill="#fff" stroke="rgba(21,23,26,.18)" stroke-width="1"/>${strokes(1.7, '#15171a')}</svg>`;
-    return `<svg xmlns="http://www.w3.org/2000/svg" width="${px}" height="${px}" viewBox="-2 -2 28 28">${strokes(4.4, '#fff')}${strokes(1.7, '#15171a')}</svg>`; };
+    if (style === 'chip') return `<svg xmlns="http://www.w3.org/2000/svg" width="${px}" height="${px}" viewBox="-5 -5 34 34"><circle cx="12" cy="12" r="16" fill="#fff" stroke="rgba(21,23,26,.18)" stroke-width="1"/>${strokes(W, '#15171a')}</svg>`;
+    return `<svg xmlns="http://www.w3.org/2000/svg" width="${px}" height="${px}" viewBox="-2 -2 28 28">${strokes(W + 2.8, '#fff')}${strokes(W, '#15171a')}</svg>`; };
   const uri = (svg) => `data:image/svg+xml,${esc(svg)}`;
-  const stage = document.querySelector('.toy-stage'), badge = document.querySelector('.badge'), badgeImg = badge.querySelector('img'), pickEl = document.querySelector('.pick');
+  const stage = document.querySelector('.toy-stage'), badge = document.querySelector('.badge'), badgeImg = badge.querySelector('img'), pickEl = document.querySelector('.pick'), big = document.querySelector('.big');
   const apply = (e) => { const key = stage.dataset.hover, i = key && key in state.pick ? state.pick[key] : -1;
     if (i < 0) { badge.style.display = 'none'; return; }                                     // not over an object, or "hand" chosen: leave the face's own cursor
     if (state.mode === 'replace') { badge.style.display = 'none'; const h = Math.round(state.size / 2); stage.style.cursor = `url("${uri(icon(key, i, state.style, state.size))}") ${h} ${h}, pointer`; }
@@ -99,17 +117,18 @@ JS = """
     items.forEach(([val, label]) => { const b = document.createElement('button'); b.type = 'button'; b.className = 'opt plain'; b.textContent = label; b.dataset.val = val; b.addEventListener('click', () => { set(val); render(); }); d.querySelector('.seg').appendChild(b); });
     d._sync = () => d.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', String(String(get()) === b.dataset.val))); return d; };
   const top = document.createElement('section'); top.className = 'box'; top.innerHTML = '<h2>How it shows</h2><div class="row"></div>';
-  const segs = [seg('Style', [['chip', 'Chip'], ['line', 'Line'], ['emoji', 'Emoji']], () => state.style, (v) => { state.style = v; }),
+  const segs = [seg('Style', [['chip', 'Chip'], ['line', 'Line only']], () => state.style, (v) => { state.style = v; }),
     seg('Mode', [['replace', 'Replaces the cursor'], ['badge', 'Beside the hand']], () => state.mode, (v) => { state.mode = v; }),
     seg('Size', [['32', 'Small'], ['44', 'Large']], () => state.size, (v) => { state.size = +v; })];
   segs.forEach((s) => top.querySelector('.row').appendChild(s)); panel.appendChild(top);
   const groups = KEYS.map((key) => { const box = document.createElement('section'); box.className = 'box'; box.innerHTML = `<h2>${DATA[key].label}</h2><div class="seg"></div>`;
-    [...DATA[key].ideas.map((d, i) => [i, d.name]), [-1, 'Hand (as now)']].forEach(([i, name]) => { const b = document.createElement('button'); b.type = 'button'; b.className = 'opt' + (i < 0 ? ' plain' : ''); b.dataset.i = i;
+    [...DATA[key].ideas.map((d, i) => [i, d.name])].forEach(([i, name]) => { const b = document.createElement('button'); b.type = 'button'; b.className = 'opt' + (i < 0 ? ' plain' : ''); b.dataset.i = i;
       b.innerHTML = (i < 0 ? '' : '<img alt="">') + `<span>${i < 0 ? name : (i + 1) + '. ' + name}</span>`; b.addEventListener('click', () => { state.pick[key] = i; render(); }); box.querySelector('.seg').appendChild(b); });
     panel.appendChild(box); return [key, box]; });
   const render = () => { segs.forEach((s) => s._sync());
-    groups.forEach(([key, box]) => box.querySelectorAll('button').forEach((b) => { const i = +b.dataset.i; b.setAttribute('aria-pressed', String(state.pick[key] === i)); const im = b.querySelector('img'); if (im) im.src = uri(icon(key, i, state.style === 'emoji' ? 'emoji' : 'line', 56)); }));
-    pickEl.textContent = 'Your picks: ' + KEYS.map((k) => DATA[k].label + ' ' + (state.pick[k] < 0 ? 'hand' : state.pick[k] + 1)).join(', ') + ' · ' + { chip: 'Chip', line: 'Line', emoji: 'Emoji' }[state.style] + ' · ' + (state.mode === 'replace' ? 'replaces the cursor' : 'beside the hand') + ' · ' + (state.size > 32 ? 'large' : 'small');
+    groups.forEach(([key, box]) => box.querySelectorAll('button').forEach((b) => { const i = +b.dataset.i; b.setAttribute('aria-pressed', String(state.pick[key] === i)); const im = b.querySelector('img'); if (im) im.src = uri(icon(key, i, 'line', 56, true)); }));
+    big.innerHTML = KEYS.map((k) => `<figure><img alt="" src="${uri(icon(k, state.pick[k], state.style, 192, true))}">${DATA[k].ideas[state.pick[k]].alt ? `<img alt="" src="${uri(icon(k, state.pick[k], state.style, 192, true).replace(DATA[k].ideas[state.pick[k]].svg, DATA[k].ideas[state.pick[k]].alt))}">` : ''}<figcaption>${DATA[k].label.split(':')[0]}</figcaption></figure>`).join('');
+    pickEl.textContent = 'Your picks: ' + KEYS.map((k) => DATA[k].label.split(':')[0] + ' ' + (state.pick[k] + 1)).join(', ') + ' · ' + { chip: 'Chip', line: 'Line only' }[state.style] + ' · ' + (state.mode === 'replace' ? 'replaces the cursor' : 'beside the hand') + ' · ' + (state.size > 32 ? 'large' : 'small');
     apply(); };
   render();
 })();
@@ -133,11 +152,12 @@ open(os.path.join(OUT, "index.html"), "w").write(f"""<!doctype html>
 <main class="page">
   <a class="back" href="../site/index.html">← Home page</a>
   <h1>Hover cursors: playground</h1>
-  <p class="intro">Pick an icon for each object, then move your pointer over the face to try it. Five ideas each (twenty for the stroopwafel), in three styles, either replacing the cursor or sitting beside the usual hand. Needs a mouse or trackpad: there is no hover on a touch screen.</p>
+  <p class="intro">Five refined line drawings of each chosen icon: play / pause, spin, magnifier and chomper. Pick one per object, then move your pointer over the face to try it. Your picks are shown enlarged under the face. Needs a mouse or trackpad: there is no hover on a touch screen.</p>
   <div class="play">
     <div class="face">
 {FACE}
       <p class="pick" aria-live="polite"></p>
+      <div class="big" aria-label="Your current picks, enlarged"></div>
     </div>
     <div class="panel"></div>
   </div>
