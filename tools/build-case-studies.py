@@ -365,7 +365,8 @@ PAGES["trellis"] = page("Trellis: Growth experiments — Matt Jongbloet", "In 3 
         ("context", "Context", "Where the business wins or loses",
          p("Savvy.Insure, by Trellis, set out to make insurance easier for everyone. Someone who wants car insurance comes to Savvy, tells us about themselves, their cars and their drivers, and gets quotes back. That flow is where the business makes or loses money.")),
         ("opportunity", "Opportunity", "Four in ten people gave up before their quote",
-         f'<p>From 17 to 31 May 2023, <strong>44,846</strong> people started the unlinked application and <strong>26,333</strong> finished it: a completion rate of <strong>58.7%</strong>. Every drop-off was a quote, and revenue, lost. {ph("Add one line on what “unlinked” means.")}</p>'
+         f'<p>From 17 to 31 May 2023, <strong>44,846</strong> people started the unlinked application and <strong>26,333</strong> finished it: a completion rate of <strong>58.7%</strong>. Every drop-off was a quote, and revenue, lost.</p>'
+         + '<p>Customers could shop in one of two ways. The <strong>linked</strong> path let them sign in to their current insurer, say Progressive, so we could pull their details from that account and find comparable quotes. The <strong>unlinked</strong> path was for anyone without insurance, or who couldn’t sign in: a series of questions asking for the minimum we needed to quote them. This flow is the unlinked path.</p>'
          + tfig("baseline-chart.jpg", "Bar chart: 44,846 started the unlinked application, 26,333 completed it, 58.7% total conversion, 17 to 31 May 2023", "Baseline, 17–31 May 2023: 58.7% of people who started the application completed it.")),
         ("approach", "Approach", "Learn cheaply, decide with evidence",
          ul("<strong>The cheapest way to learn.</strong> Not every experiment needs to be an A/B test. We framed each change as a hypothesis, picked the lightest method that could confirm or disconfirm it, and used A/B tests where we needed statistical confidence.",
@@ -386,7 +387,7 @@ PAGES["trellis"] = page("Trellis: Growth experiments — Matt Jongbloet", "In 3 
          + ul("<strong>People need Trellis to feel valuable before they give their info.</strong> Order matters.",
               "<strong>Learning is more important than being right.</strong> Good testing infrastructure means more people share ideas, and it takes the HiPPO out of decisions.")),
     ]) + nxt("trellis"),
-    bc.todo(["What “unlinked application” means, in one line.", "The other experiments: change, hypothesis and result for 4–6 of the ~15.",
+    bc.todo(["The other experiments: change, hypothesis and result for 4–6 of the ~15.",
              "Whether V2 shipped, and anything you know about the effect after launch.", "How the $3.5MM was predicted. One line makes it far more credible."]))
 
 

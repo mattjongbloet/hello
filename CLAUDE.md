@@ -81,7 +81,7 @@ Run QA on every changed page; it should print `all clear`. For dark mode, QA a t
 ## Open items
 
 - The 3D face has no keyboard or screen-reader way to open the artwork or take a bite yet (pointer only).
-- Trellis case study placeholders: what "unlinked application" means, 4–6 more experiments, whether V2 shipped, how the $3.5MM was predicted.
+- Trellis case study placeholders: 4–6 more experiments, whether V2 shipped, how the $3.5MM was predicted.
 - Carv and Hospitable case studies need content from Matt.
 
 - Internal Admin is dated January 2020 on the live site, before the CV's Homebot start (Dec 2020): confirm.
