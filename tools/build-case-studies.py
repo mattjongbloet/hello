@@ -52,6 +52,7 @@ def opening(crumb, title, dek, rows, cover, tiles):
 
   <div class="wrap">
     {cover}
+    <div class="results n{len(tiles)}">{t}</div>
   </div>
 """
 

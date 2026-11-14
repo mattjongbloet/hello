@@ -1,11 +1,11 @@
-"""Case-study opening lab (reference only: Matt kept the current order, and later removed the metric tiles): three ways to put the cover image first, before the headline, on the PMI case study.
+"""Case-study opening lab: three ways to put the cover image first, before the headline, on the PMI case study.
 Everything else on the page (facts, metric tiles, contents menu, body, next project) stays as it is.
 Reads the built redesigns/case-studies/pmi.html, so run after build-case-studies.py.
 Output: redesigns/cs-cover-lab/ (index.html + option-1..3.html)   Re-run: python3 tools/build-cs-cover-lab.py"""
 import os, re
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); OUT = os.path.join(ROOT, "redesigns", "cs-cover-lab")
 src = open(os.path.join(ROOT, "redesigns", "case-studies", "pmi.html")).read()
-OPEN = re.compile(r'  <section class="wrap cs-hero">.*?</section>\s*<div class="wrap">\s*(<div class="cs-cover.*?</div>)\s*((?:<div class="results.*?</div></div>)?)\s*</div>\n', re.S)
+OPEN = re.compile(r'  <section class="wrap cs-hero">.*?</section>\s*<div class="wrap">\s*(<div class="cs-cover.*?</div>)\s*(<div class="results.*?</div></div>)\s*</div>\n', re.S)
 m = OPEN.search(src); assert m, "PMI opening not found"
 hero = m.group(0)
 crumbs = re.search(r'<nav class="crumbs".*?</nav>', hero, re.S).group(0)
