@@ -31,7 +31,23 @@ IDEAS = {
   ("Chattering teeth", "🦷", P("M5 11a7 5.5 0 0 1 14 0zM5 14a7 5.5 0 0 0 14 0zM8.5 11V8.4M12 11V7.6M15.5 11V8.4M8.5 14v2.6M12 14v3.4M15.5 14v2.6")),
   ("Bite mark", "🍪", P("M12 3a9 9 0 1 0 9 9c-1.7.4-3.1-.4-3.5-1.9-1.7.5-3.3-.5-3.5-2.2C12.5 7.8 11.5 5.6 12 3zM8.5 11h.01M11 15.5h.01M15 16h.01")),
   ("Licking lips", "😋", P("M5 11h14M5 11c2 5.5 12 5.5 14 0M11.5 15c0 3.2 4.6 3.6 4.8.2")),
-  ("Coffee cup", "☕", P("M5 9h11v5a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5zM16 10.5h1.5a2.5 2.5 0 0 1 0 5H16M8 3.5c-.8 1 .8 2 0 3M12 3.5c-.8 1 .8 2 0 3"))]),
+  ("Coffee cup", "☕", P("M5 9h11v5a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5zM16 10.5h1.5a2.5 2.5 0 0 1 0 5H16M8 3.5c-.8 1 .8 2 0 3M12 3.5c-.8 1 .8 2 0 3")),
+  # round 2: fifteen more for the stroopwafel (Matt wasn't convinced by the first five; "maybe just a smile with teeth")
+  ("Smile with teeth", "😁", P("M4 9.5h16c0 5-3.5 8.5-8 8.5s-8-3.5-8-8.5zM4.6 13h14.8M9 9.5V13M12 9.5V13M15 9.5V13")),
+  ("Simple smile", "🙂", P("M5 10c1.5 6 12.5 6 14 0")),
+  ("Big grin", "😀", P("M3.5 9c5.5-2 11.5-2 17 0-.6 5.4-4.2 9-8.5 9s-7.9-3.6-8.5-9zM4.3 12.6c5 1.3 10.4 1.3 15.4 0M8 8.2v4.9M12 7.6v5.6M16 8.2v4.9")),
+  ("Fangs", "🧛", P("M4 9.5h16c0 5-3.5 8.5-8 8.5s-8-3.5-8-8.5zM8 9.5l1.2 3.6 1.2-3.6M13.6 9.5l1.2 3.6 1.2-3.6")),
+  ("Bitten waffle", "🧇", P("M12 3a9 9 0 1 0 9 9c-1.7.4-3.1-.4-3.5-1.9-1.7.5-3.3-.5-3.5-2.2C12.5 7.8 11.5 5.6 12 3zM7 8l9 9M5.5 13l5.5 5.5M7 16l6-6M11 19l6.5-6.5")),
+  ("Bitten half wafel", "🥮", P("M3 8h10.5c.2 1.6 1.4 2.6 3 2.4.2 1.4 1.4 2.2 2.8 2A9 9 0 0 1 3 8zM7 8l6.5 6.5M4.5 11l5.5 5.5M11 8l-5 5M14.5 11.5l-5 5")),
+  ("Tooth", "🦷", P("M7.5 4c1.6-.8 3 .4 4.5.4S14.9 3.2 16.5 4c2.4 1.2 2.4 4.6 1.5 7.4-.7 2.2-.8 8.1-2.5 8.1s-1.3-5-3.5-5-1.8 5-3.5 5-1.8-5.9-2.5-8.1C5.1 8.6 5.1 5.2 7.5 4z")),
+  ("Chomper", "😮", P("M12 12l7.8-4.5A9 9 0 1 0 19.8 16.5zM13 7.5h.01")),
+  ("Grinning face", "😄", C(12, 12, 9) + P("M7.5 13h9a4.5 4.5 0 0 1-9 0zM9 9.5h.01M15 9.5h.01")),
+  ("Drool", "🤤", P("M5 9.5c1.5 6 12.5 6 14 0M15.5 13.6s-1.6 2.4-1.6 3.8a1.6 1.6 0 0 0 3.2 0c0-1.4-1.6-3.8-1.6-3.8z")),
+  ("Lips", "💋", P("M3 12c2.5-3.5 5-5 7-4 .8.4 1.4.9 2 .9s1.2-.5 2-.9c2-1 4.5.5 7 4-2.5 3.5-5.5 5.5-9 5.5S5.5 15.5 3 12zM3 12c3 1 6 1.4 9 1.4s6-.4 9-1.4")),
+  ("Zigzag chomp", "🐊", P("M3 7h18M3 7l3 4 3-4 3 4 3-4 3 4 3-4M3 17h18M3 17l3-4 3 4 3-4 3 4 3-4 3 4")),
+  ("Tongue out", "😛", C(12, 12, 9) + P("M8 13.5h8M10.5 13.5v2.8a1.9 1.9 0 0 0 3.8 0v-2.8M9 9.5h.01M15 9.5h.01")),
+  ("Pinch", "🤏", P("M6 20c-1-4 0-7 3-9l5-3.5a1.6 1.6 0 0 1 2 2.4L13 12.5M9 20c.5-2.5 2-4 4-4.5l4.5-1a1.5 1.5 0 0 0-.3-3L13 12.5") + C(19, 7, 1.6)),
+  ("Caramel drip", "🍯", P("M3 6h18v4c0 1.6-2.4 1.6-2.4 0 0 2.4-3 2.4-3 0v3.5c0 2-3 2-3 0V10c0 3-3.4 3-3.4 0v1.6c0 1.8-2.8 1.8-2.8 0V10c0 1.6-3.4 1.6-3.4 0z"))]),
 }
 PAUSE = P("M8.5 5v14M15.5 5v14")
 DATA = json.dumps({k: {"label": v[0], "ideas": [{"name": n, "emoji": e, "svg": s} for n, e, s in v[1]]} for k, v in IDEAS.items()}, ensure_ascii=False)
@@ -61,7 +77,7 @@ button.opt img { width: 28px; height: 28px; border-radius: 50%; background: #fff
 JS = """
 (() => {
   const DATA = %%DATA%%, PAUSE = %%PAUSE%%, KEYS = Object.keys(DATA);
-  const state = { style: 'chip', mode: 'replace', size: 32, pick: { music: 2, cycle: 1, nose: 1, mouth: 0 }, playing: false };
+  const state = { style: 'chip', mode: 'replace', size: 32, pick: { music: 2, cycle: 2, nose: 1, mouth: 5 }, playing: false };
   const esc = (s) => encodeURIComponent(s).replace(/'/g, '%27').replace(/\\(/g, '%28').replace(/\\)/g, '%29');
   // Build one icon as an SVG string in the chosen style.
   const icon = (key, i, style, px) => { const idea = DATA[key].ideas[i], art = key === 'music' && i === 2 && state.playing ? PAUSE : idea.svg;
@@ -117,7 +133,7 @@ open(os.path.join(OUT, "index.html"), "w").write(f"""<!doctype html>
 <main class="page">
   <a class="back" href="../site/index.html">← Home page</a>
   <h1>Hover cursors: playground</h1>
-  <p class="intro">Pick an icon for each object, then move your pointer over the face to try it. Five ideas each, in three styles, either replacing the cursor or sitting beside the usual hand. Needs a mouse or trackpad: there is no hover on a touch screen.</p>
+  <p class="intro">Pick an icon for each object, then move your pointer over the face to try it. Five ideas each (twenty for the stroopwafel), in three styles, either replacing the cursor or sitting beside the usual hand. Needs a mouse or trackpad: there is no hover on a touch screen.</p>
   <div class="play">
     <div class="face">
 {FACE}
