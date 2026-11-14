@@ -61,7 +61,192 @@
           <h3>Growth experiments</h3>
           <p>$3.5MM in predicted annual revenue from three months of growth experiments</p>
         </div>
-        <div class="pc-shot"><img src="../assets/trellis/cover-v2.jpg" alt="" loading="lazy"></div>
+        <div class="pc-shot sv-shot"><!-- Trellis / Savvy cover animation (about 8s, loops): the mobile homepage, a tap on Start saving, three quote-flow
+     questions (vehicle, own or rent, current premium $250), shopping insurers, then offers and the homepage's own claim
+     ("could save you an average of $1,500/year"). The phone is a CSS iPhone (titanium band, bezel, Dynamic Island,
+     side keys, glass glare) shown front on with a gentle float; an iOS keyboard (letters or number pad) slides up while typing. Insurer logos are cut from Savvy's own homepage graphic
+     (assets/trellis/ins-*.png); the offer prices ($118-$149/mo) are illustrative, picked so the best offer saves ~$1,580/year
+     against the $250 entered, in line with the $1,500 average claim. Rebuilt in HTML/CSS from Matt's screens, so it stays sharp.
+     Inserted as the Trellis case-study cover by tools/build-case-studies.py, and as the Trellis card's image on the home page
+     (tools/build-a-cv.py, data-play="hover": plays on hover). -->
+<div class="sv-anim" data-play="hover" role="img" aria-label="Animation: on the Savvy mobile site, someone taps Start saving, answers three quick questions about their car, home and current premium, and sees offers from five insurers, from $118 to $149 a month, with Savvy customers saving an average of $1,500 a year">
+ <div class="sv-scale"><div class="sv-device" aria-hidden="true">
+ <i class="sv-key sv-act"></i><i class="sv-key sv-vup"></i><i class="sv-key sv-vdn"></i><i class="sv-key sv-pwr"></i>
+ <div class="sv-frame"><div class="sv-bezel"><div class="sv-phone">
+  <div class="sv-status"><b>9:41</b><span class="sv-icons"><svg viewBox="0 0 18 12" aria-hidden="true"><rect x="0" y="8" width="3" height="4" rx=".8"/><rect x="5" y="5.5" width="3" height="6.5" rx=".8"/><rect x="10" y="3" width="3" height="9" rx=".8"/><rect x="15" y="0" width="3" height="12" rx=".8"/></svg><svg viewBox="0 0 16 12" aria-hidden="true"><path d="M8 11.6 5.6 9a3.4 3.4 0 0 1 4.8 0zM3.4 6.8a6.5 6.5 0 0 1 9.2 0l-1.5 1.6a4.3 4.3 0 0 0-6.2 0zM1.1 4.5a9.7 9.7 0 0 1 13.8 0l-1.5 1.5a7.6 7.6 0 0 0-10.8 0z"/></svg><svg viewBox="0 0 27 13" aria-hidden="true"><rect x=".5" y=".5" width="23" height="12" rx="3.5" fill="none" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="20" height="9" rx="2"/><path d="M25 4.5v4a2 2 0 0 0 0-4z" opacity=".45"/></svg></span></div><i class="sv-island"><i></i></i>
+  <div class="sv-screens">
+   <section class="sv-scr sv-home on" data-s="0">
+    <div class="sv-logo"><svg class="sv-mark" viewBox="0 0 20 20" aria-hidden="true"><path d="M13.0459 5.95194C11.3637 5.95194 10 7.31563 10 8.99784V10H19.9999V5.95194H13.0459Z" fill="#5CD5FF"/><path d="M8.61411 -3.71933e-05C3.85678 -3.71933e-05 0 3.8568 0 8.61419V10H9.9999V8.99725C9.9999 7.31563 11.3636 5.95134 13.0458 5.95134H19.9998V-3.71933e-05H8.61411Z" fill="#0FBBF7"/><path d="M0 9.99881V14.0469H6.95403C8.63622 14.0469 9.9999 12.6832 9.9999 11.0016V9.99881H0Z" fill="#00F9FF"/><path d="M9.9999 9.99996V11.0027C9.9999 12.6843 8.63622 14.048 6.95403 14.048H0V20H11.3857C16.143 20 19.9998 16.1432 19.9998 11.3858V9.99996H9.9999Z" fill="#0065A3"/></svg>savvy</div>
+    <h4>Stop overpaying for insurance</h4>
+    <p class="sv-sub"><b>Savvy works with 40+ top national and local insurers</b> and could save you an average of <b>$1,500/year.</b></p>
+    <span class="sv-btn sv-cta" data-tap="1">Start saving <em>→</em></span>
+    <p class="sv-rate"><span>★</span> 4.9/5 Rating on TrustPilot</p>
+    <div class="sv-quotes"><div><img class="sv-lg" src="../assets/trellis/ins-progressive.png" alt="">Progressive<s>$$/mo</s></div><div><img class="sv-lg" src="../assets/trellis/ins-allstate.png" alt="">Allstate<s>$$/mo</s></div><div><img class="sv-lg" src="../assets/trellis/ins-liberty.png" alt="">Liberty Mutual<s>$$/mo</s></div><div><img class="sv-lg" src="../assets/trellis/ins-travelers.png" alt="">Travelers<s>$$/mo</s></div></div>
+   </section>
+   <section class="sv-scr" data-s="1">
+    <div class="sv-steps"><span class="on">Vehicles</span><span>Drivers</span><span>Policy</span></div>
+    <h5>Let’s get started with your vehicle information.</h5>
+    <div class="sv-field" data-kb="num"><small>Year</small><span data-type="2022"></span></div>
+    <div class="sv-field" data-kb="abc"><small>Make</small><span data-type="Honda"></span></div>
+    <div class="sv-field" data-kb="abc"><small>Model</small><span data-type="Civic"></span></div>
+    <span class="sv-btn" data-tap="2">Continue</span>
+   </section>
+   <section class="sv-scr" data-s="2">
+    <div class="sv-steps p3"><span class="done">Vehicles</span><span class="done">Drivers</span><span class="on">Policy</span></div>
+    <h5>Do you own or rent this property?</h5>
+    <div class="sv-addr">299 Lexington Blvd, Mendoza, CA</div>
+    <span class="sv-btn sv-own" data-tap="3">Own</span><span class="sv-btn">Rent</span><span class="sv-btn">Other</span>
+   </section>
+   <section class="sv-scr" data-s="3">
+    <div class="sv-steps p3"><span class="done">Vehicles</span><span class="done">Drivers</span><span class="on">Policy</span></div>
+    <h5>How much are you currently paying for auto insurance each month?</h5>
+    <p class="sv-help">If you don’t know the exact amount, an estimate is okay!</p>
+    <div class="sv-field" data-kb="num"><small>Estimated monthly premium</small><span data-type="$250"></span></div>
+    <span class="sv-btn" data-tap="4">Continue</span>
+   </section>
+   <section class="sv-scr sv-load" data-s="4">
+    <div class="sv-spin"></div><h5>Shopping 40+ insurers for you…</h5><div class="sv-logos"><img class="sv-lg" src="../assets/trellis/ins-progressive.png" alt=""><img class="sv-lg" src="../assets/trellis/ins-allstate.png" alt=""><img class="sv-lg" src="../assets/trellis/ins-liberty.png" alt=""><img class="sv-lg" src="../assets/trellis/ins-travelers.png" alt=""><img class="sv-lg" src="../assets/trellis/ins-farmers.png" alt=""></div><div class="sv-bar"><i></i></div>
+   </section>
+   <section class="sv-scr sv-done" data-s="5">
+    <p class="sv-good">Good news!</p>
+    <h4>You could save an average of <b class="sv-num">$1,500</b>/year</h4>
+    <div class="sv-quotes sv-offers"><div class="best"><img class="sv-lg" src="../assets/trellis/ins-progressive.png" alt=""><span class="sv-nm">Progressive<em>Best offer</em></span><s><b>$118</b>/mo</s></div><div><img class="sv-lg" src="../assets/trellis/ins-allstate.png" alt=""><span class="sv-nm">Allstate</span><s><b>$131</b>/mo</s></div><div><img class="sv-lg" src="../assets/trellis/ins-liberty.png" alt=""><span class="sv-nm">Liberty Mutual</span><s><b>$139</b>/mo</s></div><div><img class="sv-lg" src="../assets/trellis/ins-travelers.png" alt=""><span class="sv-nm">Travelers</span><s><b>$142</b>/mo</s></div><div><img class="sv-lg" src="../assets/trellis/ins-farmers.png" alt=""><span class="sv-nm">Farmers</span><s><b>$149</b>/mo</s></div></div>
+   </section>
+  </div>
+  <div class="sv-kb" aria-hidden="true"><div class="sv-kb-abc"><div><b data-k="q">q</b><b data-k="w">w</b><b data-k="e">e</b><b data-k="r">r</b><b data-k="t">t</b><b data-k="y">y</b><b data-k="u">u</b><b data-k="i">i</b><b data-k="o">o</b><b data-k="p">p</b></div><div class="in1"><b data-k="a">a</b><b data-k="s">s</b><b data-k="d">d</b><b data-k="f">f</b><b data-k="g">g</b><b data-k="h">h</b><b data-k="j">j</b><b data-k="k">k</b><b data-k="l">l</b></div><div><b class="w">⇧</b><b data-k="z">z</b><b data-k="x">x</b><b data-k="c">c</b><b data-k="v">v</b><b data-k="b">b</b><b data-k="n">n</b><b data-k="m">m</b><b class="w">⌫</b></div><div><b class="w2">123</b><b class="sp">space</b><b class="w2 go">return</b></div></div><div class="sv-kb-num"><div><b data-k="1">1</b><b data-k="2">2</b><b data-k="3">3</b></div><div><b data-k="4">4</b><b data-k="5">5</b><b data-k="6">6</b></div><div><b data-k="7">7</b><b data-k="8">8</b><b data-k="9">9</b></div><div><b class="blank"></b><b data-k="0">0</b><b class="blank">⌫</b></div></div></div>
+  <i class="sv-glare"></i><i class="sv-homebar"></i>
+  <span class="sv-touch"></span>
+ </div></div></div>
+ </div></div>
+</div>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
+.pc-shot .sv-anim { width: 100%; height: 100%; aspect-ratio: auto; border-radius: 0; }
+.pcard .sv-anim img.sv-lg { transform: none; } .pcard .sv-anim .sv-logos img.sv-lg { transform: scale(.6); }
+.sv-anim { position: relative; aspect-ratio: 16 / 10; background: radial-gradient(120% 90% at 50% 0%, #eef3ff, #dbe5fb 70%); display: grid; place-items: center; overflow: hidden; }
+:root[data-theme="dark"] .sv-anim { background: radial-gradient(120% 90% at 50% 0%, #1d2433, #121722 70%); }
+.sv-scale { width: 324px; height: 644px; flex: none; transform-origin: 50% 50%; perspective: 1800px; }
+/* The device: titanium band, black bezel, glass screen. Thickness is faked with stacked edge shadows, and it floats with a slow tilt. */
+.sv-device { position: relative; width: 324px; height: 644px; animation: sv-float 4.5s ease-in-out infinite alternate; }   /* front on (Matt), with a gentle float */
+@keyframes sv-float { to { transform: translateY(-6px); } }
+.sv-frame { position: absolute; inset: 0; border-radius: 58px; padding: 4px;
+  background: linear-gradient(180deg, #eceef0 0%, #a9acb1 12%, #d4d6d9 50%, #9a9da2 88%, #e2e4e6 100%);
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / .55), inset 0 0 1px 2px rgb(0 0 0 / .25),
+    0 0 0 1px #6d7075, 0 1px 0 1px #5f6267,
+    0 18px 34px -10px rgb(10 25 70 / .32), 0 46px 70px -24px rgb(10 25 70 / .42), 0 2px 3px rgb(0 0 0 / .18); }
+:root[data-theme="dark"] .sv-frame { box-shadow: inset 0 0 0 1px rgb(255 255 255 / .55), inset 0 0 1px 2px rgb(0 0 0 / .25), 0 0 0 1px #6d7075, 0 1px 0 1px #5f6267, 0 18px 36px -10px rgb(0 0 0 / .6), 0 46px 80px -24px rgb(0 0 0 / .7); }
+.sv-bezel { width: 100%; height: 100%; border-radius: 54px; padding: 8px; background: #050506; box-shadow: inset 0 0 0 1.5px #1c1d20; }
+.sv-key { position: absolute; width: 4px; border-radius: 2px; background: linear-gradient(90deg, #6d7075, #c9cbce 45%, #85888d); box-shadow: -1px 0 1px rgb(0 0 0 / .25); }
+.sv-act { left: -3px; top: 112px; height: 30px; } .sv-vup { left: -3px; top: 162px; height: 52px; } .sv-vdn { left: -3px; top: 224px; height: 52px; }
+.sv-pwr { right: -3px; top: 196px; height: 82px; background: linear-gradient(90deg, #85888d, #c9cbce 55%, #6d7075); box-shadow: 1px 0 1px rgb(0 0 0 / .25); }
+.sv-island { position: absolute; z-index: 6; left: 50%; top: 11px; width: 96px; height: 28px; margin-left: -48px; border-radius: 20px; background: #000; }
+.sv-island i { position: absolute; right: 12px; top: 9px; width: 10px; height: 10px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #2b3a63 0 22%, #0b0f1c 45%, #000 70%); box-shadow: inset 0 0 0 1px #15171c; }
+.sv-glare { position: absolute; inset: 0; z-index: 7; pointer-events: none; border-radius: inherit; background: linear-gradient(118deg, rgb(255 255 255 / .2) 0%, rgb(255 255 255 / .06) 24%, rgb(255 255 255 / 0) 38%, rgb(255 255 255 / 0) 72%, rgb(255 255 255 / .05) 100%); }
+.sv-homebar { position: absolute; z-index: 6; left: 50%; bottom: 8px; width: 108px; height: 4.5px; margin-left: -54px; border-radius: 3px; background: #111316; }
+.sv-icons { display: inline-flex; align-items: center; gap: 5px; color: #0f1b3d; } .sv-icons svg { height: 11px; width: auto; fill: currentColor; } .sv-icons svg:last-child { height: 12px; }
+/* iOS keyboard: letters or number pad, slides up while a field is being typed in */
+.sv-kb { position: absolute; z-index: 5; left: 0; right: 0; bottom: 0; height: 218px; padding: 8px 3px 30px; background: #d1d4da; transform: translateY(102%); transition: transform .34s cubic-bezier(.3, .7, .2, 1); }
+.sv-kb.up { transform: none; }
+.sv-kb > div { display: none; flex-direction: column; gap: 9px; height: 100%; } .sv-kb.abc .sv-kb-abc, .sv-kb.num .sv-kb-num { display: flex; }
+.sv-kb > div > div { display: flex; gap: 5px; justify-content: center; flex: 1; } .sv-kb-abc .in1 { padding: 0 14px; }
+.sv-kb b { flex: 1; display: grid; place-items: center; border-radius: 5px; background: #fff; box-shadow: 0 1px 0 #898a8d; font: 400 17px/1 -apple-system, "SF Pro Text", "Hanken Grotesk", system-ui, sans-serif; color: #000; transition: background .08s; }
+.sv-kb b.w { flex: 1.4; background: #adb1b9; font-size: 15px; } .sv-kb b.w2 { flex: 2.4; background: #adb1b9; font-size: 13px; } .sv-kb b.sp { flex: 5.6; font-size: 13px; } .sv-kb b.go { background: #3a6ee8; color: #fff; }
+.sv-kb-num b { font-size: 22px; } .sv-kb-num b.blank { background: transparent; box-shadow: none; font-size: 17px; }
+.sv-kb b.hit { background: #bfc4cd; }
+.sv-logos { display: flex; gap: 8px; margin: 2px 0 18px; } .sv-anim .sv-logos img.sv-lg { width: 30px; height: 30px; opacity: 0; transform: scale(.6); }
+.sv-load.on .sv-logos img.sv-lg { animation: sv-pop .32s cubic-bezier(.3, 1.5, .5, 1) forwards; }
+.sv-load.on .sv-logos img:nth-child(2) { animation-delay: .1s; } .sv-load.on .sv-logos img:nth-child(3) { animation-delay: .2s; } .sv-load.on .sv-logos img:nth-child(4) { animation-delay: .3s; } .sv-load.on .sv-logos img:nth-child(5) { animation-delay: .4s; }
+@keyframes sv-pop { to { opacity: 1; transform: none; } }
+.sv-offers .best.in { animation: sv-glow 1.2s ease-out .35s; } @keyframes sv-glow { 40% { box-shadow: 0 0 0 1.5px #3a6ee8, 0 0 0 7px rgb(58 110 232 / .18); } }
+@media (prefers-reduced-motion: reduce) { .sv-device { animation: none; } }
+.sv-phone { position: relative; width: 300px; height: 620px; border-radius: 46px; background: #fff; overflow: hidden; isolation: isolate;
+  --svf: "Montserrat", "Hanken Grotesk", system-ui, sans-serif;   /* Savvy's typeface, regular and semibold */ font: 400 13px/1.4 var(--svf); color: #0f1b3d; -webkit-font-smoothing: antialiased; }
+.sv-status { height: 48px; display: flex; align-items: center; justify-content: space-between; padding: 4px 26px 0 32px; font-size: 14px; } .sv-status b { font-weight: 600; letter-spacing: .01em; }
+.sv-screens { position: absolute; inset: 48px 0 0; }
+.sv-scr { position: absolute; inset: 0; padding: 14px 22px; transform: translateX(105%); visibility: hidden; transition: transform .42s cubic-bezier(.3, .7, .2, 1), opacity .42s, visibility 0s .42s; background: #fff; }
+.sv-scr.on { visibility: visible; transition-delay: 0s; }
+.sv-scr.on { transform: none; } .sv-scr.off { transform: translateX(-28%); opacity: 0; }
+.sv-logo { display: flex; align-items: center; gap: 6px; font: 600 19px/1 var(--svf); letter-spacing: -.02em; color: #102a6b; margin: 4px 0 26px; }
+.sv-mark { width: 18px; height: 18px; flex: none; }   /* Savvy's own mark (Matt's SVG) */
+.sv-home h4 { font: 700 27px/1.12 var(--svf); letter-spacing: -.025em; margin: 0 0 12px; }
+.sv-sub { margin: 0 0 18px; color: #3d4766; } .sv-sub b { color: #0f1b3d; font-weight: 600; }
+.sv-btn { position: relative; display: flex; align-items: center; justify-content: center; gap: 8px; height: 42px; border-radius: 999px; background: #3a6ee8; color: #fff; font-weight: 600; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; margin-top: 12px; transition: transform .12s, filter .12s; }
+.sv-btn em { font-style: normal; } .sv-btn.press { transform: scale(.96); filter: brightness(.88); }
+.sv-rate { margin: 10px 0 18px; text-align: center; font-size: 11.5px; color: #3d4766; } .sv-rate span { color: #f5b400; }
+.sv-quotes { background: #eef3ff; border-radius: 18px; padding: 10px; display: grid; gap: 7px; }
+.sv-quotes div { display: flex; align-items: center; gap: 9px; height: 36px; padding: 0 12px; background: #fff; border-radius: 10px; font-weight: 600; font-size: 12px; box-shadow: 0 1px 2px rgb(15 27 61 / .08); }
+.sv-quotes s { margin-left: auto; text-decoration: none; color: #3a6ee8; font-weight: 600; }
+.sv-anim img.sv-lg { width: 24px; height: 24px; border-radius: 50%; flex: none; }   /* beats the page's .cs-cover img { width: 100% } */
+.sv-offers div { height: 44px; } .sv-anim .sv-offers img.sv-lg { width: 28px; height: 28px; } .sv-nm { display: flex; flex-direction: column; line-height: 1.2; }
+.sv-nm em { font-style: normal; font-size: 8.5px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; color: #3a6ee8; background: #eef3ff; border-radius: 4px; padding: 1px 5px; margin-top: 2px; align-self: flex-start; }
+.sv-offers .best { box-shadow: 0 0 0 1.5px #3a6ee8; } .sv-offers s b { font-size: 15px; } .sv-offers s { color: #0f1b3d; font-weight: 500; font-size: 11px; } .sv-offers s b { color: #3a6ee8; font-weight: 600; }
+.sv-steps { display: grid; grid-template-columns: repeat(3, 1fr); text-align: center; font-size: 9px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #b5bccc; margin: 4px -8px 20px; padding-top: 14px; position: relative; }
+.sv-steps::before, .sv-steps::after { content: ""; position: absolute; left: 16.667%; top: 4px; height: 2px; }
+.sv-steps::before { right: 16.667%; background: #dde3f0; } .sv-steps::after { width: 0; background: #3a6ee8; } .sv-steps.p3::after { width: 66.667%; }
+.sv-steps span { position: relative; } .sv-steps span::before { content: ""; position: absolute; left: 50%; top: -15px; width: 10px; height: 10px; margin-left: -5px; border-radius: 50%; background: #fff; box-shadow: inset 0 0 0 2px #c9d0de; }
+.sv-steps .on, .sv-steps .done { color: #3a6ee8; } .sv-steps .on::before { box-shadow: inset 0 0 0 2px #3a6ee8; } .sv-steps .done::before { background: #3a6ee8; box-shadow: none; }
+.sv-scr h5 { font: 700 17px/1.3 var(--svf); margin: 0 0 16px; letter-spacing: -.01em; }
+.sv-field { height: 50px; border: 1.5px solid #dde3f0; border-radius: 10px; padding: 6px 12px; margin-bottom: 10px; display: flex; flex-direction: column; justify-content: center; transition: border-color .2s; }
+.sv-field.focus { border-color: #3a6ee8; } .sv-field small { font-size: 10px; color: #8a93ab; } .sv-field span { font-size: 15px; font-weight: 500; min-height: 20px; }
+.sv-field.focus span::after { content: ""; display: inline-block; width: 1.5px; height: 16px; background: #3a6ee8; vertical-align: -3px; margin-left: 1px; animation: sv-blink .8s steps(2) infinite; }
+@keyframes sv-blink { 50% { opacity: 0; } }
+.sv-addr { padding: 14px; border: 1.5px solid #dde3f0; border-radius: 10px; margin-bottom: 18px; font-weight: 500; }
+.sv-help { margin: -8px 0 16px; color: #6b7590; font-size: 12px; }
+.sv-load { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding-bottom: 90px; }
+.sv-spin { width: 46px; height: 46px; border-radius: 50%; border: 4px solid #dfe7fb; border-top-color: #3a6ee8; animation: sv-spin .8s linear infinite; margin-bottom: 18px; }
+@keyframes sv-spin { to { transform: rotate(360deg); } }
+.sv-bar { width: 70%; height: 6px; border-radius: 3px; background: #e6ecfa; overflow: hidden; } .sv-bar i { display: block; height: 100%; width: 0; background: #3a6ee8; border-radius: 3px; }
+.sv-load.on .sv-bar i { transition: width .75s ease-out; width: 100%; }
+.sv-done { padding-top: 34px; } .sv-good { margin: 0 0 6px; color: #19a463; font-weight: 600; font-size: 13px; letter-spacing: .04em; text-transform: uppercase; }
+.sv-done h4 { font: 700 24px/1.2 var(--svf); letter-spacing: -.02em; margin: 0 0 20px; } .sv-num { color: #3a6ee8; font-variant-numeric: tabular-nums; }
+.sv-offers div { opacity: 0; transform: translateY(8px); transition: opacity .3s, transform .3s; } .sv-offers div.in { opacity: 1; transform: none; }
+.sv-touch { position: absolute; left: 0; top: 0; width: 34px; height: 34px; margin: -17px 0 0 -17px; border-radius: 50%; background: rgb(15 27 61 / .22); box-shadow: 0 0 0 2px rgb(255 255 255 / .9); opacity: 0; pointer-events: none; transition: transform .45s cubic-bezier(.4, .1, .2, 1), opacity .2s; }
+.sv-touch.show { opacity: 1; } .sv-touch.tap { animation: sv-tap .3s ease-out; }
+@keyframes sv-tap { 40% { box-shadow: 0 0 0 2px #fff, 0 0 0 10px rgb(58 110 232 / .25); background: rgb(15 27 61 / .35); } }
+@media (max-width: 640px) { .sv-anim { aspect-ratio: 4 / 5; } }
+</style>
+<script>
+// Starts every Savvy animation on the page. data-play="hover": shows the first screen and plays on hover (or when
+// scrolled into view on touch screens), resetting when the pointer leaves. Otherwise it loops while on screen.
+(() => {
+  const init = (root) => { if (root.dataset.init) return; root.dataset.init = 1;
+  const kb = root.querySelector('.sv-kb'), scale = root.querySelector('.sv-scale'), scr = [...root.querySelectorAll('.sv-scr')], touch = root.querySelector('.sv-touch'), num = root.querySelector('.sv-num'), offers = [...root.querySelectorAll('.sv-offers div')];
+  const W = 324, H = 644, fit = () => { const k = Math.min(root.clientHeight * .86 / H, root.clientWidth * .86 / W); scale.style.transform = `scale(${k})`; scale.style.margin = `${(H * k - H) / 2}px ${(W * k - W) / 2}px`; };
+  new ResizeObserver(fit).observe(root); fit();
+  let timers = [], running = false, visible = false, hovering = false; const HOVER = root.dataset.play === 'hover';
+  const at = (ms, fn) => timers.push(setTimeout(fn, ms));
+  const show = (i) => scr.forEach((s, j) => { s.classList.toggle('on', j === i); s.classList.toggle('off', j < i); });
+  const tapEl = (sel, ms) => { at(ms - 450, () => { const el = root.querySelector(sel), p = el.closest('.sv-phone').getBoundingClientRect(), r = el.getBoundingClientRect(), k = p.width / 300;
+      touch.style.transform = `translate(${(r.left + r.width / 2 - p.left) / k}px, ${(r.top + r.height / 2 - p.top) / k}px)`; touch.classList.add('show'); });
+    at(ms, () => { const el = root.querySelector(sel); touch.classList.remove('tap'); void touch.offsetWidth; touch.classList.add('tap'); el.classList.add('press'); setTimeout(() => el.classList.remove('press'), 160); }); };
+  const type = (field, ms) => { const span = field.querySelector('span'), txt = span.dataset.type, pad = field.dataset.kb || 'abc';
+    at(ms, () => { root.querySelectorAll('.sv-field').forEach((f) => f.classList.remove('focus')); field.classList.add('focus'); kb.classList.remove('abc', 'num'); kb.classList.add(pad, 'up'); });
+    [...txt].forEach((ch, i) => at(ms + 90 + i * 75, () => { span.textContent = txt.slice(0, i + 1);   // the key under the finger lights up as each character lands
+      const key = kb.querySelector(`.sv-kb-${pad} [data-k="${ch.toLowerCase()}"]`); if (key) { key.classList.add('hit'); setTimeout(() => key.classList.remove('hit'), 110); } })); };
+  const kbDown = (ms) => at(ms, () => { kb.classList.remove('up'); root.querySelectorAll('.sv-field').forEach((f) => f.classList.remove('focus')); });
+  const reset = () => { timers.forEach(clearTimeout); timers = []; root.querySelectorAll('.sv-field').forEach((f) => { f.classList.remove('focus'); f.querySelector('span').textContent = ''; }); offers.forEach((o) => o.classList.remove('in')); kb.classList.remove('up'); num.textContent = '$0'; touch.classList.remove('show'); scr.forEach((s) => s.style.transition = 'none'); show(0); void root.offsetWidth; scr.forEach((s) => s.style.transition = ''); };
+  const cycle = () => { reset();
+    tapEl('[data-tap="1"]', 900); at(1150, () => show(1));
+    const f1 = root.querySelectorAll('[data-s="1"] .sv-field'); type(f1[0], 1450); type(f1[1], 1850); type(f1[2], 2250);
+    kbDown(2600); tapEl('[data-tap="2"]', 2750); at(2950, () => show(2));
+    tapEl('[data-tap="3"]', 3550); at(3750, () => show(3));
+    type(root.querySelector('[data-s="3"] .sv-field'), 3950); kbDown(4550); tapEl('[data-tap="4"]', 4700); at(4900, () => { show(4); touch.classList.remove('show'); });
+    at(5750, () => { show(5); const t0 = performance.now(); const up = () => { const p = Math.min(1, (performance.now() - t0) / 650); num.textContent = '$' + Math.round(1500 * (1 - Math.pow(1 - p, 3))).toLocaleString('en-US'); if (p < 1) requestAnimationFrame(up); }; up(); });
+    offers.forEach((o, i) => at(6050 + i * 110, () => o.classList.add('in')));
+    at(8900, () => { if (HOVER ? hovering : visible) cycle(); else running = false; }); };
+  const still = () => { reset(); show(5); num.textContent = '$1,500'; offers.forEach((o) => o.classList.add('in')); };
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) { if (HOVER) reset(); else still(); return; }
+  if (HOVER && matchMedia('(hover: hover)').matches) {
+    const host = root.closest('a, .pcard') || root;
+    host.addEventListener('mouseenter', () => { hovering = true; if (!running) { running = true; cycle(); } });
+    host.addEventListener('mouseleave', () => { hovering = false; running = false; reset(); });
+    reset(); return; }
+  new IntersectionObserver(([e]) => { visible = e.isIntersecting; if (visible && !running) { running = true; cycle(); } }, { threshold: .2 }).observe(root);
+  };
+  document.querySelectorAll('.sv-anim').forEach(init);
+})();
+</script>
+</div>
       </a>
       <a class="pcard reveal" href="../case-studies/pmi.html">
         <div class="pc-copy">

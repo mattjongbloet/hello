@@ -455,6 +455,10 @@ def build():
                 s = xp_re.sub(lambda m: XP_SITE if name == "site" else XP_HOME, s)
                 if name == "site":
                     s = rep(s, RESUME_OLD, RESUME_BTN, f"{name}/{page}")
+                    # the Trellis card's image is the Savvy animation from the case-study cover: first screen at rest, plays on hover
+                    anim = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "anims", "trellis.html")).read()
+                    anim = rep(anim, 'class="cs-cover sv-anim"', 'class="sv-anim" data-play="hover"', "trellis card")
+                    s = rep(s, '<div class="pc-shot"><img src="../assets/trellis/cover-v2.jpg" alt="" loading="lazy"></div>', '<div class="pc-shot sv-shot">' + anim + '</div>', f"{name}/{page}")
             if page == "about.html":
                 s = xp_re.sub(lambda m: XP_ABOUT, s)
             if name == "site":

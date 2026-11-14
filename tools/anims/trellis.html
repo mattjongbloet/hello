@@ -4,7 +4,8 @@
      side keys, glass glare) shown front on with a gentle float; an iOS keyboard (letters or number pad) slides up while typing. Insurer logos are cut from Savvy's own homepage graphic
      (assets/trellis/ins-*.png); the offer prices ($118-$149/mo) are illustrative, picked so the best offer saves ~$1,580/year
      against the $250 entered, in line with the $1,500 average claim. Rebuilt in HTML/CSS from Matt's screens, so it stays sharp.
-     Inserted as the Trellis case-study cover by tools/build-case-studies.py. -->
+     Inserted as the Trellis case-study cover by tools/build-case-studies.py, and as the Trellis card's image on the home page
+     (tools/build-a-cv.py, data-play="hover": plays on hover). -->
 <div class="cs-cover sv-anim" role="img" aria-label="Animation: on the Savvy mobile site, someone taps Start saving, answers three quick questions about their car, home and current premium, and sees offers from five insurers, from $118 to $149 a month, with Savvy customers saving an average of $1,500 a year">
  <div class="sv-scale"><div class="sv-device" aria-hidden="true">
  <i class="sv-key sv-act"></i><i class="sv-key sv-vup"></i><i class="sv-key sv-vdn"></i><i class="sv-key sv-pwr"></i>
@@ -57,6 +58,8 @@
 </div>
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
+.pc-shot .sv-anim { width: 100%; height: 100%; aspect-ratio: auto; border-radius: 0; }
+.pcard .sv-anim img.sv-lg { transform: none; } .pcard .sv-anim .sv-logos img.sv-lg { transform: scale(.6); }
 .sv-anim { position: relative; aspect-ratio: 16 / 10; background: radial-gradient(120% 90% at 50% 0%, #eef3ff, #dbe5fb 70%); display: grid; place-items: center; overflow: hidden; }
 :root[data-theme="dark"] .sv-anim { background: radial-gradient(120% 90% at 50% 0%, #1d2433, #121722 70%); }
 .sv-scale { width: 324px; height: 644px; flex: none; transform-origin: 50% 50%; perspective: 1800px; }
@@ -140,12 +143,14 @@
 @media (max-width: 640px) { .sv-anim { aspect-ratio: 4 / 5; } }
 </style>
 <script>
+// Starts every Savvy animation on the page. data-play="hover": shows the first screen and plays on hover (or when
+// scrolled into view on touch screens), resetting when the pointer leaves. Otherwise it loops while on screen.
 (() => {
-  const root = document.currentScript.previousElementSibling.previousElementSibling; if (!root || !root.classList.contains('sv-anim')) return;
+  const init = (root) => { if (root.dataset.init) return; root.dataset.init = 1;
   const kb = root.querySelector('.sv-kb'), scale = root.querySelector('.sv-scale'), scr = [...root.querySelectorAll('.sv-scr')], touch = root.querySelector('.sv-touch'), num = root.querySelector('.sv-num'), offers = [...root.querySelectorAll('.sv-offers div')];
   const W = 324, H = 644, fit = () => { const k = Math.min(root.clientHeight * .86 / H, root.clientWidth * .86 / W); scale.style.transform = `scale(${k})`; scale.style.margin = `${(H * k - H) / 2}px ${(W * k - W) / 2}px`; };
   new ResizeObserver(fit).observe(root); fit();
-  let timers = [], running = false, visible = false;
+  let timers = [], running = false, visible = false, hovering = false; const HOVER = root.dataset.play === 'hover';
   const at = (ms, fn) => timers.push(setTimeout(fn, ms));
   const show = (i) => scr.forEach((s, j) => { s.classList.toggle('on', j === i); s.classList.toggle('off', j < i); });
   const tapEl = (sel, ms) => { at(ms - 450, () => { const el = root.querySelector(sel), p = el.closest('.sv-phone').getBoundingClientRect(), r = el.getBoundingClientRect(), k = p.width / 300;
@@ -156,8 +161,8 @@
     [...txt].forEach((ch, i) => at(ms + 90 + i * 75, () => { span.textContent = txt.slice(0, i + 1);   // the key under the finger lights up as each character lands
       const key = kb.querySelector(`.sv-kb-${pad} [data-k="${ch.toLowerCase()}"]`); if (key) { key.classList.add('hit'); setTimeout(() => key.classList.remove('hit'), 110); } })); };
   const kbDown = (ms) => at(ms, () => { kb.classList.remove('up'); root.querySelectorAll('.sv-field').forEach((f) => f.classList.remove('focus')); });
-  const reset = () => { root.querySelectorAll('.sv-field').forEach((f) => { f.classList.remove('focus'); f.querySelector('span').textContent = ''; }); offers.forEach((o) => o.classList.remove('in')); kb.classList.remove('up'); num.textContent = '$0'; touch.classList.remove('show'); scr.forEach((s) => s.style.transition = 'none'); show(0); void root.offsetWidth; scr.forEach((s) => s.style.transition = ''); };
-  const cycle = () => { timers.forEach(clearTimeout); timers = []; reset();
+  const reset = () => { timers.forEach(clearTimeout); timers = []; root.querySelectorAll('.sv-field').forEach((f) => { f.classList.remove('focus'); f.querySelector('span').textContent = ''; }); offers.forEach((o) => o.classList.remove('in')); kb.classList.remove('up'); num.textContent = '$0'; touch.classList.remove('show'); scr.forEach((s) => s.style.transition = 'none'); show(0); void root.offsetWidth; scr.forEach((s) => s.style.transition = ''); };
+  const cycle = () => { reset();
     tapEl('[data-tap="1"]', 900); at(1150, () => show(1));
     const f1 = root.querySelectorAll('[data-s="1"] .sv-field'); type(f1[0], 1450); type(f1[1], 1850); type(f1[2], 2250);
     kbDown(2600); tapEl('[data-tap="2"]', 2750); at(2950, () => show(2));
@@ -165,9 +170,16 @@
     type(root.querySelector('[data-s="3"] .sv-field'), 3950); kbDown(4550); tapEl('[data-tap="4"]', 4700); at(4900, () => { show(4); touch.classList.remove('show'); });
     at(5750, () => { show(5); const t0 = performance.now(); const up = () => { const p = Math.min(1, (performance.now() - t0) / 650); num.textContent = '$' + Math.round(1500 * (1 - Math.pow(1 - p, 3))).toLocaleString('en-US'); if (p < 1) requestAnimationFrame(up); }; up(); });
     offers.forEach((o, i) => at(6050 + i * 110, () => o.classList.add('in')));
-    at(8900, () => { if (visible) cycle(); else running = false; }); };
+    at(8900, () => { if (HOVER ? hovering : visible) cycle(); else running = false; }); };
   const still = () => { reset(); show(5); num.textContent = '$1,500'; offers.forEach((o) => o.classList.add('in')); };
-  if (matchMedia('(prefers-reduced-motion: reduce)').matches) { still(); return; }
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) { if (HOVER) reset(); else still(); return; }
+  if (HOVER && matchMedia('(hover: hover)').matches) {
+    const host = root.closest('a, .pcard') || root;
+    host.addEventListener('mouseenter', () => { hovering = true; if (!running) { running = true; cycle(); } });
+    host.addEventListener('mouseleave', () => { hovering = false; running = false; reset(); });
+    reset(); return; }
   new IntersectionObserver(([e]) => { visible = e.isIntersecting; if (visible && !running) { running = true; cycle(); } }, { threshold: .2 }).observe(root);
+  };
+  document.querySelectorAll('.sv-anim').forEach(init);
 })();
 </script>
