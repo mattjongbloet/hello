@@ -351,6 +351,14 @@ XLOG = f"""<div class="xlog-wrap">
         </div>"""
 
 
+def tflow(name, alt, cap, n=9):
+    """A quote flow as a row of phone screens on a soft stage (cut from flow-<name>.jpg into assets/trellis/screens/).
+    Fits the wide column on desktop; scrolls sideways on narrow screens. Links to the original full image."""
+    shots = "".join(f'<li><img src="{T}screens/{name}-{i}.jpg" alt="" loading="lazy"><span class="num">{i}</span></li>' for i in range(1, n + 1))
+    return (f'<figure class="fig wide flow flow-{name}"><a class="flow-stage" href="{T}flow-{name}.jpg" aria-label="{alt}. Open the full image">'
+            f'<ol>{shots}</ol></a><figcaption>{cap}</figcaption></figure>')
+
+
 def tfig(src, alt, cap, wide=False, pad=False):
     return f'<figure class="fig{" wide" if wide else ""}"><a class="frame light{" pad" if pad else ""}" href="{T}{src}"><img src="{T}{src}" alt="{alt}" loading="lazy"></a><figcaption>{cap}</figcaption></figure>'
 
@@ -371,16 +379,14 @@ PAGES["trellis"] = page("Trellis: Growth experiments — Matt Jongbloet", "Savvy
          p("Savvy hadn’t had a designer for two years, and the CEO believed there were many chances to lift conversion across the main car insurance flows.",
            "So the opportunity wasn’t one problem but many: the homepage, the linked flow and the unlinked flow. The job was to find the biggest wins quickly, and prove them.")),
         ("approach", "Approach", "Fifteen experiments in three months",
-         ul("<strong>The cheapest way to learn.</strong> Not every experiment needs to be an A/B test. We framed each change as a hypothesis, picked the lightest method that could confirm or disconfirm it, and used A/B tests where we needed statistical confidence.",
-            "<strong>One small team, a steady cadence.</strong> With a front-end engineer, a back-end engineer and a growth engineering consultant, I designed and shipped around 15 experiments in three months, across the homepage, the linked flow and the unlinked flow.",
-            "<strong>Making it a habit.</strong> I co-wrote and presented <em>How do we make good decisions about product investment?</em>, sharing how we chose methods, from interviews to A/B tests, and why learning matters more than being right.")
+         p("Unfortunately, I no longer have access to all the experiments, files and visuals, so here I’ll show the one I do have: one example of the 15.")
          + '<h3 class="sub">One example: ask for the car before the phone number</h3>'
          + '<p>From 17 to 31 May 2023, <strong>44,846</strong> people started the unlinked application and <strong>26,333</strong> finished it: <strong>58.7%</strong>. Four in ten gave up before seeing a quote.</p>'
          + tfig("baseline-chart.jpg", "Bar chart: 44,846 started the unlinked application, 26,333 completed it, 58.7% total conversion, 17 to 31 May 2023", "Baseline, 17–31 May 2023: 58.7% of people who started the unlinked application completed it.", pad=True)
          + '<p class="callout">Hypothesis: changing the order of the unlinked application will increase conversion.</p>'
          + "<p>The control opened by asking for name, phone, email and date of birth, before Savvy had given anything back. V2 starts with the car and the drivers, builds up to the policy, and only asks for contact details at the very end, as <em>“Where should we send your offers?”</em></p>"
-         + tfig("flow-control.jpg", "Control flow, nine phone screens: basic information with phone and email first, then address, own or rent, vehicle information, vehicles, driver information, drivers, current premium, review", "Control: contact details on the very first screen.", True)
-         + tfig("flow-v2.jpg", "V2 flow, nine phone screens: vehicle information, vehicles, tell us about yourself, drivers, home address, own or rent, current premium, review, and where should we send your offers", "V2: vehicles and drivers first, contact details last. Stars mark the steps that moved.", True)
+         + tflow("control", "Control flow, nine phone screens: basic information with phone and email first, then address, own or rent, vehicle information, vehicles, driver information, drivers, current premium, review", "Control: contact details on the very first screen.")
+         + tflow("v2", "V2 flow, nine phone screens: vehicle information, vehicles, tell us about yourself, drivers, home address, own or rent, current premium, review, and where should we send your offers", "V2: vehicles and drivers first, contact details last. Stars mark the steps that moved.")
          + tfig("result-chart.jpg", "Bar chart, 1 to 9 June 2023: control 60.4% (8,108 of 13,419 completed), V2 69.0% (8,498 of 12,319 completed)", "1–9 June 2023: control completed 60.4% (8,108 of 13,419); V2 completed 69.0% (8,498 of 12,319).", pad=True)
          + '<h3 class="sub">Also: a new homepage</h3>'
          + '<p>I also redesigned the homepage, where both paths begin, to make the value clear up front: better insurers, real savings, and help at no cost.</p>'
@@ -431,6 +437,17 @@ CSS = """/* Matt's case-study format (tools/build-case-studies.py). Adds to styl
 .fig .frame.light.pad { padding: clamp(18px, 4.5vw, 44px); border-radius: 18px; }
 .fig .frame.light.pad img { border-radius: 4px; }
 :root[data-theme="dark"] .fig .frame.light.pad { background: #fff; border-color: transparent; }
+/* Quote flows (Trellis): nine phone screens in a row on a soft stage, rounded and lifted; sideways scroll when narrow. */
+.prose .fig.flow { min-width: 0; max-width: calc(100vw - 40px); }   /* the strip scrolls inside its frame, never widens the page */
+.flow-stage { display: block; border-radius: 22px; padding: clamp(20px, 3.4vw, 40px) clamp(16px, 3vw, 36px) clamp(16px, 2.6vw, 30px); overflow-x: auto; scrollbar-width: thin; text-decoration: none; }
+.flow-control .flow-stage { background: #f1f1ee; } .flow-v2 .flow-stage { background: #e9effc; }
+:root[data-theme="dark"] .flow-control .flow-stage { background: #1b1c20; } :root[data-theme="dark"] .flow-v2 .flow-stage { background: #182032; }
+.flow ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(9, minmax(96px, 1fr)); gap: clamp(8px, 1.2vw, 16px); }
+.prose .flow li { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 0; margin: 0; }
+.prose .flow li::before { content: none; }   /* no bullet dash from .prose li */
+.flow li img { width: 100%; border-radius: 10px; background: #fff; box-shadow: 0 0 0 1px rgb(15 27 61 / .06), 0 10px 24px -14px rgb(15 27 61 / .35); transition: transform .2s; }
+.flow-stage:hover li img { transform: translateY(-2px); }
+.flow li .num { font-size: 12px; color: var(--ink-2); }
 /* Team in the facts row: linked avatars (photo or initials) with names, then a short note. */
 .team { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
 .mate { display: inline-flex; border-radius: 50%; transition: transform .15s, box-shadow .15s; }
