@@ -28,6 +28,25 @@
   addEventListener('scroll', set, { passive: true }); addEventListener('resize', set); set();
 })();
 
+// Before / after pages: scroll either one and the other follows, pixel for pixel (same speed). "Scroll both" plays
+// one pass from top to bottom at a steady speed and stops; any wheel, touch or key on a page stops it.
+(() => {
+  document.querySelectorAll('.fig-pair.pages').forEach((pair) => {
+    const panes = [...pair.querySelectorAll('.page-scroll')]; let lock = false, raf = 0;
+    const sync = (from) => { if (lock) return; lock = true; panes.forEach((p) => { if (p !== from) p.scrollTop = from.scrollTop; }); requestAnimationFrame(() => { lock = false; }); };
+    panes.forEach((p) => p.addEventListener('scroll', () => sync(p), { passive: true }));
+    const stop = () => { cancelAnimationFrame(raf); raf = 0; };
+    panes.forEach((p) => ['wheel', 'touchstart', 'keydown', 'mousedown'].forEach((ev) => p.addEventListener(ev, stop, { passive: true })));
+    const btn = pair.nextElementSibling && pair.nextElementSibling.querySelector('button'); if (!btn) return;
+    btn.addEventListener('click', () => { stop(); const max = Math.max(...panes.map((p) => p.scrollHeight - p.clientHeight)); panes.forEach((p) => { p.scrollTop = 0; });
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const speed = 0.3 * panes[0].clientHeight; let last = performance.now(), y = 0;   // about a third of a screen a second
+      const step = (now) => { y = Math.min(max, y + (now - last) / 1000 * speed); last = now; lock = true; panes.forEach((p) => { p.scrollTop = y; }); requestAnimationFrame(() => { lock = false; });
+        if (y < max) raf = requestAnimationFrame(step); else raf = 0; };
+      raf = requestAnimationFrame(step); });
+  });
+})();
+
 // Light / dark theme: remembers the choice, swaps mockups that have a dark version.
 (() => {
   const root = document.documentElement; let theme = root.dataset.theme || 'light';

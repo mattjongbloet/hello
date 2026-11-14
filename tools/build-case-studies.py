@@ -351,6 +351,15 @@ XLOG = f"""<div class="xlog-wrap">
         </div>"""
 
 
+def bars(title, sub, data, cap, note=""):
+    """A simple bar chart drawn in HTML: percentages only. data: [(label, percent, kind)] with kind 'base', 'lost' or 'win'."""
+    cols = "".join(f'<div class="bar {k}" style="--h: {v}%"><span class="v">{(f"{v:.1f}" if v % 1 else f"{v:.0f}")}%</span><i style="height:{v}%"></i><span class="l">{l}</span></div>' for l, v, k in data)
+    label = f"{title}, {sub}: " + "; ".join(f"{l} {v:.1f}%".replace("100.0%", "100%") for l, v, k in data) + (f". {note}" if note else "")
+    return (f'<figure class="fig"><div class="frame light pad chart" role="img" aria-label="{label}">'
+            f'<p class="ch-t">{title}</p><p class="ch-s">{sub}</p><div class="ch-plot">{cols}</div>'
+            + (f'<p class="ch-n">{note}</p>' if note else "") + f'</div><figcaption>{cap}</figcaption></figure>')
+
+
 def tflow(name, alt, cap, n=9):
     """A quote flow as a row of phone screens on a soft stage (cut from flow-<name>.jpg into assets/trellis/screens/).
     Fits the wide column on desktop; scrolls sideways on narrow screens. Links to the original full image."""
@@ -381,18 +390,19 @@ PAGES["trellis"] = page("Trellis: Growth experiments — Matt Jongbloet", "Savvy
         ("approach", "Approach", "Fifteen experiments in three months",
          p("Unfortunately, I no longer have access to all the experiments, files and visuals, so here I’ll show the one I do have: one example of the 15.")
          + '<h3 class="sub">One example: ask for the car before the phone number</h3>'
-         + '<p><strong>Four in ten people gave up before seeing a quote.</strong> From 17 to 31 May 2023, 44,846 people started the unlinked application and 26,333 finished it: a completion rate of 58.7%.</p>'
-         + tfig("baseline-chart.jpg", "Bar chart: 44,846 started the unlinked application, 26,333 completed it, 58.7% total conversion, 17 to 31 May 2023", "Baseline, 17–31 May 2023: 58.7% of people who started the unlinked application completed it.", pad=True)
+         + '<p><strong>Four in ten people gave up before seeing a quote.</strong> From 17 to 31 May 2023, only 58.7% of people who started the unlinked application finished it.</p>'
+         + bars("Completion of the unlinked application", "Baseline, 17–31 May 2023", [("Started", 100, "base"), ("Completed", 58.7, "lost")], "Baseline: 58.7% of people who started the unlinked application completed it. Four in ten gave up.", "41.3% gave up before seeing a quote")
          + '<p class="callout">Hypothesis: changing the order of the unlinked application will increase conversion.</p>'
          + "<p>The control opened by asking for name, phone, email and date of birth, before Savvy had given anything back. V2 starts with the car and the drivers, builds up to the policy, and only asks for contact details at the very end, as <em>“Where should we send your offers?”</em></p>"
          + tflow("control", "Control flow, nine phone screens: basic information with phone and email first, then address, own or rent, vehicle information, vehicles, driver information, drivers, current premium, review", "Control: contact details on the very first screen.")
          + tflow("v2", "V2 flow, nine phone screens: vehicle information, vehicles, tell us about yourself, drivers, home address, own or rent, current premium, review, and where should we send your offers", "V2: vehicles and drivers first, contact details last. Stars mark the steps that moved.")
-         + tfig("result-chart.jpg", "Bar chart, 1 to 9 June 2023: control 60.4% (8,108 of 13,419 completed), V2 69.0% (8,498 of 12,319 completed)", "1–9 June 2023: control completed 60.4% (8,108 of 13,419); V2 completed 69.0% (8,498 of 12,319).", pad=True)
+         + bars("Completion of the unlinked application", "A/B test, 1–9 June 2023", [("Control", 60.4, "base"), ("V2", 69.0, "win")], "1–9 June 2023: 60.4% completed the control flow; 69.0% completed V2.", "+8.6 points, a 14% relative lift")
          + '<h3 class="sub">Also: a new homepage</h3>'
          + '<p>I also redesigned the homepage, where both paths begin, to make the value clear up front: better insurers, real savings, and help at no cost.</p>'
          + f'<div class="fig-pair even pages">'
-         + f'<figure class="fig"><a class="frame page-scroll" href="{T}home-before.jpg"><img src="{T}home-before.jpg" alt="The Savvy homepage before, on a phone: a purple headline, “Best Insurers. Instant Results. 100% Free.”, a teal Start Saving button, an illustration, three steps, three benefits and a closing call to action" loading="lazy" style="--dur: 30s"></a><figcaption>Before: January 2023</figcaption></figure>'
-         + f'<figure class="fig"><a class="frame page-scroll" href="{T}home-after.jpg"><img src="{T}home-after.jpg" alt="The redesigned Savvy homepage, on a phone: “Stop overpaying for insurance”, the $1,500 average saving, Start saving, insurer offers, Trusted by Ramsey, partner logos, benefits, reviews, three steps, licensed agents and FAQs" loading="lazy" style="--dur: 44s"></a><figcaption>After: May 2024</figcaption></figure></div>'),
+         + f'<figure class="fig"><a class="frame page-scroll" href="{T}home-before.jpg"><img src="{T}home-before.jpg" alt="The Savvy homepage before, on a phone: a purple headline, “Best Insurers. Instant Results. 100% Free.”, a teal Start Saving button, an illustration, three steps, three benefits and a closing call to action" loading="lazy"></a><figcaption>Before: January 2023</figcaption></figure>'
+         + f'<figure class="fig"><a class="frame page-scroll" href="{T}home-after.jpg"><img src="{T}home-after.jpg" alt="The redesigned Savvy homepage, on a phone: “Stop overpaying for insurance”, the $1,500 average saving, Start saving, insurer offers, Trusted by Ramsey, partner logos, benefits, reviews, three steps, licensed agents and FAQs" loading="lazy"></a><figcaption>After: May 2024</figcaption></figure></div>'
+         + '<div class="pages-ctl"><button type="button">▶ Scroll both</button><span>Or scroll either page: the other follows.</span></div>'),
         ("outcome", "Outcome", "$3.5MM in predicted annual revenue",
          ul("Across around 15 experiments in three months, the wins added up to <strong>$3.5MM in predicted gross annual revenue</strong>.",
             "The re-order test alone lifted completion of the unlinked application from <strong>60.4% to 69.0%</strong>, a 14% relative improvement.",
@@ -451,11 +461,24 @@ CSS = """/* Matt's case-study format (tools/build-case-studies.py). Adds to styl
 .flow li .num { font-size: 12px; color: var(--ink-2); }
 /* Full-page phone screenshots (Trellis homepage before / after): a phone-shaped window that slowly scrolls the whole page.
    Hover pauses it; click opens the full image; reduced motion shows the top. */
-.fig-pair.pages .page-scroll { display: block; aspect-ratio: 9 / 19.5; height: auto; overflow: hidden; container-type: size; border-radius: 26px; background: #fff; border: 1px solid var(--line); box-shadow: 0 18px 40px -26px rgb(15 27 61 / .35); }
-.fig-pair.pages .page-scroll img { width: 100%; height: auto; object-fit: initial; animation: page-scroll var(--dur, 36s) ease-in-out infinite alternate; }
-.fig-pair.pages .page-scroll:hover img { animation-play-state: paused; }
-@keyframes page-scroll { 0%, 6% { transform: translateY(0); } 94%, 100% { transform: translateY(calc(-100% + 100cqh)); } }
-@media (prefers-reduced-motion: reduce) { .fig-pair.pages .page-scroll img { animation: none; } }
+.fig-pair.pages .page-scroll { display: block; aspect-ratio: 9 / 19.5; height: auto; overflow-y: auto; overscroll-behavior-y: auto; scrollbar-width: none; border-radius: 26px; background: #fff; border: 1px solid var(--line); box-shadow: 0 18px 40px -26px rgb(15 27 61 / .35); }
+.fig-pair.pages .page-scroll::-webkit-scrollbar { display: none; }
+.fig-pair.pages .page-scroll img { width: 100%; height: auto; object-fit: initial; }
+.pages-ctl { display: flex; align-items: center; gap: 12px; margin: -10px 0 26px; font-size: 14px; color: var(--ink-2); }
+.pages-ctl button { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border: 0; border-radius: 999px; background: color-mix(in srgb, var(--ink) 6%, transparent); color: var(--ink); font: 500 14px var(--body); cursor: pointer; }
+.pages-ctl button:hover { background: color-mix(in srgb, var(--ink) 10%, transparent); }
+/* Charts drawn in HTML (percentages only). */
+.chart { text-align: left; }
+.chart .ch-t { margin: 0; font-weight: 600; font-size: 16px; color: #15171a; } .chart .ch-s { margin: 2px 0 18px; font-size: 13px; color: #5f636b; }
+.ch-plot { display: flex; align-items: flex-end; justify-content: center; gap: clamp(28px, 10%, 90px); height: 230px; padding-top: 26px; border-bottom: 1.5px solid #dfe3ec; background: repeating-linear-gradient(to top, #eef1f6 0 1px, transparent 1px 25%) bottom / 100% calc(100% - 26px) no-repeat; }
+.ch-plot .bar { position: relative; flex: 0 1 140px; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: stretch; }
+.ch-plot .bar i { display: block; border-radius: 8px 8px 0 0; background: #c6d3f5; }
+.ch-plot .bar.base i { background: #9db3ee; } .ch-plot .bar.lost i { background: #3a6ee8; } .ch-plot .bar.lost .v { bottom: calc(100% + 6px); } .ch-plot .bar.win i { background: #3a6ee8; }
+.ch-plot .bar.lost::before { content: ""; position: absolute; left: 0; right: 0; top: 0; bottom: var(--h); border-radius: 8px 8px 0 0; background: repeating-linear-gradient(-45deg, #e3eafb 0 6px, #f4f7fe 6px 12px); }
+.ch-plot .v { position: absolute; z-index: 1; left: 0; right: 0; bottom: calc(var(--h) + 6px); text-align: center; font-weight: 600; font-size: 18px; color: #15171a; }
+.ch-plot .l { position: absolute; left: 0; right: 0; bottom: -30px; text-align: center; font-size: 13px; color: #5f636b; }
+.chart .ch-n { margin: 44px 0 0; font-size: 13px; font-weight: 600; color: #3a6ee8; }
+@media (max-width: 560px) { .ch-plot { height: 180px; } }
 /* Team in the facts row: linked avatars (photo or initials) with names, then a short note. */
 .team { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
 .mate { display: inline-flex; border-radius: 50%; transition: transform .15s, box-shadow .15s; }
@@ -499,6 +522,27 @@ CSS = """/* Matt's case-study format (tools/build-case-studies.py). Adds to styl
 }
 """
 
+PAGES_JS = """
+// Before / after pages: scroll either one and the other follows, pixel for pixel (same speed). "Scroll both" plays
+// one pass from top to bottom at a steady speed and stops; any wheel, touch or key on a page stops it.
+(() => {
+  document.querySelectorAll('.fig-pair.pages').forEach((pair) => {
+    const panes = [...pair.querySelectorAll('.page-scroll')]; let lock = false, raf = 0;
+    const sync = (from) => { if (lock) return; lock = true; panes.forEach((p) => { if (p !== from) p.scrollTop = from.scrollTop; }); requestAnimationFrame(() => { lock = false; }); };
+    panes.forEach((p) => p.addEventListener('scroll', () => sync(p), { passive: true }));
+    const stop = () => { cancelAnimationFrame(raf); raf = 0; };
+    panes.forEach((p) => ['wheel', 'touchstart', 'keydown', 'mousedown'].forEach((ev) => p.addEventListener(ev, stop, { passive: true })));
+    const btn = pair.nextElementSibling && pair.nextElementSibling.querySelector('button'); if (!btn) return;
+    btn.addEventListener('click', () => { stop(); const max = Math.max(...panes.map((p) => p.scrollHeight - p.clientHeight)); panes.forEach((p) => { p.scrollTop = 0; });
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const speed = 0.3 * panes[0].clientHeight; let last = performance.now(), y = 0;   // about a third of a screen a second
+      const step = (now) => { y = Math.min(max, y + (now - last) / 1000 * speed); last = now; lock = true; panes.forEach((p) => { p.scrollTop = y; }); requestAnimationFrame(() => { lock = false; });
+        if (y < max) raf = requestAnimationFrame(step); else raf = 0; };
+      raf = requestAnimationFrame(step); });
+  });
+})();
+"""
+
 TOC_JS = """
 // Contents menu: highlight the section currently being read (works from the top of the page and on anchor jumps).
 (() => {
@@ -520,7 +564,7 @@ def build():
     shutil.copy(os.path.join(A, "style.css"), os.path.join(OUT, "style.css"))
     js = open(os.path.join(A, "script.js")).read()
     cut = js.index("  const links = [...document.querySelectorAll('.toc a')];")
-    open(os.path.join(OUT, "script.js"), "w").write(js[:cut].rstrip() + "\n})();\n" + TOC_JS + sp.THEME_JS)
+    open(os.path.join(OUT, "script.js"), "w").write(js[:cut].rstrip() + "\n})();\n" + TOC_JS + PAGES_JS + sp.THEME_JS)
     open(os.path.join(OUT, "case.css"), "w").write(bc.CSS)
     open(os.path.join(OUT, "format.css"), "w").write(CSS + open(os.path.join(HERE, "type-smaller.css")).read() + sp.HEADER_CSS + sp.DARK_CSS)
     for name, html in PAGES.items():
