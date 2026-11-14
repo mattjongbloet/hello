@@ -1,4 +1,7 @@
 /* Matt's case-study format (tools/build-case-studies.py). Adds to style.css + case.css. */
+/* Before / after pair at equal width (Trellis homepage); placeholder frames are light and phone-shaped until the images arrive. */
+.fig-pair.even { grid-template-columns: repeat(2, minmax(0, 1fr)); }   /* stays two-up on phones: before and after side by side */
+.fig-pair.even .frame.cover-ph { aspect-ratio: 9 / 16; display: grid; place-items: center; padding: 20px; text-align: center; background: repeating-linear-gradient(45deg, var(--mist), var(--mist) 12px, #ececea 12px, #ececea 24px); }
 /* Team in the facts row: linked avatars (photo or initials) with names, then a short note. */
 .team { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
 .mate { display: inline-flex; border-radius: 50%; transition: transform .15s, box-shadow .15s; }

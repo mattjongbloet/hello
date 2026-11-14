@@ -355,40 +355,46 @@ def tfig(src, alt, cap, wide=False):
     return f'<figure class="fig{" wide" if wide else ""}"><a class="frame light" href="{T}{src}"><img src="{T}{src}" alt="{alt}" loading="lazy"></a><figcaption>{cap}</figcaption></figure>'
 
 
-PAGES["trellis"] = page("Trellis: Growth experiments — Matt Jongbloet", "In 3 months, a small growth team and I ran experiments on around 15 parts of Savvy’s car insurance quote flow: $3.5MM in predicted gross annual revenue.",
-    opening("Trellis", "Finding $3.5MM in a car insurance quote flow",
-            "In three months, a small growth team and I ran experiments on around 15 parts of Savvy’s car insurance quote flow, and proved we could get more people from “I want a quote” to “here are my offers”.",
-            [("Company", "Trellis / Savvy.Insure"), ("My role", "Staff Product Designer, Growth"), ("Team", team([("Drew Bolles", "drew-bolles"), ("Chuong Nguyen", "chuongtnguyen"), ("Alexey Komissarouk", "alexeymk")])), ("Timeframe", "3 months, 2023"), ("Surface", "Car insurance quote flow")],
+PAGES["trellis"] = page("Trellis: Growth experiments — Matt Jongbloet", "Savvy hadn’t had a designer for two years. In three months, a small growth team and I ran around 15 experiments across the homepage and the car insurance quote flows: $3.5MM in predicted gross annual revenue.",
+    opening("Trellis", "Finding $3.5MM in three months of growth experiments",
+            "Savvy hadn’t had a designer for two years. In three months, a small growth team and I ran around 15 experiments across the homepage and the car insurance quote flows, adding up to $3.5MM in predicted gross annual revenue.",
+            [("Company", "Trellis / Savvy.Insure"), ("My role", "Staff Product Designer, Growth"), ("Team", team([("Drew Bolles", "drew-bolles"), ("Chuong Nguyen", "chuongtnguyen"), ("Alexey Komissarouk", "alexeymk")])), ("Timeframe", "3 months, 2023"), ("Surface", "Homepage and car insurance quote flows")],
             open(os.path.join(HERE, "anims", "trellis.html")).read(),   # animated cover: homepage → three questions → offers
-            [])   # metric tiles removed on Trellis at Matt's request ($3.5MM, ~15 parts, 3 months, 69.0% vs 60.4%, +14% lift)
+            [])   # no metric tiles on Trellis (Matt removed them)
     + body([
-        ("context", "Context", "Where the business wins or loses",
-         p("Savvy.Insure, by Trellis, set out to make insurance easier for everyone. Someone who wants car insurance comes to Savvy, tells us about themselves, their cars and their drivers, and gets quotes back. That flow is where the business makes or loses money.")),
-        ("opportunity", "Opportunity", "Four in ten people gave up before their quote",
-         f'<p>From 17 to 31 May 2023, <strong>44,846</strong> people started the unlinked application and <strong>26,333</strong> finished it: a completion rate of <strong>58.7%</strong>. Every drop-off was a quote, and revenue, lost.</p>'
-         + '<p>Customers could shop in one of two ways. The <strong>linked</strong> path let them sign in to their current insurer, say Progressive, so we could pull their details from that account and find comparable quotes. The <strong>unlinked</strong> path was for anyone without insurance, or who couldn’t sign in: a series of questions asking for the minimum we needed to quote them. This flow is the unlinked path.</p>'
-         + tfig("baseline-chart.jpg", "Bar chart: 44,846 started the unlinked application, 26,333 completed it, 58.7% total conversion, 17 to 31 May 2023", "Baseline, 17–31 May 2023: 58.7% of people who started the application completed it.")),
-        ("approach", "Approach", "Learn cheaply, decide with evidence",
+        ("context", "Context", "Two ways to shop for car insurance",
+         p("Savvy.Insure, by Trellis, helps people find better car insurance. Customers could shop in one of two ways.")
+         + ul("<strong>Linked.</strong> Sign in to your current insurer, say Progressive, and we pull your details from that account to find comparable quotes.",
+              "<strong>Unlinked.</strong> For anyone without insurance, or who couldn’t sign in: a series of questions asking for the minimum we needed to quote them.")
+         + p("Both start on the homepage, and every step from there to a quote is where the business wins or loses.")),
+        ("opportunity", "Opportunity", "No designer for two years",
+         p("Savvy hadn’t had a designer for two years, and the CEO believed there were many chances to lift conversion across the main car insurance flows.",
+           "So the opportunity wasn’t one problem but many: the homepage, the linked flow and the unlinked flow. The job was to find the biggest wins quickly, and prove them.")),
+        ("approach", "Approach", "Fifteen experiments in three months",
          ul("<strong>The cheapest way to learn.</strong> Not every experiment needs to be an A/B test. We framed each change as a hypothesis, picked the lightest method that could confirm or disconfirm it, and used A/B tests where we needed statistical confidence.",
-            "<strong>One small team, a steady cadence.</strong> With a front-end engineer, a back-end engineer and a growth engineering consultant, I designed and shipped experiments on around 15 parts of the flow in three months.",
+            "<strong>One small team, a steady cadence.</strong> With a front-end engineer, a back-end engineer and a growth engineering consultant, I designed and shipped around 15 experiments in three months, across the homepage, the linked flow and the unlinked flow.",
             "<strong>Making it a habit.</strong> I co-wrote and presented <em>How do we make good decisions about product investment?</em>, sharing how we chose methods, from interviews to A/B tests, and why learning matters more than being right.")
-         + XLOG
-         + '<h3 class="sub">Featured experiment: ask for the car before the phone number</h3>'
-         + '<p class="callout">Hypothesis: changing the order of the unlinked application flow will increase conversion.</p>'
-         + "<p>The control flow opened by asking for name, phone, email and date of birth, before Savvy had given anything back. V2 starts with the car and the drivers, builds up to the policy, and only asks for contact details at the very end, as <em>“Where should we send your offers?”</em></p>"
+         + '<h3 class="sub">One example: ask for the car before the phone number</h3>'
+         + '<p>From 17 to 31 May 2023, <strong>44,846</strong> people started the unlinked application and <strong>26,333</strong> finished it: <strong>58.7%</strong>. Four in ten gave up before seeing a quote.</p>'
+         + tfig("baseline-chart.jpg", "Bar chart: 44,846 started the unlinked application, 26,333 completed it, 58.7% total conversion, 17 to 31 May 2023", "Baseline, 17–31 May 2023: 58.7% of people who started the unlinked application completed it.")
+         + '<p class="callout">Hypothesis: changing the order of the unlinked application will increase conversion.</p>'
+         + "<p>The control opened by asking for name, phone, email and date of birth, before Savvy had given anything back. V2 starts with the car and the drivers, builds up to the policy, and only asks for contact details at the very end, as <em>“Where should we send your offers?”</em></p>"
          + tfig("flow-control.jpg", "Control flow, nine phone screens: basic information with phone and email first, then address, own or rent, vehicle information, vehicles, driver information, drivers, current premium, review", "Control: contact details on the very first screen.", True)
          + tfig("flow-v2.jpg", "V2 flow, nine phone screens: vehicle information, vehicles, tell us about yourself, drivers, home address, own or rent, current premium, review, and where should we send your offers", "V2: vehicles and drivers first, contact details last. Stars mark the steps that moved.", True)
-         + tfig("result-chart.jpg", "Bar chart, 1 to 9 June 2023: control 60.4% (8,108 of 13,419 completed), V2 69.0% (8,498 of 12,319 completed)", "1–9 June 2023: control completed 60.4% (8,108 of 13,419); V2 completed 69.0% (8,498 of 12,319).")),
+         + tfig("result-chart.jpg", "Bar chart, 1 to 9 June 2023: control 60.4% (8,108 of 13,419 completed), V2 69.0% (8,498 of 12,319 completed)", "1–9 June 2023: control completed 60.4% (8,108 of 13,419); V2 completed 69.0% (8,498 of 12,319).")
+         + '<h3 class="sub">Also: a new homepage</h3>'
+         + '<p>I also redesigned the homepage, where both paths begin, to make the value clear up front: better insurers, real savings, and help at no cost.</p>'
+         + f'<div class="fig-pair even"><figure class="fig"><div class="frame cover-ph">{ph("Before: the old Savvy homepage (mobile, full page)")}</div><figcaption>Before</figcaption></figure><figure class="fig"><div class="frame cover-ph">{ph("After: the redesigned homepage (mobile, full page)")}</div><figcaption>After</figcaption></figure></div>'),
         ("outcome", "Outcome", "$3.5MM in predicted annual revenue",
-         ul("Over three months, the experiments added up to <strong>$3.5MM in predicted gross annual revenue</strong>.",
-            f'The re-order test lifted completion by <strong>8.6 points</strong>, a 14% relative improvement. {ph("Did V2 ship to everyone? Say so here.")}',
-            "We left the team with the infrastructure to run similar tests with ease, and a shared way of deciding what to build.")
+         ul("Across around 15 experiments in three months, the wins added up to <strong>$3.5MM in predicted gross annual revenue</strong>.",
+            "The re-order test alone lifted completion of the unlinked application from <strong>60.4% to 69.0%</strong>, a 14% relative improvement.",
+            "We left the team with the infrastructure to keep testing with ease, and a shared way of deciding what to build.")
          + '<h3 class="sub">What we learned</h3>'
-         + ul("<strong>People need Trellis to feel valuable before they give their info.</strong> Order matters.",
+         + ul("<strong>People need Savvy to feel valuable before they give their info.</strong> Order matters.",
               "<strong>Learning is more important than being right.</strong> Good testing infrastructure means more people share ideas, and it takes the HiPPO out of decisions.")),
     ]) + nxt("trellis"),
-    bc.todo(["The other experiments: change, hypothesis and result for 4–6 of the ~15.",
-             "Whether V2 shipped, and anything you know about the effect after launch.", "How the $3.5MM was predicted. One line makes it far more credible."]))
+    bc.todo(["Before and after homepage images at full resolution (mobile, full page, about 1,000px wide or more).",
+             "How the $3.5MM was predicted. One line makes it far more credible.", "Whether V2 shipped to everyone."]))
 
 
 # ---- Templates for the projects still to write (not linked from the home page yet)
@@ -418,6 +424,9 @@ PAGES["hospitable"] = template("Hospitable", "Hospitable", "Senior Staff Product
                  "Context, opportunity, approach, outcome: a few lines each.", "Visuals you’re allowed to show (crop or blur where needed)."])
 
 CSS = """/* Matt's case-study format (tools/build-case-studies.py). Adds to style.css + case.css. */
+/* Before / after pair at equal width (Trellis homepage); placeholder frames are light and phone-shaped until the images arrive. */
+.fig-pair.even { grid-template-columns: repeat(2, minmax(0, 1fr)); }   /* stays two-up on phones: before and after side by side */
+.fig-pair.even .frame.cover-ph { aspect-ratio: 9 / 16; display: grid; place-items: center; padding: 20px; text-align: center; background: repeating-linear-gradient(45deg, var(--mist), var(--mist) 12px, #ececea 12px, #ececea 24px); }
 /* Team in the facts row: linked avatars (photo or initials) with names, then a short note. */
 .team { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
 .mate { display: inline-flex; border-radius: 50%; transition: transform .15s, box-shadow .15s; }

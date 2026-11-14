@@ -81,7 +81,7 @@ Run QA on every changed page; it should print `all clear`. For dark mode, QA a t
 ## Open items
 
 - The 3D face has no keyboard or screen-reader way to open the artwork or take a bite yet (pointer only).
-- Trellis case study placeholders: 4–6 more experiments, whether V2 shipped, how the $3.5MM was predicted.
+- Trellis case study: story reframed by Matt (no designer for two years; ~15 experiments across homepage, linked and unlinked flows; one worked example, the unlinked re-order test; no experiment log). Still needed: full-resolution before/after homepage images (his uploads were 89px and 194px wide; the Wayback Machine blocks automated browsers, so we don't capture it), whether V2 shipped, how the $3.5MM was predicted.
 - Carv and Hospitable case studies need content from Matt.
 
 - Internal Admin is dated January 2020 on the live site, before the CV's Homebot start (Dec 2020): confirm.

@@ -115,7 +115,7 @@ SHARED = {
 
 PORTFOLIO = "https://www.mjongbloet.com/portfolio"
 PROJECTS = {
-    "trellis": ("../case-studies/trellis.html", "trellis/savvy-logo.png", "Trellis / Savvy.Insure", "Growth experiments", "Finding $3.5MM in predicted annual revenue in a car insurance quote flow", "trellis/cover-v2.jpg", "Read the case study →"),
+    "trellis": ("../case-studies/trellis.html", "trellis/savvy-logo.png", "Trellis / Savvy.Insure", "Growth experiments", "$3.5MM in predicted annual revenue from three months of growth experiments", "trellis/cover-v2.jpg", "Read the case study →"),
     "pmi": ("../case-studies/pmi.html", "homebot-logo.png", "Homebot", "Private Mortgage Insurance (PMI)", "Helping ≈1M US homeowners save an estimated $200M a month", "pmi-mockup.png", "Read the case study →"),
     "search": ("../case-studies/home-search.html", "homebot-logo.png", "Homebot", "Home Search", "Helping ≈10 million people find their next home", "home-search.jpg", "Read the case study →"),
     "admin": ("../case-studies/internal-admin.html", "homebot-logo.png", "Homebot", "Internal Admin", "Cutting the time for 20+ key admin tasks by ≈80%", "internal-admin.jpg", "Read the case study →"),
