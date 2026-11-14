@@ -36,7 +36,7 @@ JS = """
   const cards = [...grid.children];
   const halt = () => { if (stop) stop(); stop = null; current = -1; cards.forEach((c) => { c.classList.remove('on'); c.querySelector('.play').setAttribute('aria-pressed', 'false'); }); };
   const toggle = (i) => { const was = current; halt(); if (was === i) return;
-    ctx = ctx || new (window.AudioContext || window.webkitAudioContext)(); if (ctx.state === 'suspended') ctx.resume();
+    Jungle.unmute(); ctx = ctx || new (window.AudioContext || window.webkitAudioContext)(); if (ctx.state === 'suspended') ctx.resume();
     if (!master) { master = ctx.createGain(); master.connect(ctx.destination); } master.gain.value = +vol.value;
     stop = Jungle.play(ctx, master, i); current = i; cards[i].classList.add('on'); cards[i].querySelector('.play').setAttribute('aria-pressed', 'true'); };
   vol.addEventListener('input', () => { if (master) master.gain.value = +vol.value; });
