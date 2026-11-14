@@ -209,11 +209,37 @@ window.Toy3D = (() => {
     g.fillText('DNB', S / 2, S * .8);
     const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8; return t;
   })();
-  const spinner = new THREE.Group(); vinyl.add(spinner);
-  const blackVinyl = new THREE.MeshPhysicalMaterial({ color: 0x050506, roughness: .42, metalness: .15, anisotropy: 1, anisotropyMap: aniso, normalMap: grooves, normalScale: new THREE.Vector2(.5, .5), envMapIntensity: 1.25 });
+  // What makes a real record read as turning: the music itself. Loud and quiet passages cut the grooves differently, so each
+  // track has streaks and bands that vary round the disc; the gaps between tracks and the run-out are glassy; and there is
+  // always a little dust and a hairline scratch or two. One canvas carries the colour, another how sharp the sheen is.
+  const [vinylMap, vinylRough] = (() => {
+    const S = 1024, h = S / 2, mk = () => { const c = document.createElement('canvas'); c.width = c.height = S; return c; }, cc = mk(), cr = mk(), c = cc.getContext('2d'), r = cr.getContext('2d');
+    c.fillStyle = '#060607'; c.fillRect(0, 0, S, S); r.fillStyle = 'rgb(0,112,0)'; r.fillRect(0, 0, S, S);
+    const ring = (ctx, rad, w, style) => { ctx.strokeStyle = style; ctx.lineWidth = w; ctx.beginPath(); ctx.arc(h, h, rad * h, 0, 6.2832); ctx.stroke(); };
+    const arc = (ctx, rad, a0, len, w, style) => { ctx.strokeStyle = style; ctx.lineWidth = w; ctx.beginPath(); ctx.arc(h, h, rad * h, a0, a0 + len); ctx.stroke(); };
+    const tracks = [[.365, .552], [.568, .732], [.748, .862], [.878, .962]];
+    tracks.forEach(([a, b], t) => { ring(c, (a + b) / 2, (b - a) * h, ['#070708', '#09090b', '#060607', '#0a0a0c'][t]); ring(r, (a + b) / 2, (b - a) * h, `rgb(0,${[104, 122, 98, 118][t]},0)`); });   // each track has its own tone
+    for (let i = 0; i < 70; i++) { const [a, b] = tracks[i % 4], rad = a + rnd() * (b - a), a0 = rnd() * 6.2832, len = .5 + rnd() * 2.6, w = 5 + rnd() * 16, loud = rnd() > .5;      // loud and quiet passages: broad bands
+      arc(c, rad, a0, len, w, loud ? 'rgba(26,26,30,.5)' : 'rgba(0,0,0,.45)'); arc(r, rad, a0, len, w, `rgba(0,${loud ? 170 : 62},0,.5)`); }
+    for (let i = 0; i < 1500; i++) { const [a, b] = tracks[i % 4], rad = a + rnd() * (b - a), a0 = rnd() * 6.2832, len = .08 + rnd() * 1.1, w = .7 + rnd() * 2.2, loud = rnd() > .5;   // fine streaks inside them
+      arc(c, rad, a0, len, w, loud ? 'rgba(40,40,46,.4)' : 'rgba(0,0,0,.5)'); arc(r, rad, a0, len, w, `rgba(0,${loud ? 190 : 50},0,.4)`); }
+    for (const g of [.56, .74, .87]) { ring(c, g, .016 * h, '#020203'); ring(r, g, .016 * h, 'rgb(0,34,0)'); }                                                                     // glassy gaps between tracks
+    ring(c, .33, .07 * h, '#030304'); ring(r, .33, .07 * h, 'rgb(0,30,0)'); ring(c, .98, .03 * h, '#040405'); ring(r, .98, .03 * h, 'rgb(0,44,0)');                              // run-out and lead-in: smooth
+    for (const ctx of [c, r]) { ctx.strokeStyle = ctx === c ? 'rgba(46,46,52,.8)' : 'rgba(0,150,0,.8)'; ctx.lineWidth = 1.3; ctx.beginPath();                                       // the run-out groove spirals in to a locked ring
+      for (let i = 0; i <= 260; i++) { const a = i / 260 * 6.2832 * 1.75, rad = (.362 - i / 260 * .05) * h; ctx[i ? 'lineTo' : 'moveTo'](h + Math.cos(a) * rad, h + Math.sin(a) * rad); } ctx.stroke(); }
+    ring(c, .312, 1.3, 'rgba(46,46,52,.8)'); ring(r, .312, 1.3, 'rgba(0,150,0,.8)');
+    for (let i = 0; i < 520; i++) { const rad = (.3 + rnd() * .68) * h, a = rnd() * 6.2832, x = h + Math.cos(a) * rad, y = h + Math.sin(a) * rad, sz = .5 + rnd() * 1.2;                // dust
+      c.fillStyle = `rgba(170,170,176,${.25 + rnd() * .45})`; c.beginPath(); c.arc(x, y, sz, 0, 6.2832); c.fill(); r.fillStyle = 'rgba(0,230,0,.8)'; r.beginPath(); r.arc(x, y, sz * 1.2, 0, 6.2832); r.fill(); }
+    for (let i = 0; i < 7; i++) { const rad = (.42 + rnd() * .5) * h, a = rnd() * 6.2832, x = h + Math.cos(a) * rad, y = h + Math.sin(a) * rad, d = rnd() * 6.2832, L = 30 + rnd() * 110;   // hairline scratches
+      for (const ctx of [c, r]) { ctx.strokeStyle = ctx === c ? 'rgba(120,120,128,.22)' : 'rgba(0,220,0,.5)'; ctx.lineWidth = .8; ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x + Math.cos(d) * L, y + Math.sin(d) * L); ctx.stroke(); } }
+    const tc = new THREE.CanvasTexture(cc), tr = new THREE.CanvasTexture(cr); tc.colorSpace = THREE.SRGBColorSpace; tc.anisotropy = tr.anisotropy = renderer.capabilities.getMaxAnisotropy(); return [tc, tr];
+  })();
+  // No pressing is perfectly flat: a slight warp tilts the disc inside the spinner, so its sheen rocks as it turns.
+  const spinner = new THREE.Group(); vinyl.add(spinner); const warp = new THREE.Group(); warp.rotation.set(.016, .011, 0); spinner.add(warp);
+  const blackVinyl = new THREE.MeshPhysicalMaterial({ color: 0xffffff, map: vinylMap, roughness: 1, roughnessMap: vinylRough, metalness: .15, anisotropy: 1, anisotropyMap: aniso, normalMap: grooves, normalScale: new THREE.Vector2(.5, .5), envMapIntensity: 1.02 });   // roughness comes from the map (green channel): about .2 in the gaps, .4 in the grooves, more on dust
   const edge = new THREE.MeshPhysicalMaterial({ color: 0x08080a, roughness: .35 });
-  const disc = new THREE.Mesh(new THREE.CylinderGeometry(1.3, 1.3, .045, 128), [edge, blackVinyl, edge]); disc.rotation.x = Math.PI / 2; spinner.add(disc);
-  const lab = new THREE.Mesh(new THREE.CylinderGeometry(.44, .44, .05, 64), [edge, new THREE.MeshStandardMaterial({ map: label, roughness: .75 }), edge]); lab.rotation.x = Math.PI / 2; lab.position.z = .004; spinner.add(lab);
+  const disc = new THREE.Mesh(new THREE.CylinderGeometry(1.3, 1.3, .045, 128), [edge, blackVinyl, edge]); disc.rotation.x = Math.PI / 2; warp.add(disc);
+  const lab = new THREE.Mesh(new THREE.CylinderGeometry(.44, .44, .05, 64), [edge, new THREE.MeshStandardMaterial({ map: label, roughness: .75 }), edge]); lab.rotation.x = Math.PI / 2; lab.position.z = .004; warp.add(lab);
   const spindle = new THREE.Mesh(new THREE.CylinderGeometry(.035, .035, .16, 24), steel); spindle.rotation.x = Math.PI / 2; spindle.position.z = .06; vinyl.add(spindle);
   // Technics SL-1210 style: platter, gimbal base, S-shaped tonearm, angled headshell with finger lift, counterweight.
   const black = new THREE.MeshStandardMaterial({ color: 0x17181b, metalness: .6, roughness: .42 }), chrome = new THREE.MeshStandardMaterial({ color: 0xe8eaee, metalness: 1, roughness: .1 });
