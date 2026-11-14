@@ -62,7 +62,7 @@ def opening(crumb, title, dek, rows, cover, tiles):
 
   <div class="wrap">
     {cover}
-    <div class="results n{len(tiles)}">{t}</div>
+    {f'<div class="results n{len(tiles)}">{t}</div>' if tiles else ''}
   </div>
 """
 
@@ -360,8 +360,7 @@ PAGES["trellis"] = page("Trellis: Growth experiments — Matt Jongbloet", "In 3 
             "In three months, a small growth team and I ran experiments on around 15 parts of Savvy’s car insurance quote flow, and proved we could get more people from “I want a quote” to “here are my offers”.",
             [("Company", "Trellis / Savvy.Insure"), ("My role", "Staff Product Designer, Growth"), ("Team", team([("Drew Bolles", "drew-bolles"), ("Chuong Nguyen", "chuongtnguyen"), ("Alexey Komissarouk", "alexeymk")])), ("Timeframe", "3 months, 2023"), ("Surface", "Car insurance quote flow")],
             open(os.path.join(HERE, "anims", "trellis.html")).read(),   # animated cover: homepage → three questions → offers
-            [("$3.5MM", "predicted gross annual revenue"), ("~15", "parts of the quote flow tested"), ("3 months", "from first test to result"),
-             ("69.0%", "completion in the winning re-order test, up from 60.4%"), ("+14%", "relative lift in completed applications")])
+            [])   # metric tiles removed on Trellis at Matt's request ($3.5MM, ~15 parts, 3 months, 69.0% vs 60.4%, +14% lift)
     + body([
         ("context", "Context", "Where the business wins or loses",
          p("Savvy.Insure, by Trellis, set out to make insurance easier for everyone. Someone who wants car insurance comes to Savvy, tells us about themselves, their cars and their drivers, and gets quotes back. That flow is where the business makes or loses money.")),
