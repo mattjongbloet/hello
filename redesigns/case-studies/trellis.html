@@ -96,7 +96,8 @@
 .sv-status i { width: 54px; height: 12px; border-radius: 4px; background: linear-gradient(90deg, #0f1b3d 70%, #c8ccd6 70%); }
 .sv-status::after { content: ""; position: absolute; left: 50%; top: 10px; width: 92px; height: 26px; margin-left: -46px; border-radius: 16px; background: #111316; }
 .sv-screens { position: absolute; inset: 44px 0 0; }
-.sv-scr { position: absolute; inset: 0; padding: 14px 22px; transform: translateX(105%); transition: transform .42s cubic-bezier(.3, .7, .2, 1), opacity .42s; background: #fff; }
+.sv-scr { position: absolute; inset: 0; padding: 14px 22px; transform: translateX(105%); visibility: hidden; transition: transform .42s cubic-bezier(.3, .7, .2, 1), opacity .42s, visibility 0s .42s; background: #fff; }
+.sv-scr.on { visibility: visible; transition-delay: 0s; }
 .sv-scr.on { transform: none; } .sv-scr.off { transform: translateX(-28%); opacity: 0; }
 .sv-logo { display: flex; align-items: center; gap: 6px; font: 800 19px/1 var(--svf); letter-spacing: -.02em; color: #102a6b; margin: 4px 0 26px; }
 .sv-mark { width: 16px; height: 16px; border-radius: 4px 10px 4px 10px; background: linear-gradient(135deg, #3fd0f4 0 45%, #1f5fd1 45%); }

@@ -42,7 +42,10 @@ const WIDTHS = [390, 768, 1024, 1440];
         // Text leaves for overlap + contrast
         // Text inside a closed <details> isn't rendered, so it can't clip, overlap or fail contrast.
         const hiddenInDetails = (el) => { const d = el.closest('details:not([open])'); return d && !el.closest('summary'); };
-        const leaves = all.filter((el) => !hiddenInDetails(el) && [...el.childNodes].some((n) => n.nodeType === 3 && n.textContent.trim()));
+        // Text drawn inside a picture (an element with role="img", e.g. an animated product mock-up) is part of the image:
+        // WCAG 1.4.3 exempts it from contrast, and screen readers get the image's label instead. Skip it here.
+        const inPicture = (el) => !!el.closest('[role="img"]');
+        const leaves = all.filter((el) => !hiddenInDetails(el) && !inPicture(el) && [...el.childNodes].some((n) => n.nodeType === 3 && n.textContent.trim()));
         const lum = (c) => { const v = c.map((x) => { x /= 255; return x <= 0.03928 ? x / 12.92 : Math.pow((x + 0.055) / 1.055, 2.4); }); return 0.2126 * v[0] + 0.7152 * v[1] + 0.0722 * v[2]; };
         const parse = (c) => {
           const m = c.match(/[\d.]+/g); if (!m) return null; let v = m.map(Number);
