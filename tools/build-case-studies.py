@@ -354,10 +354,10 @@ XLOG = f"""<div class="xlog-wrap">
 def bars(title, sub, data, cap, note=""):
     """A simple bar chart drawn in HTML: percentages only. data: [(label, percent, kind)] with kind 'base', 'lost' or 'win'."""
     cols = "".join(f'<div class="bar {k}" style="--h: {v}%"><span class="v">{("100" if v == 100 else f"{v:.1f}")}%</span><i style="height:{v}%"></i><span class="l">{l}</span></div>' for l, v, k in data)
-    label = f"{title}, {sub}: " + "; ".join(f"{l} {v:.1f}%".replace("100.0%", "100%") for l, v, k in data) + (f". {note}" if note else "")
+    label = f"{cap} " + f"{title}, {sub}: " + "; ".join(f"{l} {v:.1f}%".replace("100.0%", "100%") for l, v, k in data) + (f". {note}." if note else ".")   # the caption lives here now, not under the chart
     return (f'<figure class="fig"><div class="frame light pad chart" role="img" aria-label="{label}">'
             f'<p class="ch-t">{title}</p><p class="ch-s">{sub}</p><div class="ch-plot">{cols}</div>'
-            + (f'<p class="ch-n">{note}</p>' if note else "") + f'</div><figcaption>{cap}</figcaption></figure>')
+            + (f'<p class="ch-n">{note}</p>' if note else "") + '</div></figure>')
 
 
 def tflow(name, alt, cap, n=9):
