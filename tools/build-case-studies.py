@@ -53,8 +53,8 @@ def team(people, note=""):
 
 def opening(crumb, title, dek, rows, cover, tiles):
     t = "".join(f'<div><b class="num">{n}</b><span>{label}</span></div>' for n, label in tiles)
-    return f"""  <section class="wrap cs-hero">
-    <nav class="crumbs" aria-label="Breadcrumb"><a href="{HOME}index.html#work">Work</a><span>/</span><span>{crumb}</span></nav>
+    return f"""  <section class="wrap cs-hero cs-wide">
+    <!--CNAV-->
     <h1>{title}</h1>
     <p class="dek">{dek}</p>
     {meta(rows)}
@@ -479,6 +479,15 @@ CSS = """/* Matt's case-study format (tools/build-case-studies.py). Adds to styl
 .ch-plot .l { position: absolute; left: 0; right: 0; bottom: -30px; text-align: center; font-size: 13px; color: #5f636b; }
 .chart .ch-n { margin: 44px 0 0; font-size: 13px; font-weight: 600; color: #3a6ee8; }
 @media (max-width: 560px) { .ch-plot { height: 180px; } }
+/* Case-study opening (option 8): Back / Next bar, a full-width headline, the intro left-aligned at reading width, then the facts. */
+.cnav { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 0 0 18px; font-size: 15px; }
+.cnav a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; color: var(--ink-2); text-decoration: none; }
+.cnav a:hover { color: var(--ink); } .cnav svg { width: 16px; height: 16px; flex: none; }
+.cnav-next { color: var(--ink) !important; font-weight: 500; text-align: right; } .cnav-next small { font-size: 15px; font-weight: 400; color: var(--ink-2); margin-right: 4px; }
+.cs-hero.cs-wide { padding-top: 18px; }
+.cs-hero.cs-wide h1 { max-width: none; font-size: clamp(34px, 5.6vw, 76px); line-height: 1.06; letter-spacing: -.035em; }
+.cs-hero.cs-wide .dek { max-width: 62ch; margin-top: 2px; }
+@media (max-width: 560px) { .cnav-back span { display: none; } .cnav-back { padding-right: 8px; } }
 /* Team in the facts row: linked avatars (photo or initials) with names, then a short note. */
 .team { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
 .mate { display: inline-flex; border-radius: 50%; transition: transform .15s, box-shadow .15s; }
@@ -567,8 +576,17 @@ def build():
     open(os.path.join(OUT, "script.js"), "w").write(js[:cut].rstrip() + "\n})();\n" + TOC_JS + PAGES_JS + sp.THEME_JS)
     open(os.path.join(OUT, "case.css"), "w").write(bc.CSS)
     open(os.path.join(OUT, "format.css"), "w").write(CSS + open(os.path.join(HERE, "type-smaller.css")).read() + sp.HEADER_CSS + sp.DARK_CSS)
+    # Top of every case study (Matt's pick, option 8 of the header lab): Back to work on the left, the next case study on the right.
+    NEXT_TOP = {k: (NEXT_INFO[n][0], f"{n}.html") for k, n in ((k, ORDER[(ORDER.index(k) + 1) % len(ORDER)]) for k in ORDER)}
+    NEXT_TOP.update({"carv": ("Hospitable", "hospitable.html"), "hospitable": (NEXT_INFO["trellis"][0], "trellis.html")})
+    L = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+    R = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>'
     for name, html in PAGES.items():
-        open(os.path.join(OUT, name + ".html"), "w").write(html)
+        title, href = NEXT_TOP[name]
+        nav = (f'<nav class="cnav" aria-label="Case studies"><a class="cnav-back" href="{SITE}index.html#work">{L}<span>Back to work</span></a>'
+               f'<a class="cnav-next" href="{href}"><span><small>Next</small> {title}</span>{R}</a></nav>')
+        assert html.count("<!--CNAV-->") == 1, name
+        open(os.path.join(OUT, name + ".html"), "w").write(html.replace("<!--CNAV-->", nav))
     print("built case-studies:", ", ".join(PAGES))
 
 

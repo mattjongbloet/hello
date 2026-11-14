@@ -147,7 +147,7 @@ open(os.path.join(OUT, "index.html"), "w").write(f"""<!doctype html>
 import re
 PICKS = [1, 4, 7, 8, 13]
 page = open(os.path.join(ROOT, "redesigns", "case-studies", "trellis.html")).read()
-OPEN = re.compile(r'  <section class="wrap cs-hero">.*?</section>\n', re.S); assert OPEN.search(page), "Trellis opening not found"
+OPEN = re.compile(r'  <section class="wrap cs-hero[^"]*">.*?</section>\n', re.S); assert OPEN.search(page), "Trellis opening not found"
 HEAD_CSS = CSS[CSS.index("/* the header itself"):]
 # a few class names here are already used by the case-study styles, so the copies use their own
 REN = {"facts": "hfacts", "team": "hteam", "mate": "hmate", "split": "hsplit", "wide": "hwide", "next": "hnext"}
