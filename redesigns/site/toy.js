@@ -611,15 +611,21 @@ window.Toy3D = (() => {
   const cast = (e) => { const r = stage.getBoundingClientRect(); ndc.set(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1); ray.setFromCamera(ndc, camera);
     const vis = (o) => { for (let p = o; p; p = p.parent) if (p !== o && p.visible === false) return false; return true; };
     return ray.intersectObjects(face.children, true).find((i) => i.object.userData.k && vis(i.object)); };
+  // Hover cursors (Matt's picks from the cursor lab): a white chip with a line icon, 44px, in place of the pointer.
+  // Record: play, or pause while it is playing. Wheel: spin arrow. Framed art: magnifier. Stroopwafel: chomper.
+  const CHIPS = { play: '<path d="M8 5.5v13l11-6.5z"/>', pause: '<path d="M8.5 5v14M15.5 5v14"/>', cycle: '<path d="M19 12a7 7 0 1 1-2.6-5.4M17 2.8V7h-4.2"/><circle cx="12" cy="12" r="1"/>',
+    nose: '<circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5.5 5.5M10.5 8v5M8 10.5h5"/>', mouth: '<path d="M12 12l7.8-4.5A9 9 0 1 0 19.8 16.5zM13 7.5h.01"/>' }, chipCache = {};
+  const chip = (k) => { const id = k === 'music' ? (stopMusic ? 'pause' : 'play') : k === 'nose' ? (nose === 'art' ? 'nose' : '') : k === 'mouth' ? (mouth === 'stroopwafel' ? 'mouth' : '') : k; if (!CHIPS[id]) return 'pointer';
+    return chipCache[id] || (chipCache[id] = `url("data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="-5 -5 34 34"><circle cx="12" cy="12" r="16" fill="#fff" stroke="rgba(21,23,26,.18)"/><g fill="none" stroke="#15171a" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${CHIPS[id]}</g></svg>`)}") 22 22, pointer`); };
   const plane = new THREE.Plane(), pt = new THREE.Vector3();
   stage.addEventListener('pointermove', (e) => {
     if (dragging !== null) { plane.setFromNormalAndCoplanarPoint(V(0, 0, 1).applyQuaternion(face.quaternion), face.localToWorld(V(0, MOUTH_Y, .1))); cast(e); if (ray.ray.intersectPlane(plane, pt)) mouths.bezier.drag(dragging, face.worldToLocal(pt.clone())); kick(); return; }
-    if (e.pointerType === 'touch') return; const h = cast(e); hover = h ? h.object.userData.k : null; stage.dataset.hover = hover || '';   /* which object is under the pointer, for the cursor playground */ stage.style.cursor = h ? (h.object.userData.handle !== undefined ? 'grab' : 'pointer') : ''; kick(); });
+    if (e.pointerType === 'touch') return; const h = cast(e); hover = h ? h.object.userData.k : null; stage.dataset.hover = hover || '';   /* which object is under the pointer, for the cursor playground */ stage.style.cursor = h ? (h.object.userData.handle !== undefined ? 'grab' : chip(hover)) : ''; kick(); });
   stage.addEventListener('pointerdown', (e) => { const h = cast(e); if (h && h.object.userData.handle !== undefined && mouth === 'bezier') { dragging = h.object.userData.handle; stage.setPointerCapture(e.pointerId); stage.style.cursor = 'grabbing'; } });
   const drop = () => { dragging = null; stage.style.cursor = ''; }; stage.addEventListener('pointerup', drop); stage.addEventListener('pointercancel', drop);
   stage.addEventListener('pointerleave', () => { hover = null; stage.dataset.hover = ''; });
   stage.addEventListener('click', (e) => { const h = cast(e); if (!h) return; const k = h.object.userData.k;
-    if (k === 'music') { if (stopMusic) stopMusic(); else playMusic(); }
+    if (k === 'music') { if (stopMusic) stopMusic(); else playMusic(); stage.style.cursor = chip('music'); }   // play turns to pause, and back
     if (k === 'cycle') { audio(); push = 16; }                // a push: it spins up, then coasts and ticks down
     if (k === 'nose' && noses[nose].click) noses[nose].click(h.object); if (k === 'mouth' && mouths[mouth].click) mouths[mouth].click(h.object, h.uv); kick(); });
 
