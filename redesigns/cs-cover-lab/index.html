@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="../assets/mj-logo.svg" type="image/svg+xml">
+<title>Case study: image first</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;650;700&display=swap">
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+:root { --paper: #fff; --mist: #f6f6f4; --line: #e4e4df; --ink: #15171a; --ink-2: #5f636b; --signal: #b28550; --body: "Roobert", "Hanken Grotesk", system-ui, sans-serif; }
+* { box-sizing: border-box; } body { margin: 0; font: 400 16px/1.5 var(--body); color: var(--ink); background: var(--mist); }
+a { color: inherit; } :focus-visible { outline: 2px solid var(--signal); outline-offset: 3px; border-radius: 8px; }
+.page { max-width: 1520px; margin: 0 auto; padding: 28px 20px 80px; }
+.back { display: inline-block; padding: 12px 0; color: var(--ink-2); text-decoration: none; } .back:hover { color: var(--ink); }
+h1 { font: 650 clamp(28px, 3.4vw, 40px)/1.1 var(--body); letter-spacing: -.025em; margin: 6px 0 8px; }
+.intro { color: var(--ink-2); max-width: 70ch; margin: 0; }
+.opt { margin-top: 40px; }
+.opt h2 { font: 600 18px/1.2 var(--body); margin: 0 0 4px; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; }
+.opt h2 b { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--ink); color: #fff; font-size: 13px; }
+.opt h2 a { font-weight: 500; font-size: 15px; color: var(--ink-2); padding: 12px 0; }
+.note { margin: 0 0 14px; color: var(--ink-2); font-size: 15px; max-width: 80ch; }
+.opt iframe { display: block; width: 100%; height: min(1000px, 90vh); border: 1px solid var(--line); border-radius: 18px; background: #fff; }
+</style>
+</head>
+<body>
+<main class="page">
+  <a class="back" href="../case-studies/pmi.html">← Current PMI case study</a>
+  <h1>Case study: image first</h1>
+  <p class="intro">Three ways to let the imagery speak first, using the PMI case study. Only the opening changes; the facts, metric tiles, contents menu and body are the format you already have. Each frame is live: scroll it, or open it full page.</p>
+  <section class="opt">
+    <h2><b>1</b> Image first, same layout <a href="option-1.html">Open full page →</a></h2>
+    <p class="note">The smallest change: the cover moves above the headline, full width of the column. Title, intro and facts follow, left-aligned as now.</p>
+    <iframe src="option-1.html" title="PMI case study, option 1: Image first, same layout" loading="lazy"></iframe>
+  </section>
+  <section class="opt">
+    <h2><b>2</b> Framed stage <a href="option-2.html">Open full page →</a></h2>
+    <p class="note">Like your reference: the cover sits inside a dark stage with room around it, then a centred title, intro and facts. The metric tiles stay as they are.</p>
+    <iframe src="option-2.html" title="PMI case study, option 2: Framed stage" loading="lazy"></iframe>
+  </section>
+  <section class="opt">
+    <h2><b>3</b> Full-bleed cover, split title <a href="option-3.html">Open full page →</a></h2>
+    <p class="note">The cover runs edge to edge across the screen, then the title sits on the left with the intro and facts beside it, like a magazine opener.</p>
+    <iframe src="option-3.html" title="PMI case study, option 3: Full-bleed cover, split title" loading="lazy"></iframe>
+  </section>
+</main>
+</body>
+</html>
